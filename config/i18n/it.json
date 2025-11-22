@@ -45,7 +45,7 @@
   "tools": {
     "base64EncoderDecoder": {
       "title": "Codificatore Base64",
-      "page_title": "Codificatore Base64 – Convertitore Testo e File Online",
+      "page_title": "Codificatore e Decodificatore Base64",
       "description": "Codifica e decodifica testo e file in formato Base64. Supporta drag & drop, anteprima live e codifica URL-safe per lo sviluppo web.",
       "linkTitle": {
         "card": "Codificare o decodificare stringhe e file Base64",
@@ -105,7 +105,7 @@
     },
     "urlEncoderDecoder": {
       "title": "Codificatore URL",
-      "page_title": "Codificatore e Decodificatore URL – Parser Parametri di Query",
+      "page_title": "Codificatore e Decodificatore URL",
       "description": "Codifica e decodifica URL, parametri di query e componenti istantaneamente. Strumento gratuito con parser URL integrato per estrarre protocollo, host,.",
       "linkTitle": {
         "card": "Codificare o decodificare parametri e componenti URL",
@@ -163,7 +163,7 @@
     },
     "jsonFormatterValidator": {
       "title": "Formattatore JSON",
-      "page_title": "Formattatore e Validatore JSON – Beautify & Minify Online",
+      "page_title": "Formattatore e Validatore JSON",
       "description": "Formatta, valida e abbellisci dati JSON con evidenziazione sintassi istantaneamente. Strumento JSON gratuito con correzione automatica errori, minificazione,.",
       "linkTitle": {
         "card": "Formattare, validare e abbellire dati JSON",
@@ -239,7 +239,7 @@
     },
     "pxToRemConverter": {
       "title": "Convertitore Px in Rem",
-      "page_title": "Convertitore PX-REM – Calcolatore Unità CSS Responsive",
+      "page_title": "Convertitore PX-REM",
       "description": "Converti pixel in unità rem e viceversa. Regola la dimensione font base per calcoli precisi di design responsive.",
       "linkTitle": {
         "card": "Convertire pixel in unità rem per design responsive",
@@ -278,7 +278,7 @@
     },
     "uuidGeneratorTool": {
       "title": "Generatore UUID",
-      "page_title": "Generatore UUID – v1, v4, v7",
+      "page_title": "Generatore UUID",
       "description": "Genera identificatori univoci (UUID) in più versioni. Supporta UUID v1, v4 e NIL con copia con un clic e generazione bulk.",
       "linkTitle": {
         "card": "Generare identificatori univoci in più formati",
@@ -328,7 +328,7 @@
     },
     "passwordGeneratorTool": {
       "title": "Generatore Password",
-      "page_title": "Generatore Password Sicure – Creare Password Casuali Forti",
+      "page_title": "Generatore Password Sicure",
       "description": "Genera password casuali sicure istantaneamente con lunghezza e caratteri personalizzabili. Generatore gratuito con passphrase, pattern ed esclusione.",
       "linkTitle": {
         "card": "Creare password sicure e passphrase",
@@ -417,7 +417,7 @@
     },
     "hashGeneratorTool": {
       "title": "Generatore Hash",
-      "page_title": "Generatore Hash – Creare Hash SHA-256, MD5, HMAC e SRI",
+      "page_title": "Generatore Hash",
       "description": "Genera hash crittografici con SHA-1, SHA-256, SHA-384, SHA-512, MD5 e HMAC istantaneamente. Generatore hash gratuito con supporto per file e testo. Crea SRI.",
       "linkTitle": {
         "card": "Generare hash crittografici e checksum",
@@ -465,7 +465,7 @@
     },
     "loremIpsumTool": {
       "title": "Generatore Lorem Ipsum",
-      "page_title": "Generatore Lorem Ipsum – Testo Segnaposto per Design Web",
+      "page_title": "Generatore Lorem Ipsum",
       "description": "Genera testo segnaposto Lorem Ipsum gratuito per design e mockup istantaneamente. Scegli paragrafi, frasi o parole personalizzabili. Copia con un clic,.",
       "linkTitle": {
         "card": "Generare testo segnaposto per mockup",
@@ -503,7 +503,7 @@
     },
     "qrCodeGeneratorTool": {
       "title": "Generatore QR Code",
-      "page_title": "Generatore QR Code – Creare QR per URL, WiFi, vCard Online",
+      "page_title": "Generatore QR Code",
       "description": "Crea codici QR personalizzati gratuiti da testo, URL, contatti vCard o informazioni WiFi istantaneamente. Generatore di QR con colori e dimensioni.",
       "linkTitle": {
         "card": "Creare codici QR personalizzabili istantaneamente",
@@ -573,7 +573,7 @@
     },
     "htmlEntityTool": {
       "title": "Codificatore HTML Entity",
-      "page_title": "Codificatore e Decodificatore HTML Entity – Escape Caratteri",
+      "page_title": "Codificatore e Decodificatore HTML Entity",
       "description": "Converti testo in entità HTML e viceversa istantaneamente. Strumento di escape gratuito con entità nominative (&nbsp;), decimali numeriche (&#160;) ed.",
       "linkTitle": {
         "card": "Convertire testo in entità HTML e viceversa",
@@ -616,7 +616,7 @@
     },
     "jwtDecoderTool": {
       "title": "Decodificatore JWT",
-      "page_title": "Decodificatore JWT – Analisi di JSON Web Tokens Online",
+      "page_title": "Decodificatore JWT",
       "description": "Decodifica e analizza JSON Web Tokens (JWT) istantaneamente. Strumento JWT gratuito per visualizzare header, payload e firma decodificati. Verifica algoritmo.",
       "linkTitle": {
         "card": "Decodificare e analizzare token web JSON",
@@ -657,7 +657,7 @@
     },
     "punycodeConverterTool": {
       "title": "Convertitore Punycode",
-      "page_title": "Convertitore Punycode – IDN ad ASCII e Unicode a Punycode",
+      "page_title": "Convertitore Punycode",
       "description": "Converti nomi di dominio internazionali (IDN) in Punycode e viceversa istantaneamente. Strumento gratuito per trasformare domini Unicode in formato.",
       "linkTitle": {
         "card": "Convertire nomi di dominio internazionali in Punycode",
@@ -694,7 +694,7 @@
     },
     "stringEscaperTool": {
       "title": "Escape di Stringhe",
-      "page_title": "Escape di Stringhe – HTML, JavaScript, JSON, SQL & CSV",
+      "page_title": "Escape di Stringhe",
       "description": "Esegui escape e unescape di stringhe per HTML, XML, JavaScript, JSON, SQL e CSV istantaneamente. Strumento di escape gratuito con conversione automatica in.",
       "description_long": "Esegui l'escape e il de-escape di stringhe in modo sicuro per vari formati con il nostro strumento di Escape di Stringhe. Lo strumento supporta HTML, XML, JavaScript, JSON, SQL e CSV e converte automaticamente i caratteri speciali nella corretta sequenza di escape per ciascun contesto. Con la funzione di elaborazione automatica, la conversione avviene in tempo reale durante l'input. Il conteggio di caratteri e byte aiuta a monitorare la lunghezza della stringa. Ideale per gli sviluppatori che lavorano con dati dinamici e vogliono evitare SQL injection, XSS o altri problemi di sicurezza.",
       "linkTitle": {
@@ -718,7 +718,7 @@
     },
     "codeFormatterTool": {
       "title": "Formattatore Codice",
-      "page_title": "Formattatore Codice – HTML, CSS, JavaScript, XML & SQL",
+      "page_title": "Formattatore Codice",
       "description": "Formatta e abbellisci codice HTML, CSS, JavaScript, XML e SQL istantaneamente. Strumento gratuito di beautify e minify con indentazione personalizzabile..",
       "linkTitle": {
         "card": "Formattare e abbellire codice in più linguaggi",
@@ -753,7 +753,7 @@
     },
     "dataConverterTool": {
       "title": "Convertitore Dati",
-      "page_title": "Convertitore Dati – JSON a CSV, XML, YAML & Timestamps",
+      "page_title": "Convertitore Dati",
       "description": "Converti dati tra JSON, CSV, XML, YAML e Unix timestamps istantaneamente. Convertitore dati gratuito con configurazione personalizzabile per delimitatori.",
       "linkTitle": {
         "card": "Convertire tra formati di dati e timestamp",
@@ -806,7 +806,7 @@
     },
     "regexTesterTool": {
       "title": "Tester Regex",
-      "page_title": "Tester Regex – Testare & Debuggare Espressioni Regolari Online",
+      "page_title": "Tester Regex",
       "description": "Testa e debugga espressioni regolari con evidenziazione live istantanea. Tester Regex gratuito con estrazione corrispondenze, cattura gruppi e tutti i flag.",
       "linkTitle": {
         "card": "Testare e debug espressioni regolari online",
@@ -851,7 +851,7 @@
     },
     "characterReferenceTool": {
       "title": "Riferimento Caratteri",
-      "page_title": "Riferimento Caratteri – HTML Entities e Codici Unicode",
+      "page_title": "Riferimento Caratteri",
       "description": "Sfoglia e copia entità HTML e caratteri speciali con codici Unicode istantaneamente. Riferimento completo di 2.231+ entità HTML organizzate per categorie..",
       "linkTitle": {
         "card": "Sfogliare e copiare entità HTML e simboli",
@@ -889,7 +889,7 @@
     },
     "emojiReferenceTool": {
       "title": "Riferimento Emoji",
-      "page_title": "Riferimento Emoji – Ricerca Unicode e Codici Emoji",
+      "page_title": "Riferimento Emoji",
       "description": "Sfoglia e copia emoji con codici Unicode e HTML istantaneamente. Riferimento completo di emoji organizzati per categorie (visi, animali, cibo, viaggi,.",
       "linkTitle": {
         "card": "Cercare e copiare emoji con codici Unicode",

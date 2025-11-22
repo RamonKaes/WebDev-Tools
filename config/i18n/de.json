@@ -45,7 +45,7 @@
   "tools": {
     "base64EncoderDecoder": {
       "title": "Base64 Encoder",
-      "page_title": "Base64 Encoder & Decoder – Online Text & Datei Konverter",
+      "page_title": "Base64 Encoder & Decoder",
       "description": "Kostenloser Base64 Encoder und Decoder für Text und Dateien. Kodiere oder dekodiere Daten sofort mit Drag & Drop, URL-sicherer Kodierung und Live-Vorschau.",
       "description_long": "Base64 ist ein binär-zu-Text-Kodierungsschema, das Binärdaten im ASCII-Stringformat darstellt. Es wird häufig zum Kodieren von Daten in URLs, E-Mails und Daten-URIs verwendet. Die gesamte Kodierung und Dekodierung erfolgt lokal in Ihrem Browser für vollständige Privatsphäre.",
       "about_title": "Über",
@@ -105,7 +105,7 @@
     },
     "urlEncoderDecoder": {
       "title": "URL Encoder",
-      "page_title": "URL Encoder & Decoder – URLs & Query-Parameter kodieren",
+      "page_title": "URL Encoder & Decoder",
       "description": "Kostenloser URL Encoder und Decoder für Webentwickler. Kodiere oder dekodiere URLs, Query-Parameter und URI-Komponenten sofort. Enthält URL-Parser zur Analyse.",
       "description_long": "Unser URL Encoder Decoder ermöglicht es dir, URLs und deren Bestandteile sicher zu kodieren und zu dekodieren. Das Tool unterstützt sowohl den Komponenten-Modus (encodeURIComponent) als auch den URI-Modus (encodeURI) und bietet zusätzlich einen integrierten URL-Parser zur Analyse von Protokoll, Host, Pfad und Query-Parametern. Perfekt für Webentwickler, die mit URL-Parametern arbeiten.",
       "how_to_use_title": "So funktioniert's",
@@ -163,7 +163,7 @@
     },
     "jsonFormatterValidator": {
       "title": "JSON Formatter",
-      "page_title": "JSON Formatter & Validator – Formatieren, Minifizieren & Validieren",
+      "page_title": "JSON Formatter & Validator",
       "description": "Professioneller JSON Formatter und Validator mit Syntax-Highlighting. Formatiere, verschönere, minifiziere und validiere JSON-Daten sofort. Features:.",
       "description_long": "Formatiere, validiere und verschönere deine JSON-Daten mit unserem leistungsstarken JSON Formatter & Validator. Das Tool bietet automatische Fehlerkorrektur, alphabetische Sortierung von Schlüsseln, verschiedene Einrückungsoptionen und eine intuitive Tree-Ansicht. Zusätzlich kannst du JSON minifizieren, escapen und mit dem integrierten Pfad-Extraktor gezielt Werte extrahieren. Alle Operationen erfolgen clientseitig für maximale Sicherheit.",
       "how_to_use_title": "So funktioniert's",
@@ -239,7 +239,7 @@
     },
     "pxToRemConverter": {
       "title": "Px zu Rem Konverter",
-      "page_title": "Px zu Rem Konverter – CSS Einheiten Rechner für Responsive Design",
+      "page_title": "Px zu Rem Konverter",
       "description": "Konvertiere Pixel in Rem, Em und Prozent-Einheiten sofort. Kostenloser CSS Einheiten Rechner mit anpassbarer Basis-Schriftgröße und umfassenden.",
       "description_long": "Konvertiere mühelos zwischen Pixel (px), Rem, Em und Prozent-Einheiten mit unserem Px zu Rem Konverter. Das Tool ermöglicht die Anpassung der Basis-Schriftgröße und Parent-Schriftgröße für präzise Berechnungen und bietet Schnellwerte sowie eine umfassende Konvertierungstabelle. Ideal für Responsive Design und besonders nützlich für Tailwind CSS-Entwickler, die mit rem-basierten Spacing-Systemen arbeiten.",
       "how_to_use_title": "So funktioniert's",
@@ -278,7 +278,7 @@
     },
     "uuidGeneratorTool": {
       "title": "UUID Generator",
-      "page_title": "UUID Generator – Eindeutige Kennungen v1, v4, v7 Online erstellen",
+      "page_title": "UUID Generator",
       "description": "Kostenloser UUID Generator zum sofortigen Erstellen eindeutiger Identifikatoren. Generiere v1, v4, v7 und NIL UUIDs in mehreren Formaten. Massengenerierung.",
       "description_long": "Generiere universell eindeutige Identifikatoren (UUIDs) in verschiedenen Versionen mit unserem UUID Generator. Das Tool unterstützt Version 4 (zufällig), Version 1 (zeitbasiert), Version 7 (zeitbasiert + zufällig) und NIL UUIDs. Wähle zwischen verschiedenen Ausgabeformaten wie Standard mit Bindestrichen, ohne Bindestriche, mit geschweiften Klammern oder in verschiedenen Programmiersprachen-Formaten (JavaScript-Array, JSON, CSV, SQL). Die Bulk-Generierung ermöglicht die Erstellung von bis zu 1000 UUIDs auf einmal.",
       "how_to_use_title": "So funktioniert's",
@@ -328,7 +328,7 @@
     },
     "passwordGeneratorTool": {
       "title": "Passwort Generator",
-      "page_title": "Passwort-Generator – Sichere Zufallspasswörter erstellen",
+      "page_title": "Passwort Generator",
       "description": "Generiere kryptografisch sichere Passwörter mit anpassbarer Länge und Zeichentypen. Erstelle starke Zufallspasswörter, einprägsame Passphrasen oder.",
       "description_long": "Erstelle kryptografisch sichere Passwörter mit unserem Passwort Generator. Das Tool bietet drei Generierungsmodi: Zufällige Passwörter, einprägsame Passphrasen und musterbasierte Generierung. Wähle aus verschiedenen Zeichensätzen (Standard, alphanumerisch, hexadezimal oder benutzerdefiniert), schließe mehrdeutige Zeichen aus und generiere bis zu 100 Passwörter gleichzeitig. Die integrierte Passwortstärke-Analyse zeigt Entropie, Zeichensatz-Größe und geschätzte Knackzeit an. Exportiere deine Passwörter als TXT, CSV oder JSON.",
       "how_to_use_title": "So funktioniert's",
@@ -417,7 +417,7 @@
     },
     "hashGeneratorTool": {
       "title": "Hash Generator",
-      "page_title": "Hash-Generator – MD5, SHA-256, SHA-512, HMAC Online Tool",
+      "page_title": "Hash Generator",
       "description": "Kostenloser kryptografischer Hash-Generator mit Unterstützung für MD5, SHA-1, SHA-256, SHA-384, SHA-512 und HMAC Algorithmen. Generiere Hashes aus Text oder.",
       "description_long": "Erstelle kryptografische Hash-Werte mit unserem vielseitigen Hash Generator. Das Tool unterstützt alle gängigen Hash-Algorithmen: MD5, SHA-1, SHA-256, SHA-384 und SHA-512. Generiere Hashes aus Text oder Dateien, erstelle HMAC-Signaturen mit benutzerdefinierten Schlüsseln und erzeuge Subresource Integrity (SRI) Hashes für sichere CDN-Einbindungen. Der Live-Modus ermöglicht Echtzeit-Hashing während der Eingabe, und die Hash-Vergleichsfunktion hilft bei der Überprüfung von Dateiintegrität.",
       "how_to_use_title": "So funktioniert's",
@@ -465,7 +465,7 @@
     },
     "loremIpsumTool": {
       "title": "Lorem Ipsum Generator",
-      "page_title": "Lorem Ipsum Generator – Professioneller Blindtext Online",
+      "page_title": "Lorem Ipsum Generator",
       "description": "Generiere Lorem Ipsum Platzhaltertext für Designs und Mockups sofort. Wähle Absätze, Sätze oder Wörter mit anpassbarer Anzahl. Perfekt für Webdesign,.",
       "description_long": "Generiere klassischen Lorem Ipsum Platzhaltertext für deine Design-Mockups und Prototypen mit unserem flexiblen Lorem Ipsum Generator. Wähle beliebig viele Absätze, Sätze oder Wörter und kombiniere sie nach Bedarf. Das Tool zeigt die Anzahl der generierten Zeichen und Wörter an und ermöglicht das schnelle Kopieren des Textes in die Zwischenablage. Ideal für Webdesigner, Grafikdesigner und Frontend-Entwickler, die realistische Textmengen für ihre Layouts benötigen.",
       "how_to_use_title": "So funktioniert's",
@@ -503,7 +503,7 @@
     },
     "qrCodeGeneratorTool": {
       "title": "QR Code Generator",
-      "page_title": "QR-Code Generator – QR-Codes erstellen kostenlos online",
+      "page_title": "QR Code Generator",
       "description": "Kostenloser QR-Code Generator für URLs, Text, vCard-Kontakte und WiFi-Netzwerke. Passe Größe, Farben und Fehlerkorrektur-Level an. Export als PNG oder SVG.",
       "description_long": "Erstelle professionelle QR-Codes mit unserem vielseitigen QR Code Generator. Das Tool unterstützt verschiedene QR-Code-Typen: URLs/Links, Klartext, Kontakte (vCard) und WiFi-Netzwerk-Konfigurationen. Passe die Vordergrund- und Hintergrundfarben individuell an und wähle zwischen vier Größen (200x200 bis 512x512 Pixel). Die generierten QR-Codes können als PNG oder SVG heruntergeladen werden und sind sowohl für digitale Medien als auch für den Druck optimiert.",
       "how_to_use_title": "So funktioniert's",
@@ -573,7 +573,7 @@
     },
     "htmlEntityTool": {
       "title": "HTML Entity Encoder",
-      "page_title": "HTML Entity Encoder & Decoder – Sonderzeichen konvertieren",
+      "page_title": "HTML Entity Encoder & Decoder",
       "description": "Konvertiere Text in HTML-Entities und zurück kostenlos. Unterstützt benannte Entities (&nbsp;), numerische Dezimal- (&#160;) und Hex-Entities (&#xA0;)..",
       "keywords": [
         "HTML Entity",
@@ -617,7 +617,7 @@
     },
     "jwtDecoderTool": {
       "title": "JWT Decoder",
-      "page_title": "JWT Decoder – JSON Web Tokens analysieren und dekodieren",
+      "page_title": "JWT Decoder",
       "description": "Dekodiere und analysiere JSON Web Tokens (JWT) kostenlos online. Zeige Header, Payload und Signatur an. Überprüfe Algorithmus, Ablaufzeit und Claims..",
       "keywords": [
         "JWT",
@@ -659,7 +659,7 @@
     },
     "punycodeConverterTool": {
       "title": "Punycode Converter",
-      "page_title": "Punycode Converter – Internationale Domainnamen IDN konvertieren",
+      "page_title": "Punycode Converter",
       "description": "Konvertiere internationale Domainnamen (IDN) zu Punycode und zurück kostenlos. Transformiere Unicode-Domains in ASCII-kompatibles Format. Unterstützt alle.",
       "keywords": [
         "Punycode",
@@ -697,7 +697,7 @@
     },
     "stringEscaperTool": {
       "title": "String Escaper",
-      "page_title": "String Escaper – HTML, JavaScript, JSON, SQL & CSV maskieren",
+      "page_title": "String Escaper",
       "description": "Maskiere und demaskiere Strings für HTML, XML, JavaScript, JSON, SQL und CSV Kontexte kostenlos online. Auto-Konvertierung von Sonderzeichen zur Verhinderung.",
       "description_long": "Maskiere und demaskiere Strings sicher für verschiedene Formate mit unserem String Escaper Tool. Das Tool unterstützt HTML, XML, JavaScript, JSON, SQL und CSV und wandelt Sonderzeichen automatisch in die korrekte Escape-Sequenz für den jeweiligen Kontext um. Mit der Auto-Verarbeitungs-Funktion erfolgt die Konvertierung in Echtzeit während der Eingabe. Die Zeichen- und Byte-Zählung hilft bei der Überwachung der String-Länge. Ideal für Entwickler, die mit dynamischen Daten arbeiten und SQL-Injection, XSS oder andere Sicherheitsprobleme vermeiden möchten.",
       "features_title": "Funktionen",
@@ -721,7 +721,7 @@
     },
     "codeFormatterTool": {
       "title": "Code Formatter",
-      "page_title": "Code-Formatter – HTML, CSS, JavaScript & XML Online",
+      "page_title": "Code Formatter",
       "description": "Professioneller Code Formatter und Beautifier für HTML, CSS, JavaScript, XML und SQL. Formatiere unordentlichen Code, passe Einrückung an oder minifiziere.",
       "description_long": "Professioneller Code Formatter und Beautifier für Webentwickler. Formatiere, verschönere und minifiziere HTML, CSS, JavaScript, XML und SQL Code mit anpassbarer Einrückung. Das Tool bietet Echtzeit-Formatierung, Syntax-Validierung und unterstützt sowohl Verschönerung für die Entwicklung als auch Minifizierung für die Produktion. Perfekt zum Aufräumen von unübersichtlichem Code, zur Standardisierung der Formatierung oder zur Vorbereitung von Code für die Bereitstellung.",
       "features_title": "Funktionen",
@@ -756,7 +756,7 @@
     },
     "dataConverterTool": {
       "title": "Daten-Konverter",
-      "page_title": "Daten-Konverter – JSON, XML, YAML, CSV & TOML Tool",
+      "page_title": "Daten-Konverter",
       "description": "Leistungsstarker Datenformat-Konverter für JSON, XML, YAML und CSV mit einem Klick. Konvertiere Unix-Timestamps in Datum und zurück. Bidirektionale.",
       "description_long": "Leistungsstarker Datenformat-Konverter für Webentwickler. Konvertiere mit einem Klick zwischen JSON, XML, YAML und CSV-Formaten. Zusätzlich kannst du Unix/Epoch-Timestamps in lesbare Daten umwandeln und umgekehrt. Das Tool unterstützt bidirektionale Konvertierung, automatische Formaterkennung und anpassbare Ausgabe-Formatierung. Perfekt für API-Entwicklung, Datenmigration und Arbeit mit verschiedenen Datenformaten.",
       "features_title": "Funktionen",
@@ -809,7 +809,7 @@
     },
     "regexTesterTool": {
       "title": "Regex Tester",
-      "page_title": "Regex Tester – Reguläre Ausdrücke online testen mit Live-Match",
+      "page_title": "Regex Tester",
       "description": "Teste und debugge reguläre Ausdrücke online mit Live-Highlighting und Match-Extraktion. Sehe Übereinstimmungen in Echtzeit, extrahiere Erfassungsgruppen und.",
       "linkTitle": {
         "card": "Reguläre Ausdrücke online testen und debuggen",
@@ -854,7 +854,7 @@
     },
     "characterReferenceTool": {
       "title": "Zeichen-Referenz",
-      "page_title": "Zeichen-Referenz – HTML-Entities & Sonderzeichen",
+      "page_title": "Zeichen-Referenz",
       "description": "Durchsuche und kopiere 2.231+ HTML-Entities und Sonderzeichen sofort. Suche nach Name, Dezimal, Hex-Code oder Unicode. Vollständige Referenz für.",
       "linkTitle": {
         "card": "HTML-Entities und Symbole durchsuchen und kopieren",
@@ -892,7 +892,7 @@
     },
     "emojiReferenceTool": {
       "title": "Emoji-Referenz",
-      "page_title": "Emoji-Referenz – Emojis suchen, durchsuchen & mit Codes kopieren",
+      "page_title": "Emoji-Referenz",
       "description": "Umfassende Emoji-Referenz mit Unicode- und HTML-Codes. Durchsuche Tausende von Emojis nach Kategorie, suche nach Namen und kopiere sofort. Perfekt für.",
       "linkTitle": {
         "card": "Emojis mit Unicode-Codes suchen und kopieren",

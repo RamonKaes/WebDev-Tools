@@ -45,7 +45,7 @@
   "tools": {
     "base64EncoderDecoder": {
       "title": "Encodeur Base64",
-      "page_title": "Encodeur Base64 – Convertisseur Texte et Fichiers",
+      "page_title": "Encodeur et Décodeur Base64",
       "description": "Encodez et décodez du texte et des fichiers au format Base64 instantanément. Outil gratuit avec glisser-déposer, aperçu d'image et encodage URL-safe..",
       "linkTitle": {
         "card": "Encoder ou décoder des chaînes et fichiers Base64",
@@ -105,7 +105,7 @@
     },
     "urlEncoderDecoder": {
       "title": "Encodeur URL",
-      "page_title": "Encodeur et Décodeur URL – Analyseur de Paramètres de Requête",
+      "page_title": "Encodeur et Décodeur URL",
       "description": "Encodez et décodez des URL, paramètres de requête et composants instantanément. Outil gratuit avec analyseur URL intégré pour extraire protocole, hôte,.",
       "linkTitle": {
         "card": "Encoder ou décoder des paramètres et composants d'URL",
@@ -163,7 +163,7 @@
     },
     "jsonFormatterValidator": {
       "title": "Formateur JSON",
-      "page_title": "Formateur et Validateur JSON – Beautify & Minify en Ligne",
+      "page_title": "Formateur et Validateur JSON",
       "description": "Formatez, validez et embellissez les données JSON avec coloration syntaxique instantanément. Outil JSON gratuit avec correction automatique des erreurs,.",
       "linkTitle": {
         "card": "Formater, valider et embellir des données JSON",
@@ -239,7 +239,7 @@
     },
     "pxToRemConverter": {
       "title": "Convertisseur Px vers Rem",
-      "page_title": "Convertisseur Px vers Rem – Calculatrice CSS pour Design Responsive",
+      "page_title": "Convertisseur Px vers Rem",
       "description": "Convertissez pixels en unités rem, em et pourcentage instantanément. Calculatrice d'unités CSS gratuite avec taille de police de base personnalisable et.",
       "linkTitle": {
         "card": "Convertir les pixels en unités rem pour le design responsive",
@@ -278,7 +278,7 @@
     },
     "uuidGeneratorTool": {
       "title": "Générateur UUID",
-      "page_title": "Générateur UUID – Créer Identifiants Uniques v1, v4, v7 en Ligne",
+      "page_title": "Générateur UUID",
       "description": "Générateur UUID gratuit pour créer des identifiants uniques instantanément. Générez UUID v1, v4, v7 et NIL dans plusieurs formats. Génération en masse.",
       "linkTitle": {
         "card": "Générer des identifiants uniques dans plusieurs formats",
@@ -328,7 +328,7 @@
     },
     "passwordGeneratorTool": {
       "title": "Générateur de Mots de Passe",
-      "page_title": "Générateur de Mots de Passe Sécurisés – Créer Mots de Passe Aléatoires Forts",
+      "page_title": "Générateur de Mots de Passe Sécurisés",
       "description": "Générez des mots de passe aléatoires sécurisés instantanément avec longueur et caractères personnalisables. Générateur gratuit avec phrases secrètes, motifs.",
       "linkTitle": {
         "card": "Créer des mots de passe sécurisés et phrases secrètes",
@@ -417,7 +417,7 @@
     },
     "hashGeneratorTool": {
       "title": "Générateur Hash",
-      "page_title": "Générateur Hash – Créer Hashes SHA-256, MD5, HMAC et SRI",
+      "page_title": "Générateur Hash",
       "description": "Générez des hachages cryptographiques avec SHA-1, SHA-256, SHA-384, SHA-512, MD5 et HMAC instantanément. Générateur de hash gratuit avec support pour.",
       "linkTitle": {
         "card": "Générer des hachages cryptographiques et sommes de contrôle",
@@ -465,7 +465,7 @@
     },
     "loremIpsumTool": {
       "title": "Générateur Lorem Ipsum",
-      "page_title": "Générateur Lorem Ipsum – Texte de Remplissage pour Design Web",
+      "page_title": "Générateur Lorem Ipsum",
       "description": "Générez du texte de remplissage Lorem Ipsum gratuit pour designs et maquettes instantanément. Choisissez paragraphes, phrases ou mots personnalisables. Copie.",
       "linkTitle": {
         "card": "Générer du texte de remplissage pour maquettes",
@@ -503,7 +503,7 @@
     },
     "qrCodeGeneratorTool": {
       "title": "Générateur QR Code",
-      "page_title": "Générateur QR Code – Créer QR pour URL, WiFi, vCard en Ligne",
+      "page_title": "Générateur QR Code",
       "description": "Créez des codes QR personnalisés gratuits à partir de texte, URLs, contacts vCard ou informations WiFi instantanément. Générateur de QR avec couleurs et.",
       "description_long": "Créez des codes QR professionnels avec notre générateur de code QR polyvalent. L'outil prend en charge différents types de codes QR : URL/liens, texte brut, contacts (vCard) et configurations de réseau WiFi. Personnalisez les couleurs de premier plan et d'arrière-plan individuellement et choisissez parmi quatre tailles (200x200 à 512x512 pixels). Les codes QR générés peuvent être téléchargés au format PNG ou SVG et sont optimisés pour les médias numériques et l'impression.",
       "linkTitle": {
@@ -573,7 +573,7 @@
     },
     "htmlEntityTool": {
       "title": "Encodeur HTML Entity",
-      "page_title": "Encodeur et Décodeur HTML Entity – Échapper Caractères",
+      "page_title": "Encodeur et Décodeur HTML Entity",
       "description": "Convertissez le texte en entités HTML et vice versa instantanément. Outil d'échappement gratuit avec entités nommées (&nbsp;), décimales numériques (&#160;).",
       "linkTitle": {
         "card": "Convertir du texte en entités HTML et vice versa",
@@ -617,7 +617,7 @@
     },
     "jwtDecoderTool": {
       "title": "Décodeur JWT",
-      "page_title": "Décodeur JWT – Analyse de JSON Web Tokens en Ligne",
+      "page_title": "Décodeur JWT",
       "description": "Décodez et analysez les JSON Web Tokens (JWT) instantanément. Outil JWT gratuit pour voir en-tête, charge utile et signature décodés. Vérifiez algorithme.",
       "linkTitle": {
         "card": "Décoder et analyser des jetons web JSON",
@@ -659,7 +659,7 @@
     },
     "punycodeConverterTool": {
       "title": "Convertisseur Punycode",
-      "page_title": "Convertisseur Punycode – IDN vers ASCII et Unicode vers Punycode",
+      "page_title": "Convertisseur Punycode",
       "description": "Convertissez les noms de domaine internationaux (IDN) en Punycode et vice versa instantanément. Outil gratuit pour transformer domaines Unicode en format.",
       "linkTitle": {
         "card": "Convertir des noms de domaine internationaux en Punycode",
@@ -697,7 +697,7 @@
     },
     "stringEscaperTool": {
       "title": "Échappement de Chaînes",
-      "page_title": "Échappement de Chaînes – HTML, JavaScript, JSON, SQL & CSV",
+      "page_title": "Échappement de Chaînes",
       "description": "Échappez et désechappez les chaînes pour HTML, XML, JavaScript, JSON, SQL et CSV instantanément. Outil d'échappement gratuit avec conversion automatique en.",
       "description_long": "Échappez et désechappez les chaînes en toute sécurité pour différents formats avec notre outil d'échappement de chaînes. L'outil prend en charge HTML, XML, JavaScript, JSON, SQL et CSV et convertit automatiquement les caractères spéciaux en la séquence d'échappement correcte pour le contexte respectif. Avec la fonction de traitement automatique, la conversion se fait en temps réel pendant la saisie. Le comptage de caractères et d'octets aide à surveiller la longueur de la chaîne. Idéal pour les développeurs travaillant avec des données dynamiques et souhaitant éviter l'injection SQL, le XSS ou d'autres problèmes de sécurité.",
       "linkTitle": {
@@ -721,7 +721,7 @@
     },
     "codeFormatterTool": {
       "title": "Formateur de Code",
-      "page_title": "Formateur de Code – HTML, CSS, JavaScript, XML & SQL",
+      "page_title": "Formateur de Code",
       "description": "Formatez et embellissez le code HTML, CSS, JavaScript, XML et SQL instantanément. Outil gratuit de beautify et minify avec indentation personnalisable..",
       "linkTitle": {
         "card": "Formater et embellir du code dans plusieurs langages",
@@ -756,7 +756,7 @@
     },
     "dataConverterTool": {
       "title": "Convertisseur de Données",
-      "page_title": "Convertisseur Données – JSON, XML, YAML, CSV, TOML",
+      "page_title": "Convertisseur Données",
       "description": "Convertissez données entre JSON, CSV, XML, YAML et Unix timestamps instantanément. Convertisseur de données gratuit avec configuration personnalisable pour.",
       "linkTitle": {
         "card": "Convertir entre formats de données et horodatages",
@@ -809,7 +809,7 @@
     },
     "regexTesterTool": {
       "title": "Testeur Regex",
-      "page_title": "Testeur Regex – Tester & Déboguer Expressions Régulières en Ligne",
+      "page_title": "Testeur Regex",
       "description": "Testez et déboguez les expressions régulières avec surbrillance en direct instantané. Testeur Regex gratuit avec extraction de correspondances, capture de.",
       "linkTitle": {
         "card": "Tester et déboguer des expressions régulières en ligne",
@@ -854,7 +854,7 @@
     },
     "characterReferenceTool": {
       "title": "Référence de Caractères",
-      "page_title": "Référence de Caractères – HTML Entities et Codes Unicode",
+      "page_title": "Référence de Caractères",
       "description": "Parcourez et copiez des entités HTML et caractères spéciaux avec codes Unicode instantanément. Référence complète de 2.231+ entités HTML organisées par.",
       "linkTitle": {
         "card": "Parcourir et copier des entités HTML et symboles",
@@ -892,7 +892,7 @@
     },
     "emojiReferenceTool": {
       "title": "Référence Emoji",
-      "page_title": "Référence Emojis – Recherche Unicode et Codes",
+      "page_title": "Référence Emojis",
       "description": "Parcourez et copiez des emojis avec codes Unicode et HTML instantanément. Référence complète d'emojis organisés par catégories (visages, animaux, nourriture,.",
       "linkTitle": {
         "card": "Rechercher et copier des emojis avec codes Unicode",

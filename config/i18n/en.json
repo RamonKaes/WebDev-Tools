@@ -45,7 +45,7 @@
   "tools": {
     "base64EncoderDecoder": {
       "title": "Base64 Encoder",
-      "page_title": "Base64 Encoder & Decoder – Online Text & File Converter",
+      "page_title": "Base64 Encoder & Decoder",
       "description": "Free Base64 encoder and decoder for text and files. Encode or decode data instantly with drag & drop, URL-safe encoding, and live preview for maximum privacy.",
       "linkTitle": {
         "card": "Encode or decode Base64 strings and files",
@@ -105,7 +105,7 @@
     },
     "urlEncoderDecoder": {
       "title": "URL Encoder",
-      "page_title": "URL Encoder & Decoder – Parse URLs & Query Parameters",
+      "page_title": "URL Encoder & Decoder",
       "description": "URL encoder and decoder for query parameters and components. Parse protocol, host, path instantly. Support for encodeURI and encodeURIComponent methods online.",
       "linkTitle": {
         "card": "Encode or decode URL parameters and components",
@@ -163,7 +163,7 @@
     },
     "jsonFormatterValidator": {
       "title": "JSON Formatter",
-      "page_title": "JSON Formatter & Validator – Beautify, Minify & Validate",
+      "page_title": "JSON Formatter & Validator",
       "description": "Format, validate and beautify JSON with syntax highlighting. Minify JSON, view tree structure, and detect errors instantly in your browser with privacy.",
       "linkTitle": {
         "card": "Format, validate and beautify JSON data",
@@ -239,7 +239,7 @@
     },
     "pxToRemConverter": {
       "title": "Px to Rem Converter",
-      "page_title": "Px to Rem Converter – CSS Unit Calculator for Responsive Web",
+      "page_title": "Px to Rem Converter",
       "description": "Convert pixels to rem units for responsive CSS. Free PX to REM calculator with custom base font size, batch conversion and live preview for web development.",
       "linkTitle": {
         "card": "Convert pixels to rem units for responsive design",
@@ -278,7 +278,7 @@
     },
     "uuidGeneratorTool": {
       "title": "UUID Generator",
-      "page_title": "UUID Generator – Create v1, v4, v7 Unique Identifiers Online",
+      "page_title": "UUID Generator",
       "description": "Generate v1, v4, v7 UUIDs instantly. Free UUID generator creating unique identifiers for databases, APIs with bulk generation and format validation online.",
       "linkTitle": {
         "card": "Generate unique identifiers in multiple formats",
@@ -328,7 +328,7 @@
     },
     "passwordGeneratorTool": {
       "title": "Password Generator",
-      "page_title": "Secure Password Generator – Create Strong Random Passwords",
+      "page_title": "Secure Password Generator",
       "description": "Create strong, random passwords with customizable length and character sets. Secure generator with strength meter and multiple password generation.",
       "linkTitle": {
         "card": "Create secure passwords and passphrases",
@@ -417,7 +417,7 @@
     },
     "hashGeneratorTool": {
       "title": "Hash Generator",
-      "page_title": "Hash Generator – MD5, SHA-256, SHA-512, HMAC Online Tool",
+      "page_title": "Hash Generator",
       "description": "Generate MD5, SHA-1, SHA-256, SHA-512 hashes for text and files. Free cryptographic hash generator with HMAC support and file integrity verification online.",
       "linkTitle": {
         "card": "Generate cryptographic hashes and checksums",
@@ -465,7 +465,7 @@
     },
     "loremIpsumTool": {
       "title": "Lorem Ipsum Generator",
-      "page_title": "Lorem Ipsum Generator – Create Placeholder Text Online Free",
+      "page_title": "Lorem Ipsum Generator",
       "description": "Generate Lorem Ipsum placeholder text instantly. Free generator with paragraphs, words, sentences options and HTML formatting for web design mockups.",
       "linkTitle": {
         "card": "Generate placeholder text for mockups",
@@ -503,7 +503,7 @@
     },
     "qrCodeGeneratorTool": {
       "title": "QR Code Generator",
-      "page_title": "QR Code Generator – Create Custom QR Codes Online Free",
+      "page_title": "QR Code Generator",
       "description": "Create custom QR codes instantly. Free QR code generator supporting URLs, text, WiFi, vCard with SVG/PNG download, color customization and error correction.",
       "linkTitle": {
         "card": "Create customizable QR codes instantly",
@@ -573,7 +573,7 @@
     },
     "htmlEntityTool": {
       "title": "HTML Entity Encoder",
-      "page_title": "HTML Entity Encoder & Decoder – Convert Special Characters",
+      "page_title": "HTML Entity Encoder & Decoder",
       "description": "Encode and decode HTML entities instantly. Convert special characters to HTML entity codes and vice versa with support for named and numeric entity references.",
       "linkTitle": {
         "card": "Convert text to HTML entities and back",
@@ -617,7 +617,7 @@
     },
     "jwtDecoderTool": {
       "title": "JWT Decoder",
-      "page_title": "JWT Decoder – Analyze and Decode JSON Web Tokens Online",
+      "page_title": "JWT Decoder",
       "description": "Decode and analyze JSON Web Tokens (JWT) online. Free JWT decoder showing header, payload, signature with Base64 decoding and token validation insights.",
       "linkTitle": {
         "card": "Decode and analyze JSON Web Tokens",
@@ -659,7 +659,7 @@
     },
     "punycodeConverterTool": {
       "title": "Punycode Converter",
-      "page_title": "Punycode Converter – Convert International Domain Names IDN",
+      "page_title": "Punycode Converter",
       "description": "Convert international domain names to Punycode and back. Free IDN converter supporting Unicode domains for DNS compatibility and email address encoding.",
       "linkTitle": {
         "card": "Convert international domain names to Punycode",
@@ -697,7 +697,7 @@
     },
     "stringEscaperTool": {
       "title": "String Escaper",
-      "page_title": "String Escaper – Escape HTML, JavaScript, JSON, SQL & CSV",
+      "page_title": "String Escaper",
       "description": "Escape and unescape strings for HTML, JavaScript, JSON, SQL, CSV, XML. Free online string escaping tool with multiple format support and instant conversion.",
       "linkTitle": {
         "card": "Escape strings for multiple programming contexts",
@@ -721,7 +721,7 @@
     },
     "codeFormatterTool": {
       "title": "Code Formatter",
-      "page_title": "Code Formatter – Beautify HTML, CSS, JavaScript, XML & SQL",
+      "page_title": "Code Formatter",
       "description": "Beautify and format HTML, CSS, JavaScript, XML, SQL code instantly. Supports multiple languages with syntax highlighting and customizable indentation options.",
       "linkTitle": {
         "card": "Format and beautify code in multiple languages",
@@ -756,7 +756,7 @@
     },
     "dataConverterTool": {
       "title": "Data Converter",
-      "page_title": "Data Converter – Convert JSON, XML, YAML, CSV & Timestamps",
+      "page_title": "Data Converter",
       "description": "Convert between JSON, XML, YAML, CSV, and TOML formats instantly. Free online data format converter with syntax validation and real-time conversion preview.",
       "linkTitle": {
         "card": "Convert between data formats and timestamps",
@@ -809,7 +809,7 @@
     },
     "regexTesterTool": {
       "title": "Regex Tester",
-      "page_title": "Regex Tester – Test Regular Expressions with Live Results",
+      "page_title": "Regex Tester",
       "description": "Test regular expressions online with real-time matching. Free regex tester supporting JavaScript, Python, PHP patterns with syntax highlighting.",
       "linkTitle": {
         "card": "Test and debug regular expressions online",
@@ -854,7 +854,7 @@
     },
     "characterReferenceTool": {
       "title": "Character Reference",
-      "page_title": "Character Reference – HTML Entities & Unicode Symbol Lookup",
+      "page_title": "Character Reference",
       "description": "Complete HTML character entity reference with symbols, arrows, math operators. Search and copy HTML entities instantly for web development projects.",
       "linkTitle": {
         "card": "Browse and copy HTML entities and symbols",
@@ -892,7 +892,7 @@
     },
     "emojiReferenceTool": {
       "title": "Emoji Reference",
-      "page_title": "Emoji Reference – Search, Browse & Copy Emojis with Codes",
+      "page_title": "Emoji Reference",
       "description": "Searchable emoji reference with Unicode codes and categories. Browse, search and copy emojis instantly with skin tone variations and detailed emoji information.",
       "linkTitle": {
         "card": "Search and copy emojis with Unicode codes",

@@ -9,12 +9,12 @@ if (!isset($i18nData)) {
 $seoData = $i18nData['seo'][$currentTool] ?? [];
 
 // Use $pageTitle and $pageDescription from tool-base.php if already set
-// These come from seo.pageTitle and seo.pageDescription
+// These come from seo.meta_title and seo.meta_description
 if (!isset($pageTitle)) {
-  $pageTitle = $seoData['pageTitle'] ?? 'WebDev-Tools';
+  $pageTitle = $seoData['meta_title'] ?? 'WebDev-Tools';
 }
 if (!isset($pageDescription)) {
-  $pageDescription = $seoData['pageDescription'] ?? 'Free online developer tools';
+  $pageDescription = $seoData['meta_description'] ?? 'Free online developer tools';
 }
 
 $keywordsRaw = $seoData['keywords'] ?? '';

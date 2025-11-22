@@ -44,10 +44,6 @@
   },
   "tools": {
     "base64EncoderDecoder": {
-      "title": "Codificador Base64",
-      "page_title": "Codificador e Decodificador Base64",
-      "description": "Codifique e descodifique texto e ficheiros para formato Base64 instantaneamente. Ferramenta gratuita com suporte para arrastar e soltar, pré-visualização de.",
-      "description_long": "Base64 é um esquema de codificação binário para texto que representa dados binários no formato de string ASCII. É comumente usado para codificar dados em URLs, emails e URIs de dados. Toda codificação e decodificação acontece localmente em seu navegador para privacidade completa.",
       "about_title": "Sobre",
       "features_title": "Recursos",
       "features": [
@@ -101,13 +97,13 @@
       "detected_type": "Tipo detetado: {type}",
       "encode_error": "Erro de codificação. Por favor, verifique se o texto é válido.",
       "decode_error": "Erro de descodificação. Por favor, verifique se a string Base64 é válida.",
-      "error": "Erro"
+      "error": "Erro",
+      "toc_title": "Codificador Base64",
+      "h1_title": "Codificador e Decodificador Base64",
+      "card_description": "Codifique e descodifique texto e ficheiros para formato Base64 instantaneamente. Ferramenta gratuita com suporte para arrastar e soltar, pré-visualização de.",
+      "tool_description": "Base64 é um esquema de codificação binário para texto que representa dados binários no formato de string ASCII. É comumente usado para codificar dados em URLs, emails e URIs de dados. Toda codificação e decodificação acontece localmente em seu navegador para privacidade completa."
     },
     "urlEncoderDecoder": {
-      "title": "Codificador URL",
-      "page_title": "Codificador e Decodificador URL",
-      "description": "Codifique e descodifique URLs, parâmetros de consulta e componentes instantaneamente. Ferramenta gratuita com analisador de URL integrado para extrair.",
-      "description_long": "O nosso Codificador/Decodificador de URL permite codificar e descodificar URLs e seus componentes com segurança. A ferramenta suporta o modo componente (encodeURIComponent) e o modo URI (encodeURI) e inclui um analisador de URL integrado para analisar protocolo, host, caminho e parâmetros de consulta. Perfeito para programadores web que trabalham com parâmetros de URL.",
       "how_to_use_title": "Como Usar",
       "how_to_use_steps": [
         "Insira a URL ou texto que deseja codificar/descodificar",
@@ -159,13 +155,13 @@
       "encode_error": "Erro ao codificar texto",
       "decode_error": "Erro ao descodificar texto",
       "chars_encoded": "caracteres codificados",
-      "chars_decoded": "caracteres descodificados"
+      "chars_decoded": "caracteres descodificados",
+      "toc_title": "Codificador URL",
+      "h1_title": "Codificador e Decodificador URL",
+      "card_description": "Codifique e descodifique URLs, parâmetros de consulta e componentes instantaneamente. Ferramenta gratuita com analisador de URL integrado para extrair.",
+      "tool_description": "O nosso Codificador/Decodificador de URL permite codificar e descodificar URLs e seus componentes com segurança. A ferramenta suporta o modo componente (encodeURIComponent) e o modo URI (encodeURI) e inclui um analisador de URL integrado para analisar protocolo, host, caminho e parâmetros de consulta. Perfeito para programadores web que trabalham com parâmetros de URL."
     },
     "jsonFormatterValidator": {
-      "title": "Formatador JSON",
-      "page_title": "Formatador e Validador JSON",
-      "description": "Formate, valide e embeleze dados JSON com destaque de sintaxe instantaneamente. Ferramenta JSON gratuita com correção automática de erros, minificação,.",
-      "description_long": "Formate, valide e embeleze os seus dados JSON com o nosso poderoso Formatador e Validador JSON. A ferramenta oferece correção automática de erros, ordenação alfabética de chaves, várias opções de indentação e uma visualização em árvore intuitiva. Além disso, pode minificar JSON, escapar strings e usar o extrator de caminho integrado para recuperar valores específicos. Todas as operações são realizadas no lado do cliente para máxima segurança.",
       "about_title": "Sobre",
       "features_title": "Recursos",
       "input_title": "Entrada",
@@ -235,13 +231,13 @@
         "Clique em Formatar para saída bonita ou Minificar para versão compacta",
         "Opcionalmente escolha indentação (2/4 espaços ou tab) e ative ordenação de chaves",
         "Mude para visualização em Árvore para exibição hierárquica ou use o extrator de caminho"
-      ]
+      ],
+      "toc_title": "Formatador JSON",
+      "h1_title": "Formatador e Validador JSON",
+      "card_description": "Formate, valide e embeleze dados JSON com destaque de sintaxe instantaneamente. Ferramenta JSON gratuita com correção automática de erros, minificação,.",
+      "tool_description": "Formate, valide e embeleze os seus dados JSON com o nosso poderoso Formatador e Validador JSON. A ferramenta oferece correção automática de erros, ordenação alfabética de chaves, várias opções de indentação e uma visualização em árvore intuitiva. Além disso, pode minificar JSON, escapar strings e usar o extrator de caminho integrado para recuperar valores específicos. Todas as operações são realizadas no lado do cliente para máxima segurança."
     },
     "pxToRemConverter": {
-      "title": "Conversor Px para Rem",
-      "page_title": "Conversor Px para Rem",
-      "description": "Converta pixels para unidades rem, em e porcentagem instantaneamente. Calculadora de unidades CSS gratuita com tamanho de fonte base personalizável e tabelas.",
-      "description_long": "Converta facilmente entre unidades pixel (px), rem, em e porcentagem com o nosso Conversor Px para Rem. A ferramenta permite personalização do tamanho base da fonte e tamanho da fonte pai para cálculos precisos e oferece valores rápidos, bem como uma tabela de conversão abrangente. Ideal para design responsivo e especialmente útil para programadores Tailwind CSS que trabalham com sistemas de espaçamento baseados em rem.",
       "about_title": "Sobre",
       "features_title": "Recursos",
       "base_settings_title": "Configurações Base",
@@ -274,13 +270,13 @@
         "Insira um valor em pixels ou use os valores rápidos",
         "A conversão é automática para rem, em e porcentagem",
         "Use a tabela de conversão para valores comumente usados"
-      ]
+      ],
+      "toc_title": "Conversor Px para Rem",
+      "h1_title": "Conversor Px para Rem",
+      "card_description": "Converta pixels para unidades rem, em e porcentagem instantaneamente. Calculadora de unidades CSS gratuita com tamanho de fonte base personalizável e tabelas.",
+      "tool_description": "Converta facilmente entre unidades pixel (px), rem, em e porcentagem com o nosso Conversor Px para Rem. A ferramenta permite personalização do tamanho base da fonte e tamanho da fonte pai para cálculos precisos e oferece valores rápidos, bem como uma tabela de conversão abrangente. Ideal para design responsivo e especialmente útil para programadores Tailwind CSS que trabalham com sistemas de espaçamento baseados em rem."
     },
     "uuidGeneratorTool": {
-      "title": "Gerador UUID",
-      "page_title": "Gerador UUID",
-      "description": "Gerador UUID gratuito para criar identificadores únicos instantaneamente. Gere UUIDs v1, v4, v7 e NIL em múltiplos formatos. Geração em massa até 1000 UUIDs..",
-      "description_long": "Gere identificadores universalmente únicos (UUIDs) em várias versões com o nosso Gerador de UUID. A ferramenta suporta versão 4 (aleatória), versão 1 (baseada em tempo), versão 7 (tempo + aleatória) e UUIDs NIL. Escolha entre diferentes formatos de saída, como padrão com hífens, sem hífens, com chavetas ou em vários formatos de linguagens de programação (array JavaScript, JSON, CSV, SQL). A geração em massa permite criar até 1000 UUIDs de uma só vez.",
       "about_title": "Sobre",
       "features_title": "Recursos",
       "single_title": "Gerador de UUID Único",
@@ -324,13 +320,13 @@
         "Selecione o formato desejado (com/sem hífens, maiúsculas/minúsculas)",
         "Clique em 'Gerar UUID' para um único UUID",
         "Para geração em massa: Insira a quantidade (até 1000) e escolha o formato de saída"
-      ]
+      ],
+      "toc_title": "Gerador UUID",
+      "h1_title": "Gerador UUID",
+      "card_description": "Gerador UUID gratuito para criar identificadores únicos instantaneamente. Gere UUIDs v1, v4, v7 e NIL em múltiplos formatos. Geração em massa até 1000 UUIDs..",
+      "tool_description": "Gere identificadores universalmente únicos (UUIDs) em várias versões com o nosso Gerador de UUID. A ferramenta suporta versão 4 (aleatória), versão 1 (baseada em tempo), versão 7 (tempo + aleatória) e UUIDs NIL. Escolha entre diferentes formatos de saída, como padrão com hífens, sem hífens, com chavetas ou em vários formatos de linguagens de programação (array JavaScript, JSON, CSV, SQL). A geração em massa permite criar até 1000 UUIDs de uma só vez."
     },
     "passwordGeneratorTool": {
-      "title": "Gerador de Senhas",
-      "page_title": "Gerador de Senhas Seguras",
-      "description": "Gere senhas aleatórias seguras instantaneamente com comprimento e caracteres personalizáveis. Gerador gratuito com frases-passe, padrões e exclusão de.",
-      "description_long": "Crie senhas criptograficamente seguras com o nosso Gerador de Senhas. A ferramenta oferece três modos de geração: senhas aleatórias, frases-passe memoráveis e geração baseada em padrões. Escolha entre vários conjuntos de caracteres (padrão, alfanumérico, hexadecimal ou personalizado), exclua caracteres ambíguos e gere até 100 senhas simultaneamente. O analisador de força de senha integrado exibe entropia, tamanho do conjunto de caracteres e tempo estimado de quebra. Exporte suas senhas como TXT, CSV ou JSON.",
       "about_title": "Sobre",
       "features_title": "Recursos",
       "modeTitle": "Modo de Geração",
@@ -413,13 +409,13 @@
       "crackDays": "Dias para decifrar",
       "crackMonths": "Meses para decifrar",
       "separatorNone": "Nenhum",
-      "separatorSpace": "Espaço ( )"
+      "separatorSpace": "Espaço ( )",
+      "toc_title": "Gerador de Senhas",
+      "h1_title": "Gerador de Senhas Seguras",
+      "card_description": "Gere senhas aleatórias seguras instantaneamente com comprimento e caracteres personalizáveis. Gerador gratuito com frases-passe, padrões e exclusão de.",
+      "tool_description": "Crie senhas criptograficamente seguras com o nosso Gerador de Senhas. A ferramenta oferece três modos de geração: senhas aleatórias, frases-passe memoráveis e geração baseada em padrões. Escolha entre vários conjuntos de caracteres (padrão, alfanumérico, hexadecimal ou personalizado), exclua caracteres ambíguos e gere até 100 senhas simultaneamente. O analisador de força de senha integrado exibe entropia, tamanho do conjunto de caracteres e tempo estimado de quebra. Exporte suas senhas como TXT, CSV ou JSON."
     },
     "hashGeneratorTool": {
-      "title": "Gerador Hash",
-      "page_title": "Gerador Hash",
-      "description": "Gere hashes criptográficos com SHA-1, SHA-256, SHA-384, SHA-512, MD5 e HMAC instantaneamente. Gerador de hash gratuito com suporte para ficheiros e texto..",
-      "description_long": "Crie valores hash criptográficos com o nosso versátil Gerador de Hash. A ferramenta suporta todos os algoritmos hash comuns: MD5, SHA-1, SHA-256, SHA-384 e SHA-512. Gere hashes de texto ou ficheiros, crie assinaturas HMAC com chaves personalizadas e gere hashes de Subresource Integrity (SRI) para integração CDN segura. O modo ao vivo permite hashing em tempo real durante a entrada, e a funcionalidade de comparação de hash ajuda a verificar a integridade dos ficheiros.",
       "about_title": "Sobre",
       "features_title": "Recursos",
       "modeTitle": "Modo Hash",
@@ -461,13 +457,13 @@
         "Insira texto ou carregue um ficheiro",
         "Selecione o algoritmo hash (MD5, SHA-1, SHA-256, SHA-384, SHA-512)",
         "Opcionalmente ative o modo ao vivo para hashing em tempo real"
-      ]
+      ],
+      "toc_title": "Gerador Hash",
+      "h1_title": "Gerador Hash",
+      "card_description": "Gere hashes criptográficos com SHA-1, SHA-256, SHA-384, SHA-512, MD5 e HMAC instantaneamente. Gerador de hash gratuito com suporte para ficheiros e texto..",
+      "tool_description": "Crie valores hash criptográficos com o nosso versátil Gerador de Hash. A ferramenta suporta todos os algoritmos hash comuns: MD5, SHA-1, SHA-256, SHA-384 e SHA-512. Gere hashes de texto ou ficheiros, crie assinaturas HMAC com chaves personalizadas e gere hashes de Subresource Integrity (SRI) para integração CDN segura. O modo ao vivo permite hashing em tempo real durante a entrada, e a funcionalidade de comparação de hash ajuda a verificar a integridade dos ficheiros."
     },
     "loremIpsumTool": {
-      "title": "Gerador Lorem Ipsum",
-      "page_title": "Gerador Lorem Ipsum",
-      "description": "Gere texto de marcação de posição Lorem Ipsum gratuito para designs e mockups instantaneamente. Escolha parágrafos, frases ou palavras personalizáveis. Cópia.",
-      "description_long": "Gere texto de marcação de posição Lorem Ipsum clássico para seus mockups de design e protótipos com o nosso flexível Gerador de Lorem Ipsum. Escolha qualquer número de parágrafos, frases ou palavras e combine-os conforme necessário. A ferramenta exibe a contagem de caracteres e palavras gerados e permite cópia rápida para a área de transferência. Ideal para web designers, designers gráficos e programadores frontend que precisam de volumes de texto realistas para seus layouts.",
       "about_title": "Sobre",
       "features_title": "Recursos",
       "optionsTitle": "Opções de Geração",
@@ -499,13 +495,13 @@
         "Pode combinar vários tipos (ex: 2 parágrafos + 5 frases)",
         "Clique em 'Gerar'",
         "Copie o texto gerado com um clique"
-      ]
+      ],
+      "toc_title": "Gerador Lorem Ipsum",
+      "h1_title": "Gerador Lorem Ipsum",
+      "card_description": "Gere texto de marcação de posição Lorem Ipsum gratuito para designs e mockups instantaneamente. Escolha parágrafos, frases ou palavras personalizáveis. Cópia.",
+      "tool_description": "Gere texto de marcação de posição Lorem Ipsum clássico para seus mockups de design e protótipos com o nosso flexível Gerador de Lorem Ipsum. Escolha qualquer número de parágrafos, frases ou palavras e combine-os conforme necessário. A ferramenta exibe a contagem de caracteres e palavras gerados e permite cópia rápida para a área de transferência. Ideal para web designers, designers gráficos e programadores frontend que precisam de volumes de texto realistas para seus layouts."
     },
     "qrCodeGeneratorTool": {
-      "title": "Gerador QR Code",
-      "page_title": "Gerador QR Code",
-      "description": "Crie códigos QR personalizados gratuitos a partir de texto, URLs, contactos vCard ou informações WiFi instantaneamente. Gerador de QR com cores e tamanhos.",
-      "description_long": "Crie códigos QR profissionais com o nosso versátil Gerador de Código QR. A ferramenta suporta vários tipos de código QR: URLs/links, texto simples, contactos (vCard) e configurações de rede WiFi. Personalize as cores de primeiro plano e fundo individualmente e escolha entre quatro tamanhos (200x200 a 512x512 pixels). Os códigos QR gerados podem ser descarregados como PNG ou SVG e são otimizados para meios digitais e impressão.",
       "about_title": "Sobre",
       "features_title": "Recursos",
       "modeTitle": "Tipo de Código QR",
@@ -569,12 +565,13 @@
         "Insira o conteúdo (URL, texto, detalhes de contacto ou informações de rede)",
         "Opcionalmente personalize cores e tamanho",
         "Clique em 'Gerar Código QR' e descarregue como PNG ou SVG"
-      ]
+      ],
+      "toc_title": "Gerador QR Code",
+      "h1_title": "Gerador QR Code",
+      "card_description": "Crie códigos QR personalizados gratuitos a partir de texto, URLs, contactos vCard ou informações WiFi instantaneamente. Gerador de QR com cores e tamanhos.",
+      "tool_description": "Crie códigos QR profissionais com o nosso versátil Gerador de Código QR. A ferramenta suporta vários tipos de código QR: URLs/links, texto simples, contactos (vCard) e configurações de rede WiFi. Personalize as cores de primeiro plano e fundo individualmente e escolha entre quatro tamanhos (200x200 a 512x512 pixels). Os códigos QR gerados podem ser descarregados como PNG ou SVG e são otimizados para meios digitais e impressão."
     },
     "htmlEntityTool": {
-      "title": "Codificador HTML Entity",
-      "page_title": "Codificador e Decodificador HTML Entity",
-      "description": "Converta texto para entidades HTML e vice-versa instantaneamente. Ferramenta de escape gratuita com entidades nomeadas (&nbsp;), decimal numérico (&#160;) e.",
       "keywords": [
         "Entidade HTML",
         "Codificador",
@@ -613,12 +610,12 @@
         "card": "Codificar e decodificar entidades e caracteres especiais HTML",
         "nav": "Codificador Entidades HTML"
       },
-      "description_long": "Converta caracteres especiais em entidades HTML e vice-versa com o nosso Codificador de Entidades HTML. A ferramenta suporta três formatos de entidade: entidades nomeadas como &nbsp;, entidades numéricas decimais como &#160; e entidades hexadecimais como &#xA0;. Escolha se deseja converter apenas caracteres especiais ou todos os caracteres em entidades nomeadas. O modo automático converte instantaneamente enquanto digita. Perfeito para desenvolvedores web que precisam incorporar caracteres especiais de forma segura no código HTML."
+      "toc_title": "Codificador HTML Entity",
+      "h1_title": "Codificador e Decodificador HTML Entity",
+      "card_description": "Converta texto para entidades HTML e vice-versa instantaneamente. Ferramenta de escape gratuita com entidades nomeadas (&nbsp;), decimal numérico (&#160;) e.",
+      "tool_description": "Converta caracteres especiais em entidades HTML e vice-versa com o nosso Codificador de Entidades HTML. A ferramenta suporta três formatos de entidade: entidades nomeadas como &nbsp;, entidades numéricas decimais como &#160; e entidades hexadecimais como &#xA0;. Escolha se deseja converter apenas caracteres especiais ou todos os caracteres em entidades nomeadas. O modo automático converte instantaneamente enquanto digita. Perfeito para desenvolvedores web que precisam incorporar caracteres especiais de forma segura no código HTML."
     },
     "jwtDecoderTool": {
-      "title": "Decodificador JWT",
-      "page_title": "Decodificador JWT",
-      "description": "Decodifique e analise JSON Web Tokens (JWT) instantaneamente. Ferramenta JWT gratuita para ver cabeçalho, payload e assinatura decodificados. Verifique.",
       "keywords": [
         "JWT",
         "JSON Web Token",
@@ -655,12 +652,12 @@
       ],
       "about_title": "Sobre",
       "features_title": "Recursos",
-      "description_long": "Decodifique e analise JSON Web Tokens (JWT) com o nosso Decodificador JWT. A ferramenta separa automaticamente o token nas suas três partes (cabeçalho, payload, assinatura) e exibe o conteúdo decodificado em JSON formatado. Reconhece algoritmos comuns como HS256, RS256, ES256 e mostra informações de expiração (exp, iat, nbf). Nota: esta ferramenta apenas decodifica tokens; a verificação de assinatura requer a chave secreta. Todas as operações são realizadas localmente no seu navegador."
+      "toc_title": "Decodificador JWT",
+      "h1_title": "Decodificador JWT",
+      "card_description": "Decodifique e analise JSON Web Tokens (JWT) instantaneamente. Ferramenta JWT gratuita para ver cabeçalho, payload e assinatura decodificados. Verifique.",
+      "tool_description": "Decodifique e analise JSON Web Tokens (JWT) com o nosso Decodificador JWT. A ferramenta separa automaticamente o token nas suas três partes (cabeçalho, payload, assinatura) e exibe o conteúdo decodificado em JSON formatado. Reconhece algoritmos comuns como HS256, RS256, ES256 e mostra informações de expiração (exp, iat, nbf). Nota: esta ferramenta apenas decodifica tokens; a verificação de assinatura requer a chave secreta. Todas as operações são realizadas localmente no seu navegador."
     },
     "punycodeConverterTool": {
-      "title": "Conversor Punycode",
-      "page_title": "Conversor Punycode",
-      "description": "Converta nomes de domínio internacionais (IDN) para Punycode e vice-versa instantaneamente. Ferramenta gratuita para transformar domínios Unicode em formato.",
       "keywords": [
         "Punycode",
         "IDN",
@@ -693,13 +690,12 @@
         "card": "Converter nomes de domínio internacionais para Punycode",
         "nav": "Conversor Punycode"
       },
-      "description_long": "Converta nomes de domínio internacionais (IDN) de e para Punycode com o nosso Conversor Punycode. A ferramenta transforma domínios Unicode como münchen.de em formato Punycode compatível com ASCII (xn--mnchen-3ya.de) e vice-versa. Suporta todos os caracteres Unicode, incluindo emojis e scripts especiais. O modo automático converte instantaneamente enquanto digita. Ideal para desenvolvedores web e administradores de sistema que trabalham com domínios internacionais."
+      "toc_title": "Conversor Punycode",
+      "h1_title": "Conversor Punycode",
+      "card_description": "Converta nomes de domínio internacionais (IDN) para Punycode e vice-versa instantaneamente. Ferramenta gratuita para transformar domínios Unicode em formato.",
+      "tool_description": "Converta nomes de domínio internacionais (IDN) de e para Punycode com o nosso Conversor Punycode. A ferramenta transforma domínios Unicode como münchen.de em formato Punycode compatível com ASCII (xn--mnchen-3ya.de) e vice-versa. Suporta todos os caracteres Unicode, incluindo emojis e scripts especiais. O modo automático converte instantaneamente enquanto digita. Ideal para desenvolvedores web e administradores de sistema que trabalham com domínios internacionais."
     },
     "stringEscaperTool": {
-      "title": "Escape de Strings",
-      "page_title": "Escape de Strings",
-      "description": "Escape e desescapar strings para HTML, XML, JavaScript, JSON, SQL e CSV instantaneamente. Ferramenta de escape gratuita com conversão automática em tempo.",
-      "description_long": "Escape e desescapar strings com segurança para vários formatos com a nossa ferramenta de Escape de Strings. A ferramenta suporta HTML, XML, JavaScript, JSON, SQL e CSV e converte automaticamente caracteres especiais na sequência de escape correta para cada contexto. Com a funcionalidade de processamento automático, a conversão acontece em tempo real durante a entrada. A contagem de caracteres e bytes ajuda a monitorizar o comprimento da string. Ideal para programadores que trabalham com dados dinâmicos e querem evitar injeção SQL, XSS ou outros problemas de segurança.",
       "features_title": "Recursos",
       "input_title": "Entrada",
       "output_title": "Saída",
@@ -717,13 +713,13 @@
       "linkTitle": {
         "card": "Escapar ou desescapar strings para JavaScript, HTML, e mais",
         "nav": "Escape Strings"
-      }
+      },
+      "toc_title": "Escape de Strings",
+      "h1_title": "Escape de Strings",
+      "card_description": "Escape e desescapar strings para HTML, XML, JavaScript, JSON, SQL e CSV instantaneamente. Ferramenta de escape gratuita com conversão automática em tempo.",
+      "tool_description": "Escape e desescapar strings com segurança para vários formatos com a nossa ferramenta de Escape de Strings. A ferramenta suporta HTML, XML, JavaScript, JSON, SQL e CSV e converte automaticamente caracteres especiais na sequência de escape correta para cada contexto. Com a funcionalidade de processamento automático, a conversão acontece em tempo real durante a entrada. A contagem de caracteres e bytes ajuda a monitorizar o comprimento da string. Ideal para programadores que trabalham com dados dinâmicos e querem evitar injeção SQL, XSS ou outros problemas de segurança."
     },
     "codeFormatterTool": {
-      "title": "Formatador de Código",
-      "page_title": "Formatador de Código",
-      "description": "Formate e embeleze código HTML, CSS, JavaScript, XML e SQL instantaneamente. Ferramenta gratuita de beautify e minify com indentação personalizável..",
-      "description_long": "Formatador e embelezador de código profissional para programadores web. Formate, embeleze e minifique código HTML, CSS, JavaScript, XML e SQL com indentação personalizável. A ferramenta fornece formatação em tempo real, validação de sintaxe e suporta tanto embelezamento para desenvolvimento quanto minificação para produção. Perfeito para limpar código desorganizado, padronizar formatação ou preparar código para implantação.",
       "linkTitle": {
         "card": "Formatar, embelezar e minificar código HTML, CSS, JS, XML e SQL",
         "nav": "Formatador Código"
@@ -752,13 +748,13 @@
       "errorMinify": "Erro ao minificar código",
       "features_title": "Recursos",
       "loadingTerser": "Carregando minificador Terser (apenas na primeira vez)...",
-      "minifiedWithTerser": "Minificado com Terser"
+      "minifiedWithTerser": "Minificado com Terser",
+      "toc_title": "Formatador de Código",
+      "h1_title": "Formatador de Código",
+      "card_description": "Formate e embeleze código HTML, CSS, JavaScript, XML e SQL instantaneamente. Ferramenta gratuita de beautify e minify com indentação personalizável..",
+      "tool_description": "Formatador e embelezador de código profissional para programadores web. Formate, embeleze e minifique código HTML, CSS, JavaScript, XML e SQL com indentação personalizável. A ferramenta fornece formatação em tempo real, validação de sintaxe e suporta tanto embelezamento para desenvolvimento quanto minificação para produção. Perfeito para limpar código desorganizado, padronizar formatação ou preparar código para implantação."
     },
     "dataConverterTool": {
-      "title": "Conversor de Dados",
-      "page_title": "Conversor de Dados",
-      "description": "Converta dados entre JSON, CSV, XML, YAML e Unix timestamps instantaneamente. Conversor de dados gratuito com configuração personalizável para delimitadores.",
-      "description_long": "Poderoso conversor de formato de dados para programadores web. Converta entre formatos JSON, XML, YAML e CSV com um único clique. Adicionalmente, converta timestamps Unix/Epoch para datas legíveis e vice-versa. A ferramenta suporta conversão bidirecional, deteção automática de formato e formatação de saída personalizável. Perfeito para desenvolvimento de API, migração de dados e trabalho com diferentes formatos de dados.",
       "linkTitle": {
         "card": "Converter entre JSON, XML, YAML, CSV e timestamps",
         "nav": "Conversor Dados"
@@ -805,13 +801,13 @@
       "characters": "caracteres",
       "conversionSuccess": "Conversão concluída com sucesso",
       "errorConvert": "Erro ao converter dados",
-      "features_title": "Recursos"
+      "features_title": "Recursos",
+      "toc_title": "Conversor de Dados",
+      "h1_title": "Conversor de Dados",
+      "card_description": "Converta dados entre JSON, CSV, XML, YAML e Unix timestamps instantaneamente. Conversor de dados gratuito com configuração personalizável para delimitadores.",
+      "tool_description": "Poderoso conversor de formato de dados para programadores web. Converta entre formatos JSON, XML, YAML e CSV com um único clique. Adicionalmente, converta timestamps Unix/Epoch para datas legíveis e vice-versa. A ferramenta suporta conversão bidirecional, deteção automática de formato e formatação de saída personalizável. Perfeito para desenvolvimento de API, migração de dados e trabalho com diferentes formatos de dados."
     },
     "regexTesterTool": {
-      "title": "Testador Regex",
-      "page_title": "Testador Regex",
-      "description": "Teste e depure expressões regulares com realce ao vivo instantâneo. Testador Regex gratuito com extração de correspondências, captura de grupos e todas as.",
-      "description_long": "Teste expressões regulares contra texto de amostra com feedback instantâneo. Veja correspondências destacadas em tempo real, extraia grupos de captura e valide seus padrões regex antes de usá-los no código. Suporta global (g), insensível a maiúsculas (i), multilinha (m) e outras flags regex JavaScript.",
       "linkTitle": {
         "card": "Testar e depurar padrões de expressões regulares",
         "nav": "Testador Regex"
@@ -850,17 +846,17 @@
         "Insira o texto para testar contra o padrão",
         "Selecione as flags regex apropriadas se necessário",
         "Clique em Testar Padrão para ver as correspondências destacadas"
-      ]
+      ],
+      "toc_title": "Testador Regex",
+      "h1_title": "Testador Regex",
+      "card_description": "Teste e depure expressões regulares com realce ao vivo instantâneo. Testador Regex gratuito com extração de correspondências, captura de grupos e todas as.",
+      "tool_description": "Teste expressões regulares contra texto de amostra com feedback instantâneo. Veja correspondências destacadas em tempo real, extraia grupos de captura e valide seus padrões regex antes de usá-los no código. Suporta global (g), insensível a maiúsculas (i), multilinha (m) e outras flags regex JavaScript."
     },
     "characterReferenceTool": {
-      "title": "Referência de Caracteres",
-      "page_title": "Referência de Caracteres",
-      "description": "Procure e copie entidades HTML e caracteres especiais com códigos Unicode instantaneamente. Referência completa de 2.231+ entidades HTML organizadas por.",
       "linkTitle": {
         "card": "Procurar e copiar entidades de caracteres HTML e símbolos",
         "nav": "Referência Caracteres"
       },
-      "description_long": "Referência abrangente de entidades de caracteres HTML, símbolos Unicode e caracteres especiais. Procure por milhares de símbolos matemáticos, setas, diacríticos, pontuação, símbolos gregos e caracteres de desenho de caixas. Copie o caractere ou a sua entidade HTML com um único clique. Perfeito para desenvolvimento web, criação de conteúdo e trabalho com texto internacional.",
       "errorLoading": "Erro ao carregar caracteres",
       "searchTitle": "Procurar Caracteres",
       "searchPlaceholder": "Procurar por nome ou descrição...",
@@ -888,17 +884,17 @@
       "tableHeaderCopy": "Copiar",
       "showingCount": "A mostrar {count} de {total} caracteres",
       "copyChar": "Copiar carácter",
-      "copyEntity": "Copiar entidade"
+      "copyEntity": "Copiar entidade",
+      "toc_title": "Referência de Caracteres",
+      "h1_title": "Referência de Caracteres",
+      "card_description": "Procure e copie entidades HTML e caracteres especiais com códigos Unicode instantaneamente. Referência completa de 2.231+ entidades HTML organizadas por.",
+      "tool_description": "Referência abrangente de entidades de caracteres HTML, símbolos Unicode e caracteres especiais. Procure por milhares de símbolos matemáticos, setas, diacríticos, pontuação, símbolos gregos e caracteres de desenho de caixas. Copie o caractere ou a sua entidade HTML com um único clique. Perfeito para desenvolvimento web, criação de conteúdo e trabalho com texto internacional."
     },
     "emojiReferenceTool": {
-      "title": "Referência Emoji",
-      "page_title": "Referência Emojis",
-      "description": "Procure e copie emojis com códigos Unicode e HTML instantaneamente. Referência completa de emojis organizados por categorias (caras, animais, comida,.",
       "linkTitle": {
         "card": "Procurar, copiar e colar emojis por categoria",
         "nav": "Referência Emojis"
       },
-      "description_long": "Referência completa de emojis com milhares de emojis organizados por categorias. Procure emojis comuns, emoções, gestos, tecnologia, negócios e símbolos de programação. Copie qualquer emoji com um único clique para usar nas suas mensagens, documentos ou código.",
       "features_title": "Recursos",
       "categoryAll": "Todos os Emojis",
       "categoryUI": "UI/UX",
@@ -908,13 +904,15 @@
       "categoryTech": "Tecnologia",
       "categoryBusiness": "Negócios",
       "categoryDev": "Programação/Dev",
-      "categoryArrows": "Setas/Direções"
+      "categoryArrows": "Setas/Direções",
+      "toc_title": "Referência Emoji",
+      "h1_title": "Referência Emojis",
+      "card_description": "Procure e copie emojis com códigos Unicode e HTML instantaneamente. Referência completa de emojis organizados por categorias (caras, animais, comida,.",
+      "tool_description": "Referência completa de emojis com milhares de emojis organizados por categorias. Procure emojis comuns, emoções, gestos, tecnologia, negócios e símbolos de programação. Copie qualquer emoji com um único clique para usar nas suas mensagens, documentos ou código."
     }
   },
   "seo": {
     "base64EncoderDecoder": {
-      "pageTitle": "Codificador Base64 – Conversor de Texto e Ficheiros",
-      "pageDescription": "Codifique e descodifique texto e ficheiros para formato Base64 instantaneamente. Ferramenta gratuita com suporte para arrastar e soltar, pré-visualização de.",
       "keywords": "base64, codificador, decodificador, binário para texto, data uri, codificação segura para url, codificação de ficheiro",
       "ogImage": "og-default.png",
       "featureList": [
@@ -925,11 +923,11 @@
         "Processamento multilinha",
         "Processamento do lado do cliente"
       ],
-      "applicationCategory": "UtilityApplication"
+      "applicationCategory": "UtilityApplication",
+      "meta_title": "Codificador Base64 – Conversor de Texto e Ficheiros",
+      "meta_description": "Codifique e descodifique texto e ficheiros para formato Base64 instantaneamente. Ferramenta gratuita com suporte para arrastar e soltar, pré-visualização de."
     },
     "urlEncoderDecoder": {
-      "pageTitle": "Codificador URL – Converter URLs e Parâmetros Online",
-      "pageDescription": "Codifique e descodifique URLs, parâmetros de consulta e componentes instantaneamente. Ferramenta gratuita com analisador de URL integrado para extrair.",
       "keywords": "codificador url, decodificador url, codificação percentual, componente uri, string de consulta, analisador url",
       "ogImage": "og-default.png",
       "featureList": [
@@ -940,11 +938,11 @@
         "Processamento em modo ao vivo",
         "Suporte multilinha"
       ],
-      "applicationCategory": "UtilityApplication"
+      "applicationCategory": "UtilityApplication",
+      "meta_title": "Codificador URL – Converter URLs e Parâmetros Online",
+      "meta_description": "Codifique e descodifique URLs, parâmetros de consulta e componentes instantaneamente. Ferramenta gratuita com analisador de URL integrado para extrair."
     },
     "jsonFormatterValidator": {
-      "pageTitle": "Formatador e Validador JSON – Online Beautify & Minify",
-      "pageDescription": "Formate, valide e embeleze dados JSON com destaque de sintaxe instantaneamente. Ferramenta JSON gratuita com correção automática de erros, minificação,.",
       "keywords": "formatador json, validador json, embelezador json, destaque de sintaxe, minificar json, visualização em árvore",
       "ogImage": "og-default.png",
       "featureList": [
@@ -955,11 +953,11 @@
         "Visualização em árvore",
         "Extrator de caminho JSON"
       ],
-      "applicationCategory": "UtilityApplication"
+      "applicationCategory": "UtilityApplication",
+      "meta_title": "Formatador e Validador JSON – Online Beautify & Minify",
+      "meta_description": "Formate, valide e embeleze dados JSON com destaque de sintaxe instantaneamente. Ferramenta JSON gratuita com correção automática de erros, minificação,."
     },
     "pxToRemConverter": {
-      "pageTitle": "Conversor Px para Rem – Calculadora CSS para Design Responsivo",
-      "pageDescription": "Converta pixels para unidades rem, em e porcentagem instantaneamente. Calculadora de unidades CSS gratuita com tamanho de fonte base personalizável e tabelas.",
       "keywords": "px para rem, pixel para rem, conversor de unidades css, design responsivo, calculadora rem, tailwind css",
       "ogImage": "og-default.png",
       "featureList": [
@@ -970,11 +968,11 @@
         "Valores rápidos predefinidos",
         "Compatibilidade Tailwind CSS"
       ],
-      "applicationCategory": "UtilityApplication"
+      "applicationCategory": "UtilityApplication",
+      "meta_title": "Conversor Px para Rem – Calculadora CSS para Design Responsivo",
+      "meta_description": "Converta pixels para unidades rem, em e porcentagem instantaneamente. Calculadora de unidades CSS gratuita com tamanho de fonte base personalizável e tabelas."
     },
     "uuidGeneratorTool": {
-      "pageTitle": "Gerador UUID – Criar Identificadores Únicos v1, v4, v7 Online",
-      "pageDescription": "Gerador UUID gratuito para criar identificadores únicos instantaneamente. Gere UUIDs v1, v4, v7 e NIL em múltiplos formatos. Geração em massa até 1000 UUIDs..",
       "keywords": "gerador uuid, gerador guid, identificador único, uuid v4, uuid v1, uuid v7, uuid em massa",
       "ogImage": "og-default.png",
       "featureList": [
@@ -985,11 +983,11 @@
         "Cópia de um clique",
         "Geração automática ao carregar"
       ],
-      "applicationCategory": "UtilityApplication"
+      "applicationCategory": "UtilityApplication",
+      "meta_title": "Gerador UUID – Criar Identificadores Únicos v1, v4, v7 Online",
+      "meta_description": "Gerador UUID gratuito para criar identificadores únicos instantaneamente. Gere UUIDs v1, v4, v7 e NIL em múltiplos formatos. Geração em massa até 1000 UUIDs.."
     },
     "passwordGeneratorTool": {
-      "pageTitle": "Gerador de Senhas Seguras – Criar Senhas Aleatórias Fortes",
-      "pageDescription": "Gere senhas aleatórias seguras instantaneamente com comprimento e caracteres personalizáveis. Gerador gratuito com frases-passe, padrões e exclusão de.",
       "keywords": "gerador de senha, senha segura, senha aleatória, frase-passe, força de senha, criptográfico",
       "ogImage": "og-default.png",
       "featureList": [
@@ -1000,11 +998,11 @@
         "Modo frase-passe",
         "Exportar para TXT, CSV, JSON"
       ],
-      "applicationCategory": "UtilityApplication"
+      "applicationCategory": "UtilityApplication",
+      "meta_title": "Gerador de Senhas Seguras – Criar Senhas Aleatórias Fortes",
+      "meta_description": "Gere senhas aleatórias seguras instantaneamente com comprimento e caracteres personalizáveis. Gerador gratuito com frases-passe, padrões e exclusão de."
     },
     "hashGeneratorTool": {
-      "pageTitle": "Gerador Hash – Criar Hashes SHA-256, MD5, HMAC e SRI",
-      "pageDescription": "Gere hashes criptográficos com SHA-1, SHA-256, SHA-384, SHA-512, MD5 e HMAC instantaneamente. Gerador de hash gratuito com suporte para ficheiros e texto..",
       "keywords": "gerador de hash, sha256, md5, sha1, hmac, hash criptográfico, checksum, hash sri",
       "ogImage": "og-default.png",
       "featureList": [
@@ -1015,11 +1013,11 @@
         "Processamento em modo ao vivo",
         "Comparação de hash"
       ],
-      "applicationCategory": "UtilityApplication"
+      "applicationCategory": "UtilityApplication",
+      "meta_title": "Gerador Hash – Criar Hashes SHA-256, MD5, HMAC e SRI",
+      "meta_description": "Gere hashes criptográficos com SHA-1, SHA-256, SHA-384, SHA-512, MD5 e HMAC instantaneamente. Gerador de hash gratuito com suporte para ficheiros e texto.."
     },
     "loremIpsumTool": {
-      "pageTitle": "Gerador Lorem Ipsum – Texto Placeholder para Web Design",
-      "pageDescription": "Gere texto de marcação de posição Lorem Ipsum gratuito para designs e mockups instantaneamente. Escolha parágrafos, frases ou palavras personalizáveis. Cópia.",
       "keywords": "lorem ipsum, texto de marcação, texto fictício, texto de preenchimento, gerador lipsum, mockup design",
       "ogImage": "og-default.png",
       "featureList": [
@@ -1030,11 +1028,11 @@
         "Cópia de um clique",
         "Texto Lorem Ipsum clássico"
       ],
-      "applicationCategory": "UtilityApplication"
+      "applicationCategory": "UtilityApplication",
+      "meta_title": "Gerador Lorem Ipsum – Texto Placeholder para Web Design",
+      "meta_description": "Gere texto de marcação de posição Lorem Ipsum gratuito para designs e mockups instantaneamente. Escolha parágrafos, frases ou palavras personalizáveis. Cópia."
     },
     "qrCodeGeneratorTool": {
-      "pageTitle": "Gerador QR Code – Criar QR para URL, WiFi, vCard Online",
-      "pageDescription": "Crie códigos QR personalizados gratuitos a partir de texto, URLs, contactos vCard ou informações WiFi instantaneamente. Gerador de QR com cores e tamanhos.",
       "keywords": "gerador de código qr, criador de código qr, qr vcard, código qr wifi, qr png, qr svg",
       "ogImage": "og-default.png",
       "featureList": [
@@ -1045,11 +1043,11 @@
         "Níveis de correção de erro",
         "Saída otimizada para impressão"
       ],
-      "applicationCategory": "UtilityApplication"
+      "applicationCategory": "UtilityApplication",
+      "meta_title": "Gerador QR Code – Criar QR para URL, WiFi, vCard Online",
+      "meta_description": "Crie códigos QR personalizados gratuitos a partir de texto, URLs, contactos vCard ou informações WiFi instantaneamente. Gerador de QR com cores e tamanhos."
     },
     "stringEscaperTool": {
-      "pageTitle": "Escape de Strings – HTML, JavaScript, JSON, SQL & CSV",
-      "pageDescription": "Escape e desescapar strings para HTML, XML, JavaScript, JSON, SQL e CSV instantaneamente. Ferramenta de escape gratuita com conversão automática em tempo.",
       "keywords": "escapador de strings, escape html, escape javascript, escape json, escape sql, prevenção xss",
       "ogImage": "og-default.png",
       "featureList": [
@@ -1060,11 +1058,11 @@
         "Prevenção XSS e injeção SQL",
         "Processamento do lado do cliente"
       ],
-      "applicationCategory": "UtilityApplication"
+      "applicationCategory": "UtilityApplication",
+      "meta_title": "Escape de Strings – HTML, JavaScript, JSON, SQL & CSV",
+      "meta_description": "Escape e desescapar strings para HTML, XML, JavaScript, JSON, SQL e CSV instantaneamente. Ferramenta de escape gratuita com conversão automática em tempo."
     },
     "codeFormatterTool": {
-      "pageTitle": "Formatador de Código – HTML, CSS, JavaScript, XML & SQL",
-      "pageDescription": "Formate e embeleze código HTML, CSS, JavaScript, XML e SQL instantaneamente. Ferramenta gratuita de beautify e minify com indentação personalizável..",
       "keywords": "formatador de código, embelezador, formatador html, formatador css, formatador javascript, minificador de código, pretty print",
       "ogImage": "og-default.png",
       "featureList": [
@@ -1075,11 +1073,11 @@
         "Validação de sintaxe",
         "Suporte de cópia e descarregar"
       ],
-      "applicationCategory": "UtilityApplication"
+      "applicationCategory": "UtilityApplication",
+      "meta_title": "Formatador de Código – HTML, CSS, JavaScript, XML & SQL",
+      "meta_description": "Formate e embeleze código HTML, CSS, JavaScript, XML e SQL instantaneamente. Ferramenta gratuita de beautify e minify com indentação personalizável.."
     },
     "dataConverterTool": {
-      "pageTitle": "Conversor de Dados – JSON para CSV, XML, YAML & Timestamps",
-      "pageDescription": "Converta dados entre JSON, CSV, XML, YAML e Unix timestamps instantaneamente. Conversor de dados gratuito com configuração personalizável para delimitadores.",
       "keywords": "conversor de dados, json para xml, xml para json, conversor yaml, conversor csv, conversor timestamp, conversor epoch",
       "ogImage": "og-default.png",
       "featureList": [
@@ -1090,11 +1088,11 @@
         "Modo ao vivo de conversão automática",
         "Opções de delimitador CSV"
       ],
-      "applicationCategory": "UtilityApplication"
+      "applicationCategory": "UtilityApplication",
+      "meta_title": "Conversor de Dados – JSON para CSV, XML, YAML & Timestamps",
+      "meta_description": "Converta dados entre JSON, CSV, XML, YAML e Unix timestamps instantaneamente. Conversor de dados gratuito com configuração personalizável para delimitadores."
     },
     "sampleHelloWorld": {
-      "pageTitle": "Exemplo Hello World – Template de Desenvolvimento de Ferramenta",
-      "pageDescription": "Ferramenta de exemplo demonstrando a estrutura da WebDev-Tools com transformação de texto, contagem de caracteres e funcionalidade de área de transferência.",
       "keywords": "ferramenta de exemplo, ferramenta demo, hello world, transformação de texto, template programador",
       "ogImage": "og-default.png",
       "featureList": [
@@ -1105,11 +1103,11 @@
         "Copiar para área de transferência",
         "Template de desenvolvimento de ferramenta"
       ],
-      "applicationCategory": "DemoApplication"
+      "applicationCategory": "DemoApplication",
+      "meta_title": "Exemplo Hello World – Template de Desenvolvimento de Ferramenta",
+      "meta_description": "Ferramenta de exemplo demonstrando a estrutura da WebDev-Tools com transformação de texto, contagem de caracteres e funcionalidade de área de transferência."
     },
     "regexTesterTool": {
-      "pageTitle": "Testador Regex – Testar & Depurar Expressões Regulares Online",
-      "pageDescription": "Teste e depure expressões regulares com realce ao vivo instantâneo. Testador Regex gratuito com extração de correspondências, captura de grupos e todas as.",
       "keywords": "testador regex, expressão regular, correspondência de padrão, validador regex, depurador regex, regex javascript",
       "ogImage": "og-default.png",
       "featureList": [
@@ -1120,11 +1118,11 @@
         "Contagem de correspondências e detalhes de posição",
         "Copiar resultados e descarregar dados de teste"
       ],
-      "applicationCategory": "UtilityApplication"
+      "applicationCategory": "UtilityApplication",
+      "meta_title": "Testador Regex – Testar & Depurar Expressões Regulares Online",
+      "meta_description": "Teste e depure expressões regulares com realce ao vivo instantâneo. Testador Regex gratuito com extração de correspondências, captura de grupos e todas as."
     },
     "characterReferenceTool": {
-      "pageTitle": "Referência de Caracteres – HTML Entities e Códigos Unicode",
-      "pageDescription": "Procure e copie entidades HTML e caracteres especiais com códigos Unicode instantaneamente. Referência completa de 2.231+ entidades HTML organizadas por.",
       "keywords": "entidades html, caracteres especiais, símbolos unicode, escape html, códigos de caracteres, referência de entidades",
       "ogImage": "og-default.png",
       "featureList": [
@@ -1135,11 +1133,11 @@
         "Códigos Unicode, decimal, hexadecimal",
         "Cópia de um clique"
       ],
-      "applicationCategory": "UtilityApplication"
+      "applicationCategory": "UtilityApplication",
+      "meta_title": "Referência de Caracteres – HTML Entities e Códigos Unicode",
+      "meta_description": "Procure e copie entidades HTML e caracteres especiais com códigos Unicode instantaneamente. Referência completa de 2.231+ entidades HTML organizadas por."
     },
     "emojiReferenceTool": {
-      "pageTitle": "Referência Emojis – Pesquisa Unicode e Códigos",
-      "pageDescription": "Procure e copie emojis com códigos Unicode e HTML instantaneamente. Referência completa de emojis organizados por categorias (caras, animais, comida,.",
       "keywords": "referência emoji, lista emoji, emoji unicode, pesquisa emoji, códigos emoji, copiar emoji",
       "ogImage": "og-default.png",
       "featureList": [
@@ -1150,31 +1148,33 @@
         "Cópia de um clique",
         "Categorias focadas em programadores"
       ],
-      "applicationCategory": "UtilityApplication"
+      "applicationCategory": "UtilityApplication",
+      "meta_title": "Referência Emojis – Pesquisa Unicode e Códigos",
+      "meta_description": "Procure e copie emojis com códigos Unicode e HTML instantaneamente. Referência completa de emojis organizados por categorias (caras, animais, comida,."
     },
     "htmlEntityTool": {
-      "pageTitle": "Codificador e Decodificador HTML Entity – Escapar Caracteres",
-      "pageDescription": "Converta texto para entidades HTML e vice-versa instantaneamente. Ferramenta de escape gratuita com entidades nomeadas (&nbsp;), decimal numérico (&#160;) e.",
       "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [],
-      "keywords": ""
+      "keywords": "",
+      "meta_title": "Codificador e Decodificador HTML Entity – Escapar Caracteres",
+      "meta_description": "Converta texto para entidades HTML e vice-versa instantaneamente. Ferramenta de escape gratuita com entidades nomeadas (&nbsp;), decimal numérico (&#160;) e."
     },
     "jwtDecoderTool": {
-      "pageTitle": "Decodificador JWT – Análise de JSON Web Tokens Online",
-      "pageDescription": "Decodifique e analise JSON Web Tokens (JWT) instantaneamente. Ferramenta JWT gratuita para ver cabeçalho, payload e assinatura decodificados. Verifique.",
       "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [],
-      "keywords": ""
+      "keywords": "",
+      "meta_title": "Decodificador JWT – Análise de JSON Web Tokens Online",
+      "meta_description": "Decodifique e analise JSON Web Tokens (JWT) instantaneamente. Ferramenta JWT gratuita para ver cabeçalho, payload e assinatura decodificados. Verifique."
     },
     "punycodeConverterTool": {
-      "pageTitle": "Conversor Punycode – IDN para ASCII e Unicode para Punycode",
-      "pageDescription": "Converta nomes de domínio internacionais (IDN) para Punycode e vice-versa instantaneamente. Ferramenta gratuita para transformar domínios Unicode em formato.",
       "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [],
-      "keywords": ""
+      "keywords": "",
+      "meta_title": "Conversor Punycode – IDN para ASCII e Unicode para Punycode",
+      "meta_description": "Converta nomes de domínio internacionais (IDN) para Punycode e vice-versa instantaneamente. Ferramenta gratuita para transformar domínios Unicode em formato."
     }
   }
 }

@@ -57,7 +57,7 @@ include __DIR__ . '/head.php';
     
     <?php
     // Use page_title for H1 heading (SEO-optimized), title is for navigation only
-    $toolH1Title = $toolData['page_title'] ?? $toolData['title'] ?? '';
+    $toolH1Title = $toolData['title'] ?? '';
     $toolNavTitle = $toolData['title'] ?? '';
     $toolDescription = $toolData['description_long'] ?? $toolData['description'] ?? '';
     $toolIcon = $toolConfig['icon'] ?? 'tools';

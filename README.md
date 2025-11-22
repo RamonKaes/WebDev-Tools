@@ -212,6 +212,35 @@ WebDev-Tools adheres to established industry specifications to ensure reliabilit
 
 ---
 
+## Code Review & Learnings
+
+### Externer Code-Review (2024-12-19)
+
+Im Rahmen eines externen Reviews wurden vier kritische Issues identifiziert und behoben:
+
+1. **UUID v1 Sicherheit:**
+   - Math.random wurde durch crypto.getRandomValues ersetzt (CSPRNG)
+   - Unsichere Fallbacks entfernt, Fehler werden im UI angezeigt
+2. **Manifest-Generator BASE_PATH:**
+   - BASE_PATH wird jetzt dynamisch aus config.php oder CLI gelesen
+   - Validierung und Korrektur der URLs für Produktion
+3. **YAML→JSON Top-Level Listen:**
+   - Parser unterstützt jetzt YAML-Listen als Root-Element
+   - Indentierungsfehler behoben
+4. **JSON→CSV leere Arrays:**
+   - Validierung und Fehlerbehandlung für leere Arrays
+   - Crash-Schutz und klare Fehlermeldungen
+
+**Learnings:**
+- Niemals Math.random für sicherheitsrelevante Zwecke
+- Input-Validierung und Fehlerbehandlung sind essenziell
+- Build-Skripte müssen umgebungsabhängig sein
+- Automatisierte Tests verhindern Regressionen
+
+Alle Fixes sind implementiert, getestet und dokumentiert. Weitere Details im [Code-Review-Report](CODE_REVIEW_REPORT.md).
+
+---
+
 ## Internationalization
 
 ### Language Coverage

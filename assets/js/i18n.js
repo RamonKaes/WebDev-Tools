@@ -405,7 +405,6 @@ class I18n {
 
       if (success && targetUrl) {
         // Use the href from the link (supports localized slugs)
-        console.log('[i18n] Navigating to:', targetUrl);
         window.location.href = targetUrl;
       } else if (success) {
         // Fallback: use old URL rewriting method

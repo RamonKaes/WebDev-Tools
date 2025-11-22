@@ -65,7 +65,6 @@
     tocNav.innerHTML = '';
 
     const toolHeader = document.getElementById('tool-header');
-    console.log('[TOC] tool-header element:', toolHeader);
 
     if (toolHeader) {
       const h1 = toolHeader.querySelector('h1');
@@ -86,18 +85,15 @@
         });
 
         tocNav.appendChild(headerLink);
-        console.log('[TOC] Added tool header link:', headerLink.textContent);
       }
     }
 
     const headings = document.querySelectorAll('#main-content h2:not(#tool-container h2), #main-content .h5:not(#tool-container .h5), #main-content h5:not(#tool-container h5)');
-    console.log('[TOC] Found headings:', headings.length);
 
     if (headings.length === 0 && !toolHeader) {
       const sidebar = document.getElementById('toc-sidebar');
       if (sidebar) {
         sidebar.closest('aside').style.display = 'none';
-        console.log('[TOC] No headings found, hiding sidebar');
       }
       return;
     }
@@ -128,7 +124,6 @@
       });
 
       tocNav.appendChild(link);
-      console.log('[TOC] Added heading link:', link.textContent);
     });
 
     console.log('[TOC] Total links added:', tocNav.children.length);
@@ -139,17 +134,12 @@
    * Only runs if viewport is wide enough
    */
   function initToc() {
-    console.log('[TOC] Init called, window width:', window.innerWidth, 'visible:', isTocVisible());
-
     if (!isTocVisible()) {
-      console.log('[TOC] Not visible, skipping');
       return;
     }
 
     ensureHeadingIds();
     buildToc();
-
-    console.log('[TOC] Initialization complete');
   }
 
   /**

@@ -24,7 +24,7 @@ $featureList = $seoData['featureList'] ?? [];
 $applicationCategory = $seoData['applicationCategory'] ?? 'UtilityApplication';
 
 $toolData = $i18nData['tools'][$currentTool] ?? [];
-$toolName = $toolData['title'] ?? 'WebDev-Tools';
+$toolName = $toolData['toc_title'] ?? 'WebDev-Tools';
 
 $htmlLang = $lang;
 $ogLocales = ['en' => 'en_US', 'de' => 'de_DE', 'es' => 'es_ES', 'pt' => 'pt_PT', 'fr' => 'fr_FR', 'it' => 'it_IT'];

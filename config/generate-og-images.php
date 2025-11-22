@@ -60,8 +60,8 @@ $outputDir = __DIR__ . '/../assets/img/og';
 echo "Generating OG images for all tools...\n\n";
 
 foreach ($tools as $toolId => $config) {
-  $title = $i18nEn['tools'][$toolId]['title'] ?? $toolId;
-  $description = $i18nEn['seo'][$toolId]['pageDescription'] ?? '';
+  $title = $i18nEn['tools'][$toolId]['toc_title'] ?? $toolId;
+  $description = $i18nEn['seo'][$toolId]['meta_description'] ?? '';
   $icon = $config['icon'] ?? 'bi-tools';
   $category = $config['category'] ?? 'utilities';
   $color = $categoryColors[$category] ?? '#6c757d';

@@ -31,10 +31,10 @@ $seoData = $i18nData['seo'][$toolId] ?? [];
 $t = $i18nData; // Make full i18n data available as $t for templates
 
 // Set page metadata from SEO section
-// pageTitle → <title> tag (Meta-Title)
-// pageDescription → <meta description> tag
-$pageTitle = $seoData['pageTitle'] ?? 'WebDev-Tools';
-$pageDescription = $seoData['pageDescription'] ?? 'Free developer tools';
+// meta_title → <title> tag (Meta-Title)
+// meta_description → <meta description> tag
+$pageTitle = $seoData['meta_title'] ?? 'WebDev-Tools';
+$pageDescription = $seoData['meta_description'] ?? 'Free developer tools';
 $keywords = $seoData['keywords'] ?? '';
 
 $currentTool = $toolId;

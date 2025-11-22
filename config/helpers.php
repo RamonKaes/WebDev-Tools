@@ -320,8 +320,8 @@ function generateToolSchema($toolId, $lang, $seoData) {
   }
   
   $toolUrl = htmlspecialchars_decode(getToolUrl($config['slug'], $lang), ENT_QUOTES);
-  $toolName = $seoData['pageTitle'] ?? 'WebDev-Tools';
-  $description = $seoData['pageDescription'] ?? '';
+  $toolName = $seoData['meta_title'] ?? 'WebDev-Tools';
+  $description = $seoData['meta_description'] ?? '';
   $category = $seoData['applicationCategory'] ?? 'UtilityApplication';
   $features = $seoData['featureList'] ?? [];
   
@@ -404,10 +404,9 @@ function generateBreadcrumbSchema($currentTool, $lang) {
     if ($config) {
       $toolData = $i18nData['tools'][$currentTool] ?? [];
       $seoData = $i18nData['seo'][$currentTool] ?? [];
-      $toolName = $seoData['page_title']
-        ?? $seoData['pageTitle']
-        ?? $toolData['page_title']
-        ?? $toolData['title']
+      $toolName = $toolData['h1_title']
+        ?? $seoData['meta_title']
+        ?? $toolData['toc_title']
         ?? ($config['slug'] ?? $currentTool);
       $toolUrl = htmlspecialchars_decode(getToolUrl($currentTool, $lang), ENT_QUOTES);
 

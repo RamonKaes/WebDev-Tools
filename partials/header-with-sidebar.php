@@ -166,7 +166,7 @@ $openMenuLabel = $openMenuLabels[$lang] ?? 'Open menu';
               <?php foreach ($navigationStructure['encoders'] as $tool): ?>
               <li><a href="<?= $toolBaseUrl . $tool['url'] ?>"
                   class="text-secondary text-decoration-none rounded tool-link <?= $currentTool === $tool['key'] ? 'active' : '' ?>"
-                  title="<?= htmlspecialchars($toolTitles[$tool['key']]['linkTitle']['nav'] ?? $toolTitles[$tool['key']]['title'] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($toolTitles[$tool['key']]['title'] ?? $toolTitles[$tool['key']] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?></a>
+                  title="<?= htmlspecialchars($toolTitles[$tool['key']]['linkTitle']['nav'] ?? $toolTitles[$tool['key']]['toc_title'] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($toolTitles[$tool['key']]['toc_title'] ?? $toolTitles[$tool['key']] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?></a>
               </li>
               <?php endforeach; ?>
             </ul>
@@ -186,7 +186,7 @@ $openMenuLabel = $openMenuLabels[$lang] ?? 'Open menu';
               <?php foreach ($navigationStructure['formatters'] as $tool): ?>
               <li><a href="<?= $toolBaseUrl . $tool['url'] ?>"
                   class="text-secondary text-decoration-none rounded tool-link <?= $currentTool === $tool['key'] ? 'active' : '' ?>"
-                  title="<?= htmlspecialchars($toolTitles[$tool['key']]['linkTitle']['nav'] ?? $toolTitles[$tool['key']]['title'] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($toolTitles[$tool['key']]['title'] ?? $toolTitles[$tool['key']] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?></a>
+                  title="<?= htmlspecialchars($toolTitles[$tool['key']]['linkTitle']['nav'] ?? $toolTitles[$tool['key']]['toc_title'] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($toolTitles[$tool['key']]['toc_title'] ?? $toolTitles[$tool['key']] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?></a>
               </li>
               <?php endforeach; ?>
             </ul>
@@ -208,7 +208,7 @@ $openMenuLabel = $openMenuLabels[$lang] ?? 'Open menu';
               <?php foreach ($navigationStructure['converters'] as $tool): ?>
               <li><a href="<?= $toolBaseUrl . $tool['url'] ?>"
                   class="text-secondary text-decoration-none rounded tool-link <?= $currentTool === $tool['key'] ? 'active' : '' ?>"
-                  title="<?= htmlspecialchars($toolTitles[$tool['key']]['linkTitle']['nav'] ?? $toolTitles[$tool['key']]['title'] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($toolTitles[$tool['key']]['title'] ?? $toolTitles[$tool['key']] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?></a>
+                  title="<?= htmlspecialchars($toolTitles[$tool['key']]['linkTitle']['nav'] ?? $toolTitles[$tool['key']]['toc_title'] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($toolTitles[$tool['key']]['toc_title'] ?? $toolTitles[$tool['key']] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?></a>
               </li>
               <?php endforeach; ?>
             </ul>
@@ -230,7 +230,7 @@ $openMenuLabel = $openMenuLabels[$lang] ?? 'Open menu';
               <?php foreach ($navigationStructure['generators'] as $tool): ?>
               <li><a href="<?= $toolBaseUrl . $tool['url'] ?>"
                   class="text-secondary text-decoration-none rounded tool-link <?= $currentTool === $tool['key'] ? 'active' : '' ?>"
-                  title="<?= htmlspecialchars($toolTitles[$tool['key']]['linkTitle']['nav'] ?? $toolTitles[$tool['key']]['title'] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($toolTitles[$tool['key']]['title'] ?? $toolTitles[$tool['key']] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?></a>
+                  title="<?= htmlspecialchars($toolTitles[$tool['key']]['linkTitle']['nav'] ?? $toolTitles[$tool['key']]['toc_title'] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($toolTitles[$tool['key']]['toc_title'] ?? $toolTitles[$tool['key']] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?></a>
               </li>
               <?php endforeach; ?>
             </ul>
@@ -252,7 +252,7 @@ $openMenuLabel = $openMenuLabels[$lang] ?? 'Open menu';
               <?php foreach ($navigationStructure['references'] as $tool): ?>
               <li><a href="<?= $toolBaseUrl . $tool['url'] ?>"
                   class="text-secondary text-decoration-none rounded tool-link <?= $currentTool === $tool['key'] ? 'active' : '' ?>"
-                  title="<?= htmlspecialchars($toolTitles[$tool['key']]['linkTitle']['nav'] ?? $toolTitles[$tool['key']]['title'] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($toolTitles[$tool['key']]['title'] ?? $toolTitles[$tool['key']] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?></a>
+                  title="<?= htmlspecialchars($toolTitles[$tool['key']]['linkTitle']['nav'] ?? $toolTitles[$tool['key']]['toc_title'] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($toolTitles[$tool['key']]['toc_title'] ?? $toolTitles[$tool['key']] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?></a>
               </li>
               <?php endforeach; ?>
             </ul>
@@ -274,7 +274,7 @@ $openMenuLabel = $openMenuLabels[$lang] ?? 'Open menu';
               <?php foreach ($navigationStructure['stringtools'] as $tool): ?>
               <li><a href="<?= $toolBaseUrl . $tool['url'] ?>"
                   class="text-secondary text-decoration-none rounded tool-link <?= $currentTool === $tool['key'] ? 'active' : '' ?>"
-                  title="<?= htmlspecialchars($toolTitles[$tool['key']]['linkTitle']['nav'] ?? $toolTitles[$tool['key']]['title'] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($toolTitles[$tool['key']]['title'] ?? $toolTitles[$tool['key']] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?></a>
+                  title="<?= htmlspecialchars($toolTitles[$tool['key']]['linkTitle']['nav'] ?? $toolTitles[$tool['key']]['toc_title'] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($toolTitles[$tool['key']]['toc_title'] ?? $toolTitles[$tool['key']] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?></a>
               </li>
               <?php endforeach; ?>
             </ul>
@@ -296,7 +296,7 @@ $openMenuLabel = $openMenuLabels[$lang] ?? 'Open menu';
               <?php foreach ($navigationStructure['utilities'] as $tool): ?>
               <li><a href="<?= $toolBaseUrl . $tool['url'] ?>"
                   class="text-secondary text-decoration-none rounded tool-link <?= $currentTool === $tool['key'] ? 'active' : '' ?>"
-                  title="<?= htmlspecialchars($toolTitles[$tool['key']]['linkTitle']['nav'] ?? $toolTitles[$tool['key']]['title'] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($toolTitles[$tool['key']]['title'] ?? $toolTitles[$tool['key']] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?></a>
+                  title="<?= htmlspecialchars($toolTitles[$tool['key']]['linkTitle']['nav'] ?? $toolTitles[$tool['key']]['toc_title'] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($toolTitles[$tool['key']]['toc_title'] ?? $toolTitles[$tool['key']] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?></a>
               </li>
               <?php endforeach; ?>
             </ul>
@@ -365,8 +365,8 @@ $openMenuLabel = $openMenuLabels[$lang] ?? 'Open menu';
               <?php foreach ($navigationStructure['encoders'] as $tool): ?>
               <li><a href="<?= $toolBaseUrl . $tool['url'] ?>"
                   class="text-secondary text-decoration-none rounded tool-link mobile-nav-link <?= $currentTool === $tool['key'] ? 'active' : '' ?>"
-                  aria-label="<?= htmlspecialchars(($toolTitles[$tool['key']]['title'] ?? $tool['key']) . ' - Mobile Navigation', ENT_QUOTES, 'UTF-8') ?>"
-                  title="<?= htmlspecialchars($toolTitles[$tool['key']]['linkTitle']['nav'] ?? $toolTitles[$tool['key']]['title'] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($toolTitles[$tool['key']]['title'] ?? $toolTitles[$tool['key']] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?></a>
+                  aria-label="<?= htmlspecialchars(($toolTitles[$tool['key']]['toc_title'] ?? $tool['key']) . ' - Mobile Navigation', ENT_QUOTES, 'UTF-8') ?>"
+                  title="<?= htmlspecialchars($toolTitles[$tool['key']]['linkTitle']['nav'] ?? $toolTitles[$tool['key']]['toc_title'] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($toolTitles[$tool['key']]['toc_title'] ?? $toolTitles[$tool['key']] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?></a>
               </li>
               <?php endforeach; ?>
             </ul>
@@ -385,8 +385,8 @@ $openMenuLabel = $openMenuLabels[$lang] ?? 'Open menu';
               <?php foreach ($navigationStructure['formatters'] as $tool): ?>
               <li><a href="<?= $toolBaseUrl . $tool['url'] ?>"
                   class="text-secondary text-decoration-none rounded tool-link mobile-nav-link <?= $currentTool === $tool['key'] ? 'active' : '' ?>"
-                  title="<?= htmlspecialchars($toolTitles[$tool['key']]['linkTitle']['nav'] ?? $toolTitles[$tool['key']]['title'] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?>"
-                  aria-label="<?= htmlspecialchars(($toolTitles[$tool['key']]['title'] ?? $tool['key']) . ' - Mobile Navigation', ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($toolTitles[$tool['key']]['title'] ?? $toolTitles[$tool['key']] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?></a>
+                  title="<?= htmlspecialchars($toolTitles[$tool['key']]['linkTitle']['nav'] ?? $toolTitles[$tool['key']]['toc_title'] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?>"
+                  aria-label="<?= htmlspecialchars(($toolTitles[$tool['key']]['toc_title'] ?? $tool['key']) . ' - Mobile Navigation', ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($toolTitles[$tool['key']]['toc_title'] ?? $toolTitles[$tool['key']] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?></a>
               </li>
               <?php endforeach; ?>
             </ul>
@@ -405,8 +405,8 @@ $openMenuLabel = $openMenuLabels[$lang] ?? 'Open menu';
               <?php foreach ($navigationStructure['converters'] as $tool): ?>
               <li><a href="<?= $toolBaseUrl . $tool['url'] ?>"
                   class="text-secondary text-decoration-none rounded tool-link mobile-nav-link <?= $currentTool === $tool['key'] ? 'active' : '' ?>"
-                  title="<?= htmlspecialchars($toolTitles[$tool['key']]['linkTitle']['nav'] ?? $toolTitles[$tool['key']]['title'] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?>"
-                  aria-label="<?= htmlspecialchars(($toolTitles[$tool['key']]['title'] ?? $tool['key']) . ' - Mobile Navigation', ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($toolTitles[$tool['key']]['title'] ?? $toolTitles[$tool['key']] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?></a>
+                  title="<?= htmlspecialchars($toolTitles[$tool['key']]['linkTitle']['nav'] ?? $toolTitles[$tool['key']]['toc_title'] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?>"
+                  aria-label="<?= htmlspecialchars(($toolTitles[$tool['key']]['toc_title'] ?? $tool['key']) . ' - Mobile Navigation', ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($toolTitles[$tool['key']]['toc_title'] ?? $toolTitles[$tool['key']] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?></a>
               </li>
               <?php endforeach; ?>
             </ul>
@@ -425,8 +425,8 @@ $openMenuLabel = $openMenuLabels[$lang] ?? 'Open menu';
               <?php foreach ($navigationStructure['generators'] as $tool): ?>
               <li><a href="<?= $toolBaseUrl . $tool['url'] ?>"
                   class="text-secondary text-decoration-none rounded tool-link mobile-nav-link <?= $currentTool === $tool['key'] ? 'active' : '' ?>"
-                  title="<?= htmlspecialchars($toolTitles[$tool['key']]['linkTitle']['nav'] ?? $toolTitles[$tool['key']]['title'] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?>"
-                  aria-label="<?= htmlspecialchars(($toolTitles[$tool['key']]['title'] ?? $tool['key']) . ' - Mobile Navigation', ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($toolTitles[$tool['key']]['title'] ?? $toolTitles[$tool['key']] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?></a>
+                  title="<?= htmlspecialchars($toolTitles[$tool['key']]['linkTitle']['nav'] ?? $toolTitles[$tool['key']]['toc_title'] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?>"
+                  aria-label="<?= htmlspecialchars(($toolTitles[$tool['key']]['toc_title'] ?? $tool['key']) . ' - Mobile Navigation', ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($toolTitles[$tool['key']]['toc_title'] ?? $toolTitles[$tool['key']] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?></a>
               </li>
               <?php endforeach; ?>
             </ul>
@@ -445,8 +445,8 @@ $openMenuLabel = $openMenuLabels[$lang] ?? 'Open menu';
               <?php foreach ($navigationStructure['references'] as $tool): ?>
               <li><a href="<?= $toolBaseUrl . $tool['url'] ?>"
                   class="text-secondary text-decoration-none rounded tool-link mobile-nav-link <?= $currentTool === $tool['key'] ? 'active' : '' ?>"
-                  title="<?= htmlspecialchars($toolTitles[$tool['key']]['linkTitle']['nav'] ?? $toolTitles[$tool['key']]['title'] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?>"
-                  aria-label="<?= htmlspecialchars(($toolTitles[$tool['key']]['title'] ?? $tool['key']) . ' - Mobile Navigation', ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($toolTitles[$tool['key']]['title'] ?? $toolTitles[$tool['key']] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?></a>
+                  title="<?= htmlspecialchars($toolTitles[$tool['key']]['linkTitle']['nav'] ?? $toolTitles[$tool['key']]['toc_title'] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?>"
+                  aria-label="<?= htmlspecialchars(($toolTitles[$tool['key']]['toc_title'] ?? $tool['key']) . ' - Mobile Navigation', ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($toolTitles[$tool['key']]['toc_title'] ?? $toolTitles[$tool['key']] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?></a>
               </li>
               <?php endforeach; ?>
             </ul>
@@ -465,8 +465,8 @@ $openMenuLabel = $openMenuLabels[$lang] ?? 'Open menu';
               <?php foreach ($navigationStructure['stringtools'] as $tool): ?>
               <li><a href="<?= $toolBaseUrl . $tool['url'] ?>"
                   class="text-secondary text-decoration-none rounded tool-link mobile-nav-link <?= $currentTool === $tool['key'] ? 'active' : '' ?>"
-                  title="<?= htmlspecialchars($toolTitles[$tool['key']]['linkTitle']['nav'] ?? $toolTitles[$tool['key']]['title'] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?>"
-                  aria-label="<?= htmlspecialchars(($toolTitles[$tool['key']]['title'] ?? $tool['key']) . ' - Mobile Navigation', ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($toolTitles[$tool['key']]['title'] ?? $toolTitles[$tool['key']] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?></a>
+                  title="<?= htmlspecialchars($toolTitles[$tool['key']]['linkTitle']['nav'] ?? $toolTitles[$tool['key']]['toc_title'] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?>"
+                  aria-label="<?= htmlspecialchars(($toolTitles[$tool['key']]['toc_title'] ?? $tool['key']) . ' - Mobile Navigation', ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($toolTitles[$tool['key']]['toc_title'] ?? $toolTitles[$tool['key']] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?></a>
               </li>
               <?php endforeach; ?>
             </ul>
@@ -485,8 +485,8 @@ $openMenuLabel = $openMenuLabels[$lang] ?? 'Open menu';
               <?php foreach ($navigationStructure['utilities'] as $tool): ?>
               <li><a href="<?= $toolBaseUrl . $tool['url'] ?>"
                   class="text-secondary text-decoration-none rounded tool-link mobile-nav-link <?= $currentTool === $tool['key'] ? 'active' : '' ?>"
-                  title="<?= htmlspecialchars($toolTitles[$tool['key']]['linkTitle']['nav'] ?? $toolTitles[$tool['key']]['title'] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?>"
-                  aria-label="<?= htmlspecialchars(($toolTitles[$tool['key']]['title'] ?? $tool['key']) . ' - Mobile Navigation', ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($toolTitles[$tool['key']]['title'] ?? $toolTitles[$tool['key']] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?></a>
+                  title="<?= htmlspecialchars($toolTitles[$tool['key']]['linkTitle']['nav'] ?? $toolTitles[$tool['key']]['toc_title'] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?>"
+                  aria-label="<?= htmlspecialchars(($toolTitles[$tool['key']]['toc_title'] ?? $tool['key']) . ' - Mobile Navigation', ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($toolTitles[$tool['key']]['toc_title'] ?? $toolTitles[$tool['key']] ?? $tool['key'], ENT_QUOTES, 'UTF-8') ?></a>
               </li>
               <?php endforeach; ?>
             </ul>

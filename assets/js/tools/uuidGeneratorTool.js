@@ -169,15 +169,36 @@
       /**
        * Generate UUID v1 (Timestamp-based)
        *
+       * Uses crypto.getRandomValues() for the random component (clock sequence and node ID).
+       * Falls back to disabling v1 if crypto is unavailable.
+       *
        * @returns {string} - UUID v1 string
        */
       function generateUUIDv1() {
-        let d = new Date().getTime();
-        return 'xxxxxxxx-xxxx-1xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
-          const r = (d + Math.random() * 16) % 16 | 0;
-          d = Math.floor(d / 16);
-          return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
-        });
+        try {
+          const d = new Date().getTime();
+          const timeBytes = new Uint8Array(8);
+          crypto.getRandomValues(timeBytes);
+          
+          // Timestamp (60-bit, 100ns intervals since 1582-10-15)
+          const timestamp = (d * 10000) + 0x01B21DD213814000;
+          
+          // Build UUID v1: time_low-time_mid-time_hi_and_version-clock_seq-node
+          const timeLow = (timestamp & 0xFFFFFFFF).toString(16).padStart(8, '0');
+          const timeMid = ((timestamp >> 32) & 0xFFFF).toString(16).padStart(4, '0');
+          const timeHiVersion = (((timestamp >> 48) & 0x0FFF) | 0x1000).toString(16).padStart(4, '0');
+          
+          // Clock sequence (14 bits) + variant bits
+          const clockSeq = ((timeBytes[0] << 8 | timeBytes[1]) & 0x3FFF | 0x8000).toString(16).padStart(4, '0');
+          
+          // Node ID (48 bits from random)
+          const node = Array.from(timeBytes.slice(2, 8), b => b.toString(16).padStart(2, '0')).join('');
+          
+          return `${timeLow}-${timeMid}-${timeHiVersion}-${clockSeq}-${node}`;
+        } catch (e) {
+          // If crypto is unavailable, throw error to disable v1 in UI
+          throw new Error('UUID v1 requires Web Crypto API support');
+        }
       }
 
       /**
@@ -317,29 +338,49 @@
       uuidVersionSelect.addEventListener('change', () => {
         updateVersionHelp();
         if (autoGenerateCheck.checked) {
-          singleUuidInput.value = generateFormattedUUID();
+          try {
+            singleUuidInput.value = generateFormattedUUID();
+          } catch (e) {
+            singleUuidInput.value = t('tools.uuidGeneratorTool.crypto_error');
+            console.error('UUID generation failed:', e);
+          }
         }
       });
 
       uuidFormatSelect.addEventListener('change', () => {
         if (autoGenerateCheck.checked) {
-          singleUuidInput.value = generateFormattedUUID();
+          try {
+            singleUuidInput.value = generateFormattedUUID();
+          } catch (e) {
+            singleUuidInput.value = t('tools.uuidGeneratorTool.crypto_error');
+            console.error('UUID generation failed:', e);
+          }
         }
       });
 
       generateSingleBtn.addEventListener('click', () => {
-        singleUuidInput.value = generateFormattedUUID();
+        try {
+          singleUuidInput.value = generateFormattedUUID();
+        } catch (e) {
+          singleUuidInput.value = t('tools.uuidGeneratorTool.crypto_error');
+          console.error('UUID generation failed:', e);
+        }
       });
 
       generateBulkBtn.addEventListener('click', () => {
-        const count = parseInt(bulkCountInput.value);
+        const count = parseInt(bulkCountInput.value, 10);
         if (isNaN(count) || count < 1 || count > 1000) {
           bulkOutputTextarea.value = t('tools.uuidGeneratorTool.bulk_error');
           return;
         }
-        const version = uuidVersionSelect.value;
-        const uuids = Array.from({length: count}, () => generateUUID(version));
-        bulkOutputTextarea.value = formatBulkUUIDs(uuids, bulkFormatSelect.value);
+        try {
+          const version = uuidVersionSelect.value;
+          const uuids = Array.from({length: count}, () => generateUUID(version));
+          bulkOutputTextarea.value = formatBulkUUIDs(uuids, bulkFormatSelect.value);
+        } catch (e) {
+          bulkOutputTextarea.value = t('tools.uuidGeneratorTool.crypto_error');
+          console.error('UUID bulk generation failed:', e);
+        }
       });
 
       copySingleBtn.addEventListener('click', function() {

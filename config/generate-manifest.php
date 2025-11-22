@@ -15,8 +15,19 @@ if (php_sapi_name() !== 'cli') {
   die('Access denied. This script can only be executed via command line.');
 }
 
+require_once __DIR__ . '/config.php';
 $toolsConfig = require __DIR__ . '/tools.php';
-$baseUrl = '/WebDev-Tools';
+
+// Use BASE_PATH from config.php or CLI argument
+$baseUrl = $argv[1] ?? BASE_PATH ?? '';
+
+// Validate BASE_PATH
+if ($baseUrl && !str_starts_with($baseUrl, '/')) {
+  echo "⚠️  Warning: BASE_PATH should start with / (got: {$baseUrl})\n";
+  $baseUrl = '/' . $baseUrl;
+}
+
+echo "📦 Generating manifest with BASE_PATH: '{$baseUrl}'\n";
 
 // OG Image mapping (uses full slug names to match generated files)
 $ogImageMap = [

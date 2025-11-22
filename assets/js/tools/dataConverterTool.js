@@ -398,7 +398,7 @@
        * @throws {Error} - If timestamp is invalid
        */
       timestampToDate: (input) => {
-        const timestamp = parseInt(input.trim());
+        const timestamp = parseInt(input.trim(), 10);
         if (isNaN(timestamp)) {
           throw new Error('Invalid timestamp');
         }
@@ -439,7 +439,7 @@
       const value = indentationSelect?.value || '2';
       if (value === 'tab') return '\t';
       if (value === 'compact') return 0;
-      return parseInt(value);
+      return parseInt(value, 10);
     }
 
     /**
@@ -607,9 +607,14 @@
      */
     function yamlToJson(yaml) {
       const lines = yaml.split('\n').filter(line => line.trim() && !line.trim().startsWith('#'));
-      const obj = {};
-      let currentObj = obj;
-      const stack = [{ obj, indent: -1 }];
+      
+      // Check if YAML starts with a list (top-level array)
+      const firstLine = lines.find(l => l.trim());
+      const isTopLevelList = firstLine && firstLine.trim().startsWith('- ');
+      
+      const root = isTopLevelList ? [] : {};
+      let currentObj = root;
+      const stack = [{ obj: root, indent: -1, key: null }];
 
       lines.forEach(line => {
         const indent = line.search(/\S/);
@@ -618,18 +623,28 @@
         // Handle list items
         if (trimmed.startsWith('- ')) {
           const value = trimmed.substring(2).trim();
+          
+          // Pop stack based on indentation
+          while (stack.length > 1 && indent < stack[stack.length - 1].indent) {
+            stack.pop();
+          }
+          
           const parent = stack[stack.length - 1];
-
+          
+          // If parent is an object, create array for last key
           if (!Array.isArray(parent.obj)) {
-            const lastKey = Object.keys(parent.obj).pop();
+            const lastKey = parent.key;
             if (lastKey && parent.obj[lastKey] === undefined) {
               parent.obj[lastKey] = [];
+              stack.push({ obj: parent.obj[lastKey], indent, key: null });
             }
           }
-
-          const lastKey = Object.keys(parent.obj).pop();
-          if (Array.isArray(parent.obj[lastKey])) {
-            parent.obj[lastKey].push(parseYamlValue(value));
+          
+          const targetArray = Array.isArray(parent.obj) ? parent.obj : 
+                              (parent.key && Array.isArray(parent.obj[parent.key]) ? parent.obj[parent.key] : null);
+          
+          if (targetArray) {
+            targetArray.push(parseYamlValue(value));
           }
           return;
         }
@@ -651,14 +666,17 @@
         if (!value || value === '{}' || value === '[]') {
           currentObj[key] = value === '[]' ? [] : (value === '{}' ? {} : undefined);
           if (!value) {
-            stack.push({ obj: currentObj[key] = {}, indent });
+            const newObj = {};
+            currentObj[key] = newObj;
+            stack.push({ obj: newObj, indent, key });
           }
         } else {
           currentObj[key] = parseYamlValue(value);
+          stack[stack.length - 1].key = key;
         }
       });
 
-      return obj;
+      return root;
     }
 
     /**
@@ -672,7 +690,7 @@
       if (value === 'true') return true;
       if (value === 'false') return false;
       if (value === '~') return null;
-      if (/^-?\d+$/.test(value)) return parseInt(value);
+      if (/^-?\d+$/.test(value)) return parseInt(value, 10);
       if (/^-?\d+\.\d+$/.test(value)) return parseFloat(value);
       if (value.startsWith('"') && value.endsWith('"')) {
         return value.substring(1, value.length - 1).replace(/\\"/g, '"');
@@ -688,8 +706,22 @@
      *
      * @param {Array<object>} data - Array of objects
      * @returns {string} - CSV string
+     * @throws {Error} - If data is not a valid array or is empty
      */
     function jsonToCsv(data) {
+      // Validate input
+      if (!Array.isArray(data)) {
+        throw new Error('CSV conversion requires an array of objects');
+      }
+      
+      if (data.length === 0) {
+        return ''; // Empty CSV for empty array
+      }
+      
+      if (typeof data[0] !== 'object' || data[0] === null) {
+        throw new Error('CSV conversion requires an array of objects (got: ' + typeof data[0] + ')');
+      }
+      
       const delimiter = document.getElementById('csvDelimiter')?.value || ',';
       const headers = Object.keys(data[0]);
 

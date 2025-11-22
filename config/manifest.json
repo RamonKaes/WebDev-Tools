@@ -1,6 +1,6 @@
 {
     "version": "1.0.0",
-    "generatedAt": "2025-11-10T15:11:27+00:00",
+    "generatedAt": "2025-11-22T14:45:02+00:00",
     "tools": {
         "base64EncoderDecoder": {
             "id": "base64EncoderDecoder",
@@ -328,7 +328,7 @@
             "category": "references",
             "icon": "bi-table",
             "jsPath": "/assets/js/tools/characterReferenceTool.js",
-            "ogImage": "character-reference.svg",
+            "ogImage": "default.svg",
             "externalLibraries": [],
             "jsLibraries": [
                 "clipboard-utils"
@@ -349,7 +349,7 @@
             "category": "references",
             "icon": "bi-emoji-smile",
             "jsPath": "/assets/js/tools/emojiReferenceTool.js",
-            "ogImage": "emoji-reference.svg",
+            "ogImage": "default.svg",
             "externalLibraries": [],
             "jsLibraries": [],
             "features": [

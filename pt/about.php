@@ -280,6 +280,10 @@ $currentUrl = getFullUrl('/about.php', $lang);
               e a tornei pública.
             </p>
             <p>
+              E porque tudo isso surgiu de um «acidente», o código está completamente aberto.
+              Se você quiser mexer por conta própria ou encontrar um bug: você pode encontrar
+              o repositório Git aqui: <a href="https://github.com/RamonKaes/WebDev-Tools" target="_blank" rel="noopener noreferrer" title="Repositório GitHub do WebDev-Tools">https://github.com/RamonKaes/WebDev-Tools</a>.
+            <p>
               Sim, desculpem. Agora está aqui. A 10 000.ª coleção de ferramentas. Mas, afinal,
               tem uma história por trás! :D
             </p>

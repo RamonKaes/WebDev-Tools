@@ -102,6 +102,23 @@ This guarantees cryptographically secure randomness resistant to prediction atta
 | **MITM Attacks** | ⚠️ Possible if TLS compromised | ✅ No attack surface |
 | **Data Breach** | ⚠️ Server database vulnerable | ✅ No server database |
 
+### Open Source & Auditability
+
+**Full Transparency**: The complete source code is available on GitHub for review and audit:
+- 🔓 **Public Repository**: [github.com/RamonKaes/WebDev-Tools](https://github.com/RamonKaes/WebDev-Tools)
+- 📋 **MIT License**: Free to fork, modify, and distribute
+- 🔍 **Community Review**: Anyone can inspect the code and report security issues
+
+### Security Guarantees
+
+WebDev-Tools implements multiple layers of protection:
+
+- ✅ **Subresource Integrity (SRI)**: All external libraries verified with cryptographic hashes
+- ✅ **Content Security Policy (CSP)**: Strict nonce-based script execution, no inline code
+- ✅ **Security Headers**: HSTS, X-Frame-Options, CSP, Referrer-Policy, Permissions-Policy
+- ✅ **Zero External Dependencies**: Data processing uses only native browser APIs
+- ✅ **No Tracking**: No cookies (except language preference), no analytics on tool usage
+
 **See [SECURITY.md](SECURITY.md) for detailed security documentation.**
 
 ---

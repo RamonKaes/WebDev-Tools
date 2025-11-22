@@ -178,8 +178,10 @@ html, body {
   color: var(--bs-body-color) !important;
 }
 
+.tool-link[data-tool="about"],
 .tool-link[data-tool="imprint"],
-.tool-link[data-tool="privacy"] {
+.tool-link[data-tool="privacy"],
+.tool-link[title="GitHub Repository"] {
   font-size: 0.75rem;
 }
 

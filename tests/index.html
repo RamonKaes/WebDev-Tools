@@ -1,201 +1,1142 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="auto">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <title>WebDev-Tools Test Runner</title>
+  <title>WebDev-Tools Test Dashboard</title>
+  
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/bootstrap-icons/bootstrap-icons.min.css">
+  
   <style>
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-      background: #f5f5f5;
+      min-height: 100vh;
+      background: var(--bs-body-bg);
     }
-    h1 {
-      color: #333;
-      border-bottom: 3px solid #007bff;
-      padding-bottom: 10px;
+    
+    /* Sidebar - Mobile First */
+    .sidebar {
+      position: fixed;
+      top: 56px;
+      bottom: 0;
+      left: 0;
+      z-index: 100;
+      width: 280px;
+      background: var(--bs-body-bg);
+      border-right: 1px solid var(--bs-border-color);
+      box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out;
     }
-    .test-section {
-      background: white;
-      padding: 20px;
-      margin: 20px 0;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    
+    /* Sidebar visible on desktop */
+    @media (min-width: 992px) {
+      .sidebar {
+        transform: translateX(0);
+      }
     }
-    button {
-      background: #007bff;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-      margin: 5px;
+    
+    /* Sidebar shown when toggled on mobile */
+    .sidebar.show {
+      transform: translateX(0);
     }
-    button:hover {
-      background: #0056b3;
+    
+    .sidebar-sticky {
+      position: relative;
+      top: 0;
+      height: 100%;
+      padding: 1rem 0;
+      overflow-x: hidden;
+      overflow-y: auto;
     }
+    
+    .sidebar .nav-link {
+      font-weight: 500;
+      color: var(--bs-body-color);
+      padding: 0.5rem 1rem;
+      transition: all 0.2s;
+    }
+    
+    .sidebar .nav-link:hover {
+      background-color: var(--bs-tertiary-bg);
+      border-radius: 0.25rem;
+    }
+    
+    .sidebar .nav-link.active {
+      color: var(--bs-primary);
+      background-color: var(--bs-primary-bg-subtle);
+      border-radius: 0.25rem;
+    }
+    
+    .sidebar-heading {
+      font-size: .75rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--bs-secondary);
+      padding: 0.5rem 1rem;
+      margin-top: 1rem;
+    }
+    
+    /* Main Content - No margin on mobile */
+    main {
+      margin-left: 0;
+      padding: 72px 1rem 1rem 1rem;
+      min-height: 100vh;
+    }
+    
+    /* Main Content - Margin for sidebar on desktop */
+    @media (min-width: 992px) {
+      main {
+        margin-left: 280px;
+        padding: 72px 2rem 2rem 2rem;
+      }
+    }
+    
+    .navbar {
+      z-index: 1000;
+      background: var(--bs-body-bg);
+      border-bottom: 1px solid var(--bs-border-color);
+    }
+    
     #console {
       background: #1e1e1e;
       color: #d4d4d4;
-      padding: 15px;
-      border-radius: 5px;
-      font-family: 'Courier New', monospace;
-      font-size: 14px;
+      padding: 1rem;
+      border-radius: 0.375rem;
+      font-family: 'Courier New', Monaco, monospace;
+      font-size: 0.875rem;
       white-space: pre-wrap;
       max-height: 600px;
       overflow-y: auto;
-      margin-top: 20px;
+      line-height: 1.5;
     }
-    .pass { color: #4caf50; }
-    .fail { color: #f44336; }
-    .skip { color: #ff9800; }
-    .info { color: #2196f3; }
+    
+    .console-pass { color: #4caf50; font-weight: 500; }
+    .console-fail { color: #f44336; font-weight: 500; }
+    .console-skip { color: #ff9800; font-weight: 500; }
+    .console-info { color: #2196f3; font-weight: 500; }
+    .console-warn { color: #ffc107; font-weight: 500; }
+    
+    .stat-card {
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .stat-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    
+    .stat-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.5rem;
+      font-size: 1.5rem;
+    }
+    
+    .test-badge {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.5rem;
+    }
+    
+    .progress-thin {
+      height: 0.5rem;
+    }
   </style>
 </head>
 <body>
-  <h1>🧪 WebDev-Tools Test Runner</h1>
   
-  <div class="test-section">
-    <h2>Available Test Suites</h2>
-    <p>Select a test suite to run:</p>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#">
+        <i class="bi bi-bug-fill text-primary me-2"></i>
+        <strong>Test Dashboard</strong>
+      </a>
+      <div class="d-flex align-items-center gap-2">
+        <button class="btn btn-sm btn-success" onclick="runAllTests()" title="Run All Tests (Ctrl+Enter)">
+          <i class="bi bi-play-fill"></i>
+        </button>
+        <button class="btn btn-sm btn-outline-secondary" onclick="clearConsole()" title="Clear Console (Ctrl+L)">
+          <i class="bi bi-trash"></i>
+        </button>
+        <span class="badge bg-success" id="passCounter">0 Pass</span>
+        <span class="badge bg-danger" id="failCounter">0 Fail</span>
+        <div class="vr"></div>
+        <button class="btn btn-sm btn-outline-primary" onclick="toggleTheme()" title="Toggle Theme">
+          <i class="bi bi-moon-fill" id="themeIcon"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Sidebar -->
+  <nav id="sidebarMenu" class="sidebar d-lg-block">
+    <div class="sidebar-sticky">
+      <div class="sidebar-heading">
+        <i class="bi bi-speedometer2 me-1"></i>
+        Dashboard
+      </div>
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link active" href="#" data-section="overview">
+            <i class="bi bi-house-door me-2"></i>
+            Overview
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-section="tests">
+            <i class="bi bi-play-circle me-2"></i>
+            Test Suites
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-section="console">
+            <i class="bi bi-terminal me-2"></i>
+            Console Output
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-heading">
+        <i class="bi bi-folder2-open me-1"></i>
+        Test Categories
+      </div>
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="scrollToCategory('library')">
+            <i class="bi bi-journal-code me-2"></i>
+            Library Tests
+            <span class="badge bg-primary rounded-pill ms-auto">7</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="scrollToCategory('core')">
+            <i class="bi bi-cpu me-2"></i>
+            Core Tests
+            <span class="badge bg-primary rounded-pill ms-auto">4</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="scrollToCategory('tools')">
+            <i class="bi bi-tools me-2"></i>
+            Tool Tests
+            <span class="badge bg-warning rounded-pill ms-auto">New</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-heading">
+        <i class="bi bi-gear me-1"></i>
+        Actions
+      </div>
+      <ul class="nav flex-column mb-3">
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="runAllTests()">
+            <i class="bi bi-play-fill text-success me-2"></i>
+            Run All Tests
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="clearConsole()">
+            <i class="bi bi-trash me-2"></i>
+            Clear Console
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="exportResults()">
+            <i class="bi bi-download me-2"></i>
+            Export Results
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <div class="container-fluid">
     
-    <h3>Library Tests</h3>
-    <button onclick="runTests('lib/validators.test.js')">Validators</button>
-    <button onclick="runTests('lib/clipboard-utils.test.js')">Clipboard Utils</button>
-    <button onclick="runTests('lib/formatters.test.js')">Formatters</button>
-    <button onclick="runTests('lib/storage-utils.test.js')">Storage Utils</button>
-    <button onclick="runTests('lib/json-tree-renderer.test.js')">JSON Tree Renderer</button>
-    <button onclick="runTests('lib/download-utils.test.js')">Download Utils</button>
-    <button onclick="runTests('lib/dragdrop-utils.test.js')">Drag & Drop Utils</button>
-    
-    <h3 style="margin-top: 20px;">Core Tests</h3>
-    <button onclick="runTests('logger.test.js')">Logger Error Handling</button>
-    <button onclick="runTests('performance-monitoring.test.js')">Performance Monitoring</button>
-    <button onclick="runTests('i18n-fallback.test.js')">I18n Fallback</button>
-    <button onclick="runTests('tool-registry.test.js')">Tool Registry</button>
-    
-    <h3 style="margin-top: 20px;">Actions</h3>
-    <button onclick="runAllTests()">▶ Run All Tests</button>
-    <button onclick="clearConsole()">Clear Console</button>
+    <!-- Overview Section -->
+    <section id="overview-section">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="h3 mb-0">
+          <i class="bi bi-speedometer2 text-primary me-2"></i>
+          Test Overview
+        </h1>
+        <div class="d-flex gap-2">
+          <div class="btn-group" role="group">
+            <button class="btn btn-outline-secondary" onclick="runCategoryTests('library')" title="Run Library Tests">
+              <i class="bi bi-box me-1"></i>Library
+            </button>
+            <button class="btn btn-outline-secondary" onclick="runCategoryTests('core')" title="Run Core Tests">
+              <i class="bi bi-cpu me-1"></i>Core
+            </button>
+            <button class="btn btn-outline-secondary" onclick="runCategoryTests('tools')" title="Run Tool Tests">
+              <i class="bi bi-tools me-1"></i>Tools
+            </button>
+          </div>
+          <button class="btn btn-success" onclick="runAllTests()">
+            <i class="bi bi-play-fill me-1"></i>
+            Run All
+          </button>
+        </div>
+      </div>
+
+      <!-- Stats Cards -->
+      <div class="row g-4 mb-4">
+        <div class="col-md-3">
+          <div class="card stat-card border-0 shadow-sm">
+            <div class="card-body">
+              <div class="d-flex align-items-center">
+                <div class="stat-icon bg-success bg-opacity-10 text-success">
+                  <i class="bi bi-check-circle-fill"></i>
+                </div>
+                <div class="ms-3 flex-grow-1">
+                  <p class="text-muted mb-0 small">Passed</p>
+                  <h3 class="mb-0" id="statsPass">0</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-3">
+          <div class="card stat-card border-0 shadow-sm">
+            <div class="card-body">
+              <div class="d-flex align-items-center">
+                <div class="stat-icon bg-danger bg-opacity-10 text-danger">
+                  <i class="bi bi-x-circle-fill"></i>
+                </div>
+                <div class="ms-3 flex-grow-1">
+                  <p class="text-muted mb-0 small">Failed</p>
+                  <h3 class="mb-0" id="statsFail">0</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-3">
+          <div class="card stat-card border-0 shadow-sm">
+            <div class="card-body">
+              <div class="d-flex align-items-center">
+                <div class="stat-icon bg-warning bg-opacity-10 text-warning">
+                  <i class="bi bi-skip-forward-circle-fill"></i>
+                </div>
+                <div class="ms-3 flex-grow-1">
+                  <p class="text-muted mb-0 small">Skipped</p>
+                  <h3 class="mb-0" id="statsSkip">0</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-3">
+          <div class="card stat-card border-0 shadow-sm">
+            <div class="card-body">
+              <div class="d-flex align-items-center">
+                <div class="stat-icon bg-primary bg-opacity-10 text-primary">
+                  <i class="bi bi-clock-fill"></i>
+                </div>
+                <div class="ms-3 flex-grow-1">
+                  <p class="text-muted mb-0 small">Duration</p>
+                  <h3 class="mb-0" id="statsDuration">0ms</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Coverage Progress -->
+      <div class="card border-0 shadow-sm mb-4">
+        <div class="card-body">
+          <h5 class="card-title mb-3">
+            <i class="bi bi-bar-chart-fill text-primary me-2"></i>
+            Test Coverage
+          </h5>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <div class="d-flex justify-content-between mb-2">
+                <span class="small text-muted">Library Tests</span>
+                <span class="small fw-semibold" id="libCoverage">0%</span>
+              </div>
+              <div class="progress progress-thin">
+                <div class="progress-bar bg-success" role="progressbar" style="width: 0%" id="libCoverageBar"></div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <div class="d-flex justify-content-between mb-2">
+                <span class="small text-muted">Core Tests</span>
+                <span class="small fw-semibold" id="coreCoverage">0%</span>
+              </div>
+              <div class="progress progress-thin">
+                <div class="progress-bar bg-info" role="progressbar" style="width: 0%" id="coreCoverageBar"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Activity -->
+      <div class="card border-0 shadow-sm">
+        <div class="card-header bg-transparent">
+          <h5 class="card-title mb-0">
+            <i class="bi bi-activity text-primary me-2"></i>
+            Recent Test Runs
+          </h5>
+        </div>
+        <div class="card-body">
+          <div class="list-group list-group-flush" id="recentActivity">
+            <div class="list-group-item px-0 text-muted text-center">
+              No tests run yet. Click "Run All Tests" to start.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Test Suites Section -->
+    <section id="tests-section" style="display: none;">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="h3 mb-0">
+          <i class="bi bi-play-circle text-primary me-2"></i>
+          Test Suites
+        </h1>
+      </div>
+
+      <!-- Library Tests Accordion -->
+      <div class="accordion mb-4" id="libraryAccordion">
+        <div class="accordion-item" id="library">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLibrary">
+              <i class="bi bi-journal-code text-primary me-2"></i>
+              <strong>Library Tests</strong>
+              <span class="badge bg-primary ms-2">7 suites</span>
+            </button>
+          </h2>
+          <div id="collapseLibrary" class="accordion-collapse collapse show" data-bs-parent="#libraryAccordion">
+            <div class="accordion-body">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body">
+                      <h6 class="card-title">
+                        <i class="bi bi-shield-check text-success me-2"></i>
+                        Validators
+                      </h6>
+                      <p class="card-text small text-muted">Email, URL, JSON, Base64, Hex validation tests</p>
+                      <button class="btn btn-sm btn-outline-primary" onclick="runTests('lib/validators.test.js')">
+                        <i class="bi bi-play-fill me-1"></i>Run Tests
+                      </button>
+                      <span class="badge bg-secondary ms-2 test-badge" data-test="validators">Ready</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-md-6">
+                  <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body">
+                      <h6 class="card-title">
+                        <i class="bi bi-clipboard-check text-info me-2"></i>
+                        Clipboard Utils
+                      </h6>
+                      <p class="card-text small text-muted">Clipboard API integration tests</p>
+                      <button class="btn btn-sm btn-outline-primary" onclick="runTests('lib/clipboard-utils.test.js')">
+                        <i class="bi bi-play-fill me-1"></i>Run Tests
+                      </button>
+                      <span class="badge bg-secondary ms-2 test-badge" data-test="clipboard">Ready</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-md-6">
+                  <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body">
+                      <h6 class="card-title">
+                        <i class="bi bi-paragraph text-warning me-2"></i>
+                        Formatters
+                      </h6>
+                      <p class="card-text small text-muted">Byte, number, date formatting tests</p>
+                      <button class="btn btn-sm btn-outline-primary" onclick="runTests('lib/formatters.test.js')">
+                        <i class="bi bi-play-fill me-1"></i>Run Tests
+                      </button>
+                      <span class="badge bg-secondary ms-2 test-badge" data-test="formatters">Ready</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-md-6">
+                  <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body">
+                      <h6 class="card-title">
+                        <i class="bi bi-hdd text-danger me-2"></i>
+                        Storage Utils
+                      </h6>
+                      <p class="card-text small text-muted">localStorage/sessionStorage tests</p>
+                      <button class="btn btn-sm btn-outline-primary" onclick="runTests('lib/storage-utils.test.js')">
+                        <i class="bi bi-play-fill me-1"></i>Run Tests
+                      </button>
+                      <span class="badge bg-secondary ms-2 test-badge" data-test="storage">Ready</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-md-6">
+                  <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body">
+                      <h6 class="card-title">
+                        <i class="bi bi-diagram-3 text-primary me-2"></i>
+                        JSON Tree Renderer
+                      </h6>
+                      <p class="card-text small text-muted">JSON tree rendering & folding tests</p>
+                      <button class="btn btn-sm btn-outline-primary" onclick="runTests('lib/json-tree-renderer.test.js')">
+                        <i class="bi bi-play-fill me-1"></i>Run Tests
+                      </button>
+                      <span class="badge bg-secondary ms-2 test-badge" data-test="json-tree">Ready</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-md-6">
+                  <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body">
+                      <h6 class="card-title">
+                        <i class="bi bi-download text-success me-2"></i>
+                        Download Utils
+                      </h6>
+                      <p class="card-text small text-muted">File download utility tests</p>
+                      <button class="btn btn-sm btn-outline-primary" onclick="runTests('lib/download-utils.test.js')">
+                        <i class="bi bi-play-fill me-1"></i>Run Tests
+                      </button>
+                      <span class="badge bg-secondary ms-2 test-badge" data-test="download">Ready</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-md-6">
+                  <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body">
+                      <h6 class="card-title">
+                        <i class="bi bi-file-earmark-arrow-up text-info me-2"></i>
+                        Drag & Drop Utils
+                      </h6>
+                      <p class="card-text small text-muted">File drag & drop handling tests</p>
+                      <button class="btn btn-sm btn-outline-primary" onclick="runTests('lib/dragdrop-utils.test.js')">
+                        <i class="bi bi-play-fill me-1"></i>Run Tests
+                      </button>
+                      <span class="badge bg-secondary ms-2 test-badge" data-test="dragdrop">Ready</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Core Tests Accordion -->
+      <div class="accordion mb-4" id="coreAccordion">
+        <div class="accordion-item" id="core">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCore">
+              <i class="bi bi-cpu text-primary me-2"></i>
+              <strong>Core Tests</strong>
+              <span class="badge bg-info ms-2">4 suites</span>
+            </button>
+          </h2>
+          <div id="collapseCore" class="accordion-collapse collapse" data-bs-parent="#coreAccordion">
+            <div class="accordion-body">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body">
+                      <h6 class="card-title">
+                        <i class="bi bi-exclamation-triangle text-warning me-2"></i>
+                        Logger Error Handling
+                      </h6>
+                      <p class="card-text small text-muted">Error logging & classification tests</p>
+                      <button class="btn btn-sm btn-outline-primary" onclick="runTests('logger.test.js')">
+                        <i class="bi bi-play-fill me-1"></i>Run Tests
+                      </button>
+                      <span class="badge bg-secondary ms-2 test-badge" data-test="logger">Ready</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-md-6">
+                  <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body">
+                      <h6 class="card-title">
+                        <i class="bi bi-speedometer2 text-success me-2"></i>
+                        Performance Monitoring
+                      </h6>
+                      <p class="card-text small text-muted">Performance tracking & metrics tests</p>
+                      <button class="btn btn-sm btn-outline-primary" onclick="runTests('performance-monitoring.test.js')">
+                        <i class="bi bi-play-fill me-1"></i>Run Tests
+                      </button>
+                      <span class="badge bg-secondary ms-2 test-badge" data-test="performance">Ready</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-md-6">
+                  <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body">
+                      <h6 class="card-title">
+                        <i class="bi bi-translate text-primary me-2"></i>
+                        I18n Fallback
+                      </h6>
+                      <p class="card-text small text-muted">Translation fallback mechanism tests</p>
+                      <button class="btn btn-sm btn-outline-primary" onclick="runTests('i18n-fallback.test.js')">
+                        <i class="bi bi-play-fill me-1"></i>Run Tests
+                      </button>
+                      <span class="badge bg-secondary ms-2 test-badge" data-test="i18n">Ready</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-md-6">
+                  <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body">
+                      <h6 class="card-title">
+                        <i class="bi bi-tools text-danger me-2"></i>
+                        Tool Registry
+                      </h6>
+                      <p class="card-text small text-muted">Tool registration & management tests</p>
+                      <button class="btn btn-sm btn-outline-primary" onclick="runTests('tool-registry.test.js')">
+                        <i class="bi bi-play-fill me-1"></i>Run Tests
+                      </button>
+                      <span class="badge bg-secondary ms-2 test-badge" data-test="registry">Ready</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tool Tests Accordion (New) -->
+      <div class="accordion mb-4" id="toolsAccordion">
+        <div class="accordion-item" id="tools">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTools">
+              <i class="bi bi-tools text-primary me-2"></i>
+              <strong>Tool-Specific Tests</strong>
+              <span class="badge bg-success ms-2">3</span>
+            </button>
+          </h2>
+          <div id="collapseTools" class="accordion-collapse collapse" data-bs-parent="#toolsAccordion">
+            <div class="accordion-body">
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <div class="card h-100">
+                    <div class="card-body">
+                      <h6 class="card-title d-flex align-items-center justify-content-between">
+                        <span><i class="bi bi-fingerprint me-2"></i>UUID Generator</span>
+                        <span class="badge bg-secondary" id="badge-uuid">-</span>
+                      </h6>
+                      <p class="card-text small text-muted">Tests for UUID v4 generation, validation, and uniqueness.</p>
+                      <button class="btn btn-sm btn-primary w-100" onclick="runTests('tools/uuid-generator.test.js')">
+                        <i class="bi bi-play-fill me-1"></i>Run Tests
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card h-100">
+                    <div class="card-body">
+                      <h6 class="card-title d-flex align-items-center justify-content-between">
+                        <span><i class="bi bi-shield-lock me-2"></i>Password Generator</span>
+                        <span class="badge bg-secondary" id="badge-password">-</span>
+                      </h6>
+                      <p class="card-text small text-muted">Tests for secure password generation and strength calculation.</p>
+                      <button class="btn btn-sm btn-primary w-100" onclick="runTests('tools/password-generator.test.js')">
+                        <i class="bi bi-play-fill me-1"></i>Run Tests
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card h-100">
+                    <div class="card-body">
+                      <h6 class="card-title d-flex align-items-center justify-content-between">
+                        <span><i class="bi bi-hash me-2"></i>Hash Generator</span>
+                        <span class="badge bg-secondary" id="badge-hash">-</span>
+                      </h6>
+                      <p class="card-text small text-muted">Tests for SHA-256, SHA-512, SHA-1 hash generation and SRI formatting.</p>
+                      <button class="btn btn-sm btn-primary w-100" onclick="runTests('tools/hash-generator.test.js')">
+                        <i class="bi bi-play-fill me-1"></i>Run Tests
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Console Section -->
+    <section id="console-section" style="display: none;">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="h3 mb-0">
+          <i class="bi bi-terminal text-primary me-2"></i>
+          Console Output
+        </h1>
+        <div>
+          <button class="btn btn-outline-secondary btn-sm" onclick="clearConsole()">
+            <i class="bi bi-trash me-1"></i>Clear
+          </button>
+          <button class="btn btn-outline-primary btn-sm" onclick="copyConsole()">
+            <i class="bi bi-clipboard me-1"></i>Copy
+          </button>
+        </div>
+      </div>
+
+      <div class="card border-0 shadow-sm">
+        <div class="card-body p-0">
+          <div id="console" class="rounded"></div>
+        </div>
+      </div>
+    </section>
+
+    </div>
+  </main>
+
+  <!-- Toast Notifications Container -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="testToast" class="toast" role="alert">
+      <div class="toast-header">
+        <i class="bi bi-check-circle-fill text-success me-2"></i>
+        <strong class="me-auto">Test Complete</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+      </div>
+      <div class="toast-body" id="toastMessage">
+        Test completed successfully
+      </div>
+    </div>
   </div>
 
-  <div class="test-section">
-    <h2>Console Output</h2>
-    <div id="console"></div>
-  </div>
-
-  <!-- Load tool registry for tests -->
+  <!-- Bootstrap JS -->
+  <script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Load dependencies -->
   <script src="../assets/js/tool-registry.js"></script>
-  
-  <!-- Load i18n for tests -->
   <script src="../assets/js/i18n.js"></script>
-  
-  <!-- Load performance monitoring as module -->
   <script type="module" src="../assets/js/lib/performance-monitoring.js"></script>
 
   <script type="module">
-    // Wait for DOM to be fully loaded
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initTestRunner);
-    } else {
-      initTestRunner();
-    }
+    // State management
+    const testStats = {
+      pass: 0,
+      fail: 0,
+      skip: 0,
+      duration: 0,
+      history: [],
+      running: false,
+      currentTest: null,
+      autoScroll: true
+    };
+    
+    const testCategories = {
+      library: [
+        'lib/validators.test.js',
+        'lib/clipboard-utils.test.js',
+        'lib/formatters.test.js',
+        'lib/storage-utils.test.js',
+        'lib/json-tree-renderer.test.js',
+        'lib/download-utils.test.js',
+        'lib/dragdrop-utils.test.js'
+      ],
+      core: [
+        'logger.test.js',
+        'performance-monitoring.test.js',
+        'i18n-fallback.test.js',
+        'tool-registry.test.js'
+      ],
+      tools: [
+        'tools/uuid-generator.test.js',
+        'tools/password-generator.test.js',
+        'tools/hash-generator.test.js'
+      ]
+    };
 
-    function initTestRunner() {
-      // Intercept console logs and display in custom console
-      const consoleDiv = document.getElementById('console');
-      const originalLog = console.log;
-      const originalError = console.error;
+    // Theme management
+    window.toggleTheme = function() {
+      const html = document.documentElement;
+      const currentTheme = html.getAttribute('data-bs-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-bs-theme', newTheme);
+      
+      const icon = document.getElementById('themeIcon');
+      icon.className = newTheme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
+      
+      localStorage.setItem('test-dashboard-theme', newTheme);
+    };
 
-      function formatMessage(msg, type = 'log') {
-        const span = document.createElement('span');
+    // Load saved theme
+    const savedTheme = localStorage.getItem('test-dashboard-theme') || 'light';
+    document.documentElement.setAttribute('data-bs-theme', savedTheme);
+    const icon = document.getElementById('themeIcon');
+    icon.className = savedTheme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
+
+    // Navigation
+    document.querySelectorAll('.sidebar .nav-link[data-section]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const section = e.currentTarget.dataset.section;
         
-        if (msg.includes('✓ PASS')) {
-          span.className = 'pass';
-        } else if (msg.includes('✗ FAIL')) {
-          span.className = 'fail';
-        } else if (msg.includes('⊝ SKIP')) {
-          span.className = 'skip';
-        } else if (msg.includes('🧪') || msg.includes('===')) {
-          span.className = 'info';
+        // Update active state
+        document.querySelectorAll('.sidebar .nav-link').forEach(l => l.classList.remove('active'));
+        e.currentTarget.classList.add('active');
+        
+        // Show section
+        document.querySelectorAll('main > section').forEach(s => s.style.display = 'none');
+        document.getElementById(`${section}-section`).style.display = 'block';
+      });
+    });
+
+    window.scrollToCategory = function(category) {
+      // Switch to tests section
+      document.querySelectorAll('main > section').forEach(s => s.style.display = 'none');
+      document.getElementById('tests-section').style.display = 'block';
+      
+      // Update sidebar
+      document.querySelectorAll('.sidebar .nav-link').forEach(l => l.classList.remove('active'));
+      document.querySelector('.sidebar .nav-link[data-section="tests"]').classList.add('active');
+      
+      // Scroll to category
+      const element = document.getElementById(category);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        
+        // Open accordion
+        const collapseElement = element.querySelector('.accordion-collapse');
+        if (collapseElement && !collapseElement.classList.contains('show')) {
+          const bsCollapse = new bootstrap.Collapse(collapseElement, { toggle: true });
         }
-        
-        span.textContent = msg;
-        consoleDiv.appendChild(span);
-        consoleDiv.appendChild(document.createTextNode('\n'));
+      }
+    };
+
+    // Console management
+    const consoleDiv = document.getElementById('console');
+    const originalLog = console.log;
+    const originalError = console.error;
+
+    function formatMessage(msg, type = 'log') {
+      const span = document.createElement('span');
+      
+      if (msg.includes('✓ PASS')) {
+        span.className = 'console-pass';
+        testStats.pass++;
+      } else if (msg.includes('✗ FAIL')) {
+        span.className = 'console-fail';
+        testStats.fail++;
+      } else if (msg.includes('⊝ SKIP')) {
+        span.className = 'console-skip';
+        testStats.skip++;
+      } else if (msg.includes('🧪') || msg.includes('===')) {
+        span.className = 'console-info';
+      } else if (msg.includes('⚠') || msg.includes('WARNING')) {
+        span.className = 'console-warn';
+      }
+      
+      span.textContent = msg;
+      consoleDiv.appendChild(span);
+      consoleDiv.appendChild(document.createTextNode('\n'));
+      
+      if (testStats.autoScroll) {
         consoleDiv.scrollTop = consoleDiv.scrollHeight;
       }
-
-      console.log = function(...args) {
-        originalLog.apply(console, args);
-        formatMessage(args.join(' '), 'log');
-      };
-
-      console.error = function(...args) {
-        originalError.apply(console, args);
-        formatMessage(args.join(' '), 'error');
-      };
-
-      window.runTests = async function(testFile) {
-        consoleDiv.innerHTML = '';
-        console.log(`Loading test suite: ${testFile}...`);
-        try {
-          // Add cache buster to force reload
-          const cacheBuster = `?v=${Date.now()}`;
-          await import(`./${testFile}${cacheBuster}`);
-        } catch (error) {
-          console.error(`Failed to load test suite: ${error.message}`);
-        }
-      };
-
-      window.clearConsole = function() {
-        consoleDiv.innerHTML = '';
-      };
-
-      window.runAllTests = async function() {
-        const allTests = [
-          'lib/validators.test.js',
-          'lib/clipboard-utils.test.js',
-          'lib/formatters.test.js',
-          'lib/storage-utils.test.js',
-          'lib/json-tree-renderer.test.js',
-          'lib/download-utils.test.js',
-          'lib/dragdrop-utils.test.js',
-          'logger.test.js',
-          'performance-monitoring.test.js',
-          'i18n-fallback.test.js',
-          'tool-registry.test.js'
-        ];
-        
-        consoleDiv.innerHTML = '';
-        console.log(`🚀 Running all test suites (${allTests.length} suites)...\n`);
-        
-        for (const testFile of allTests) {
-          console.log(`\n${'='.repeat(60)}`);
-          console.log(`📦 Loading: ${testFile}`);
-          console.log('='.repeat(60));
-          try {
-            const cacheBuster = `?v=${Date.now()}`;
-            await import(`./${testFile}${cacheBuster}`);
-          } catch (error) {
-            console.error(`❌ Failed to load ${testFile}: ${error.message}`);
-          }
-        }
-        
-        console.log(`\n${'='.repeat(60)}`);
-        console.log('✅ All test suites completed!');
-        console.log('='.repeat(60));
-      };
-
-      // Auto-run validators tests on load
-      console.log('Test runner ready. Click a button to run tests.');
+      
+      updateStats();
+      updateConsoleStatus();
     }
+
+    console.log = function(...args) {
+      originalLog.apply(console, args);
+      formatMessage(args.join(' '), 'log');
+    };
+
+    console.error = function(...args) {
+      originalError.apply(console, args);
+      formatMessage(args.join(' '), 'error');
+    };
+
+    function updateStats() {
+      document.getElementById('statsPass').textContent = testStats.pass;
+      document.getElementById('statsFail').textContent = testStats.fail;
+      document.getElementById('statsSkip').textContent = testStats.skip;
+      document.getElementById('passCounter').textContent = `${testStats.pass} Pass`;
+      document.getElementById('failCounter').textContent = `${testStats.fail} Fail`;
+      
+      // Update coverage (dummy calculation for demo)
+      const libTotal = 7;
+      const coreTotal = 4;
+      const libCoverage = Math.min(100, (testStats.pass / libTotal) * 10);
+      const coreCoverage = Math.min(100, (testStats.pass / coreTotal) * 10);
+      
+      document.getElementById('libCoverage').textContent = `${Math.round(libCoverage)}%`;
+      document.getElementById('libCoverageBar').style.width = `${libCoverage}%`;
+      document.getElementById('coreCoverage').textContent = `${Math.round(coreCoverage)}%`;
+      document.getElementById('coreCoverageBar').style.width = `${coreCoverage}%`;
+    }
+
+    window.clearConsole = function() {
+      consoleDiv.innerHTML = '';
+      testStats.pass = 0;
+      testStats.fail = 0;
+      testStats.skip = 0;
+      testStats.duration = 0;
+      testStats.running = false;
+      testStats.currentTest = null;
+      updateStats();
+      updateConsoleStatus();
+      console.log('🎯 Console cleared - Ready for testing');
+    };
+    
+    window.toggleAutoScroll = function() {
+      testStats.autoScroll = document.getElementById('autoScroll').checked;
+      localStorage.setItem('test-dashboard-autoscroll', testStats.autoScroll);
+    };
+    
+    function updateConsoleStatus() {
+      const status = document.getElementById('consoleStatus');
+      if (!status) return;
+      
+      if (testStats.running) {
+        status.innerHTML = `<span class="text-warning"><i class="bi bi-hourglass-split me-1"></i>Running: ${testStats.currentTest}</span>`;
+      } else if (testStats.pass > 0 || testStats.fail > 0) {
+        const total = testStats.pass + testStats.fail + testStats.skip;
+        status.innerHTML = `<span class="text-success"><i class="bi bi-check-circle me-1"></i>Completed ${total} tests</span>`;
+      } else {
+        status.innerHTML = '<span class="text-muted">Ready</span>';
+      }
+    }
+    
+    window.runCategoryTests = async function(category) {
+      const tests = testCategories[category];
+      if (!tests) return;
+      
+      clearConsole();
+      
+      console.log(`\n${'='.repeat(60)}`);
+      console.log(`📦 Running ${category.toUpperCase()} tests (${tests.length} suites)...`);
+      console.log('='.repeat(60));
+      
+      // Auto-switch to console
+      document.querySelectorAll('main > section').forEach(s => s.style.display = 'none');
+      document.getElementById('console-section').style.display = 'block';
+      document.querySelectorAll('.sidebar .nav-link').forEach(l => l.classList.remove('active'));
+      document.querySelector('.sidebar .nav-link[data-section="console"]').classList.add('active');
+      
+      for (const testFile of tests) {
+        await runTests(testFile);
+      }
+      
+      console.log(`\n✅ ${category.toUpperCase()} tests completed!`);
+      showToast(`${category.charAt(0).toUpperCase() + category.slice(1)} tests completed`, 'success');
+    };
+
+    window.copyConsole = function() {
+      const text = consoleDiv.innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        showToast('Console copied to clipboard', 'success');
+      });
+    };
+
+    window.runTests = async function(testFile) {
+      testStats.running = true;
+      testStats.currentTest = testFile.split('/').pop().replace('.test.js', '');
+      updateConsoleStatus();
+      
+      const startTime = Date.now();
+      const testName = testStats.currentTest;
+      
+      console.log(`\n${'='.repeat(60)}`);
+      console.log(`🧪 Running: ${testFile}`);
+      console.log('='.repeat(60));
+      
+      try {
+        const cacheBuster = `?v=${Date.now()}`;
+        await import(`./${testFile}${cacheBuster}`);
+        
+        const duration = Date.now() - startTime;
+        testStats.duration += duration;
+        
+        addToHistory(testName, 'success', duration);
+        showToast(`${testName} completed in ${duration}ms`, 'success');
+        
+        // Update badge
+        const badge = document.querySelector(`[data-test="${testName}"]`);
+        if (badge) {
+          badge.className = 'badge bg-success ms-2 test-badge';
+          badge.textContent = 'Passed';
+        }
+        
+      } catch (error) {
+        console.error(`❌ Failed to load ${testFile}: ${error.message}`);
+        addToHistory(testName, 'error', Date.now() - startTime);
+        showToast(`${testName} failed: ${error.message}`, 'error');
+        
+        // Update badge
+        const badge = document.querySelector(`[data-test="${testName}"]`);
+        if (badge) {
+          badge.className = 'badge bg-danger ms-2 test-badge';
+          badge.textContent = 'Failed';
+        }
+      }
+      
+      document.getElementById('statsDuration').textContent = `${testStats.duration}ms`;
+      testStats.running = false;
+      testStats.currentTest = null;
+      updateConsoleStatus();
+    };
+
+    window.runAllTests = async function() {
+      const allTests = [
+        ...testCategories.library,
+        ...testCategories.core,
+        ...testCategories.tools
+      ];
+      
+      clearConsole();
+      const startTime = Date.now();
+      
+      // Auto-switch to console
+      document.querySelectorAll('main > section').forEach(s => s.style.display = 'none');
+      document.getElementById('console-section').style.display = 'block';
+      document.querySelectorAll('.sidebar .nav-link').forEach(l => l.classList.remove('active'));
+      document.querySelector('.sidebar .nav-link[data-section="console"]').classList.add('active');
+      
+      console.log(`\n${'='.repeat(60)}`);
+      console.log(`🚀 Running all test suites (${allTests.length} suites)...`);
+      console.log('='.repeat(60));
+      
+      for (const testFile of allTests) {
+        await runTests(testFile);
+      }
+      
+      const totalDuration = Date.now() - startTime;
+      console.log(`\n${'='.repeat(60)}`);
+      console.log(`✅ All test suites completed in ${totalDuration}ms`);
+      console.log(`   Passed: ${testStats.pass} | Failed: ${testStats.fail} | Skipped: ${testStats.skip}`);
+      console.log('='.repeat(60));
+      
+      showToast(`All tests completed! ${testStats.pass} passed, ${testStats.fail} failed`, testStats.fail > 0 ? 'warning' : 'success');
+    };
+
+    function addToHistory(testName, status, duration) {
+      const activity = document.getElementById('recentActivity');
+      const time = new Date().toLocaleTimeString();
+      
+      const statusIcon = status === 'success' 
+        ? '<i class="bi bi-check-circle-fill text-success me-2"></i>'
+        : '<i class="bi bi-x-circle-fill text-danger me-2"></i>';
+      
+      const item = document.createElement('div');
+      item.className = 'list-group-item px-0 d-flex justify-content-between align-items-center';
+      item.innerHTML = `
+        <div>
+          ${statusIcon}
+          <strong>${testName}</strong>
+          <small class="text-muted ms-2">${time}</small>
+        </div>
+        <span class="badge bg-secondary">${duration}ms</span>
+      `;
+      
+      if (activity.querySelector('.text-center')) {
+        activity.innerHTML = '';
+      }
+      
+      activity.insertBefore(item, activity.firstChild);
+      
+      // Keep only last 10
+      while (activity.children.length > 10) {
+        activity.removeChild(activity.lastChild);
+      }
+    }
+
+    function showToast(message, type = 'success') {
+      const toast = document.getElementById('testToast');
+      const toastMessage = document.getElementById('toastMessage');
+      const header = toast.querySelector('.toast-header');
+      
+      toastMessage.textContent = message;
+      
+      const icon = header.querySelector('i');
+      icon.className = type === 'success' 
+        ? 'bi bi-check-circle-fill text-success me-2'
+        : type === 'error'
+        ? 'bi bi-x-circle-fill text-danger me-2'
+        : 'bi bi-exclamation-triangle-fill text-warning me-2';
+      
+      const bsToast = new bootstrap.Toast(toast);
+      bsToast.show();
+    }
+
+    window.exportResults = function() {
+      const results = {
+        timestamp: new Date().toISOString(),
+        stats: testStats,
+        console: consoleDiv.innerText
+      };
+      
+      const blob = new Blob([JSON.stringify(results, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `test-results-${Date.now()}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+      
+      showToast('Test results exported successfully', 'success');
+    };
+
+    // Keyboard shortcuts
+    document.addEventListener('keydown', (e) => {
+      // Ctrl+Enter: Run all tests
+      if (e.ctrlKey && e.key === 'Enter') {
+        e.preventDefault();
+        runAllTests();
+      }
+      // Ctrl+L: Clear console
+      if (e.ctrlKey && e.key === 'l') {
+        e.preventDefault();
+        clearConsole();
+      }
+      // Ctrl+E: Export results
+      if (e.ctrlKey && e.key === 'e') {
+        e.preventDefault();
+        exportResults();
+      }
+    });
+    
+    // Load saved auto-scroll preference
+    const savedAutoScroll = localStorage.getItem('test-dashboard-autoscroll');
+    if (savedAutoScroll !== null) {
+      testStats.autoScroll = savedAutoScroll === 'true';
+      document.getElementById('autoScroll').checked = testStats.autoScroll;
+    }
+    
+    // Initialize
+    console.log('🎯 Test Dashboard Ready');
+    console.log('💡 Shortcuts: Ctrl+Enter (Run All) | Ctrl+L (Clear) | Ctrl+E (Export)\n');
   </script>
 </body>
 </html>

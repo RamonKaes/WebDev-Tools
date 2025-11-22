@@ -1,10 +1,7 @@
-# Security: Password protection for tests directory
-AuthType Basic
-AuthName "Test Area - Access Restricted"
-AuthUserFile /var/www/html/WebDev-Tools/tests/.htpasswd
-Require valid-user
+# Tests Directory - Public on GitHub
+# Password protection removed for public repository
 
-# Additional security headers
+# Security headers
 <IfModule mod_headers.c>
     Header set X-Robots-Tag "noindex, nofollow"
 </IfModule>

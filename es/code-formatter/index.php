@@ -1,0 +1,84 @@
+<?php
+
+declare(strict_types=1);
+
+$toolId = 'codeFormatterTool';
+$lang = 'es';
+
+$customFeaturesContent = <<<HTML
+<ul class="list-unstyled">
+    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Formato para HTML, CSS, JavaScript, XML y SQL</li>
+    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Modos de embellecer y minificar</li>
+    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Indentación personalizable (2/4 espacios o tabulaciones)</li>
+    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Autoformato en tiempo real</li>
+    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Validación de sintaxis</li>
+    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Copiar y descargar con un clic</li>
+</ul>
+HTML;
+
+/*
+$customNoticeContent = <<<HTML
+<div class="alert alert-info" role="alert">
+  <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Opciones de formateo</h2>
+  <ul class="mb-0">
+    <li>Embellecer: hace el código más legible mediante sangría y saltos de línea correctos</li>
+    <li>Minificar: elimina espacios innecesarios para reducir el tamaño del archivo</li>
+    <li>Indentación: elige entre 2 espacios, 4 espacios o tabulaciones</li>
+  </ul>
+</div>
+HTML;
+*/
+
+$additionalSections = [
+    [
+        'title' => 'Casos de uso comunes',
+        'icon' => 'lightbulb',
+        'content' => <<<HTML
+<div class="row">
+  <div class="col-md-6">
+    <h3 class="h6">Desarrollo</h3>
+    <ul>
+      <li>Embellecer código minificado para facilitar la lectura y depuración</li>
+      <li>Estandarizar el formato dentro del equipo</li>
+      <li>Limpiar código desordenado o generado automáticamente</li>
+      <li>Formatear antes de hacer commit en control de versiones</li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <h3 class="h6">Producción</h3>
+    <ul>
+      <li>Minificar para reducir el tamaño y mejorar los tiempos de carga</li>
+      <li>Preparar el código para el despliegue</li>
+      <li>Optimizar el uso de ancho de banda</li>
+      <li>Mejorar el rendimiento del sitio web</li>
+    </ul>
+  </div>
+</div>
+HTML
+    ]
+];
+
+$usefulResources = [
+    [
+        'url' => 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference',
+        'title' => 'Referencia de JavaScript en MDN',
+        'description' => 'Guía completa de sintaxis y buenas prácticas de JavaScript'
+    ],
+    [
+        'url' => 'https://www.w3.org/Style/CSS/',
+        'title' => 'Especificaciones CSS del W3C',
+        'description' => 'Estándares oficiales de CSS y recomendaciones de formato'
+    ],
+    [
+        'url' => 'https://html.spec.whatwg.org/',
+        'title' => 'HTML Living Standard',
+        'description' => 'Especificación actual de HTML y reglas de sintaxis'
+    ],
+    [
+        'url' => 'https://www.w3.org/TR/xml/',
+        'title' => 'Especificación XML del W3C',
+        'description' => 'Estándar oficial del lenguaje XML (Extensible Markup Language)'
+    ]
+];
+
+require_once __DIR__ . '/../../partials/tool-base.php';

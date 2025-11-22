@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clipboard Utils - Manual Test</title>
+  <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+  <style>
+    body {
+      padding: 20px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .test-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .test-section {
+      border: 1px solid #dee2e6;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      background: white;
+    }
+    .code-block {
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 5px;
+      font-family: 'Courier New', monospace;
+      margin: 10px 0;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+  </style>
+</head>
+<body>
+  <div class="test-container">
+    <h1>Clipboard Utils - Manual Test</h1>
+    <p class="text-muted">Test the enhanced clipboard functionality with fallback and toast notifications</p>
+    
+    <div class="test-section">
+      <h3>Test 1: Copy with Toast Notification</h3>
+      <p>Click the button to copy text and see a toast notification</p>
+      <div class="code-block" id="text1">Hello World! This is a test.</div>
+      <button class="btn btn-primary" id="btn-toast">Copy with Toast</button>
+    </div>
+    
+    <div class="test-section">
+      <h3>Test 2: Copy with Button Feedback Only</h3>
+      <p>No toast, just button state change</p>
+      <div class="code-block" id="text2">Button feedback only - no toast</div>
+      <button class="btn btn-secondary" id="btn-feedback">Copy (No Toast)</button>
+    </div>
+    
+    <div class="test-section">
+      <h3>Test 3: Copy with Both Toast and Button Feedback</h3>
+      <div class="code-block" id="text3">Both feedback mechanisms active!</div>
+      <button class="btn btn-success" id="btn-both">Copy (Both)</button>
+    </div>
+    
+    <div class="test-section">
+      <h3>Test 4: Different Toast Types</h3>
+      <div class="d-flex gap-2 flex-wrap">
+        <button class="btn btn-success" id="btn-success">Success Toast</button>
+        <button class="btn btn-danger" id="btn-error">Error Toast</button>
+        <button class="btn btn-warning" id="btn-warning">Warning Toast</button>
+        <button class="btn btn-info" id="btn-info">Info Toast</button>
+      </div>
+    </div>
+    
+    <div class="test-section">
+      <h3>Test 5: Copy Special Characters</h3>
+      <p>Test UTF-8, emojis, and HTML entities</p>
+      <div class="code-block" id="text5">🎉 Special chars: <>&"' UTF-8: äöü €</div>
+      <button class="btn btn-primary" id="btn-special">Copy Special Chars</button>
+    </div>
+    
+    <div class="test-section">
+      <h3>Test 6: Copy Empty String</h3>
+      <p>Should show warning toast</p>
+      <button class="btn btn-outline-primary" id="btn-empty">Try Copy Empty</button>
+    </div>
+    
+    <div class="test-section">
+      <h3>Test 7: Multiple Toasts</h3>
+      <p>Test toast stacking</p>
+      <button class="btn btn-primary" id="btn-multiple">Trigger 5 Toasts</button>
+    </div>
+    
+    <div class="test-section">
+      <h3>Browser Info</h3>
+      <div id="browser-info"></div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { 
+      copyToClipboard, 
+      handleCopyButton, 
+      copyWithToast,
+      showToast,
+      isClipboardSupported 
+    } from '../assets/js/lib/clipboard-utils.js';
+    
+    // Test 1: Copy with toast
+    document.getElementById('btn-toast').addEventListener('click', async () => {
+      const text = document.getElementById('text1').textContent;
+      await copyWithToast(text, {
+        successMessage: 'Text successfully copied! 🎉'
+      });
+    });
+    
+    // Test 2: Copy with button feedback only
+    document.getElementById('btn-feedback').addEventListener('click', async () => {
+      const btn = document.getElementById('btn-feedback');
+      const text = document.getElementById('text2').textContent;
+      await handleCopyButton(btn, text, {
+        useToast: false,
+        showButtonFeedback: true
+      });
+    });
+    
+    // Test 3: Copy with both
+    document.getElementById('btn-both').addEventListener('click', async () => {
+      const btn = document.getElementById('btn-both');
+      const text = document.getElementById('text3').textContent;
+      await handleCopyButton(btn, text, {
+        useToast: true,
+        showButtonFeedback: true,
+        successMessage: 'Copied successfully!'
+      });
+    });
+    
+    // Test 4: Different toast types
+    document.getElementById('btn-success').addEventListener('click', () => {
+      showToast('This is a success message!', 'success');
+    });
+    
+    document.getElementById('btn-error').addEventListener('click', () => {
+      showToast('This is an error message!', 'error');
+    });
+    
+    document.getElementById('btn-warning').addEventListener('click', () => {
+      showToast('This is a warning message!', 'warning');
+    });
+    
+    document.getElementById('btn-info').addEventListener('click', () => {
+      showToast('This is an info message!', 'info');
+    });
+    
+    // Test 5: Special characters
+    document.getElementById('btn-special').addEventListener('click', async () => {
+      const text = document.getElementById('text5').textContent;
+      await copyWithToast(text, {
+        successMessage: 'Special characters copied!'
+      });
+    });
+    
+    // Test 6: Empty string
+    document.getElementById('btn-empty').addEventListener('click', async () => {
+      await copyWithToast('');
+    });
+    
+    // Test 7: Multiple toasts
+    document.getElementById('btn-multiple').addEventListener('click', () => {
+      showToast('Toast 1: Success', 'success', 4000);
+      setTimeout(() => showToast('Toast 2: Warning', 'warning', 4000), 200);
+      setTimeout(() => showToast('Toast 3: Error', 'error', 4000), 400);
+      setTimeout(() => showToast('Toast 4: Info', 'info', 4000), 600);
+      setTimeout(() => showToast('Toast 5: Success again', 'success', 4000), 800);
+    });
+    
+    // Browser info
+    const info = document.getElementById('browser-info');
+    info.innerHTML = `
+      <strong>Clipboard API Support:</strong> ${isClipboardSupported() ? '✅ Yes' : '❌ No (will use fallback)'}<br>
+      <strong>User Agent:</strong> ${navigator.userAgent}<br>
+      <strong>Secure Context:</strong> ${window.isSecureContext ? '✅ Yes (HTTPS/localhost)' : '❌ No (requires HTTPS)'}
+    `;
+  </script>
+</body>
+</html>

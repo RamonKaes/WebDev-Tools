@@ -1,0 +1,13 @@
+# Security: Password protection for tests directory
+AuthType Basic
+AuthName "Test Area - Access Restricted"
+AuthUserFile /var/www/html/WebDev-Tools/tests/.htpasswd
+Require valid-user
+
+# Additional security headers
+<IfModule mod_headers.c>
+    Header set X-Robots-Tag "noindex, nofollow"
+</IfModule>
+
+# Disable directory listing
+Options -Indexes

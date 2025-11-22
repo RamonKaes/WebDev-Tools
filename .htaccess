@@ -1,0 +1,23 @@
+# Development .htaccess for localhost
+# ====================================
+# Minimal config for local development
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  # No HTTPS or www redirects
+  # No legacy redirects
+  ErrorDocument 404 /404.php
+  ErrorDocument 403 /403.php
+  ErrorDocument 500 /500.php
+</IfModule>
+
+# No aggressive caching, no security headers
+# Allow all assets to be loaded and changed instantly
+<IfModule mod_headers.c>
+  Header always unset X-Powered-By
+  Header always unset Server
+  Header set Cache-Control "no-cache, no-store, must-revalidate"
+  Header set Pragma "no-cache"
+  Header set Expires "0"
+</IfModule>

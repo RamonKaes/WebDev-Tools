@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON Tree Renderer - Manual Test</title>
+  <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/bootstrap-icons/bootstrap-icons.min.css">
+  <style>
+    body {
+      padding: 20px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .test-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .test-case {
+      border: 1px solid #dee2e6;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      background: white;
+    }
+    #results {
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 5px;
+      margin-top: 20px;
+      font-family: monospace;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="test-container">
+    <h1>JSON Tree Renderer - Manual Test</h1>
+    
+    <div class="test-case">
+      <h3>Test 1: Small Object (No Virtualization)</h3>
+      <div id="test1-container"></div>
+    </div>
+    
+    <div class="test-case">
+      <h3>Test 2: Large Object (With Virtualization)</h3>
+      <p>Generating 600 nested objects (~1200 nodes)</p>
+      <div id="test2-container"></div>
+    </div>
+    
+    <div class="test-case">
+      <h3>Test 3: Large Array (Lazy Rendering)</h3>
+      <p>Array with 150 items (should show "Load More")</p>
+      <div id="test3-container"></div>
+    </div>
+    
+    <div class="test-case">
+      <h3>Test 4: Deep Nesting</h3>
+      <p>10 levels deep nested structure</p>
+      <div id="test4-container"></div>
+    </div>
+    
+    <div id="results"></div>
+  </div>
+
+  <script type="module">
+    import { renderJSONTree, addTreeStyles, CONFIG } from '../assets/js/lib/json-tree-renderer.js';
+    
+    const results = [];
+    
+    // Add styles first
+    addTreeStyles();
+    
+    // Test 1: Small object
+    try {
+      const smallData = {
+        name: 'John Doe',
+        age: 30,
+        email: 'john@example.com',
+        address: {
+          street: '123 Main St',
+          city: 'New York',
+          zip: '10001'
+        }
+      };
+      
+      renderJSONTree(smallData, document.getElementById('test1-container'));
+      results.push('✓ Test 1: Small object rendered successfully');
+      
+      const tree = document.querySelector('#test1-container .json-tree');
+      const isVirtualized = tree.dataset.virtualized === 'true';
+      results.push(`  Virtualization: ${isVirtualized ? 'ENABLED (unexpected)' : 'DISABLED (expected)'}`);
+      results.push(`  Node count: ${tree.dataset.nodeCount}`);
+    } catch (error) {
+      results.push(`✗ Test 1 failed: ${error.message}`);
+    }
+    
+    // Test 2: Large object (>1000 nodes)
+    try {
+      const largeData = {};
+      for (let i = 0; i < 600; i++) {
+        largeData[`item${i}`] = {
+          id: i,
+          value: `Value ${i}`
+        };
+      }
+      
+      renderJSONTree(largeData, document.getElementById('test2-container'));
+      results.push('✓ Test 2: Large object rendered successfully');
+      
+      const tree = document.querySelector('#test2-container .json-tree');
+      const isVirtualized = tree.dataset.virtualized === 'true';
+      results.push(`  Virtualization: ${isVirtualized ? 'ENABLED (expected)' : 'DISABLED (unexpected)'}`);
+      results.push(`  Node count: ${tree.dataset.nodeCount}`);
+      
+      // Check for lazy rendering
+      const lazyElements = document.querySelectorAll('#test2-container [data-lazy-render="true"]');
+      results.push(`  Lazy render elements: ${lazyElements.length}`);
+    } catch (error) {
+      results.push(`✗ Test 2 failed: ${error.message}`);
+    }
+    
+    // Test 3: Large array
+    try {
+      const largeArray = [];
+      for (let i = 0; i < 150; i++) {
+        largeArray.push({
+          id: i,
+          name: `Item ${i}`,
+          value: Math.random() * 100
+        });
+      }
+      
+      renderJSONTree(largeArray, document.getElementById('test3-container'));
+      results.push('✓ Test 3: Large array rendered successfully');
+      
+      const loadMoreBtn = document.querySelector('#test3-container .json-tree-load-more');
+      results.push(`  "Load More" button: ${loadMoreBtn ? 'PRESENT (expected)' : 'MISSING (unexpected)'}`);
+    } catch (error) {
+      results.push(`✗ Test 3 failed: ${error.message}`);
+    }
+    
+    // Test 4: Deep nesting
+    try {
+      let deepData = { level: 1 };
+      let current = deepData;
+      for (let i = 2; i <= 10; i++) {
+        current.nested = { level: i };
+        current = current.nested;
+      }
+      
+      renderJSONTree(deepData, document.getElementById('test4-container'));
+      results.push('✓ Test 4: Deep nested structure rendered successfully');
+      
+      const toggles = document.querySelectorAll('#test4-container .json-tree-toggle');
+      results.push(`  Toggle buttons: ${toggles.length}`);
+    } catch (error) {
+      results.push(`✗ Test 4 failed: ${error.message}`);
+    }
+    
+    // Display results
+    document.getElementById('results').textContent = results.join('\n');
+    
+    console.log('Manual tests completed:');
+    console.log(results.join('\n'));
+  </script>
+</body>
+</html>

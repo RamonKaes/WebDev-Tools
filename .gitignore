@@ -1,0 +1,65 @@
+# WebDev-Tools .gitignore
+
+# Environment and Configuration
+.env
+.env.*
+!.env.example
+config/local.php
+config/database.php
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs and Temporary Files
+*.log
+logs/
+tmp/
+temp/
+cache/
+
+# Dependency Directories
+node_modules/
+vendor/
+bower_components/
+
+# Build Outputs
+dist/
+build/
+*.min.js
+*.min.css
+!assets/**/*.min.js
+!assets/**/*.min.css
+
+# OS Files
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Backup Files
+*.bak
+*.backup
+*.old
+*~
+
+# PHP
+composer.phar
+composer.lock
+
+# Sensitive Data
+*.pem
+*.key
+*.cert
+private/
+secrets/
+
+# Testing
+coverage/
+.phpunit.result.cache
+
+# Documentation Build
+docs/_build/

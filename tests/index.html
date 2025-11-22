@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>WebDev-Tools Test Runner</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    h1 {
+      color: #333;
+      border-bottom: 3px solid #007bff;
+      padding-bottom: 10px;
+    }
+    .test-section {
+      background: white;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 5px;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    #console {
+      background: #1e1e1e;
+      color: #d4d4d4;
+      padding: 15px;
+      border-radius: 5px;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre-wrap;
+      max-height: 600px;
+      overflow-y: auto;
+      margin-top: 20px;
+    }
+    .pass { color: #4caf50; }
+    .fail { color: #f44336; }
+    .skip { color: #ff9800; }
+    .info { color: #2196f3; }
+  </style>
+</head>
+<body>
+  <h1>🧪 WebDev-Tools Test Runner</h1>
+  
+  <div class="test-section">
+    <h2>Available Test Suites</h2>
+    <p>Select a test suite to run:</p>
+    
+    <h3>Library Tests</h3>
+    <button onclick="runTests('lib/validators.test.js')">Validators</button>
+    <button onclick="runTests('lib/clipboard-utils.test.js')">Clipboard Utils</button>
+    <button onclick="runTests('lib/formatters.test.js')">Formatters</button>
+    <button onclick="runTests('lib/storage-utils.test.js')">Storage Utils</button>
+    <button onclick="runTests('lib/json-tree-renderer.test.js')">JSON Tree Renderer</button>
+    <button onclick="runTests('lib/download-utils.test.js')">Download Utils</button>
+    <button onclick="runTests('lib/dragdrop-utils.test.js')">Drag & Drop Utils</button>
+    
+    <h3 style="margin-top: 20px;">Core Tests</h3>
+    <button onclick="runTests('logger.test.js')">Logger Error Handling</button>
+    <button onclick="runTests('performance-monitoring.test.js')">Performance Monitoring</button>
+    <button onclick="runTests('i18n-fallback.test.js')">I18n Fallback</button>
+    <button onclick="runTests('tool-registry.test.js')">Tool Registry</button>
+    
+    <h3 style="margin-top: 20px;">Actions</h3>
+    <button onclick="runAllTests()">▶ Run All Tests</button>
+    <button onclick="clearConsole()">Clear Console</button>
+  </div>
+
+  <div class="test-section">
+    <h2>Console Output</h2>
+    <div id="console"></div>
+  </div>
+
+  <!-- Load tool registry for tests -->
+  <script src="../assets/js/tool-registry.js"></script>
+  
+  <!-- Load i18n for tests -->
+  <script src="../assets/js/i18n.js"></script>
+  
+  <!-- Load performance monitoring as module -->
+  <script type="module" src="../assets/js/lib/performance-monitoring.js"></script>
+
+  <script type="module">
+    // Wait for DOM to be fully loaded
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initTestRunner);
+    } else {
+      initTestRunner();
+    }
+
+    function initTestRunner() {
+      // Intercept console logs and display in custom console
+      const consoleDiv = document.getElementById('console');
+      const originalLog = console.log;
+      const originalError = console.error;
+
+      function formatMessage(msg, type = 'log') {
+        const span = document.createElement('span');
+        
+        if (msg.includes('✓ PASS')) {
+          span.className = 'pass';
+        } else if (msg.includes('✗ FAIL')) {
+          span.className = 'fail';
+        } else if (msg.includes('⊝ SKIP')) {
+          span.className = 'skip';
+        } else if (msg.includes('🧪') || msg.includes('===')) {
+          span.className = 'info';
+        }
+        
+        span.textContent = msg;
+        consoleDiv.appendChild(span);
+        consoleDiv.appendChild(document.createTextNode('\n'));
+        consoleDiv.scrollTop = consoleDiv.scrollHeight;
+      }
+
+      console.log = function(...args) {
+        originalLog.apply(console, args);
+        formatMessage(args.join(' '), 'log');
+      };
+
+      console.error = function(...args) {
+        originalError.apply(console, args);
+        formatMessage(args.join(' '), 'error');
+      };
+
+      window.runTests = async function(testFile) {
+        consoleDiv.innerHTML = '';
+        console.log(`Loading test suite: ${testFile}...`);
+        try {
+          // Add cache buster to force reload
+          const cacheBuster = `?v=${Date.now()}`;
+          await import(`./${testFile}${cacheBuster}`);
+        } catch (error) {
+          console.error(`Failed to load test suite: ${error.message}`);
+        }
+      };
+
+      window.clearConsole = function() {
+        consoleDiv.innerHTML = '';
+      };
+
+      window.runAllTests = async function() {
+        const allTests = [
+          'lib/validators.test.js',
+          'lib/clipboard-utils.test.js',
+          'lib/formatters.test.js',
+          'lib/storage-utils.test.js',
+          'lib/json-tree-renderer.test.js',
+          'lib/download-utils.test.js',
+          'lib/dragdrop-utils.test.js',
+          'logger.test.js',
+          'performance-monitoring.test.js',
+          'i18n-fallback.test.js',
+          'tool-registry.test.js'
+        ];
+        
+        consoleDiv.innerHTML = '';
+        console.log(`🚀 Running all test suites (${allTests.length} suites)...\n`);
+        
+        for (const testFile of allTests) {
+          console.log(`\n${'='.repeat(60)}`);
+          console.log(`📦 Loading: ${testFile}`);
+          console.log('='.repeat(60));
+          try {
+            const cacheBuster = `?v=${Date.now()}`;
+            await import(`./${testFile}${cacheBuster}`);
+          } catch (error) {
+            console.error(`❌ Failed to load ${testFile}: ${error.message}`);
+          }
+        }
+        
+        console.log(`\n${'='.repeat(60)}`);
+        console.log('✅ All test suites completed!');
+        console.log('='.repeat(60));
+      };
+
+      // Auto-run validators tests on load
+      console.log('Test runner ready. Click a button to run tests.');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,1370 @@
+[
+  {
+    "char": "&",
+    "name": "Ampersand",
+    "entity": "&amp;",
+    "unicode": "U+0026",
+    "decimal": "&#38;",
+    "category": "html"
+  },
+  {
+    "char": "<",
+    "name": "Less Than",
+    "entity": "&lt;",
+    "unicode": "U+003C",
+    "decimal": "&#60;",
+    "category": "html"
+  },
+  {
+    "char": ">",
+    "name": "Greater Than",
+    "entity": "&gt;",
+    "unicode": "U+003E",
+    "decimal": "&#62;",
+    "category": "html"
+  },
+  {
+    "char": "\"",
+    "name": "Quotation Mark",
+    "entity": "&quot;",
+    "unicode": "U+0022",
+    "decimal": "&#34;",
+    "category": "html"
+  },
+  {
+    "char": "'",
+    "name": "Apostrophe",
+    "entity": "&apos;",
+    "unicode": "U+0027",
+    "decimal": "&#39;",
+    "category": "html"
+  },
+  {
+    "char": " ",
+    "name": "Non-Breaking Space",
+    "entity": "&nbsp;",
+    "unicode": "U+00A0",
+    "decimal": "&#160;",
+    "category": "html"
+  },
+  {
+    "char": "©",
+    "name": "Copyright Sign",
+    "entity": "&copy;",
+    "unicode": "U+00A9",
+    "decimal": "&#169;",
+    "category": "symbols"
+  },
+  {
+    "char": "®",
+    "name": "Registered Sign",
+    "entity": "&reg;",
+    "unicode": "U+00AE",
+    "decimal": "&#174;",
+    "category": "symbols"
+  },
+  {
+    "char": "™",
+    "name": "Trade Mark Sign",
+    "entity": "&trade;",
+    "unicode": "U+2122",
+    "decimal": "&#8482;",
+    "category": "symbols"
+  },
+  {
+    "char": "€",
+    "name": "Euro Sign",
+    "entity": "&euro;",
+    "unicode": "U+20AC",
+    "decimal": "&#8364;",
+    "category": "currency"
+  },
+  {
+    "char": "$",
+    "name": "Dollar Sign",
+    "entity": "$",
+    "unicode": "U+0024",
+    "decimal": "&#36;",
+    "category": "currency"
+  },
+  {
+    "char": "£",
+    "name": "Pound Sign",
+    "entity": "&pound;",
+    "unicode": "U+00A3",
+    "decimal": "&#163;",
+    "category": "currency"
+  },
+  {
+    "char": "¥",
+    "name": "Yen Sign",
+    "entity": "&yen;",
+    "unicode": "U+00A5",
+    "decimal": "&#165;",
+    "category": "currency"
+  },
+  {
+    "char": "¢",
+    "name": "Cent Sign",
+    "entity": "&cent;",
+    "unicode": "U+00A2",
+    "decimal": "&#162;",
+    "category": "currency"
+  },
+  {
+    "char": "ä",
+    "name": "Latin Small Letter A with Diaeresis",
+    "entity": "&auml;",
+    "unicode": "U+00E4",
+    "decimal": "&#228;",
+    "category": "diacritics"
+  },
+  {
+    "char": "Ä",
+    "name": "Latin Capital Letter A with Diaeresis",
+    "entity": "&Auml;",
+    "unicode": "U+00C4",
+    "decimal": "&#196;",
+    "category": "diacritics"
+  },
+  {
+    "char": "ö",
+    "name": "Latin Small Letter O with Diaeresis",
+    "entity": "&ouml;",
+    "unicode": "U+00F6",
+    "decimal": "&#246;",
+    "category": "diacritics"
+  },
+  {
+    "char": "Ö",
+    "name": "Latin Capital Letter O with Diaeresis",
+    "entity": "&Ouml;",
+    "unicode": "U+00D6",
+    "decimal": "&#214;",
+    "category": "diacritics"
+  },
+  {
+    "char": "ü",
+    "name": "Latin Small Letter U with Diaeresis",
+    "entity": "&uuml;",
+    "unicode": "U+00FC",
+    "decimal": "&#252;",
+    "category": "diacritics"
+  },
+  {
+    "char": "Ü",
+    "name": "Latin Capital Letter U with Diaeresis",
+    "entity": "&Uuml;",
+    "unicode": "U+00DC",
+    "decimal": "&#220;",
+    "category": "diacritics"
+  },
+  {
+    "char": "ß",
+    "name": "Latin Small Letter Sharp S",
+    "entity": "&szlig;",
+    "unicode": "U+00DF",
+    "decimal": "&#223;",
+    "category": "diacritics"
+  },
+  {
+    "char": "á",
+    "name": "Latin Small Letter A with Acute",
+    "entity": "&aacute;",
+    "unicode": "U+00E1",
+    "decimal": "&#225;",
+    "category": "diacritics"
+  },
+  {
+    "char": "é",
+    "name": "Latin Small Letter E with Acute",
+    "entity": "&eacute;",
+    "unicode": "U+00E9",
+    "decimal": "&#233;",
+    "category": "diacritics"
+  },
+  {
+    "char": "í",
+    "name": "Latin Small Letter I with Acute",
+    "entity": "&iacute;",
+    "unicode": "U+00ED",
+    "decimal": "&#237;",
+    "category": "diacritics"
+  },
+  {
+    "char": "ó",
+    "name": "Latin Small Letter O with Acute",
+    "entity": "&oacute;",
+    "unicode": "U+00F3",
+    "decimal": "&#243;",
+    "category": "diacritics"
+  },
+  {
+    "char": "ú",
+    "name": "Latin Small Letter U with Acute",
+    "entity": "&uacute;",
+    "unicode": "U+00FA",
+    "decimal": "&#250;",
+    "category": "diacritics"
+  },
+  {
+    "char": "à",
+    "name": "Latin Small Letter A with Grave",
+    "entity": "&agrave;",
+    "unicode": "U+00E0",
+    "decimal": "&#224;",
+    "category": "diacritics"
+  },
+  {
+    "char": "è",
+    "name": "Latin Small Letter E with Grave",
+    "entity": "&egrave;",
+    "unicode": "U+00E8",
+    "decimal": "&#232;",
+    "category": "diacritics"
+  },
+  {
+    "char": "ì",
+    "name": "Latin Small Letter I with Grave",
+    "entity": "&igrave;",
+    "unicode": "U+00EC",
+    "decimal": "&#236;",
+    "category": "diacritics"
+  },
+  {
+    "char": "ò",
+    "name": "Latin Small Letter O with Grave",
+    "entity": "&ograve;",
+    "unicode": "U+00F2",
+    "decimal": "&#242;",
+    "category": "diacritics"
+  },
+  {
+    "char": "ù",
+    "name": "Latin Small Letter U with Grave",
+    "entity": "&ugrave;",
+    "unicode": "U+00F9",
+    "decimal": "&#249;",
+    "category": "diacritics"
+  },
+  {
+    "char": "â",
+    "name": "Latin Small Letter A with Circumflex",
+    "entity": "&acirc;",
+    "unicode": "U+00E2",
+    "decimal": "&#226;",
+    "category": "diacritics"
+  },
+  {
+    "char": "ê",
+    "name": "Latin Small Letter E with Circumflex",
+    "entity": "&ecirc;",
+    "unicode": "U+00EA",
+    "decimal": "&#234;",
+    "category": "diacritics"
+  },
+  {
+    "char": "î",
+    "name": "Latin Small Letter I with Circumflex",
+    "entity": "&icirc;",
+    "unicode": "U+00EE",
+    "decimal": "&#238;",
+    "category": "diacritics"
+  },
+  {
+    "char": "ô",
+    "name": "Latin Small Letter O with Circumflex",
+    "entity": "&ocirc;",
+    "unicode": "U+00F4",
+    "decimal": "&#244;",
+    "category": "diacritics"
+  },
+  {
+    "char": "û",
+    "name": "Latin Small Letter U with Circumflex",
+    "entity": "&ucirc;",
+    "unicode": "U+00FB",
+    "decimal": "&#251;",
+    "category": "diacritics"
+  },
+  {
+    "char": "ñ",
+    "name": "Latin Small Letter N with Tilde",
+    "entity": "&ntilde;",
+    "unicode": "U+00F1",
+    "decimal": "&#241;",
+    "category": "diacritics"
+  },
+  {
+    "char": "ç",
+    "name": "Latin Small Letter C with Cedilla",
+    "entity": "&ccedil;",
+    "unicode": "U+00E7",
+    "decimal": "&#231;",
+    "category": "diacritics"
+  },
+  {
+    "char": "§",
+    "name": "Section Sign",
+    "entity": "&sect;",
+    "unicode": "U+00A7",
+    "decimal": "&#167;",
+    "category": "symbols"
+  },
+  {
+    "char": "¶",
+    "name": "Pilcrow Sign",
+    "entity": "&para;",
+    "unicode": "U+00B6",
+    "decimal": "&#182;",
+    "category": "symbols"
+  },
+  {
+    "char": "†",
+    "name": "Dagger",
+    "entity": "&dagger;",
+    "unicode": "U+2020",
+    "decimal": "&#8224;",
+    "category": "symbols"
+  },
+  {
+    "char": "‡",
+    "name": "Double Dagger",
+    "entity": "&Dagger;",
+    "unicode": "U+2021",
+    "decimal": "&#8225;",
+    "category": "symbols"
+  },
+  {
+    "char": "•",
+    "name": "Bullet",
+    "entity": "&bull;",
+    "unicode": "U+2022",
+    "decimal": "&#8226;",
+    "category": "symbols"
+  },
+  {
+    "char": "…",
+    "name": "Horizontal Ellipsis",
+    "entity": "&hellip;",
+    "unicode": "U+2026",
+    "decimal": "&#8230;",
+    "category": "punctuation"
+  },
+  {
+    "char": "–",
+    "name": "En Dash",
+    "entity": "&ndash;",
+    "unicode": "U+2013",
+    "decimal": "&#8211;",
+    "category": "punctuation"
+  },
+  {
+    "char": "—",
+    "name": "Em Dash",
+    "entity": "&mdash;",
+    "unicode": "U+2014",
+    "decimal": "&#8212;",
+    "category": "punctuation"
+  },
+  {
+    "char": "'",
+    "name": "Left Single Quotation Mark",
+    "entity": "&lsquo;",
+    "unicode": "U+2018",
+    "decimal": "&#8216;",
+    "category": "punctuation"
+  },
+  {
+    "char": "'",
+    "name": "Right Single Quotation Mark",
+    "entity": "&rsquo;",
+    "unicode": "U+2019",
+    "decimal": "&#8217;",
+    "category": "punctuation"
+  },
+  {
+    "char": "\u201C",
+    "name": "Left Double Quotation Mark",
+    "entity": "&ldquo;",
+    "unicode": "U+201C",
+    "decimal": "&#8220;",
+    "category": "punctuation"
+  },
+  {
+    "char": "\u201D",
+    "name": "Right Double Quotation Mark",
+    "entity": "&rdquo;",
+    "unicode": "U+201D",
+    "decimal": "&#8221;",
+    "category": "punctuation"
+  },
+  {
+    "char": "‹",
+    "name": "Single Left-Pointing Angle Quotation Mark",
+    "entity": "&lsaquo;",
+    "unicode": "U+2039",
+    "decimal": "&#8249;",
+    "category": "punctuation"
+  },
+  {
+    "char": "›",
+    "name": "Single Right-Pointing Angle Quotation Mark",
+    "entity": "&rsaquo;",
+    "unicode": "U+203A",
+    "decimal": "&#8250;",
+    "category": "punctuation"
+  },
+  {
+    "char": "«",
+    "name": "Left-Pointing Double Angle Quotation Mark",
+    "entity": "&laquo;",
+    "unicode": "U+00AB",
+    "decimal": "&#171;",
+    "category": "punctuation"
+  },
+  {
+    "char": "»",
+    "name": "Right-Pointing Double Angle Quotation Mark",
+    "entity": "&raquo;",
+    "unicode": "U+00BB",
+    "decimal": "&#187;",
+    "category": "punctuation"
+  },
+  {
+    "char": "×",
+    "name": "Multiplication Sign",
+    "entity": "&times;",
+    "unicode": "U+00D7",
+    "decimal": "&#215;",
+    "category": "math"
+  },
+  {
+    "char": "÷",
+    "name": "Division Sign",
+    "entity": "&divide;",
+    "unicode": "U+00F7",
+    "decimal": "&#247;",
+    "category": "math"
+  },
+  {
+    "char": "±",
+    "name": "Plus-Minus Sign",
+    "entity": "&plusmn;",
+    "unicode": "U+00B1",
+    "decimal": "&#177;",
+    "category": "math"
+  },
+  {
+    "char": "≠",
+    "name": "Not Equal To",
+    "entity": "&ne;",
+    "unicode": "U+2260",
+    "decimal": "&#8800;",
+    "category": "math"
+  },
+  {
+    "char": "≈",
+    "name": "Almost Equal To",
+    "entity": "&asymp;",
+    "unicode": "U+2248",
+    "decimal": "&#8776;",
+    "category": "math"
+  },
+  {
+    "char": "≤",
+    "name": "Less-Than or Equal To",
+    "entity": "&le;",
+    "unicode": "U+2264",
+    "decimal": "&#8804;",
+    "category": "math"
+  },
+  {
+    "char": "≥",
+    "name": "Greater-Than or Equal To",
+    "entity": "&ge;",
+    "unicode": "U+2265",
+    "decimal": "&#8805;",
+    "category": "math"
+  },
+  {
+    "char": "°",
+    "name": "Degree Sign",
+    "entity": "&deg;",
+    "unicode": "U+00B0",
+    "decimal": "&#176;",
+    "category": "symbols"
+  },
+  {
+    "char": "µ",
+    "name": "Micro Sign",
+    "entity": "&micro;",
+    "unicode": "U+00B5",
+    "decimal": "&#181;",
+    "category": "symbols"
+  },
+  {
+    "char": "¼",
+    "name": "Vulgar Fraction One Quarter",
+    "entity": "&frac14;",
+    "unicode": "U+00BC",
+    "decimal": "&#188;",
+    "category": "math"
+  },
+  {
+    "char": "½",
+    "name": "Vulgar Fraction One Half",
+    "entity": "&frac12;",
+    "unicode": "U+00BD",
+    "decimal": "&#189;",
+    "category": "math"
+  },
+  {
+    "char": "¾",
+    "name": "Vulgar Fraction Three Quarters",
+    "entity": "&frac34;",
+    "unicode": "U+00BE",
+    "decimal": "&#190;",
+    "category": "math"
+  },
+  {
+    "char": "¹",
+    "name": "Superscript One",
+    "entity": "&sup1;",
+    "unicode": "U+00B9",
+    "decimal": "&#185;",
+    "category": "math"
+  },
+  {
+    "char": "²",
+    "name": "Superscript Two",
+    "entity": "&sup2;",
+    "unicode": "U+00B2",
+    "decimal": "&#178;",
+    "category": "math"
+  },
+  {
+    "char": "³",
+    "name": "Superscript Three",
+    "entity": "&sup3;",
+    "unicode": "U+00B3",
+    "decimal": "&#179;",
+    "category": "math"
+  },
+  {
+    "char": "←",
+    "name": "Leftwards Arrow",
+    "entity": "&larr;",
+    "unicode": "U+2190",
+    "decimal": "&#8592;",
+    "category": "arrows"
+  },
+  {
+    "char": "→",
+    "name": "Rightwards Arrow",
+    "entity": "&rarr;",
+    "unicode": "U+2192",
+    "decimal": "&#8594;",
+    "category": "arrows"
+  },
+  {
+    "char": "↑",
+    "name": "Upwards Arrow",
+    "entity": "&uarr;",
+    "unicode": "U+2191",
+    "decimal": "&#8593;",
+    "category": "arrows"
+  },
+  {
+    "char": "↓",
+    "name": "Downwards Arrow",
+    "entity": "&darr;",
+    "unicode": "U+2193",
+    "decimal": "&#8595;",
+    "category": "arrows"
+  },
+  {
+    "char": "↔",
+    "name": "Left Right Arrow",
+    "entity": "&harr;",
+    "unicode": "U+2194",
+    "decimal": "&#8596;",
+    "category": "arrows"
+  },
+  {
+    "char": "⇐",
+    "name": "Leftwards Double Arrow",
+    "entity": "&lArr;",
+    "unicode": "U+21D0",
+    "decimal": "&#8656;",
+    "category": "arrows"
+  },
+  {
+    "char": "⇒",
+    "name": "Rightwards Double Arrow",
+    "entity": "&rArr;",
+    "unicode": "U+21D2",
+    "decimal": "&#8658;",
+    "category": "arrows"
+  },
+  {
+    "char": "⇑",
+    "name": "Upwards Double Arrow",
+    "entity": "&uArr;",
+    "unicode": "U+21D1",
+    "decimal": "&#8657;",
+    "category": "arrows"
+  },
+  {
+    "char": "⇓",
+    "name": "Downwards Double Arrow",
+    "entity": "&dArr;",
+    "unicode": "U+21D3",
+    "decimal": "&#8659;",
+    "category": "arrows"
+  },
+  {
+    "char": "⇔",
+    "name": "Left Right Double Arrow",
+    "entity": "&hArr;",
+    "unicode": "U+21D4",
+    "decimal": "&#8660;",
+    "category": "arrows"
+  },
+  {
+    "char": "∀",
+    "name": "For All",
+    "entity": "&forall;",
+    "unicode": "U+2200",
+    "decimal": "&#8704;",
+    "category": "math"
+  },
+  {
+    "char": "∃",
+    "name": "There Exists",
+    "entity": "&exist;",
+    "unicode": "U+2203",
+    "decimal": "&#8707;",
+    "category": "math"
+  },
+  {
+    "char": "∅",
+    "name": "Empty Set",
+    "entity": "&empty;",
+    "unicode": "U+2205",
+    "decimal": "&#8709;",
+    "category": "math"
+  },
+  {
+    "char": "∈",
+    "name": "Element Of",
+    "entity": "&isin;",
+    "unicode": "U+2208",
+    "decimal": "&#8712;",
+    "category": "math"
+  },
+  {
+    "char": "∉",
+    "name": "Not an Element Of",
+    "entity": "&notin;",
+    "unicode": "U+2209",
+    "decimal": "&#8713;",
+    "category": "math"
+  },
+  {
+    "char": "∋",
+    "name": "Contains as Member",
+    "entity": "&ni;",
+    "unicode": "U+220B",
+    "decimal": "&#8715;",
+    "category": "math"
+  },
+  {
+    "char": "∏",
+    "name": "N-Ary Product",
+    "entity": "&prod;",
+    "unicode": "U+220F",
+    "decimal": "&#8719;",
+    "category": "math"
+  },
+  {
+    "char": "∑",
+    "name": "N-Ary Summation",
+    "entity": "&sum;",
+    "unicode": "U+2211",
+    "decimal": "&#8721;",
+    "category": "math"
+  },
+  {
+    "char": "∞",
+    "name": "Infinity",
+    "entity": "&infin;",
+    "unicode": "U+221E",
+    "decimal": "&#8734;",
+    "category": "math"
+  },
+  {
+    "char": "√",
+    "name": "Square Root",
+    "entity": "&radic;",
+    "unicode": "U+221A",
+    "decimal": "&#8730;",
+    "category": "math"
+  },
+  {
+    "char": "∝",
+    "name": "Proportional To",
+    "entity": "&prop;",
+    "unicode": "U+221D",
+    "decimal": "&#8733;",
+    "category": "math"
+  },
+  {
+    "char": "∠",
+    "name": "Angle",
+    "entity": "&ang;",
+    "unicode": "U+2220",
+    "decimal": "&#8736;",
+    "category": "math"
+  },
+  {
+    "char": "∧",
+    "name": "Logical And",
+    "entity": "&and;",
+    "unicode": "U+2227",
+    "decimal": "&#8743;",
+    "category": "math"
+  },
+  {
+    "char": "∨",
+    "name": "Logical Or",
+    "entity": "&or;",
+    "unicode": "U+2228",
+    "decimal": "&#8744;",
+    "category": "math"
+  },
+  {
+    "char": "∩",
+    "name": "Intersection",
+    "entity": "&cap;",
+    "unicode": "U+2229",
+    "decimal": "&#8745;",
+    "category": "math"
+  },
+  {
+    "char": "∪",
+    "name": "Union",
+    "entity": "&cup;",
+    "unicode": "U+222A",
+    "decimal": "&#8746;",
+    "category": "math"
+  },
+  {
+    "char": "∫",
+    "name": "Integral",
+    "entity": "&int;",
+    "unicode": "U+222B",
+    "decimal": "&#8747;",
+    "category": "math"
+  },
+  {
+    "char": "∴",
+    "name": "Therefore",
+    "entity": "&there4;",
+    "unicode": "U+2234",
+    "decimal": "&#8756;",
+    "category": "math"
+  },
+  {
+    "char": "∼",
+    "name": "Tilde Operator",
+    "entity": "&sim;",
+    "unicode": "U+223C",
+    "decimal": "&#8764;",
+    "category": "math"
+  },
+  {
+    "char": "≅",
+    "name": "Approximately Equal To",
+    "entity": "&cong;",
+    "unicode": "U+2245",
+    "decimal": "&#8773;",
+    "category": "math"
+  },
+  {
+    "char": "⊂",
+    "name": "Subset Of",
+    "entity": "&sub;",
+    "unicode": "U+2282",
+    "decimal": "&#8834;",
+    "category": "math"
+  },
+  {
+    "char": "⊃",
+    "name": "Superset Of",
+    "entity": "&sup;",
+    "unicode": "U+2283",
+    "decimal": "&#8835;",
+    "category": "math"
+  },
+  {
+    "char": "⊄",
+    "name": "Not a Subset Of",
+    "entity": "&nsub;",
+    "unicode": "U+2284",
+    "decimal": "&#8836;",
+    "category": "math"
+  },
+  {
+    "char": "⊆",
+    "name": "Subset Of or Equal To",
+    "entity": "&sube;",
+    "unicode": "U+2286",
+    "decimal": "&#8838;",
+    "category": "math"
+  },
+  {
+    "char": "⊇",
+    "name": "Superset Of or Equal To",
+    "entity": "&supe;",
+    "unicode": "U+2287",
+    "decimal": "&#8839;",
+    "category": "math"
+  },
+  {
+    "char": "⊕",
+    "name": "Circled Plus",
+    "entity": "&oplus;",
+    "unicode": "U+2295",
+    "decimal": "&#8853;",
+    "category": "math"
+  },
+  {
+    "char": "⊗",
+    "name": "Circled Times",
+    "entity": "&otimes;",
+    "unicode": "U+2297",
+    "decimal": "&#8855;",
+    "category": "math"
+  },
+  {
+    "char": "⊥",
+    "name": "Up Tack",
+    "entity": "&perp;",
+    "unicode": "U+22A5",
+    "decimal": "&#8869;",
+    "category": "math"
+  },
+  {
+    "char": "⋅",
+    "name": "Dot Operator",
+    "entity": "&sdot;",
+    "unicode": "U+22C5",
+    "decimal": "&#8901;",
+    "category": "math"
+  },
+  {
+    "char": "α",
+    "name": "Greek Small Letter Alpha",
+    "entity": "&alpha;",
+    "unicode": "U+03B1",
+    "decimal": "&#945;",
+    "category": "greek"
+  },
+  {
+    "char": "β",
+    "name": "Greek Small Letter Beta",
+    "entity": "&beta;",
+    "unicode": "U+03B2",
+    "decimal": "&#946;",
+    "category": "greek"
+  },
+  {
+    "char": "γ",
+    "name": "Greek Small Letter Gamma",
+    "entity": "&gamma;",
+    "unicode": "U+03B3",
+    "decimal": "&#947;",
+    "category": "greek"
+  },
+  {
+    "char": "δ",
+    "name": "Greek Small Letter Delta",
+    "entity": "&delta;",
+    "unicode": "U+03B4",
+    "decimal": "&#948;",
+    "category": "greek"
+  },
+  {
+    "char": "ε",
+    "name": "Greek Small Letter Epsilon",
+    "entity": "&epsilon;",
+    "unicode": "U+03B5",
+    "decimal": "&#949;",
+    "category": "greek"
+  },
+  {
+    "char": "ζ",
+    "name": "Greek Small Letter Zeta",
+    "entity": "&zeta;",
+    "unicode": "U+03B6",
+    "decimal": "&#950;",
+    "category": "greek"
+  },
+  {
+    "char": "η",
+    "name": "Greek Small Letter Eta",
+    "entity": "&eta;",
+    "unicode": "U+03B7",
+    "decimal": "&#951;",
+    "category": "greek"
+  },
+  {
+    "char": "θ",
+    "name": "Greek Small Letter Theta",
+    "entity": "&theta;",
+    "unicode": "U+03B8",
+    "decimal": "&#952;",
+    "category": "greek"
+  },
+  {
+    "char": "ι",
+    "name": "Greek Small Letter Iota",
+    "entity": "&iota;",
+    "unicode": "U+03B9",
+    "decimal": "&#953;",
+    "category": "greek"
+  },
+  {
+    "char": "κ",
+    "name": "Greek Small Letter Kappa",
+    "entity": "&kappa;",
+    "unicode": "U+03BA",
+    "decimal": "&#954;",
+    "category": "greek"
+  },
+  {
+    "char": "λ",
+    "name": "Greek Small Letter Lambda",
+    "entity": "&lambda;",
+    "unicode": "U+03BB",
+    "decimal": "&#955;",
+    "category": "greek"
+  },
+  {
+    "char": "μ",
+    "name": "Greek Small Letter Mu",
+    "entity": "&mu;",
+    "unicode": "U+03BC",
+    "decimal": "&#956;",
+    "category": "greek"
+  },
+  {
+    "char": "ν",
+    "name": "Greek Small Letter Nu",
+    "entity": "&nu;",
+    "unicode": "U+03BD",
+    "decimal": "&#957;",
+    "category": "greek"
+  },
+  {
+    "char": "ξ",
+    "name": "Greek Small Letter Xi",
+    "entity": "&xi;",
+    "unicode": "U+03BE",
+    "decimal": "&#958;",
+    "category": "greek"
+  },
+  {
+    "char": "ο",
+    "name": "Greek Small Letter Omicron",
+    "entity": "&omicron;",
+    "unicode": "U+03BF",
+    "decimal": "&#959;",
+    "category": "greek"
+  },
+  {
+    "char": "π",
+    "name": "Greek Small Letter Pi",
+    "entity": "&pi;",
+    "unicode": "U+03C0",
+    "decimal": "&#960;",
+    "category": "greek"
+  },
+  {
+    "char": "ρ",
+    "name": "Greek Small Letter Rho",
+    "entity": "&rho;",
+    "unicode": "U+03C1",
+    "decimal": "&#961;",
+    "category": "greek"
+  },
+  {
+    "char": "σ",
+    "name": "Greek Small Letter Sigma",
+    "entity": "&sigma;",
+    "unicode": "U+03C3",
+    "decimal": "&#963;",
+    "category": "greek"
+  },
+  {
+    "char": "τ",
+    "name": "Greek Small Letter Tau",
+    "entity": "&tau;",
+    "unicode": "U+03C4",
+    "decimal": "&#964;",
+    "category": "greek"
+  },
+  {
+    "char": "υ",
+    "name": "Greek Small Letter Upsilon",
+    "entity": "&upsilon;",
+    "unicode": "U+03C5",
+    "decimal": "&#965;",
+    "category": "greek"
+  },
+  {
+    "char": "φ",
+    "name": "Greek Small Letter Phi",
+    "entity": "&phi;",
+    "unicode": "U+03C6",
+    "decimal": "&#966;",
+    "category": "greek"
+  },
+  {
+    "char": "χ",
+    "name": "Greek Small Letter Chi",
+    "entity": "&chi;",
+    "unicode": "U+03C7",
+    "decimal": "&#967;",
+    "category": "greek"
+  },
+  {
+    "char": "ψ",
+    "name": "Greek Small Letter Psi",
+    "entity": "&psi;",
+    "unicode": "U+03C8",
+    "decimal": "&#968;",
+    "category": "greek"
+  },
+  {
+    "char": "ω",
+    "name": "Greek Small Letter Omega",
+    "entity": "&omega;",
+    "unicode": "U+03C9",
+    "decimal": "&#969;",
+    "category": "greek"
+  },
+  {
+    "char": "Α",
+    "name": "Greek Capital Letter Alpha",
+    "entity": "&Alpha;",
+    "unicode": "U+0391",
+    "decimal": "&#913;",
+    "category": "greek"
+  },
+  {
+    "char": "Β",
+    "name": "Greek Capital Letter Beta",
+    "entity": "&Beta;",
+    "unicode": "U+0392",
+    "decimal": "&#914;",
+    "category": "greek"
+  },
+  {
+    "char": "Γ",
+    "name": "Greek Capital Letter Gamma",
+    "entity": "&Gamma;",
+    "unicode": "U+0393",
+    "decimal": "&#915;",
+    "category": "greek"
+  },
+  {
+    "char": "Δ",
+    "name": "Greek Capital Letter Delta",
+    "entity": "&Delta;",
+    "unicode": "U+0394",
+    "decimal": "&#916;",
+    "category": "greek"
+  },
+  {
+    "char": "Ε",
+    "name": "Greek Capital Letter Epsilon",
+    "entity": "&Epsilon;",
+    "unicode": "U+0395",
+    "decimal": "&#917;",
+    "category": "greek"
+  },
+  {
+    "char": "Ζ",
+    "name": "Greek Capital Letter Zeta",
+    "entity": "&Zeta;",
+    "unicode": "U+0396",
+    "decimal": "&#918;",
+    "category": "greek"
+  },
+  {
+    "char": "Η",
+    "name": "Greek Capital Letter Eta",
+    "entity": "&Eta;",
+    "unicode": "U+0397",
+    "decimal": "&#919;",
+    "category": "greek"
+  },
+  {
+    "char": "Θ",
+    "name": "Greek Capital Letter Theta",
+    "entity": "&Theta;",
+    "unicode": "U+0398",
+    "decimal": "&#920;",
+    "category": "greek"
+  },
+  {
+    "char": "Ι",
+    "name": "Greek Capital Letter Iota",
+    "entity": "&Iota;",
+    "unicode": "U+0399",
+    "decimal": "&#921;",
+    "category": "greek"
+  },
+  {
+    "char": "Κ",
+    "name": "Greek Capital Letter Kappa",
+    "entity": "&Kappa;",
+    "unicode": "U+039A",
+    "decimal": "&#922;",
+    "category": "greek"
+  },
+  {
+    "char": "Λ",
+    "name": "Greek Capital Letter Lambda",
+    "entity": "&Lambda;",
+    "unicode": "U+039B",
+    "decimal": "&#923;",
+    "category": "greek"
+  },
+  {
+    "char": "Μ",
+    "name": "Greek Capital Letter Mu",
+    "entity": "&Mu;",
+    "unicode": "U+039C",
+    "decimal": "&#924;",
+    "category": "greek"
+  },
+  {
+    "char": "Ν",
+    "name": "Greek Capital Letter Nu",
+    "entity": "&Nu;",
+    "unicode": "U+039D",
+    "decimal": "&#925;",
+    "category": "greek"
+  },
+  {
+    "char": "Ξ",
+    "name": "Greek Capital Letter Xi",
+    "entity": "&Xi;",
+    "unicode": "U+039E",
+    "decimal": "&#926;",
+    "category": "greek"
+  },
+  {
+    "char": "Ο",
+    "name": "Greek Capital Letter Omicron",
+    "entity": "&Omicron;",
+    "unicode": "U+039F",
+    "decimal": "&#927;",
+    "category": "greek"
+  },
+  {
+    "char": "Π",
+    "name": "Greek Capital Letter Pi",
+    "entity": "&Pi;",
+    "unicode": "U+03A0",
+    "decimal": "&#928;",
+    "category": "greek"
+  },
+  {
+    "char": "Ρ",
+    "name": "Greek Capital Letter Rho",
+    "entity": "&Rho;",
+    "unicode": "U+03A1",
+    "decimal": "&#929;",
+    "category": "greek"
+  },
+  {
+    "char": "Σ",
+    "name": "Greek Capital Letter Sigma",
+    "entity": "&Sigma;",
+    "unicode": "U+03A3",
+    "decimal": "&#931;",
+    "category": "greek"
+  },
+  {
+    "char": "Τ",
+    "name": "Greek Capital Letter Tau",
+    "entity": "&Tau;",
+    "unicode": "U+03A4",
+    "decimal": "&#932;",
+    "category": "greek"
+  },
+  {
+    "char": "Υ",
+    "name": "Greek Capital Letter Upsilon",
+    "entity": "&Upsilon;",
+    "unicode": "U+03A5",
+    "decimal": "&#933;",
+    "category": "greek"
+  },
+  {
+    "char": "Φ",
+    "name": "Greek Capital Letter Phi",
+    "entity": "&Phi;",
+    "unicode": "U+03A6",
+    "decimal": "&#934;",
+    "category": "greek"
+  },
+  {
+    "char": "Χ",
+    "name": "Greek Capital Letter Chi",
+    "entity": "&Chi;",
+    "unicode": "U+03A7",
+    "decimal": "&#935;",
+    "category": "greek"
+  },
+  {
+    "char": "Ψ",
+    "name": "Greek Capital Letter Psi",
+    "entity": "&Psi;",
+    "unicode": "U+03A8",
+    "decimal": "&#936;",
+    "category": "greek"
+  },
+  {
+    "char": "Ω",
+    "name": "Greek Capital Letter Omega",
+    "entity": "&Omega;",
+    "unicode": "U+03A9",
+    "decimal": "&#937;",
+    "category": "greek"
+  },
+  {
+    "char": "♠",
+    "name": "Black Spade Suit",
+    "entity": "&spades;",
+    "unicode": "U+2660",
+    "decimal": "&#9824;",
+    "category": "symbols"
+  },
+  {
+    "char": "♣",
+    "name": "Black Club Suit",
+    "entity": "&clubs;",
+    "unicode": "U+2663",
+    "decimal": "&#9827;",
+    "category": "symbols"
+  },
+  {
+    "char": "♥",
+    "name": "Black Heart Suit",
+    "entity": "&hearts;",
+    "unicode": "U+2665",
+    "decimal": "&#9829;",
+    "category": "symbols"
+  },
+  {
+    "char": "♦",
+    "name": "Black Diamond Suit",
+    "entity": "&diams;",
+    "unicode": "U+2666",
+    "decimal": "&#9830;",
+    "category": "symbols"
+  },
+  {
+    "char": "★",
+    "name": "Black Star",
+    "entity": "★",
+    "unicode": "U+2605",
+    "decimal": "&#9733;",
+    "category": "symbols"
+  },
+  {
+    "char": "☆",
+    "name": "White Star",
+    "entity": "☆",
+    "unicode": "U+2606",
+    "decimal": "&#9734;",
+    "category": "symbols"
+  },
+  {
+    "char": "✓",
+    "name": "Check Mark",
+    "entity": "✓",
+    "unicode": "U+2713",
+    "decimal": "&#10003;",
+    "category": "symbols"
+  },
+  {
+    "char": "✗",
+    "name": "Ballot X",
+    "entity": "✗",
+    "unicode": "U+2717",
+    "decimal": "&#10007;",
+    "category": "symbols"
+  },
+  {
+    "char": "☎",
+    "name": "Black Telephone",
+    "entity": "☎",
+    "unicode": "U+260E",
+    "decimal": "&#9742;",
+    "category": "symbols"
+  },
+  {
+    "char": "☏",
+    "name": "White Telephone",
+    "entity": "☏",
+    "unicode": "U+260F",
+    "decimal": "&#9743;",
+    "category": "symbols"
+  },
+  {
+    "char": "✉",
+    "name": "Envelope",
+    "entity": "✉",
+    "unicode": "U+2709",
+    "decimal": "&#9993;",
+    "category": "symbols"
+  },
+  {
+    "char": "✂",
+    "name": "Black Scissors",
+    "entity": "✂",
+    "unicode": "U+2702",
+    "decimal": "&#9986;",
+    "category": "symbols"
+  },
+  {
+    "char": "✏",
+    "name": "Pencil",
+    "entity": "✏",
+    "unicode": "U+270F",
+    "decimal": "&#9999;",
+    "category": "symbols"
+  },
+  {
+    "char": "⌂",
+    "name": "House",
+    "entity": "⌂",
+    "unicode": "U+2302",
+    "decimal": "&#8962;",
+    "category": "symbols"
+  },
+  {
+    "char": "⌘",
+    "name": "Place of Interest Sign",
+    "entity": "⌘",
+    "unicode": "U+2318",
+    "decimal": "&#8984;",
+    "category": "symbols"
+  }
+]

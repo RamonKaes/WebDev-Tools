@@ -1,59 +1,59 @@
 # WebDev-Tools Test Suite
 
-Einfaches Vanilla JavaScript Test-Framework ohne externe Abhängigkeiten.
+Simple vanilla JavaScript test framework with no external dependencies.
 
 ## Test Coverage
 
-### ✅ Implementierte Tests
+### ✅ Implemented Tests
 
 #### Unit Tests (JavaScript)
-- **validators.test.js** - 15 Tests für Email, URL, JSON, Base64, Hex-Validierung
-- **clipboard-utils.test.js** - 5 Tests für Clipboard API Integration
-- **formatters.test.js** - 15 Tests für Byte/Number/Date Formatierung
-- **storage-utils.test.js** - 11 Tests für localStorage/sessionStorage
-- **logger.test.js** - 10 Tests für Error Handling, Classification, Stack Traces
+- **validators.test.js** - 15 tests for email, URL, JSON, Base64, hex validation
+- **clipboard-utils.test.js** - 5 tests for Clipboard API integration
+- **formatters.test.js** - 15 tests for byte/number/date formatting
+- **storage-utils.test.js** - 11 tests for localStorage/sessionStorage
+- **logger.test.js** - 10 tests for error handling, classification, and stack traces
 
-**Total: 56 Tests** | **Coverage: ~40% der Utility-Bibliotheken**
+**Total: 56 tests** | **Coverage: ~40% of utility libraries**
 
 #### Security & Dependency Tests
-- **dependency-check.sh** - Automatisierte Sicherheitsprüfung für:
-  - CVE-Scans (OSV.dev API)
-  - Version-Updates (GitHub Releases)
-  - PHP EOL-Status
+- **dependency-check.sh** - Automated security checks for:
+  - CVE scans (OSV.dev API)
+  - Version updates (GitHub Releases)
+  - PHP EOL status
 
-## Verwendung
+## Usage
 
-### Tests im Browser ausführen
+### Run tests in the browser
 
-1. Öffne `tests/index.html` in einem Browser
-2. Klicke auf "Run Validators Tests" oder einen anderen Test-Button
-3. Sieh dir die Ergebnisse in der Konsole an
+1. Open `tests/index.html` in a browser
+2. Click "Run Validators Tests" or another test button
+3. View the test results in the browser console
 
-### Tests in der Kommandozeile ausführen
+### Run tests from the command line
 
-#### JavaScript Unit Tests (mit Node.js)
+#### JavaScript unit tests (Node.js)
 ```bash
-# Einzelne Test-Datei ausführen
+# Run a single test file
 node tests/lib/validators.test.js
 ```
 
 #### Security & Dependency Check
 ```bash
-# Dependency-Sicherheitsprüfung durchführen
+# Run dependency security check
 cd /var/www/html/WebDev-Tools
 ./tests/dependency-check.sh
 ```
 
-**Empfohlene Frequenz:** Vierteljährlich (vor jedem Release)
+**Recommended frequency:** Quarterly (before each release)
 
-## Test-Struktur
+## Test Structure
 
 ```
 tests/
-├── test-runner.js          # Test-Framework Core
-├── index.html              # Browser Test Runner UI
-├── dependency-check.sh     # Security & Dependency Scanner
-├── lib/                    # Unit Tests für lib/
+├── test-runner.js          # Test framework core
+├── index.html              # Browser test runner UI
+├── dependency-check.sh     # Security & dependency scanner
+├── lib/                    # Unit tests under lib/
 │   ├── validators.test.js
 │   ├── clipboard-utils.test.js
 │   ├── formatters.test.js
@@ -62,9 +62,9 @@ tests/
 └── README.md
 ```
 
-## Neue Tests erstellen
+## Create new tests
 
-Erstelle eine neue `.test.js` Datei:
+Create a new `.test.js` file:
 
 ```javascript
 import { TestRunner, assert } from '../test-runner.js';
@@ -72,43 +72,43 @@ import { myFunction } from '../../assets/js/lib/my-module.js';
 
 const runner = new TestRunner();
 
-runner.test('Test-Name', () => {
+runner.test('Test Name', () => {
   const result = myFunction('input');
   assert.equal(result, 'expected');
 });
 
-// Tests ausführen
+// Run the tests
 runner.run();
 ```
 
-## Verfügbare Assertions
+## Available assertions
 
-- `assert.ok(value, message)` - Prüft ob Wert truthy ist
-- `assert.equal(actual, expected, message)` - Strikte Gleichheit (===)
-- `assert.deepEqual(actual, expected, message)` - Deep Object-Vergleich
-- `assert.throws(fn, message)` - Prüft ob Funktion wirft
-- `assert.isNull(value, message)` - Prüft auf null/undefined
-- `assert.notNull(value, message)` - Prüft dass nicht null/undefined
-- `assert.includes(array, value, message)` - Array enthält Wert
-- `assert.typeOf(value, type, message)` - Typ-Prüfung
+- `assert.ok(value, message)` - Checks if value is truthy
+- `assert.equal(actual, expected, message)` - Strict equality (===)
+- `assert.deepEqual(actual, expected, message)` - Deep object comparison
+- `assert.throws(fn, message)` - Expects function to throw
+- `assert.isNull(value, message)` - Checks for null/undefined
+- `assert.notNull(value, message)` - Checks that value is not null/undefined
+- `assert.includes(array, value, message)` - Array contains value
+- `assert.typeOf(value, type, message)` - Type check
 
-## Tests überspringen
+## Skipping tests
 
 ```javascript
-runner.skip('Test-Name', () => {
-  // Dieser Test wird übersprungen
+runner.skip('Test Name', () => {
+  // This test will be skipped
 });
 ```
 
-## Best Practices
+## Best practices
 
-1. **Ein Test pro Funktion**: Teste eine spezifische Funktionalität
-2. **Aussagekräftige Namen**: Beschreibe was getestet wird
-3. **Arrange-Act-Assert**: Strukturiere Tests in Setup, Ausführung, Prüfung
-4. **Edge Cases**: Teste Grenzfälle (null, undefined, leere Strings)
-5. **Unabhängigkeit**: Tests sollten nicht voneinander abhängen
+1. **One test per function**: Test a specific functionality
+2. **Descriptive names**: Describe what is being tested
+3. **Arrange-Act-Assert**: Structure tests into setup, execution, verification
+4. **Edge cases**: Test boundary cases (null, undefined, empty strings)
+5. **Independence**: Tests should not depend on each other
 
-## Beispiel
+## Example
 
 ```javascript
 runner.test('isValidEmail: accepts valid email', () => {
@@ -123,11 +123,11 @@ runner.test('isValidEmail: accepts valid email', () => {
 });
 ```
 
-## Weitere Test-Suites hinzufügen
+## Adding additional test suites
 
-1. Erstelle neue `.test.js` Datei im entsprechenden Ordner
-2. Füge Button in `index.html` hinzu:
+1. Create a new `.test.js` file in the appropriate folder
+2. Add a button to `index.html`:
    ```html
-   <button onclick="runTests('dein/test.js')">Run Dein Test</button>
+   <button onclick="runTests('your/test.js')">Run Your Test</button>
    ```
-3. Import das Test-Modul und führe `runner.run()` aus
+3. Import the test module and call `runner.run()`

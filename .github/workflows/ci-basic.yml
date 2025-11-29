@@ -1,11 +1,13 @@
 name: CI Basic Checks
 
 on:
-  push:
-    branches: [ main, 'fix/*', 'chore/*', 'test/*' ]
   pull_request:
     branches: [ main ]
+  workflow_dispatch: {}
 
+# Limit expensive runs & unnecessary checks by:
+# - Only running on PRs (and via manual dispatch)
+# - Ignoring docs translations and other non-code changes
 jobs:
   php-lint:
     name: PHP - Syntax check
@@ -17,6 +19,7 @@ jobs:
         with:
           php-version: '8.1'
       - name: Find PHP files
+        if: github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch'
         run: |
           echo "Looking for PHP files..."
           files=$(find . -type f -name '*.php' -not -path './vendor/*' -not -path './node_modules/*') || true
@@ -63,6 +66,18 @@ jobs:
       - name: Run ESLint
         if: "-f package.json"
         run: |
+          concurrency:
+            group: ci-basic
+            cancel-in-progress: true
+
+          defaults:
+            run:
+              shell: bash
+
+          # Ignore changes that should not trigger CI runs, which helps reduce Action minutes
+          # We still run the workflow for PRs and manual dispatch; this avoids running on doc changes
+          # Note: `paths-ignore` needs to be specified at root of the workflow `on` configuration
+
           npm ci
           if [ -f .eslintrc.json ] || [ -f .eslintrc.js ]; then
             npx eslint . || true

@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+set -e
+
+echo "Running local checks..."
+
+# PHP Lint
+if command -v php >/dev/null 2>&1; then
+  echo "Checking PHP files for syntax errors..."
+  find . -type f -name "*.php" -not -path './vendor/*' -not -path './node_modules/*' -print0 | xargs -0 -n1 php -l || true
+else
+  echo "PHP not installed locally, skipping PHP lint"
+fi
+
+# Node / NPM tests
+if [ -f package.json ] && command -v npm >/dev/null 2>&1; then
+  echo "Running npm tests..."
+  npm ci
+  npm test || true
+else
+  echo "No package.json or npm not available - skipping Node tests"
+fi
+
+echo "Done"

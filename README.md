@@ -51,12 +51,13 @@ WebDev-Tools.info is a professional-grade, client-side-only platform providing e
 
 ### 🌍 **Multi-Language Support**
 Available in 6 languages with culturally-aware translations:
+
 - English (EN)
-- Deutsch (DE)
-- Español (ES)
-- Português (PT)
-- Français (FR)
-- Italiano (IT)
+- German (DE)
+- Spanish (ES)
+- Portuguese (PT)
+- French (FR)
+- Italian (IT)
 
 ---
 

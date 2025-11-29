@@ -1,0 +1,20 @@
+# Labels standard for the repository
+labels:
+  - name: bug
+    description: Bug or unexpected behavior
+    color: d73a4a
+  - name: feature
+    description: New feature or enhancement
+    color: 0e8a16
+  - name: docs
+    description: Documentation changes
+    color: 0075ca
+  - name: tests
+    description: Related to tests or test infra
+    color: 0052cc
+  - name: changelog
+    description: Changelog update
+    color: 5319e7
+  - name: needs review
+    description: Requires peer review
+    color: fbca04

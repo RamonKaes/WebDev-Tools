@@ -214,30 +214,30 @@ WebDev-Tools adheres to established industry specifications to ensure reliabilit
 
 ## Code Review & Learnings
 
-### Externer Code-Review (2024-12-19)
+### External Code Review (2024-12-19)
 
-Im Rahmen eines externen Reviews wurden vier kritische Issues identifiziert und behoben:
+As part of an external review, four critical issues were identified and addressed:
 
-1. **UUID v1 Sicherheit:**
-   - Math.random wurde durch crypto.getRandomValues ersetzt (CSPRNG)
-   - Unsichere Fallbacks entfernt, Fehler werden im UI angezeigt
-2. **Manifest-Generator BASE_PATH:**
-   - BASE_PATH wird jetzt dynamisch aus config.php oder CLI gelesen
-   - Validierung und Korrektur der URLs für Produktion
-3. **YAML→JSON Top-Level Listen:**
-   - Parser unterstützt jetzt YAML-Listen als Root-Element
-   - Indentierungsfehler behoben
-4. **JSON→CSV leere Arrays:**
-   - Validierung und Fehlerbehandlung für leere Arrays
-   - Crash-Schutz und klare Fehlermeldungen
+1. **UUID v1 Security:**
+   - Math.random was replaced with crypto.getRandomValues (CSPRNG)
+   - Unsafe fallbacks were removed and errors are surfaced in the UI
+2. **Manifest Generator BASE_PATH:**
+   - BASE_PATH is now read dynamically from `config.php` or via the CLI
+   - URLs are validated and corrected for production environments
+3. **YAML→JSON Top-Level Lists:**
+   - The parser now supports YAML lists at the root level
+   - Indentation issues were fixed
+4. **JSON→CSV Empty Arrays:**
+   - Validation and error handling were added for empty arrays
+   - Crash protection and clear error messages implemented
 
-**Learnings:**
-- Niemals Math.random für sicherheitsrelevante Zwecke
-- Input-Validierung und Fehlerbehandlung sind essenziell
-- Build-Skripte müssen umgebungsabhängig sein
-- Automatisierte Tests verhindern Regressionen
+**Key Takeaways:**
+- Never use `Math.random` for security-sensitive functionality
+- Input validation and robust error handling are essential
+- Build scripts must be environment-aware
+- Automated tests help prevent regressions
 
-Alle Fixes sind implementiert, getestet und dokumentiert. Weitere Details im [Code-Review-Report](CODE_REVIEW_REPORT.md).
+All fixes have been implemented, tested, and documented. See the [Code Review Report](CODE_REVIEW_REPORT.md) for details.
 
 ---
 

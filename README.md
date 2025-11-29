@@ -487,7 +487,7 @@ We welcome contributions from the community! Here's how you can help:
 
 As the sole maintainer of this repository, you can keep changes lightweight while remaining safe and traceable. We recommend the following minimal workflow:
 
-- **No GitHub Actions**: This repository avoids GitHub Actions to prevent action minutes costs. See `.github/NO_GITHUB_ACTIONS.md` for details.
+- **No GitHub Actions**: This repository avoids GitHub Actions to prevent action minutes costs.
 - **Local checks first**: Run `./bin/check` before pushing. It performs PHP syntax checks and optional Node tests if `package.json` is present.
 - **Trivial changes (docs, typos)**: Commit directly to `main` after running `./bin/check`:
    ```bash

@@ -483,6 +483,33 @@ We welcome contributions from the community! Here's how you can help:
 - Cross-browser testing
 - Translation accuracy (for i18n changes)
 
+### Single-Developer Workflow (Recommended)
+
+As the sole maintainer of this repository, you can keep changes lightweight while remaining safe and traceable. We recommend the following minimal workflow:
+
+- **No GitHub Actions**: This repository avoids GitHub Actions to prevent action minutes costs. See `.github/NO_GITHUB_ACTIONS.md` for details.
+- **Local checks first**: Run `./bin/check` before pushing. It performs PHP syntax checks and optional Node tests if `package.json` is present.
+- **Trivial changes (docs, typos)**: Commit directly to `main` after running `./bin/check`:
+   ```bash
+   git add -A
+   git commit -m "docs: fix typo"
+   ./bin/check
+   git push origin main
+   ```
+- **Code changes (recommended)**: Use a feature branch and a quick self-review PR. This keeps your change history clean and reversible:
+   ```bash
+   git checkout -b feat/your-change
+   ./bin/check
+   git add -A
+   git commit -m "feat: add ..."
+   git push --set-upstream origin feat/your-change
+   gh pr create --title "feat: add ..." --body "Short description"
+   ```
+- **Merge policy**: For most changes, merge PRs yourself once you're confident after running `./bin/check` and a quick smoke test in the browser.
+- **Self-hosted runner (optional)**: If you want CI without GitHub minutes, consider a self-hosted runner (local machine or server you control). See `.github/NO_GITHUB_ACTIONS.md`.
+
+This workflow keeps friction low while ensuring code quality and traceability.
+
 ---
 
 ## Roadmap

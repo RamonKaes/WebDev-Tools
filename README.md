@@ -236,7 +236,7 @@ As part of an external review, four critical issues were identified and addresse
 - Never use `Math.random` for security-sensitive functionality
 - Input validation and robust error handling are essential
 - Build scripts must be environment-aware
-- Automated tests help prevent regressions
+- Automated checks help prevent regressions
 
 All fixes have been implemented, tested, and documented. See the [Code Review Report](CODE_REVIEW_REPORT.md) for details.
 
@@ -367,15 +367,15 @@ WebDev-Tools was developed using a **hybrid human-AI approach** that combines th
 
 ### Developer Artifacts
 
-NOTE: To keep the core project lightweight and focused on the tool collection, developer artifacts are located under `/dev`. Historical test harnesses have been removed from this repository.
+NOTE: To keep the core project lightweight and focused on the tool collection, developer artifacts are located under `/dev`. Historical development harnesses have been removed from this repository.
 
 
 ## Getting Started
-### Legacy Test Artifacts Removed
+### Legacy Developer Artifacts Removed
 
-This repository no longer includes local or headless test harnesses and artifacts. Tests were removed to keep the core project lean for hosting environments. If you need test harnesses, consider cloning the separate test repository (previously maintained in `/tests` and `/dev`) or re-introducing test tooling in a dedicated development workspace.
+This repository no longer includes local or headless development harnesses and related artifacts. They were removed to keep the core project lean for hosting environments. If you require the previous development tooling, consider requesting the separate repository that contained these artifacts.
 
-> Note: If you still rely on the removed test suite, please contact the repository maintainers and we can provide the tests in a separate repository or internal artifact.
+> Note: If you rely on previously available developer harnesses or utilities, please contact the repository maintainers and we can provide them in a separate repository or internal artifact.
 
 
 ### Prerequisites
@@ -484,7 +484,7 @@ We welcome contributions from the community! Here's how you can help:
    - Use Bootstrap classes for styling
    - Maintain client-side-only architecture
    - Add appropriate comments and documentation
-4. **Test thoroughly**: Verify across multiple browsers and languages
+4. **Verify thoroughly**: Verify across multiple browsers and languages
 5. **Submit a Pull Request** with a clear description of changes
 
 ### Code Review Process
@@ -499,7 +499,7 @@ We welcome contributions from the community! Here's how you can help:
 As the sole maintainer of this repository, you can keep changes lightweight while remaining safe and traceable. We recommend the following minimal workflow:
 
 - **No GitHub Actions**: This repository avoids GitHub Actions to prevent action minutes costs.
-- **Local checks first**: Run `./bin/check` before pushing. It performs PHP syntax checks and optional Node tests if `package.json` is present.
+- **Local checks first**: Run `./bin/check` before pushing. It performs PHP syntax checks and optional Node checks if `package.json` is present.
 - **Trivial changes (docs, typos)**: Commit directly to `main` after running `./bin/check`:
    ```bash
    git add -A
@@ -516,7 +516,7 @@ As the sole maintainer of this repository, you can keep changes lightweight whil
    git push --set-upstream origin feat/your-change
    gh pr create --title "feat: add ..." --body "Short description"
    ```
-- **Merge policy**: For most changes, merge PRs yourself once you're confident after running `./bin/check` and a quick smoke test in the browser.
+- **Merge policy**: For most changes, merge PRs yourself once you're confident after running `./bin/check` and a quick smoke check in the browser.
 - **Self-hosted runner (optional)**: If you want CI without GitHub minutes, consider a self-hosted runner (local machine or server you control). See `.github/NO_GITHUB_ACTIONS.md`.
 
 This workflow keeps friction low while ensuring code quality and traceability.

@@ -3,8 +3,8 @@ Repository Policy: No GitHub Actions
 This repository has disabled GitHub Actions to avoid using GitHub Actions minutes.
 
 Local checks and instructions (Single developer recommendations):
-- Use `./bin/check` to run local syntax and test checks (PHP lint + optional Node tests).
-- Prior to a push, run `./bin/check` and a quick manual smoke test in the browser.
+- Use `./bin/check` to run local syntax and verification checks (PHP lint + optional Node checks).
+- Prior to a push, run `./bin/check` and a quick manual smoke check in the browser.
 - For tiny changes (typos, copy) — push directly to `main` if you're confident.
 - For code changes that affect logic or more than one file — open a PR (fast self-review), run `./bin/check`, then merge.
 - Manual steps for running checks locally:
@@ -14,7 +14,7 @@ Local checks and instructions (Single developer recommendations):
 
 Alternatives to using GitHub Actions for CI (cost-free options):
 1. Self-hosted runner — if you own a machine, you can add a self-hosted runner to execute CI jobs without paying for GitHub minutes.
-2. Local test automation — scripts to run tests locally before push/PR.
+2. Local automation — scripts to run checks locally before push/PR.
 3. A lightweight CI server under your control (e.g., Jenkins/Gitlab CI) if you want more automation off-GitHub.
 
 If you want to re-enable GitHub Actions later, create a new workflow file and open a PR. Prefer `workflow_dispatch` and `paths-ignore` rules to minimize unnecessary runs.

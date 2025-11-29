@@ -12,6 +12,11 @@
  * @returns {Promise<boolean>} - True on success
  */
 export async function copyToClipboard(text) {
+  if (!text) {
+    console.warn('No text to copy');
+    return false;
+  }
+
   if (!navigator.clipboard || !navigator.clipboard.writeText) {
     console.warn('Clipboard API not available');
     return fallbackCopy(text);

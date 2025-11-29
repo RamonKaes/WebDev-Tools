@@ -13,9 +13,14 @@ fi
 
 # Node / NPM tests
 if [ -f package.json ] && command -v npm >/dev/null 2>&1; then
-  echo "Running npm tests..."
-  npm ci
-  npm test || true
+  # Only run npm tests if a test script is defined
+  if node -e "const pkg=require('./package.json'); console.log((pkg.scripts && pkg.scripts.test) ? '1' : '0')" | grep -q "1"; then
+    echo "Running npm tests..."
+    npm ci
+    npm test || true
+  else
+    echo "npm package found but no 'test' script defined - skipping npm tests"
+  fi
 else
   echo "No package.json or npm not available - skipping Node tests"
 fi

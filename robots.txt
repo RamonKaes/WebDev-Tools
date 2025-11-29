@@ -4,7 +4,7 @@
 User-agent: *
 Disallow: /config/
 Disallow: /_archive/
-Disallow: /tests/
+# tests folder has been removed from repository
 Disallow: /partials/
 
 # Sitemap Index

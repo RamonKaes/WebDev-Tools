@@ -5,6 +5,8 @@
  * and dynamic UI updates.
  */
 
+const DEBUG = false;
+
 class I18n {
   constructor() {
     this.translations = {};
@@ -183,10 +185,10 @@ class I18n {
       await fetchTranslations(lang);
       return { success: true, langUsed: lang };
     } catch (error) {
-      console.error(`[i18n] Error loading ${lang}.json:`, error);
+      if (DEBUG) console.error(`[i18n] Error loading ${lang}.json:`, error);
 
       if (lang !== this.fallbackLang) {
-        console.warn(`[i18n] Falling back to ${this.fallbackLang}`);
+        if (DEBUG) console.warn(`[i18n] Falling back to ${this.fallbackLang}`);
 
         if (this.translations[this.fallbackLang]) {
           return { success: true, langUsed: this.fallbackLang };
@@ -229,14 +231,19 @@ class I18n {
 
   let value = this.getTranslation(key, this.currentLang);
 
-  if (value === key && this.currentLang !== this.fallbackLang) {
-  console.warn(`[i18n] Missing translation for key: ${key} (lang: ${this.currentLang})`);
-  value = this.getTranslation(key, this.fallbackLang);
-
   if (value === key) {
-  console.warn(`[i18n] Missing translation in fallback for key: ${key}`);
-  return `[MISSING: ${key}]`;
-  }
+    // Warn whenever translation is missing in the current language
+    console.warn(`[i18n] Missing translation for key: ${key} (lang: ${this.currentLang})`);
+    // If currentLang is different from fallback, try fallback
+    if (this.currentLang !== this.fallbackLang) {
+      value = this.getTranslation(key, this.fallbackLang);
+      if (value === key) {
+        console.warn(`[i18n] Missing translation in fallback for key: ${key}`);
+        return `[MISSING: ${key}]`;
+      }
+    } else {
+      return `[MISSING: ${key}]`;
+    }
   }
 
   if (typeof value === 'string' && Object.keys(params).length > 0) {

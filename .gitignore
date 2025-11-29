@@ -1,3 +1,17 @@
+node_modules/
+dev/node_modules/
+dev/e2e/node_modules/
+dev/*.log
+dev/*.png
+dev/*.log
+dev/*.png
+*.log
+*.env
+dist/
+coverage/
+/.parcel-cache
+/.cache
+/.DS_Store
 # WebDev-Tools .gitignore
 
 # Environment and Configuration

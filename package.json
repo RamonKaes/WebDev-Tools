@@ -1,0 +1,9 @@
+{
+  "name": "webdev-tools",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The core WebDev-Tools site — developer tools and assets. Test harnesses were removed from this repository.",
+  "scripts": {
+    "start": "http-server -p 8080"
+  }
+}

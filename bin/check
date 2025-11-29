@@ -11,18 +11,18 @@ else
   echo "PHP not installed locally, skipping PHP lint"
 fi
 
-# Node / NPM tests
+# Node / NPM scripts / checks
 if [ -f package.json ] && command -v npm >/dev/null 2>&1; then
   # Only run npm tests if a test script is defined
   if node -e "const pkg=require('./package.json'); console.log((pkg.scripts && pkg.scripts.test) ? '1' : '0')" | grep -q "1"; then
-    echo "Running npm tests..."
+    echo "Running npm scripts (optional 'test' script)..."
     npm ci
     npm test || true
   else
-    echo "npm package found but no 'test' script defined - skipping npm tests"
+    echo "npm package found but no 'test' script defined - skipping optional npm script run"
   fi
 else
-  echo "No package.json or npm not available - skipping Node tests"
+  echo "No package.json or npm not available - skipping Node checks"
 fi
 
 echo "Done"

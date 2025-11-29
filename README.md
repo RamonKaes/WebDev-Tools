@@ -371,11 +371,9 @@ NOTE: To keep the core project lightweight and focused on the tool collection, d
 
 
 ## Getting Started
-### Legacy Developer Artifacts Removed
+### Developer Artifacts
 
-This repository no longer includes local or headless development harnesses and related artifacts. They were removed to keep the core project lean for hosting environments. If you require the previous development tooling, consider requesting the separate repository that contained these artifacts.
-
-> Note: If you rely on previously available developer harnesses or utilities, please contact the repository maintainers and we can provide them in a separate repository or internal artifact.
+This repository contains a small set of developer utilities and helper scripts under `/dev` used for optional local tasks. These utilities are intended solely for developers and do not affect production assets.
 
 
 ### Prerequisites

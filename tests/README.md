@@ -27,6 +27,13 @@ Simple vanilla JavaScript test framework with no external dependencies.
 
 1. Open `tests/index.html` in a browser
 2. Click "Run Validators Tests" or another test button
+### New UI features
+
+- **Select tests**: Each test card contains a checkbox. Select one or more and click "Run Selected" to execute only those tests.
+- **Search/Filter**: Use the search box to filter visible tests by name.
+- **Run All / Run Selected**: The dashboard provides Run All, Run Selected, and Run Category buttons.
+- **Console export**: Export results to JSON file from the UI.
+
 3. View the test results in the browser console
 
 ### Run tests from the command line

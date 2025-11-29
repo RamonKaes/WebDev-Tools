@@ -366,6 +366,37 @@ WebDev-Tools was developed using a **hybrid human-AI approach** that combines th
 ---
 
 ## Getting Started
+### Running Tests Locally
+
+You can run the project tests locally using the built-in test runner and simple scripts. The project includes browser-based tests and a small Node-friendly test runner for tooling and utilities.
+
+- Quick local checks (recommended before every push):
+   ```bash
+   ./bin/check
+   ```
+
+- Run browser tests:
+   1. Open `tests/index.html` in a modern browser
+   2. Click the test suite you want to run (Validators, Clipboard, Tools, etc.)
+   3. View the results in the console or on the page
+
+- Run JavaScript tests using Node (suitable for non-DOM tests):
+   ```bash
+   node tests/test-runner.js
+   # or run individual test files
+   node tests/lib/validators.test.js
+   ```
+
+- Run the dependency & security check:
+   ```bash
+   ./tests/dependency-check.sh
+   ```
+
+Notes:
+- Some tests depend on DOM APIs (e.g., Clipboard, DOM-based UI tests) and must be run in a browser.
+- Running all tests in Node may require a DOM shim (e.g., `jsdom`) or adjustments if you intend to run them via Node.
+- Use `./bin/check` for fast local validation with PHP lint and optional Node tests.
+
 
 ### Prerequisites
 

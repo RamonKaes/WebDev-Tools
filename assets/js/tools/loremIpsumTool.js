@@ -189,10 +189,10 @@
               </div>
               <div class="d-flex gap-2">
                 <button class="btn btn-outline-secondary btn-sm" id="copyBtn" disabled>
-                  <i class="bi bi-clipboard me-2"></i>${t('tools.loremIpsumTool.copy')}
+                  <i class="bi bi-clipboard me-2" aria-hidden="true"></i><span class="btn-text">${t('tools.loremIpsumTool.copy')}</span>
                 </button>
                 <button class="btn btn-outline-secondary btn-sm" id="clearBtn" disabled>
-                  <i class="bi bi-trash me-2"></i>${t('tools.loremIpsumTool.clear')}
+                  <i class="bi bi-trash me-2" aria-hidden="true"></i><span class="btn-text">${t('tools.loremIpsumTool.clear')}</span>
                 </button>
               </div>
             </div>
@@ -250,16 +250,32 @@
 
         copyToClipboard(text)
           .then(() => {
+            // Prefer explicit icon and text elements; gracefully handle absent nodes
             const originalIcon = copyBtn.querySelector('i');
-            const originalText = copyBtn.childNodes[copyBtn.childNodes.length - 1];
-            const originalTextContent = originalText.textContent;
+            const originalTextEl = copyBtn.querySelector('.btn-text') || copyBtn.childNodes[copyBtn.childNodes.length - 1];
+            const originalTextContent = originalTextEl ? originalTextEl.textContent : '';
 
-            originalIcon.className = 'bi bi-check2 me-2';
-            originalText.textContent = t('tools.loremIpsumTool.copied');
+            if (originalIcon && typeof originalIcon.className !== 'undefined') {
+              originalIcon.className = 'bi bi-check2 me-2';
+            } else {
+              // fallback: add a temporary success class to the button itself
+              copyBtn.classList.add('copied-temp');
+            }
+
+            if (originalTextEl) {
+              originalTextEl.textContent = t('tools.loremIpsumTool.copied');
+            }
 
             setTimeout(() => {
-              originalIcon.className = 'bi bi-clipboard me-2';
-              originalText.textContent = originalTextContent;
+              if (originalIcon && typeof originalIcon.className !== 'undefined') {
+                originalIcon.className = 'bi bi-clipboard me-2';
+              } else {
+                copyBtn.classList.remove('copied-temp');
+              }
+
+              if (originalTextEl) {
+                originalTextEl.textContent = originalTextContent;
+              }
             }, 2000);
           })
           .catch((err) => {

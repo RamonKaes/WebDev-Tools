@@ -12,7 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 ### Fixed
-- **fix(lorem-ipsum):** restore Copy button functionality in `assets/js/tools/loremIpsumTool.js`
+- **fix(lorem-ipsum):** restore Copy button functionality in `assets/js/tools/loremIpsumTool.js` (PR #1, commit dc9bb4b)
+- **test:** add unit test to cover copy-button behavior (PR #3)
 
 ### Technical Improvements
 

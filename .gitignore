@@ -3,8 +3,6 @@ dev/node_modules/
 # dev/e2e/ references removed
 dev/*.log
 dev/*.png
-dev/*.log
-dev/*.png
 *.log
 *.env
 dist/

@@ -313,6 +313,7 @@
       "version_v7_help": "Basé sur l'horodatage Unix avec composant aléatoire",
       "version_nil_help": "UUID nul (tous les bits à zéro)",
       "bulk_error": "Le nombre doit être compris entre 1 et 1000",
+      "crypto_error": "Erreur : La génération de nombres aléatoires cryptographiquement sécurisés n'est pas disponible dans ce navigateur. La génération d'UUID nécessite le support de l'API Web Crypto.",
       "about_title": "À propos",
       "how_to_use_steps": [
         "Choisissez la version UUID (v4 recommandée pour la plupart des cas)",

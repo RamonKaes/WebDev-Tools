@@ -313,6 +313,7 @@
       "copy_all_btn": "Copy All",
       "download_btn": "Download",
       "bulk_error": "Please enter a valid number between 1 and 1000",
+      "crypto_error": "Error: Cryptographically secure random number generation is not available in this browser. UUID generation requires Web Crypto API support.",
       "about_title": "About",
       "how_to_use_steps": [
         "Choose UUID version (v4 recommended for most cases)",

@@ -4,6 +4,7 @@
   "robots.txt",
   "base64-encoder-decoder/index.php",
   "code-formatter/index.php",
+  "data-converter/index.php",
   "hash-generator/index.php",
   "html-entity-encoder-decoder/index.php",
   "json-formatter-validator/index.php",

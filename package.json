@@ -4,6 +4,8 @@
   "private": true,
   "description": "The core WebDev-Tools site — developer tools and assets.",
   "scripts": {
-    "start": "http-server -p 8080"
+    "start": "http-server -p 8080",
+    "dev": "php -S 127.0.0.1:8080 -t . dev/router.php",
+    "test": "php tests/run.php"
   }
 }

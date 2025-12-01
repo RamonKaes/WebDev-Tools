@@ -24,6 +24,7 @@ WebDev-Tools.info is a professional-grade, client-side-only platform providing e
 - [Development Methodology](#development-methodology)
 - [Getting Started](#getting-started)
 - [Browser Compatibility](#browser-compatibility)
+- [Documentation](#documentation)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -85,12 +86,22 @@ WebDev-Tools implements a **"Privacy-by-Design"** approach that eliminates commo
 ### Cryptographic Security
 
 
-## Tests (Minimal host friendly checks)
+## Tests (Comprehensive host-friendly checks)
 
-We maintain a small, host-friendly test suite that runs without Node.js or browser automation. These checks are safe to run on hosted servers and can be executed from the browser or the command line:
+We maintain a comprehensive, host-friendly test suite that runs without Node.js or browser automation. These checks are safe to run on hosted servers and can be executed from the browser or the command line:
 
-- Browser UI: `tests/index.php` — open in a browser and click **Run checks**. The UI prints detailed debug logs including the computed `siteRoot`, `checks.json` URL, and each endpoint fetched.
-- CLI: `tests/run.php` — run via `php tests/run.php <BASE_URL>` or with `BASE_URL=<url>` environment variable to validate endpoints and headers for a given host.
+- **Browser UI:** `tests/index.php` — open in a browser and click **Run checks** to execute a comprehensive test suite including:
+  - **Browser APIs & Core:** Fetch, Crypto, Base64, JWT, JSON, URL, HTML Entity encoding
+  - **Cryptography:** SHA-256/512, HMAC-SHA256, JWT signatures
+  - **Security:** CSP validation, eval() blocking
+  - **Accessibility:** WCAG 2.1 AA compliance (page lang, alt text, form labels, semantic buttons)
+  - **Performance:** TTFB, DOM Content Loaded, Load Complete budgets
+  - **Endpoints:** All 118+ tool endpoints validation
+  
+  Results are shown in real-time with ✅/❌ indicators and can be downloaded as JSON report.
+
+- **CLI:** `tests/run.php` — run via `php tests/run.php <BASE_URL>` or with `BASE_URL=<url>` environment variable to validate endpoints and headers for a given host.
+- **Security Tests:** `tests/security.php` — run cryptographic security tests (CSPRNG validation, hash integrity, JWT signature verification) in the browser.
 
 Important notes:
 - `tests/checks.json` lists canonical, relative endpoints. Paths without a leading `/` are resolved relative to the site root (the folder containing `tests/`) so localized pages such as `de/index.php` are requested as `https://<host>/<siteRoot>/de/index.php`.
@@ -391,8 +402,9 @@ This repository contains a small set of developer utilities and helper scripts u
 
 ### Prerequisites
 
-- **Web Server**: Apache 2.4+ with `mod_rewrite` enabled
-- **PHP**: Version 7.4 or higher
+- **Web Server (production)**: Apache/Nginx with PHP support — the live site (https://webdev-tools.info/) runs entirely as a PHP/Apache site and **does not require Node.js or npm**. All production assets are static/PHP and safe for hosting environments without Node.
+- **Local development (optional)**: Node.js/npm are useful convenience tools for developers (local servers, scripts) but are **not required** for the site to run in production. Use the PHP CLI or the `dev/start-server.sh` router for local testing when Node isn't available.
+- **PHP**: Version 7.4 or higher (8.x recommended)
 - **Browser**: Modern browser with JavaScript enabled
 
 ### Installation
@@ -509,8 +521,8 @@ We welcome contributions from the community! Here's how you can help:
 
 As the sole maintainer of this repository, you can keep changes lightweight while remaining safe and traceable. We recommend the following minimal workflow:
 
-- **No GitHub Actions**: This repository avoids GitHub Actions to prevent action minutes costs.
-- **Local checks first**: Run `./bin/check` before pushing. It performs PHP syntax checks and optional Node checks if `package.json` is present.
+- **CI & Local checks**: This repository includes a lightweight GitHub Actions CI that runs server-side checks and a Composer-free static analysis step.
+- **Local checks first**: Run `./bin/check` before pushing. It performs PHP syntax checks and a lightweight PHPCS style check via a PHAR (no Composer required). Node/npm are still optional developer tools and not needed by CI or production.
 - **Trivial changes (docs, typos)**: Commit directly to `main` after running `./bin/check`:
    ```bash
    git add -A
@@ -531,6 +543,32 @@ As the sole maintainer of this repository, you can keep changes lightweight whil
 - **Self-hosted runner (optional)**: If you want CI without GitHub minutes, consider a self-hosted runner (local machine or server you control). See `.github/NO_GITHUB_ACTIONS.md`.
 
 This workflow keeps friction low while ensuring code quality and traceability.
+
+---
+
+## Documentation
+
+### 📚 Developer Documentation
+
+Detailed technical documentation is available in the [`/docs`](docs/) directory:
+
+- **[Sitemap Generation](docs/SITEMAP-GENERATION.md)** - How sitemaps are automatically generated from tool configurations
+- **[Code Splitting](docs/CODE-SPLITTING.md)** - Strategy for optimizing large tools (1000+ LOC)
+- **[Logger Migration](docs/LOGGER-MIGRATION.md)** - Guide for unified error handling and logging
+- **[JSDoc Status](docs/JSDOC-STATUS.md)** - Type annotations and documentation standards
+
+### 🧪 Testing Documentation
+
+- **[Test Suite](tests/README.md)** - Comprehensive browser-based tests (APIs, Security, Accessibility, Performance)
+- **[Unit Tests](tests/unit/README.md)** - Vitest unit tests for JavaScript libraries
+- **[E2E Tests](tests/e2e/README.md)** - Playwright end-to-end tests
+
+### 🔧 Configuration
+
+- **[Development Server](dev/README.md)** - Local development setup
+- **[i18n Translations](config/i18n/README.md)** - Internationalization guide
+
+See [docs/README.md](docs/README.md) for the complete documentation index.
 
 ---
 
@@ -607,7 +645,11 @@ SOFTWARE.
 - **Website**: [https://webdev-tools.info/](https://webdev-tools.info/)
 - **Issues**: [GitHub Issues](https://github.com/yourusername/WebDev-Tools/issues)
 - **Email**: [Contact Form](https://webdev-tools.info/imprint.php)
-- **Documentation**: [Security Policy](SECURITY.md) | [Changelog](CHANGELOG.md)
+- **Documentation**: 
+  - [Developer Docs](docs/README.md)
+  - [Security Policy](SECURITY.md)
+  - [Changelog](CHANGELOG.md)
+  - [Contributing Guide](CONTRIBUTING.md)
 
 ---
 

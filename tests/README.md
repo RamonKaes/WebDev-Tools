@@ -10,7 +10,45 @@ This folder contains a minimal test suite that runs without Node.js or browser a
 
 Usage
 -----
-Open `index.php` in a browser and click **Run checks** to show results in the UI and download a JSON report. The UI includes debugging outputs that show the computed site root, checks.json URL, and each endpoint fetch.
+Open `index.php` in a browser and click **Run checks** to execute a **comprehensive test suite** including:
+
+**Browser APIs & Core Functionality:**
+- Fetch API availability
+- Web Crypto API (CSPRNG)
+- Base64 encoding/decoding
+- JWT decoding
+- JSON parsing/validation
+- URL encoding/decoding
+- HTML entity encoding/decoding
+
+**Cryptography & Security:**
+- SHA-256/SHA-512 integrity tests
+- HMAC-SHA256 signatures
+- JWT HS256 signature validation
+- Content Security Policy (CSP) validation
+- eval() blocking tests
+
+**Accessibility (WCAG 2.1 AA):**
+- Page language attributes
+- Image alt text validation
+- Form input labels
+- Semantic button usage
+
+**Performance Budgets:**
+- TTFB (Time to First Byte) < 600ms
+- DOM Content Loaded < 1800ms
+- Load Complete < 3800ms
+- PerformanceObserver API availability
+
+**Endpoint Checks:**
+- All 118+ tool endpoints (from `checks.json`)
+
+Results are shown in real-time with ✅/❌ indicators. Download a JSON report for detailed analysis.
+
+**Security Tests:** Open `security.php` in a browser to run cryptographic security tests:
+- UUID v4/v1 CSPRNG validation (no Math.random fallback)
+- Password generator CSPRNG validation
+- SHA-256 integrity test with known test vectors
 
 To run server-side checks (requires PHP CLI):
 ```bash

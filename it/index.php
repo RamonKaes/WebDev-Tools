@@ -325,7 +325,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
           </a>
         </div>
         <div class="col-12 col-md-6 col-lg-4 tool-item" data-category="converters">
-          <a href="<?= $dashboardToolBaseUrl ?>convertitore-px-a-rem/" data-tool-id="pxToRemConverter" class="text-decoration-none">
+          <a href="<?= $dashboardToolBaseUrl ?>px-to-rem-converter/" data-tool-id="pxToRemConverter" class="text-decoration-none">
             <div class="card h-100 tool-card">
               <div class="card-body d-flex flex-column">
                   <h3 class="card-title fs-custom-18 mb-2">

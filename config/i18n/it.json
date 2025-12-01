@@ -321,6 +321,7 @@
       "version_v7_help": "Basato su timestamp Unix con componente casuale",
       "version_nil_help": "UUID nullo (tutti i bit a zero)",
       "bulk_error": "Il numero deve essere compreso tra 1 e 1000",
+      "crypto_error": "Errore: La generazione di numeri casuali crittograficamente sicuri non è disponibile in questo browser. La generazione di UUID richiede il supporto dell'API Web Crypto.",
       "toc_title": "Generatore UUID",
       "h1_title": "Generatore UUID",
       "card_description": "Genera identificatori univoci (UUID) in più versioni. Supporta UUID v1, v4 e NIL con copia con un clic e generazione bulk.",
@@ -581,7 +582,8 @@
         "Scegli la modalità: Codifica o Decodifica",
         "Seleziona il tipo di entità desiderato",
         "Inserisci o incolla il tuo testo",
-        "Clicca su Converti o usa la conversione automatica"
+        "Clicca su Converti o usa la conversione automatica",
+        "Clicca \"Riferimento Caratteri\" per un elenco completo"
       ],
       "about_title": "Informazioni",
       "features_title": "Funzionalità",
@@ -624,7 +626,8 @@
         "Incolla il tuo token JWT nel campo di input",
         "Clicca su Decodifica o usa l'esempio per testare",
         "Esamina header, payload e informazioni sulla firma",
-        "Controlla tempo di scadenza e algoritmo"
+        "Controlla tempo di scadenza e algoritmo",
+        "La firma non viene verificata - utilizzare un server per questo"
       ],
       "about_title": "Informazioni",
       "features_title": "Funzionalità",
@@ -665,7 +668,8 @@
         "Inserisci un nome di dominio Unicode o Punycode",
         "Seleziona la direzione di conversione",
         "Clicca su Converti o usa la conversione automatica",
-        "Copia il dominio convertito per l'uso"
+        "Copia il dominio convertito per l'uso",
+        "È possibile inserire più domini riga per riga"
       ],
       "about_title": "Informazioni",
       "features_title": "Funzionalità",
@@ -948,7 +952,9 @@
         "Correzione automatica errori",
         "Supporto minificazione",
         "Visualizzazione ad albero",
-        "Estrattore percorso JSON"
+        "Estrattore percorso JSON",
+        "Minimizzazione output JSON",
+        "Indentazione personalizzabile"
       ],
       "keywords": "formattatore json, validatore json, beautifier json, evidenziazione sintassi, minifica json, visualizzazione ad albero",
       "meta_title": "Formattatore e Validatore JSON – Beautify & Minify Online",
@@ -993,7 +999,8 @@
         "Generazione basata su pattern",
         "Analisi forza password",
         "Generazione bulk",
-        "Export TXT, CSV, JSON"
+        "Export TXT, CSV, JSON",
+        "Esporta in TXT, CSV, JSON"
       ],
       "keywords": "generatore password, password sicura, password casuale, passphrase, forza password, crittografico",
       "meta_title": "Generatore Password Sicure – Creare Password Casuali Forti",

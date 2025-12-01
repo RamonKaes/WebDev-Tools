@@ -321,6 +321,7 @@
       "version_v7_help": "Kombiniert Zeitstempel mit Zufallsdaten (empfohlen für zeitlich geordnete UUIDs)",
       "version_nil_help": "Spezielle UUID mit allen Nullen (00000000-0000-0000-0000-000000000000)",
       "bulk_error": "Bitte geben Sie eine gültige Zahl zwischen 1 und 1000 ein",
+      "crypto_error": "Fehler: Kryptographisch sichere Zufallszahlengenerierung ist in diesem Browser nicht verfügbar. UUID-Generierung erfordert Web Crypto API-Unterstützung.",
       "toc_title": "UUID Generator",
       "h1_title": "UUID Generator",
       "card_description": "Kostenloser UUID Generator zum sofortigen Erstellen eindeutiger Identifikatoren. Generiere v1, v4, v7 und NIL UUIDs in mehreren Formaten. Massengenerierung.",

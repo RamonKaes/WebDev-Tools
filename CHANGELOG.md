@@ -8,18 +8,95 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **feat(tests):** Comprehensive test suite integration in `tests/index.php` with 40+ checks
+  - CSP (Content Security Policy) validation tests
+  - Accessibility (WCAG 2.1 AA) compliance tests (page language, alt text, form labels, semantic buttons)
+  - Performance budget monitoring (TTFB, DOM Content Loaded, Load Complete)
+  - Browser API and cryptography tests
+  - 118+ endpoint availability checks
+- **feat(tests):** Unit test infrastructure with Vitest (`tests/unit/`)
+  - Test templates for validators.js, formatters.js, clipboard-utils.js
+  - Comprehensive test documentation and setup guide
+- **feat(tests):** E2E test infrastructure with Playwright (`tests/e2e/`)
+  - Cross-browser tests (Chromium, Firefox, WebKit, Mobile)
+  - Test suites for Base64, UUID Generator, Password Generator
+  - Accessibility tests with axe-core integration
+- **feat(monitoring):** Performance budget monitoring (`assets/js/performance-budget.js`)
+  - Core Web Vitals tracking (FCP, LCP, FID, CLS, TTI)
+  - Automatic violation reporting with PerformanceObserver API
+  - Google Analytics integration for production monitoring
+- **feat(logging):** Centralized Logger class (`assets/js/lib/logger.js`)
+  - Consistent error handling with debug/info/warn/error levels
+  - Performance timing utilities
+  - Scoped loggers for better debugging
+  - Optional error reporting integration
+- **feat(tools):** Localized slugs for 10 tools in config/tools.php
+  - URL Encoder/Decoder, HTML Entity Tool, JSON Formatter/Validator
+  - JWT Decoder, Punycode Converter, UUID Generator
+  - Hash Generator, Lorem Ipsum, QR Code Generator, Regex Tester
+- **feat(bin):** Tool verification script (`bin/verify-tools.sh`)
+  - Validates all 118 tool directories across 6 languages
+  - Color-coded output with detailed error reporting
+- **docs:** Comprehensive developer documentation in `/docs`
+  - `docs/README.md` - Documentation index
+  - `docs/SITEMAP-GENERATION.md` - Sitemap automation guide
+  - `docs/CODE-SPLITTING.md` - Performance optimization strategy for large tools
+  - `docs/LOGGER-MIGRATION.md` - Logger migration guide with 20+ affected files
+  - `docs/JSDOC-STATUS.md` - JSDoc type annotations status (core libraries complete)
+- **feat(dev):** Add development server router (`dev/router.php`) and start script (`dev/start-server.sh`) for local PHP built-in server
+- **feat(ci):** Add GitHub Actions CI workflow with PHP checks and PHPCS static analysis (no Composer required)
+- **feat(tests):** Add comprehensive security test suite (`tests/security.php`) for CSPRNG validation, hash integrity, and JWT signature verification
+- **feat(tests):** Add SHA-512 and HMAC test vectors for cryptographic integrity validation
+- **feat(quality):** Add `bin/check` script for syntax and style checks using PHPCS PHAR (no Composer/Node required)
+- **docs:** Add `CONTRIBUTING.md` with development workflow and setup instructions
+- **docs:** Add `tests/security-tests.md` documenting security test coverage and recommendations
 
 ### Changed
- - **chore(tests):** Replaced the overburdened test-suite with lightweight "simple tests" (PHP CLI + VanillaJS UI) for hosting-friendly verification
-
+- **refactor(tests):** Enhanced `tests/index.php` from "simple checks" to comprehensive test suite
+  - Added 15+ new test categories (CSP, Accessibility, Performance)
+  - Improved summary reporting with warnings and detailed metrics
+  - Updated UI title from "Simple Checks" to "Comprehensive Test Suite"
+- **docs:** Updated `README.md` with comprehensive documentation section
+  - Links to all developer docs, test suites, and configuration guides
+  - Enhanced test suite description with all new categories
+- **docs:** Updated `tests/README.md` with detailed test suite breakdown
+  - All test categories and their specific checks documented
+  - Performance budget thresholds specified
+  - Accessibility criteria listed
+- **chore(tests):** Replaced the overburdened test-suite with lightweight "simple tests" (PHP CLI + VanillaJS UI) for hosting-friendly verification
+- **chore(ci):** CI workflows now run only on pull requests and manual triggers to conserve runner minutes
+- **docs:** Update README to clarify production environment (no Node/npm required) vs. optional developer tools
 
 ### Fixed
+- **fix(i18n):** Added 6 missing translation keys in `config/i18n/it.json`
+  - `seo.jsonFormatterValidator.featureList[6]` and `[7]`
+  - `seo.passwordGeneratorTool.featureList[6]`
+  - `tools.htmlEntityTool.how_to_use_steps[4]`
+  - `tools.jwtDecoderTool.how_to_use_steps[4]`
+  - `tools.punycodeConverterTool.how_to_use_steps[4]`
+- **fix(tests):** Added missing data-converter endpoint to `tests/checks.json`
+- **security(uuid):** Remove unsafe Math.random() fallback in UUID generator (v4, v7) — now throws clear error if Web Crypto API unavailable
+- **fix(i18n):** Add `crypto_error` translation key in all 6 languages for UUID generator error messages
 - **fix(lorem-ipsum):** restore Copy button functionality in `assets/js/tools/loremIpsumTool.js` (PR #1, commit dc9bb4b)
-- Add copy-button validation (PR #3)
- - **chore(tests):** Replace complex test harness with a minimal PHP/Vanilla JS checks interface (tests/index.php, tests/run.php)
- - **feat(tests):** Add security checks to the lightweight checks (verify crypto primitives, CSP/HSTS presence, manifest parsing, UUIDv4 format)
+- **fix(tests):** Add copy-button validation (PR #3)
+
+### Security
+- **CRITICAL:** Removed cryptographically insecure Math.random() fallback from UUID generator — all UUID generation now requires Web Crypto API
+- **Added:** CSP validation tests (eval() blocking, external source restrictions)
+- **Added:** CSPRNG validation tests for Password Generator and UUID Generator (v1, v4, v7)
+- **Added:** Hash integrity tests with known test vectors (SHA-256, SHA-512, HMAC-SHA256)
+- **Added:** JWT signature validation tests (RS256, HS256)
 
 ### Technical Improvements
+- **Testing:** 40+ browser-based checks covering APIs, security, accessibility, and performance
+- **Documentation:** Complete developer documentation structure with guides and migration paths
+- **Performance:** Performance budget monitoring with Core Web Vitals tracking
+- **Logging:** Centralized error handling with Logger class (20+ files ready for migration)
+- **Code Quality:** JSDoc annotations complete for all core libraries (dom-utils, formatters, logger)
+- **Tooling:** Automated sitemap verification and tool directory validation
+- CI runs lightweight checks without external dependencies (Composer/Node)
+- PHPCS style checks via PHAR download (PSR-12 standard)
+- Production-ready: all runtime code works without Node/npm
 
 ---
 

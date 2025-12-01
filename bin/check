@@ -1,4 +1,57 @@
 #!/usr/bin/env bash
+set -euo pipefail
+
+# Lightweight project checks that do not require Composer or Node.
+# - php -l for syntax
+# - phpcs via phar (downloaded on demand)
+
+ROOT=$(cd "$(dirname "$0")/.." && pwd)
+PHPCS_PHAR="$ROOT/.tools/phpcs.phar"
+
+echo "Running lightweight project checks (no Composer / Node required)"
+
+fail=0
+
+echo "* Syntax checks (php -l)"
+mapfile -t files < <(find "$ROOT" -type f -name '*.php' -not -path '*/tests/reports/*' -not -path '*/.git/*')
+for f in "${files[@]}"; do
+  php -l "$f" >/dev/null 2>&1 || {
+    echo "SYNTAX ERROR: $f"
+    php -l "$f" || true
+    fail=1
+  }
+done
+
+if [ "$fail" -ne 0 ]; then
+  echo "One or more PHP files have syntax errors. Fix before continuing."
+  exit 1
+fi
+
+echo "* Running PHPCS (style checks) — using PHAR (no Composer required)"
+mkdir -p "$ROOT/.tools"
+if [ ! -f "$PHPCS_PHAR" ]; then
+  echo "Downloading phpcs.phar to $PHPCS_PHAR"
+  curl -fsSL -o "$PHPCS_PHAR" "https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar" || {
+    echo "Failed to download phpcs.phar"; exit 1
+  }
+  chmod +x "$PHPCS_PHAR"
+fi
+
+echo "Running phpcs (standard: PSR12)"
+# Limit PHPCS checks to key server-side PHP areas to keep checks lightweight and avoid failing on generated/asset files.
+TARGETS=(
+  "$ROOT/index.php"
+  "$ROOT/config"
+  "$ROOT/partials"
+  "$ROOT/bin"
+)
+
+php "$PHPCS_PHAR" --standard=PSR12 --extensions=php --ignore=tests/reports/* "${TARGETS[@]}" || {
+  echo "PHPCS reported issues"; exit 1
+}
+
+echo "All checks passed. ✅"
+#!/usr/bin/env bash
 set -e
 
 echo "Running local checks..."

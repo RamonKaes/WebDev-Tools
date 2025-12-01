@@ -314,6 +314,7 @@
       "version_v7_help": "Combina timestamp com dados aleatórios (recomendado para UUIDs ordenados por tempo)",
       "version_nil_help": "UUID especial com todos zeros (00000000-0000-0000-0000-000000000000)",
       "bulk_error": "Por favor insira um número válido entre 1 e 1000",
+      "crypto_error": "Erro: A geração de números aleatórios criptograficamente seguros não está disponível neste navegador. A geração de UUID requer suporte à API Web Crypto.",
       "how_to_use_title": "Como Usar",
       "how_to_use_steps": [
         "Escolha a versão UUID (v4 recomendada para a maioria dos casos)",

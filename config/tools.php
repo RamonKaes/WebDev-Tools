@@ -23,6 +23,14 @@ return [
   'urlEncoderDecoder' => [
     'id' => 'urlEncoderDecoder',
     'slug' => 'url-encoder-decoder',
+    'slugs' => [
+      'en' => 'url-encoder-decoder',
+      'de' => 'url-encoder-decoder',
+      'es' => 'url-encoder-decoder',
+      'pt' => 'url-encoder-decoder',
+      'fr' => 'url-encoder-decoder',
+      'it' => 'url-encoder-decoder'
+    ],
     'category' => 'encoders',
     'icon' => 'bi-link-45deg',
     'jsModule' => 'tools/urlEncoderDecoderTool.js',
@@ -35,6 +43,14 @@ return [
   'htmlEntityTool' => [
     'id' => 'htmlEntityTool',
     'slug' => 'html-entity-encoder-decoder',
+    'slugs' => [
+      'en' => 'html-entity-encoder-decoder',
+      'de' => 'html-entity-encoder-decoder',
+      'es' => 'html-entity-encoder-decoder',
+      'pt' => 'html-entity-encoder-decoder',
+      'fr' => 'html-entity-encoder-decoder',
+      'it' => 'html-entity-encoder-decoder'
+    ],
     'category' => 'encoders',
     'icon' => 'bi-code-square',
     'jsModule' => 'tools/htmlEntityTool.js',
@@ -47,6 +63,14 @@ return [
   'jsonFormatterValidator' => [
     'id' => 'jsonFormatterValidator',
     'slug' => 'json-formatter-validator',
+    'slugs' => [
+      'en' => 'json-formatter-validator',
+      'de' => 'json-formatter-validator',
+      'es' => 'json-formatter-validator',
+      'pt' => 'json-formatter-validator',
+      'fr' => 'json-formatter-validator',
+      'it' => 'json-formatter-validator'
+    ],
     'category' => 'formatters',
     'icon' => 'bi-filetype-json',
     'jsModule' => 'tools/jsonFormatterValidatorTool.js',
@@ -119,6 +143,14 @@ return [
   'jwtDecoderTool' => [
     'id' => 'jwtDecoderTool',
     'slug' => 'jwt-decoder',
+    'slugs' => [
+      'en' => 'jwt-decoder',
+      'de' => 'jwt-decoder',
+      'es' => 'jwt-decoder',
+      'pt' => 'jwt-decoder',
+      'fr' => 'jwt-decoder',
+      'it' => 'jwt-decoder'
+    ],
     'category' => 'encoders',
     'icon' => 'bi-shield-lock',
     'jsModule' => 'tools/jwtDecoderTool.js',
@@ -131,6 +163,14 @@ return [
   'punycodeConverterTool' => [
     'id' => 'punycodeConverterTool',
     'slug' => 'punycode-converter',
+    'slugs' => [
+      'en' => 'punycode-converter',
+      'de' => 'punycode-converter',
+      'es' => 'punycode-converter',
+      'pt' => 'punycode-converter',
+      'fr' => 'punycode-converter',
+      'it' => 'punycode-converter'
+    ],
     'category' => 'encoders',
     'icon' => 'bi-globe',
     'jsModule' => 'tools/punycodeConverterTool.js',
@@ -143,6 +183,14 @@ return [
   'uuidGeneratorTool' => [
     'id' => 'uuidGeneratorTool',
     'slug' => 'uuid-generator',
+    'slugs' => [
+      'en' => 'uuid-generator',
+      'de' => 'uuid-generator',
+      'es' => 'uuid-generator',
+      'pt' => 'uuid-generator',
+      'fr' => 'uuid-generator',
+      'it' => 'uuid-generator'
+    ],
     'category' => 'generators',
     'icon' => 'bi-fingerprint',
     'jsModule' => 'tools/uuidGeneratorTool.js',
@@ -175,6 +223,14 @@ return [
   'hashGeneratorTool' => [
     'id' => 'hashGeneratorTool',
     'slug' => 'hash-generator',
+    'slugs' => [
+      'en' => 'hash-generator',
+      'de' => 'hash-generator',
+      'es' => 'hash-generator',
+      'pt' => 'hash-generator',
+      'fr' => 'hash-generator',
+      'it' => 'hash-generator'
+    ],
     'category' => 'generators',
     'icon' => 'bi-hash',
     'jsModule' => 'tools/hashGeneratorTool.js',
@@ -187,6 +243,14 @@ return [
   'loremIpsumTool' => [
     'id' => 'loremIpsumTool',
     'slug' => 'lorem-ipsum',
+    'slugs' => [
+      'en' => 'lorem-ipsum',
+      'de' => 'lorem-ipsum',
+      'es' => 'lorem-ipsum',
+      'pt' => 'lorem-ipsum',
+      'fr' => 'lorem-ipsum',
+      'it' => 'lorem-ipsum'
+    ],
     'category' => 'generators',
     'icon' => 'bi-file-text',
     'jsModule' => 'tools/loremIpsumTool.js',
@@ -199,6 +263,14 @@ return [
   'qrCodeGeneratorTool' => [
     'id' => 'qrCodeGeneratorTool',
     'slug' => 'qr-code-generator',
+    'slugs' => [
+      'en' => 'qr-code-generator',
+      'de' => 'qr-code-generator',
+      'es' => 'qr-code-generator',
+      'pt' => 'qr-code-generator',
+      'fr' => 'qr-code-generator',
+      'it' => 'qr-code-generator'
+    ],
     'category' => 'generators',
     'icon' => 'bi-qr-code',
     'jsModule' => 'tools/qrCodeGeneratorTool.js',
@@ -278,6 +350,14 @@ return [
   'regexTesterTool' => [
     'id' => 'regexTesterTool',
     'slug' => 'regex-tester',
+    'slugs' => [
+      'en' => 'regex-tester',
+      'de' => 'regex-tester',
+      'es' => 'regex-tester',
+      'pt' => 'regex-tester',
+      'fr' => 'regex-tester',
+      'it' => 'regex-tester'
+    ],
     'category' => 'utilities',
     'icon' => 'bi-regex',
     'jsModule' => 'tools/regexTesterTool.js',

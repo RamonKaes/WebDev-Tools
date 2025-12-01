@@ -159,10 +159,7 @@
           const hex = Array.from(bytes, b => ('0' + b.toString(16)).slice(-2)).join('');
           return `${hex.substring(0,8)}-${hex.substring(8,12)}-${hex.substring(12,16)}-${hex.substring(16,20)}-${hex.substring(20)}`;
         } catch (e) {
-          return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
-            const r = Math.random() * 16 | 0;
-            return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
-          });
+          throw new Error('UUID generation requires Web Crypto API (crypto.getRandomValues). This browser does not support cryptographically secure random number generation.');
         }
       }
 
@@ -227,7 +224,7 @@
           const hex = Array.from(bytes, b => ('0' + b.toString(16)).slice(-2)).join('');
           return `${hex.substring(0,8)}-${hex.substring(8,12)}-${hex.substring(12,16)}-${hex.substring(16,20)}-${hex.substring(20)}`;
         } catch (e) {
-          return generateUUIDv4();
+          throw new Error('UUID v7 requires Web Crypto API support');
         }
       }
 

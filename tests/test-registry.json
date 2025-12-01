@@ -2,5 +2,12 @@
   { "id": "fetch", "enabled": true, "desc": "Check browser fetch API availability" },
   { "id": "crypto_random", "enabled": true, "desc": "Check crypto.getRandomValues" },
   { "id": "btoa_atob", "enabled": true, "desc": "Check base64 btoa/atob" },
-  { "id": "jwt-decode", "enabled": true, "desc": "Decode a sample JWT payload" }
+  { "id": "jwt-decode", "enabled": true, "desc": "Decode a sample JWT payload" },
+  { "id": "uuid_csprng", "enabled": true, "desc": "Verify UUID v4 uses CSPRNG (no predictable patterns)" },
+  { "id": "password_csprng", "enabled": true, "desc": "Verify password generator uses CSPRNG" },
+  { "id": "hash_integrity", "enabled": true, "desc": "Verify SHA-256 digest with known test vector" },
+  { "id": "sha512_integrity", "enabled": true, "desc": "Verify SHA-512 digest with known test vector" },
+  { "id": "hmac_sha256", "enabled": true, "desc": "Verify HMAC-SHA256 with known test vector" },
+  { "id": "jwt_signature_hs256", "enabled": true, "desc": "Verify JWT HS256 signature validation" },
+  { "id": "jwt_signature_rs256", "enabled": true, "desc": "Verify JWT RS256 algorithm detection" }
 ]

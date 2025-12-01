@@ -1,0 +1,50 @@
+[
+  {
+    "id": "php_version",
+    "description": "Ensure running PHP is >= 7.4",
+    "scope": "host",
+    "enabled": true
+  },
+  {
+    "id": "manifest_parse",
+    "description": "manifest.json exists and parses as JSON",
+    "scope": "host",
+    "enabled": true
+  },
+  {
+    "id": "i18n_en",
+    "description": "i18n en.json exists and parses",
+    "scope": "host",
+    "enabled": false
+  },
+  {
+    "id": "security_headers",
+    "description": "security-headers.php contains CSP; runtime CSP header present for BASE_URL",
+    "scope": "host",
+    "enabled": true
+  },
+  {
+    "id": "crypto_random",
+    "description": "random_bytes or openssl_random_pseudo_bytes present and unique",
+    "scope": "host",
+    "enabled": true
+  },
+  {
+    "id": "sha256",
+    "description": "SHA-256 known-signature check",
+    "scope": "host",
+    "enabled": true
+  },
+  {
+    "id": "uuid_v4",
+    "description": "UUIDv4 generation & format",
+    "scope": "host",
+    "enabled": true
+  },
+  {
+    "id": "jwt_decode",
+    "description": "JWT payload decode (no signature validation)",
+    "scope": "browser",
+    "enabled": true
+  }
+]

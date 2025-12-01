@@ -21,3 +21,13 @@ Notes:
 - Reports: `php tests/run.php` writes a JSON report to `tests/reports/run-summary.json` after each run.
 	- Note: On `localhost` the site often runs over `http`, while the hosted environment runs `https`. Runtime HSTS header checks are only validated for HTTPS schemes.
 
+Policy & Guidelines
+- Keep the `tests/` minimal and focused on security-relevant and essential correctness checks.
+- The test registry (`tests/test-registry.json`) defines the allowed checks and whether they're enabled. Do not add tests ad-hoc — open a PR and document the reason.
+- Default rule: only checks included in `test-registry.json` and flagged with `enabled:true` will run. An empty `enabled` set runs all checks (fallback); maintainers should keep only a small approved set enabled for hosting.
+
+How to add a new test
+1. Add a new entry to `tests/test-registry.json` with `id`, `description`, `scope` (`host`/`browser`) and `enabled:false` by default.
+2. Implement the corresponding check in `tests/run.php` or `tests/index.php` as a guarded function (i.e., execute only if the registry enables the test).
+3. Provide justification in the PR — why the test is essential, no Node dependency, and why it should be enabled by default.
+

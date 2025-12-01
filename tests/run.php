@@ -7,6 +7,15 @@ function ok($msg){ global $results; $results[] = ['ok'=>true,'msg'=>$msg]; echo 
 function fail($msg){ global $results; $results[] = ['ok'=>false,'msg'=>$msg]; echo "[FAIL] $msg\n"; }
 
 echo "WebDev-Tools Server Checks\n";
+// Optional runtime base URL to validate runtime headers and responses
+$baseUrl = getenv('BASE_URL') ?: ($argv[1] ?? null);
+if ($baseUrl) {
+  // Normalize: ensure a scheme is present
+  if (!preg_match('#^https?://#i', $baseUrl)) {
+    $baseUrl = 'https://' . $baseUrl;
+  }
+  echo "Using BASE_URL: $baseUrl\n";
+}
 // 1. PHP version
 $phpVersion = phpversion();
 if (version_compare($phpVersion, '7.4.0', '>=')){
@@ -70,6 +79,30 @@ if (file_exists($secHeaders)){
   if (strpos($txt, 'Strict-Transport-Security') !== false) ok('security-headers.php contains HSTS (Conditional)'); else fail('security-headers.php HSTS not found');
 } else {
   fail('security-headers.php missing');
+}
+
+// 6b. If a runtime base URL was provided, check HTTP response headers (CSP/HSTS) at runtime
+if ($baseUrl) {
+  $headers = @get_headers($baseUrl, 1);
+  if (!$headers || !is_array($headers)) {
+    fail("Failed to fetch headers from runtime base URL: $baseUrl");
+  } else {
+    // Normalize header keys and check for CSP and HSTS
+    $headersNormalized = array_change_key_case($headers, CASE_LOWER);
+    $hasCSP = false;
+    foreach ($headersNormalized as $k => $v) {
+      if ($k === 'content-security-policy' || $k === 'content-security-policy-report-only') { $hasCSP = true; break; }
+    }
+    if ($hasCSP) ok('Runtime CSP header present'); else fail('Runtime CSP header missing');
+
+    // HSTS only required if scheme is https
+    $scheme = parse_url($baseUrl, PHP_URL_SCHEME);
+    if ($scheme === 'https') {
+      if (isset($headersNormalized['strict-transport-security'])) ok('Runtime HSTS header present'); else fail('Runtime HSTS missing for HTTPS site');
+    } else {
+      ok('Runtime HSTS not expected for non-HTTPS site');
+    }
+  }
 }
 
 // 7. Hashing check (SHA-256 known value)

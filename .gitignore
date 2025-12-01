@@ -47,6 +47,12 @@ build/
 !assets/**/*.min.js
 !assets/**/*.min.css
 
+# Deployment
+deploy_package/
+*.tar.gz
+.deployignore
+deploy.sh
+
 # OS Files
 Thumbs.db
 .DS_Store

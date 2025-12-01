@@ -30,6 +30,15 @@
   # ====================================
   # Redirect old English-style URLs to localized directory names
   
+  # German (DE) - redirect English slugs to German
+  RewriteRule ^de/url-encoder-decoder/?$ /de/url-kodierer-dekodierer/ [R=301,L]
+  RewriteRule ^de/html-entity-encoder-decoder/?$ /de/html-entity-kodierer-dekodierer/ [R=301,L]
+  RewriteRule ^de/json-formatter-validator/?$ /de/json-formatierer-validator/ [R=301,L]
+  RewriteRule ^de/code-formatter/?$ /de/code-formatierer/ [R=301,L]
+  RewriteRule ^de/jwt-decoder/?$ /de/jwt-dekodierer/ [R=301,L]
+  RewriteRule ^de/punycode-converter/?$ /de/punycode-konverter/ [R=301,L]
+  RewriteRule ^de/string-escaper/?$ /de/string-maskierer/ [R=301,L]
+  
   # Spanish (ES) - redirect English slugs to Spanish
   RewriteRule ^es/password-generator/?$ /es/generador-contrasenas/ [R=301,L]
   RewriteRule ^es/data-converter-json-xml-yaml-csv-timestamp/?$ /es/conversor-datos/ [R=301,L]

@@ -72,6 +72,11 @@
       let replacedCount = 0;
 
       icons.forEach(icon => {
+        // Skip icons inside headings (h1-h6)
+        if (icon.closest('h1, h2, h3, h4, h5, h6')) {
+          return;
+        }
+
         const classList = Array.from(icon.classList);
         const biClass = classList.find(cls => cls.startsWith('bi-') && this.iconMap[cls]);
 

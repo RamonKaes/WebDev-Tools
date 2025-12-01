@@ -25,7 +25,7 @@ return [
     'slug' => 'url-encoder-decoder',
     'slugs' => [
       'en' => 'url-encoder-decoder',
-      'de' => 'url-encoder-decoder',
+      'de' => 'url-kodierer-dekodierer',
       'es' => 'url-encoder-decoder',
       'pt' => 'url-encoder-decoder',
       'fr' => 'url-encoder-decoder',
@@ -45,7 +45,7 @@ return [
     'slug' => 'html-entity-encoder-decoder',
     'slugs' => [
       'en' => 'html-entity-encoder-decoder',
-      'de' => 'html-entity-encoder-decoder',
+      'de' => 'html-entity-kodierer-dekodierer',
       'es' => 'html-entity-encoder-decoder',
       'pt' => 'html-entity-encoder-decoder',
       'fr' => 'html-entity-encoder-decoder',
@@ -65,7 +65,7 @@ return [
     'slug' => 'json-formatter-validator',
     'slugs' => [
       'en' => 'json-formatter-validator',
-      'de' => 'json-formatter-validator',
+      'de' => 'json-formatierer-validator',
       'es' => 'json-formatter-validator',
       'pt' => 'json-formatter-validator',
       'fr' => 'json-formatter-validator',
@@ -85,7 +85,7 @@ return [
     'slug' => 'code-formatter',
     'slugs' => [
       'en' => 'code-formatter',
-      'de' => 'code-formatter',
+      'de' => 'code-formatierer',
       'es' => 'code-formatter',
       'pt' => 'code-formatter',
       'fr' => 'code-formatter',
@@ -145,7 +145,7 @@ return [
     'slug' => 'jwt-decoder',
     'slugs' => [
       'en' => 'jwt-decoder',
-      'de' => 'jwt-decoder',
+      'de' => 'jwt-dekodierer',
       'es' => 'jwt-decoder',
       'pt' => 'jwt-decoder',
       'fr' => 'jwt-decoder',
@@ -165,7 +165,7 @@ return [
     'slug' => 'punycode-converter',
     'slugs' => [
       'en' => 'punycode-converter',
-      'de' => 'punycode-converter',
+      'de' => 'punycode-konverter',
       'es' => 'punycode-converter',
       'pt' => 'punycode-converter',
       'fr' => 'punycode-converter',
@@ -292,7 +292,7 @@ return [
     'slug' => 'string-escaper',
     'slugs' => [
       'en' => 'string-escaper',
-      'de' => 'string-escaper',
+      'de' => 'string-maskierer',
       'es' => 'escapador-cadenas',
       'pt' => 'string-escaper',
       'fr' => 'string-escaper',

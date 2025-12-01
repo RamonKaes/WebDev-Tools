@@ -8,6 +8,50 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **feat(ui):** Sidebar navigation auto-scroll (`assets/js/sidebar-navigation.js`)
+  - Automatically expands category collapse when navigating to tool pages
+  - Smooth scrolls to active tool link in sidebar for better UX
+  - Integrated in common-scripts.php for all tool pages
+- **feat(ui):** Consistent icon system across all heading levels
+  - Bootstrap icon fonts for H1-H6 headings instead of mixed SVG/font approach
+  - Modified icon-system.js to exclude heading icons from SVG sprite conversion
+  - Uniform icon sizing that scales with heading font-size
+
+### Changed
+- **refactor(icons):** Unified heading icon implementation
+  - H1 icons now use Bootstrap icon fonts with Flexbox alignment
+  - Removed custom CSS for icon sizing in favor of native Bootstrap scaling
+  - Icons in H1-H6 exempt from automatic SVG sprite conversion
+  - All heading icons scale proportionally with their respective heading sizes
+- **i18n(de):** Updated German localized slugs for 8 tools
+  - URL Encoder/Decoder: `url-kodierer-dekodierer`
+  - HTML Entity Tool: `html-entity-kodierer-dekodierer`
+  - JSON Formatter: `json-formatierer-validator`
+  - Code Formatter: `code-formatierer`
+  - JWT Decoder: `jwt-dekodierer`
+  - Punycode Converter: `punycode-konverter`
+  - String Escaper: `string-maskierer`
+- **build:** Updated all sitemaps with new lastmod date (2025-12-01)
+  - Regenerated German, Spanish, French, Italian, Portuguese sitemaps
+  - Updated sitemap index with current modification dates
+
+### Fixed
+- **fix(icons):** Resolved inconsistent icon sizes in tool headings
+  - H1 icons now consistently display at appropriate size
+  - H2-H6 icons maintain visual consistency across all tool pages
+  - Vertical alignment corrected using Bootstrap Flexbox utilities
+
+### Documentation
+- **docs:** Updated I18N-GUIDELINES.md with professional writing standards
+  - Added guidelines for avoiding marketing language in technical documentation
+  - Documented preferred technical terminology and patterns
+  - Provided examples of professional vs. marketing-focused writing
+
+---
+
+## Previous Entries
+
+### Added
 - **feat(tests):** Comprehensive test suite integration in `tests/index.php` with 40+ checks
   - CSP (Content Security Policy) validation tests
   - Accessibility (WCAG 2.1 AA) compliance tests (page language, alt text, form labels, semantic buttons)

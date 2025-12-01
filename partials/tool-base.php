@@ -66,8 +66,8 @@ include __DIR__ . '/head.php';
     ?>
     <div class="tool-container-inner mx-auto" id="tool-header">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h3 mb-0" data-toc-title="<?= htmlspecialchars($toolNavTitle, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>">
-          <i class="bi <?= htmlspecialchars($toolIcon, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?> me-2 fs-2 align-middle tool-header-icon"></i><?= htmlspecialchars($toolH1Title, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>
+        <h1 class="h3 mb-0 d-flex align-items-center" data-toc-title="<?= htmlspecialchars($toolNavTitle, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>">
+          <i class="bi <?= htmlspecialchars($toolIcon, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?> me-2"></i><span><?= htmlspecialchars($toolH1Title, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?></span>
         </h1>
       </div>
       <?php if ($toolDescription): ?>

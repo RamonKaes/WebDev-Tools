@@ -19,4 +19,5 @@ Purpose: Provide a lightweight verification surface that works on hosted servers
 Notes:
 - This is intentionally minimal to avoid heavy test harnesses on hosted environments. If you need a more feature-rich setup, consider a separate dev repository.
 - Reports: `php tests/run.php` writes a JSON report to `tests/reports/run-summary.json` after each run.
+	- Note: On `localhost` the site often runs over `http`, while the hosted environment runs `https`. Runtime HSTS header checks are only validated for HTTPS schemes.
 

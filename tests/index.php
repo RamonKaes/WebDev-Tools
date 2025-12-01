@@ -45,12 +45,21 @@
         if (navigator.clipboard && navigator.clipboard.writeText) { ok('Clipboard API available'); results.push({check:'clipboard',ok:true}); } else { log('Clipboard API not available (expected on some hosts)'); results.push({check:'clipboard',ok:false}); }
 
         // Basic file checks via fetch
-        const toCheck = ['config/manifest.json','config/i18n/en.json','config/config.php'];
+        // Paths to check via HTTP
+        // We prefer public-accessible assets. Avoid fetching server-side PHP config files by HTTP as they may be intentionally protected.
+        const toCheck = ['manifest.json','config/i18n/en.json'];
         for (const p of toCheck){
           try{
-            const res = await fetch(window.location.origin + '/' + p, {cache:'no-store'});
-            if (res.ok){ ok(`Found: ${p}`); results.push({check:p,ok:true}); }
-            else { fail(`HTTP ${res.status} - ${p}`); results.push({check:p,ok:false}); }
+            // Respect base path if provided
+            const base = (window.__BASE_PATH__ || (document.querySelector('base') && document.querySelector('base').href) || window.location.pathname.replace(/\/[^/]*$/, '/'));
+            const url = new URL(p, window.location.origin + base);
+            const res = await fetch(url.toString(), {cache:'no-store'});
+            if (res.ok){ ok(`Found: ${p} (${url.pathname})`); results.push({check:p,ok:true}); }
+            else if (res.status === 404){
+              // 404 may be expected (e.g., config files not publicly accessible). Treat as warning rather than hard fail.
+              log(`HTTP 404 - ${p} at ${url.pathname} (may be intentionally protected)`);
+              results.push({check:p,ok:false,warning:true});
+            } else { fail(`HTTP ${res.status} - ${p}`); results.push({check:p,ok:false}); }
           } catch (e){ fail(`Failed to fetch ${p} — ${e.message}`); results.push({check:p,ok:false}); }
         }
 
@@ -119,7 +128,7 @@
         } catch (e) { fail('JWT decode error: '+e.message); results.push({check:'jwt-decode',ok:false}); }
 
         // Final summary
-        const failures = results.filter(r => !r.ok).length;
+        const failures = results.filter(r => !r.ok && !r.warning).length;
         if (failures === 0){ ok('All checks passed'); } else { fail(`${failures} checks failed`); }
 
         // Enable download

@@ -64,6 +64,49 @@
           if (parsed.hello === 'world'){ ok('JSON parse OK'); results.push({check:'json-parse',ok:true}); } else { fail('JSON parse not correct'); results.push({check:'json-parse',ok:false}); }
         } catch (e){ fail('JSON parse failed: ' + e.message); results.push({check:'json-parse',ok:false}); }
 
+        // Additional security checks
+        // SHA-256 via SubtleCrypto
+        try {
+          if (window.crypto && window.crypto.subtle && window.crypto.subtle.digest) {
+            const data = new TextEncoder().encode('hello');
+            const digest = await window.crypto.subtle.digest('SHA-256', data);
+            const hex = Array.from(new Uint8Array(digest)).map(b => b.toString(16).padStart(2,'0')).join('');
+            if (hex === '2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824') { ok('SubtleCrypto SHA-256 matches expected'); results.push({check:'sha256',ok:true}); } else { fail('SHA-256 mismatch'); results.push({check:'sha256',ok:false}); }
+          } else { log('SubtleCrypto SHA-256 not available (expected on some hosts)'); results.push({check:'sha256',ok:false}); }
+        } catch (e) { fail('SubtleCrypto error: ' + e.message); results.push({check:'sha256',ok:false}); }
+
+        // Base64 correctness (btoa/atob)
+        try {
+          const enc = btoa('hello');
+          if (enc === 'aGVsbG8=') { ok('btoa base64 encoding OK'); results.push({check:'btoa',ok:true}); } else { fail('btoa mismatch: ' + enc); results.push({check:'btoa',ok:false}); }
+          const dec = atob(enc);
+          if (dec === 'hello') { ok('atob base64 decoding OK'); results.push({check:'atob',ok:true}); } else { fail('atob mismatch: ' + dec); results.push({check:'atob',ok:false}); }
+        } catch (e) { fail('btoa/atob not available or error: ' + e.message); results.push({check:'btoa/atob',ok:false}); }
+
+        // Crypto.getRandomValues uniqueness
+        try {
+          if (window.crypto && crypto.getRandomValues) {
+            const a = new Uint8Array(16); crypto.getRandomValues(a);
+            const b = new Uint8Array(16); crypto.getRandomValues(b);
+            const eq = a.every((v,i)=>v===b[i]);
+            if (!eq) { ok('crypto.getRandomValues produces non-equal values'); results.push({check:'getRandomValues',ok:true}); } else { fail('crypto.getRandomValues produced equal values'); results.push({check:'getRandomValues',ok:false}); }
+          } else { log('crypto.getRandomValues not available'); results.push({check:'getRandomValues',ok:false}); }
+        } catch (e) { fail('crypto.getRandomValues error: ' + e.message); results.push({check:'getRandomValues',ok:false}); }
+
+        // UUID format check (quick check)
+        try {
+          const u = (function(){
+            if (typeof crypto !== 'undefined' && crypto.getRandomValues) {
+              const r = new Uint8Array(16); crypto.getRandomValues(r);
+              r[6] = (r[6] & 0x0f) | 0x40; r[8] = (r[8] & 0x3f) | 0x80;
+              const hex = Array.from(r).map(b => b.toString(16).padStart(2,'0')).join('');
+              return hex.slice(0,8)+'-'+hex.slice(8,12)+'-'+hex.slice(12,16)+'-'+hex.slice(16,20)+'-'+hex.slice(20);
+            }
+            return null;
+          })();
+          if (u && /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(u)) { ok('Inline UUIDv4 generation format OK: ' + u); results.push({check:'uuid',ok:true}); } else { fail('UUIDv4 generation unavailable or invalid'); results.push({check:'uuid',ok:false}); }
+        } catch (e) { fail('UUID check failed: ' + e.message); results.push({check:'uuid',ok:false}); }
+
         // Final summary
         const failures = results.filter(r => !r.ok).length;
         if (failures === 0){ ok('All checks passed'); } else { fail(`${failures} checks failed`); }

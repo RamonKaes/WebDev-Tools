@@ -15,6 +15,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - **fix(lorem-ipsum):** restore Copy button functionality in `assets/js/tools/loremIpsumTool.js` (PR #1, commit dc9bb4b)
 - Add copy-button validation (PR #3)
+ - **chore(tests):** Replace complex test harness with a minimal PHP/Vanilla JS checks interface (tests/index.php, tests/run.php)
+ - **feat(tests):** Add security checks to the lightweight checks (verify crypto primitives, CSP/HSTS presence, manifest parsing, UUIDv4 format)
 
 ### Technical Improvements
 

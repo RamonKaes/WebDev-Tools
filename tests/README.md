@@ -1,3 +1,35 @@
+# Tests — Minimal, host-friendly checks
+
+This folder contains a minimal test suite that runs without Node.js or browser automation. It's intentionally "host-friendly" and designed to be run locally (in a browser or via PHP CLI) to provide a small set of essential checks.
+
+- `index.php`: Browser-side checks (Vanilla JS).
+- `run.php`: CLI runner for basic server-side checks via PHP CLI (optional).
+- `test-registry.json`: Enables/disables tests by ID.
+- `checks.json`: Canonical list of endpoints that will be tested by both the browser UI and the CLI.
+- `reports/`: Generated JSON reports saved locally; reports are NOT tracked in Git (ignored by `.gitignore`).
+
+Usage
+-----
+Open `index.php` in a browser and click **Run checks** to show results in the UI and download a JSON report. The UI includes debugging outputs that show the computed site root, checks.json URL, and each endpoint fetch.
+
+To run server-side checks (requires PHP CLI):
+```bash
+php tests/run.php http://localhost/WebDev-Tools
+```
+Or use an environment variable:
+```bash
+BASE_URL=https://example.com php tests/run.php
+```
+
+Design & URL resolution
+------
+The tests are intentionally minimal and do feature detection only (no remote dependencies). If you want to expand the test suite, use `test-registry.json` to keep the UI fast and minimally invasive.
+
+URL resolution rules (important):
+- `checks.json` is loaded from the `tests/` directory (e.g. `/WebDev-Tools/tests/checks.json`).
+- Each path in `checks.json` is resolved as follows:
+	- If path starts with a leading `/`, it's treated as an absolute host path: `new URL(path, origin)`.
+	- Otherwise it's resolved relative to the **site root** (the folder that contains `tests/`) so localized tools like `de/...` or `fr/...` are correctly requested as `https://<host>/<siteRoot>/de/...`.
 # Simple checks for WebDev-Tools
 
 This folder provides a minimal, hosting-friendly "checks" interface using only PHP and Vanilla JS.
@@ -16,10 +48,12 @@ This folder provides a minimal, hosting-friendly "checks" interface using only P
 
 Purpose: Provide a lightweight verification surface that works on hosted servers with no Node.js or advanced tooling.
 
-Notes:
+Notes
+-----
 - This is intentionally minimal to avoid heavy test harnesses on hosted environments. If you need a more feature-rich setup, consider a separate dev repository.
-- Reports: `php tests/run.php` writes a JSON report to `tests/reports/run-summary.json` after each run.
-	- Note: On `localhost` the site often runs over `http`, while the hosted environment runs `https`. Runtime HSTS header checks are only validated for HTTPS schemes.
+- Reports: `php tests/run.php` writes a JSON report to `tests/reports/run-summary.json` locally after each run.
+	- The `tests/reports/` directory is ignored and `run-summary.json` is not tracked by git. A `.gitkeep` keeps the folder present in the repo.
+	- For CI pipelining, collect `run-summary.json` as an artifact instead of adding it to the repository.
 
 Policy & Guidelines
 - Keep the `tests/` minimal and focused on security-relevant and essential correctness checks.

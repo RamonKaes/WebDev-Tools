@@ -1,3 +1,20 @@
+# Tests — Minimal, host-friendly checks
+
+This folder contains a minimal test suite that runs without Node.js or browser automation. It's designed to be run locally (on host or via CLI) and provides basic feature checks.
+
+- `index.php`: Browser-side checks (Vanilla JS).
+- `run.php`: CLI runner for basic server-side checks via PHP CLI (optional).
+- `test-registry.json`: Enables/disables tests by ID.
+- `reports/`: Generated JSON reports saved here.
+
+Usage
+-----
+Open `index.php` in a browser and click **Run checks** to show results in the UI and download a JSON report.
+Run server-side checks via `php tests/run.php`.
+
+Design
+------
+The tests are intentionally minimal and do feature detection only (no remote dependencies). If you want to expand the test suite, use `test-registry.json` to keep the UI fast and minimally invasive.
 # Simple checks for WebDev-Tools
 
 This folder provides a minimal, hosting-friendly "checks" interface using only PHP and Vanilla JS.

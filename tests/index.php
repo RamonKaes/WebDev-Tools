@@ -23,6 +23,7 @@
     <button id="runBtn">Run checks</button>
     <button id="downloadBtn" disabled>Download Report</button>
   </div>
+  <div id="envNote" style="margin-top:.5rem;color:#666;font-size:0.95rem"></div>
   <pre id="output" class="output" aria-live="polite"></pre>
   <script>
     (function(){
@@ -38,6 +39,9 @@
         out.textContent = '';
         results.length = 0;
         log('Starting checks...');
+
+        // Show environment protocol
+        try { document.getElementById('envNote').textContent = 'Environment: ' + window.location.protocol + ' (HSTS checks only apply for HTTPS)'; } catch(e){ }
 
         // JS feature checks
         if (window.fetch) { ok('fetch API available'); results.push({check:'fetch',ok:true}); } else { fail('fetch API missing'); results.push({check:'fetch',ok:false}); }

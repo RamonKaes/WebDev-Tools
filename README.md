@@ -84,6 +84,19 @@ WebDev-Tools implements a **"Privacy-by-Design"** approach that eliminates commo
 
 ### Cryptographic Security
 
+
+## Tests (Minimal host friendly checks)
+
+We maintain a small, host-friendly test suite that runs without Node.js or browser automation. These checks are safe to run on hosted servers and can be executed from the browser or the command line:
+
+- Browser UI: `tests/index.php` — open in a browser and click **Run checks**. The UI prints detailed debug logs including the computed `siteRoot`, `checks.json` URL, and each endpoint fetched.
+- CLI: `tests/run.php` — run via `php tests/run.php <BASE_URL>` or with `BASE_URL=<url>` environment variable to validate endpoints and headers for a given host.
+
+Important notes:
+- `tests/checks.json` lists canonical, relative endpoints. Paths without a leading `/` are resolved relative to the site root (the folder containing `tests/`) so localized pages such as `de/index.php` are requested as `https://<host>/<siteRoot>/de/index.php`.
+- `tests/reports/` is ignored by git and is used for local JSON reports only — we don't store runtime artifacts in the repo. If you run tests in CI, persist artifacts via your CI pipeline instead of committing them.
+
+See `tests/README.md` for more details and developer guidance.
 **CSPRNG Usage**: Security-critical tools (Password Generator, UUID Generator) utilize the **Web Crypto API** (`crypto.getRandomValues()`), not the predictable `Math.random()`.
 
 **Entropy Sources**:

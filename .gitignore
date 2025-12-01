@@ -72,6 +72,7 @@ secrets/
 # Testing
 coverage/
 .phpunit.result.cache
+tests/reports/
 
 # Documentation Build
 docs/_build/

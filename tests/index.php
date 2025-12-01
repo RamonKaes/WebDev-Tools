@@ -107,6 +107,17 @@
           if (u && /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(u)) { ok('Inline UUIDv4 generation format OK: ' + u); results.push({check:'uuid',ok:true}); } else { fail('UUIDv4 generation unavailable or invalid'); results.push({check:'uuid',ok:false}); }
         } catch (e) { fail('UUID check failed: ' + e.message); results.push({check:'uuid',ok:false}); }
 
+        // JWT decode check (no signature validation) - decode payload only
+        try {
+          const sampleJWT = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaW5mbyI6InNvbWUifQ.signature';
+          const parts = sampleJWT.split('.');
+          if (parts.length >= 2) {
+            const payload = parts[1].replace(/-/g, '+').replace(/_/g, '/');
+            const json = JSON.parse(decodeURIComponent(escape(atob(payload))));
+            if (json && json.id === 1) { ok('JWT payload decode OK'); results.push({check:'jwt-decode',ok:true}); } else { fail('JWT payload decode unexpected'); results.push({check:'jwt-decode',ok:false}); }
+          } else { fail('JWT token malformed'); results.push({check:'jwt-decode',ok:false}); }
+        } catch (e) { fail('JWT decode error: '+e.message); results.push({check:'jwt-decode',ok:false}); }
+
         // Final summary
         const failures = results.filter(r => !r.ok).length;
         if (failures === 0){ ok('All checks passed'); } else { fail(`${failures} checks failed`); }

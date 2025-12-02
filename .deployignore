@@ -1,0 +1,57 @@
+# Dateien/Ordner, die NICHT auf das Hosting müssen
+
+# Development
+dev/
+.vscode/
+.idea/
+
+# Deployment scripts (not needed on production)
+deploy.sh
+migrate-i18n-keys.sh
+migrate_i18n.py
+
+# Testing
+tests/
+.phpunit.result.cache
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Documentation (optional, kann deployed werden)
+docs/
+
+# CI/CD
+.github/
+
+# Development Tools
+.editorconfig
+.phpcs.xml.dist
+.tools/
+
+# Dependencies (falls lokal installiert)
+node_modules/
+vendor/
+
+# Build/Temp
+*.log
+*.tmp
+.DS_Store
+
+# Scripts
+bin/
+migrate_i18n.py
+migrate-i18n-keys.sh
+
+# Markdown Dokumentation
+README.md
+CHANGELOG.md
+CONTRIBUTING.md
+SECURITY.md
+
+# Package files
+package.json
+package-lock.json
+composer.json
+composer.lock

@@ -28,6 +28,7 @@
         "clear": "Effacer",
         "copy": "Copier",
         "copied": "Copié !",
+        "load_sample": "Charger un exemple",
         "toggle_layout": "Basculer la mise en page",
         "layout_side_by_side": "Côte à côte",
         "layout_stacked": "Empilé",
@@ -35,7 +36,8 @@
         "characters": "caractères",
         "toggle_theme": "Changer de thème",
         "error": "Erreur",
-        "usefulResources": "Ressources Utiles"
+        "usefulResources": "Ressources Utiles",
+        "code": "Code"
     },
     "theme": {
         "light": "Clair",
@@ -236,6 +238,55 @@
             "h1_title": "Formateur et Validateur JSON — Formatage et validation",
             "card_description": "Formatez, validez et embellissez JSON avec coloration syntaxique. Correction automatique, tri des clés et vue arborescente pour structures complexes.",
             "tool_description": "Formatez, validez et embellissez vos données JSON avec notre puissant formateur et validateur JSON. L'outil offre une correction automatique des erreurs, un tri alphabétique des clés, diverses options d'indentation et une vue arborescente intuitive. De plus, vous pouvez minifier, échapper le JSON et extraire des valeurs ciblées avec l'extracteur de chemin intégré. Toutes les opérations se font côté client pour une sécurité maximale."
+        },
+        "aspectRatioCalculator": {
+            "linkTitle": {
+                "card": "Calculez les dimensions et maintenez les ratios d'aspect",
+                "nav": "Ratio d'Aspect"
+            },
+            "presets_title": "Ratios d'Aspect Courants",
+            "calculator_title": "Calculateur",
+            "aspect_ratio_label": "Ratio d'Aspect",
+            "width_label": "Largeur",
+            "height_label": "Hauteur",
+            "calculate_dimensions_label": "Calculer les Dimensions",
+            "known_width_label": "Largeur Connue",
+            "calculated_height_label": "Hauteur Calculée",
+            "known_height_label": "Hauteur Connue",
+            "calculated_width_label": "Largeur Calculée",
+            "ratio_formats_label": "Formats de Ratio",
+            "ratio_format": "Ratio",
+            "decimal_format": "Décimal",
+            "percentage_format": "Pourcentage",
+            "css_generator_title": "Générateur de Code CSS",
+            "css_method_label": "Méthode CSS",
+            "css_modern": "Moderne (aspect-ratio)",
+            "css_padding_trick": "Legacy (padding-bottom)",
+            "css_both": "Les deux méthodes",
+            "css_info_title": "Méthodes CSS",
+            "css_modern_info": "Utilise la propriété CSS moderne aspect-ratio (IE non supporté)",
+            "css_padding_info": "Astuce classique padding-bottom pour les anciens navigateurs",
+            "css_enter_ratio": "Entrez un ratio d'aspect pour générer du code CSS",
+            "common_resolutions_title": "Résolutions Courantes",
+            "resolution": "Nom",
+            "dimensions": "Dimensions",
+            "ratio": "Ratio",
+            "common_use": "Usage Courant",
+            "click_row_hint": "Cliquez sur une ligne pour utiliser ces dimensions",
+            "about_title": "À propos",
+            "how_to_use_steps": [
+                "Sélectionnez un preset ou entrez un ratio d'aspect personnalisé",
+                "Entrez une largeur ou hauteur connue pour calculer l'autre dimension",
+                "Copiez les valeurs calculées ou le code CSS généré",
+                "Utilisez le tableau des résolutions courantes comme référence rapide"
+            ],
+            "how_to_use_title": "Comment Utiliser",
+            "toc_title": "Ratio d'Aspect",
+            "h1_title": "Calculateur de Ratio d'Aspect — Dimensions Responsive",
+            "meta_title": "Calculateur de Ratio d'Aspect — Dimensions & CSS",
+            "card_description": "Calculez les dimensions manquantes à partir des ratios d'aspect. Générez du code CSS avec la propriété aspect-ratio moderne ou technique padding-bottom. Presets 16:9, 4:3, 21:9 inclus.",
+            "meta_description": "Calculez les dimensions à partir des ratios d'aspect pour le design responsive. Générez du CSS avec propriété aspect-ratio ou fallback padding-bottom. Presets courants et table de résolutions.",
+            "tool_description": "Calculez les dimensions manquantes à partir des ratios d'aspect avec notre Calculateur de Ratio d'Aspect. Générez du code CSS pour les médias responsives avec la propriété moderne aspect-ratio ou la technique legacy padding-bottom. Parfait pour les images responsives, les embeds vidéo et la conception de mise en page avec des presets courants comme 16:9, 4:3, 21:9 et plus."
         },
         "pxToRemConverter": {
             "linkTitle": {
@@ -630,6 +681,8 @@
             "payload": "Charge utile",
             "signature": "Signature",
             "signatureNote": "La signature ne peut être vérifiée qu'avec la clé secrète. Cet outil ne fait que décoder le token.",
+            "verificationWarning": "⚠️ Attention : Cet outil NE vérifie PAS la signature !",
+            "verificationWarningDetails": "Ce décodeur JWT affiche uniquement le contenu du jeton. Il NE vérifie PAS la signature. Ne faites jamais confiance aux données JWT décodées sans vérification côté serveur. Un attaquant peut manipuler le contenu du jeton – seule la validation cryptographique avec la clé secrète garantit l'authenticité.",
             "algorithm": "Algorithme",
             "expiry": "Expiration",
             "expired": "Le token a expiré",

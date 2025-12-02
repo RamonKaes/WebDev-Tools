@@ -126,6 +126,127 @@ if (!is_dir($out_dir)) mkdir($out_dir, 0755, true);
 $summary = ['timestamp' => date(DATE_ATOM), 'results' => $results];
 file_put_contents($out_dir . '/run-summary.json', json_encode($summary, JSON_PRETTY_PRINT));
 
+echo "\n";
+
+// ============================================================
+// ADDITIONAL VALIDATION TESTS
+// ============================================================
+
+section("Homepage Localized Links");
+subsection("German (de) Tool Slugs");
+
+$de_homepage = @file_get_contents("$base/de/");
+$de_localized_tools = [
+    'code-formatierer' => 'Code Formatter',
+    'html-entity-kodierer-dekodierer' => 'HTML Entity Tool',
+    'json-formatierer-validator' => 'JSON Formatter',
+    'jwt-dekodierer' => 'JWT Decoder',
+    'punycode-konverter' => 'Punycode Converter',
+    'string-maskierer' => 'String Escaper',
+    'url-kodierer-dekodierer' => 'URL Encoder'
+];
+
+foreach ($de_localized_tools as $slug => $name) {
+    if ($de_homepage && strpos($de_homepage, "/de/$slug/") !== false) {
+        ok("$name → /de/$slug/");
+        $passed++;
+    } else {
+        fail("$name → /de/$slug/ NOT FOUND");
+        $failed++;
+    }
+}
+
+subsection("Spanish (es) Tool Slugs");
+
+$es_homepage = @file_get_contents("$base/es/");
+$es_localized_tools = [
+    'escapador-cadenas' => 'String Escaper',
+    'generador-contrasenas' => 'Password Generator',
+    'conversor-datos' => 'Data Converter'
+];
+
+foreach ($es_localized_tools as $slug => $name) {
+    if ($es_homepage && strpos($es_homepage, "/es/$slug/") !== false) {
+        ok("$name → /es/$slug/");
+        $passed++;
+    } else {
+        fail("$name → /es/$slug/ NOT FOUND");
+        $failed++;
+    }
+}
+
+section("Navigation & Language Switcher");
+subsection("Sidebar Navigation (German)");
+
+$de_sidebar_tools = [
+    'code-formatierer' => 'Code Formatter',
+    'jwt-dekodierer' => 'JWT Decoder',
+    'string-maskierer' => 'String Escaper'
+];
+
+foreach ($de_sidebar_tools as $slug => $name) {
+    if ($de_homepage && strpos($de_homepage, "/de/$slug/") !== false) {
+        ok("Sidebar: $name → /de/$slug/");
+        $passed++;
+    } else {
+        fail("Sidebar: $name missing");
+        $failed++;
+    }
+}
+
+subsection("Language Switcher URLs");
+
+$de_tool_page = @file_get_contents("$base/de/code-formatierer/");
+if ($de_tool_page && strpos($de_tool_page, "/code-formatter/") !== false) {
+    ok("DE→EN: /de/code-formatierer/ → /code-formatter/");
+    $passed++;
+} else {
+    fail("Language switcher DE→EN missing");
+    $failed++;
+}
+
+$en_tool_page = @file_get_contents("$base/code-formatter/");
+if ($en_tool_page && strpos($en_tool_page, "/de/code-formatierer/") !== false) {
+    ok("EN→DE: /code-formatter/ → /de/code-formatierer/");
+    $passed++;
+} else {
+    fail("Language switcher EN→DE missing");
+    $failed++;
+}
+
+// Check special pages in sidebar
+if ($de_homepage) {
+    $special_pages = ['about.php', 'imprint.php', 'privacy.php'];
+    foreach ($special_pages as $page) {
+        if (strpos($de_homepage, "/$page") !== false) {
+            ok("Special page: $page found");
+            $passed++;
+        } else {
+            fail("Special page: $page missing");
+            $failed++;
+        }
+    }
+}
+
+// Check mobile OffCanvas navigation
+if ($de_homepage && strpos($de_homepage, 'id="mobileSidebar"') !== false) {
+    ok("Mobile OffCanvas present");
+    $passed++;
+    
+    if (strpos($de_homepage, '/de/code-formatierer/') !== false) {
+        ok("Mobile nav uses localized URLs");
+        $passed++;
+    } else {
+        fail("Mobile nav not using localized URLs");
+        $failed++;
+    }
+} else {
+    fail("Mobile OffCanvas missing");
+    $failed += 2;
+}
+
+echo "\n";
+
 section("Summary");
 $total = $passed + $failed;
 echo "Total checks: " . $total . "\n";

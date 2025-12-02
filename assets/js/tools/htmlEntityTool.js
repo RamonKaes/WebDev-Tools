@@ -154,12 +154,12 @@
                       </label>
                       <div class="btn-group btn-group-sm w-100" role="group">
                         <input type="radio" class="btn-check" name="mode" id="modeEncode" value="encode" checked autocomplete="off">
-                        <label class="btn btn-outline-primary" for="modeEncode">
+                        <label class="btn btn-outline-primary d-inline-flex align-items-center" for="modeEncode">
                           <i class="bi bi-lock me-1"></i>${t('tools.htmlEntityTool.encode')}
                         </label>
 
                         <input type="radio" class="btn-check" name="mode" id="modeDecode" value="decode" autocomplete="off">
-                        <label class="btn btn-outline-primary" for="modeDecode">
+                        <label class="btn btn-outline-primary d-inline-flex align-items-center" for="modeDecode">
                           <i class="bi bi-unlock me-1"></i>${t('tools.htmlEntityTool.decode')}
                         </label>
                       </div>
@@ -209,13 +209,16 @@
                       ></textarea>
 
                       <div class="d-flex flex-wrap gap-2">
-                        <button class="btn btn-sm btn-primary" id="convertBtn">
+                        <button class="btn btn-sm btn-primary d-inline-flex align-items-center" id="convertBtn">
                           <i class="bi bi-arrow-right me-2"></i>${t('tools.htmlEntityTool.convert')}
                         </button>
-                        <button class="btn btn-sm btn-outline-secondary" id="clearBtn">
+                        <button class="btn btn-sm btn-outline-secondary d-inline-flex align-items-center" id="clearBtn">
                           <i class="bi bi-trash me-2"></i>${t('common.clear')}
                         </button>
-                        <a href="#" class="btn btn-sm btn-outline-info ms-auto" id="viewReferenceBtn">
+                        <button class="btn btn-sm btn-outline-secondary d-inline-flex align-items-center" id="loadSampleBtn">
+                          <i class="bi bi-file-earmark me-2"></i>${t('common.load_sample')}
+                        </button>
+                        <a href="#" class="btn btn-sm btn-outline-info ms-auto d-inline-flex align-items-center" id="viewReferenceBtn">
                           <i class="bi bi-book me-2"></i>${t('tools.htmlEntityTool.viewReference')}
                         </a>
                       </div>
@@ -242,10 +245,10 @@
 
                       <div class="d-flex align-items-center gap-2 flex-wrap">
                         <small class="text-muted me-auto" id="outputStats">0 ${t('common.characters')}</small>
-                        <button class="btn btn-sm btn-outline-secondary" id="copyBtn">
+                        <button class="btn btn-sm btn-outline-secondary d-inline-flex align-items-center" id="copyBtn">
                           <i class="bi bi-clipboard me-2"></i>${t('common.copy')}
                         </button>
-                        <button class="btn btn-sm btn-outline-secondary" id="downloadBtn">
+                        <button class="btn btn-sm btn-outline-secondary d-inline-flex align-items-center" id="downloadBtn">
                           <i class="bi bi-download me-2"></i>Download
                         </button>
                       </div>
@@ -286,6 +289,7 @@
       const autoConvert = container.querySelector('#autoConvert');
       const convertBtn = container.querySelector('#convertBtn');
       const clearBtn = container.querySelector('#clearBtn');
+      const loadSampleBtn = container.querySelector('#loadSampleBtn');
       const copyBtn = container.querySelector('#copyBtn');
       const downloadBtn = container.querySelector('#downloadBtn');
       const viewReferenceBtn = container.querySelector('#viewReferenceBtn');
@@ -396,25 +400,44 @@
         inputText.focus();
       });
 
+      // Load sample button
+      loadSampleBtn.addEventListener('click', () => {
+        const mode = container.querySelector('input[name="mode"]:checked').value;
+        if (mode === 'encode') {
+          inputText.value = '<div class="example">\n  <h1>Hello World!</h1>\n  <p>Special characters: © ® ™ € £ ¥ &lt;&gt;</p>\n  <a href="https://example.com?id=123&name=test">Link</a>\n</div>';
+        } else {
+          inputText.value = '&lt;div class=&quot;example&quot;&gt;\n  &lt;h1&gt;Hello World!&lt;/h1&gt;\n  &lt;p&gt;Special characters: &copy; &reg; &trade; &euro; &pound; &yen; &amp;lt;&amp;gt;&lt;/p&gt;\n  &lt;a href=&quot;https://example.com?id=123&amp;name=test&quot;&gt;Link&lt;/a&gt;\n&lt;/div&gt;';
+        }
+        if (autoConvert.checked) {
+          performConversion();
+        }
+        updateStats();
+      });
+
       // Copy button
       copyBtn.addEventListener('click', async () => {
         if (!outputText.value) return;
 
-        try {
-          await navigator.clipboard.writeText(outputText.value);
+        const success = await window.ClipboardUtils.copyToClipboard(outputText.value);
+        
+        if (success) {
           const icon = copyBtn.querySelector('i');
-          const originalClass = icon.className;
-          icon.className = 'bi bi-check2 me-2';
-          copyBtn.classList.add('btn-success');
-          copyBtn.classList.remove('btn-outline-secondary');
+          if (icon) {
+            const originalClass = icon.className;
+            icon.className = 'bi bi-check2 me-2';
+            copyBtn.classList.add('btn-success');
+            copyBtn.classList.remove('btn-outline-secondary');
 
-          setTimeout(() => {
-            icon.className = originalClass;
-            copyBtn.classList.remove('btn-success');
-            copyBtn.classList.add('btn-outline-secondary');
-          }, 2000);
-        } catch (err) {
-          console.error('Failed to copy:', err);
+            setTimeout(() => {
+              if (icon) {
+                icon.className = originalClass;
+              }
+              copyBtn.classList.remove('btn-success');
+              copyBtn.classList.add('btn-outline-secondary');
+            }, 2000);
+          }
+        } else {
+          console.error('Failed to copy to clipboard');
         }
       });
 

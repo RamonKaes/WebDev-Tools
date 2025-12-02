@@ -14,7 +14,7 @@
   <!-- Icon (centered, large) -->
   <g transform="translate(450, 150)">
     <svg width="300" height="300" viewBox="0 0 16 16" fill="#ffffff" opacity="0.3">
-      <path fill-rule="evenodd" d="M4.5 13a.5.5 0 0 1-.5-.5V2.866a1 1 0 0 1 .106-.447l1-1.667a.5.5 0 0 1 .894.448l-1 1.667A.5.5 0 0 1 5 3V12.5a.5.5 0 0 1-.5.5zm2 0a.5.5 0 0 1-.5-.5V2.866a1 1 0 0 1 .106-.447l1-1.667a.5.5 0 0 1 .894.448l-1 1.667A.5.5 0 0 1 7 3V12.5a.5.5 0 0 1-.5.5zM8 13a1 1 0 0 0 1-1V3.5a1 1 0 0 0-.5-.866l-1-1.667a.5.5 0 0 0-.894.448l1 1.667A.5.5 0 0 0 9 3v9a1 1 0 0 0 1 1z"/><path d="M11 15a1 1 0 0 0 1-1V3.5a1 1 0 0 0-.5-.866l-1-1.667a.5.5 0 0 0-.894.448l1 1.667A.5.5 0 0 0 12 3v11a1 1 0 0 0 1 1z"/>
+      &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4.5 13a.5.5 0 0 1-.5-.5V2.866a1 1 0 0 1 .106-.447l1-1.667a.5.5 0 0 1 .894.448l-1 1.667A.5.5 0 0 1 5 3V12.5a.5.5 0 0 1-.5.5zm2 0a.5.5 0 0 1-.5-.5V2.866a1 1 0 0 1 .106-.447l1-1.667a.5.5 0 0 1 .894.448l-1 1.667A.5.5 0 0 1 7 3V12.5a.5.5 0 0 1-.5.5zM8 13a1 1 0 0 0 1-1V3.5a1 1 0 0 0-.5-.866l-1-1.667a.5.5 0 0 0-.894.448l1 1.667A.5.5 0 0 0 9 3v9a1 1 0 0 0 1 1z&quot;/&gt;&lt;path d=&quot;M11 15a1 1 0 0 0 1-1V3.5a1 1 0 0 0-.5-.866l-1-1.667a.5.5 0 0 0-.894.448l1 1.667A.5.5 0 0 0 12 3v11a1 1 0 0 0 1 1z&quot;/&gt;
     </svg>
   </g>
   
@@ -23,7 +23,7 @@
     Regex Tester
   </text>
   <text x="600" y="450" font-family="system-ui, -apple-system, sans-serif" font-size="42" font-weight="400" fill="#ffffff" text-anchor="middle" opacity="0.9">
-    Test and debug regular expressions with live highlighting, match extraction, and group capture....
+    Test regular expressions with real-time matching. regex tester supporting JavaScript, Python, PHP...
   </text>
   
   <!-- Mini-Tools Branding (bottom) -->

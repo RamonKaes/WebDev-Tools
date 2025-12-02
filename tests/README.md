@@ -1,105 +1,162 @@
-# Tests — Minimal, host-friendly checks
+# WebDev-Tools Test Suite
 
-This folder contains a minimal test suite that runs without Node.js or browser automation. It's intentionally "host-friendly" and designed to be run locally (in a browser or via PHP CLI) to provide a small set of essential checks.
+Comprehensive testing infrastructure for URL validation, navigation, and localization.
 
-- `index.php`: Browser-side checks (Vanilla JS).
-- `run.php`: CLI runner for basic server-side checks via PHP CLI (optional).
-- `test-registry.json`: Enables/disables tests by ID.
-- `checks.json`: Canonical list of endpoints that will be tested by both the browser UI and the CLI.
-- `reports/`: Generated JSON reports saved locally; reports are NOT tracked in Git (ignored by `.gitignore`).
+## Quick Start
 
-Usage
------
-Open `index.php` in a browser and click **Run checks** to execute a **comprehensive test suite** including:
-
-**Browser APIs & Core Functionality:**
-- Fetch API availability
-- Web Crypto API (CSPRNG)
-- Base64 encoding/decoding
-- JWT decoding
-- JSON parsing/validation
-- URL encoding/decoding
-- HTML entity encoding/decoding
-
-**Cryptography & Security:**
-- SHA-256/SHA-512 integrity tests
-- HMAC-SHA256 signatures
-- JWT HS256 signature validation
-- Content Security Policy (CSP) validation
-- eval() blocking tests
-
-**Accessibility (WCAG 2.1 AA):**
-- Page language attributes
-- Image alt text validation
-- Form input labels
-- Semantic button usage
-
-**Performance Budgets:**
-- TTFB (Time to First Byte) < 600ms
-- DOM Content Loaded < 1800ms
-- Load Complete < 3800ms
-- PerformanceObserver API availability
-
-**Endpoint Checks:**
-- All 118+ tool endpoints (from `checks.json`)
-
-Results are shown in real-time with ✅/❌ indicators. Download a JSON report for detailed analysis.
-
-**Security Tests:** Open `security.php` in a browser to run cryptographic security tests:
-- UUID v4/v1 CSPRNG validation (no Math.random fallback)
-- Password generator CSPRNG validation
-- SHA-256 integrity test with known test vectors
-
-To run server-side checks (requires PHP CLI):
 ```bash
 php tests/run.php http://localhost/WebDev-Tools
 ```
-Or use an environment variable:
+
+Or use environment variable:
 ```bash
 BASE_URL=https://example.com php tests/run.php
 ```
 
-Design & URL resolution
-------
-The tests are intentionally minimal and do feature detection only (no remote dependencies). If you want to expand the test suite, use `test-registry.json` to keep the UI fast and minimally invasive.
+Expected: **All 136 checks passed** ✅
 
-URL resolution rules (important):
-- `checks.json` is loaded from the `tests/` directory (e.g. `/WebDev-Tools/tests/checks.json`).
-- Each path in `checks.json` is resolved as follows:
-	- If path starts with a leading `/`, it's treated as an absolute host path: `new URL(path, origin)`.
-	- Otherwise it's resolved relative to the **site root** (the folder that contains `tests/`) so localized tools like `de/...` or `fr/...` are correctly requested as `https://<host>/<siteRoot>/de/...`.
-# Simple checks for WebDev-Tools
+## Test Scripts
 
-This folder provides a minimal, hosting-friendly "checks" interface using only PHP and Vanilla JS.
+- **`run.php`** - Comprehensive CLI test suite (136 checks)
+  - HTTP endpoint availability (116 endpoints × 6 languages)
+  - Homepage localized link validation (10 checks)
+  - Sidebar navigation validation (3 checks)
+  - Language switcher URL mapping (5 checks)
+  - Special pages & mobile navigation (2 checks)
+  
+- **`index.php`** - Browser-based test UI
+  - Client-side JavaScript checks
+  - Browser API availability (Fetch, Web Crypto)
+  - Cryptographic integrity tests (SHA-256, HMAC)
+  - CSP validation, accessibility, performance budgets
 
-- `index.php` — Browser-based checks (client-side, purely JavaScript). Open in a browser and click "Run checks" to execute basic checks and download a JSON report.
-- `run.php` — CLI script for server-side checks (requires PHP CLI). Run `php tests/run.php` to execute server-side checks (file presence, PHP version, manifest parse).
-	- You can optionally pass a BASE_URL to `run.php` to validate runtime HTTP response headers (CSP/HSTS):
-		```bash
-		# Check runtime headers at https://example.com
-		php tests/run.php https://example.com
-		# Or via environment variable
-		BASE_URL=https://example.com php tests/run.php
-		```
-	- Note: HSTS will only be checked when the runtime scheme is `https`. On localhost (http) HSTS checks are not expected.
-	- Security checks: The CLI and browser checks include security validations (CSPRNG availability, SHA-256 digest validation, UUIDv4 format, and presence of CSP/HSTS directives in `config/security-headers.php`).
+## Coverage
 
-Purpose: Provide a lightweight verification surface that works on hosted servers with no Node.js or advanced tooling.
+**Total: 136 automated checks in run.php**
 
-Notes
------
-- This is intentionally minimal to avoid heavy test harnesses on hosted environments. If you need a more feature-rich setup, consider a separate dev repository.
-- Reports: `php tests/run.php` writes a JSON report to `tests/reports/run-summary.json` locally after each run.
-	- The `tests/reports/` directory is ignored and `run-summary.json` is not tracked by git. A `.gitkeep` keeps the folder present in the repo.
-	- For CI pipelining, collect `run-summary.json` as an artifact instead of adding it to the repository.
+| Category | Checks | Description |
+|----------|--------|-------------|
+| HTTP Endpoints | 116 | All tools across 6 languages (EN/DE/ES/PT/FR/IT) |
+| Homepage Links | 10 | German & Spanish localized URLs |
+| Sidebar Navigation | 3 | Desktop sidebar tool links |
+| Language Switcher | 5 | DE↔EN, special pages |
+| Mobile Navigation | 2 | OffCanvas presence & localized URLs |
 
-Policy & Guidelines
-- Keep the `tests/` minimal and focused on security-relevant and essential correctness checks.
-- The test registry (`tests/test-registry.json`) defines the allowed checks and whether they're enabled. Do not add tests ad-hoc — open a PR and document the reason.
-- Default rule: only checks included in `test-registry.json` and flagged with `enabled:true` will run. An empty `enabled` set runs all checks (fallback); maintainers should keep only a small approved set enabled for hosting.
+## Localized URLs Tested
 
-How to add a new test
-1. Add a new entry to `tests/test-registry.json` with `id`, `description`, `scope` (`host`/`browser`) and `enabled:false` by default.
-2. Implement the corresponding check in `tests/run.php` or `tests/index.php` as a guarded function (i.e., execute only if the registry enables the test).
-3. Provide justification in the PR — why the test is essential, no Node dependency, and why it should be enabled by default.
+**German (de)**: code-formatierer, jwt-dekodierer, string-maskierer, html-entity-kodierer-dekodierer, json-formatierer-validator, url-kodierer-dekodierer, punycode-konverter
 
+**Spanish (es)**: escapador-cadenas, generador-contrasenas, conversor-datos
+
+**Portuguese (pt)**: conversor-dados, referencia-emojis
+
+**French (fr)**: generateur-mots-de-passe, convertisseur-donnees
+
+**Italian (it)**: generatore-password, convertitore-dati
+
+## Requirements
+
+**Production**: Apache + PHP 7.4+  
+**Development**: PHP 7.4+, localhost HTTP access
+
+Optional: mod_rewrite for `.htaccess` redirects (backward compatibility)
+
+## Usage Examples
+
+```bash
+# Full CLI test suite
+php tests/run.php http://localhost/WebDev-Tools
+
+# Custom base URL
+BASE_URL=https://webdev-tools.info php tests/run.php
+
+# Browser-based tests
+# Open tests/index.php in browser for interactive testing
+```
+
+## CI/CD Integration
+
+```bash
+#!/bin/bash
+php tests/run.php http://localhost
+
+if [ $? -eq 0 ]; then
+  echo "✅ Deploy to production"
+else
+  echo "❌ Block deployment"
+  exit 1
+fi
+```
+
+Exit code: 0 = pass, 1 = fail
+
+## Troubleshooting
+
+**Connection errors**: Ensure HTTP server is running and BASE_URL is correct
+
+**Permission errors**: Check PHP has read access to all test files
+
+**Port conflicts**: Update BASE_URL in command or environment variable
+
+## Test Output
+
+```
+============================================================
+Environment Checks
+============================================================
+  ✓ PHP version 8.4.11
+  ✓ JSON functions available
+  ✓ Server config present (config.php)
+
+============================================================
+HTTP Endpoint Checks
+============================================================
+Base URL: http://localhost/WebDev-Tools
+
+→ Core
+------------------------------------------------------------
+  ✓ index.php [200]
+  ✓ sitemap.xml [200]
+
+→ English Tools
+------------------------------------------------------------
+  ✓ base64-encoder-decoder/index.php [200]
+  ✓ code-formatter/index.php [200]
+  ...
+
+→ German (de)
+------------------------------------------------------------
+  ✓ de/code-formatierer/index.php [200]
+  ✓ de/jwt-dekodierer/index.php [200]
+  ...
+
+============================================================
+Homepage Localized Links
+============================================================
+  ✓ Code Formatter → /de/code-formatierer/
+  ✓ JWT Decoder → /de/jwt-dekodierer/
+  ...
+
+============================================================
+Navigation & Language Switcher
+============================================================
+  ✓ Sidebar: Code Formatter → /de/code-formatierer/
+  ✓ DE→EN: /de/code-formatierer/ → /code-formatter/
+  ✓ EN→DE: /code-formatter/ → /de/code-formatierer/
+  ✓ Mobile OffCanvas present
+  ✓ Mobile nav uses localized URLs
+
+============================================================
+Summary
+============================================================
+Total checks: 140
+  ✓ Passed: 140 (100%)
+```
+
+## Architecture
+
+- **config/tools.php** - Localized slug definitions
+- **config/helpers.php** - Dynamic URL generation (`getToolUrl`, `getNavigationStructure`)
+- **partials/header-with-sidebar.php** - Uses `getAllToolLanguageUrls()` for language switcher
+
+**Status**: READY FOR PRODUCTION ✨

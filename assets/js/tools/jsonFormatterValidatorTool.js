@@ -168,11 +168,11 @@
                   <textarea id="jsonInput" rows="12" class="form-control font-monospace mb-3" placeholder="${t('tools.jsonFormatterValidator.input_placeholder')}"></textarea>
 
                   <div class="d-flex flex-wrap gap-2 mb-2">
-                    <button class="btn btn-sm btn-primary" id="formatBtn"><i class="bi bi-indent me-2"></i>${t('tools.jsonFormatterValidator.btn_format')}</button>
+                    <button class="btn btn-sm btn-primary d-inline-flex align-items-center" id="formatBtn"><i class="bi bi-indent me-2"></i>${t('tools.jsonFormatterValidator.btn_format')}</button>
                     <button class="btn btn-sm btn-outline-primary" id="validateBtn">${t('tools.jsonFormatterValidator.btn_validate')}</button>
-                    <button class="btn btn-sm btn-outline-primary" id="minifyBtn"><i class="bi bi-dash-square me-2"></i>${t('tools.jsonFormatterValidator.btn_minify')}</button>
-                    <button class="btn btn-sm btn-outline-secondary" id="clearBtn"><i class="bi bi-trash me-2"></i>${t('tools.jsonFormatterValidator.btn_clear')}</button>
-                    <button class="btn btn-sm btn-outline-secondary" id="loadSampleBtn"><i class="bi bi-file-earmark me-2"></i>${t('tools.jsonFormatterValidator.btn_load_sample')}</button>
+                    <button class="btn btn-sm btn-outline-primary d-inline-flex align-items-center" id="minifyBtn"><i class="bi bi-dash-square me-2"></i>${t('tools.jsonFormatterValidator.btn_minify')}</button>
+                    <button class="btn btn-sm btn-outline-secondary d-inline-flex align-items-center" id="clearBtn"><i class="bi bi-trash me-2"></i>${t('tools.jsonFormatterValidator.btn_clear')}</button>
+                    <button class="btn btn-sm btn-outline-secondary d-inline-flex align-items-center" id="loadSampleBtn"><i class="bi bi-file-earmark me-2"></i>${t('tools.jsonFormatterValidator.btn_load_sample')}</button>
                   </div>
 
                   <div class="form-check form-check-inline">
@@ -194,10 +194,10 @@
 
                   <div class="btn-group btn-group-sm mb-3 w-100" role="group">
                     <input type="radio" class="btn-check" name="viewMode" id="viewText" autocomplete="off" checked>
-                    <label class="btn btn-outline-primary btn-sm" for="viewText"><i class="bi bi-file-text me-1"></i>${t('tools.jsonFormatterValidator.view_text')}</label>
+                    <label class="btn btn-outline-primary btn-sm d-inline-flex align-items-center" for="viewText"><i class="bi bi-file-text me-1"></i>${t('tools.jsonFormatterValidator.view_text')}</label>
 
                     <input type="radio" class="btn-check" name="viewMode" id="viewTree" autocomplete="off">
-                    <label class="btn btn-outline-primary btn-sm" for="viewTree"><i class="bi bi-diagram-3 me-1"></i>${t('tools.jsonFormatterValidator.view_tree')}</label>
+                    <label class="btn btn-outline-primary btn-sm d-inline-flex align-items-center" for="viewTree"><i class="bi bi-diagram-3 me-1"></i>${t('tools.jsonFormatterValidator.view_tree')}</label>
                   </div>
 
                   <textarea id="jsonOutput" rows="12" class="form-control bg-body-secondary font-monospace mb-3" placeholder="${t('tools.jsonFormatterValidator.output_placeholder')}"></textarea>
@@ -210,8 +210,8 @@
                       <option value="4" selected>${t('tools.jsonFormatterValidator.indent_4_spaces')}</option>
                       <option value="tab">${t('tools.jsonFormatterValidator.indent_tab')}</option>
                     </select>
-                    <button class="btn btn-outline-secondary btn-sm" id="copyBtn"><i class="bi bi-clipboard me-2"></i>${t('tools.jsonFormatterValidator.btn_copy')}</button>
-                    <button class="btn btn-outline-secondary btn-sm" id="downloadBtn"><i class="bi bi-download me-2"></i>${t('tools.jsonFormatterValidator.btn_download')}</button>
+                    <button class="btn btn-outline-secondary btn-sm d-inline-flex align-items-center" id="copyBtn"><i class="bi bi-clipboard me-2"></i>${t('tools.jsonFormatterValidator.btn_copy')}</button>
+                    <button class="btn btn-outline-secondary btn-sm d-inline-flex align-items-center" id="downloadBtn"><i class="bi bi-download me-2"></i>${t('tools.jsonFormatterValidator.btn_download')}</button>
                   </div>
                 </div>
               </div>
@@ -834,19 +834,22 @@
         statusOutput.innerHTML = `<p class="text-success mb-0"><i class="bi bi-check-circle me-2"></i>${t('tools.jsonFormatterValidator.downloaded')}</p>`;
       });
 
-      copyBtn.addEventListener('click', function () {
+      copyBtn.addEventListener('click', async function () {
         if (!jsonOutput.value) {
           statusOutput.innerHTML = `<p class="text-warning mb-0"><i class="bi bi-exclamation-triangle me-2"></i>${t('tools.jsonFormatterValidator.no_output_copy')}</p>`;
           return;
         }
-        navigator.clipboard.writeText(jsonOutput.value).then(function() {
+        
+        const success = await window.ClipboardUtils.copyToClipboard(jsonOutput.value);
+        
+        if (success) {
           statusOutput.innerHTML = `<p class="text-success mb-0"><i class="bi bi-check-circle me-2"></i>${t('tools.jsonFormatterValidator.copied')}</p>`;
           setTimeout(function() {
             statusOutput.innerHTML = `<p class="text-muted mb-0">${t('tools.jsonFormatterValidator.status_initial')}</p>`;
           }, 3000);
-        }).catch(function(err) {
+        } else {
           statusOutput.innerHTML = `<p class="text-danger mb-0"><i class="bi bi-x-circle me-2"></i>${t('tools.jsonFormatterValidator.copy_error')}</p>`;
-        });
+        }
       });
 
       extractPathBtn.addEventListener('click', function () {

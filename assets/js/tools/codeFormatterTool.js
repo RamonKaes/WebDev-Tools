@@ -402,10 +402,10 @@
                   </label>
                   <div class="btn-group btn-group-sm w-100" role="group">
                     <input type="radio" class="btn-check" name="mode" id="modeBeautify" autocomplete="off" checked>
-                    <label class="btn btn-outline-primary" for="modeBeautify"><i class="bi bi-stars me-1"></i>${t('tools.codeFormatterTool.beautifyBtn')}</label>
+                    <label class="btn btn-outline-primary d-inline-flex align-items-center" for="modeBeautify"><i class="bi bi-stars me-1"></i>${t('tools.codeFormatterTool.beautifyBtn')}</label>
 
                     <input type="radio" class="btn-check" name="mode" id="modeMinify" autocomplete="off">
-                    <label class="btn btn-outline-primary" for="modeMinify"><i class="bi bi-file-earmark-zip me-1"></i>${t('tools.codeFormatterTool.minifyBtn')}</label>
+                    <label class="btn btn-outline-primary d-inline-flex align-items-center" for="modeMinify"><i class="bi bi-file-earmark-zip me-1"></i>${t('tools.codeFormatterTool.minifyBtn')}</label>
                   </div>
                   <div id="minifyInfo" class="alert alert-info mt-2 mb-0 py-1 px-2 small d-none">
                     <i class="bi bi-info-circle me-1"></i>
@@ -439,8 +439,9 @@
                   <textarea class="form-control font-monospace mb-3" id="inputCode" rows="20" placeholder="${t('tools.codeFormatterTool.inputPlaceholder')}"></textarea>
 
                   <div class="d-flex flex-wrap gap-2">
-                    <button class="btn btn-sm btn-primary" id="formatBtn"><i class="bi bi-arrow-right me-2"></i>${t('tools.codeFormatterTool.processBtn')}</button>
-                    <button class="btn btn-sm btn-outline-secondary" id="clearBtn"><i class="bi bi-trash me-2"></i>${t('common.clear')}</button>
+                    <button class="btn btn-sm btn-primary d-inline-flex align-items-center" id="formatBtn"><i class="bi bi-arrow-right me-2"></i>${t('tools.codeFormatterTool.processBtn')}</button>
+                    <button class="btn btn-sm btn-outline-secondary d-inline-flex align-items-center" id="clearBtn"><i class="bi bi-trash me-2"></i>${t('common.clear')}</button>
+                    <button class="btn btn-sm btn-outline-secondary d-inline-flex align-items-center" id="loadSampleBtn"><i class="bi bi-file-earmark me-2"></i>${t('common.load_sample')}</button>
                   </div>
                 </div>
               </div>
@@ -455,8 +456,8 @@
 
                   <div class="d-flex align-items-center gap-2 flex-wrap">
                     <small class="text-muted me-auto" id="outputInfo"></small>
-                    <button class="btn btn-sm btn-outline-secondary" id="copyBtn"><i class="bi bi-clipboard me-2"></i>${t('common.copy')}</button>
-                    <button class="btn btn-sm btn-outline-secondary" id="downloadBtn"><i class="bi bi-download me-2"></i>Download</button>
+                    <button class="btn btn-sm btn-outline-secondary d-inline-flex align-items-center" id="copyBtn"><i class="bi bi-clipboard me-2"></i>${t('common.copy')}</button>
+                    <button class="btn btn-sm btn-outline-secondary d-inline-flex align-items-center" id="downloadBtn"><i class="bi bi-download me-2"></i>Download</button>
                   </div>
                 </div>
               </div>
@@ -482,6 +483,7 @@
       const modeMinify = document.getElementById('modeMinify');
       const formatBtn = document.getElementById('formatBtn');
       const clearBtn = document.getElementById('clearBtn');
+      const loadSampleBtn = document.getElementById('loadSampleBtn');
       const copyBtn = document.getElementById('copyBtn');
       const downloadBtn = document.getElementById('downloadBtn');
       const autoFormat = document.getElementById('autoFormat');
@@ -600,6 +602,20 @@
         inputCode.value = '';
         outputCode.value = '';
         outputInfo.textContent = '';
+      });
+
+      loadSampleBtn.addEventListener('click', () => {
+        const lang = languageSelect.value;
+        const samples = {
+          javascript: 'function greet(name){console.log("Hello, "+name+"!");}const user={name:"John",age:30,hobbies:["coding","reading"]};greet(user.name);',
+          html: '<!DOCTYPE html><html><head><title>Example</title></head><body><div class="container"><h1>Hello World</h1><p>This is a sample.</p></div></body></html>',
+          css: 'body{margin:0;padding:0;font-family:Arial,sans-serif;}.container{max-width:1200px;margin:0 auto;padding:20px;}h1{color:#333;font-size:2rem;}',
+          json: '{"name":"John Doe","age":30,"email":"john@example.com","address":{"street":"Main St","city":"Berlin","country":"Germany"},"hobbies":["coding","reading"]}'
+        };
+        inputCode.value = samples[lang] || samples.javascript;
+        if (autoFormat.checked) {
+          handleFormat();
+        }
       });
 
       modeBeautify.addEventListener('change', updateButtonText);

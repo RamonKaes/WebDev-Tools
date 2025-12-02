@@ -829,19 +829,21 @@
        */
       const hide = (el) => el?.classList.add('d-none');
 
-      hashResults.addEventListener('click', function(e) {
+      hashResults.addEventListener('click', async function(e) {
         const btn = e.target.closest('.sri-copy-btn');
         if (!btn) return;
 
         const value = btn.getAttribute('data-copy-value');
         if (value) {
-          navigator.clipboard.writeText(value).then(() => {
+          const success = await window.ClipboardUtils.copyToClipboard(value);
+          
+          if (success) {
             const originalHtml = btn.innerHTML;
             btn.innerHTML = '<i class="bi bi-check"></i>';
             setTimeout(() => {
               btn.innerHTML = originalHtml;
             }, 1500);
-          });
+          }
         }
       });
 
@@ -969,15 +971,19 @@
 
       // Add copy functionality
       container.querySelectorAll('.copy-hash').forEach(btn => {
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', async () => {
           const hash = btn.dataset.hash;
-          navigator.clipboard.writeText(hash).then(() => {
+          const success = await window.ClipboardUtils.copyToClipboard(hash);
+          
+          if (success) {
             const icon = btn.querySelector('i');
-            icon.className = 'bi bi-check';
-            setTimeout(() => {
-              icon.className = 'bi bi-clipboard';
-            }, 2000);
-          });
+            if (icon) {
+              icon.className = 'bi bi-check';
+              setTimeout(() => {
+                icon.className = 'bi bi-clipboard';
+              }, 2000);
+            }
+          }
         });
       });
     },

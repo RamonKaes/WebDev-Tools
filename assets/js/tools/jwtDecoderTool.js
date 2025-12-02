@@ -230,10 +230,21 @@
                   </div>
                 </div>
 
+                <!-- Security Warning -->
+                <div class="col-12">
+                  <div class="alert alert-danger mb-3" role="alert">
+                    <div class="d-inline-flex align-items-center">
+                      <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                      <strong>${t('tools.jwtDecoderTool.verificationWarning')}</strong>
+                    </div>
+                    <p class="mb-0 mt-2 small">${t('tools.jwtDecoderTool.verificationWarningDetails')}</p>
+                  </div>
+                </div>
+
                 <!-- Signature -->
                 <div class="col-12">
                   <div class="card">
-                    <div class="card-header bg-warning">
+                    <div class="card-header bg-warning text-dark">
                       <h3 class="h6 mb-0">
                         <i class="bi bi-shield-lock me-2"></i>${t('tools.jwtDecoderTool.signature')}
                       </h3>

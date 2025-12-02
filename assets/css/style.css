@@ -9,23 +9,6 @@
    CUSTOM UTILITIES
    ============================================ */
 
-/* Font size 18px (1.125rem) - not available in Bootstrap */
-.fs-custom-18 {
-  font-size: 1.125rem !important;
-}
-
-/* Display heading font weight */
-.display-5 {
-  font-weight: 400 !important;
-}
-
-/* Active state for dropdown items */
-.dropdown-item.active,
-.dropdown-item:active {
-  background-color: var(--bs-primary);
-  color: #fff;
-}
-
 /* ============================================
    CORE LAYOUT
    ============================================ */
@@ -350,27 +333,15 @@ header.d-lg-none nav {
   fill: currentColor;
 }
 
-.bd-language-toggle .dropdown-item.active svg,
-.bd-language-toggle .dropdown-item:active svg {
-  fill: currentColor;
-  color: white;
-}
+  .bd-language-toggle .dropdown-item.active svg,
+  .bd-language-toggle .dropdown-item:active svg {
+    fill: currentColor;
+    color: white;
+  }
 
-.language-option.active {
-  background-color: var(--bs-primary);
-  color: white;
-}
-
-.language-option.active:hover {
-  background-color: var(--bs-primary);
-  color: white;
-}
-
-/* ============================================
-   TOOL-SPECIFIC MINIMAL STYLES
-   ============================================ */
-
-/* Layout Toggle Button (used in tools with 2-column layouts) */
+  /* ============================================
+     TOOL-SPECIFIC MINIMAL STYLES
+     ============================================ *//* Layout Toggle Button (used in tools with 2-column layouts) */
 .btn-layout-toggle {
   width: 2.5rem;
   height: 2.5rem;
@@ -506,10 +477,6 @@ header.d-lg-none nav {
 
 #parseOutput code {
   word-break: break-all;
-}
-
-#conversionTable tbody tr:hover {
-  cursor: pointer;
 }
 
 /* Copy Button Styling */
@@ -671,11 +638,13 @@ header.d-lg-none nav {
    TOOL-SPECIFIC UTILITIES
    ============================================ */
 
-/* Regex Tester specific styles */
-.max-w-100 {
-  max-width: 100px;
+/* Aspect Ratio Calculator - Preset Buttons */
+.ratio-preset.active small,
+.ratio-preset:hover small {
+  color: #fff !important;
 }
 
+/* Regex Tester specific styles */
 .results-container {
   max-height: 400px;
   overflow-y: auto;
@@ -702,25 +671,3 @@ header.d-lg-none nav {
 .error-container-min-height {
   min-height: 60vh;
 }
-
-/* ============================================
-   FOOTER
-   ============================================ */
-
-.app-footer a {
-  transition: opacity 0.2s ease;
-}
-
-.app-footer a:hover {
-  opacity: 0.7;
-}
-
-.app-footer a:hover .footer-logo path {
-  fill: var(--bs-primary);
-}
-
-.footer-logo path {
-  fill: var(--bs-body-color);
-  transition: fill 0.2s ease;
-}
-

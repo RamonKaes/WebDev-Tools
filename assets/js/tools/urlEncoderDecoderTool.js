@@ -54,18 +54,18 @@
 
               <div class="btn-group btn-group-sm mb-3 w-100" role="group">
                 <input type="radio" class="btn-check" name="mode" id="modeEncode" autocomplete="off" checked>
-                <label class="btn btn-outline-primary btn-sm" for="modeEncode"><i class="bi bi-arrow-right me-1"></i>${t('tools.urlEncoderDecoder.encode_title')}</label>
+                <label class="btn btn-outline-primary btn-sm d-inline-flex align-items-center" for="modeEncode"><i class="bi bi-arrow-right me-1"></i>${t('tools.urlEncoderDecoder.encode_title')}</label>
 
                 <input type="radio" class="btn-check" name="mode" id="modeDecode" autocomplete="off">
-                <label class="btn btn-outline-primary btn-sm" for="modeDecode"><i class="bi bi-arrow-left me-1"></i>${t('tools.urlEncoderDecoder.decode_title')}</label>
+                <label class="btn btn-outline-primary btn-sm d-inline-flex align-items-center" for="modeDecode"><i class="bi bi-arrow-left me-1"></i>${t('tools.urlEncoderDecoder.decode_title')}</label>
               </div>
 
               <textarea class="form-control font-monospace mb-3" id="input" rows="10" placeholder="${t('tools.urlEncoderDecoder.encode_placeholder')}"></textarea>
 
               <div class="d-flex flex-wrap gap-2 mb-2">
-                <button class="btn btn-sm btn-primary" id="processBtn"><i class="bi bi-arrow-right me-2"></i>${t('tools.urlEncoderDecoder.encode_btn')}</button>
-                <button class="btn btn-sm btn-outline-secondary" id="clearBtn"><i class="bi bi-trash me-2"></i>${t('tools.urlEncoderDecoder.clear_btn')}</button>
-                <button class="btn btn-sm btn-outline-secondary" id="loadSampleBtn"><i class="bi bi-file-earmark me-2"></i>${t('tools.urlEncoderDecoder.load_sample')}</button>
+                <button class="btn btn-sm btn-primary d-inline-flex align-items-center" id="processBtn"><i class="bi bi-arrow-right me-2"></i>${t('tools.urlEncoderDecoder.encode_btn')}</button>
+                <button class="btn btn-sm btn-outline-secondary d-inline-flex align-items-center" id="clearBtn"><i class="bi bi-trash me-2"></i>${t('tools.urlEncoderDecoder.clear_btn')}</button>
+                <button class="btn btn-sm btn-outline-secondary d-inline-flex align-items-center" id="loadSampleBtn"><i class="bi bi-file-earmark me-2"></i>${t('tools.urlEncoderDecoder.load_sample')}</button>
               </div>
 
               <div id="encodeOptions">
@@ -118,7 +118,7 @@
 
               <div class="d-flex align-items-center gap-2 flex-wrap mb-3">
                 <small class="text-muted me-auto" id="outputInfo"></small>
-                <button class="btn btn-sm btn-outline-secondary" id="copyBtn"><i class="bi bi-clipboard me-2"></i>${t('tools.urlEncoderDecoder.copy_btn')}</button>
+                <button class="btn btn-sm btn-outline-secondary d-inline-flex align-items-center" id="copyBtn"><i class="bi bi-clipboard me-2"></i>${t('tools.urlEncoderDecoder.copy_btn')}</button>
               </div>
 
               <div class="alert alert-info py-2 mb-0" id="modeInfo">
@@ -135,7 +135,7 @@
 
               <div class="input-group mb-3">
                 <input type="text" class="form-control font-monospace" id="parseInput" placeholder="${t('tools.urlEncoderDecoder.parser_placeholder')}">
-                <button class="btn btn-primary btn-sm" id="parseBtn"><i class="bi bi-search me-2"></i>${t('tools.urlEncoderDecoder.parse_btn')}</button>
+                <button class="btn btn-primary btn-sm d-inline-flex align-items-center" id="parseBtn"><i class="bi bi-search me-2"></i>${t('tools.urlEncoderDecoder.parse_btn')}</button>
               </div>
 
               <div id="parseOutput"></div>
@@ -417,13 +417,17 @@
         }
       });
 
-      copyBtn.addEventListener('click', function () {
-        if (navigator.clipboard && output.value) {
-          navigator.clipboard.writeText(output.value).then(() => {
+      copyBtn.addEventListener('click', async function () {
+        if (output.value) {
+          const success = await window.ClipboardUtils.copyToClipboard(output.value);
+          
+          if (success) {
             const icon = copyBtn.querySelector('i');
-            icon.className = 'bi bi-check me-2';
-            setTimeout(() => { icon.className = 'bi bi-clipboard me-2'; }, 2000);
-          });
+            if (icon) {
+              icon.className = 'bi bi-check me-2';
+              setTimeout(() => { icon.className = 'bi bi-clipboard me-2'; }, 2000);
+            }
+          }
         }
       });
 

@@ -183,14 +183,18 @@
 
       // Copy button
       const copyBtn = container.querySelector('#copyPasswords');
-      copyBtn.addEventListener('click', () => {
-        if (navigator.clipboard && outputTextarea.value) {
-          navigator.clipboard.writeText(outputTextarea.value).then(() => {
+      copyBtn.addEventListener('click', async () => {
+        if (outputTextarea.value) {
+          const success = await window.ClipboardUtils.copyToClipboard(outputTextarea.value);
+          
+          if (success) {
             const icon = copyBtn.querySelector('i');
-            const originalClass = icon.className;
-            icon.className = 'bi bi-check me-2';
-            setTimeout(() => { icon.className = originalClass; }, 2000);
-          });
+            if (icon) {
+              const originalClass = icon.className;
+              icon.className = 'bi bi-check me-2';
+              setTimeout(() => { icon.className = originalClass; }, 2000);
+            }
+          }
         }
       });
 

@@ -535,21 +535,26 @@
       copyBtn.addEventListener('click', async () => {
         if (!outputText.value) return;
 
-        try {
-          await navigator.clipboard.writeText(outputText.value);
+        const success = await window.ClipboardUtils.copyToClipboard(outputText.value);
+        
+        if (success) {
           const icon = copyBtn.querySelector('i');
-          const originalClass = icon.className;
-          icon.className = 'bi bi-check2 me-2';
-          copyBtn.classList.add('btn-success');
-          copyBtn.classList.remove('btn-outline-secondary');
+          if (icon) {
+            const originalClass = icon.className;
+            icon.className = 'bi bi-check2 me-2';
+            copyBtn.classList.add('btn-success');
+            copyBtn.classList.remove('btn-outline-secondary');
 
-          setTimeout(() => {
-            icon.className = originalClass;
-            copyBtn.classList.remove('btn-success');
-            copyBtn.classList.add('btn-outline-secondary');
-          }, 2000);
-        } catch (err) {
-          console.error('Failed to copy:', err);
+            setTimeout(() => {
+              if (icon) {
+                icon.className = originalClass;
+              }
+              copyBtn.classList.remove('btn-success');
+              copyBtn.classList.add('btn-outline-secondary');
+            }, 2000);
+          }
+        } else {
+          console.error('Failed to copy to clipboard');
         }
       });
 

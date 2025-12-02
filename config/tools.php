@@ -365,5 +365,25 @@ return [
     'features' => ['live-testing', 'match-highlighting', 'group-extraction', 'multiple-flags'],
     'seoTemplate' => 'default',
     'hasFeaturesSection' => true
+  ],
+
+  'aspectRatioCalculator' => [
+    'id' => 'aspectRatioCalculator',
+    'slug' => 'aspect-ratio-calculator',
+    'slugs' => [
+      'en' => 'aspect-ratio-calculator',
+      'de' => 'seitenverhaeltnis-rechner',
+      'es' => 'calculadora-relacion-aspecto',
+      'pt' => 'calculadora-proporcao-aspecto',
+      'fr' => 'calculateur-ratio-aspect',
+      'it' => 'calcolatore-rapporto-aspetto'
+    ],
+    'category' => 'converters',
+    'icon' => 'bi-aspect-ratio',
+    'jsModule' => 'tools/aspectRatioCalculatorTool.js',
+    'jsLibraries' => ['clipboard-utils'],
+    'features' => ['dimension-calculation', 'common-presets', 'css-padding-trick', 'responsive-design'],
+    'seoTemplate' => 'default',
+    'hasFeaturesSection' => true
   ]
 ];

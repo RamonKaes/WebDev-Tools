@@ -38,10 +38,10 @@
 
                   <div class="btn-group btn-group-sm mb-3 w-100" role="group">
                     <input type="radio" class="btn-check" name="mode" id="modeEncode" autocomplete="off" checked>
-                    <label class="btn btn-outline-primary btn-sm" for="modeEncode"><i class="bi bi-arrow-right me-1"></i>${t('tools.base64EncoderDecoder.encode_title')}</label>
+                    <label class="btn btn-outline-primary btn-sm d-inline-flex align-items-center" for="modeEncode"><i class="bi bi-arrow-right me-1"></i>${t('tools.base64EncoderDecoder.encode_title')}</label>
 
                     <input type="radio" class="btn-check" name="mode" id="modeDecode" autocomplete="off">
-                    <label class="btn btn-outline-primary btn-sm" for="modeDecode"><i class="bi bi-arrow-left me-1"></i>${t('tools.base64EncoderDecoder.decode_title')}</label>
+                    <label class="btn btn-outline-primary btn-sm d-inline-flex align-items-center" for="modeDecode"><i class="bi bi-arrow-left me-1"></i>${t('tools.base64EncoderDecoder.decode_title')}</label>
                   </div>
 
                   <div class="drag-drop-area mb-3" id="dropArea">
@@ -53,9 +53,9 @@
                   <textarea class="form-control font-monospace mb-3" id="input" rows="12" placeholder="${t('tools.base64EncoderDecoder.encode_placeholder')}"></textarea>
 
                   <div class="d-flex flex-wrap gap-2 mb-2">
-                    <button class="btn btn-sm btn-primary" id="processBtn"><i class="bi bi-arrow-right me-2"></i>${t('tools.base64EncoderDecoder.encode_btn')}</button>
-                    <button class="btn btn-sm btn-outline-secondary" id="clearBtn"><i class="bi bi-trash me-2"></i>${t('tools.base64EncoderDecoder.clear_btn')}</button>
-                    <button class="btn btn-sm btn-outline-secondary" id="loadSampleBtn"><i class="bi bi-file-earmark me-2"></i>${t('tools.base64EncoderDecoder.load_sample')}</button>
+                    <button class="btn btn-sm btn-primary d-inline-flex align-items-center" id="processBtn"><i class="bi bi-arrow-right me-2"></i>${t('tools.base64EncoderDecoder.encode_btn')}</button>
+                    <button class="btn btn-sm btn-outline-secondary d-inline-flex align-items-center" id="clearBtn"><i class="bi bi-trash me-2"></i>${t('tools.base64EncoderDecoder.clear_btn')}</button>
+                    <button class="btn btn-sm btn-outline-secondary d-inline-flex align-items-center" id="loadSampleBtn"><i class="bi bi-file-earmark me-2"></i>${t('tools.base64EncoderDecoder.load_sample')}</button>
                   </div>
 
                   <div id="encodeOptions">
@@ -98,8 +98,8 @@
 
                   <div class="d-flex align-items-center gap-2 flex-wrap">
                     <small class="text-muted me-auto" id="outputInfo"></small>
-                    <button class="btn btn-sm btn-outline-secondary" id="copyBtn"><i class="bi bi-clipboard me-2"></i>${t('tools.base64EncoderDecoder.copy_btn')}</button>
-                    <button class="btn btn-sm btn-outline-secondary" id="downloadBtn"><i class="bi bi-download me-2"></i>${t('tools.base64EncoderDecoder.download_btn')}</button>
+                    <button class="btn btn-sm btn-outline-secondary d-inline-flex align-items-center" id="copyBtn"><i class="bi bi-clipboard me-2"></i>${t('tools.base64EncoderDecoder.copy_btn')}</button>
+                    <button class="btn btn-sm btn-outline-secondary d-inline-flex align-items-center" id="downloadBtn"><i class="bi bi-download me-2"></i>${t('tools.base64EncoderDecoder.download_btn')}</button>
                   </div>
                 </div>
               </div>
@@ -526,13 +526,17 @@
         }
       });
 
-      copyBtn.addEventListener('click', function () {
-        if (navigator.clipboard && output.value) {
-          navigator.clipboard.writeText(output.value).then(() => {
+      copyBtn.addEventListener('click', async function () {
+        if (output.value) {
+          const success = await window.ClipboardUtils.copyToClipboard(output.value);
+          
+          if (success) {
             const icon = copyBtn.querySelector('i');
-            icon.className = 'bi bi-check me-2';
-            setTimeout(() => { icon.className = 'bi bi-clipboard me-2'; }, 2000);
-          });
+            if (icon) {
+              icon.className = 'bi bi-check me-2';
+              setTimeout(() => { icon.className = 'bi bi-clipboard me-2'; }, 2000);
+            }
+          }
         }
       });
 

@@ -4,13 +4,25 @@ define('SUPPORTED_LANGS', ['en', 'de', 'es', 'pt', 'fr', 'it']);
 
 // Security: Strict host validation with whitelist
 // Prevents Host header manipulation attacks (e.g., 'localhost.attacker.tld')
-$allowedLocalHosts = ['localhost', '127.0.0.1', 'localhost:80', '127.0.0.1:80'];
+// Expanded to support common development ports (8000, 8080, 3000, etc.)
 $currentHost = $_SERVER['HTTP_HOST'] ?? '';
-$isLocalhost = in_array($currentHost, $allowedLocalHosts, true);
+$serverName = $_SERVER['SERVER_NAME'] ?? '';
+$serverPort = $_SERVER['SERVER_PORT'] ?? '80';
 
-$baseUrl = $isLocalhost
-    ? 'http://localhost' 
-    : 'https://webdev-tools.info';
+// Check if host is localhost/127.0.0.1 (with or without port)
+$isLocalhost = (
+    preg_match('/^(localhost|127\.0\.0\.1)(:\d+)?$/i', $currentHost) ||
+    in_array($serverName, ['localhost', '127.0.0.1'], true)
+);
+
+// Determine scheme and construct base URL dynamically for localhost
+if ($isLocalhost) {
+    $scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+    $port = ($serverPort != '80' && $serverPort != '443') ? ':' . $serverPort : '';
+    $baseUrl = $scheme . '://' . $serverName . $port;
+} else {
+    $baseUrl = 'https://webdev-tools.info';
+}
 
 // Base path: '/WebDev-Tools' for localhost, empty for production
 define('BASE_PATH', $isLocalhost ? '/WebDev-Tools' : '');

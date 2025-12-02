@@ -308,13 +308,15 @@
        * @param {string} text - Text to copy
        * @param {HTMLElement} button - Button element for visual feedback
        */
-      function copyToClipboard(text, button) {
-        if (navigator.clipboard) {
-          navigator.clipboard.writeText(text).then(() => {
-            const icon = button.querySelector('i');
+      async function copyToClipboard(text, button) {
+        const success = await window.ClipboardUtils.copyToClipboard(text);
+        
+        if (success) {
+          const icon = button.querySelector('i');
+          if (icon) {
             icon.className = 'bi bi-check';
             setTimeout(() => { icon.className = 'bi bi-clipboard'; }, 2000);
-          });
+          }
         }
       }
 

@@ -35,8 +35,14 @@ $cspDirectives = [
     "manifest-src 'self'"
 ];
 
-// Add HTTPS-only directive in production
-$isHttps = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on';
+// Detect HTTPS: check direct connection and proxy headers
+$isHttps = (
+    (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ||
+    (!empty($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') ||
+    (!empty($_SERVER['HTTP_CF_VISITOR']) && strpos($_SERVER['HTTP_CF_VISITOR'], 'https') !== false)
+);
+
+// Add HTTPS-only directive when behind HTTPS
 if ($isHttps) {
     $cspDirectives[] = "upgrade-insecure-requests";
 }
@@ -90,9 +96,10 @@ header("Permissions-Policy: " . implode(', ', $permissionsPolicies));
 
 /**
  * Strict-Transport-Security (HSTS)
- * Forces HTTPS connections (production only)
+ * Forces HTTPS connections
+ * Respects X-Forwarded-Proto for proxy/CDN deployments
  */
-if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
+if ($isHttps) {
     header("Strict-Transport-Security: max-age=31536000; includeSubDomains; preload");
 }
 

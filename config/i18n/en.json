@@ -28,6 +28,7 @@
         "clear": "Clear",
         "copy": "Copy",
         "copied": "Copied!",
+        "load_sample": "Load Sample",
         "toggle_layout": "Toggle layout",
         "layout_side_by_side": "Side by side",
         "layout_stacked": "Stacked",
@@ -35,7 +36,8 @@
         "characters": "characters",
         "toggle_theme": "Toggle theme",
         "error": "Error",
-        "usefulResources": "Useful Resources"
+        "usefulResources": "Useful Resources",
+        "code": "Code"
     },
     "theme": {
         "light": "Light",
@@ -236,6 +238,55 @@
             "h1_title": "JSON Formatter & Validator — Beautify, Minify & Fix",
             "card_description": "Format, validate and beautify JSON with syntax highlighting. Minify JSON, view tree structure, and detect errors. in your browser with privacy.",
             "tool_description": "Format, validate, and beautify your JSON data with our powerful JSON Formatter & Validator. The tool offers automatic error correction, alphabetical key sorting, various indentation options, and an intuitive tree view. Additionally, you can minify JSON, escape strings, and use the integrated path extractor to retrieve specific values. All operations are performed client-side for maximum security."
+        },
+        "aspectRatioCalculator": {
+            "linkTitle": {
+                "card": "Calculate dimensions and maintain aspect ratios",
+                "nav": "Aspect Ratio"
+            },
+            "presets_title": "Common Aspect Ratios",
+            "calculator_title": "Calculator",
+            "aspect_ratio_label": "Aspect Ratio",
+            "width_label": "Width",
+            "height_label": "Height",
+            "calculate_dimensions_label": "Calculate Dimensions",
+            "known_width_label": "Known Width",
+            "calculated_height_label": "Calculated Height",
+            "known_height_label": "Known Height",
+            "calculated_width_label": "Calculated Width",
+            "ratio_formats_label": "Ratio Formats",
+            "ratio_format": "Ratio",
+            "decimal_format": "Decimal",
+            "percentage_format": "Percentage",
+            "css_generator_title": "CSS Code Generator",
+            "css_method_label": "CSS Method",
+            "css_modern": "Modern (aspect-ratio)",
+            "css_padding_trick": "Legacy (padding-bottom)",
+            "css_both": "Both methods",
+            "css_info_title": "CSS Methods",
+            "css_modern_info": "Uses the modern aspect-ratio CSS property (IE not supported)",
+            "css_padding_info": "Classic padding-bottom hack for older browser support",
+            "css_enter_ratio": "Enter an aspect ratio to generate CSS code",
+            "common_resolutions_title": "Common Resolutions",
+            "resolution": "Name",
+            "dimensions": "Dimensions",
+            "ratio": "Ratio",
+            "common_use": "Common Use",
+            "click_row_hint": "Click on a row to use these dimensions",
+            "about_title": "About",
+            "how_to_use_steps": [
+                "Select a preset or enter a custom aspect ratio",
+                "Enter a known width or height to calculate the other dimension",
+                "Copy the calculated values or generated CSS code",
+                "Use the common resolutions table for quick reference"
+            ],
+            "how_to_use_title": "How to Use",
+            "toc_title": "Aspect Ratio",
+            "h1_title": "Aspect Ratio Calculator — Responsive Design Dimensions",
+            "meta_title": "Aspect Ratio Calculator — Responsive Dimensions & CSS",
+            "card_description": "Calculate missing dimensions from aspect ratios. Generate CSS code with modern aspect-ratio property or legacy padding-bottom technique. Includes 16:9, 4:3, 21:9 presets.",
+            "meta_description": "Calculate dimensions from aspect ratios for responsive design. Generate CSS with aspect-ratio property or padding-bottom fallback. Common presets and resolution table included.",
+            "tool_description": "Calculate missing dimensions from aspect ratios with our Aspect Ratio Calculator. Generate CSS code for responsive media with modern aspect-ratio property or legacy padding-bottom technique. Perfect for responsive images, video embeds, and layout design with common presets like 16:9, 4:3, 21:9, and more."
         },
         "pxToRemConverter": {
             "linkTitle": {
@@ -629,6 +680,8 @@
             "payload": "Payload",
             "signature": "Signature",
             "signatureNote": "The signature can only be verified with the secret key. This tool only decodes the token.",
+            "verificationWarning": "⚠️ Warning: This tool does NOT perform signature verification!",
+            "verificationWarningDetails": "This JWT decoder only displays token content. It does NOT verify the signature. Never trust decoded JWT data without server-side verification. An attacker can manipulate the token content – only cryptographic validation with the secret key guarantees authenticity.",
             "algorithm": "Algorithm",
             "expiry": "Expiry",
             "expired": "Token has expired",

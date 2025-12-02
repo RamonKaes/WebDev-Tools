@@ -1,6 +1,6 @@
 {
     "version": "1.0.0",
-    "generatedAt": "2025-11-22T14:45:02+00:00",
+    "generatedAt": "2025-12-02T14:22:38+00:00",
     "tools": {
         "base64EncoderDecoder": {
             "id": "base64EncoderDecoder",
@@ -379,6 +379,27 @@
                 "match-highlighting",
                 "group-extraction",
                 "multiple-flags"
+            ],
+            "hasFeaturesSection": true,
+            "hasAboutSection": false
+        },
+        "aspectRatioCalculator": {
+            "id": "aspectRatioCalculator",
+            "slug": "aspect-ratio-calculator",
+            "url": "/aspect-ratio-calculator/",
+            "category": "converters",
+            "icon": "bi-aspect-ratio",
+            "jsPath": "/assets/js/tools/aspectRatioCalculatorTool.js",
+            "ogImage": "default.svg",
+            "externalLibraries": [],
+            "jsLibraries": [
+                "clipboard-utils"
+            ],
+            "features": [
+                "dimension-calculation",
+                "common-presets",
+                "css-padding-trick",
+                "responsive-design"
             ],
             "hasFeaturesSection": true,
             "hasAboutSection": false

@@ -170,8 +170,9 @@
                   ></textarea>
 
                   <div class="d-flex flex-wrap gap-2 mb-2">
-                    <button class="btn btn-sm btn-primary" id="convertBtn"><i class="bi bi-arrow-left-right me-2"></i>${t('tools.dataConverterTool.convertBtn')}</button>
-                    <button class="btn btn-sm btn-outline-secondary" id="clearBtn"><i class="bi bi-trash me-2"></i>${t('common.clear')}</button>
+                    <button class="btn btn-sm btn-primary d-inline-flex align-items-center" id="convertBtn"><i class="bi bi-arrow-left-right me-2"></i>${t('tools.dataConverterTool.convertBtn')}</button>
+                    <button class="btn btn-sm btn-outline-secondary d-inline-flex align-items-center" id="clearBtn"><i class="bi bi-trash me-2"></i>${t('common.clear')}</button>
+                    <button class="btn btn-sm btn-outline-secondary d-inline-flex align-items-center" id="loadSampleBtn"><i class="bi bi-file-earmark me-2"></i>${t('common.load_sample')}</button>
                   </div>
 
                   <small class="text-muted" id="inputStats">0 ${t('tools.dataConverterTool.lines')}, 0 ${t('tools.dataConverterTool.characters')}</small>
@@ -195,8 +196,8 @@
 
                   <div class="d-flex align-items-center gap-2 flex-wrap">
                     <small class="text-muted me-auto" id="outputStats">0 ${t('tools.dataConverterTool.lines')}, 0 ${t('tools.dataConverterTool.characters')}</small>
-                    <button class="btn btn-sm btn-outline-secondary" id="copyOutput"><i class="bi bi-clipboard me-2"></i>${t('common.copy')}</button>
-                    <button class="btn btn-sm btn-outline-secondary" id="downloadOutput"><i class="bi bi-download me-2"></i>Download</button>
+                    <button class="btn btn-sm btn-outline-secondary d-inline-flex align-items-center" id="copyOutput"><i class="bi bi-clipboard me-2"></i>${t('common.copy')}</button>
+                    <button class="btn btn-sm btn-outline-secondary d-inline-flex align-items-center" id="downloadOutput"><i class="bi bi-download me-2"></i>Download</button>
                   </div>
                 </div>
               </div>
@@ -218,6 +219,7 @@
     const outputArea = document.getElementById('outputData');
     const convertBtn = document.getElementById('convertBtn');
     const clearBtn = document.getElementById('clearBtn');
+    const loadSampleBtn = document.getElementById('loadSampleBtn');
     const autoConvert = document.getElementById('autoConvert');
     const indentationSelect = document.getElementById('indentation');
     const optionsContainer = document.getElementById('conversionOptions');
@@ -927,6 +929,22 @@
           statusEl.classList.add('d-none');
         }
         updateStats('', '');
+      });
+
+      loadSampleBtn.addEventListener('click', () => {
+        const type = conversionType.value;
+        const samples = {
+          jsonToXml: '{"name":"John Doe","age":30,"email":"john@example.com","address":{"street":"Main St","city":"Berlin","country":"Germany"},"hobbies":["coding","reading"]}',
+          xmlToJson: '<person><name>John Doe</name><age>30</age><email>john@example.com</email><address><street>Main St</street><city>Berlin</city><country>Germany</country></address></person>',
+          csvToJson: 'name,age,email\nJohn Doe,30,john@example.com\nJane Smith,25,jane@example.com',
+          jsonToCsv: '[{"name":"John Doe","age":30,"email":"john@example.com"},{"name":"Jane Smith","age":25,"email":"jane@example.com"}]',
+          base64ToHex: 'SGVsbG8gV29ybGQh',
+          hexToBase64: '48656c6c6f20576f726c6421'
+        };
+        inputArea.value = samples[type] || samples.jsonToXml;
+        if (autoConvert.checked) {
+          handleConversion();
+        }
       });
     }
 

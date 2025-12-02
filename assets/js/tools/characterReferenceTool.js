@@ -8,45 +8,13 @@
   'use strict';
 
   /**
-   * Copy text to clipboard using Clipboard API with fallback
+   * Copy text to clipboard using global ClipboardUtils
    *
    * @param {string} text - Text to copy
    * @returns {Promise<boolean>} - True if copy succeeded
    */
   async function copyToClipboard(text) {
-    if (!navigator.clipboard || !navigator.clipboard.writeText) {
-      return fallbackCopy(text);
-    }
-    try {
-      await navigator.clipboard.writeText(text);
-      return true;
-    } catch (error) {
-      return fallbackCopy(text);
-    }
-  }
-
-  /**
-   * Fallback copy method using execCommand (for older browsers)
-   *
-   * @param {string} text - Text to copy
-   * @returns {boolean} - True if copy succeeded
-   */
-  function fallbackCopy(text) {
-    const textarea = document.createElement('textarea');
-    textarea.value = text;
-    textarea.style.position = 'fixed';
-    textarea.style.top = '-9999px';
-    textarea.style.left = '-9999px';
-    document.body.appendChild(textarea);
-    textarea.select();
-    let success = false;
-    try {
-      success = document.execCommand('copy');
-    } catch (err) {
-      console.error('Fallback copy failed:', err);
-    }
-    document.body.removeChild(textarea);
-    return success;
+    return await window.ClipboardUtils.copyToClipboard(text);
   }
 
   /**

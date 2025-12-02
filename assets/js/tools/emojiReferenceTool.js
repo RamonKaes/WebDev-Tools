@@ -267,20 +267,22 @@
     const grid = document.getElementById('emojiGrid');
     if (!grid) return;
 
-    grid.addEventListener('click', (e) => {
+    grid.addEventListener('click', async (e) => {
       const btn = e.target.closest('.copy-emoji, .copy-code');
       if (!btn) return;
 
       const value = btn.dataset.value;
-      navigator.clipboard.writeText(value).then(() => {
+      const success = await window.ClipboardUtils.copyToClipboard(value);
+      
+      if (success) {
         const icon = btn.querySelector('i');
         if (icon) {
           icon.className = 'bi bi-check';
           setTimeout(() => icon.className = 'bi bi-clipboard', 1500);
         }
-      }).catch(err => {
-        console.error('Copy failed:', err);
-      });
+      } else {
+        console.error('Copy failed');
+      }
     });
   }
 })();

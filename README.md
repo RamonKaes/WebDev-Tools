@@ -5,7 +5,7 @@
 [![Security](https://img.shields.io/badge/security-client--side%20only-brightgreen.svg)](#security-architecture)
 [![Languages](https://img.shields.io/badge/languages-6-orange.svg)](#internationalization)
 
-> **A comprehensive suite of 18+ privacy-focused developer utilities for modern web development**
+> **A comprehensive suite of 19 privacy-focused developer utilities for modern web development**
 
 WebDev-Tools.info is a professional-grade, client-side-only platform providing essential tools for software developers, system administrators, and web engineers. All operations execute locally in your browser — your data never leaves your device.
 
@@ -187,6 +187,7 @@ WebDev-Tools implements multiple layers of protection:
 
 | Tool | Standards | Key Features |
 |------|-----------|--------------|
+| **[Aspect Ratio Calculator](./aspect-ratio-calculator/)** | N/A | Bidirectional ratio calculation; Width/height from ratio; Responsive design helper |
 | **[Px to Rem Converter](./px-to-rem-converter/)** | WCAG | Accessible typography; Custom base font size; Bulk conversion |
 | **[QR Code Generator](./qr-code-generator/)** | ISO/IEC 18004 | Error correction levels; SVG/PNG export; WiFi/vCard formats |
 | **[Lorem Ipsum Generator](./lorem-ipsum/)** | N/A | Configurable paragraphs/words; HTML tag injection; Layout testing |

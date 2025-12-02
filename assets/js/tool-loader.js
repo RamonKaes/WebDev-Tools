@@ -30,7 +30,8 @@
     'characterReferenceTool': '/assets/js/tools/characterReferenceTool.js',
     'emojiReferenceTool': '/assets/js/tools/emojiReferenceTool.js',
     'stringEscaperTool': '/assets/js/tools/stringEscaperTool.js',
-    'regexTesterTool': '/assets/js/tools/regexTesterTool.js'
+    'regexTesterTool': '/assets/js/tools/regexTesterTool.js',
+    'aspectRatioCalculator': '/assets/js/tools/aspectRatioCalculatorTool.js'
   };
 
   const FREQUENTLY_USED = [

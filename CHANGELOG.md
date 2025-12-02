@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **feat(tools):** Aspect Ratio Calculator
+  - Calculate missing dimensions from aspect ratios (16:9, 4:3, 21:9, etc.)
+  - Bidirectional conversion: ratio from dimensions or dimensions from ratio
+  - Responsive design helper for maintaining proportional scaling
+  - Localized in 6 languages (EN/DE/ES/PT/FR/IT)
+  - Client-side execution with real-time calculation
 - **feat(ui):** Sidebar navigation auto-scroll (`assets/js/sidebar-navigation.js`)
   - Automatically expands category collapse when navigating to tool pages
   - Smooth scrolls to active tool link in sidebar for better UX
@@ -16,6 +22,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Bootstrap icon fonts for H1-H6 headings instead of mixed SVG/font approach
   - Modified icon-system.js to exclude heading icons from SVG sprite conversion
   - Uniform icon sizing that scales with heading font-size
+- **feat(tests):** Consolidated test architecture (136 automated checks)
+  - Migrated all bash tests into single `run.php` file
+  - Eliminated bash dependency for better portability
+  - Added homepage localized link validation (10 checks)
+  - Added navigation & language switcher validation (10 checks)
+  - Validates German, Spanish, Portuguese tool URLs
+  - Tests sidebar navigation, mobile OffCanvas, special pages
 
 ### Changed
 - **refactor(icons):** Unified heading icon implementation
@@ -23,6 +36,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Removed custom CSS for icon sizing in favor of native Bootstrap scaling
   - Icons in H1-H6 exempt from automatic SVG sprite conversion
   - All heading icons scale proportionally with their respective heading sizes
+- **refactor(tests):** Consolidated test architecture
+  - Deleted 3 bash scripts (run-all.sh, verify-homepage-links.sh, verify-navigation.sh)
+  - Removed 393 lines of bash code, added 120 lines of PHP
+  - Single-script testing: `php tests/run.php`
+  - Summary output now shows accurate check count (136 total)
+- **refactor(security):** Enhanced security configuration
+  - Added localhost development mode detection in config.php
+  - HSTS headers now respect proxy SSL termination (X-Forwarded-Proto)
+  - JWT Decoder displays security warning about token inspection risks
 - **i18n(de):** Updated German localized slugs for 8 tools
   - URL Encoder/Decoder: `url-kodierer-dekodierer`
   - HTML Entity Tool: `html-entity-kodierer-dekodierer`
@@ -40,12 +62,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - H1 icons now consistently display at appropriate size
   - H2-H6 icons maintain visual consistency across all tool pages
   - Vertical alignment corrected using Bootstrap Flexbox utilities
+- **fix(tests):** Corrected German URL slugs in test suite
+  - Fixed hardcoded English slugs (code-formatter → code-formatierer)
+  - Implemented dynamic URL generation via `getToolUrl()`
+  - All 116 endpoints now test correct localized URLs
 
 ### Documentation
 - **docs:** Updated I18N-GUIDELINES.md with professional writing standards
   - Added guidelines for avoiding marketing language in technical documentation
   - Documented preferred technical terminology and patterns
   - Provided examples of professional vs. marketing-focused writing
+- **docs(tests):** Simplified test suite documentation
+  - Updated README.md to reflect single-script architecture
+  - Removed bash-specific troubleshooting instructions
+  - Added comprehensive test coverage breakdown (136 checks)
 
 ---
 

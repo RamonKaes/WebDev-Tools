@@ -243,17 +243,18 @@
 
                   <div class="btn-group btn-group-sm mb-3 w-100" role="group">
                     <input type="radio" class="btn-check" name="mode" id="modeEscape" autocomplete="off" checked>
-                    <label class="btn btn-outline-primary btn-sm" for="modeEscape"><i class="bi bi-lock me-1"></i>${t('tools.stringEscaperTool.escapeBtn')}</label>
+                    <label class="btn btn-outline-primary btn-sm d-inline-flex align-items-center" for="modeEscape"><i class="bi bi-lock me-1"></i>${t('tools.stringEscaperTool.escapeBtn')}</label>
 
                     <input type="radio" class="btn-check" name="mode" id="modeUnescape" autocomplete="off">
-                    <label class="btn btn-outline-primary btn-sm" for="modeUnescape"><i class="bi bi-unlock me-1"></i>${t('tools.stringEscaperTool.unescapeBtn')}</label>
+                    <label class="btn btn-outline-primary btn-sm d-inline-flex align-items-center" for="modeUnescape"><i class="bi bi-unlock me-1"></i>${t('tools.stringEscaperTool.unescapeBtn')}</label>
                   </div>
 
                   <textarea class="form-control font-monospace mb-3" id="inputText" rows="12" placeholder="${t('tools.stringEscaperTool.inputPlaceholder')}"></textarea>
 
                   <div class="d-flex flex-wrap gap-2">
-                    <button class="btn btn-sm btn-primary" id="processBtn"><i class="bi bi-arrow-right me-2"></i>${t('tools.stringEscaperTool.processBtn')}</button>
-                    <button class="btn btn-sm btn-outline-secondary" id="clearBtn"><i class="bi bi-trash me-2"></i>${t('common.clear')}</button>
+                    <button class="btn btn-sm btn-primary d-inline-flex align-items-center" id="processBtn"><i class="bi bi-arrow-right me-2"></i>${t('tools.stringEscaperTool.processBtn')}</button>
+                    <button class="btn btn-sm btn-outline-secondary d-inline-flex align-items-center" id="clearBtn"><i class="bi bi-trash me-2"></i>${t('common.clear')}</button>
+                    <button class="btn btn-sm btn-outline-secondary d-inline-flex align-items-center" id="loadSampleBtn"><i class="bi bi-file-earmark me-2"></i>${t('common.load_sample')}</button>
                   </div>
 
                   <div class="form-check form-check-inline mt-2">
@@ -273,7 +274,7 @@
 
                   <div class="d-flex align-items-center gap-2 flex-wrap">
                     <small class="text-muted me-auto" id="outputInfo"></small>
-                    <button class="btn btn-sm btn-outline-secondary" id="copyBtn"><i class="bi bi-clipboard me-2"></i>${t('common.copy')}</button>
+                    <button class="btn btn-sm btn-outline-secondary d-inline-flex align-items-center" id="copyBtn"><i class="bi bi-clipboard me-2"></i>${t('common.copy')}</button>
                   </div>
                 </div>
               </div>
@@ -300,6 +301,7 @@
       const modeUnescape = document.getElementById('modeUnescape');
       const processBtn = document.getElementById('processBtn');
       const clearBtn = document.getElementById('clearBtn');
+      const loadSampleBtn = document.getElementById('loadSampleBtn');
       const copyBtn = document.getElementById('copyBtn');
       const autoProcess = document.getElementById('autoProcess');
       const outputInfo = document.getElementById('outputInfo');
@@ -406,12 +408,25 @@
         inputText.focus();
       });
 
+      loadSampleBtn.addEventListener('click', () => {
+        const mode = document.querySelector('input[name="mode"]:checked').id;
+        if (mode === 'modeEscape') {
+          inputText.value = 'Hello "World"!\nThis has \'quotes\' and special chars: <>&\nBackslash: \\ and newlines\nTabs:\there';
+        } else {
+          inputText.value = 'Hello \\"World\\"!\\nThis has \\\'quotes\\\' and special chars: &lt;&gt;&amp;\\nBackslash: \\\\ and newlines\\nTabs:\\there';
+        }
+        if (autoProcess.checked) {
+          handleProcess();
+        }
+      });
+
       copyBtn.addEventListener('click', async () => {
         const text = outputText.value;
         if (!text) return;
 
-        try {
-          await navigator.clipboard.writeText(text);
+        const success = await window.ClipboardUtils.copyToClipboard(text);
+        
+        if (success) {
           const originalHTML = copyBtn.innerHTML;
           copyBtn.innerHTML = `<i class="bi bi-check2 me-2"></i>${t('common.copied')}`;
           copyBtn.classList.add('btn-success');
@@ -420,8 +435,8 @@
             copyBtn.innerHTML = originalHTML;
             copyBtn.classList.remove('btn-success');
           }, 2000);
-        } catch (error) {
-          console.error('Copy failed:', error);
+        } else {
+          console.error('Copy failed');
         }
       });
 

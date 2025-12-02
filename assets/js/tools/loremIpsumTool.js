@@ -75,31 +75,13 @@
   }
 
   /**
-   * Copy text to clipboard with fallback for older browsers
+   * Copy text to clipboard using global ClipboardUtils
    *
    * @param {string} text - Text to copy
-   * @returns {Promise<void>} - Promise that resolves when copy succeeds
+   * @returns {Promise<boolean>} - Promise that resolves when copy succeeds
    */
   function copyToClipboard(text) {
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      return navigator.clipboard.writeText(text);
-    } else {
-      // Fallback for older browsers
-      const textarea = document.createElement('textarea');
-      textarea.value = text;
-      textarea.style.position = 'fixed';
-      textarea.style.opacity = '0';
-      document.body.appendChild(textarea);
-      textarea.select();
-      try {
-        document.execCommand('copy');
-        document.body.removeChild(textarea);
-        return Promise.resolve();
-      } catch (err) {
-        document.body.removeChild(textarea);
-        return Promise.reject(err);
-      }
-    }
+    return window.ClipboardUtils.copyToClipboard(text);
   }
 
   window.Tools.register('loremIpsumTool', {

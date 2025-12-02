@@ -10,7 +10,8 @@ Suggested workflow
 1. Run the built-in PHP tests locally:
 
    ```bash
-   php tests/run.php
+   php tests/run.php           # 136 automated checks
+   php tests/crawler.php        # Browser-like navigation crawler
    ```
 
 2. Start a local dev server (optional, Node not required):
@@ -70,7 +71,8 @@ npm run dev
 Server-side checks are intentionally minimal and CLI-friendly. Run them with:
 
 ```bash
-php tests/run.php
+php tests/run.php           # 136 automated checks (HTTP + navigation + i18n)
+php tests/crawler.php        # Browser-like link crawler (cross-language validation)
 # or via npm
 npm run test
 ```

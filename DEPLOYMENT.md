@@ -10,13 +10,22 @@ Das Projekt enthält ein automatisches Deployment-Script:
 
 Dies erstellt ein Paket `webdev-tools_TIMESTAMP.tar.gz` mit allen notwendigen Dateien.
 
+### Deployment-Konfiguration
+
+Das Script verwendet `.deployignore` um zu definieren, welche Dateien/Ordner **nicht** ins Production-Paket kommen:
+- Development-Tools (dev/, tests/, bin/)
+- Deployment-Scripts (deploy.sh, migrate-*.sh, migrate_*.py)
+- Git-Dateien (.git/, .github/, .gitignore)
+- Dokumentation (README.md, docs/, CONTRIBUTING.md)
+- CI/CD und Editor-Konfiguration
+
 ## Was wird deployed?
 
 ### ✅ Enthalten:
 - Alle PHP-Dateien (*.php)
 - Assets (CSS, JS, Images, Fonts)
 - Konfiguration (config/)
-- Alle Tool-Verzeichnisse (18 Tools in 6 Sprachen)
+- Alle Tool-Verzeichnisse (19 Tools in 6 Sprachen)
 - Sitemaps
 - .htaccess (aus .htaccess.production)
 - robots.txt, favicon.ico

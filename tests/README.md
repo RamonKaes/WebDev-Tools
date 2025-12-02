@@ -4,43 +4,88 @@ Comprehensive testing infrastructure for URL validation, navigation, and localiz
 
 ## Quick Start
 
+### Run All Tests (Recommended) ⭐
 ```bash
+php tests/run-all.php
+# or with custom base URL
+php tests/run-all.php http://localhost:8080
+```
+
+### Run Individual Tests
+```bash
+# Slug validation (95 checks)
+php tests/validate-slugs.php
+
+# HTTP endpoints & navigation (137 checks)
 php tests/run.php http://localhost/WebDev-Tools
+
+# Deep link crawler (optional)
+php tests/crawler.php http://localhost/WebDev-Tools
 ```
 
-Or use environment variable:
-```bash
-BASE_URL=https://example.com php tests/run.php
-```
-
-Expected: **All 136 checks passed** ✅
+Expected: **All critical tests passed** ✅
 
 ## Test Scripts
 
-- **`run.php`** - Comprehensive CLI test suite (136 checks)
-  - HTTP endpoint availability (116 endpoints × 6 languages)
-  - Homepage localized link validation (10 checks)
-  - Sidebar navigation validation (3 checks)
-  - Language switcher URL mapping (5 checks)
-  - Special pages & mobile navigation (2 checks)
-  
-- **`index.php`** - Browser-based test UI
-  - Client-side JavaScript checks
-  - Browser API availability (Fetch, Web Crypto)
-  - Cryptographic integrity tests (SHA-256, HMAC)
-  - CSP validation, accessibility, performance budgets
+### 1. `run-all.php` - Master Test Runner ⭐
+Executes all test suites and provides comprehensive report.
+- **Critical:** Slug validation + HTTP endpoints
+- **Optional:** Deep link crawler
+- **Exit Code:** 0 = all passed, 1 = failures detected
+
+### 2. `validate-slugs.php` - Slug Validation [CRITICAL]
+Validates localized tool slugs are properly configured.
+- Checks all languages have slug definitions
+- Verifies directories and index.php files exist
+- Flags warnings when English slugs are reused
+- **95 checks** across 19 tools × 5 languages
+
+### 3. `run.php` - HTTP Endpoints & Navigation [CRITICAL]
+Comprehensive test suite (137 checks):
+- **116 HTTP endpoint checks** - All tool pages return 200 OK
+- **10 Homepage localized links** - German/Spanish tool URLs
+- **10 Navigation tests** - Language switcher, special pages, mobile nav
+- **1 Integrated crawler** - Browser-like navigation across 69 pages
+
+### 4. `crawler.php` - Deep Link Crawler [OPTIONAL]
+Standalone browser-like crawler for deep navigation validation.
+- Simulates real browser behavior
+- Follows navigation links recursively (max depth: 2)
+- Tests sidebar, language switcher, footer, offcanvas menus
+- Reports broken links and statistics
+
+### 5. `index.php` - Browser-Based Test UI
+Client-side testing interface:
+- JavaScript API availability checks
+- Browser API tests (Fetch, Web Crypto)
+- Cryptographic integrity tests (SHA-256, HMAC)
+- CSP validation, accessibility, performance budgets
 
 ## Coverage
 
-**Total: 136 automated checks in run.php**
+**Total: 137 automated checks in run.php + 95 slug validations**
 
-| Category | Checks | Description |
+| Test Suite | Checks | Description |
 |----------|--------|-------------|
-| HTTP Endpoints | 116 | All tools across 6 languages (EN/DE/ES/PT/FR/IT) |
-| Homepage Links | 10 | German & Spanish localized URLs |
-| Sidebar Navigation | 3 | Desktop sidebar tool links |
-| Language Switcher | 5 | DE↔EN, special pages |
-| Mobile Navigation | 2 | OffCanvas presence & localized URLs |
+| **Slug Validation** | 95 | Localized slug configuration across 5 languages |
+| **HTTP Endpoints** | 116 | All tools across 6 languages (EN/DE/ES/PT/FR/IT) |
+| **Homepage Links** | 10 | German & Spanish localized URLs |
+| **Navigation** | 10 | Language switcher, special pages, mobile nav |
+| **Integrated Crawler** | 1 | Browser-like navigation (69 pages tested) |
+
+## How It Caught the Italian Slug Bug
+
+The Italian `px-to-rem-converter` was using the English slug instead of `convertitore-px-rem`, causing a redirect loop.
+
+**Why existing tests missed it:**
+1. `tests/checks.json` had the wrong slug hardcoded
+2. Both test and config were wrong, so they matched
+
+**How the new system caught it:**
+1. External SEO crawler detected redirect loop
+2. `validate-slugs.php` now flags when localized slugs match English
+3. Integrated crawler in `run.php` tests real navigation paths
+4. `run-all.php` provides comprehensive validation
 
 ## Localized URLs Tested
 

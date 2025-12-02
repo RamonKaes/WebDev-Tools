@@ -247,6 +247,61 @@ if ($de_homepage && strpos($de_homepage, 'id="mobileSidebar"') !== false) {
 
 echo "\n";
 
+// ============================================================
+// CRAWLER-BASED NAVIGATION VALIDATION
+// ============================================================
+
+section("Cross-Language Navigation Crawler");
+echo "Running browser-like link crawler...\n\n";
+
+// Include crawler functions
+require_once __DIR__ . '/crawler-functions.php';
+
+$crawlerStats = [
+    'pages_visited' => [],
+    'broken_links' => [],
+    'redirect_loops' => [],
+    'sidebar_links' => 0,
+    'language_links' => 0,
+];
+
+// Start crawling from a few key pages
+$startUrls = [
+    "$base/de/code-formatierer/",
+    "$base/es/generador-contrasenas/",
+    "$base/fr/generateur-mots-de-passe/",
+];
+
+foreach ($startUrls as $startUrl) {
+    crawlPage($startUrl, 0, 1, [], $crawlerStats, $base);
+}
+
+$crawlerPassed = count($crawlerStats['pages_visited']);
+$crawlerFailed = count($crawlerStats['broken_links']) + count($crawlerStats['redirect_loops']);
+
+echo "Pages visited: " . $crawlerPassed . "\n";
+echo "Sidebar links tested: " . $crawlerStats['sidebar_links'] . "\n";
+echo "Language switcher links tested: " . $crawlerStats['language_links'] . "\n";
+echo "Broken links: " . $crawlerFailed . "\n";
+
+if ($crawlerFailed > 0) {
+    echo "\n⚠ Broken Links Found:\n";
+    foreach ($crawlerStats['broken_links'] as $broken) {
+        echo "  ✗ $broken\n";
+        fail("Broken link: $broken");
+    }
+    foreach ($crawlerStats['redirect_loops'] as $loop) {
+        echo "  ✗ Redirect loop: $loop\n";
+        fail("Redirect loop: $loop");
+    }
+    $failed += $crawlerFailed;
+} else {
+    ok("All navigation links working (" . $crawlerPassed . " pages)");
+    $passed++;
+}
+
+echo "\n";
+
 section("Summary");
 $total = $passed + $failed;
 echo "Total checks: " . $total . "\n";

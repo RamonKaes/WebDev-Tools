@@ -90,7 +90,7 @@
   "it/jwt-decoder/index.php",
   "it/lorem-ipsum/index.php",
   "it/punycode-converter/index.php",
-  "it/px-to-rem-converter/index.php",
+  "it/convertitore-px-rem/index.php",
   "it/qr-code-generator/index.php",
   "it/regex-tester/index.php",
   "it/riferimento-caratteri/index.php",

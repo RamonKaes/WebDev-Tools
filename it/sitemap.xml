@@ -31,6 +31,11 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://webdev-tools.info/it/convertitore-px-rem/</loc>
+    <lastmod>2025-12-02</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://webdev-tools.info/it/generatore-password/</loc>
     <lastmod>2025-12-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -72,11 +77,6 @@
   </url>
   <url>
     <loc>https://webdev-tools.info/it/punycode-converter/</loc>
-    <lastmod>2025-12-02</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://webdev-tools.info/it/px-to-rem-converter/</loc>
     <lastmod>2025-12-02</lastmod>
     <changefreq>weekly</changefreq>
   </url>

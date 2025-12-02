@@ -109,7 +109,7 @@ return [
       'es' => 'conversor-px-a-rem',
       'pt' => 'conversor-px-para-rem',
       'fr' => 'convertisseur-px-vers-rem',
-      'it' => 'px-to-rem-converter'
+      'it' => 'convertitore-px-rem'
     ],
     'category' => 'converters',
     'icon' => 'bi-arrows-angle-expand',

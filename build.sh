@@ -85,10 +85,11 @@ echo "📦 Minifying i18n JSON..."
 for json in config/i18n/*.json; do
   filename=$(basename "$json")
   if command -v jq &> /dev/null; then
-    jq -c . "$json" > "$DIST_DIR/config/i18n/${filename%.json}.min.json"
+    # Minify and keep original filename (not .min.json)
+    jq -c . "$json" > "$DIST_DIR/config/i18n/$filename"
   else
     # Fallback without jq
-    cp "$json" "$DIST_DIR/config/i18n/${filename%.json}.min.json"
+    cp "$json" "$DIST_DIR/config/i18n/$filename"
   fi
 done
 

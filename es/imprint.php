@@ -97,3 +97,7 @@ $currentUrl = getFullUrl('/imprint.php', $lang);
 
 </body>
 </html>
+<?php
+// Output minified HTML
+echo minify_html_output(ob_get_clean());
+?>

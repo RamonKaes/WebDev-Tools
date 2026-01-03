@@ -323,3 +323,7 @@ include __DIR__ . '/head.php';
 
   <?php include __DIR__ . '/common-scripts.php'; ?>
   <?php include __DIR__ . '/footer.php'; ?>
+<?php
+// Output minified HTML
+echo minify_html_output(ob_get_clean());
+?>

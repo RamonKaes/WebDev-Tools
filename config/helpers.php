@@ -524,3 +524,41 @@ function getAllTools(): array
 
     return $toolsConfig;
 }
+
+/**
+ * Minify HTML output for production
+ * Removes unnecessary whitespace, line breaks, and comments
+ * while preserving functionality and inline scripts/styles.
+ *
+ * Only active in production (non-localhost environments)
+ *
+ * @param string $html Raw HTML output
+ * @return string Minified HTML
+ */
+function minify_html_output(string $html): string
+{
+    // Only minify in production (not on localhost/127.0.0.1)
+    $host = $_SERVER['HTTP_HOST'] ?? '';
+    if (str_contains($host, 'localhost') || str_contains($host, '127.0.0.1')) {
+        return $html;
+    }
+
+    // Minification rules
+    $search = [
+        '/\>[^\S ]+/s',                    // Strip whitespace after tags, except space
+        '/[^\S ]+\</s',                    // Strip whitespace before tags, except space
+        '/(\s)+/s',                        // Shorten multiple whitespace sequences
+        '/<!--(?!\[if\s)(.|\s)*?-->/s',   // Remove HTML comments (except IE conditionals)
+    ];
+
+    $replace = [
+        '>',
+        '<',
+        '\\1',
+        '',
+    ];
+
+    $html = preg_replace($search, $replace, $html);
+
+    return $html;
+}

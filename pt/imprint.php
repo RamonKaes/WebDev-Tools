@@ -86,3 +86,7 @@ $currentUrl = getFullUrl('/imprint.php', $lang);
 <?php include __DIR__ . '/../partials/footer.php'; ?>
 </body>
 </html>
+<?php
+// Output minified HTML
+echo minify_html_output(ob_get_clean());
+?>

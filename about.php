@@ -16,6 +16,9 @@
 
 declare(strict_types=1);
 
+// Start output buffering for HTML minification
+ob_start();
+
 require_once __DIR__ . '/config/config.php';
 require_once __DIR__ . '/config/helpers.php';
 require_once __DIR__ . '/config/security-headers.php';
@@ -318,3 +321,7 @@ $currentUrl = getFullUrl('/about.php', $lang);
 </body>
 
 </html>
+<?php
+// Output minified HTML
+echo minify_html_output(ob_get_clean());
+?>

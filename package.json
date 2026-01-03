@@ -1,0 +1,55 @@
+{
+  "name": "webdev-tools",
+  "version": "1.0.0",
+  "description": "Privacy-first developer utilities - 19 tools, 6 languages, 100% client-side execution",
+  "main": "index.php",
+  "scripts": {
+    "build": "bash build.sh",
+    "build:css": "sass build-tools/bootstrap-custom.scss dist/assets/css/bootstrap.min.css --style compressed --no-source-map",
+    "build:js": "terser assets/js/**/*.js -o dist/assets/js/app.bundle.min.js --compress --mangle --source-map",
+    "build:watch": "bash build.sh && watch 'bash build.sh' assets/",
+    "deploy": "rsync -avz --delete dist/ user@webdev-tools.info:/var/www/html/",
+    "test": "cd tests && ./run-all-tests.sh",
+    "test:suite": "cd tests && ./test-suite.sh",
+    "test:advanced": "cd tests && ./advanced-tests.sh",
+    "test:performance": "cd tests && ./performance-security-tests.sh",
+    "test:copilot": "cd tests && ./copilot-compliance-check.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RamonKaes/WebDev-Tools.git"
+  },
+  "keywords": [
+    "developer-tools",
+    "privacy",
+    "client-side",
+    "utilities",
+    "web-tools",
+    "uuid",
+    "jwt",
+    "base64",
+    "json",
+    "password-generator",
+    "qr-code",
+    "hash-generator",
+    "rfc-compliant"
+  ],
+  "author": "Ramon Kaes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RamonKaes/WebDev-Tools/issues"
+  },
+  "homepage": "https://webdev-tools.info",
+  "devDependencies": {
+    "bootstrap": "^5.3.0",
+    "sass": "^1.70.0",
+    "terser": "^5.27.0",
+    "cssnano": "^6.0.3",
+    "cssnano-cli": "^1.0.5",
+    "watch": "^1.0.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

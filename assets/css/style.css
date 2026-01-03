@@ -1,0 +1,742 @@
+/**
+ * WebDev-Tools Custom Styles
+ * Optimized for minimal file size - Bootstrap handles most styling
+ * 
+ * @updated 1. Dezember 2025
+ */
+
+/* ============================================
+   CUSTOM UTILITIES
+   ============================================ */
+
+/* ============================================
+   CORE LAYOUT
+   ============================================ */
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 400;
+  font-size: 0.875rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  height: 100%;
+}
+
+.app-wrapper {
+  display: flex;
+  flex-grow: 1;
+  height: calc(100% - 57px); /* Minus mobile header height */
+}
+
+@media (min-width: 992px) {
+  .app-wrapper {
+    height: 100%;
+  }
+  
+  .tool-container-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+/* ============================================
+   SIDEBAR & NAVIGATION
+   ============================================ */
+
+#desktop-sidebar {
+  width: 280px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+/* Make desktop sidebar responsive between 992px and 1479px */
+@media (min-width: 992px) and (max-width: 1479px) {
+  #desktop-sidebar {
+    width: 240px;
+  }
+  
+  .left-sidebar-spacer {
+    width: 240px !important;
+  }
+}
+
+.btn-toggle {
+  padding: 0.5rem;
+  font-weight: 500;
+  color: var(--bs-body-color);
+  background-color: transparent;
+  width: 100%;
+  text-align: left;
+  transition: color 0.15s ease-in-out;
+  text-decoration: none;
+}
+
+.btn-toggle:hover {
+  color: var(--bs-body-color);
+  background-color: var(--bs-secondary-bg);
+  border-radius: var(--bs-border-radius);
+  text-decoration: none;
+}
+
+.btn-toggle::before {
+  width: 1.25em;
+  line-height: 0;
+  margin-right: 0.5rem;
+  content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='rgba%280,0,0,.5%29' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
+  transition: transform 0.35s ease;
+  transform-origin: 0.5em 50%;
+}
+
+[data-bs-theme="dark"] .btn-toggle::before {
+  content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='rgba%28255,255,255,.87%29' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
+}
+
+.btn-toggle[aria-expanded="true"]::before {
+  transform: rotate(90deg);
+}
+
+.btn-toggle[data-tool="home"]::before {
+  opacity: 0;
+}
+
+.btn-toggle[data-tool="about"]::before,
+.btn-toggle[data-tool="imprint"]::before,
+.btn-toggle[data-tool="privacy"]::before {
+  display: none;
+}
+
+.btn-toggle.active {
+  background-color: var(--bs-primary-bg-subtle);
+  color: var(--bs-body-color);
+  border-radius: 0.375rem;
+}
+
+.btn-toggle.active i {
+  color: var(--bs-body-color);
+}
+
+.btn-toggle-nav a {
+  margin-left: 2rem;
+  color: var(--bs-secondary) !important;
+  padding: 0.25rem 0.5rem;
+  display: block;
+  font-size: 0.875rem;
+  border-radius: var(--bs-border-radius);
+}
+
+.btn-toggle-nav a:hover {
+  background-color: var(--bs-secondary-bg);
+  color: var(--bs-emphasis-color) !important;
+}
+
+.btn-toggle-nav a.active {
+  background-color: var(--bs-primary-bg-subtle);
+  color: var(--bs-body-color) !important;
+  border-radius: 0.375rem;
+}
+
+/* Legal navigation links */
+.tool-link {
+  padding: 0.25rem 0.5rem;
+  display: block;
+  font-size: 0.875rem;
+  transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+  border-radius: var(--bs-border-radius);
+}
+
+.tool-link:hover {
+  background-color: var(--bs-secondary-bg);
+  color: var(--bs-emphasis-color) !important;
+}
+
+.tool-link.active {
+  background-color: var(--bs-primary-bg-subtle);
+  color: var(--bs-body-color) !important;
+}
+
+.tool-link[data-tool="about"],
+.tool-link[data-tool="imprint"],
+.tool-link[data-tool="privacy"],
+.tool-link[title="GitHub Repository"] {
+  font-size: 0.75rem;
+}
+
+/* Brand styling */
+.navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar-brand img {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: inline-block;
+  object-fit: contain;
+}
+
+[data-bs-theme="dark"] .navbar-brand img {
+  filter: brightness(0) invert(1);
+}
+
+/* Fixed header heights */
+header.d-lg-none nav {
+  height: 57px;
+  padding: 0 1rem !important;
+}
+
+#desktop-sidebar > div:first-child {
+  height: 57px;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem !important;
+}
+
+@media (min-width: 992px) {
+  #desktop-sidebar .navbar-brand {
+    font-size: 1.25rem; /* 20px - Bootstrap navbar-brand standard */
+  }
+  
+  #desktop-sidebar .navbar-brand img {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+}
+
+/* OffCanvas navbar-brand font size */
+#mobileSidebar .navbar-brand {
+  font-size: 1.25rem; /* 20px - Bootstrap navbar-brand standard */
+}
+
+/* ============================================
+   HOMEPAGE & TOOLS
+   ============================================ */
+
+.tool-card {
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.tool-card:hover {
+  background-color: var(--bs-light);
+  border-color: var(--bs-primary) !important;
+}
+
+.tool-card:focus-visible {
+  background-color: var(--bs-light);
+  border-color: var(--bs-primary) !important;
+  outline: 2px solid var(--bs-primary);
+  outline-offset: 2px;
+}
+
+[data-bs-theme="dark"] .tool-card:hover {
+  background-color: var(--bs-dark);
+  border-color: var(--bs-primary) !important;
+}
+
+[data-bs-theme="dark"] .tool-card:focus-visible {
+  background-color: var(--bs-dark);
+  border-color: var(--bs-primary) !important;
+  outline: 2px solid var(--bs-primary);
+  outline-offset: 2px;
+}
+
+/* Category filter animations - using Bootstrap utilities where possible */
+.tool-item.fade-in {
+  animation: fadeInScale 0.4s ease forwards;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+/* Enhanced Button States for WCAG Compliance */
+.btn:focus-visible,
+button:focus-visible,
+a.btn:focus-visible {
+  outline: 2px solid var(--bs-primary);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+.btn:disabled,
+button:disabled,
+a.btn.disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.btn:active:not(:disabled),
+button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+/* Tool cards hover/focus states */
+.tool-card:hover {
+  transform: translateY(-2px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tool-card:focus-within {
+  outline: 2px solid var(--bs-primary);
+  outline-offset: 2px;
+}
+
+/* Skip to main content link */
+.visually-hidden-focusable:focus {
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  padding: 0.5rem 1rem !important;
+  margin: 0.5rem !important;
+  overflow: visible !important;
+  clip: auto !important;
+  white-space: normal !important;
+  background-color: var(--bs-primary) !important;
+  color: white !important;
+  text-decoration: none !important;
+  border-radius: 0.25rem !important;
+  z-index: 9999 !important;
+}
+
+/* ============================================
+   THEME SWITCHER
+   ============================================ */
+
+/* ============================================
+   THEME SWITCHER
+   ============================================ */
+
+.bd-mode-toggle {
+  z-index: 1500;
+}
+
+.bd-mode-toggle .btn-primary svg {
+  fill: currentColor;
+  color: white;
+}
+
+.bd-mode-toggle .dropdown-item svg {
+  fill: currentColor;
+}
+
+.bd-mode-toggle .dropdown-item.active svg,
+.bd-mode-toggle .dropdown-item:active svg {
+  fill: currentColor;
+  color: white;
+}
+
+/* ============================================
+   LANGUAGE SWITCHER
+   ============================================ */
+
+.bd-language-toggle {
+  z-index: 1499;
+  bottom: 0;
+  margin-bottom: 7rem;
+}
+
+.bd-language-toggle .btn-primary svg {
+  fill: currentColor;
+  color: white;
+}
+
+.bd-language-toggle .dropdown-item svg {
+  fill: currentColor;
+}
+
+  .bd-language-toggle .dropdown-item.active svg,
+  .bd-language-toggle .dropdown-item:active svg {
+    fill: currentColor;
+    color: white;
+  }
+
+  /* ============================================
+     TOOL-SPECIFIC MINIMAL STYLES
+     ============================================ *//* Layout Toggle Button (used in tools with 2-column layouts) */
+.btn-layout-toggle {
+  width: 2.5rem;
+  height: 2.5rem;
+  z-index: 1030;
+  border-radius: 50% !important; /* Force round shape everywhere */
+}
+
+/* Layout Toggle Button - Stacked Position (top-right) */
+.btn-layout-toggle-stacked {
+  margin: 1.125rem;
+  transform: translateX(calc(100% + 0.75rem));
+}
+
+/* Scrollable Pre-formatted Text Container */
+.pre-scrollable {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* JSON Formatter - Drag & Drop Area */
+.drag-drop-area {
+  border: 2px dashed var(--bs-border-color);
+  border-radius: 0.375rem;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.drag-drop-area:hover,
+.drag-drop-area.drag-over {
+  border-color: var(--bs-primary);
+  background-color: var(--bs-primary-bg-subtle);
+}
+
+/* Image Preview Box */
+.image-preview-box {
+  max-height: 400px;
+}
+
+/* Password Strength Progress Bar */
+.progress-strength-bar {
+  height: 12px;
+}
+
+/* JSON Tree View */
+.json-tree-container {
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid var(--bs-border-color);
+  border-radius: 0.375rem;
+  padding: 1rem;
+}
+
+.json-tree-item {
+  margin-left: 1.5rem;
+  margin-top: 0.25rem;
+}
+
+.json-tree-key {
+  color: var(--bs-blue);
+  font-weight: 600;
+}
+
+.json-tree-string { color: var(--bs-green); }
+.json-tree-number { color: var(--bs-orange); }
+.json-tree-boolean { color: var(--bs-purple); }
+.json-tree-null { 
+  color: var(--bs-secondary);
+  font-style: italic;
+}
+
+.json-tree-toggle {
+  cursor: pointer;
+  user-select: none;
+  display: inline-block;
+  width: 1rem;
+  text-align: center;
+}
+
+.json-tree-toggle:hover {
+  color: var(--bs-primary);
+}
+
+/* Character Reference Tool */
+#charTable thead th {
+  position: sticky;
+  top: 0;
+  background-color: var(--bs-light);
+  z-index: 10;
+  box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.1);
+}
+
+[data-bs-theme="dark"] #charTable thead th {
+  background-color: var(--bs-dark);
+  color: var(--bs-light);
+}
+
+#charTable code {
+  font-size: 0.875rem;
+  padding: 0.2rem 0.4rem;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 0.25rem;
+}
+
+[data-bs-theme="dark"] #charTable code {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Character table column widths */
+.char-col-char { width: 80px; }
+.char-col-name { width: 25%; }
+.char-col-entity { width: 15%; }
+.char-col-unicode { width: 12%; }
+.char-col-decimal { width: 12%; }
+.char-col-copy { width: 200px; }
+
+/* QR Code Generator Preview */
+.qr-preview-area {
+  min-height: 256px;
+  background: var(--bs-light);
+  border-radius: 0.375rem;
+}
+
+[data-bs-theme="dark"] .qr-preview-area {
+  background: var(--bs-dark);
+}
+
+/* URL Encoder - Parse Output Table */
+#parseOutput .table th {
+  width: 150px;
+  font-weight: 600;
+}
+
+#parseOutput code {
+  word-break: break-all;
+}
+
+/* Copy Button Styling */
+.copy-btn {
+  text-decoration: none;
+  color: var(--bs-secondary);
+  font-size: 0.875rem;
+}
+
+.copy-btn:hover {
+  color: var(--bs-primary);
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+/* Table of Contents Sidebar */
+#toc-sidebar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--bs-border-color) transparent;
+}
+
+#toc-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+#toc-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#toc-sidebar::-webkit-scrollbar-thumb {
+  background-color: var(--bs-border-color);
+  border-radius: 3px;
+}
+
+#toc-sidebar::-webkit-scrollbar-thumb:hover {
+  background-color: var(--bs-secondary);
+}
+
+/* TOC Sidebar Container - Fixed position */
+.toc-sidebar-fixed {
+  width: 280px;
+  position: fixed !important;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 1001;
+}
+
+/* TOC Sidebar Spacer */
+.toc-sidebar-spacer {
+  width: 280px;
+  flex-shrink: 0;
+}
+
+/* Responsive TOC sidebar widths */
+@media (min-width: 1480px) and (max-width: 1679px) {
+  .toc-sidebar-fixed {
+    width: 240px;
+  }
+  
+  .toc-sidebar-spacer {
+    width: 240px;
+  }
+}
+
+/* Hide TOC sidebar below 1480px */
+@media (max-width: 1479px) {
+  .toc-sidebar-fixed,
+  .toc-sidebar-spacer {
+    display: none !important;
+  }
+}
+
+/* Ensure TOC nav is sticky within the fixed sidebar */
+#toc-nav {
+  position: sticky !important;
+  top: 1rem;
+}
+
+/* TOC Heading styling */
+.toc-heading {
+  letter-spacing: 0.5px;
+}
+
+/* Left Sidebar Spacer */
+.left-sidebar-spacer {
+  width: 280px;
+  flex-shrink: 0;
+}
+
+/* Hide left sidebar spacer below 992px (when desktop sidebar is hidden) */
+@media (max-width: 991px) {
+  .left-sidebar-spacer {
+    display: none !important;
+  }
+}
+
+/* Vertical nav styling inspired by Bootstrap Docs */
+#toc-nav .nav-link {
+  display: block;
+  padding: 0.25rem 0;
+  padding-left: 0.5rem;
+  margin-top: 0.125rem;
+  margin-left: 0;
+  color: var(--bs-body-color);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  font-size: 0.875rem;
+  transition: border-color 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+#toc-nav .nav-link:hover {
+  border-left-color: var(--bs-border-color);
+  color: var(--bs-primary);
+}
+
+#toc-nav .nav-link.active {
+  border-left-color: var(--bs-primary);
+  color: var(--bs-primary);
+  font-weight: 600;
+}
+
+#toc-nav .nav-link:focus-visible {
+  border-left-color: var(--bs-primary);
+  color: var(--bs-primary);
+  outline: 2px solid var(--bs-primary);
+  outline-offset: 2px;
+}
+
+/* Tool link (first item) should not highlight */
+#toc-nav .toc-tool-link {
+  font-size: 0.9375rem;
+  color: var(--bs-body-color);
+  opacity: 0.8;
+}
+
+#toc-nav .toc-tool-link.active {
+  border-left-color: transparent !important;
+  color: var(--bs-body-color) !important;
+  font-weight: normal !important;
+}
+
+#toc-nav .toc-tool-link:hover {
+  opacity: 1;
+  color: var(--bs-primary);
+}
+
+@media (max-width: 768px) {
+  #charTable .btn-group-sm .btn {
+    padding: 0.15rem 0.3rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* ============================================
+   TOOL-SPECIFIC UTILITIES
+   ============================================ */
+
+/* Aspect Ratio Calculator - Preset Buttons */
+.ratio-preset.active small,
+.ratio-preset:hover small {
+  color: #fff !important;
+}
+
+/* Regex Tester specific styles */
+.results-container {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.pre-wrap {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.col-width-150 {
+  width: 150px;
+}
+
+/* Error page utilities */
+.error-icon-large {
+  font-size: 8rem;
+}
+
+.min-vh-75 {
+  min-height: 70vh;
+}
+
+.error-container-min-height {
+  min-height: 60vh;
+}
+
+/* ============================================
+   IMAGES & MEDIA - CORE WEB VITALS
+   ============================================ */
+
+/* Aspect ratio for images to prevent CLS (Cumulative Layout Shift) */
+.tool-card img,
+.og-image,
+.icon-preview {
+  aspect-ratio: attr(width) / attr(height);
+  width: 100%;
+  height: auto;
+}
+
+/* Specific aspect ratios for common image types */
+.tool-icon {
+  aspect-ratio: 1 / 1;
+}
+
+.og-preview {
+  aspect-ratio: 1200 / 630;
+}
+
+.avatar-image {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+/* Fallback for browsers without aspect-ratio support */
+@supports not (aspect-ratio: 1 / 1) {
+  .tool-icon::before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+  }
+}

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#3465a4"/>
+  
+  <!-- Gradient Overlay -->
+  <defs>
+    <linearGradient id="gradhashGeneratorTool" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3465a4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:0.2" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#gradhashGeneratorTool)"/>
+  
+  <!-- Icon (centered, large) -->
+  <g transform="translate(450, 150)">
+    <svg width="300" height="300" viewBox="0 0 16 16" fill="#ffffff" opacity="0.3">
+      &lt;path d=&quot;M8.39 12.648a1.32 1.32 0 0 0-.015.18c0 .305.21.508.5.508.266 0 .492-.172.555-.477l.554-2.703h1.204c.421 0 .617-.234.617-.547 0-.312-.188-.53-.617-.53h-.985l.516-2.524h1.265c.43 0 .618-.227.618-.547 0-.313-.188-.524-.618-.524h-1.046l.476-2.304a1.06 1.06 0 0 0 .016-.164.51.51 0 0 0-.516-.516.54.54 0 0 0-.539.43l-.523 2.554H7.617l.477-2.304c.008-.04.015-.118.015-.164a.512.512 0 0 0-.523-.516.539.539 0 0 0-.531.43L6.53 5.484H5.414c-.43 0-.617.22-.617.532 0 .312.187.539.617.539h.906l-.515 2.523H4.609c-.421 0-.609.219-.609.531 0 .313.188.547.61.547h.976l-.516 2.492c-.008.04-.015.125-.015.18 0 .305.21.508.5.508.265 0 .492-.172.554-.477l.555-2.703h2.242l-.515 2.492zm-1-6.109h2.266l-.515 2.563H6.859l.532-2.563z&quot;/&gt;
+    </svg>
+  </g>
+  
+  <!-- Text Content -->
+  <text x="600" y="380" font-family="system-ui, -apple-system, sans-serif" font-size="68" font-weight="700" fill="#ffffff" text-anchor="middle">
+    Hash Generator
+  </text>
+  <text x="600" y="450" font-family="system-ui, -apple-system, sans-serif" font-size="42" font-weight="400" fill="#ffffff" text-anchor="middle" opacity="0.9">
+    Generate MD5, SHA-1, SHA-256, SHA-512 hashes for text and files. cryptographic hash generator with...
+  </text>
+  
+  <!-- Mini-Tools Branding (bottom) -->
+  <text x="600" y="570" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="500" fill="#ffffff" text-anchor="middle" opacity="0.7">
+    Mini-Tools Collection
+  </text>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#c17d11"/>
+  
+  <!-- Gradient Overlay -->
+  <defs>
+    <linearGradient id="gradcodeFormatterTool" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#c17d11;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:0.2" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#gradcodeFormatterTool)"/>
+  
+  <!-- Icon (centered, large) -->
+  <g transform="translate(450, 150)">
+    <svg width="300" height="300" viewBox="0 0 16 16" fill="#ffffff" opacity="0.3">
+      &lt;path d=&quot;M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z&quot;/&gt;&lt;path d=&quot;M6.854 4.646a.5.5 0 0 1 0 .708L4.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0zm2.292 0a.5.5 0 0 0 0 .708L11.793 8l-2.647 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708 0z&quot;/&gt;
+    </svg>
+  </g>
+  
+  <!-- Text Content -->
+  <text x="600" y="380" font-family="system-ui, -apple-system, sans-serif" font-size="68" font-weight="700" fill="#ffffff" text-anchor="middle">
+    Code Formatter
+  </text>
+  <text x="600" y="450" font-family="system-ui, -apple-system, sans-serif" font-size="42" font-weight="400" fill="#ffffff" text-anchor="middle" opacity="0.9">
+    Beautify and format HTML, CSS, JavaScript, XML, SQL code. Supports multiple languages with syntax...
+  </text>
+  
+  <!-- Mini-Tools Branding (bottom) -->
+  <text x="600" y="570" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="500" fill="#ffffff" text-anchor="middle" opacity="0.7">
+    Mini-Tools Collection
+  </text>
+</svg>

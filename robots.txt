@@ -1,0 +1,19 @@
+# robots.txt for WebDev-Tools
+# Last updated: 20. November 2025
+
+User-agent: *
+Disallow: /config/
+Disallow: /_archive/
+# tests folder has been removed from repository
+Disallow: /partials/
+
+# Sitemap Index
+Sitemap: https://webdev-tools.info/sitemap.xml
+
+# Language-specific sitemaps
+Sitemap: https://webdev-tools.info/sitemap-en.xml
+Sitemap: https://webdev-tools.info/de/sitemap.xml
+Sitemap: https://webdev-tools.info/es/sitemap.xml
+Sitemap: https://webdev-tools.info/pt/sitemap.xml
+Sitemap: https://webdev-tools.info/fr/sitemap.xml
+Sitemap: https://webdev-tools.info/it/sitemap.xml

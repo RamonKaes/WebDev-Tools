@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#cc0000"/>
+  
+  <!-- Gradient Overlay -->
+  <defs>
+    <linearGradient id="gradbase64EncoderDecoder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#cc0000;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:0.2" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#gradbase64EncoderDecoder)"/>
+  
+  <!-- Icon (centered, large) -->
+  <g transform="translate(450, 150)">
+    <svg width="300" height="300" viewBox="0 0 16 16" fill="#ffffff" opacity="0.3">
+      &lt;path d=&quot;M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2v9.255S12 12 8 12s-5 1.755-5 1.755V2a1 1 0 0 1 1-1h5.5v2z&quot;/&gt;
+    </svg>
+  </g>
+  
+  <!-- Text Content -->
+  <text x="600" y="380" font-family="system-ui, -apple-system, sans-serif" font-size="68" font-weight="700" fill="#ffffff" text-anchor="middle">
+    Base64 Encoder
+  </text>
+  <text x="600" y="450" font-family="system-ui, -apple-system, sans-serif" font-size="42" font-weight="400" fill="#ffffff" text-anchor="middle" opacity="0.9">
+    Base64 encoder and decoder for text and files. Encode or decode data. with drag &amp; drop, URL-safe...
+  </text>
+  
+  <!-- Mini-Tools Branding (bottom) -->
+  <text x="600" y="570" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="500" fill="#ffffff" text-anchor="middle" opacity="0.7">
+    Mini-Tools Collection
+  </text>
+</svg>

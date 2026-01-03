@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#ce5c00"/>
+  
+  <!-- Gradient Overlay -->
+  <defs>
+    <linearGradient id="gradcharacterReferenceTool" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ce5c00;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:0.2" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#gradcharacterReferenceTool)"/>
+  
+  <!-- Icon (centered, large) -->
+  <g transform="translate(450, 150)">
+    <svg width="300" height="300" viewBox="0 0 16 16" fill="#ffffff" opacity="0.3">
+      &lt;path d=&quot;M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm15 2h-4v3h4V4zm0 4h-4v3h4V8zm0 4h-4v3h3a1 1 0 0 0 1-1v-2zm-5 3v-3H6v3h4zm-5 0v-3H1v2a1 1 0 0 0 1 1h3zm-4-4h4V8H1v3zm0-4h4V4H1v3zm5-3v3h4V4H6zm4 4H6v3h4V8z&quot;/&gt;
+    </svg>
+  </g>
+  
+  <!-- Text Content -->
+  <text x="600" y="380" font-family="system-ui, -apple-system, sans-serif" font-size="68" font-weight="700" fill="#ffffff" text-anchor="middle">
+    Character Reference
+  </text>
+  <text x="600" y="450" font-family="system-ui, -apple-system, sans-serif" font-size="42" font-weight="400" fill="#ffffff" text-anchor="middle" opacity="0.9">
+    Complete HTML character entity reference with symbols, arrows, math operators. Search and copy HTML...
+  </text>
+  
+  <!-- Mini-Tools Branding (bottom) -->
+  <text x="600" y="570" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="500" fill="#ffffff" text-anchor="middle" opacity="0.7">
+    Mini-Tools Collection
+  </text>
+</svg>

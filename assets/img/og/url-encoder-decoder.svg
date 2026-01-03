@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#cc0000"/>
+  
+  <!-- Gradient Overlay -->
+  <defs>
+    <linearGradient id="gradurlEncoderDecoder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#cc0000;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:0.2" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#gradurlEncoderDecoder)"/>
+  
+  <!-- Icon (centered, large) -->
+  <g transform="translate(450, 150)">
+    <svg width="300" height="300" viewBox="0 0 16 16" fill="#ffffff" opacity="0.3">
+      &lt;path d=&quot;M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z&quot;/&gt;&lt;path d=&quot;M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z&quot;/&gt;
+    </svg>
+  </g>
+  
+  <!-- Text Content -->
+  <text x="600" y="380" font-family="system-ui, -apple-system, sans-serif" font-size="68" font-weight="700" fill="#ffffff" text-anchor="middle">
+    URL Encoder
+  </text>
+  <text x="600" y="450" font-family="system-ui, -apple-system, sans-serif" font-size="42" font-weight="400" fill="#ffffff" text-anchor="middle" opacity="0.9">
+    URL encoder and decoder for query parameters and components. Parse protocol, host, path. Support for...
+  </text>
+  
+  <!-- Mini-Tools Branding (bottom) -->
+  <text x="600" y="570" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="500" fill="#ffffff" text-anchor="middle" opacity="0.7">
+    Mini-Tools Collection
+  </text>
+</svg>

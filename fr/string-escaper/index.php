@@ -1,0 +1,82 @@
+<?php
+
+declare(strict_types=1);
+
+$toolId = 'stringEscaperTool';
+$lang = 'fr';
+
+$customAboutContent = <<<HTML
+<p class="mb-2">
+    L'<strong>Échappement de Chaînes</strong> vous aide à échapper et déséchapper des chaînes pour divers formats, notamment HTML, XML, JavaScript, JSON, SQL et CSV.
+    Idéal pour les développeurs qui manipulent des chaînes devant être correctement échappées selon le contexte.
+</p>
+<p class="mb-0">
+    Tout le traitement s'effectue côté client dans votre navigateur&nbsp;: vos données ne quittent pas votre appareil.
+</p>
+HTML;
+
+$customFeaturesContent = <<<HTML
+<ul class="list-unstyled">
+    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Échappement HTML/XML&nbsp;: encode les caractères spéciaux comme &lt;, &gt;, &amp;</li>
+    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Échappement JavaScript&nbsp;: gère guillemets, retours à la ligne et caractères spéciaux</li>
+    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Échappement JSON&nbsp;: respect des chaînes JSON valides</li>
+    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Échappement SQL&nbsp;: prévention des injections SQL</li>
+    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Échappement CSV&nbsp;: gestion des guillemets et délimiteurs</li>
+    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Traitement côté client (privacy-first)</li>
+    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Copie en un clic</li>
+</ul>
+HTML;
+
+$additionalSections = [
+    [
+        'title' => 'Cas d\'utilisation courants',
+        'icon' => 'lightbulb',
+        'content' => <<<HTML
+<div class="row">
+  <div class="col-md-6">
+    <h3 class="h6">Sécurité</h3>
+    <ul>
+      <li>Prévenir les attaques XSS via l'échappement HTML</li>
+      <li>Prévention des injections SQL</li>
+      <li>Sorties JavaScript sécurisées</li>
+      <li>Protection des données dans les API JSON</li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <h3 class="h6">Traitement de données</h3>
+    <ul>
+      <li>Export CSV correctement échappé</li>
+      <li>Sanitisation de contenu HTML/XML</li>
+      <li>Littéraux de chaînes JavaScript</li>
+      <li>Préparation des requêtes base de données</li>
+    </ul>
+  </div>
+</div>
+HTML
+    ]
+];
+
+$usefulResources = [
+    [
+        'url' => 'https://owasp.org/www-community/attacks/xss/',
+        'title' => 'OWASP&nbsp;: prévention des attaques XSS',
+        'description' => 'Guide complet pour prévenir les attaques Cross-Site Scripting'
+    ],
+    [
+        'url' => 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String',
+        'title' => 'MDN&nbsp;: référence des chaînes JavaScript',
+        'description' => 'Documentation complète sur les méthodes de chaînes et l\'échappement en JavaScript'
+    ],
+    [
+        'url' => 'https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html',
+        'title' => 'OWASP&nbsp;: prévention des injections SQL',
+        'description' => 'Bonnes pratiques pour éviter les vulnérabilités d\'injection SQL'
+    ],
+    [
+        'url' => 'https://www.w3.org/TR/html5/syntax.html#escaping-a-string',
+        'title' => 'W3C HTML5&nbsp;: échappement des chaînes',
+        'description' => 'Spécification officielle pour l\'échappement des chaînes en HTML'
+    ]
+];
+
+include __DIR__ . '/../../partials/tool-base.php';

@@ -1,0 +1,65 @@
+# Development .htaccess for localhost
+# ====================================
+# Minimal config for local development
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  
+  # ====================================
+  # LOCALIZED URL REDIRECTS
+  # ====================================
+  # Redirect English slugs to localized directory names
+  
+  # German (DE)
+  RewriteRule ^de/url-encoder-decoder/?$ /de/url-kodierer-dekodierer/ [R=301,L]
+  RewriteRule ^de/html-entity-encoder-decoder/?$ /de/html-entity-kodierer-dekodierer/ [R=301,L]
+  RewriteRule ^de/json-formatter-validator/?$ /de/json-formatierer-validator/ [R=301,L]
+  RewriteRule ^de/code-formatter/?$ /de/code-formatierer/ [R=301,L]
+  RewriteRule ^de/jwt-decoder/?$ /de/jwt-dekodierer/ [R=301,L]
+  RewriteRule ^de/punycode-converter/?$ /de/punycode-konverter/ [R=301,L]
+  RewriteRule ^de/string-escaper/?$ /de/string-maskierer/ [R=301,L]
+  
+  # Spanish (ES)
+  RewriteRule ^es/password-generator/?$ /es/generador-contrasenas/ [R=301,L]
+  RewriteRule ^es/data-converter-json-xml-yaml-csv-timestamp/?$ /es/conversor-datos/ [R=301,L]
+  RewriteRule ^es/emoji-reference/?$ /es/referencia-emojis/ [R=301,L]
+  RewriteRule ^es/character-reference/?$ /es/referencia-caracteres/ [R=301,L]
+  RewriteRule ^es/px-to-rem-converter/?$ /es/conversor-px-a-rem/ [R=301,L]
+  
+  # French (FR)
+  RewriteRule ^fr/password-generator/?$ /fr/generateur-mots-de-passe/ [R=301,L]
+  RewriteRule ^fr/data-converter-json-xml-yaml-csv-timestamp/?$ /fr/convertisseur-donnees/ [R=301,L]
+  RewriteRule ^fr/emoji-reference/?$ /fr/reference-emoji/ [R=301,L]
+  RewriteRule ^fr/character-reference/?$ /fr/reference-caracteres/ [R=301,L]
+  RewriteRule ^fr/px-to-rem-converter/?$ /fr/convertisseur-px-vers-rem/ [R=301,L]
+  
+  # Italian (IT)
+  RewriteRule ^it/password-generator/?$ /it/generatore-password/ [R=301,L]
+  RewriteRule ^it/data-converter-json-xml-yaml-csv-timestamp/?$ /it/convertitore-dati/ [R=301,L]
+  RewriteRule ^it/emoji-reference/?$ /it/riferimento-emoji/ [R=301,L]
+  RewriteRule ^it/character-reference/?$ /it/riferimento-caratteri/ [R=301,L]
+  
+  # Portuguese (PT)
+  RewriteRule ^pt/data-converter-json-xml-yaml-csv-timestamp/?$ /pt/conversor-dados/ [R=301,L]
+  RewriteRule ^pt/emoji-reference/?$ /pt/referencia-emojis/ [R=301,L]
+  RewriteRule ^pt/character-reference/?$ /pt/referencia-caracteres/ [R=301,L]
+  RewriteRule ^pt/px-to-rem-converter/?$ /pt/conversor-px-para-rem/ [R=301,L]
+  
+  # ====================================
+  # ERROR PAGES
+  # ====================================
+  ErrorDocument 404 /404.php
+  ErrorDocument 403 /403.php
+  ErrorDocument 500 /500.php
+</IfModule>
+
+# No aggressive caching, no security headers
+# Allow all assets to be loaded and changed instantly
+<IfModule mod_headers.c>
+  Header always unset X-Powered-By
+  Header always unset Server
+  Header set Cache-Control "no-cache, no-store, must-revalidate"
+  Header set Pragma "no-cache"
+  Header set Expires "0"
+</IfModule>

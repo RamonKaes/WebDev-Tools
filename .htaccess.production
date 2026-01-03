@@ -1,0 +1,242 @@
+# Production .htaccess Configuration
+# ====================================
+# 
+# DEPLOYMENT INSTRUCTIONS:
+# 1. Rename this file to .htaccess: mv .htaccess.production .htaccess
+# 2. Verify mod_headers, mod_expires and mod_rewrite are enabled
+# 3. Update manifest.json generatedAt timestamp
+# 4. Test with: curl -I https://webdev-tools.info/assets/js/tool-loader.js
+#
+# WARNING: This configuration enables aggressive caching!
+# Only use in production, NOT on localhost/development environments.
+
+# ====================================
+# URL REWRITING (Production)
+# ====================================
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  
+  # Redirect www to non-www
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+  
+  # HTTPS enforcement
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  
+  # ====================================
+  # LEGACY URL REDIRECTS
+  # ====================================
+  # Redirect old English-style URLs to localized directory names
+  
+  # German (DE) - redirect English slugs to German
+  RewriteRule ^de/url-encoder-decoder/?$ /de/url-kodierer-dekodierer/ [R=301,L]
+  RewriteRule ^de/html-entity-encoder-decoder/?$ /de/html-entity-kodierer-dekodierer/ [R=301,L]
+  RewriteRule ^de/json-formatter-validator/?$ /de/json-formatierer-validator/ [R=301,L]
+  RewriteRule ^de/code-formatter/?$ /de/code-formatierer/ [R=301,L]
+  RewriteRule ^de/jwt-decoder/?$ /de/jwt-dekodierer/ [R=301,L]
+  RewriteRule ^de/punycode-converter/?$ /de/punycode-konverter/ [R=301,L]
+  RewriteRule ^de/string-escaper/?$ /de/string-maskierer/ [R=301,L]
+  
+  # Spanish (ES) - redirect English slugs to Spanish
+  RewriteRule ^es/password-generator/?$ /es/generador-contrasenas/ [R=301,L]
+  RewriteRule ^es/data-converter-json-xml-yaml-csv-timestamp/?$ /es/conversor-datos/ [R=301,L]
+  RewriteRule ^es/emoji-reference/?$ /es/referencia-emojis/ [R=301,L]
+  RewriteRule ^es/character-reference/?$ /es/referencia-caracteres/ [R=301,L]
+  RewriteRule ^es/px-to-rem-converter/?$ /es/conversor-px-a-rem/ [R=301,L]
+  RewriteRule ^es/code-formatter-html-css-js-xml-sql/?$ /es/code-formatter/ [R=301,L]
+  RewriteRule ^es/string-escaper-html-js-json-sql-csv/?$ /es/escapador-cadenas/ [R=301,L]
+  
+  # French (FR) - redirect English slugs to French
+  RewriteRule ^fr/password-generator/?$ /fr/generateur-mots-de-passe/ [R=301,L]
+  RewriteRule ^fr/data-converter-json-xml-yaml-csv-timestamp/?$ /fr/convertisseur-donnees/ [R=301,L]
+  RewriteRule ^fr/emoji-reference/?$ /fr/reference-emoji/ [R=301,L]
+  RewriteRule ^fr/character-reference/?$ /fr/reference-caracteres/ [R=301,L]
+  RewriteRule ^fr/px-to-rem-converter/?$ /fr/convertisseur-px-vers-rem/ [R=301,L]
+  RewriteRule ^fr/code-formatter-html-css-js-xml-sql/?$ /fr/code-formatter/ [R=301,L]
+  RewriteRule ^fr/string-escaper-html-js-json-sql-csv/?$ /fr/string-escaper/ [R=301,L]
+  
+  # Italian (IT) - redirect English slugs to Italian
+  RewriteRule ^it/password-generator/?$ /it/generatore-password/ [R=301,L]
+  RewriteRule ^it/data-converter-json-xml-yaml-csv-timestamp/?$ /it/convertitore-dati/ [R=301,L]
+  RewriteRule ^it/emoji-reference/?$ /it/riferimento-emoji/ [R=301,L]
+  RewriteRule ^it/character-reference/?$ /it/riferimento-caratteri/ [R=301,L]
+  RewriteRule ^it/px-to-rem-converter/?$ /it/convertitore-px-rem/ [R=301,L]
+  RewriteRule ^it/convertitore-px-a-rem/?$ /it/convertitore-px-rem/ [R=301,L]
+  RewriteRule ^it/code-formatter-html-css-js-xml-sql/?$ /it/code-formatter/ [R=301,L]
+  RewriteRule ^it/string-escaper-html-js-json-sql-csv/?$ /it/string-escaper/ [R=301,L]
+  
+  # Portuguese (PT) - redirect English slugs to Portuguese
+  RewriteRule ^pt/password-generator/?$ /pt/password-generator/ [R=301,L]
+  RewriteRule ^pt/data-converter-json-xml-yaml-csv-timestamp/?$ /pt/conversor-dados/ [R=301,L]
+  RewriteRule ^pt/emoji-reference/?$ /pt/referencia-emojis/ [R=301,L]
+  RewriteRule ^pt/character-reference/?$ /pt/referencia-caracteres/ [R=301,L]
+  RewriteRule ^pt/px-to-rem-converter/?$ /pt/conversor-px-para-rem/ [R=301,L]
+  RewriteRule ^pt/code-formatter-html-css-js-xml-sql/?$ /pt/code-formatter/ [R=301,L]
+  RewriteRule ^pt/string-escaper-html-js-json-sql-csv/?$ /pt/string-escaper/ [R=301,L]
+  
+  # ====================================
+  # ERROR PAGES
+  # ====================================
+  ErrorDocument 404 /404.php
+  ErrorDocument 403 /403.php
+  ErrorDocument 500 /500.php
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Remove Server and X-Powered-By headers for security
+  Header always unset X-Powered-By
+  Header always unset Server
+  
+  # ===========================
+  # VERSIONED ASSETS (1 YEAR CACHE)
+  # ===========================
+  # Files with ?v= query parameter can be cached indefinitely
+  # Cache invalidation happens through version change in URL
+  
+  <FilesMatch "\.(js|css|json)$">
+    # Check if URL contains ?v= parameter
+    SetEnvIf Request_URI "v=" versioned_asset
+    
+    # Long-lived cache for versioned assets
+    Header set Cache-Control "public, max-age=31536000, immutable" env=versioned_asset
+    
+    # Short cache for non-versioned assets (1 hour with revalidation)
+    Header set Cache-Control "public, max-age=3600, must-revalidate" env=!versioned_asset
+  </FilesMatch>
+  
+  # ===========================
+  # STATIC ASSETS
+  # ===========================
+  
+  # Images - 1 month cache
+  <FilesMatch "\.(jpg|jpeg|png|gif|svg|webp|ico)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+  
+  # Fonts - 1 year cache (rarely change)
+  <FilesMatch "\.(woff|woff2|ttf|eot|otf)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+    
+    # CORS for fonts from CDN
+    Header set Access-Control-Allow-Origin "*"
+  </FilesMatch>
+  
+  # ===========================
+  # DYNAMIC CONTENT
+  # ===========================
+  
+  # PHP files - no cache, always revalidate
+  <FilesMatch "\.php$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
+  
+  # Manifest.json - 1 hour cache with revalidation
+  <Files "manifest.json">
+    Header set Cache-Control "public, max-age=3600, must-revalidate"
+  </Files>
+  
+  # i18n JSON files - 1 day cache (versioned via BUILD_HASH)
+  <FilesMatch "^(en|de)\.json$">
+    Header set Cache-Control "public, max-age=86400, must-revalidate"
+  </FilesMatch>
+  
+  # ===========================
+  # SECURITY HEADERS
+  # ===========================
+  
+  # Already set in security-headers.php, but enforce at Apache level
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  
+  # HSTS - Enable HTTPS
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+  
+  # ===========================
+  # SITEMAP OPTIMIZATION
+  # ===========================
+  # Explicitly disable cookies for sitemap.xml to prevent Google Search Console warnings
+  <FilesMatch "^sitemap\.xml$">
+    Header always unset Set-Cookie
+    Header always set Cache-Control "public, max-age=3600"
+    # Allow sitemap indexing by omitting noindex directive
+    Header always unset X-Robots-Tag
+  </FilesMatch>
+</IfModule>
+
+# ===========================
+# COMPRESSION
+# ===========================
+
+<IfModule mod_deflate.c>
+  # Compress HTML, CSS, JavaScript, Text, XML, fonts
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript
+  AddOutputFilterByType DEFLATE application/javascript application/x-javascript
+  AddOutputFilterByType DEFLATE application/json application/xml text/xml
+  AddOutputFilterByType DEFLATE application/xhtml+xml application/rss+xml
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE application/font-woff application/font-woff2
+</IfModule>
+
+# ===========================
+# BROWSER COMPATIBILITY
+# ===========================
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  
+  # Fallback for browsers that don't respect Cache-Control
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType application/font-woff2 "access plus 1 year"
+</IfModule>
+
+# ===========================
+# ETAG HANDLING
+# ===========================
+
+# Remove ETags (we use explicit Cache-Control)
+<IfModule mod_headers.c>
+  Header unset ETag
+</IfModule>
+FileETag None
+
+# ===========================
+# MONITORING & DEBUGGING
+# ===========================
+
+# Add custom header to identify cache strategy (remove in production if desired)
+<IfModule mod_headers.c>
+  Header set X-Cache-Strategy "aggressive-versioning"
+</IfModule>
+
+# ===========================
+# NOTES
+# ===========================
+#
+# Cache Strategy Explanation:
+# - Versioned Assets (?v=20251107100159): 1 year immutable cache
+# - Manifest: 1 hour with revalidation (controls version hashes)
+# - i18n: 1 day cache (versioned via BUILD_HASH)
+# - Images/Fonts: 1 month/1 year (rarely change)
+# - PHP: No cache (dynamic content)
+#
+# Performance Impact:
+# - First visit: All assets downloaded (~500KB gzip)
+# - Repeat visit: Only manifest.json checked (1 request, ~2KB)
+# - After deployment: Only changed assets re-downloaded
+#
+# Deployment Checklist:
+# [ ] Update manifest.json generatedAt timestamp
+# [ ] Clear localStorage on test browser
+# [ ] Verify Cache-Control headers: curl -I https://...
+# [ ] Check browser DevTools Network tab (from cache)
+# [ ] Monitor 304 Not Modified responses
+#

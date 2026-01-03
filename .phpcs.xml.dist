@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<ruleset name="WebDev-Tools">
+  <description>PHPCS rules for WebDev-Tools (applies to selected server-side code)
+  </description>
+
+  <!-- Use PSR12 standard -->
+  <rule ref="PSR12" />
+
+  <!-- Relax line-length to reduce noisy warnings (project policy: 140 chars preferable, very long strings allowed up to 1000) -->
+  <rule ref="Generic.Files.LineLength">
+    <properties>
+      <property name="lineLimit" value="1000" />
+      <property name="absoluteLineLimit" value="10000" />
+    </properties>
+  </rule>
+
+  <!-- Disable the PSR1 SideEffects check for now to allow files that both declare symbols and run small side-effect logic. -->
+  <rule ref="PSR1.Files.SideEffects">
+    <severity>0</severity>
+  </rule>
+
+  <!-- Disable Generic line-length checks to avoid noisy warnings in HTML/template heavy files -->
+  <rule ref="Generic.Files.LineLength">
+    <severity>0</severity>
+  </rule>
+
+  <!-- Ignore generated, vendor and asset directories -->
+  <file>./index.php</file>
+  <file>./config</file>
+  <file>./partials</file>
+  <file>./bin</file>
+
+  <exclude-pattern>*/tests/reports/*</exclude-pattern>
+  <exclude-pattern>*/assets/*</exclude-pattern>
+  <exclude-pattern>*/.git/*</exclude-pattern>
+  <exclude-pattern>*/.tools/*</exclude-pattern>
+  <exclude-pattern>*/node_modules/*</exclude-pattern>
+</ruleset>

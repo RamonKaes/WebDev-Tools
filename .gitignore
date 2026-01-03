@@ -1,0 +1,153 @@
+# WebDev-Tools .gitignore
+# Created: 3. Januar 2026
+
+# ============================================
+# BUILD ARTIFACTS
+# ============================================
+
+# Production Build
+dist/
+build-manifest.json
+
+# Source Maps
+*.min.js.map
+*.css.map
+
+# Temporary Build Files
+*.temp.js
+*.temp.css
+
+# ============================================
+# NODE & NPM
+# ============================================
+
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# NPM Debug Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ============================================
+# TEST OUTPUTS
+# ============================================
+
+# Test Reports
+test-report-*.txt
+tests/test-report-*.txt
+
+# Coverage Reports
+coverage/
+.nyc_output/
+
+# ============================================
+# DEVELOPMENT
+# ============================================
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# PHP Development
+.phpunit.result.cache
+vendor/
+
+# SASS/SCSS Cache
+.sass-cache/
+*.css.map
+
+# ============================================
+# LOGS & DATABASES
+# ============================================
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# Databases (if any)
+*.sqlite
+*.db
+
+# ============================================
+# SYSTEM FILES
+# ============================================
+
+# OS Generated
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Linux
+*~
+.directory
+
+# Windows
+Desktop.ini
+$RECYCLE.BIN/
+
+# ============================================
+# TEMPORARY FILES
+# ============================================
+
+# Temp
+tmp/
+temp/
+*.tmp
+*.bak
+*.backup
+
+# Cache
+.cache/
+*.cache
+
+# ============================================
+# SECURITY & SECRETS
+# ============================================
+
+# Environment Files (if used in future)
+.env
+.env.local
+.env.*.local
+
+# Private Keys
+*.pem
+*.key
+*.p12
+
+# ============================================
+# PROJECT SPECIFIC
+# ============================================
+
+# Build Tools Cache
+build-tools/.cache/
+
+# Generated Files
+config/manifest.json.backup
+
+# Don't ignore these important files
+!.htaccess
+!.htaccess.production
+!.eslintrc.json
+!.phpcs.xml.dist
+
+# ============================================
+# DEPLOYMENT
+# ============================================
+
+# Deployment Scripts (if sensitive)
+# deploy-private.sh
+
+# Server Configs (keep production template)
+# .htaccess (keep for dev, production uses .htaccess.production)

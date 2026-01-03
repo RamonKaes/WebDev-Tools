@@ -1,0 +1,408 @@
+{
+    "version": "1.0.0",
+    "generatedAt": "2025-12-02T14:22:38+00:00",
+    "tools": {
+        "base64EncoderDecoder": {
+            "id": "base64EncoderDecoder",
+            "slug": "base64-encoder-decoder",
+            "url": "/base64-encoder-decoder/",
+            "category": "encoders",
+            "icon": "bi-file-binary",
+            "jsPath": "/assets/js/tools/base64EncoderDecoderTool.js",
+            "ogImage": "base64-encoder-decoder.svg",
+            "externalLibraries": [],
+            "jsLibraries": [
+                "clipboard-utils",
+                "download-utils",
+                "dragdrop-utils",
+                "validators"
+            ],
+            "features": [
+                "drag-drop",
+                "file-upload",
+                "live-mode"
+            ],
+            "hasFeaturesSection": true,
+            "hasAboutSection": false
+        },
+        "urlEncoderDecoder": {
+            "id": "urlEncoderDecoder",
+            "slug": "url-encoder-decoder",
+            "url": "/url-encoder-decoder/",
+            "category": "encoders",
+            "icon": "bi-link-45deg",
+            "jsPath": "/assets/js/tools/urlEncoderDecoderTool.js",
+            "ogImage": "url-encoder-decoder.svg",
+            "externalLibraries": [],
+            "jsLibraries": [
+                "clipboard-utils",
+                "download-utils",
+                "validators"
+            ],
+            "features": [
+                "bulk-processing",
+                "url-parsing"
+            ],
+            "hasFeaturesSection": true,
+            "hasAboutSection": false
+        },
+        "htmlEntityTool": {
+            "id": "htmlEntityTool",
+            "slug": "html-entity-encoder-decoder",
+            "url": "/html-entity-encoder-decoder/",
+            "category": "encoders",
+            "icon": "bi-code-square",
+            "jsPath": "/assets/js/tools/htmlEntityTool.js",
+            "ogImage": "html-entity-encoder-decoder.svg",
+            "externalLibraries": [],
+            "jsLibraries": [
+                "clipboard-utils",
+                "download-utils"
+            ],
+            "features": [
+                "named-entities",
+                "numeric-entities",
+                "bidirectional"
+            ],
+            "hasFeaturesSection": true,
+            "hasAboutSection": false
+        },
+        "jsonFormatterValidator": {
+            "id": "jsonFormatterValidator",
+            "slug": "json-formatter-validator",
+            "url": "/json-formatter-validator/",
+            "category": "formatters",
+            "icon": "bi-filetype-json",
+            "jsPath": "/assets/js/tools/jsonFormatterValidatorTool.js",
+            "ogImage": "json-formatter-validator.svg",
+            "externalLibraries": [],
+            "jsLibraries": [
+                "clipboard-utils",
+                "download-utils",
+                "dragdrop-utils",
+                "formatters",
+                "validators"
+            ],
+            "features": [
+                "syntax-highlighting",
+                "tree-view",
+                "minification",
+                "validation"
+            ],
+            "hasFeaturesSection": true,
+            "hasAboutSection": false
+        },
+        "codeFormatterTool": {
+            "id": "codeFormatterTool",
+            "slug": "code-formatter",
+            "url": "/code-formatter/",
+            "category": "formatters",
+            "icon": "bi-code-square",
+            "jsPath": "/assets/js/tools/codeFormatterTool.js",
+            "ogImage": "code-formatter-html-css-js-xml-sql.svg",
+            "externalLibraries": [],
+            "jsLibraries": [
+                "clipboard-utils",
+                "download-utils"
+            ],
+            "features": [],
+            "hasFeaturesSection": true,
+            "hasAboutSection": false
+        },
+        "pxToRemConverter": {
+            "id": "pxToRemConverter",
+            "slug": "px-to-rem-converter",
+            "url": "/px-to-rem-converter/",
+            "category": "converters",
+            "icon": "bi-arrows-angle-expand",
+            "jsPath": "/assets/js/tools/pxToRemConverterTool.js",
+            "ogImage": "px-to-rem-converter.svg",
+            "externalLibraries": [],
+            "jsLibraries": [
+                "clipboard-utils"
+            ],
+            "features": [
+                "live-calculation",
+                "conversion-tables",
+                "tailwind-support"
+            ],
+            "hasFeaturesSection": true,
+            "hasAboutSection": false
+        },
+        "dataConverterTool": {
+            "id": "dataConverterTool",
+            "slug": "data-converter",
+            "url": "/data-converter/",
+            "category": "converters",
+            "icon": "bi-arrow-left-right",
+            "jsPath": "/assets/js/tools/dataConverterTool.js",
+            "ogImage": "data-converter-json-xml-yaml-csv-timestamp.svg",
+            "externalLibraries": [],
+            "jsLibraries": [
+                "clipboard-utils",
+                "download-utils",
+                "validators",
+                "formatters"
+            ],
+            "features": [
+                "bidirectional-conversion",
+                "multiple-formats",
+                "timestamp-conversion"
+            ],
+            "hasFeaturesSection": true,
+            "hasAboutSection": false
+        },
+        "jwtDecoderTool": {
+            "id": "jwtDecoderTool",
+            "slug": "jwt-decoder",
+            "url": "/jwt-decoder/",
+            "category": "encoders",
+            "icon": "bi-shield-lock",
+            "jsPath": "/assets/js/tools/jwtDecoderTool.js",
+            "ogImage": "jwt-decoder.svg",
+            "externalLibraries": [],
+            "jsLibraries": [],
+            "features": [
+                "decode-jwt",
+                "verify-expiry",
+                "algorithm-detection"
+            ],
+            "hasFeaturesSection": true,
+            "hasAboutSection": false
+        },
+        "punycodeConverterTool": {
+            "id": "punycodeConverterTool",
+            "slug": "punycode-converter",
+            "url": "/punycode-converter/",
+            "category": "encoders",
+            "icon": "bi-globe",
+            "jsPath": "/assets/js/tools/punycodeConverterTool.js",
+            "ogImage": "punycode-converter.svg",
+            "externalLibraries": [],
+            "jsLibraries": [
+                "clipboard-utils",
+                "download-utils"
+            ],
+            "features": [
+                "idn-support",
+                "bidirectional",
+                "auto-detect"
+            ],
+            "hasFeaturesSection": true,
+            "hasAboutSection": false
+        },
+        "uuidGeneratorTool": {
+            "id": "uuidGeneratorTool",
+            "slug": "uuid-generator",
+            "url": "/uuid-generator/",
+            "category": "generators",
+            "icon": "bi-fingerprint",
+            "jsPath": "/assets/js/tools/uuidGeneratorTool.js",
+            "ogImage": "uuid-generator.svg",
+            "externalLibraries": [],
+            "jsLibraries": [
+                "clipboard-utils",
+                "download-utils",
+                "validators"
+            ],
+            "features": [
+                "bulk-generation",
+                "uuid-v4",
+                "rfc-4122"
+            ],
+            "hasFeaturesSection": true,
+            "hasAboutSection": false
+        },
+        "passwordGeneratorTool": {
+            "id": "passwordGeneratorTool",
+            "slug": "password-generator",
+            "url": "/password-generator/",
+            "category": "generators",
+            "icon": "bi-shield-lock",
+            "jsPath": "/assets/js/tools/passwordGeneratorTool.js",
+            "ogImage": "password-generator.svg",
+            "externalLibraries": [],
+            "jsLibraries": [
+                "clipboard-utils",
+                "download-utils",
+                "wordlist"
+            ],
+            "features": [
+                "random-password",
+                "passphrase",
+                "pattern-based",
+                "strength-meter"
+            ],
+            "hasFeaturesSection": true,
+            "hasAboutSection": false
+        },
+        "hashGeneratorTool": {
+            "id": "hashGeneratorTool",
+            "slug": "hash-generator",
+            "url": "/hash-generator/",
+            "category": "generators",
+            "icon": "bi-hash",
+            "jsPath": "/assets/js/tools/hashGeneratorTool.js",
+            "ogImage": "hash-generator.svg",
+            "externalLibraries": [],
+            "jsLibraries": [
+                "clipboard-utils",
+                "download-utils"
+            ],
+            "features": [
+                "multiple-algorithms",
+                "file-hashing"
+            ],
+            "hasFeaturesSection": true,
+            "hasAboutSection": false
+        },
+        "loremIpsumTool": {
+            "id": "loremIpsumTool",
+            "slug": "lorem-ipsum",
+            "url": "/lorem-ipsum/",
+            "category": "generators",
+            "icon": "bi-file-text",
+            "jsPath": "/assets/js/tools/loremIpsumTool.js",
+            "ogImage": "lorem-ipsum.svg",
+            "externalLibraries": [],
+            "jsLibraries": [
+                "clipboard-utils",
+                "download-utils"
+            ],
+            "features": [
+                "paragraphs",
+                "words",
+                "sentences",
+                "html-output"
+            ],
+            "hasFeaturesSection": true,
+            "hasAboutSection": false
+        },
+        "qrCodeGeneratorTool": {
+            "id": "qrCodeGeneratorTool",
+            "slug": "qr-code-generator",
+            "url": "/qr-code-generator/",
+            "category": "generators",
+            "icon": "bi-qr-code",
+            "jsPath": "/assets/js/tools/qrCodeGeneratorTool.js",
+            "ogImage": "qr-code-generator.svg",
+            "externalLibraries": [
+                {
+                    "url": "https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js",
+                    "integrity": "sha384-lQXOAyZwHXE55JFyrOMB7nY2Wv+m5ZWNtJcHrd1rceRQXAYNLak8ukN5TjBTcIwz",
+                    "crossorigin": "anonymous"
+                }
+            ],
+            "jsLibraries": [
+                "download-utils"
+            ],
+            "features": [
+                "qr-generation",
+                "customizable",
+                "download-svg-png"
+            ],
+            "hasFeaturesSection": true,
+            "hasAboutSection": false
+        },
+        "stringEscaperTool": {
+            "id": "stringEscaperTool",
+            "slug": "string-escaper",
+            "url": "/string-escaper/",
+            "category": "stringtools",
+            "icon": "bi-code-slash",
+            "jsPath": "/assets/js/tools/stringEscaperTool.js",
+            "ogImage": "string-escaper-html-js-json-sql-csv.svg",
+            "externalLibraries": [],
+            "jsLibraries": [
+                "clipboard-utils",
+                "download-utils"
+            ],
+            "features": [],
+            "hasFeaturesSection": true,
+            "hasAboutSection": false
+        },
+        "characterReferenceTool": {
+            "id": "characterReferenceTool",
+            "slug": "character-reference",
+            "url": "/character-reference/",
+            "category": "references",
+            "icon": "bi-table",
+            "jsPath": "/assets/js/tools/characterReferenceTool.js",
+            "ogImage": "default.svg",
+            "externalLibraries": [],
+            "jsLibraries": [
+                "clipboard-utils"
+            ],
+            "features": [
+                "search",
+                "categories",
+                "toggle-view",
+                "copy-codes"
+            ],
+            "hasFeaturesSection": true,
+            "hasAboutSection": false
+        },
+        "emojiReferenceTool": {
+            "id": "emojiReferenceTool",
+            "slug": "emoji-reference",
+            "url": "/emoji-reference/",
+            "category": "references",
+            "icon": "bi-emoji-smile",
+            "jsPath": "/assets/js/tools/emojiReferenceTool.js",
+            "ogImage": "default.svg",
+            "externalLibraries": [],
+            "jsLibraries": [],
+            "features": [
+                "search",
+                "categories",
+                "copy-emoji",
+                "copy-codes"
+            ],
+            "hasFeaturesSection": true,
+            "hasAboutSection": false
+        },
+        "regexTesterTool": {
+            "id": "regexTesterTool",
+            "slug": "regex-tester",
+            "url": "/regex-tester/",
+            "category": "utilities",
+            "icon": "bi-regex",
+            "jsPath": "/assets/js/tools/regexTesterTool.js",
+            "ogImage": "regex-tester.svg",
+            "externalLibraries": [],
+            "jsLibraries": [
+                "clipboard-utils",
+                "download-utils"
+            ],
+            "features": [
+                "live-testing",
+                "match-highlighting",
+                "group-extraction",
+                "multiple-flags"
+            ],
+            "hasFeaturesSection": true,
+            "hasAboutSection": false
+        },
+        "aspectRatioCalculator": {
+            "id": "aspectRatioCalculator",
+            "slug": "aspect-ratio-calculator",
+            "url": "/aspect-ratio-calculator/",
+            "category": "converters",
+            "icon": "bi-aspect-ratio",
+            "jsPath": "/assets/js/tools/aspectRatioCalculatorTool.js",
+            "ogImage": "default.svg",
+            "externalLibraries": [],
+            "jsLibraries": [
+                "clipboard-utils"
+            ],
+            "features": [
+                "dimension-calculation",
+                "common-presets",
+                "css-padding-trick",
+                "responsive-design"
+            ],
+            "hasFeaturesSection": true,
+            "hasAboutSection": false
+        }
+    }
+}

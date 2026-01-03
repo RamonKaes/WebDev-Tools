@@ -2,6 +2,9 @@
 
 declare(strict_types=1);
 
+// Start output buffering for HTML minification
+ob_start();
+
 $toolId = 'qrCodeGeneratorTool';
 $lang = 'it';
 

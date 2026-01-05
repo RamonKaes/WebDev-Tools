@@ -44,6 +44,9 @@
         "dark": "Scuro",
         "auto": "Auto"
     },
+    "errors": {
+        "registry_missing": "[{tool}] Registro degli strumenti non disponibile. Si prega di ricaricare la pagina."
+    },
     "tools": {
         "base64EncoderDecoder": {
             "linkTitle": {

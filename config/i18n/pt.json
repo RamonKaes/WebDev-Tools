@@ -44,6 +44,9 @@
         "dark": "Escuro",
         "auto": "Automático"
     },
+    "errors": {
+        "registry_missing": "[{tool}] Registro de ferramentas não disponível. Por favor, recarregue a página."
+    },
     "tools": {
         "base64EncoderDecoder": {
             "about_title": "Sobre",

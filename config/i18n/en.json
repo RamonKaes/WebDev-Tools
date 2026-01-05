@@ -44,6 +44,9 @@
         "dark": "Dark",
         "auto": "Auto"
     },
+    "errors": {
+        "registry_missing": "[{tool}] Tools registry not available. Please reload the page."
+    },
     "tools": {
         "base64EncoderDecoder": {
             "linkTitle": {

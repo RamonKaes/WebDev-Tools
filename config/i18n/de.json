@@ -44,6 +44,9 @@
         "dark": "Dunkel",
         "auto": "Auto"
     },
+    "errors": {
+        "registry_missing": "[{tool}] Tools-Registry nicht verfügbar. Bitte laden Sie die Seite neu."
+    },
     "tools": {
         "base64EncoderDecoder": {
             "about_title": "Über",

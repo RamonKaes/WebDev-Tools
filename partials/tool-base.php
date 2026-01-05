@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Tool Base Template
  * Last updated: 2024-11-14 14:30:00

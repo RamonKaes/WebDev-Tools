@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 if (!isset($errorCode)) {
     http_response_code(400);
     exit('Bad Request: Error code not specified');

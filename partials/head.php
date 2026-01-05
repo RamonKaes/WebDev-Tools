@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Head Template - Updated 2024-11-14 14:30
  */

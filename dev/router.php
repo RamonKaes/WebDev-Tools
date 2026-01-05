@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 // Simple router script for PHP built-in server.
 // Serves existing files directly; falls back to index.php for app routing.
 $url  = parse_url($_SERVER['REQUEST_URI']);

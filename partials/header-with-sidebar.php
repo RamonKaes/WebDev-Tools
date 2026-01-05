@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Reusable Header + Sidebar Template
  * Used across all tool pages for consistent navigation

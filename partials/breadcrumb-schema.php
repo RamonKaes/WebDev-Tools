@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Breadcrumb Schema.org JSON-LD
  * Generates breadcrumb structured data for better SEO

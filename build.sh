@@ -175,6 +175,7 @@ JS_FILES=(
   "assets/js/lib/logger.js"
   "assets/js/lib/storage-utils.js"
   "assets/js/lib/wordlist.js"
+  "assets/js/icon-system.js"
   "assets/js/tool-registry.js"
   "assets/js/tool-loader.js"
   "assets/js/sidebar-navigation.js"

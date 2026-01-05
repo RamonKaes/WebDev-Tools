@@ -232,11 +232,53 @@ find "$DIST_DIR" -name "*.php" -type f -exec sed -i \
   {} \;
 
 # Replace individual JS files with bundle
+# Strategy: Remove individual script tags, then add bundle at strategic location
+
+# First, remove all individual JS file script tags
 find "$DIST_DIR" -name "*.php" -type f -exec sed -i \
-  -e "s|assets/js/tool-loader.js|assets/js/app.bundle.$BUILD_HASH.min.js|g" \
+  '/assets\/js\/theme-init\.js/d; 
+   /assets\/js\/helpers\.js/d;
+   /assets\/js\/tool-registry\.js/d;
+   /assets\/js\/lib\/clipboard-utils\.js/d;
+   /assets\/js\/sidebar-navigation\.js/d;
+   /assets\/js\/sidebar-persistence\.js/d;
+   /assets\/js\/toc-generator\.js/d;
+   /assets\/js\/category-filter\.js/d;
+   /assets\/js\/color-modes\.js/d;
+   /assets\/js\/mobile-navigation\.js/d;
+   /assets\/js\/i18n\.js/d;
+   /assets\/js\/tool-loader\.js/d' \
   {} \;
 
+# Add bundle to common-scripts.php after DOMPurify (using more robust pattern)
+if [ -f "$DIST_DIR/partials/common-scripts.php" ]; then
+  # Insert after the DOMPurify script closing tag
+  awk -v bundle="$BUILD_HASH" '
+    /<script src="https:\/\/cdn.jsdelivr.net\/npm\/dompurify/ {
+      print
+      getline
+      print
+      getline  
+      print
+      print ""
+      print "  <!-- Application Bundle: All tools and utilities -->"
+      print "  <script src=\"<?= $assetPrefix ?>assets/js/app.bundle." bundle ".min.js?v=<?= $buildHash ?>\" nonce=\"<?= $nonce ?>\"></script>"
+      next
+    }
+    { print }
+  ' "$DIST_DIR/partials/common-scripts.php" > "$DIST_DIR/partials/common-scripts.php.tmp"
+  mv "$DIST_DIR/partials/common-scripts.php.tmp" "$DIST_DIR/partials/common-scripts.php"
+fi
+
+# Also add to head.php for pages that don't use common-scripts.php
+if [ -f "$DIST_DIR/partials/head.php" ]; then
+  # Add before closing </head> tag
+  sed -i 's|</head>|  <script src="<?= $assetPrefix ?>assets/js/app.bundle.'"$BUILD_HASH"'.min.js?v=<?= $buildHash ?>"></script>\n</head>|' \
+    "$DIST_DIR/partials/head.php"
+fi
+
 echo "  ✓ Asset references updated with hashed filenames"
+echo "  ✓ Individual JS files replaced with bundle"
 
 # ============================================
 # 8. Deploy .htaccess.production

@@ -254,15 +254,14 @@ find "$DIST_DIR" -name "*.php" -type f -exec sed -i \
 if [ -f "$DIST_DIR/partials/common-scripts.php" ]; then
   # Insert after the DOMPurify script closing tag
   awk -v bundle="$BUILD_HASH" '
-    /<script src="https:\/\/cdn.jsdelivr.net\/npm\/dompurify/ {
+    /crossorigin="anonymous"/ && !inserted {
       print
       getline
-      print
-      getline  
       print
       print ""
       print "  <!-- Application Bundle: All tools and utilities -->"
       print "  <script src=\"<?= $assetPrefix ?>assets/js/app.bundle." bundle ".min.js?v=<?= $buildHash ?>\" nonce=\"<?= $nonce ?>\"></script>"
+      inserted = 1
       next
     }
     { print }

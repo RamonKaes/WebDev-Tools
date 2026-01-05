@@ -201,8 +201,8 @@ JS_FILES=(
   "assets/js/tools/emojiReferenceTool.js"
 )
 
-# Concatenate
-cat "${JS_FILES[@]}" > "$DIST_DIR/assets/js/app.bundle.temp.js"
+# Concatenate and remove ES6 module syntax (export/import)
+cat "${JS_FILES[@]}" | sed 's/^export default /\/\/ export default /g; s/^export {/\/\/ export {/g; s/^export function /function /g; s/^export const /const /g; s/^import .*/\/\/ &/g' > "$DIST_DIR/assets/js/app.bundle.temp.js"
 
 if command -v terser &> /dev/null; then
   terser "$DIST_DIR/assets/js/app.bundle.temp.js" \
@@ -212,6 +212,7 @@ if command -v terser &> /dev/null; then
   
   rm "$DIST_DIR/assets/js/app.bundle.temp.js"
   echo "  ✓ JavaScript bundled & minified (720KB → ~180KB + source map)"
+  echo "  ✓ ES6 module syntax converted to browser-compatible format"
 else
   mv "$DIST_DIR/assets/js/app.bundle.temp.js" \
     "$DIST_DIR/assets/js/app.bundle.$BUILD_HASH.min.js"

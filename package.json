@@ -5,9 +5,7 @@
   "main": "index.php",
   "scripts": {
     "build": "bash build.sh",
-    "build:css": "sass build-tools/bootstrap-custom.scss dist/assets/css/bootstrap.min.css --style compressed --no-source-map",
-    "build:js": "terser assets/js/**/*.js -o dist/assets/js/app.bundle.min.js --compress --mangle --source-map",
-    "build:watch": "bash build.sh && watch 'bash build.sh' assets/",
+    "build:css": "csso assets/css/style.css -o dist/assets/css/style.min.css",
     "deploy": "rsync -avz --delete dist/ user@webdev-tools.info:/var/www/html/",
     "test": "cd tests && ./run-all-tests.sh",
     "test:suite": "cd tests && ./test-suite.sh",

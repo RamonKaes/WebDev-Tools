@@ -10,12 +10,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### 🏗️ Build System
-- Comprehensive build process concept created ([BUILD-CONCEPT.md](BUILD-CONCEPT.md))
-- Production build pipeline planned with dist/ output directory
-- Bootstrap Custom Build strategy defined (228KB → 120KB target)
-- Asset minification & bundling (87% size reduction with GZIP)
-- Cache-busting with content-based hashes
-- Build manifest generation for deployment tracking
+- **[2026-01-05]** Simplified build system - removed JavaScript bundling
+  - Removed complex IIFE concatenation (382 → 129 lines in build.sh)
+  - Archived old bundling script as `build-bundled.sh.old` for reference
+  - JavaScript files now loaded individually (more maintainable & debuggable)
+  - Build process now only: copy files + CSS minification + sitemap generation
+  - Fixed production deployment to use `.htaccess.production`
+  - Reason: Bundling caused fragile IIFE issues and wrong tool loading
+- Removed duplicate logger implementation (`assets/js/lib/logger.js`)
+  - Kept singleton logger (`assets/js/logger.js`) used by 3 tools
+  - ES6 module version was unused and caused browser compatibility issues
 
 ### 🧪 Testing Infrastructure
 - Moved all test scripts to dedicated `/tests` directory

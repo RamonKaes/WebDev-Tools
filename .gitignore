@@ -55,6 +55,9 @@ coverage/
 *~
 .DS_Store
 
+# AI Assistant Instructions (personal workflow)
+copilot-instructions.md
+
 # PHP Development
 .phpunit.result.cache
 vendor/

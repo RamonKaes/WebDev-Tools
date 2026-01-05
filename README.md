@@ -840,7 +840,8 @@ This repository contains a small set of developer utilities and helper scripts u
 # Start local development server (PHP built-in)
 php -S localhost:8000
 
-# Note: Node-based watch/build tasks were removed from the repository; use the PHP dev server or see `maintenance/MAINTENANCE.md` for archived scripts.
+# Or use the helper script
+./dev/start-server.sh
 ```
 
 ---
@@ -953,7 +954,8 @@ Detailed technical documentation is available in the [`/docs`](docs/) directory:
 
 ### 🧪 Testing Documentation
 
-- **Removed:** Unit and E2E tests and test automation were removed from the main repository and archived for reference in the `archive/legacy-scripts` branch; consolidated maintenance instructions live in `maintenance/MAINTENANCE.md`.
+- **[Test Suite](tests/README.md)** - Comprehensive testing documentation
+- **Note:** Legacy E2E test harnesses were archived in the `archive/legacy-scripts` branch to keep the main repository lightweight.
 
 ### 🔧 Configuration
 

@@ -27,7 +27,6 @@ $features = [
     'Procesamiento local centrado en la privacidad',
     'Copiar al portapapeles con un clic'
 ];
-HTML;
 
 $additionalSections = [
     [

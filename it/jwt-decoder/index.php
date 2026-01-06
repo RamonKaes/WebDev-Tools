@@ -29,9 +29,6 @@ $features = [
     'Firma: mostra la firma codificata in Base64URL',
     'Elaborazione lato client: i dati non lasciano il browser'
 ];
-    <li>Lato client: tutto il processo avviene nel browser</li>
-</ul>
-HTML;
 
 $customNoticeType = 'warning';
 $customNoticeContent = <<<HTML

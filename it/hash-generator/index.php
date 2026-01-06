@@ -31,11 +31,6 @@ $features = [
     'Generazione in tempo reale',
     'Elaborazione 100% lato client: i dati rimangono sul dispositivo'
 ];
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Copia con un clic</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Generazione in tempo reale</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Elaborazione 100% lato client</li>
-</ul>
-HTML;
 
 $customNoticeType = 'warning';
 $customNoticeContent = <<<HTML

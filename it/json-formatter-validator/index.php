@@ -29,9 +29,6 @@ $features = [
     'Evidenziazione chiara degli errori',
     'Elaborazione lato client: privacy garantita'
 ];
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Privacy garantita: tutto resta nel browser</li>
-</ul>
-HTML;
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML

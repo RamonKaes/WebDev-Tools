@@ -28,7 +28,6 @@ $features = [
     'Processamento 100% no navegador',
     'Geração instantânea sem atrasos'
 ];
-HTML;
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML

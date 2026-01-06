@@ -31,11 +31,6 @@ $features = [
     'Anteprima in tempo reale',
     'Generazione 100% lato client'
 ];
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Download come PNG o SVG</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Anteprima in tempo reale</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Generazione 100% lato client</li>
-</ul>
-HTML;
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML

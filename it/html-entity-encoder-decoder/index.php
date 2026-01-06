@@ -29,9 +29,6 @@ $features = [
     'Riferimento caratteri: collegamento rapido all\'intera lista di entità HTML',
     'Download: salva i risultati in un file di testo'
 ];
-    <li>Download: salva il risultato in un file di testo</li>
-</ul>
-HTML;
 
 $additionalSections = [
   [

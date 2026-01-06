@@ -29,9 +29,6 @@ $features = [
     'Codici Unicode, decimali ed esadecimali affiancati',
     'Copia istantanea negli appunti'
 ];
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Copia con un solo clic</li>
-</ul>
-HTML;
 
 $usefulResources = [
     [

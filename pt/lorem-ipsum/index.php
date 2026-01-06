@@ -27,7 +27,6 @@ $features = [
     'Cópia para a área de transferência com um clique',
     'Contador de caracteres e palavras em tempo real'
 ];
-HTML;
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML

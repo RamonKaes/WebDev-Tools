@@ -28,8 +28,6 @@ $features = [
     'Analisi: estrai protocollo, host, percorso e query string',
     'Rilevamento automatico: identifica quando codificare o decodificare'
 ];
-</ul>
-HTML;
 
 $customNoticeContent = '
   <h3 class="h6 mb-2">

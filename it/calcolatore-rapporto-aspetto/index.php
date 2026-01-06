@@ -31,11 +31,6 @@ $features = [
     'Calcolo in tempo reale',
     'Elaborazione 100% lato client'
 ];
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Calcolatore di dimensioni immagine responsive</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Calcolo in tempo reale</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Elaborazione 100% lato client</li>
-</ul>
-HTML;
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML

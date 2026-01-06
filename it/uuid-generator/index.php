@@ -30,10 +30,6 @@ $features = [
     'Nessuna chiamata al server: 100% lato client',
     'Generazione istantanea senza latenza'
 ];
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Elaborazione 100% nel browser</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Generazione istantanea senza ritardi</li>
-</ul>
-HTML;
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML

@@ -30,10 +30,6 @@ $features = [
     'Copia con un clic',
     '100% lato client: nessun dato inviato al server'
 ];
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Copia negli appunti con un clic</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>100% lato client: nessun dato inviato al server</li>
-</ul>
-HTML;
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML

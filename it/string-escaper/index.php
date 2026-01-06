@@ -29,9 +29,6 @@ $features = [
     'Elaborazione 100% locale (focus sulla privacy)',
     'Copia con un clic'
 ];
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Copia il risultato con un clic</li>
-</ul>
-HTML;
 
 $additionalSections = [
     [

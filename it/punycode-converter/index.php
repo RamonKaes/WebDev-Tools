@@ -29,9 +29,6 @@ $features = [
     'Domini di esempio: carica casi reali per testare',
     'Conversione in tempo reale durante la digitazione'
 ];
-    <li>Conversione in tempo reale: risultati mentre digiti</li>
-</ul>
-HTML;
 
 $additionalSections = [
   [

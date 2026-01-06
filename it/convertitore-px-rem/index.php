@@ -31,11 +31,6 @@ $features = [
     'Preset per breakpoint comuni',
     'Elaborazione 100% lato client'
 ];
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Copia i valori convertiti con un clic</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Preset dei breakpoint più comuni</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Elaborazione 100% nel browser</li>
-</ul>
-HTML;
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML

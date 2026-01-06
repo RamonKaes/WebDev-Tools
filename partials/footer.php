@@ -1,3 +1,4 @@
+<?php declare(strict_types=1); ?>
   </div>
 
   <script src="<?= $assetPrefix ?>assets/bootstrap/js/bootstrap.bundle.min.js"></script>

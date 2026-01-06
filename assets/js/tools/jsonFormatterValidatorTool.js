@@ -315,19 +315,19 @@
         });
       }
 
-      var jsonInput = container.querySelector('#jsonInput');
-      var jsonOutput = container.querySelector('#jsonOutput');
-      var jsonTree = container.querySelector('#jsonTree');
-      var statusOutput = container.querySelector('#statusOutput');
-      var indentSelect = container.querySelector('#indentSelect');
-      var formatBtn = container.querySelector('#formatBtn');
-      var validateBtn = container.querySelector('#validateBtn');
-      var minifyBtn = container.querySelector('#minifyBtn');
-      var clearBtn = container.querySelector('#clearBtn');
-      var loadSampleBtn = container.querySelector('#loadSampleBtn');
-      var downloadBtn = container.querySelector('#downloadBtn');
-      var copyBtn = container.querySelector('#copyBtn');
-      var jsonPath = container.querySelector('#jsonPath');
+      const jsonInput = container.querySelector('#jsonInput');
+      const jsonOutput = container.querySelector('#jsonOutput');
+      const jsonTree = container.querySelector('#jsonTree');
+      const statusOutput = container.querySelector('#statusOutput');
+      const indentSelect = container.querySelector('#indentSelect');
+      const formatBtn = container.querySelector('#formatBtn');
+      const validateBtn = container.querySelector('#validateBtn');
+      const minifyBtn = container.querySelector('#minifyBtn');
+      const clearBtn = container.querySelector('#clearBtn');
+      const loadSampleBtn = container.querySelector('#loadSampleBtn');
+      const downloadBtn = container.querySelector('#downloadBtn');
+      const copyBtn = container.querySelector('#copyBtn');
+      const jsonPath = container.querySelector('#jsonPath');
       var extractPathBtn = container.querySelector('#extractPathBtn');
       var pathResult = container.querySelector('#pathResult');
       var escapeBtn = container.querySelector('#escapeBtn');

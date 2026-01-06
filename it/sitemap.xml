@@ -2,117 +2,117 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://webdev-tools.info/it/</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-06</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://webdev-tools.info/it/about.php</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-06</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://webdev-tools.info/it/base64-encoder-decoder/</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-06</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://webdev-tools.info/it/calcolatore-rapporto-aspetto/</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-06</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://webdev-tools.info/it/code-formatter/</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-06</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://webdev-tools.info/it/convertitore-dati/</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-06</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://webdev-tools.info/it/convertitore-px-rem/</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-06</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://webdev-tools.info/it/generatore-password/</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-06</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://webdev-tools.info/it/hash-generator/</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-06</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://webdev-tools.info/it/html-entity-encoder-decoder/</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-06</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://webdev-tools.info/it/imprint.php</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-06</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://webdev-tools.info/it/json-formatter-validator/</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-06</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://webdev-tools.info/it/jwt-decoder/</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-06</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://webdev-tools.info/it/lorem-ipsum/</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-06</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://webdev-tools.info/it/privacy.php</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-06</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://webdev-tools.info/it/punycode-converter/</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-06</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://webdev-tools.info/it/qr-code-generator/</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-06</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://webdev-tools.info/it/regex-tester/</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-06</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://webdev-tools.info/it/riferimento-caratteri/</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-06</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://webdev-tools.info/it/riferimento-emoji/</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-06</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://webdev-tools.info/it/string-escaper/</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-06</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://webdev-tools.info/it/url-encoder-decoder/</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-06</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://webdev-tools.info/it/uuid-generator/</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-06</lastmod>
     <changefreq>weekly</changefreq>
   </url>
 </urlset>

@@ -86,14 +86,9 @@ $usefulResources = [
         'description' => 'Langjährige Ressource für Lorem-Ipsum-Textgenerierung und Informationen'
     ],
     [
-        'url' => 'https://www.nngroup.com/articles/lorem-ipsum/',
-        'title' => 'Nielsen Norman Group: Lorem Ipsum in UX',
-        'description' => 'Forschung über den Einfluss von Platzhaltertext im User Experience Design'
-    ],
-    [
-        'url' => 'https://alistapart.com/article/ux-content-first/',
-        'title' => 'A List Apart: Content-First Design',
-        'description' => 'Warum Design mit echten Inhalten für bessere UX entscheidend ist'
+        'url' => 'https://www.smashingmagazine.com/2010/01/lorem-ipsum-killing-designs/',
+        'title' => 'Smashing Magazine: Lorem Ipsum schadet Ihrem Design',
+        'description' => 'Warum Platzhaltertext den Designprozess und die User Experience beeinträchtigen kann'
     ]
 ];
 

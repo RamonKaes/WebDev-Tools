@@ -25,6 +25,11 @@ HTML;
 
 $usefulResources = [
     [
+        'url' => 'https://en.wikipedia.org/wiki/Regular_expression',
+        'title' => 'Wikipedia: Regular Expression',
+        'description' => 'Beginner-friendly introduction to regular expressions'
+    ],
+    [
         'url' => 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions',
         'title' => 'MDN Regular Expressions Guide',
         'description' => 'Comprehensive guide to regular expressions in JavaScript by Mozilla'

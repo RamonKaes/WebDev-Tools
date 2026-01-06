@@ -246,8 +246,8 @@ $currentUrl = getFullUrl('/about.php', $lang);
             <p class="mb-5">
               4. Ping-pong de IA en las revisiones de código
               También he apostado por la IA en el control de calidad, pero de forma sistemática:
-              primero dejé que <a href="https://openai.com/index/openai-o1/" target="_blank" rel="noopener noreferrer" title="OpenAI o1 - Modelo de IA avanzado">GPT-5 Codex</a> realizara las revisiones de código y
-              luego pedí la opinión de <a href="https://www.anthropic.com/claude" target="_blank" rel="noopener noreferrer" title="Claude AI de Anthropic">Claude Sonnet 4.5</a> al respecto. Una revisión de IA para
+              primero dejé que <a href="https://openai.com/o1/" target="_blank" rel="noopener noreferrer" title="OpenAI o1 - Modelo de razonamiento avanzado">GPT-5 Codex</a> realizara las revisiones de código y
+              luego pedí la opinión de <a href="https://www.anthropic.com/" target="_blank" rel="noopener noreferrer" title="Anthropic - Seguridad e investigación en IA">Claude Sonnet 4.5</a> al respecto. Una revisión de IA para
               la revisión de IA, por así decirlo. Es bastante meta, pero extremadamente útil para
               contrastar diferentes «formas de pensar».
             </p>
@@ -258,7 +258,7 @@ $currentUrl = getFullUrl('/about.php', $lang);
             </h2>
             <p>
               Una vez que la funcionalidad estuvo lista, pensé en las traducciones. Primero le tocó el turno a
-              <a href="https://www.anthropic.com/claude" target="_blank" rel="noopener noreferrer" title="Claude AI de Anthropic">Claude Sonnet 4.5</a>. Según sus propias declaraciones, la IA domina el inglés y el
+              <a href="https://www.anthropic.com/" target="_blank" rel="noopener noreferrer" title="Anthropic - Seguridad e investigación en IA">Claude Sonnet 4.5</a>. Según sus propias declaraciones, la IA domina el inglés y el
               alemán a nivel nativo y ofrece una seguridad del 98 % en español, francés,
               italiano y portugués.
             </p>
@@ -272,7 +272,7 @@ $currentUrl = getFullUrl('/about.php', $lang);
             <p class="mb-5">
               Un refrescante grado de autorreflexión. Sin embargo, para la traducción por lotes propiamente dicha
               de la parte estática y codificada de las lenguas románicas, Claude me pareció
-              demasiado intelectual. En su lugar, dejé que <a href="https://openai.com/index/openai-o1/" target="_blank" rel="noopener noreferrer" title="OpenAI o1 - Modelo de IA avanzado">GPT-5-Codex</a> se encargara de ello.
+              demasiado intelectual. En su lugar, dejé que <a href="https://openai.com/o1/" target="_blank" rel="noopener noreferrer" title="OpenAI o1 - Modelo de razonamiento avanzado">GPT-5-Codex</a> se encargara de ello.
               Una vez más, la herramienta adecuada para el trabajo adecuado.
             </p>
 

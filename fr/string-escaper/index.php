@@ -61,6 +61,11 @@ HTML
 
 $usefulResources = [
     [
+        'url' => 'https://fr.wikipedia.org/wiki/Caract%C3%A8re_d%27%C3%A9chappement',
+        'title' => 'Wikipedia&nbsp;: Caractère d\'&eacute;chappement',
+        'description' => 'Introduction accessible aux caractères et séquences d\'&eacute;chappement'
+    ],
+    [
         'url' => 'https://owasp.org/www-community/attacks/xss/',
         'title' => 'OWASP&nbsp;: prévention des attaques XSS',
         'description' => 'Guide complet pour prévenir les attaques Cross-Site Scripting'

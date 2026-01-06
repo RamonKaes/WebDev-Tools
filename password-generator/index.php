@@ -74,6 +74,11 @@ HTML
 
 $usefulResources = [
     [
+        'url' => 'https://en.wikipedia.org/wiki/Password_strength',
+        'title' => 'Wikipedia: Password Strength',
+        'description' => 'Beginner-friendly introduction to password security concepts'
+    ],
+    [
         'url' => 'https://pages.nist.gov/800-63-3/sp800-63b.html',
         'title' => 'NIST SP 800-63B: Digital Identity Guidelines',
         'description' => 'Official guidelines for password creation and authentication'

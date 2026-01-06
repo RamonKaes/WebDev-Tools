@@ -71,6 +71,11 @@ HTML
 
 $usefulResources = [
     [
+        'url' => 'https://pt.wikipedia.org/wiki/Em_%28tipografia%29',
+        'title' => 'Wikipedia: Em (tipografia)',
+        'description' => 'Introdução acessível às unidades tipográficas em e rem'
+    ],
+    [
         'url' => 'https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units',
         'title' => 'MDN: valores e unidades CSS',
         'description' => 'Guia completo sobre unidades CSS, incluindo px, rem e em'
@@ -81,9 +86,9 @@ $usefulResources = [
         'description' => 'Especificação oficial do W3C para a unidade rem'
     ],
     [
-        'url' => 'https://css-tricks.com/rems-ems/',
-        'title' => 'CSS-Tricks: rems e ems',
-        'description' => 'Boas práticas para usar rem em design responsivo'
+        'url' => 'https://moderncss.dev/generating-font-size-css-rules-and-creating-a-fluid-type-scale/',
+        'title' => 'Modern CSS: Regras de tamanho de fonte e escala fluida',
+        'description' => 'Guia completo sobre unidades rem e tipografia fluida em CSS moderno'
     ],
     [
         'url' => 'https://www.24a11y.com/2019/pixels-vs-relative-units-in-css-why-its-still-a-big-deal/',

@@ -61,6 +61,11 @@ HTML
 
 $usefulResources = [
     [
+        'url' => 'https://pt.wikipedia.org/wiki/Caractere_de_escape',
+        'title' => 'Wikipedia: Caractere de escape',
+        'description' => 'Introdução acessível a caracteres e sequências de escape'
+    ],
+    [
         'url' => 'https://owasp.org/www-community/attacks/xss/',
         'title' => 'OWASP XSS Prevention Cheat Sheet',
         'description' => 'Guia completo para prevenir ataques de Cross-Site Scripting'

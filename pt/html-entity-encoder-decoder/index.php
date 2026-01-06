@@ -92,6 +92,11 @@ HTML
 
 $usefulResources = [
     [
+        'url' => 'https://developer.mozilla.org/en-US/docs/Glossary/Entity',
+        'title' => 'MDN: Entidades HTML',
+        'description' => 'Guia acessível sobre entidades de caracteres HTML'
+    ],
+    [
         'url' => 'https://html.spec.whatwg.org/multipage/named-characters.html',
         'title' => 'HTML Standard: entidades nomeadas',
         'description' => 'Especificação WHATWG para entidades com nome'

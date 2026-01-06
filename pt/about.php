@@ -183,7 +183,7 @@ $currentUrl = getFullUrl('/about.php', $lang);
             <p>
               A certa altura, ocorreu-me: são apenas scripts simples. Porque não deixar
               a IA fazer isso? Como utilizador fiel do <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer" title="Visual Studio Code - Editor de código gratuito">VS Code</a>, criei o projeto diretamente com o
-              <a href="https://www.anthropic.com/claude" target="_blank" rel="noopener noreferrer" title="Claude AI da Anthropic">Claude Sonnet 4.5</a> (no <a href="https://github.com/features/copilot" target="_blank" rel="noopener noreferrer" title="GitHub Copilot - Programador de pares de IA">GitHub CoPilot</a>).
+              <a href="https://www.anthropic.com/" target="_blank" rel="noopener noreferrer" title="Anthropic - Segurança e pesquisa em IA">Claude Sonnet 4.5</a> (no <a href="https://github.com/features/copilot" target="_blank" rel="noopener noreferrer" title="GitHub Copilot - Programador de pares de IA">GitHub CoPilot</a>).
             </p>
             <p>
               Fiquei surpreendido, porque o resultado foi uma aplicação web modular
@@ -239,8 +239,8 @@ $currentUrl = getFullUrl('/about.php', $lang);
             <p class="mb-5">
               4. Ping-pong de IA nas revisões de código
               Também apostei nas IAs para a garantia de qualidade, mas de forma sistemática:
-              primeiro, realizei as revisões de código com o <a href="https://openai.com/index/openai-o1/" target="_blank" rel="noopener noreferrer" title="OpenAI o1 - Modelo de IA avançado">GPT-5 Codex</a> e,
-              em seguida, solicitei a opinião do <a href="https://www.anthropic.com/claude" target="_blank" rel="noopener noreferrer" title="Claude AI da Anthropic">Claude Sonnet 4.5</a> sobre o assunto. Uma revisão de IA para
+              primeiro, realizei as revisões de código com o <a href="https://openai.com/o1/" target="_blank" rel="noopener noreferrer" title="OpenAI o1 - Modelo de raciocínio avançado">GPT-5 Codex</a> e,
+              em seguida, solicitei a opinião do <a href="https://www.anthropic.com/" target="_blank" rel="noopener noreferrer" title="Anthropic - Segurança e pesquisa em IA">Claude Sonnet 4.5</a> sobre o assunto. Uma revisão de IA para
               a revisão de IA, por assim dizer. Isso é bastante meta, mas extremamente útil para
               verificar diferentes «formas de pensar».
             </p>
@@ -251,7 +251,7 @@ $currentUrl = getFullUrl('/about.php', $lang);
             </h2>
             <p>
               Depois de definir a funcionalidade, pensei em traduções. Primeiro, foi a vez do
-              <a href="https://www.anthropic.com/claude" target="_blank" rel="noopener noreferrer" title="Claude AI da Anthropic">Claude Sonnet 4.5</a>. Segundo a própria declaração, a IA domina o inglês e o
+              <a href="https://www.anthropic.com/" target="_blank" rel="noopener noreferrer" title="Anthropic - Segurança e pesquisa em IA">Claude Sonnet 4.5</a>. Segundo a própria declaração, a IA domina o inglês e o
               alemão ao nível de língua materna e oferece uma precisão de 98 % em espanhol, francês,
               italiano e português.
             </p>
@@ -265,7 +265,7 @@ $currentUrl = getFullUrl('/about.php', $lang);
             <p class="mb-5">
               Um nível refrescante de autorreflexão. Para a tradução em lote propriamente dita
               da parte estática e codificada das línguas românicas, Claude acabou por ser
-              demasiado intelectual para mim. Em vez disso, deixei que o <a href="https://openai.com/index/openai-o1/" target="_blank" rel="noopener noreferrer" title="OpenAI o1 - Modelo de IA avançado">GPT-5-Codex</a> fizesse o trabalho.
+              demasiado intelectual para mim. Em vez disso, deixei que o <a href="https://openai.com/o1/" target="_blank" rel="noopener noreferrer" title="OpenAI o1 - Modelo de raciocínio avançado">GPT-5-Codex</a> fizesse o trabalho.
               Mais uma vez, a ferramenta certa para o trabalho certo!
             </p>
 

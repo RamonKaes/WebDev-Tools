@@ -93,6 +93,11 @@ HTML
 
 $usefulResources = [
     [
+        'url' => 'https://de.wikipedia.org/wiki/HTML-Entit%C3%A4t',
+        'title' => 'Wikipedia: HTML-Entität',
+        'description' => 'Einsteigerfreundliche Einführung in HTML-Zeichen-Entitäten'
+    ],
+    [
         'url' => 'https://html.spec.whatwg.org/multipage/named-characters.html',
         'title' => 'HTML Standard: Named Character References',
         'description' => 'Offizielle WHATWG HTML-Spezifikation für benannte Entities'

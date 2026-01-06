@@ -73,6 +73,11 @@ HTML
 
 $usefulResources = [
     [
+        'url' => 'https://fr.wikipedia.org/wiki/Mot_de_passe',
+        'title' => 'Wikipedia&nbsp;: Mot de passe',
+        'description' => 'Introduction accessible aux concepts de sécurité des mots de passe'
+    ],
+    [
         'url' => 'https://pages.nist.gov/800-63-3/sp800-63b.html',
         'title' => 'NIST SP 800-63B&nbsp;: recommandations d\'identité numérique',
         'description' => 'Directives officielles pour la création de mots de passe et l\'authentification'

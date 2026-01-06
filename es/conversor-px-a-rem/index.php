@@ -71,6 +71,11 @@ HTML
 
 $usefulResources = [
     [
+        'url' => 'https://es.wikipedia.org/wiki/Cuadrat%C3%ADn',
+        'title' => 'Wikipedia: Cuadratín',
+        'description' => 'Introducción accesible a las unidades tipográficas em y rem'
+    ],
+    [
         'url' => 'https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units',
         'title' => 'MDN: valores y unidades CSS',
         'description' => 'Guía completa sobre unidades CSS, incluidas px, rem y em'
@@ -81,9 +86,9 @@ $usefulResources = [
         'description' => 'Especificación oficial del W3C para la unidad rem'
     ],
     [
-        'url' => 'https://css-tricks.com/rems-ems/',
-        'title' => 'CSS-Tricks: usar rem y em',
-        'description' => 'Buenas prácticas para aplicar rem en diseño responsive'
+        'url' => 'https://moderncss.dev/generating-font-size-css-rules-and-creating-a-fluid-type-scale/',
+        'title' => 'Modern CSS: Reglas de tamaño de fuente y escalado fluido',
+        'description' => 'Guía completa sobre unidades rem y tipografía fluida en CSS moderno'
     ],
     [
         'url' => 'https://www.24a11y.com/2019/pixels-vs-relative-units-in-css-why-its-still-a-big-deal/',

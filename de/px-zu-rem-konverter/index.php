@@ -57,6 +57,11 @@ HTML
 
 $usefulResources = [
     [
+        'url' => 'https://de.wikipedia.org/wiki/Schriftgrad',
+        'title' => 'Wikipedia: Schriftgrad',
+        'description' => 'Einsteigerfreundliche Einführung in typografische Einheiten'
+    ],
+    [
         'url' => 'https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units',
         'title' => 'MDN CSS-Werte und -Einheiten',
         'description' => 'Vollständiger Leitfaden zu CSS-Einheiten inkl. px, rem und em'
@@ -67,9 +72,9 @@ $usefulResources = [
         'description' => 'Offizielle Spezifikation für CSS-rem-Einheiten'
     ],
     [
-        'url' => 'https://css-tricks.com/rems-ems/',
-        'title' => 'CSS-Tricks: px am Root, rem für Komponenten',
-        'description' => 'Best Practices für die Verwendung von rem im responsiven Design'
+        'url' => 'https://moderncss.dev/generating-font-size-css-rules-and-creating-a-fluid-type-scale/',
+        'title' => 'Modern CSS: Schriftgrößen-Regeln und fluid Type Scale',
+        'description' => 'Umfassender Leitfaden zu rem-Einheiten und fluid Typography in modernem CSS'
     ],
     [
         'url' => 'https://www.24a11y.com/2019/pixels-vs-relative-units-in-css-why-its-still-a-big-deal/',

@@ -33,6 +33,11 @@ HTML;
 
 $usefulResources = [
     [
+        'url' => 'https://en.wikipedia.org/wiki/Unicode',
+        'title' => 'Wikipedia: Unicode',
+        'description' => 'Beginner-friendly introduction to Unicode and character encoding'
+    ],
+    [
         'url' => 'https://html.spec.whatwg.org/multipage/named-characters.html',
         'title' => 'WHATWG HTML Named Character References',
         'description' => 'Official HTML specification for named character entities'

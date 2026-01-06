@@ -62,6 +62,11 @@ HTML
 
 $usefulResources = [
     [
+        'url' => 'https://en.wikipedia.org/wiki/JSON',
+        'title' => 'Wikipedia: JSON',
+        'description' => 'Beginner-friendly introduction to JSON concepts and usage'
+    ],
+    [
         'url' => 'https://www.ecma-international.org/publications-and-standards/standards/ecma-404/',
         'title' => 'ECMA-404: The JSON Data Interchange Syntax',
         'description' => 'Official JSON specification by ECMA International'

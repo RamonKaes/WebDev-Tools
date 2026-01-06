@@ -182,7 +182,7 @@ $currentUrl = getFullUrl('/about.php', $lang);
             <p>
               À un moment donné, je me suis dit : ce ne sont que des scripts simples. Pourquoi ne pas
               laisser l'IA s'en charger ? En tant qu'utilisateur fidèle de <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer" title="Visual Studio Code - Éditeur de code gratuit">VS Code</a>, j'ai immédiatement lancé le projet avec
-              <a href="https://www.anthropic.com/claude" target="_blank" rel="noopener noreferrer" title="Claude AI d'Anthropic">Claude Sonnet 4.5</a> (dans <a href="https://github.com/features/copilot" target="_blank" rel="noopener noreferrer" title="GitHub Copilot - Programmeur en binôme IA">GitHub CoPilot</a>).
+              <a href="https://www.anthropic.com/" target="_blank" rel="noopener noreferrer" title="Anthropic - Sécurité et recherche en IA">Claude Sonnet 4.5</a> (dans <a href="https://github.com/features/copilot" target="_blank" rel="noopener noreferrer" title="GitHub Copilot - Programmeur en binôme IA">GitHub CoPilot</a>).
             </p>
             <p>
               J'ai été surpris, car le résultat était une application web étonnamment bonne et modulable.
@@ -238,8 +238,8 @@ $currentUrl = getFullUrl('/about.php', $lang);
             <p class="mb-5">
               4. Ping-pong IA lors des revues de code
               J'ai également misé sur les IA pour l'assurance qualité, mais de manière systématique :
-              j'ai d'abord fait effectuer les révisions de code par <a href="https://openai.com/index/openai-o1/" target="_blank" rel="noopener noreferrer" title="OpenAI o1 - Modèle d'IA avancé">GPT-5 Codex</a>, puis
-              j'ai demandé l'avis de <a href="https://www.anthropic.com/claude" target="_blank" rel="noopener noreferrer" title="Claude AI d'Anthropic">Claude Sonnet 4.5</a> à ce sujet. Une révision IA pour
+              j'ai d'abord fait effectuer les révisions de code par <a href="https://openai.com/o1/" target="_blank" rel="noopener noreferrer" title="OpenAI o1 - Modèle de raisonnement avancé">GPT-5 Codex</a>, puis
+              j'ai demandé l'avis de <a href="https://www.anthropic.com/" target="_blank" rel="noopener noreferrer" title="Anthropic - Sécurité et recherche en IA">Claude Sonnet 4.5</a> à ce sujet. Une révision IA pour
               la révision IA, en quelque sorte. C'est assez méta, mais extrêmement utile pour
               vérifier différentes « façons de penser ».
             </p>
@@ -250,7 +250,7 @@ $currentUrl = getFullUrl('/about.php', $lang);
             </h2>
             <p>
               Une fois la fonctionnalité mise en place, j'ai pensé aux traductions. J'ai d'abord essayé
-              <a href="https://www.anthropic.com/claude" target="_blank" rel="noopener noreferrer" title="Claude AI d'Anthropic">Claude Sonnet 4.5</a>. Selon ses propres déclarations, l'IA maîtrise l'anglais et
+              <a href="https://www.anthropic.com/" target="_blank" rel="noopener noreferrer" title="Anthropic - Sécurité et recherche en IA">Claude Sonnet 4.5</a>. Selon ses propres déclarations, l'IA maîtrise l'anglais et
               l'allemand à un niveau natif et offre une fiabilité de 98 % en espagnol, français,
               italien et portugais.
             </p>
@@ -264,7 +264,7 @@ $currentUrl = getFullUrl('/about.php', $lang);
             <p class="mb-5">
               Une dose rafraîchissante d'introspection. Pour la traduction par lots proprement dite
               de la partie statique et codée en dur des langues romanes, Claude m'a toutefois semblé
-              trop intellectuel. J'ai donc préféré confier cette tâche à <a href="https://openai.com/index/openai-o1/" target="_blank" rel="noopener noreferrer" title="OpenAI o1 - Modèle d'IA avancé">GPT-5-Codex</a>.
+              trop intellectuel. J'ai donc préféré confier cette tâche à <a href="https://openai.com/o1/" target="_blank" rel="noopener noreferrer" title="OpenAI o1 - Modèle de raisonnement avancé">GPT-5-Codex</a>.
               Là encore, il s'agit de choisir le bon outil pour le bon travail !
             </p>
 

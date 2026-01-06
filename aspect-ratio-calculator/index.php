@@ -86,14 +86,19 @@ HTML
 
 $usefulResources = [
     [
+        'url' => 'https://en.wikipedia.org/wiki/Aspect_ratio',
+        'title' => 'Wikipedia: Aspect Ratio',
+        'description' => 'Beginner-friendly introduction to aspect ratios in images and video'
+    ],
+    [
         'url' => 'https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio',
         'title' => 'MDN: CSS aspect-ratio Property',
         'description' => 'Modern CSS property for maintaining aspect ratios'
     ],
     [
-        'url' => 'https://css-tricks.com/aspect-ratio-boxes/',
-        'title' => 'CSS-Tricks: Aspect Ratio Boxes',
-        'description' => 'Complete guide to creating aspect ratio boxes in CSS'
+        'url' => 'https://www.smashingmagazine.com/2019/03/aspect-ratio-unit-css/',
+        'title' => 'Smashing Magazine: Aspect Ratio in CSS',
+        'description' => 'Comprehensive guide to maintaining aspect ratios in modern CSS'
     ],
     [
         'url' => 'https://www.w3.org/TR/css-sizing-4/#aspect-ratio',

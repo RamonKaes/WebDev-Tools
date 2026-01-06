@@ -70,8 +70,11 @@ HTML
 ];
 
 $usefulResources = [
-    [
-        'url' => 'https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units',
+    [        'url' => 'https://fr.wikipedia.org/wiki/Cadratin',
+        'title' => 'Wikipedia : Cadratin',
+        'description' => 'Introduction accessible aux unités typographiques em et rem'
+    ],
+    [        'url' => 'https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units',
         'title' => 'MDN&nbsp;: valeurs et unités CSS',
         'description' => 'Guide complet des unités CSS dont px, rem et em'
     ],
@@ -81,9 +84,9 @@ $usefulResources = [
         'description' => 'Spécification officielle du W3C pour l\'unité rem'
     ],
     [
-        'url' => 'https://css-tricks.com/rems-ems/',
-        'title' => 'CSS-Tricks&nbsp;: idée de taille de police',
-        'description' => 'Bonnes pratiques pour utiliser rem dans un design responsive'
+        'url' => 'https://moderncss.dev/generating-font-size-css-rules-and-creating-a-fluid-type-scale/',
+        'title' => 'Modern CSS&nbsp;: règles de taille de police et échelle fluide',
+        'description' => 'Guide complet sur les unités rem et la typographie fluide en CSS moderne'
     ],
     [
         'url' => 'https://www.24a11y.com/2019/pixels-vs-relative-units-in-css-why-its-still-a-big-deal/',

@@ -27,6 +27,11 @@ HTML;
 
 $usefulResources = [
     [
+        'url' => 'https://de.wikipedia.org/wiki/Regul%C3%A4rer_Ausdruck',
+        'title' => 'Wikipedia: Regulärer Ausdruck',
+        'description' => 'Einsteigerfreundliche Einführung in reguläre Ausdrücke'
+    ],
+    [
         'url' => 'https://developer.mozilla.org/de/docs/Web/JavaScript/Guide/Regular_expressions',
         'title' => 'MDN Reguläre Ausdrücke Leitfaden',
         'description' => 'Umfassender Leitfaden zu regulären Ausdrücken in JavaScript von Mozilla'

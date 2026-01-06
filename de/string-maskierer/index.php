@@ -71,6 +71,11 @@ HTML
 
 $usefulResources = [
     [
+        'url' => 'https://de.wikipedia.org/wiki/Escape-Sequenz',
+        'title' => 'Wikipedia: Escape-Sequenz',
+        'description' => 'Einsteigerfreundliche Einführung in Escape-Zeichen und -Sequenzen'
+    ],
+    [
         'url' => 'https://owasp.org/www-community/attacks/xss/',
         'title' => 'OWASP XSS Prevention Cheat Sheet',
         'description' => 'Umfassender Leitfaden zur Verhinderung von Cross-Site Scripting-Angriffen'

@@ -73,6 +73,11 @@ HTML
 
 $usefulResources = [
     [
+        'url' => 'https://es.wikipedia.org/wiki/Contrase%C3%B1a',
+        'title' => 'Wikipedia: Contraseña',
+        'description' => 'Introducción accesible a los conceptos de seguridad de contraseñas'
+    ],
+    [
         'url' => 'https://pages.nist.gov/800-63-3/sp800-63b.html',
         'title' => 'NIST SP 800-63B: directrices de identidad digital',
         'description' => 'Recomendaciones oficiales para creación de contraseñas y autenticación'

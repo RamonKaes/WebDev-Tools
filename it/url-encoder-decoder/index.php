@@ -70,6 +70,11 @@ HTML
 
 $usefulResources = [
     [
+        'url' => 'https://web.dev/articles/url-parts',
+        'title' => 'Web.dev: Parti dell\'URL',
+        'description' => 'Guida accessibile sui componenti e sulla codifica degli URL'
+    ],
+    [
         'url' => 'https://datatracker.ietf.org/doc/html/rfc3986',
         'title' => 'RFC 3986: sintassi URI',
         'description' => 'Specifica ufficiale per sintassi e codifica degli URI'

@@ -74,6 +74,11 @@ HTML
 
 $usefulResources = [
     [
+        'url' => 'https://de.wikipedia.org/wiki/Kennwort',
+        'title' => 'Wikipedia: Kennwort',
+        'description' => 'Einsteigerfreundliche Einführung in Passwortsicherheit'
+    ],
+    [
         'url' => 'https://pages.nist.gov/800-63-3/sp800-63b.html',
         'title' => 'NIST SP 800-63B: Richtlinien für digitale Identität',
         'description' => 'Offizielle Richtlinien für Passworterstellung und Authentifizierung'

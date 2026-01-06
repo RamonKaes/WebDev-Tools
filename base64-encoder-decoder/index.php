@@ -50,6 +50,11 @@ HTML
 
 $usefulResources = [
     [
+        'url' => 'https://en.wikipedia.org/wiki/Base64',
+        'title' => 'Base64 - Wikipedia',
+        'description' => 'Introduction to Base64 encoding concept and history'
+    ],
+    [
         'url' => 'https://datatracker.ietf.org/doc/html/rfc4648',
         'title' => 'RFC 4648: The Base16, Base32, and Base64 Data Encodings',
         'description' => 'Official IETF specification defining Base64 encoding standard'

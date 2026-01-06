@@ -50,6 +50,11 @@ HTML
 
 $usefulResources = [
     [
+        'url' => 'https://en.wikipedia.org/wiki/Prettyprint',
+        'title' => 'Wikipedia: Pretty-printing',
+        'description' => 'Beginner-friendly introduction to code formatting and pretty-printing'
+    ],
+    [
         'url' => 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference',
         'title' => 'MDN JavaScript Reference',
         'description' => 'Complete guide to JavaScript syntax and best practices'

@@ -21,9 +21,14 @@ HTML;
 
 $usefulResources = [
     [
-        'url' => 'https://unicode.org/emoji/charts/full-emoji-list.html',
-        'title' => 'Unicode Full Emoji List',
-        'description' => 'Offizielle Unicode Consortium vollständige Emoji-Referenz'
+        'url' => 'https://de.wikipedia.org/wiki/Emoji',
+        'title' => 'Wikipedia: Emoji',
+        'description' => 'Einsteigerfreundliche Einführung in die Geschichte und Verwendung von Emojis'
+    ],
+    [
+        'url' => 'https://unicode.org/emoji/charts/',
+        'title' => 'Unicode Emoji Charts',
+        'description' => 'Offizielle Unicode Consortium Emoji-Referenz und Dokumentation'
     ],
     [
         'url' => 'https://emojipedia.org/',
@@ -34,11 +39,6 @@ $usefulResources = [
         'url' => 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCodePoint',
         'title' => 'MDN String.fromCodePoint()',
         'description' => 'JavaScript-Methode zum Erstellen von Strings aus Unicode-Codepunkten'
-    ],
-    [
-        'url' => 'https://www.w3.org/TR/emoji/',
-        'title' => 'W3C Emoji Requirements',
-        'description' => 'Technische Spezifikationen für Emoji-Implementierung in Webstandards'
     ]
 ];
 

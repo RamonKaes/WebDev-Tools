@@ -73,6 +73,11 @@ HTML
 
 $usefulResources = [
     [
+        'url' => 'https://pt.wikipedia.org/wiki/Senha',
+        'title' => 'Wikipedia: Senha',
+        'description' => 'Introdução acessível aos conceitos de segurança de senhas'
+    ],
+    [
         'url' => 'https://pages.nist.gov/800-63-3/sp800-63b.html',
         'title' => 'NIST SP 800-63B: diretrizes de identidade digital',
         'description' => 'Recomendações oficiais para criação de senhas e autenticação'

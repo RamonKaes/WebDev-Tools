@@ -61,6 +61,11 @@ HTML
 
 $usefulResources = [
     [
+        'url' => 'https://developer.mozilla.org/en-US/docs/Glossary/Escape_sequence',
+        'title' => 'MDN: Secuencias de escape',
+        'description' => 'Introducción accesible a los caracteres de escape y secuencias'
+    ],
+    [
         'url' => 'https://owasp.org/www-community/attacks/xss/',
         'title' => 'OWASP: prevención de XSS',
         'description' => 'Guía completa para evitar ataques Cross-Site Scripting'

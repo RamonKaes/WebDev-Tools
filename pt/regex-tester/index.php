@@ -20,6 +20,11 @@ HTML;
 
 $usefulResources = [
     [
+        'url' => 'https://pt.wikipedia.org/wiki/Express%C3%A3o_regular',
+        'title' => 'Wikipedia: Expressão regular',
+        'description' => 'Introdução acessível às expressões regulares'
+    ],
+    [
         'url' => 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions',
         'title' => 'MDN: guia de expressões regulares',
         'description' => 'Referência completa sobre regex em JavaScript pela Mozilla'

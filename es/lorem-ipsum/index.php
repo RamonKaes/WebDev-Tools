@@ -83,14 +83,9 @@ $usefulResources = [
         'description' => 'Recurso clásico para generar y conocer Lorem Ipsum'
     ],
     [
-        'url' => 'https://www.nngroup.com/articles/lorem-ipsum/',
-        'title' => 'Nielsen Norman Group: Lorem Ipsum en UX',
-        'description' => 'Investigación sobre el impacto del texto ficticio en la experiencia de usuario'
-    ],
-    [
-        'url' => 'https://alistapart.com/article/ux-content-first/',
-        'title' => 'A List Apart: diseño con contenido primero',
-        'description' => 'Por qué diseñar con contenido real produce mejores resultados en UX'
+        'url' => 'https://www.smashingmagazine.com/2010/01/lorem-ipsum-killing-designs/',
+        'title' => 'Smashing Magazine: Lorem Ipsum daña tu diseño',
+        'description' => 'Por qué el texto de relleno puede perjudicar tu proceso de diseño y la experiencia de usuario'
     ]
 ];
 

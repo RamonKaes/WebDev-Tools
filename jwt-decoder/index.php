@@ -93,6 +93,11 @@ HTML
 
 $usefulResources = [
     [
+        'url' => 'https://en.wikipedia.org/wiki/JSON_Web_Token',
+        'title' => 'Wikipedia: JSON Web Token',
+        'description' => 'Beginner-friendly introduction to JWT concepts and structure'
+    ],
+    [
         'url' => 'https://jwt.io/',
         'title' => 'JWT.io',
         'description' => 'Official JWT website with debugger and library information'

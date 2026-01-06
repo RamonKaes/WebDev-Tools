@@ -63,6 +63,11 @@ HTML
 
 $usefulResources = [
     [
+        'url' => 'https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Tools_and_setup/What_are_browser_developer_tools',
+        'title' => 'MDN: Strumenti di sviluppo',
+        'description' => 'Introduzione accessibile alla formattazione e debug del codice'
+    ],
+    [
         'url' => 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference',
         'title' => 'Riferimento JavaScript MDN',
         'description' => 'Guida completa alla sintassi JavaScript e alle best practice'

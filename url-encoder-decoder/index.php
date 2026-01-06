@@ -72,6 +72,11 @@ HTML
 
 $usefulResources = [
     [
+        'url' => 'https://en.wikipedia.org/wiki/URL_encoding',
+        'title' => 'Wikipedia: URL Encoding',
+        'description' => 'Beginner-friendly introduction to URL encoding concepts'
+    ],
+    [
         'url' => 'https://datatracker.ietf.org/doc/html/rfc3986',
         'title' => 'RFC 3986: Uniform Resource Identifier (URI) Syntax',
         'description' => 'Official specification for URI syntax and encoding'

@@ -50,6 +50,11 @@ HTML
 
 $usefulResources = [
     [
+        'url' => 'https://pt.wikipedia.org/wiki/Serializa%C3%A7%C3%A3o',
+        'title' => 'Wikipedia: Serialização',
+        'description' => 'Introdução acessível aos formatos de serialização de dados'
+    ],
+    [
         'url' => 'https://www.json.org/',
         'title' => 'JSON.org - introdução ao JSON',
         'description' => 'Especificação oficial e documentação do formato JSON'

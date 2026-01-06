@@ -71,6 +71,11 @@ HTML
 
 $usefulResources = [
     [
+        'url' => 'https://fr.wikipedia.org/wiki/Encodage-pourcent',
+        'title' => 'Wikipedia&nbsp;: Encodage-pourcent',
+        'description' => 'Introduction accessible aux concepts d\'encodage d\'URL'
+    ],
+    [
         'url' => 'https://datatracker.ietf.org/doc/html/rfc3986',
         'title' => 'RFC 3986&nbsp;: syntaxe des URI',
         'description' => 'Spécification officielle de la syntaxe et de l\'encodage des URI'

@@ -247,8 +247,8 @@ $currentUrl = getFullUrl('/about.php', $lang);
             <p class="mb-5">
               4. AI ping-pong during code reviews
               I also relied on AIs for quality assurance, but with a system:
-              First, I had <a href="https://openai.com/index/openai-o1/" target="_blank" rel="noopener noreferrer" title="OpenAI o1 - Advanced AI model">GPT-5 Codex</a> perform the code reviews and
-              then sought the opinion of <a href="https://www.anthropic.com/claude" target="_blank" rel="noopener noreferrer" title="Claude AI by Anthropic">Claude Sonnet 4.5</a>. An AI review for
+              First, I had <a href="https://openai.com/o1/" target="_blank" rel="noopener noreferrer" title="OpenAI o1 - Advanced reasoning model">GPT-5 Codex</a> perform the code reviews and
+              then sought the opinion of <a href="https://www.anthropic.com/" target="_blank" rel="noopener noreferrer" title="Anthropic - AI safety and research">Claude Sonnet 4.5</a>. An AI review for
               the AI review, so to speak. It's pretty meta, but extremely useful for
               cross-checking different "ways of thinking."
             </p>
@@ -259,7 +259,7 @@ $currentUrl = getFullUrl('/about.php', $lang);
             </h2>
             <p>
               Once the functionality was in place, I thought about translations. First, I tried
-              <a href="https://www.anthropic.com/claude" target="_blank" rel="noopener noreferrer" title="Claude AI by Anthropic">Claude Sonnet 4.5</a>. According to its own statement, the AI has native-level proficiency in English and
+              <a href="https://www.anthropic.com/" target="_blank" rel="noopener noreferrer" title="Anthropic - AI safety and research">Claude Sonnet 4.5</a>. According to its own statement, the AI has native-level proficiency in English and
               German and delivers 98% accuracy in Spanish, French,
               Italian, and Portuguese.
             </p>
@@ -273,7 +273,7 @@ $currentUrl = getFullUrl('/about.php', $lang);
             <p class="mb-5">
               A refreshing degree of self-reflection. However, Claude was too cerebral for the actual batch translation
               of the static, hard-coded part of the Romance languages.
-              I had <a href="https://openai.com/index/openai-o1/" target="_blank" rel="noopener noreferrer" title="OpenAI o1 - Advanced AI model">GPT-5 Codex</a> do it instead. The same applies here: the right tool for the right job!
+              I had <a href="https://openai.com/o1/" target="_blank" rel="noopener noreferrer" title="OpenAI o1 - Advanced reasoning model">GPT-5 Codex</a> do it instead. The same applies here: the right tool for the right job!
             </p>
 
             <h2 class="h5 card-title mb-3">

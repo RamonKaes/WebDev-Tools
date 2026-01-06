@@ -49,8 +49,11 @@ HTML
 ];
 
 $usefulResources = [
-    [
-        'url' => 'https://datatracker.ietf.org/doc/html/rfc4648',
+    [        'url' => 'https://de.wikipedia.org/wiki/Base64',
+        'title' => 'Base64 - Wikipedia',
+        'description' => 'Einführung in das Base64-Kodierungskonzept und Geschichte'
+    ],
+    [        'url' => 'https://datatracker.ietf.org/doc/html/rfc4648',
         'title' => 'RFC 4648: Base16, Base32 und Base64 Datenkodierung',
         'description' => 'Offizielle IETF-Spezifikation für Base64-Kodierung'
     ],

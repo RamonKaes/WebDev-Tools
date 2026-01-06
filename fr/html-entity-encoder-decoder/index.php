@@ -93,6 +93,11 @@ HTML
 
 $usefulResources = [
     [
+        'url' => 'https://fr.wikipedia.org/wiki/Liste_des_entit%C3%A9s_de_caract%C3%A8res_de_XML_et_HTML',
+        'title' => 'Wikipedia&nbsp;: Entités de caractères HTML',
+        'description' => 'Introduction accessible aux entités de caractères HTML'
+    ],
+    [
         'url' => 'https://html.spec.whatwg.org/multipage/named-characters.html',
         'title' => 'Standard HTML&nbsp;: références de caractères nommés',
         'description' => 'Spécification officielle WHATWG des entités nommées'

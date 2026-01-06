@@ -81,14 +81,9 @@ $usefulResources = [
         'description' => 'Risorsa storica per generare e comprendere Lorem Ipsum'
     ],
     [
-        'url' => 'https://www.nngroup.com/articles/lorem-ipsum/',
-        'title' => 'Nielsen Norman Group: Lorem Ipsum in UX',
-        'description' => 'Ricerca sull\'impatto del testo segnaposto nell\'esperienza utente'
-    ],
-    [
-        'url' => 'https://alistapart.com/article/ux-content-first/',
-        'title' => 'A List Apart: Content-First Design',
-        'description' => 'Perché progettare con contenuti reali genera UX migliore'
+        'url' => 'https://www.smashingmagazine.com/2010/01/lorem-ipsum-killing-designs/',
+        'title' => 'Smashing Magazine: Lorem Ipsum danneggia i tuoi design',
+        'description' => 'Perché il testo segnaposto può danneggiare il processo di progettazione e l\'esperienza utente'
     ]
 ];
 

@@ -69,6 +69,11 @@ HTML
 
 $usefulResources = [
     [
+        'url' => 'https://de.wikipedia.org/wiki/Quelltext',
+        'title' => 'Wikipedia: Quelltext',
+        'description' => 'Einsteigerfreundliche Einführung in Quellcode und Formatierung'
+    ],
+    [
         'url' => 'https://developer.mozilla.org/de/docs/Web/JavaScript/Reference',
         'title' => 'MDN JavaScript-Referenz',
         'description' => 'Vollständiger Leitfaden zur JavaScript-Syntax und Best Practices'

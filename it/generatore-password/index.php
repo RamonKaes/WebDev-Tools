@@ -73,6 +73,11 @@ HTML
 
 $usefulResources = [
     [
+        'url' => 'https://it.wikipedia.org/wiki/Password',
+        'title' => 'Wikipedia: Password',
+        'description' => 'Introduzione accessibile ai concetti di sicurezza delle password'
+    ],
+    [
         'url' => 'https://pages.nist.gov/800-63-3/sp800-63b.html',
         'title' => 'NIST SP 800-63B: linee guida per l\'identità digitale',
         'description' => 'Raccomandazioni ufficiali per gestione password e autenticazione'

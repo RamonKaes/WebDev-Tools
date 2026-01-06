@@ -190,7 +190,7 @@ $currentUrl = getFullUrl('/about.php', $lang);
             <p>
               Irgendwann kam mir der Gedanke: Es sind ja nur einfache Skripte. Lass das doch
               mal die KI machen! Als treuer Nutzer von <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer" title="Visual Studio Code - Kostenloser Code-Editor">VS Code</a> habe ich das Projekt direkt mit
-              <a href="https://www.anthropic.com/claude" target="_blank" rel="noopener noreferrer" title="Claude AI von Anthropic">Claude Sonnet 4.5</a> (im <a href="https://github.com/features/copilot" target="_blank" rel="noopener noreferrer" title="GitHub Copilot - KI-Programmierhilfe">GitHub CoPilot</a>) aufgesetzt.
+              <a href="https://www.anthropic.com/" target="_blank" rel="noopener noreferrer" title="Anthropic - KI-Sicherheit und Forschung">Claude Sonnet 4.5</a> (im <a href="https://github.com/features/copilot" target="_blank" rel="noopener noreferrer" title="GitHub Copilot - KI-Programmierhilfe">GitHub CoPilot</a>) aufgesetzt.
             </p>
             <p>
               Ich war überrascht, denn das Ergebnis war eine erstaunlich gute, modular
@@ -246,8 +246,8 @@ $currentUrl = getFullUrl('/about.php', $lang);
             <p class="mb-5">
               4. KI-Ping-Pong bei Code-Reviews
               Auch bei der Qualitätssicherung habe ich auf die KIs gesetzt, aber mit System:
-              Zunächst habe ich die Code-Reviews von <a href="https://openai.com/index/openai-o1/" target="_blank" rel="noopener noreferrer" title="OpenAI o1 - Fortgeschrittenes KI-Modell">GPT-5 Codex</a> durchführen lassen und
-              anschließend die Meinung von <a href="https://www.anthropic.com/claude" target="_blank" rel="noopener noreferrer" title="Claude AI von Anthropic">Claude Sonnet 4.5</a> dazu eingeholt. Ein KI-Review für
+              Zünächst habe ich die Code-Reviews von <a href="https://openai.com/o1/" target="_blank" rel="noopener noreferrer" title="OpenAI o1 - Fortgeschrittenes Denkmodell">GPT-5 Codex</a> durchführen lassen und
+              anschließend die Meinung von <a href="https://www.anthropic.com/" target="_blank" rel="noopener noreferrer" title="Anthropic - KI-Sicherheit und Forschung">Claude Sonnet 4.5</a> dazu eingeholt. Ein KI-Review für
               das KI-Review sozusagen. Das ist ziemlich meta, aber extrem nützlich, um
               verschiedene „Denkweisen" gegenzuprüfen.
             </p>

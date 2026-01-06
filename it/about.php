@@ -182,7 +182,7 @@ $currentUrl = getFullUrl('/about.php', $lang);
             <p>
               A un certo punto mi è venuta un'idea: si tratta solo di semplici script. Perché non lasciare che sia l'IA a occuparsene?
               Da fedele utente di <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer" title="Visual Studio Code - Editor di codice gratuito">VS Code</a>, ho avviato il progetto direttamente con
-              <a href="https://www.anthropic.com/claude" target="_blank" rel="noopener noreferrer" title="Claude AI di Anthropic">Claude Sonnet 4.5</a> (in <a href="https://github.com/features/copilot" target="_blank" rel="noopener noreferrer" title="GitHub Copilot - Programmatore di coppia IA">GitHub CoPilot</a>).
+              <a href="https://www.anthropic.com/" target="_blank" rel="noopener noreferrer" title="Anthropic - Sicurezza e ricerca IA">Claude Sonnet 4.5</a> (in <a href="https://github.com/features/copilot" target="_blank" rel="noopener noreferrer" title="GitHub Copilot - Programmatore di coppia IA">GitHub CoPilot</a>).
             </p>
             <p>
               Sono rimasto sorpreso, perché il risultato è stata un'applicazione web sorprendentemente buona e modulare
@@ -238,8 +238,8 @@ $currentUrl = getFullUrl('/about.php', $lang);
             <p class="mb-5">
               4. Ping-pong di IA nelle revisioni del codice
               Anche per il controllo qualità ho puntato sulle IA, ma in modo sistematico:
-              innanzitutto ho fatto eseguire le revisioni del codice da <a href="https://openai.com/index/openai-o1/" target="_blank" rel="noopener noreferrer" title="OpenAI o1 - Modello IA avanzato">GPT-5 Codex</a> e
-              poi ho chiesto il parere di <a href="https://www.anthropic.com/claude" target="_blank" rel="noopener noreferrer" title="Claude AI di Anthropic">Claude Sonnet 4.5</a>. Una revisione AI per
+              innanzitutto ho fatto eseguire le revisioni del codice da <a href="https://openai.com/o1/" target="_blank" rel="noopener noreferrer" title="OpenAI o1 - Modello di ragionamento avanzato">GPT-5 Codex</a> e
+              poi ho chiesto il parere di <a href="https://www.anthropic.com/" target="_blank" rel="noopener noreferrer" title="Anthropic - Sicurezza e ricerca IA">Claude Sonnet 4.5</a>. Una revisione AI per
               la revisione AI, per così dire. È piuttosto meta, ma estremamente utile per
               verificare diversi “modi di pensare”.
             </p>
@@ -250,7 +250,7 @@ $currentUrl = getFullUrl('/about.php', $lang);
             </h2>
             <p>
               Una volta definita la funzionalità, ho pensato alle traduzioni. Per prima cosa ho provato
-              <a href="https://www.anthropic.com/claude" target="_blank" rel="noopener noreferrer" title="Claude AI di Anthropic">Claude Sonnet 4.5</a>. Secondo quanto dichiarato, l'IA padroneggia l'inglese e il
+              <a href="https://www.anthropic.com/" target="_blank" rel="noopener noreferrer" title="Anthropic - Sicurezza e ricerca IA">Claude Sonnet 4.5</a>. Secondo quanto dichiarato, l'IA padroneggia l'inglese e il
               tedesco a livello madrelingua e offre una sicurezza del 98% per lo spagnolo, il francese, l'
               italiano e il portoghese.
             </p>
@@ -264,7 +264,7 @@ $currentUrl = getFullUrl('/about.php', $lang);
             <p class="mb-5">
               Un livello di autoriflessione davvero stimolante. Per la traduzione batch vera e propria
               della parte statica e hardcoded delle lingue romanze, Claude mi è sembrato
-              tuttavia troppo cerebrale. Ho quindi deciso di affidare il compito a <a href="https://openai.com/index/openai-o1/" target="_blank" rel="noopener noreferrer" title="OpenAI o1 - Modello IA avanzato">GPT-5-Codex</a>.
+              tuttavia troppo cerebrale. Ho quindi deciso di affidare il compito a <a href="https://openai.com/o1/" target="_blank" rel="noopener noreferrer" title="OpenAI o1 - Modello di ragionamento avanzato">GPT-5-Codex</a>.
               Anche in questo caso vale il principio: lo strumento giusto per il lavoro giusto!
             </p>
 

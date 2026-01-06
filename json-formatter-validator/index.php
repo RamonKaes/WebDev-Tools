@@ -11,7 +11,6 @@ $featuresSectionTitle = 'Features';
 $resourcesSectionTitle = 'Useful Resources';
 
 $customAboutContent = <<<HTML
-$customAboutContent = <<<HTML
 <p class="mb-2">
     Format, validate, and beautify JSON data with our comprehensive JSON tool. 
     Perfect for developers working with APIs, configuration files, and data structures.

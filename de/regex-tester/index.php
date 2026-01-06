@@ -19,10 +19,6 @@ $features = [
     '100% clientseitige Verarbeitung'
 ];
 
-$toolId = 'regexTesterTool';
-$lang = 'de';
-
-
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
 <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Reguläre Ausdrücke testen</h2>

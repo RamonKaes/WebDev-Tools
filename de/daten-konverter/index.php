@@ -10,11 +10,6 @@ $lang = 'de';
 $featuresSectionTitle = 'Funktionen';
 $resourcesSectionTitle = 'Nützliche Ressourcen';
 
-
-
-$toolId = 'dataConverterTool';
-$lang = 'de';
-
 $features = [
     'JSON, XML, YAML, CSV Konvertierung',
     'Bidirektionale Format-Konvertierung',

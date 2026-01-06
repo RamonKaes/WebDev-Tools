@@ -19,10 +19,6 @@ $features = [
     '100% client-side processing'
 ];
 
-$toolId = 'regexTesterTool';
-$lang = 'en';
-
-
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
 <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Regular Expression Testing</h3>

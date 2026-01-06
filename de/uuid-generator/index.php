@@ -7,21 +7,21 @@ ob_start();
 
 $toolId = 'uuidGeneratorTool';
 $lang = 'de';
+$featuresSectionTitle = 'Funktionen';
+$resourcesSectionTitle = 'Nützliche Ressourcen';
 $customAboutContent = <<<HTML
 <p class="mb-2">Generieren Sie sofort eindeutige Kennungen (UUIDs/GUIDs) für Ihre Anwendungen, Datenbanken und APIs. Unterstützt mehrere UUID-Versionen mit kryptografisch sicherer Generierung.</p>
 <p>UUIDs (Universally Unique Identifiers) sind 128-Bit-Werte, die zur eindeutigen Identifizierung von Informationen in Computersystemen verwendet werden. Dieses Tool generiert standardkonforme UUIDs, die garantiert über Raum und Zeit einzigartig sind.</p>
 HTML;
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>UUID v4 (zufällig) mit kryptografischer Sicherheit generieren</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Massengenerierung: mehrere UUIDs auf einmal erstellen</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Mehrere Ausgabeformate: Standard, Großbuchstaben, ohne Bindestriche</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Einzelne UUIDs oder alle auf einmal kopieren</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>RFC 4122 konform</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Keine Serverkommunikation - 100% clientseitig</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Sofortige Generierung ohne Verzögerungen</li>
-</ul>
-HTML;
+$features = [
+    'UUID v4 (zufällig) mit kryptografischer Sicherheit generieren',
+    'Massengenerierung: mehrere UUIDs auf einmal erstellen',
+    'Mehrere Ausgabeformate: Standard, Großbuchstaben, ohne Bindestriche',
+    'Einzelne UUIDs oder alle auf einmal kopieren',
+    'RFC 4122 konform',
+    'Keine Serverkommunikation - 100% clientseitig',
+    'Sofortige Generierung ohne Verzögerungen'
+];
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
     <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Über UUID Version 4</h2>

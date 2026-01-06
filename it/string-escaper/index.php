@@ -7,6 +7,8 @@ ob_start();
 
 $toolId = 'stringEscaperTool';
 $lang = 'it';
+$featuresSectionTitle = 'Funzionalità';
+$resourcesSectionTitle = 'Risorse Utili';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
@@ -18,14 +20,15 @@ $customAboutContent = <<<HTML
 </p>
 HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Escape HTML/XML – codifica caratteri speciali come &lt;, &gt;, &amp;</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Escape JavaScript – gestisce virgolette, newline e caratteri speciali</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Escape JSON – applica la sintassi corretta per stringhe JSON</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Escape SQL – aiuta a prevenire SQL injection</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Escape CSV – gestisce virgolette e delimitatori</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Elaborazione 100% locale (focus sulla privacy)</li>
+$features = [
+    'Escape HTML/XML – codifica caratteri speciali come <, >, &',
+    'Escape JavaScript – gestisce virgolette, newline e caratteri speciali',
+    'Escape JSON – applica la sintassi corretta per stringhe JSON',
+    'Escape SQL – aiuta a prevenire SQL injection',
+    'Escape CSV – gestisce virgolette e delimitatori',
+    'Elaborazione 100% locale (focus sulla privacy)',
+    'Copia con un clic'
+];
     <li><i class="bi bi-check-circle-fill text-success me-2"></i>Copia il risultato con un clic</li>
 </ul>
 HTML;

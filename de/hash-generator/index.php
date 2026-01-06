@@ -7,6 +7,8 @@ ob_start();
 
 $toolId = 'hashGeneratorTool';
 $lang = 'de';
+$featuresSectionTitle = 'Funktionen';
+$resourcesSectionTitle = 'Nützliche Ressourcen';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
@@ -19,18 +21,16 @@ $customAboutContent = <<<HTML
 </p>
 HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Mehrere Hash-Algorithmen: MD5, SHA-1, SHA-256, SHA-384, SHA-512</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Text und Dateien hashen</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Hashes zur Verifikation vergleichen</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>HMAC-Unterstützung mit benutzerdefinierten Schlüsseln</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Groß- und Kleinschreibung Ausgabeoptionen</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Hashes mit einem Klick kopieren</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Echtzeit Hash-Generierung</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>100% clientseitige Verarbeitung - Ihre Daten verlassen niemals Ihren Browser</li>
-</ul>
-HTML;
+$features = [
+    'Mehrere Hash-Algorithmen: MD5, SHA-1, SHA-256, SHA-384, SHA-512',
+    'Text und Dateien hashen',
+    'Hashes zur Verifikation vergleichen',
+    'HMAC-Unterstützung mit benutzerdefinierten Schlüsseln',
+    'Groß- und Kleinschreibung Ausgabeoptionen',
+    'Hashes mit einem Klick kopieren',
+    'Echtzeit Hash-Generierung',
+    '100% clientseitige Verarbeitung - Ihre Daten verlassen niemals Ihren Browser'
+];
 
 $customNoticeType = 'warning';
 $customNoticeContent = <<<HTML

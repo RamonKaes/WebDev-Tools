@@ -7,29 +7,29 @@ ob_start();
 
 $toolId = 'jwtDecoderTool';
 $lang = 'es';
+$featuresSectionTitle = 'Características';
+$resourcesSectionTitle = 'Recursos Útiles';
 
-$customAboutContent = '
-  <p class="mb-2">
+$customAboutContent = <<<HTML
+<p class="mb-2">
     <strong>JSON Web Tokens (JWT)</strong> son un medio compacto y seguro para representar
     afirmaciones entre dos partes. Se utilizan ampliamente para autenticación e intercambio de información
     en aplicaciones web modernas y APIs.
-  </p>
-  <p class="mb-0">
+</p>
+<p class="mb-0">
     Este decodificador extrae y muestra el encabezado, la carga útil y la firma de un JWT.
     Nota: la verificación de la firma requiere la clave secreta y debe realizarse en el servidor para mantener la seguridad.
-  </p>
-';
+</p>
+HTML;
 
-$customFeaturesContent = '
-  <ul class="mb-0">
-    <li>Decodifica el encabezado: muestra algoritmo (alg) y tipo de token (typ)</li>
-    <li>Extrae la carga útil: visualiza las reclamaciones y datos de usuario</li>
-    <li>Comprueba la caducidad: detecta automáticamente si el token expiró</li>
-    <li>Resaltado de sintaxis: JSON coloreado para mejorar la lectura</li>
-    <li>Visualiza la firma: muestra la firma codificada en Base64URL</li>
-    <li>Procesamiento local: toda la lógica se ejecuta en tu navegador</li>
-  </ul>
-';
+$features = [
+    'Decodifica el encabezado: muestra algoritmo (alg) y tipo de token (typ)',
+    'Extrae la carga útil: visualiza las reclamaciones y datos de usuario',
+    'Comprueba la caducidad: detecta automáticamente si el token expiró',
+    'Resaltado de sintaxis: JSON coloreado para mejorar la lectura',
+    'Visualiza la firma: muestra la firma codificada en Base64URL',
+    'Procesamiento local: toda la lógica se ejecuta en tu navegador'
+];
 
 $customNoticeType = 'warning';
 $customNoticeContent = <<<HTML

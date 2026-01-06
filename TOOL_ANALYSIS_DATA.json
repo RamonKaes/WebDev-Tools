@@ -1,0 +1,293 @@
+{
+  "analysis_meta": {
+    "date": "2026-01-06",
+    "analyzer": "GitHub Copilot (Claude Sonnet 4.5)",
+    "total_files_analyzed": 115,
+    "total_issues_found": 53
+  },
+  "issue_summary": {
+    "critical": {
+      "count": 17,
+      "categories": {
+        "duplicate_variables": 4,
+        "missing_required_variables": 13
+      }
+    },
+    "important": {
+      "count": 36,
+      "categories": {
+        "commented_content": 6,
+        "simple_strings_instead_heredoc": 30
+      }
+    }
+  },
+  "issues": {
+    "duplicate_variables": [
+      {
+        "file": "de/code-formatierer/index.php",
+        "priority": "critical",
+        "variables": ["toolId", "lang", "featuresSectionTitle", "resourcesSectionTitle"],
+        "duplicate_lines": [8, 9, 10, 11],
+        "keep_lines": [15, 16],
+        "fix": "Delete lines 8-12"
+      },
+      {
+        "file": "de/daten-konverter/index.php",
+        "priority": "critical",
+        "variables": ["toolId", "lang"],
+        "duplicate_lines": [8, 9, 10, 11],
+        "keep_lines": [15, 16],
+        "fix": "Delete lines 8-12"
+      },
+      {
+        "file": "de/regex-tester/index.php",
+        "priority": "critical",
+        "variables": ["toolId", "lang"],
+        "duplicate_lines": [8, 9, 10, 11],
+        "keep_lines": [15, 16],
+        "fix": "Delete lines 8-12"
+      },
+      {
+        "file": "regex-tester/index.php",
+        "priority": "critical",
+        "variables": ["toolId", "lang"],
+        "duplicate_lines": [8, 9],
+        "keep_lines": [13, 14],
+        "fix": "Delete lines 8-10"
+      }
+    ],
+    "missing_required_variables": [
+      {
+        "file": "regex-tester/index.php",
+        "lang": "en",
+        "priority": "critical",
+        "missing": ["customFeaturesContent"],
+        "fix": "Add $customFeaturesContent with feature list"
+      },
+      {
+        "file": "de/regex-tester/index.php",
+        "lang": "de",
+        "priority": "critical",
+        "missing": ["customFeaturesContent"],
+        "fix": "Add $customFeaturesContent (German)"
+      },
+      {
+        "file": "es/regex-tester/index.php",
+        "lang": "es",
+        "priority": "critical",
+        "missing": ["customFeaturesContent"],
+        "fix": "Add $customFeaturesContent (Spanish)"
+      },
+      {
+        "file": "fr/regex-tester/index.php",
+        "lang": "fr",
+        "priority": "critical",
+        "missing": ["customFeaturesContent"],
+        "fix": "Add $customFeaturesContent (French)"
+      },
+      {
+        "file": "it/regex-tester/index.php",
+        "lang": "it",
+        "priority": "critical",
+        "missing": ["customFeaturesContent"],
+        "fix": "Add $customFeaturesContent (Italian)"
+      },
+      {
+        "file": "pt/regex-tester/index.php",
+        "lang": "pt",
+        "priority": "critical",
+        "missing": ["customFeaturesContent"],
+        "fix": "Add $customFeaturesContent (Portuguese)"
+      },
+      {
+        "file": "es/escapador-cadenas/index.php",
+        "lang": "es",
+        "priority": "critical",
+        "missing": ["featuresSectionTitle"],
+        "fix": "Add $featuresSectionTitle = 'Características';"
+      },
+      {
+        "file": "es/generador-contrasenas/index.php",
+        "lang": "es",
+        "priority": "critical",
+        "missing": ["featuresSectionTitle"],
+        "fix": "Add $featuresSectionTitle = 'Características';"
+      },
+      {
+        "file": "es/hash-generator/index.php",
+        "lang": "es",
+        "priority": "critical",
+        "missing": ["featuresSectionTitle"],
+        "fix": "Add $featuresSectionTitle = 'Características';"
+      },
+      {
+        "file": "es/lorem-ipsum/index.php",
+        "lang": "es",
+        "priority": "critical",
+        "missing": ["featuresSectionTitle"],
+        "fix": "Add $featuresSectionTitle = 'Características';"
+      },
+      {
+        "file": "es/qr-code-generator/index.php",
+        "lang": "es",
+        "priority": "critical",
+        "missing": ["featuresSectionTitle"],
+        "fix": "Add $featuresSectionTitle = 'Características';"
+      },
+      {
+        "file": "es/uuid-generator/index.php",
+        "lang": "es",
+        "priority": "critical",
+        "missing": ["featuresSectionTitle"],
+        "fix": "Add $featuresSectionTitle = 'Características';"
+      },
+      {
+        "file": "pt/uuid-generator/index.php",
+        "lang": "pt",
+        "priority": "critical",
+        "missing": ["featuresSectionTitle", "resourcesSectionTitle"],
+        "fix": "Add both section titles in Portuguese"
+      }
+    ],
+    "commented_important_content": [
+      {
+        "file": "de/code-formatierer/index.php",
+        "priority": "important",
+        "variable": "customNoticeContent",
+        "lines": "30-41",
+        "content_type": "Formatting options info box",
+        "fix": "Remove /* on line 30 and */ on line 41"
+      },
+      {
+        "file": "de/string-maskierer/index.php",
+        "priority": "important",
+        "variable": "customNoticeContent",
+        "lines": "35-43",
+        "content_type": "Escape options info box",
+        "fix": "Remove /* on line 35 and */ on line 43"
+      },
+      {
+        "file": "es/code-formatter/index.php",
+        "priority": "important",
+        "variable": "customNoticeContent",
+        "lines": "24-35",
+        "content_type": "Formatting options (Spanish)",
+        "fix": "Remove /* on line 24 and */ on line 35"
+      },
+      {
+        "file": "fr/code-formatter/index.php",
+        "priority": "important",
+        "variable": "customNoticeContent",
+        "lines": "24-35",
+        "content_type": "Formatting options (French)",
+        "fix": "Remove /* on line 24 and */ on line 35"
+      },
+      {
+        "file": "it/code-formatter/index.php",
+        "priority": "important",
+        "variable": "customNoticeContent",
+        "lines": "24-35",
+        "content_type": "Formatting options (Italian)",
+        "fix": "Remove /* on line 24 and */ on line 35"
+      },
+      {
+        "file": "pt/code-formatter/index.php",
+        "priority": "important",
+        "variable": "customNoticeContent",
+        "lines": "24-35",
+        "content_type": "Formatting options (Portuguese)",
+        "fix": "Remove /* on line 24 and */ on line 35"
+      }
+    ],
+    "simple_strings_instead_heredoc": {
+      "de": [
+        "de/html-entity-kodierer-dekodierer/index.php",
+        "de/jwt-dekodierer/index.php",
+        "de/punycode-konverter/index.php",
+        "de/url-kodierer-dekodierer/index.php",
+        "de/zeichen-referenz/index.php"
+      ],
+      "en": [
+        "character-reference/index.php",
+        "html-entity-encoder-decoder/index.php",
+        "jwt-decoder/index.php",
+        "punycode-converter/index.php",
+        "url-encoder-decoder/index.php"
+      ],
+      "es": [
+        "es/html-entity-encoder-decoder/index.php",
+        "es/jwt-decoder/index.php",
+        "es/punycode-converter/index.php",
+        "es/referencia-caracteres/index.php",
+        "es/url-encoder-decoder/index.php"
+      ],
+      "fr": [
+        "fr/html-entity-encoder-decoder/index.php",
+        "fr/jwt-decoder/index.php",
+        "fr/punycode-converter/index.php",
+        "fr/reference-caracteres/index.php",
+        "fr/url-encoder-decoder/index.php"
+      ],
+      "it": [
+        "it/html-entity-encoder-decoder/index.php",
+        "it/jwt-decoder/index.php",
+        "it/punycode-converter/index.php",
+        "it/riferimento-caratteri/index.php",
+        "it/url-encoder-decoder/index.php"
+      ],
+      "pt": [
+        "pt/html-entity-encoder-decoder/index.php",
+        "pt/jwt-decoder/index.php",
+        "pt/punycode-converter/index.php",
+        "pt/referencia-caracteres/index.php",
+        "pt/url-encoder-decoder/index.php"
+      ]
+    }
+  },
+  "fix_phases": {
+    "phase_1_critical": {
+      "name": "Critical Fixes",
+      "priority": "HIGHEST",
+      "estimated_time_minutes": 25,
+      "steps": [
+        {
+          "step": 1,
+          "name": "Remove duplicate variables",
+          "files": 4,
+          "time_minutes": 5
+        },
+        {
+          "step": 2,
+          "name": "Add missing required variables",
+          "files": 13,
+          "time_minutes": 20
+        }
+      ]
+    },
+    "phase_2_important": {
+      "name": "Important Fixes",
+      "priority": "MEDIUM",
+      "estimated_time_minutes": 35,
+      "steps": [
+        {
+          "step": 3,
+          "name": "Uncomment important content",
+          "files": 6,
+          "time_minutes": 5
+        },
+        {
+          "step": 4,
+          "name": "Convert strings to heredoc",
+          "files": 30,
+          "time_minutes": 30
+        }
+      ]
+    }
+  },
+  "quality_checks": {
+    "syntax_check": "php -l {file}",
+    "batch_check": "find . -path '*/*/index.php' -type f ! -path '*/config/*' ! -path '*/partials/*' -exec php -l {} \\;",
+    "browser_test": "Open 2-3 tools per language in browser",
+    "git_commit": "git commit -m 'fix: Tool-PHP Bereinigung - Duplikate, fehlende Variablen, Heredoc-Konvertierung'"
+  }
+}

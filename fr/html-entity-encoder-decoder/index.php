@@ -7,30 +7,30 @@ ob_start();
 
 $toolId = 'htmlEntityTool';
 $lang = 'fr';
+$featuresSectionTitle = 'Fonctionnalités';
+$resourcesSectionTitle = 'Ressources Utiles';
 
-$customAboutContent = '
-  <p class="mb-2">
+$customAboutContent = <<<HTML
+<p class="mb-2">
     <strong>Les entités HTML</strong> sont des représentations spéciales utilisées en HTML pour afficher
-    des caractères réservés et des symboles. Elles évitent les problèmes d\'interprétation par le navigateur
+    des caractères réservés et des symboles. Elles évitent les problèmes d'interprétation par le navigateur
     et garantissent un rendu correct sur différents systèmes et encodages.
-  </p>
-  <p class="mb-0">
+</p>
+<p class="mb-0">
     Cet outil gère les entités nommées (&amp;nbsp;), les entités numériques décimales (&amp;#160;)
-    et hexadécimales (&amp;#xA0;). Toutes les conversions s\'effectuent localement dans votre navigateur
+    et hexadécimales (&amp;#xA0;). Toutes les conversions s'effectuent localement dans votre navigateur
     pour une confidentialité totale.
-  </p>
-';
+</p>
+HTML;
 
-$customFeaturesContent = '
-  <ul class="mb-0">
-    <li>Entités nommées&nbsp;: convertit vers les entités standard comme &amp;nbsp;, &amp;lt;, &amp;gt;</li>
-    <li>Entités numériques&nbsp;: formats décimal (&amp;#160;) ou hexadécimal (&amp;#xA0;)</li>
-    <li>Bidirectionnel&nbsp;: encode du texte en entités ou décode des entités en texte</li>
-    <li>Conversion automatique&nbsp;: transformation en temps réel pendant la saisie</li>
-    <li>Référence de caractères&nbsp;: lien rapide vers la liste complète des entités HTML</li>
-    <li>Téléchargement&nbsp;: enregistrez les résultats dans un fichier texte</li>
-  </ul>
-';
+$features = [
+    'Entités nommées : convertit vers les entités standard comme &nbsp;, &lt;, &gt;',
+    'Entités numériques : formats décimal (&#160;) ou hexadécimal (&#xA0;)',
+    'Bidirectionnel : encode du texte en entités ou décode des entités en texte',
+    'Conversion automatique : transformation en temps réel pendant la saisie',
+    'Référence de caractères : lien rapide vers la liste complète des entités HTML',
+    'Téléchargement : enregistrez les résultats dans un fichier texte'
+];
 
 $additionalSections = [
   [

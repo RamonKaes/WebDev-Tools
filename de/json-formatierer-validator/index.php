@@ -7,22 +7,22 @@ ob_start();
 
 $toolId = 'jsonFormatterValidator';
 $lang = 'de';
+$featuresSectionTitle = 'Funktionen';
+$resourcesSectionTitle = 'Nützliche Ressourcen';
 $customAboutContent = <<<HTML
 <p class="mb-2">Formatieren, validieren und visualisieren Sie JSON-Daten mit erweiterten Funktionen. Perfekt für Entwickler, die mit APIs, Konfigurationsdateien und strukturierten Daten arbeiten.</p>
 <p>Dieses Tool hilft Ihnen, JSON zu bereinigen, Fehler zu finden und Ihre Datenstruktur zu verstehen. Alle Verarbeitung erfolgt clientseitig für maximale Sicherheit und Datenschutz.</p>
 HTML;
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>JSON formatieren und verschönern</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>JSON-Syntax validieren mit detaillierten Fehlermeldungen</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>JSON minimieren/komprimieren</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Baumanzeige mit erweiterbaren/zusammenklappbaren Knoten</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Anpassbare Einrückung (2 oder 4 Leerzeichen)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Datentyp-Hervorhebung</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Mit einem Klick in die Zwischenablage kopieren</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>100% clientseitige Verarbeitung - Ihre Daten bleiben privat</li>
-</ul>
-HTML;
+$features = [
+    'JSON formatieren und verschönern',
+    'JSON-Syntax validieren mit detaillierten Fehlermeldungen',
+    'JSON minimieren/komprimieren',
+    'Baumanzeige mit erweiterbaren/zusammenklappbaren Knoten',
+    'Anpassbare Einrückung (2 oder 4 Leerzeichen)',
+    'Datentyp-Hervorhebung',
+    'Mit einem Klick in die Zwischenablage kopieren',
+    '100% clientseitige Verarbeitung - Ihre Daten bleiben privat'
+];
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
     <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>JSON-Formatierungsoptionen</h2>

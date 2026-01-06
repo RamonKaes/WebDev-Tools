@@ -6,8 +6,8 @@ declare(strict_types=1);
 ob_start();
 
 $toolId = 'stringEscaperTool';
-$lang = 'es';
-
+$lang = 'es';$featuresSectionTitle = 'Características';
+$resourcesSectionTitle = 'Recursos Útiles';
 $customAboutContent = <<<HTML
 <p class="mb-2">
     <strong>Escape de Cadenas</strong> te ayuda a escapar y desescapar cadenas para distintos formatos como HTML, XML, JavaScript, JSON, SQL y CSV.
@@ -18,16 +18,15 @@ $customAboutContent = <<<HTML
 </p>
 HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Escape HTML/XML: codifica caracteres como &lt;, &gt; y &amp;</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Escape JavaScript: gestiona comillas, saltos de línea y caracteres especiales</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Escape JSON: garantiza cadenas válidas en objetos JSON</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Escape SQL: ayuda a prevenir inyecciones SQL</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Escape CSV: maneja comillas y separadores correctamente</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Procesamiento local centrado en la privacidad</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Copiar al portapapeles con un clic</li>
-</ul>
+$features = [
+    'Escape HTML/XML: codifica caracteres como <, > y &',
+    'Escape JavaScript: gestiona comillas, saltos de línea y caracteres especiales',
+    'Escape JSON: garantiza cadenas válidas en objetos JSON',
+    'Escape SQL: ayuda a prevenir inyecciones SQL',
+    'Escape CSV: maneja comillas y separadores correctamente',
+    'Procesamiento local centrado en la privacidad',
+    'Copiar al portapapeles con un clic'
+];
 HTML;
 
 $additionalSections = [

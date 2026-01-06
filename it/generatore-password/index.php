@@ -7,6 +7,8 @@ ob_start();
 
 $toolId = 'passwordGeneratorTool';
 $lang = 'it';
+$featuresSectionTitle = 'Funzionalità';
+$resourcesSectionTitle = 'Risorse Utili';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
@@ -19,13 +21,15 @@ $customAboutContent = <<<HTML
 </p>
 HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Lunghezza configurabile (4-128 caratteri)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Includi lettere maiuscole, minuscole, numeri e simboli</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Escludi caratteri ambigui (0, O, l, 1, ...)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Genera più password contemporaneamente</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Indicatore di robustezza</li>
+$features = [
+    'Lunghezza configurabile (4-128 caratteri)',
+    'Includi lettere maiuscole, minuscole, numeri e simboli',
+    'Escludi caratteri ambigui (0, O, l, 1, ...)',
+    'Genera più password contemporaneamente',
+    'Indicatore di robustezza',
+    'Copia con un clic',
+    '100% lato client: nessun dato inviato al server'
+];
     <li><i class="bi bi-check-circle-fill text-success me-2"></i>Copia negli appunti con un clic</li>
     <li><i class="bi bi-check-circle-fill text-success me-2"></i>100% lato client: nessun dato inviato al server</li>
 </ul>

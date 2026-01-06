@@ -7,6 +7,8 @@ ob_start();
 
 $toolId = 'passwordGeneratorTool';
 $lang = 'fr';
+$featuresSectionTitle = 'Fonctionnalités';
+$resourcesSectionTitle = 'Ressources Utiles';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
@@ -19,17 +21,15 @@ $customAboutContent = <<<HTML
 </p>
 HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Longueur personnalisable (4 à 128 caractères)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Inclure majuscules, minuscules, chiffres et symboles</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Exclure les caractères ambigus (0, O, l, 1, etc.)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Générer plusieurs mots de passe en une fois</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Indicateur de robustesse du mot de passe</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Copie en un clic</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>100&nbsp;% côté client&nbsp;: aucune donnée envoyée au serveur</li>
-</ul>
-HTML;
+$features = [
+    'Longueur personnalisable (4 à 128 caractères)',
+    'Inclure majuscules, minuscules, chiffres et symboles',
+    'Exclure les caractères ambigus (0, O, l, 1, etc.)',
+    'Générer plusieurs mots de passe en une fois',
+    'Indicateur de robustesse du mot de passe',
+    'Copie en un clic',
+    '100 % côté client : aucune donnée envoyée au serveur'
+];
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML

@@ -7,6 +7,8 @@ ob_start();
 
 $toolId = 'pxToRemConverter';
 $lang = 'en';
+$featuresSectionTitle = 'Features';
+$resourcesSectionTitle = 'Useful Resources';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
@@ -20,17 +22,15 @@ $customAboutContent = <<<HTML
 </p>
 HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Convert px to rem and rem to px</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Customizable base font size (default: 16px)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Batch conversion: convert multiple values at once</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Real-time conversion as you type</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Copy converted values with one click</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Common breakpoint presets</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>100% client-side processing</li>
-</ul>
-HTML;
+$features = [
+    'Convert px to rem and rem to px',
+    'Customizable base font size (default: 16px)',
+    'Batch conversion: convert multiple values at once',
+    'Real-time conversion as you type',
+    'Copy converted values with one click',
+    'Common breakpoint presets',
+    '100% client-side processing'
+];
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML

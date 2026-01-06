@@ -7,33 +7,33 @@ ob_start();
 
 $toolId = 'characterReferenceTool';
 $lang = 'de';
+$featuresSectionTitle = 'Funktionen';
+$resourcesSectionTitle = 'Nützliche Ressourcen';
+
+$features = [
+    'Über 2.231 HTML-Entities',
+    'Kategoriebasiertes Durchsuchen',
+    'Leistungsstarke Suchfunktion',
+    'Mehrere Kopierformate',
+    'Unicode-, Dezimal-, Hex-Codes',
+    'Ein-Klick-Kopie'
+];
 
 require_once __DIR__ . '/../../partials/tool-base.php';
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Über 2.231 HTML-Entities</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Kategoriebasiertes Durchsuchen</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Leistungsstarke Suchfunktion</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Mehrere Kopierformate</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Unicode-, Dezimal-, Hex-Codes</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Ein-Klick-Kopie</li>
-</ul>
-HTML;
-
-$customAboutContent = '
-  <p class="mb-2">
+$customAboutContent = <<<HTML
+<p class="mb-2">
     Durchsuchen Sie eine umfassende Sammlung von HTML-Entities, Unicode-Zeichen und 
     Sondersymbolen. Finden Sie die Entity-Codes, die Sie für die Webentwicklung benötigen, 
     von gängigen Symbolen bis hin zu mathematischen Operatoren und Emojis.
-  </p>
-  <p class="mb-0">
+</p>
+<p class="mb-0">
     <i class="bi bi-lightbulb me-1"></i>
     <strong>Text konvertieren?</strong> Nutzen Sie unseren 
     <a href="' . getToolUrl('html-entity-encoder-decoder', 'de') . '">HTML Entity Encoder/Decoder</a>, 
     um HTML-Entities in großen Mengen zu kodieren oder dekodieren.
-  </p>
-';
+</p>
+HTML;
 
 $usefulResources = [
     [

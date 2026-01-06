@@ -6,8 +6,8 @@ declare(strict_types=1);
 ob_start();
 
 $toolId = 'hashGeneratorTool';
-$lang = 'es';
-
+$lang = 'es';$featuresSectionTitle = 'Características';
+$resourcesSectionTitle = 'Recursos Útiles';
 $customAboutContent = <<<HTML
 <p class="mb-2">
     Genera hashes criptográficos para texto y archivos con múltiples algoritmos.
@@ -19,18 +19,16 @@ $customAboutContent = <<<HTML
 </p>
 HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Varios algoritmos: MD5, SHA-1, SHA-256, SHA-384, SHA-512</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Hashea texto y archivos</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Compara hashes para verificación</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Soporte HMAC con claves personalizadas</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Salida en mayúsculas o minúsculas</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Copiar resultados con un clic</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Generación en tiempo real</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Procesamiento 100 % local: tus datos nunca salen del navegador</li>
-</ul>
-HTML;
+$features = [
+    'Varios algoritmos: MD5, SHA-1, SHA-256, SHA-384, SHA-512',
+    'Hashea texto y archivos',
+    'Compara hashes para verificación',
+    'Soporte HMAC con claves personalizadas',
+    'Salida en mayúsculas o minúsculas',
+    'Copiar resultados con un clic',
+    'Generación en tiempo real',
+    'Procesamiento 100 % local: tus datos nunca salen del navegador'
+];
 
 $customNoticeType = 'warning';
 $customNoticeContent = <<<HTML

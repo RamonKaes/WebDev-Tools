@@ -7,6 +7,8 @@ ob_start();
 
 $toolId = 'aspectRatioCalculator';
 $lang = 'fr';
+$featuresSectionTitle = 'Fonctionnalités';
+$resourcesSectionTitle = 'Ressources Utiles';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
@@ -20,17 +22,15 @@ $customAboutContent = <<<HTML
 </p>
 HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Calculer la largeur ou hauteur manquante à partir du rapport d'aspect</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Préréglages de rapports courants (16:9, 4:3, 21:9, 1:1, etc.)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Générateur de l'astuce CSS padding-bottom</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Formats de rapport multiples (rapport, décimal, pourcentage)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Calculateur de tailles d'image responsive</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Calcul en temps réel</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Traitement 100% côté client</li>
-</ul>
-HTML;
+$features = [
+    'Calculer la largeur ou hauteur manquante à partir du rapport d\'aspect',
+    'Préréglages de rapports courants (16:9, 4:3, 21:9, 1:1, etc.)',
+    'Générateur de l\'astuce CSS padding-bottom',
+    'Formats de rapport multiples (rapport, décimal, pourcentage)',
+    'Calculateur de tailles d\'image responsive',
+    'Calcul en temps réel',
+    'Traitement 100% côté client'
+];
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML

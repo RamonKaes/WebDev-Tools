@@ -7,6 +7,8 @@ ob_start();
 
 $toolId = 'passwordGeneratorTool';
 $lang = 'pt';
+$featuresSectionTitle = 'Recursos';
+$resourcesSectionTitle = 'Recursos Úteis';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
@@ -19,17 +21,15 @@ $customAboutContent = <<<HTML
 </p>
 HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Comprimento configurável (4-128 caracteres)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Inclua letras maiúsculas, minúsculas, números e símbolos</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Exclua caracteres ambíguos (0, O, l, 1, ...)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Gere várias senhas de uma vez</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Indicador de força da senha</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Copie para a área de transferência com um clique</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>100% no lado do cliente: nenhuma senha é enviada ao servidor</li>
-</ul>
-HTML;
+$features = [
+    'Comprimento configurável (4-128 caracteres)',
+    'Inclua letras maiúsculas, minúsculas, números e símbolos',
+    'Exclua caracteres ambíguos (0, O, l, 1, ...)',
+    'Gere várias senhas de uma vez',
+    'Indicador de força da senha',
+    'Copie para a área de transferência com um clique',
+    '100% no lado do cliente: nenhuma senha é enviada ao servidor'
+];
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML

@@ -7,6 +7,8 @@ ob_start();
 
 $toolId = 'uuidGeneratorTool';
 $lang = 'fr';
+$featuresSectionTitle = 'Fonctionnalités';
+$resourcesSectionTitle = 'Ressources Utiles';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
@@ -19,17 +21,15 @@ $customAboutContent = <<<HTML
 </p>
 HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Génération d'UUID v4 (aléatoires) avec sécurité cryptographique</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Génération en lot&nbsp;: créez plusieurs UUID d'un coup</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Plusieurs formats de sortie&nbsp;: standard, majuscules, sans tirets</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Copie individuelle ou globale en un clic</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Conforme à la RFC 4122</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Aucun appel serveur&nbsp;: 100&nbsp;% côté client</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Génération instantanée sans latence</li>
-</ul>
-HTML;
+$features = [
+    'Génération d\'UUID v4 (aléatoires) avec sécurité cryptographique',
+    'Génération en lot : créez plusieurs UUID d\'un coup',
+    'Plusieurs formats de sortie : standard, majuscules, sans tirets',
+    'Copie individuelle ou globale en un clic',
+    'Conforme à la RFC 4122',
+    'Aucun appel serveur : 100 % côté client',
+    'Génération instantanée sans latence'
+];
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML

@@ -7,29 +7,29 @@ ob_start();
 
 $toolId = 'characterReferenceTool';
 $lang = 'en';
+$featuresSectionTitle = 'Features';
+$resourcesSectionTitle = 'Useful Resources';
 
-$customAboutContent = '
-  <p class="mb-2">
+$customAboutContent = <<<HTML
+<p class="mb-2">
     Browse and search through a comprehensive collection of HTML entities, Unicode characters, 
     and special symbols. Find the entity codes you need for web development, from common symbols 
     to mathematical operators and emoji.
-  </p>
-  <p class="mb-0">
+</p>
+<p class="mb-0">
     Each character displays its HTML entity, decimal code, hex code, and Unicode representation. 
     Click any format to copy it instantly to your clipboard.
-  </p>
-';
-
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Over 2,231 HTML entities</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Category-based browsing</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Powerful search function</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Multiple copy formats</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Unicode, decimal, hex codes</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>One-click copy</li>
-</ul>
+</p>
 HTML;
+
+$features = [
+    'Over 2,231 HTML entities',
+    'Category-based browsing',
+    'Powerful search function',
+    'Multiple copy formats',
+    'Unicode, decimal, hex codes',
+    'One-click copy'
+];
 
 $usefulResources = [
     [

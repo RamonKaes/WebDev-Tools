@@ -7,6 +7,8 @@ ob_start();
 
 $toolId = 'loremIpsumTool';
 $lang = 'fr';
+$featuresSectionTitle = 'Fonctionnalités';
+$resourcesSectionTitle = 'Ressources Utiles';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
@@ -19,17 +21,15 @@ $customAboutContent = <<<HTML
 </p>
 HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Générer des paragraphes, phrases ou mots</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Quantité personnalisable (1 à 100 unités)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Démarrer par «&nbsp;Lorem ipsum dolor sit amet...&nbsp;»</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Option d'encapsulation dans des balises HTML &lt;p&gt;</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Sortie en texte brut</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Copie en un clic</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Compteur de mots et de caractères en temps réel</li>
-</ul>
-HTML;
+$features = [
+    'Générer des paragraphes, phrases ou mots',
+    'Quantité personnalisable (1 à 100 unités)',
+    'Démarrer par « Lorem ipsum dolor sit amet... »',
+    'Option d\'encapsulation dans des balises HTML <p>',
+    'Sortie en texte brut',
+    'Copie en un clic',
+    'Compteur de mots et de caractères en temps réel'
+];
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML

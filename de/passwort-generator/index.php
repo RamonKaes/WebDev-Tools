@@ -7,6 +7,8 @@ ob_start();
 
 $toolId = 'passwordGeneratorTool';
 $lang = 'de';
+$featuresSectionTitle = 'Funktionen';
+$resourcesSectionTitle = 'Nützliche Ressourcen';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
@@ -20,17 +22,15 @@ $customAboutContent = <<<HTML
 </p>
 HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Anpassbare Passwortlänge (4-128 Zeichen)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Großbuchstaben, Kleinbuchstaben, Zahlen und Symbole einschließen</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Mehrdeutige Zeichen ausschließen (0,O,l,1, etc.)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Mehrere Passwörter auf einmal generieren</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Passwortstärke-Indikator</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Mit einem Klick in die Zwischenablage kopieren</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>100% clientseitig - Passwörter werden nie an Server gesendet</li>
-</ul>
-HTML;
+$features = [
+    'Anpassbare Passwortlänge (4-128 Zeichen)',
+    'Großbuchstaben, Kleinbuchstaben, Zahlen und Symbole einschließen',
+    'Mehrdeutige Zeichen ausschließen (0,O,l,1, etc.)',
+    'Mehrere Passwörter auf einmal generieren',
+    'Passwortstärke-Indikator',
+    'Mit einem Klick in die Zwischenablage kopieren',
+    '100% clientseitig - Passwörter werden nie an Server gesendet'
+];
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML

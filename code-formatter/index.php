@@ -7,17 +7,17 @@ ob_start();
 
 $toolId = 'codeFormatterTool';
 $lang = 'en';
+$featuresSectionTitle = 'Features';
+$resourcesSectionTitle = 'Useful Resources';
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>HTML, CSS, JavaScript, XML, SQL formatting</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Beautify and minify modes</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Customizable indentation (2/4 spaces, tabs)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Real-time auto-formatting</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Syntax validation</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Copy and download support</li>
-</ul>
-HTML;
+$features = [
+    'HTML, CSS, JavaScript, XML, SQL formatting',
+    'Beautify and minify modes',
+    'Customizable indentation (2/4 spaces, tabs)',
+    'Real-time auto-formatting',
+    'Syntax validation',
+    'Copy and download support'
+];
 
 $additionalSections = [
     [

@@ -7,28 +7,28 @@ ob_start();
 
 $toolId = 'characterReferenceTool';
 $lang = 'es';
+$featuresSectionTitle = 'Características';
+$resourcesSectionTitle = 'Recursos Útiles';
 
-$customAboutContent = '
-  <p class="mb-2">
+$customAboutContent = <<<HTML
+<p class="mb-2">
     Explora y busca una colección completa de entidades HTML, caracteres Unicode y símbolos especiales.
     Encuentra los códigos necesarios para desarrollo web, desde símbolos comunes hasta operadores matemáticos y emoji.
-  </p>
-  <p class="mb-0">
+</p>
+<p class="mb-0">
     Cada carácter muestra su entidad HTML, código decimal, código hexadecimal y representación Unicode.
     Haz clic en cualquier formato para copiarlo al instante al portapapeles.
-  </p>
-';
-
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Más de 2 231 entidades HTML</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Navegación por categorías</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Búsqueda avanzada</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Múltiples formatos de copia</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Códigos Unicode, decimales y hexadecimales</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Copiar con un solo clic</li>
-</ul>
+</p>
 HTML;
+
+$features = [
+    'Más de 2 231 entidades HTML',
+    'Navegación por categorías',
+    'Búsqueda avanzada',
+    'Múltiples formatos de copia',
+    'Códigos Unicode, decimales y hexadecimales',
+    'Copiar con un solo clic'
+];
 
 $usefulResources = [
     [

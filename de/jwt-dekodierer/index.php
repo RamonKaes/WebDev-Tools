@@ -7,30 +7,30 @@ ob_start();
 
 $toolId = 'jwtDecoderTool';
 $lang = 'de';
+$featuresSectionTitle = 'Funktionen';
+$resourcesSectionTitle = 'Nützliche Ressourcen';
 
-$customAboutContent = '
-  <p class="mb-2">
+$customAboutContent = <<<HTML
+<p class="mb-2">
     <strong>JSON Web Tokens (JWT)</strong> sind eine kompakte, URL-sichere Methode zur 
     Darstellung von Ansprüchen zwischen zwei Parteien. Sie werden häufig für Authentifizierung 
     und Informationsaustausch in modernen Webanwendungen und APIs verwendet.
-  </p>
-  <p class="mb-0">
+</p>
+<p class="mb-0">
     Dieser Decoder extrahiert und zeigt die Header-, Payload- und Signatur-Komponenten eines JWT an. 
     Hinweis: Die Signaturprüfung erfordert den geheimen Schlüssel und sollte 
     aus Sicherheitsgründen serverseitig erfolgen.
-  </p>
-';
+</p>
+HTML;
 
-$customFeaturesContent = '
-  <ul class="mb-0">
-    <li>Header-Dekodierung: Anzeige von Algorithmus (alg) und Token-Typ (typ)</li>
-    <li>Payload-Extraktion: Dekodierung von Claims und Benutzerdaten</li>
-    <li>Ablaufprüfung: Automatische Überprüfung, ob Token abgelaufen ist</li>
-    <li>Syntax-Hervorhebung: Farbcodiertes JSON für bessere Lesbarkeit</li>
-    <li>Beispiel-Token: Beispiel-JWT zum Testen des Decoders laden</li>
-    <li>Nur Client-seitig: Alle Dekodierung erfolgt in Ihrem Browser</li>
-  </ul>
-';
+$features = [
+    'Header-Dekodierung: Anzeige von Algorithmus (alg) und Token-Typ (typ)',
+    'Payload-Extraktion: Dekodierung von Claims und Benutzerdaten',
+    'Ablaufprüfung: Automatische Überprüfung, ob Token abgelaufen ist',
+    'Syntax-Hervorhebung: Farbcodiertes JSON für bessere Lesbarkeit',
+    'Beispiel-Token: Beispiel-JWT zum Testen des Decoders laden',
+    'Nur Client-seitig: Alle Dekodierung erfolgt in Ihrem Browser'
+];
 
 $customNoticeType = 'warning';
 $customNoticeContent = <<<HTML

@@ -7,29 +7,29 @@ ob_start();
 
 $toolId = 'jwtDecoderTool';
 $lang = 'fr';
+$featuresSectionTitle = 'Fonctionnalités';
+$resourcesSectionTitle = 'Ressources Utiles';
 
-$customAboutContent = '
-  <p class="mb-2">
+$customAboutContent = <<<HTML
+<p class="mb-2">
     <strong>JSON Web Tokens (JWT)</strong> sont un moyen compact et compatible avec les URL pour représenter
-    des revendications entre deux parties. Ils sont largement utilisés pour l\'authentification et l\'échange
-    d\'informations dans les applications web modernes et les API.
-  </p>
-  <p class="mb-0">
-    Ce décodeur extrait et affiche les composants en-tête, charge utile et signature d\'un JWT.
+    des revendications entre deux parties. Ils sont largement utilisés pour l'authentification et l'échange
+    d'informations dans les applications web modernes et les API.
+</p>
+<p class="mb-0">
+    Ce décodeur extrait et affiche les composants en-tête, charge utile et signature d'un JWT.
     Remarque&nbsp;: la vérification de la signature nécessite la clé secrète et doit être effectuée côté serveur pour rester sécurisée.
-  </p>
-';
+</p>
+HTML;
 
-$customFeaturesContent = '
-  <ul class="mb-0">
-    <li>Décodage de l\'en-tête&nbsp;: affiche l\'algorithme (alg) et le type de jeton (typ)</li>
-    <li>Extraction de la charge utile&nbsp;: décode les revendications et données utilisateur</li>
-    <li>Vérification d\'expiration&nbsp;: détecte automatiquement si le jeton a expiré</li>
-    <li>Mise en évidence syntaxique&nbsp;: JSON coloré pour une meilleure lisibilité</li>
-    <li>Affichage de la signature&nbsp;: montre la signature encodée en Base64URL</li>
-    <li>Côté client&nbsp;: tout le traitement se fait localement dans votre navigateur</li>
-  </ul>
-';
+$features = [
+    'Décodage de l\'en-tête : affiche l\'algorithme (alg) et le type de jeton (typ)',
+    'Extraction de la charge utile : décode les revendications et données utilisateur',
+    'Vérification d\'expiration : détecte automatiquement si le jeton a expiré',
+    'Mise en évidence syntaxique : JSON coloré pour une meilleure lisibilité',
+    'Affichage de la signature : montre la signature encodée en Base64URL',
+    'Côté client : tout le traitement se fait localement dans votre navigateur'
+];
 
 $customNoticeType = 'warning';
 $customNoticeContent = <<<HTML

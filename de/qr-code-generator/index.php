@@ -7,21 +7,21 @@ ob_start();
 
 $toolId = 'qrCodeGeneratorTool';
 $lang = 'de';
+$featuresSectionTitle = 'Funktionen';
+$resourcesSectionTitle = 'Nützliche Ressourcen';
 $customAboutContent = <<<HTML
 <p class="mb-2">Generieren Sie sofort QR-Codes für URLs, Text, Kontaktinformationen und mehr. Passen Sie Farben, Größe und Fehlerkorrekturlevel an.</p>
 <p>QR (Quick Response) Codes sind zweidimensionale Barcodes, die verschiedene Datentypen speichern und von Smartphones und QR-Lesern gescannt werden können. Alle QR-Code-Generierung erfolgt in Ihrem Browser - keine Daten werden an externe Server gesendet.</p>
 HTML;
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>QR-Codes für URLs, Text, Telefonnummern, E-Mails und mehr generieren</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Anpassbare Größe und Qualität</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Benutzerdefinierte Vorder- und Hintergrundfarben</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Fehlerkorrekturlevel (L, M, Q, H)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Als PNG oder SVG herunterladen</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Echtzeit-Vorschau</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>100% clientseitige Generierung</li>
-</ul>
-HTML;
+$features = [
+    'QR-Codes für URLs, Text, Telefonnummern, E-Mails und mehr generieren',
+    'Anpassbare Größe und Qualität',
+    'Benutzerdefinierte Vorder- und Hintergrundfarben',
+    'Fehlerkorrekturlevel (L, M, Q, H)',
+    'Als PNG oder SVG herunterladen',
+    'Echtzeit-Vorschau',
+    '100% clientseitige Generierung'
+];
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
     <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Fehlerkorrekturlevel</h2>

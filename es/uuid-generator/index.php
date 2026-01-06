@@ -6,8 +6,8 @@ declare(strict_types=1);
 ob_start();
 
 $toolId = 'uuidGeneratorTool';
-$lang = 'es';
-
+$lang = 'es';$featuresSectionTitle = 'Características';
+$resourcesSectionTitle = 'Recursos Útiles';
 $customAboutContent = <<<HTML
 <p class="mb-2">
     Genera identificadores únicos (UUID/GUID) al instante para aplicaciones, bases de datos y APIs.
@@ -19,17 +19,15 @@ $customAboutContent = <<<HTML
 </p>
 HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Genera UUID v4 (aleatorios) con seguridad criptográfica</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Generación masiva: crea múltiples UUID de un golpe</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Formatos alternativos: estándar, mayúsculas, sin guiones</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Copiar UUID individual o todos a la vez</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Cumple la RFC 4122</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Sin comunicación con el servidor: 100 % local</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Generación inmediata sin esperas</li>
-</ul>
-HTML;
+$features = [
+    'Genera UUID v4 (aleatorios) con seguridad criptográfica',
+    'Generación masiva: crea múltiples UUID de un golpe',
+    'Formatos alternativos: estándar, mayúsculas, sin guiones',
+    'Copiar UUID individual o todos a la vez',
+    'Cumple la RFC 4122',
+    'Sin comunicación con el servidor: 100 % local',
+    'Generación inmediata sin esperas'
+];
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML

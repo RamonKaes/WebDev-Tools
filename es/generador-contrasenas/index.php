@@ -6,8 +6,8 @@ declare(strict_types=1);
 ob_start();
 
 $toolId = 'passwordGeneratorTool';
-$lang = 'es';
-
+$lang = 'es';$featuresSectionTitle = 'Características';
+$resourcesSectionTitle = 'Recursos Útiles';
 $customAboutContent = <<<HTML
 <p class="mb-2">
     Genera contraseñas fuertes y seguras con longitud y conjuntos de caracteres personalizables.
@@ -19,17 +19,15 @@ $customAboutContent = <<<HTML
 </p>
 HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Longitud configurable (4-128 caracteres)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Incluye mayúsculas, minúsculas, números y símbolos</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Excluye caracteres ambiguos (0, O, l, 1, etc.)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Genera varias contraseñas a la vez</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Indicador de fortaleza de la contraseña</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Copiar al portapapeles con un clic</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Procesamiento 100 % local: ninguna contraseña abandona tu dispositivo</li>
-</ul>
-HTML;
+$features = [
+    'Longitud configurable (4-128 caracteres)',
+    'Incluye mayúsculas, minúsculas, números y símbolos',
+    'Excluye caracteres ambiguos (0, O, l, 1, etc.)',
+    'Genera varias contraseñas a la vez',
+    'Indicador de fortaleza de la contraseña',
+    'Copiar al portapapeles con un clic',
+    'Procesamiento 100 % local: ninguna contraseña abandona tu dispositivo'
+];
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML

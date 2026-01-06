@@ -7,6 +7,8 @@ ob_start();
 
 $toolId = 'aspectRatioCalculator';
 $lang = 'it';
+$featuresSectionTitle = 'Funzionalità';
+$resourcesSectionTitle = 'Risorse Utili';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
@@ -20,12 +22,15 @@ $customAboutContent = <<<HTML
 </p>
 HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Calcolare larghezza o altezza mancante dal rapporto d'aspetto</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Preset di rapporti comuni (16:9, 4:3, 21:9, 1:1, ecc.)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Generatore del trucco CSS padding-bottom</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Formati di rapporto multipli (rapporto, decimale, percentuale)</li>
+$features = [
+    'Calcolare larghezza o altezza mancante dal rapporto d\'aspetto',
+    'Preset di rapporti comuni (16:9, 4:3, 21:9, 1:1, ecc.)',
+    'Generatore del trucco CSS padding-bottom',
+    'Formati di rapporto multipli (rapporto, decimale, percentuale)',
+    'Calcolatore di dimensioni per immagini responsive',
+    'Calcolo in tempo reale',
+    'Elaborazione 100% lato client'
+];
     <li><i class="bi bi-check-circle-fill text-success me-2"></i>Calcolatore di dimensioni immagine responsive</li>
     <li><i class="bi bi-check-circle-fill text-success me-2"></i>Calcolo in tempo reale</li>
     <li><i class="bi bi-check-circle-fill text-success me-2"></i>Elaborazione 100% lato client</li>

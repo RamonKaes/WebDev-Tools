@@ -7,6 +7,8 @@ ob_start();
 
 $toolId = 'loremIpsumTool';
 $lang = 'de';
+$featuresSectionTitle = 'Funktionen';
+$resourcesSectionTitle = 'Nützliche Ressourcen';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
@@ -19,17 +21,15 @@ $customAboutContent = <<<HTML
 </p>
 HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Generieren Sie Absätze, Wörter oder Zeichen</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Anpassbare Menge (1-50 Absätze)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Beginnen Sie mit "Lorem ipsum dolor sit amet"</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>HTML-Absatz-Tags einschließen</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Mit einem Klick in die Zwischenablage kopieren</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Zeichenanzahl und Statistiken</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>100% clientseitig - funktioniert offline</li>
-</ul>
-HTML;
+$features = [
+    'Generieren Sie Absätze, Wörter oder Zeichen',
+    'Anpassbare Menge (1-50 Absätze)',
+    'Beginnen Sie mit "Lorem ipsum dolor sit amet"',
+    'HTML-Absatz-Tags einschließen',
+    'Mit einem Klick in die Zwischenablage kopieren',
+    'Zeichenanzahl und Statistiken',
+    '100% clientseitig - funktioniert offline'
+];
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML

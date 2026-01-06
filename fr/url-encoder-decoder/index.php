@@ -7,28 +7,28 @@ ob_start();
 
 $toolId = 'urlEncoderDecoder';
 $lang = 'fr';
+$featuresSectionTitle = 'Fonctionnalités';
+$resourcesSectionTitle = 'Ressources Utiles';
 
-$customAboutContent = '
-  <p class="mb-2">
-    <strong>L\'encodage d\'URL</strong> (ou encodage pourcentage) convertit des caractères en un format transmissible sur Internet.
+$customAboutContent = <<<HTML
+<p class="mb-2">
+    <strong>L'encodage d'URL</strong> (ou encodage pourcentage) convertit des caractères en un format transmissible sur Internet.
     Les caractères spéciaux sont remplacés par "%" suivi de deux chiffres hexadécimaux.
-  </p>
-  <p class="mb-0">
-    Tous les encodages et décodages s\'effectuent localement dans votre navigateur. Aucune donnée n\'est envoyée à un serveur,
+</p>
+<p class="mb-0">
+    Tous les encodages et décodages s'effectuent localement dans votre navigateur. Aucune donnée n'est envoyée à un serveur,
     garantissant une confidentialité et une sécurité totales.
-  </p>
-';
+</p>
+HTML;
 
-$customFeaturesContent = '
-  <ul class="mb-0">
-    <li>Encodage d\'URL&nbsp;: encodez des URL et paramètres de requête</li>
-    <li>Décodage d\'URL&nbsp;: décodez des URL encodées en pourcentage</li>
-    <li>Encodage de composants&nbsp;: encodez des segments individuels d\'URL</li>
-    <li>Traitement en masse&nbsp;: encodez/décodez plusieurs lignes en une fois</li>
-    <li>Analyse d\'URL&nbsp;: extrayez protocole, hôte, chemin et chaîne de requête</li>
-    <li>Détection automatique&nbsp;: reconnaît automatiquement les besoins d\'encodage</li>
-  </ul>
-';
+$features = [
+    'Encodage d\'URL : encodez des URL et paramètres de requête',
+    'Décodage d\'URL : décodez des URL encodées en pourcentage',
+    'Encodage de composants : encodez des segments individuels d\'URL',
+    'Traitement en masse : encodez/décodez plusieurs lignes en une fois',
+    'Analyse d\'URL : extrayez protocole, hôte, chemin et chaîne de requête',
+    'Détection automatique : reconnaît automatiquement les besoins d\'encodage'
+];
 
 $customNoticeContent = '
   <h3 class="h6 mb-2">

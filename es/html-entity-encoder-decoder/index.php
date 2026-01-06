@@ -7,28 +7,28 @@ ob_start();
 
 $toolId = 'htmlEntityTool';
 $lang = 'es';
+$featuresSectionTitle = 'Características';
+$resourcesSectionTitle = 'Recursos Útiles';
 
-$customAboutContent = '
-  <p class="mb-2">
+$customAboutContent = <<<HTML
+<p class="mb-2">
     <strong>Las entidades HTML</strong> son representaciones especiales para mostrar caracteres reservados y símbolos en HTML.
     Evitan problemas de interpretación del navegador y garantizan un renderizado correcto en distintos sistemas y codificaciones.
-  </p>
-  <p class="mb-0">
+</p>
+<p class="mb-0">
     Esta herramienta admite entidades con nombre (&amp;nbsp;), entidades decimales (&amp;#160;) y hexadecimales (&amp;#xA0;).
     Todas las conversiones se realizan localmente en tu navegador para mantener la privacidad.
-  </p>
-';
+</p>
+HTML;
 
-$customFeaturesContent = '
-  <ul class="mb-0">
-    <li>Entidades con nombre: convierte a referentes estándar como &amp;nbsp;, &amp;lt;, &amp;gt;</li>
-    <li>Entidades numéricas: formato decimal (&amp;#160;) u hexadecimal (&amp;#xA0;)</li>
-    <li>Bidireccional: codifica texto a entidades o decodifica entidades a texto</li>
-    <li>Autoconversión: transformación en tiempo real mientras escribes</li>
-    <li>Referencia de caracteres: enlace rápido para consultar todas las entidades HTML</li>
-    <li>Descarga: guarda los resultados en un archivo de texto</li>
-  </ul>
-';
+$features = [
+    'Entidades con nombre: convierte a referentes estándar como &nbsp;, &lt;, &gt;',
+    'Entidades numéricas: formato decimal (&#160;) u hexadecimal (&#xA0;)',
+    'Bidireccional: codifica texto a entidades o decodifica entidades a texto',
+    'Autoconversión: transformación en tiempo real mientras escribes',
+    'Referencia de caracteres: enlace rápido para consultar todas las entidades HTML',
+    'Descarga: guarda los resultados en un archivo de texto'
+];
 
 $additionalSections = [
   [

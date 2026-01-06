@@ -6,8 +6,8 @@ declare(strict_types=1);
 ob_start();
 
 $toolId = 'loremIpsumTool';
-$lang = 'es';
-
+$lang = 'es';$featuresSectionTitle = 'Características';
+$resourcesSectionTitle = 'Recursos Útiles';
 $customAboutContent = <<<HTML
 <p class="mb-2">
     Genera texto de relleno (Lorem Ipsum) para tus maquetas, prototipos y diseños.
@@ -19,16 +19,14 @@ $customAboutContent = <<<HTML
 </p>
 HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Genera párrafos, frases o palabras</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Cantidad personalizable (1-100 unidades)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Opcionalmente comienza con «Lorem ipsum dolor sit amet...»</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Salida en texto plano o con etiquetas HTML &lt;p&gt;</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Copiar al portapapeles con un clic</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Conteo de palabras y caracteres en tiempo real</li>
-</ul>
-HTML;
+$features = [
+    'Genera párrafos, frases o palabras',
+    'Cantidad personalizable (1-100 unidades)',
+    'Opcionalmente comienza con «Lorem ipsum dolor sit amet...»',
+    'Salida en texto plano o con etiquetas HTML <p>',
+    'Copiar al portapapeles con un clic',
+    'Conteo de palabras y caracteres en tiempo real'
+];
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML

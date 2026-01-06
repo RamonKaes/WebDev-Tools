@@ -7,6 +7,8 @@ ob_start();
 
 $toolId = 'hashGeneratorTool';
 $lang = 'it';
+$featuresSectionTitle = 'Funzionalità';
+$resourcesSectionTitle = 'Risorse Utili';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
@@ -19,13 +21,16 @@ $customAboutContent = <<<HTML
 </p>
 HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Più algoritmi: MD5, SHA-1, SHA-256, SHA-384, SHA-512</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Hash di testo e file</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Confronto di hash per la verifica</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Supporto HMAC con chiavi personalizzate</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Output maiuscolo o minuscolo</li>
+$features = [
+    'Più algoritmi: MD5, SHA-1, SHA-256, SHA-384, SHA-512',
+    'Hash di testo e file',
+    'Confronto di hash per la verifica',
+    'Supporto HMAC con chiavi personalizzate',
+    'Output maiuscolo o minuscolo',
+    'Copia hash con un clic',
+    'Generazione in tempo reale',
+    'Elaborazione 100% lato client: i dati rimangono sul dispositivo'
+];
     <li><i class="bi bi-check-circle-fill text-success me-2"></i>Copia con un clic</li>
     <li><i class="bi bi-check-circle-fill text-success me-2"></i>Generazione in tempo reale</li>
     <li><i class="bi bi-check-circle-fill text-success me-2"></i>Elaborazione 100% lato client</li>

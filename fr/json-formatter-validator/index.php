@@ -7,6 +7,8 @@ ob_start();
 
 $toolId = 'jsonFormatterValidator';
 $lang = 'fr';
+$featuresSectionTitle = 'Fonctionnalités';
+$resourcesSectionTitle = 'Ressources Utiles';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
@@ -19,18 +21,16 @@ $customAboutContent = <<<HTML
 </p>
 HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Formater et embellir le JSON avec une indentation personnalisable (2 ou 4 espaces)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Valider la syntaxe JSON avec des messages d'erreur détaillés</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Minifier le JSON pour réduire la taille des fichiers</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Validation de la syntaxe en temps réel</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Détection des erreurs ligne par ligne</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Copie du résultat formaté en un clic</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Mise en évidence claire des erreurs et messages explicites</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Respect de la vie privée&nbsp;: tout se passe dans votre navigateur</li>
-</ul>
-HTML;
+$features = [
+    'Formater et embellir le JSON avec une indentation personnalisable (2 ou 4 espaces)',
+    'Valider la syntaxe JSON avec des messages d\'erreur détaillés',
+    'Minifier le JSON pour réduire la taille des fichiers',
+    'Validation de la syntaxe en temps réel',
+    'Détection des erreurs ligne par ligne',
+    'Copie du résultat formaté en un clic',
+    'Mise en évidence claire des erreurs et messages explicites',
+    'Respect de la vie privée : tout se passe dans votre navigateur'
+];
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML

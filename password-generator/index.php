@@ -7,6 +7,8 @@ ob_start();
 
 $toolId = 'passwordGeneratorTool';
 $lang = 'en';
+$featuresSectionTitle = 'Features';
+$resourcesSectionTitle = 'Useful Resources';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
@@ -20,17 +22,15 @@ $customAboutContent = <<<HTML
 </p>
 HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Customizable password length (4-128 characters)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Include uppercase letters, lowercase letters, numbers, and symbols</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Exclude ambiguous characters (0,O,l,1, etc.)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Generate multiple passwords at once</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Password strength indicator</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Copy to clipboard with one click</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>100% client-side - passwords never sent to server</li>
-</ul>
-HTML;
+$features = [
+    'Customizable password length (4-128 characters)',
+    'Include uppercase letters, lowercase letters, numbers, and symbols',
+    'Exclude ambiguous characters (0,O,l,1, etc.)',
+    'Generate multiple passwords at once',
+    'Password strength indicator',
+    'Copy to clipboard with one click',
+    '100% client-side - passwords never sent to server'
+];
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML

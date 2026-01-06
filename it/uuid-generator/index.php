@@ -7,6 +7,8 @@ ob_start();
 
 $toolId = 'uuidGeneratorTool';
 $lang = 'it';
+$featuresSectionTitle = 'Funzionalità';
+$resourcesSectionTitle = 'Risorse Utili';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
@@ -19,13 +21,15 @@ $customAboutContent = <<<HTML
 </p>
 HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Generazione UUID v4 (casuale) con sicurezza crittografica</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Generazione batch: crea più UUID contemporaneamente</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Formati: standard, maiuscolo, senza trattini</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Copia UUID individualmente o tutti insieme</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Conformità RFC 4122</li>
+$features = [
+    'Generazione UUID v4 (casuale) con sicurezza crittografica',
+    'Generazione batch: crea più UUID contemporaneamente',
+    'Formati: standard, maiuscolo, senza trattini',
+    'Copia UUID individualmente o tutti insieme',
+    'Conformità RFC 4122',
+    'Nessuna chiamata al server: 100% lato client',
+    'Generazione istantanea senza latenza'
+];
     <li><i class="bi bi-check-circle-fill text-success me-2"></i>Elaborazione 100% nel browser</li>
     <li><i class="bi bi-check-circle-fill text-success me-2"></i>Generazione istantanea senza ritardi</li>
 </ul>

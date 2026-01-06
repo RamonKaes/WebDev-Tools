@@ -7,6 +7,8 @@ ob_start();
 
 $toolId = 'stringEscaperTool';
 $lang = 'de';
+$featuresSectionTitle = 'Funktionen';
+$resourcesSectionTitle = 'Nützliche Ressourcen';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
@@ -18,17 +20,15 @@ $customAboutContent = <<<HTML
 </p>
 HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>HTML/XML Escape – Kodiert Sonderzeichen wie &lt;, &gt;, &amp;</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>JavaScript Escape – Behandelt Anführungszeichen, Zeilenumbrüche und Sonderzeichen</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>JSON Escape – Korrekte Maskierung für JSON-Strings</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>SQL Escape – Schutz vor SQL-Injection</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>CSV Escape – Behandelt Anführungszeichen und Trennzeichen</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Clientseitige Verarbeitung (Datenschutz zuerst)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Mit einem Klick in Zwischenablage kopieren</li>
-</ul>
-HTML;
+$features = [
+    'HTML/XML Escape – Kodiert Sonderzeichen wie <, >, &',
+    'JavaScript Escape – Behandelt Anführungszeichen, Zeilenumbrüche und Sonderzeichen',
+    'JSON Escape – Korrekte Maskierung für JSON-Strings',
+    'SQL Escape – Schutz vor SQL-Injection',
+    'CSV Escape – Behandelt Anführungszeichen und Trennzeichen',
+    'Clientseitige Verarbeitung (Datenschutz zuerst)',
+    'Mit einem Klick in Zwischenablage kopieren'
+];
 
 /*
 $customNoticeType = 'info'; // info, warning, danger, success

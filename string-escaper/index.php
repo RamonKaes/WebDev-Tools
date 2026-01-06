@@ -7,6 +7,8 @@ ob_start();
 
 $toolId = 'stringEscaperTool';
 $lang = 'en';
+$featuresSectionTitle = 'Features';
+$resourcesSectionTitle = 'Useful Resources';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
@@ -18,17 +20,15 @@ $customAboutContent = <<<HTML
 </p>
 HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>HTML/XML Escape – Encode special characters like &lt;, &gt;, &amp;</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>JavaScript Escape – Handle quotes, newlines, and special characters</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>JSON Escape – Proper escaping for JSON strings</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>SQL Escape – Protect against SQL injection</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>CSV Escape – Handle quotes and delimiters</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Client-side processing (privacy-first)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Copy to clipboard with one click</li>
-</ul>
-HTML;
+$features = [
+    'HTML/XML Escape – Encode special characters like <, >, &',
+    'JavaScript Escape – Handle quotes, newlines, and special characters',
+    'JSON Escape – Proper escaping for JSON strings',
+    'SQL Escape – Protect against SQL injection',
+    'CSV Escape – Handle quotes and delimiters',
+    'Client-side processing (privacy-first)',
+    'Copy to clipboard with one click'
+];
 
 $additionalSections = [
     [

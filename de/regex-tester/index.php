@@ -7,8 +7,17 @@ ob_start();
 
 $toolId = 'regexTesterTool';
 $lang = 'de';
+$featuresSectionTitle = 'Funktionen';
+$resourcesSectionTitle = 'Nützliche Ressourcen';
 
-
+$features = [
+    'Echtzeit-Musterabgleich',
+    'Mehrere Regex-Flags (g, i, m, s, u)',
+    'Match-Hervorhebung mit Erfassungsgruppen',
+    'Detaillierte Match-Informationen und Statistiken',
+    'Bibliothek häufiger Regex-Muster',
+    '100% clientseitige Verarbeitung'
+];
 
 $toolId = 'regexTesterTool';
 $lang = 'de';

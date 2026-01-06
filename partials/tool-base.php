@@ -176,15 +176,28 @@ include __DIR__ . '/head.php';
 
     <?php
     if ($toolConfig['hasFeaturesSection'] ?? false) :
-        $featuresTitle = t($i18nData, "tools.{$toolId}.features_title", 'Features');
-        $featuresContent = $customFeaturesContent ?? null;
+        $featuresTitle = $featuresSectionTitle ?? 'Features';
+        $featuresContent = null;
 
-        if (!$featuresContent) {
-            $features = $seoData['featureList'] ?? [];
-            if (!empty($features)) {
-                $featuresContent = '<ul class="mb-0">';
-                foreach ($features as $feature) {
-                    $featuresContent .= '<li>' . htmlspecialchars($feature, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') . '</li>';
+        // NEW: Prefer $features array (clean data structure)
+        if (isset($features) && is_array($features) && !empty($features)) {
+            $featuresContent = '<ul class="list-unstyled">';
+            foreach ($features as $feature) {
+                $featuresContent .= '<li><i class="bi bi-check-circle-fill text-success me-2"></i>' . htmlspecialchars($feature, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') . '</li>';
+            }
+            $featuresContent .= '</ul>';
+        }
+        // FALLBACK: Legacy $customFeaturesContent (for backwards compatibility)
+        elseif (isset($customFeaturesContent) && $customFeaturesContent) {
+            $featuresContent = $customFeaturesContent;
+        }
+        // FALLBACK: SEO featureList from i18n JSON
+        else {
+            $featureListFromSeo = $seoData['featureList'] ?? [];
+            if (!empty($featureListFromSeo)) {
+                $featuresContent = '<ul class="list-unstyled">';
+                foreach ($featureListFromSeo as $feature) {
+                    $featuresContent .= '<li><i class="bi bi-check-circle-fill text-success me-2"></i>' . htmlspecialchars($feature, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') . '</li>';
                 }
                 $featuresContent .= '</ul>';
             }
@@ -196,7 +209,7 @@ include __DIR__ . '/head.php';
       <div class="card">
         <div class="card-body">
           <h2 class="h5 card-title mb-3">
-            <i class="bi bi-list-check me-2"></i><?= $featuresTitle ?>
+            <i class="bi bi-list-check me-2"></i><?= htmlspecialchars($featuresTitle, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>
           </h2>
             <?= $featuresContent ?>
         </div>
@@ -270,6 +283,7 @@ include __DIR__ . '/head.php';
 
     <?php
     if (isset($usefulResources) && is_array($usefulResources) && !empty($usefulResources)) :
+        $resourcesSectionTitle = $resourcesSectionTitle ?? 'Useful Resources';
         ?>
     
     <!-- Useful Resources Card -->
@@ -277,7 +291,7 @@ include __DIR__ . '/head.php';
       <div class="card">
         <div class="card-body">
           <h2 class="h5 card-title mb-3">
-            <i class="bi bi-link-45deg me-2"></i><?= htmlspecialchars($t['common']['usefulResources'] ?? 'Useful Resources', ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>
+            <i class="bi bi-link-45deg me-2"></i><?= htmlspecialchars($resourcesSectionTitle, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>
           </h2>
           <div class="row">
             <?php foreach ($usefulResources as $resource) : ?>

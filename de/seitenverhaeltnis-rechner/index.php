@@ -7,6 +7,8 @@ ob_start();
 
 $toolId = 'aspectRatioCalculator';
 $lang = 'de';
+$featuresSectionTitle = 'Funktionen';
+$resourcesSectionTitle = 'Nützliche Ressourcen';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
@@ -20,17 +22,15 @@ $customAboutContent = <<<HTML
 </p>
 HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Berechnung fehlender Breite oder Höhe aus Seitenverhältnis</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Gängige Verhältnis-Vorlagen (16:9, 4:3, 21:9, 1:1, etc.)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>CSS padding-bottom-Trick Generator</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Mehrere Verhältnis-Formate (Verhältnis, Dezimal, Prozent)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Responsive Bildgrößen-Rechner</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Echtzeit-Berechnung</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>100% clientseitige Verarbeitung</li>
-</ul>
-HTML;
+$features = [
+    'Berechnung fehlender Breite oder Höhe aus Seitenverhältnis',
+    'Gängige Verhältnis-Vorlagen (16:9, 4:3, 21:9, 1:1, etc.)',
+    'CSS padding-bottom-Trick Generator',
+    'Mehrere Verhältnis-Formate (Verhältnis, Dezimal, Prozent)',
+    'Responsive Bildgrößen-Rechner',
+    'Echtzeit-Berechnung',
+    '100% clientseitige Verarbeitung'
+];
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML

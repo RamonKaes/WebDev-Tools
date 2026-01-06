@@ -7,17 +7,17 @@ ob_start();
 
 $toolId = 'emojiReferenceTool';
 $lang = 'es';
+$featuresSectionTitle = 'Características';
+$resourcesSectionTitle = 'Recursos Útiles';
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Cientos de emojis disponibles</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Filtrado por categorías</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Búsqueda por palabras clave</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Información Unicode detallada</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Copiar en un clic</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Categorías enfocadas para desarrolladores</li>
-</ul>
-HTML;
+$features = [
+    'Cientos de emojis disponibles',
+    'Filtrado por categorías',
+    'Búsqueda por palabras clave',
+    'Información Unicode detallada',
+    'Copiar en un clic',
+    'Categorías enfocadas para desarrolladores'
+];
 
 $usefulResources = [
     [

@@ -7,29 +7,29 @@ ob_start();
 
 $toolId = 'punycodeConverterTool';
 $lang = 'es';
+$featuresSectionTitle = 'Características';
+$resourcesSectionTitle = 'Recursos Útiles';
 
-$customAboutContent = '
-  <p class="mb-2">
+$customAboutContent = <<<HTML
+<p class="mb-2">
     <strong>Punycode</strong> es una sintaxis de codificación que representa caracteres Unicode
     en nombres de dominio usando únicamente caracteres ASCII. Permite que los dominios internacionalizados (IDN)
     funcionen con la infraestructura DNS existente.
-  </p>
-  <p class="mb-0">
+</p>
+<p class="mb-0">
     Esta herramienta implementa la RFC 3492 para convertir dominios Unicode (münchen.de)
     y sus equivalentes Punycode (xn--mnchen-3ya.de). Todas las conversiones ocurren en tu navegador.
-  </p>
-';
+</p>
+HTML;
 
-$customFeaturesContent = '
-  <ul class="mb-0">
-    <li>Conversión bidireccional: de Unicode a Punycode y viceversa</li>
-    <li>Detección automática: identifica el formato de entrada</li>
-    <li>Cumple con la RFC 3492: implementación completa del estándar Punycode</li>
-    <li>Procesamiento por lotes: convierte múltiples dominios (una línea por dominio)</li>
-    <li>Dominios de ejemplo: carga dominios internacionales para probar</li>
-    <li>Conversión en tiempo real: actualiza mientras escribes</li>
-  </ul>
-';
+$features = [
+    'Conversión bidireccional: de Unicode a Punycode y viceversa',
+    'Detección automática: identifica el formato de entrada',
+    'Cumple con la RFC 3492: implementación completa del estándar Punycode',
+    'Procesamiento por lotes: convierte múltiples dominios (una línea por dominio)',
+    'Dominios de ejemplo: carga dominios internacionales para probar',
+    'Conversión en tiempo real: actualiza mientras escribes'
+];
 
 $additionalSections = [
   [

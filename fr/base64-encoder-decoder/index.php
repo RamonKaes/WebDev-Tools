@@ -7,17 +7,17 @@ ob_start();
 
 $toolId = 'base64EncoderDecoder';
 $lang = 'fr';
+$featuresSectionTitle = 'Fonctionnalités';
+$resourcesSectionTitle = 'Ressources Utiles';
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Encodage et décodage de texte et de fichiers</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Prise en charge du glisser-déposer de fichiers</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Encodage Base64 compatible URL</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Mode temps réel</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Traitement multi-lignes</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Traitement côté client&nbsp;: vos données ne quittent jamais votre navigateur</li>
-</ul>
-HTML;
+$features = [
+    'Encodage et décodage de texte et de fichiers',
+    'Prise en charge du glisser-déposer de fichiers',
+    'Encodage Base64 compatible URL',
+    'Mode temps réel',
+    'Traitement multi-lignes',
+    'Traitement côté client : vos données ne quittent jamais votre navigateur'
+];
 
 $additionalSections = [
   [

@@ -7,25 +7,28 @@ ob_start();
 
 $toolId = 'characterReferenceTool';
 $lang = 'it';
+$featuresSectionTitle = 'Funzionalità';
+$resourcesSectionTitle = 'Risorse Utili';
 
-$customAboutContent = '
-  <p class="mb-2">
+$customAboutContent = <<<HTML
+<p class="mb-2">
     Esplora e cerca una raccolta completa di entità HTML, caratteri Unicode e simboli speciali.
     Trova i codici necessari per lo sviluppo web, dai simboli comuni agli operatori matematici ed emoji.
-  </p>
-  <p class="mb-0">
+</p>
+<p class="mb-0">
     Ogni carattere mostra entità HTML, codici decimale ed esadecimale, oltre alla rappresentazione Unicode.
     Clicca su qualsiasi formato per copiarlo istantaneamente negli appunti.
-  </p>
-';
+</p>
+HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Oltre 2 231 entità HTML catalogate</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Navigazione per categorie</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Ricerca avanzata per nome o codice</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Formati multipli di copia</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Codici Unicode, decimali ed esadecimali affiancati</li>
+$features = [
+    'Oltre 2 231 entità HTML catalogate',
+    'Navigazione per categorie',
+    'Ricerca avanzata per nome o codice',
+    'Formati multipli di copia',
+    'Codici Unicode, decimali ed esadecimali affiancati',
+    'Copia istantanea negli appunti'
+];
     <li><i class="bi bi-check-circle-fill text-success me-2"></i>Copia con un solo clic</li>
 </ul>
 HTML;

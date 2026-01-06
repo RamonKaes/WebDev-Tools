@@ -7,6 +7,8 @@ ob_start();
 
 $toolId = 'qrCodeGeneratorTool';
 $lang = 'pt';
+$featuresSectionTitle = 'Recursos';
+$resourcesSectionTitle = 'Recursos Úteis';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
@@ -20,17 +22,15 @@ $customAboutContent = <<<HTML
 </p>
 HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Crie QR codes para URLs, textos, telefones, e-mails e muito mais</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Tamanho e qualidade configuráveis</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Cores personalizadas de fundo e primeiro plano</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Níveis de correção de erro (L, M, Q, H)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Download como PNG ou SVG</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Pré-visualização em tempo real</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Geração 100% local</li>
-</ul>
-HTML;
+$features = [
+    'Crie QR codes para URLs, textos, telefones, e-mails e muito mais',
+    'Tamanho e qualidade configuráveis',
+    'Cores personalizadas de fundo e primeiro plano',
+    'Níveis de correção de erro (L, M, Q, H)',
+    'Download como PNG ou SVG',
+    'Pré-visualização em tempo real',
+    'Geração 100% local'
+];
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML

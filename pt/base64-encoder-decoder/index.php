@@ -7,17 +7,17 @@ ob_start();
 
 $toolId = 'base64EncoderDecoder';
 $lang = 'pt';
+$featuresSectionTitle = 'Recursos';
+$resourcesSectionTitle = 'Recursos Úteis';
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Codificação e decodificação de texto e arquivos</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Suporte a arrastar e soltar arquivos</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Codificação Base64 compatível com URLs</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Modo em tempo real</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Processamento multilinha</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Processamento no navegador: seus dados nunca saem do dispositivo</li>
-</ul>
-HTML;
+$features = [
+    'Codificação e decodificação de texto e arquivos',
+    'Suporte a arrastar e soltar arquivos',
+    'Codificação Base64 compatível com URLs',
+    'Modo em tempo real',
+    'Processamento multilinha',
+    'Processamento no navegador: seus dados nunca saem do dispositivo'
+];
 
 $additionalSections = [
   [

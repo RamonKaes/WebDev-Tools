@@ -7,17 +7,17 @@ ob_start();
 
 $toolId = 'dataConverterTool';
 $lang = 'en';
+$featuresSectionTitle = 'Features';
+$resourcesSectionTitle = 'Useful Resources';
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>JSON, XML, YAML, CSV conversion</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Bidirectional format conversion</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Unix timestamp to date conversion</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Customizable output formatting</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Auto-convert live mode</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>CSV delimiter options</li>
-</ul>
-HTML;
+$features = [
+    'JSON, XML, YAML, CSV conversion',
+    'Bidirectional format conversion',
+    'Unix timestamp to date conversion',
+    'Customizable output formatting',
+    'Auto-convert live mode',
+    'CSV delimiter options'
+];
 
 $additionalSections = [
     [

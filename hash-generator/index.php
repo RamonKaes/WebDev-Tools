@@ -7,6 +7,8 @@ ob_start();
 
 $toolId = 'hashGeneratorTool';
 $lang = 'en';
+$featuresSectionTitle = 'Features';
+$resourcesSectionTitle = 'Useful Resources';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
@@ -19,18 +21,16 @@ $customAboutContent = <<<HTML
 </p>
 HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Multiple hash algorithms: MD5, SHA-1, SHA-256, SHA-384, SHA-512</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Hash text and files</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Compare hashes for verification</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>HMAC support with custom keys</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Uppercase and lowercase output options</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Copy hashes with one click</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Real-time hash generation</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>100% client-side processing - your data never leaves your browser</li>
-</ul>
-HTML;
+$features = [
+    'Multiple hash algorithms: MD5, SHA-1, SHA-256, SHA-384, SHA-512',
+    'Hash text and files',
+    'Compare hashes for verification',
+    'HMAC support with custom keys',
+    'Uppercase and lowercase output options',
+    'Copy hashes with one click',
+    'Real-time hash generation',
+    '100% client-side processing - your data never leaves your browser'
+];
 
 $customNoticeType = 'warning';
 $customNoticeContent = <<<HTML

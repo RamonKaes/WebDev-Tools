@@ -7,6 +7,17 @@ ob_start();
 
 $toolId = 'regexTesterTool';
 $lang = 'pt';
+$featuresSectionTitle = 'Recursos';
+$resourcesSectionTitle = 'Recursos Úteis';
+
+$features = [
+    'Correspondência de padrões em tempo real',
+    'Suporte para múltiplas flags (g, i, m, s, u)',
+    'Destaque de correspondências com grupos de captura',
+    'Informações detalhadas e estatísticas',
+    'Biblioteca de padrões regex comuns',
+    'Processamento 100% do lado do cliente'
+];
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML

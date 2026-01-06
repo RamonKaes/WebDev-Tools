@@ -7,6 +7,8 @@ ob_start();
 
 $toolId = 'aspectRatioCalculator';
 $lang = 'es';
+$featuresSectionTitle = 'Características';
+$resourcesSectionTitle = 'Recursos Útiles';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
@@ -20,17 +22,15 @@ $customAboutContent = <<<HTML
 </p>
 HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Calcular ancho o alto faltante desde relación de aspecto</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Plantillas de relaciones comunes (16:9, 4:3, 21:9, 1:1, etc.)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Generador del truco CSS padding-bottom</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Múltiples formatos de relación (relación, decimal, porcentaje)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Calculadora de tamaños de imagen responsivos</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Cálculo en tiempo real</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Procesamiento 100% del lado del cliente</li>
-</ul>
-HTML;
+$features = [
+    'Calcular ancho o alto faltante desde relación de aspecto',
+    'Plantillas de relaciones comunes (16:9, 4:3, 21:9, 1:1, etc.)',
+    'Generador del truco CSS padding-bottom',
+    'Múltiples formatos de relación (relación, decimal, porcentaje)',
+    'Calculadora de tamaños de imagen responsivos',
+    'Cálculo en tiempo real',
+    'Procesamiento 100% del lado del cliente'
+];
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML

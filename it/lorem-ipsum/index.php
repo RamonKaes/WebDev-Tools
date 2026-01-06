@@ -7,6 +7,8 @@ ob_start();
 
 $toolId = 'loremIpsumTool';
 $lang = 'it';
+$featuresSectionTitle = 'Funzionalità';
+$resourcesSectionTitle = 'Risorse Utili';
 $customAboutContent = <<<HTML
 <p class="mb-2">
     Genera testo segnaposto (Lorem Ipsum) per mockup, prototipi e layout.
@@ -16,17 +18,16 @@ $customAboutContent = <<<HTML
     Lorem Ipsum è il testo fittizio standard usato da designer e sviluppatori fin dal XVI secolo.
     Questo strumento ti aiuta a generare la quantità ideale di testo per concentrarti sul design senza preoccuparti del contenuto.
 HTML;
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Genera paragrafi, frasi o parole</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Quantità personalizzabile (1-100 unità)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Opzione per iniziare con "Lorem ipsum dolor sit amet..."</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Output con tag HTML di paragrafo</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Output in testo semplice</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Copia negli appunti con un clic</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Contatore di caratteri e parole in tempo reale</li>
-</ul>
-HTML;
+
+$features = [
+    'Genera paragrafi, frasi o parole',
+    'Quantità personalizzabile (1-100 unità)',
+    'Opzione per iniziare con "Lorem ipsum dolor sit amet..."',
+    'Output con tag HTML di paragrafo',
+    'Output in testo semplice',
+    'Copia negli appunti con un clic',
+    'Contatore di caratteri e parole in tempo reale'
+];
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML

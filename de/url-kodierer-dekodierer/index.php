@@ -7,30 +7,30 @@ ob_start();
 
 $toolId = 'urlEncoderDecoder';
 $lang = 'de';
+$featuresSectionTitle = 'Funktionen';
+$resourcesSectionTitle = 'Nützliche Ressourcen';
 
-$customAboutContent = '
-  <p class="mb-2">
+$customAboutContent = <<<HTML
+<p class="mb-2">
     <strong>URL-Kodierung</strong> (auch als Prozent-Kodierung bekannt) konvertiert Zeichen 
     in ein Format, das über das Internet übertragen werden kann. Sonderzeichen werden 
     durch ein "%" gefolgt von zwei Hexadezimalziffern ersetzt.
-  </p>
-  <p class="mb-0">
+</p>
+<p class="mb-0">
     Alle Kodierungs- und Dekodierungsvorgänge erfolgen lokal in Ihrem Browser. Es werden 
     keine Daten an einen Server gesendet, was vollständige Privatsphäre und Sicherheit 
     gewährleistet.
-  </p>
-';
+</p>
+HTML;
 
-$customFeaturesContent = '
-  <ul class="mb-0">
-    <li>URL-Kodierung: Kodieren von URLs und Query-Parametern</li>
-    <li>URL-Dekodierung: Dekodieren von prozent-kodierten URLs</li>
-    <li>Komponenten-Kodierung: Kodieren einzelner URL-Komponenten</li>
-    <li>Stapelverarbeitung: Mehrere Zeilen gleichzeitig kodieren/dekodieren</li>
-    <li>URL-Parsing: Extrahieren von Protokoll, Host, Pfad und Query-Strings</li>
-    <li>Auto-Erkennung: Automatische Erkennung der Kodierungsanforderungen</li>
-  </ul>
-';
+$features = [
+    'URL-Kodierung: Kodieren von URLs und Query-Parametern',
+    'URL-Dekodierung: Dekodieren von prozent-kodierten URLs',
+    'Komponenten-Kodierung: Kodieren einzelner URL-Komponenten',
+    'Stapelverarbeitung: Mehrere Zeilen gleichzeitig kodieren/dekodieren',
+    'URL-Parsing: Extrahieren von Protokoll, Host, Pfad und Query-Strings',
+    'Auto-Erkennung: Automatische Erkennung der Kodierungsanforderungen'
+];
 
 $customNoticeContent = '
   <h3 class="h6 mb-2">

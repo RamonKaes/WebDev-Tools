@@ -7,28 +7,31 @@ ob_start();
 
 $toolId = 'htmlEntityTool';
 $lang = 'it';
+$featuresSectionTitle = 'Funzionalità';
+$resourcesSectionTitle = 'Risorse Utili';
 
-$customAboutContent = '
-  <p class="mb-2">
+$customAboutContent = <<<HTML
+<p class="mb-2">
     <strong>Le entità HTML</strong> sono rappresentazioni speciali utilizzate per mostrare caratteri riservati e simboli
     senza causare problemi di parsing nel browser. Garantiscono un rendering corretto in diversi ambienti e codifiche.
-  </p>
-  <p class="mb-0">
+</p>
+<p class="mb-0">
     Questo strumento supporta entità nominali (&amp;nbsp;), numeriche decimali (&amp;#160;) ed esadecimali (&amp;#xA0;).
     Tutte le conversioni avvengono localmente nel tuo browser.
-  </p>
-';
+</p>
+HTML;
 
-$customFeaturesContent = '
-  <ul class="mb-0">
-    <li>Entità nominali: converti in entità standard come &amp;nbsp;, &amp;lt;, &amp;gt;</li>
-    <li>Entità numeriche: formato decimale (&amp;#160;) o esadecimale (&amp;#xA0;)</li>
-    <li>Bidirezionale: codifica testo o decodifica entità</li>
-    <li>Conversione automatica: trasformazione in tempo reale durante la digitazione</li>
-    <li>Riferimento caratteri: collegamento rapido all\'intera lista di entità HTML</li>
+$features = [
+    'Entità nominali: converti in entità standard come &nbsp;, &lt;, &gt;',
+    'Entità numeriche: formato decimale (&#160;) o esadecimale (&#xA0;)',
+    'Bidirezionale: codifica testo o decodifica entità',
+    'Conversione automatica: trasformazione in tempo reale durante la digitazione',
+    'Riferimento caratteri: collegamento rapido all\'intera lista di entità HTML',
+    'Download: salva i risultati in un file di testo'
+];
     <li>Download: salva il risultato in un file di testo</li>
-  </ul>
-';
+</ul>
+HTML;
 
 $additionalSections = [
   [

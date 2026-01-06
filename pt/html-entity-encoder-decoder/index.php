@@ -7,29 +7,29 @@ ob_start();
 
 $toolId = 'htmlEntityTool';
 $lang = 'pt';
+$featuresSectionTitle = 'Recursos';
+$resourcesSectionTitle = 'Recursos Úteis';
 
-$customAboutContent = '
-  <p class="mb-2">
+$customAboutContent = <<<HTML
+<p class="mb-2">
     <strong>Entidades HTML</strong> são representações especiais usadas para exibir caracteres reservados e símbolos
     sem causar problemas de interpretação no navegador.
     Elas garantem renderização correta em diferentes sistemas e codificações.
-  </p>
-  <p class="mb-0">
+</p>
+<p class="mb-0">
     A ferramenta oferece suporte a entidades nomeadas (&amp;nbsp;), numéricas decimais (&amp;#160;)
     e hexadecimais (&amp;#xA0;). Todas as conversões acontecem localmente no seu navegador.
-  </p>
-';
+</p>
+HTML;
 
-$customFeaturesContent = '
-  <ul class="mb-0">
-    <li>Entidades nomeadas: converta para &amp;nbsp;, &amp;lt;, &amp;gt; e outras</li>
-    <li>Entidades numéricas: formato decimal (&amp;#160;) ou hexadecimal (&amp;#xA0;)</li>
-    <li>Bidirecional: codifique texto ou decodifique entidades</li>
-    <li>Auto conversão: atualização em tempo real enquanto digita</li>
-    <li>Referência de caracteres: acesso rápido à lista completa</li>
-    <li>Download: salve o resultado em arquivo de texto</li>
-  </ul>
-';
+$features = [
+    'Entidades nomeadas: converta para &nbsp;, &lt;, &gt; e outras',
+    'Entidades numéricas: formato decimal (&#160;) ou hexadecimal (&#xA0;)',
+    'Bidirecional: codifique texto ou decodifique entidades',
+    'Auto conversão: atualização em tempo real enquanto digita',
+    'Referência de caracteres: acesso rápido à lista completa',
+    'Download: salve o resultado em arquivo de texto'
+];
 
 $additionalSections = [
   [

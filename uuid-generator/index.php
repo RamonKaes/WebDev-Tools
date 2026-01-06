@@ -7,6 +7,8 @@ ob_start();
 
 $toolId = 'uuidGeneratorTool';
 $lang = 'en';
+$featuresSectionTitle = 'Features';
+$resourcesSectionTitle = 'Useful Resources';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
@@ -20,17 +22,15 @@ $customAboutContent = <<<HTML
 </p>
 HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Generate UUID v4 (random) with cryptographic security</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Bulk generation: create multiple UUIDs at once</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Multiple output formats: standard, uppercase, no hyphens</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Copy individual UUIDs or all at once</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>RFC 4122 compliant</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>No server communication - 100% client-side</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Instant generation with no delays</li>
-</ul>
-HTML;
+$features = [
+    'Generate UUID v4 (random) with cryptographic security',
+    'Bulk generation: create multiple UUIDs at once',
+    'Multiple output formats: standard, uppercase, no hyphens',
+    'Copy individual UUIDs or all at once',
+    'RFC 4122 compliant',
+    'No server communication - 100% client-side',
+    'Instant generation with no delays'
+];
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML

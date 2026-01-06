@@ -85,10 +85,34 @@ else
 fi
 
 # ============================================
-# 5. Copy Bootstrap
+# 5. Build Custom Bootstrap
 # ============================================
-echo "📦 Copying Bootstrap..."
-cp -r assets/bootstrap "$DIST_DIR/assets/"
+echo "📦 Building Custom Bootstrap..."
+mkdir -p "$DIST_DIR/assets/bootstrap/css"
+
+# ⚠️ WICHTIG: Bei neuen Tools prüfen, ob zusätzliche Bootstrap-Komponenten
+# in build-tools/bootstrap-custom.scss importiert werden müssen!
+# Aktuelle Komponenten: buttons, nav, navbar, card, badge, forms, dropdown,
+# button-group, transitions, modal, tooltip, offcanvas
+# NICHT importiert: accordion, alert, breadcrumb, carousel, list-group,
+# pagination, placeholders, popovers, progress, spinners, tables, toasts
+
+if command -v npx &> /dev/null && npx sass --version &> /dev/null; then
+  npx sass build-tools/bootstrap-custom.scss "$DIST_DIR/assets/bootstrap/css/bootstrap.min.css" \
+    --style=compressed --no-source-map
+  
+  ORIGINAL_SIZE=$(stat -f%z "assets/bootstrap/css/bootstrap.min.css" 2>/dev/null || stat -c%s "assets/bootstrap/css/bootstrap.min.css")
+  CUSTOM_SIZE=$(stat -f%z "$DIST_DIR/assets/bootstrap/css/bootstrap.min.css" 2>/dev/null || stat -c%s "$DIST_DIR/assets/bootstrap/css/bootstrap.min.css")
+  REDUCTION=$(echo "scale=1; 100 - ($CUSTOM_SIZE * 100 / $ORIGINAL_SIZE)" | bc)
+  
+  echo "  ✓ Custom Bootstrap compiled (${CUSTOM_SIZE} bytes, ${REDUCTION}% Reduktion)"
+else
+  cp -r assets/bootstrap "$DIST_DIR/assets/"
+  echo "  ⚠ sass not available, using original Bootstrap (228KB)"
+fi
+
+# Copy Bootstrap Icons
+cp -r assets/bootstrap-icons "$DIST_DIR/assets/" 2>/dev/null || true
 
 # ============================================
 # 6. Copy Static Assets
@@ -96,7 +120,6 @@ cp -r assets/bootstrap "$DIST_DIR/assets/"
 echo "🖼️  Copying static assets..."
 cp -r assets/img "$DIST_DIR/assets/"
 cp -r assets/data "$DIST_DIR/assets/"
-cp -r assets/bootstrap-icons "$DIST_DIR/assets/" 2>/dev/null || true
 
 # ============================================
 # 7. Copy i18n

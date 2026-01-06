@@ -7,6 +7,8 @@ ob_start();
 
 $toolId = 'jsonFormatterValidator';
 $lang = 'pt';
+$featuresSectionTitle = 'Recursos';
+$resourcesSectionTitle = 'Recursos Úteis';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
@@ -17,18 +19,16 @@ $customAboutContent = <<<HTML
     Tudo acontece no seu navegador para manter os dados privados.</p>
 HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Formatação e prettify com indentação de 2 ou 4 espaços</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Validação sintática com mensagens detalhadas</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Minificação de JSON para reduzir tamanho</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Validação em tempo real</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Detecção de erros linha a linha</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Cópia do resultado com um clique</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Destaque visual dos erros</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Processamento 100% local</li>
-</ul>
-HTML;
+$features = [
+    'Formatação e prettify com indentação de 2 ou 4 espaços',
+    'Validação sintática com mensagens detalhadas',
+    'Minificação de JSON para reduzir tamanho',
+    'Validação em tempo real',
+    'Detecção de erros linha a linha',
+    'Cópia do resultado com um clique',
+    'Destaque visual dos erros',
+    'Processamento 100% local'
+];
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML

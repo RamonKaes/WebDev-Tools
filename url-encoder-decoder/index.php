@@ -7,29 +7,29 @@ ob_start();
 
 $toolId = 'urlEncoderDecoder';
 $lang = 'en';
+$featuresSectionTitle = 'Features';
+$resourcesSectionTitle = 'Useful Resources';
 
-$customAboutContent = '
-  <p class="mb-2">
+$customAboutContent = <<<HTML
+<p class="mb-2">
     <strong>URL Encoding</strong> (also known as percent-encoding) converts characters 
     into a format that can be transmitted over the Internet. Special characters are 
     replaced with a "%" followed by two hexadecimal digits.
-  </p>
-  <p class="mb-0">
+</p>
+<p class="mb-0">
     All encoding and decoding happens locally in your browser. No data is sent to any 
     server, ensuring complete privacy and security.
-  </p>
-';
+</p>
+HTML;
 
-$customFeaturesContent = '
-  <ul class="mb-0">
-    <li>URL Encoding: Encode URLs and query parameters</li>
-    <li>URL Decoding: Decode percent-encoded URLs</li>
-    <li>Component Encoding: Encode individual URL components</li>
-    <li>Bulk Processing: Encode/decode multiple lines at once</li>
-    <li>URL Parsing: Extract protocol, host, path, and query strings</li>
-    <li>Auto-detection: Automatically detect encoding requirements</li>
-  </ul>
-';
+$features = [
+    'URL Encoding: Encode URLs and query parameters',
+    'URL Decoding: Decode percent-encoded URLs',
+    'Component Encoding: Encode individual URL components',
+    'Bulk Processing: Encode/decode multiple lines at once',
+    'URL Parsing: Extract protocol, host, path, and query strings',
+    'Auto-detection: Automatically detect encoding requirements'
+];
 
 $customNoticeContent = '
   <h3 class="h6 mb-2">

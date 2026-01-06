@@ -7,6 +7,8 @@ ob_start();
 
 $toolId = 'loremIpsumTool';
 $lang = 'pt';
+$featuresSectionTitle = 'Recursos';
+$resourcesSectionTitle = 'Recursos Úteis';
 $customAboutContent = <<<HTML
 <p class="mb-2">
     Gere texto de preenchimento (Lorem Ipsum) para maquetes, protótipos e layouts.
@@ -16,16 +18,15 @@ $customAboutContent = <<<HTML
     Lorem Ipsum é o texto padrão usado por designers e desenvolvedores desde o século XVI.
     Esta ferramenta ajuda você a gerar a quantidade ideal de texto fictício para focar no design sem se preocupar com o conteúdo.
 HTML;
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Gere parágrafos, frases ou palavras</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Quantidade ajustável (1-100 unidades)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Opção para iniciar com "Lorem ipsum dolor sit amet..."</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Saída com tags HTML de parágrafo</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Saída em texto simples</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Cópia para a área de transferência com um clique</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Contador de caracteres e palavras em tempo real</li>
-</ul>
+$features = [
+    'Gere parágrafos, frases ou palavras',
+    'Quantidade ajustável (1-100 unidades)',
+    'Opção para iniciar com "Lorem ipsum dolor sit amet..."',
+    'Saída com tags HTML de parágrafo',
+    'Saída em texto simples',
+    'Cópia para a área de transferência com um clique',
+    'Contador de caracteres e palavras em tempo real'
+];
 HTML;
 
 $customNoticeType = 'info';

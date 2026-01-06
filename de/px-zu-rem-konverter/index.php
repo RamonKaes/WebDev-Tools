@@ -7,21 +7,21 @@ ob_start();
 
 $toolId = 'pxToRemConverter';
 $lang = 'de';
+$featuresSectionTitle = 'Funktionen';
+$resourcesSectionTitle = 'Nützliche Ressourcen';
 $customAboutContent = <<<HTML
 <p class="mb-2">Konvertieren Sie schnell und präzise zwischen Pixeln (px) und rem-Einheiten. Unverzichtbar für responsives Webdesign und barrierefreie Typografie.</p>
 <p>Die rem (root em) Einheit ist relativ zur Schriftgröße des Root-Elements, was sie ideal für die Erstellung skalierbarer und barrierefreier Interfaces macht. Dieses Tool hilft Ihnen, px-Werte basierend auf Ihrer Basis-Schriftgröße in rem zu konvertieren und umgekehrt.</p>
 HTML;
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>px zu rem und rem zu px konvertieren</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Anpassbare Basis-Schriftgröße (Standard: 16px)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Batch-Konvertierung: mehrere Werte auf einmal konvertieren</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Echtzeit-Konvertierung während der Eingabe</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Konvertierte Werte mit einem Klick kopieren</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Gängige Breakpoint-Vorlagen</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>100% clientseitige Verarbeitung</li>
-</ul>
-HTML;
+$features = [
+    'px zu rem und rem zu px konvertieren',
+    'Anpassbare Basis-Schriftgröße (Standard: 16px)',
+    'Batch-Konvertierung: mehrere Werte auf einmal konvertieren',
+    'Echtzeit-Konvertierung während der Eingabe',
+    'Konvertierte Werte mit einem Klick kopieren',
+    'Gängige Breakpoint-Vorlagen',
+    '100% clientseitige Verarbeitung'
+];
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
     <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Warum rem-Einheiten verwenden?</h2>

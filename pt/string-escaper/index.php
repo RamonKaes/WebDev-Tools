@@ -7,6 +7,8 @@ ob_start();
 
 $toolId = 'stringEscaperTool';
 $lang = 'pt';
+$featuresSectionTitle = 'Recursos';
+$resourcesSectionTitle = 'Recursos Úteis';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
@@ -18,17 +20,15 @@ $customAboutContent = <<<HTML
 </p>
 HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Escape HTML/XML – codifica caracteres especiais como &lt;, &gt;, &amp;</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Escape JavaScript – trata aspas, quebras de linha e caracteres especiais</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Escape JSON – aplica a sintaxe correta para strings JSON</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Escape SQL – ajuda a prevenir injeção de SQL</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Escape CSV – lida com aspas e delimitadores</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Processamento 100% local (foco em privacidade)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Copie o resultado com um clique</li>
-</ul>
-HTML;
+$features = [
+    'Escape HTML/XML – codifica caracteres especiais como <, >, &',
+    'Escape JavaScript – trata aspas, quebras de linha e caracteres especiais',
+    'Escape JSON – aplica a sintaxe correta para strings JSON',
+    'Escape SQL – ajuda a prevenir injeção de SQL',
+    'Escape CSV – lida com aspas e delimitadores',
+    'Processamento 100% local (foco em privacidade)',
+    'Copie o resultado com um clique'
+];
 
 $additionalSections = [
     [

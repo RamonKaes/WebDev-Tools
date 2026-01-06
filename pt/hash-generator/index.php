@@ -7,6 +7,8 @@ ob_start();
 
 $toolId = 'hashGeneratorTool';
 $lang = 'pt';
+$featuresSectionTitle = 'Recursos';
+$resourcesSectionTitle = 'Recursos Úteis';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
@@ -19,18 +21,16 @@ $customAboutContent = <<<HTML
 </p>
 HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Algoritmos: MD5, SHA-1, SHA-256, SHA-384, SHA-512</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Hash para texto e arquivos</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Comparação de hashes para verificação</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Suporte a HMAC com chave personalizada</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Saída em maiúsculas ou minúsculas</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Cópia com um clique</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Geração em tempo real</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Processamento 100% local</li>
-</ul>
-HTML;
+$features = [
+    'Algoritmos: MD5, SHA-1, SHA-256, SHA-384, SHA-512',
+    'Hash para texto e arquivos',
+    'Comparação de hashes para verificação',
+    'Suporte a HMAC com chave personalizada',
+    'Saída em maiúsculas ou minúsculas',
+    'Cópia com um clique',
+    'Geração em tempo real',
+    'Processamento 100% local'
+];
 
 $customNoticeType = 'warning';
 $customNoticeContent = <<<HTML

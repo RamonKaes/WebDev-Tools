@@ -7,6 +7,8 @@ ob_start();
 
 $toolId = 'pxToRemConverter';
 $lang = 'fr';
+$featuresSectionTitle = 'Fonctionnalités';
+$resourcesSectionTitle = 'Ressources Utiles';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
@@ -20,17 +22,15 @@ $customAboutContent = <<<HTML
 </p>
 HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Conversion px → rem et rem → px</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Taille de police de base personnalisable (par défaut&nbsp;: 16&nbsp;px)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Conversion en série&nbsp;: convertissez plusieurs valeurs en une fois</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Conversion en temps réel pendant la saisie</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Copie rapide des valeurs converties</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Préréglages pour les points de rupture courants</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Traitement 100&nbsp;% côté client</li>
-</ul>
-HTML;
+$features = [
+    'Conversion px → rem et rem → px',
+    'Taille de police de base personnalisable (par défaut : 16 px)',
+    'Conversion en série : convertissez plusieurs valeurs en une fois',
+    'Conversion en temps réel pendant la saisie',
+    'Copie rapide des valeurs converties',
+    'Préréglages pour les points de rupture courants',
+    'Traitement 100 % côté client'
+];
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML

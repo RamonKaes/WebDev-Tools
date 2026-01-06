@@ -7,6 +7,8 @@ ob_start();
 
 $toolId = 'loremIpsumTool';
 $lang = 'en';
+$featuresSectionTitle = 'Features';
+$resourcesSectionTitle = 'Useful Resources';
 $customAboutContent = <<<HTML
 <p class="mb-2">
     Generate placeholder text (Lorem Ipsum) for your design mockups, prototypes, and layouts. 
@@ -17,17 +19,16 @@ $customAboutContent = <<<HTML
     This tool helps you generate the perfect amount of placeholder text for your projects, 
     allowing you to focus on design without worrying about content.
 HTML;
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Generate paragraphs, sentences, or words</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Customizable quantity (1-100 units)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Start with "Lorem ipsum dolor sit amet..."</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>HTML paragraph tags option</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Plain text output</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Copy to clipboard with one click</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Real-time character and word count</li>
-</ul>
-HTML;
+
+$features = [
+    'Generate paragraphs, sentences, or words',
+    'Customizable quantity (1-100 units)',
+    'Start with "Lorem ipsum dolor sit amet..."',
+    'HTML paragraph tags option',
+    'Plain text output',
+    'Copy to clipboard with one click',
+    'Real-time character and word count'
+];
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML

@@ -7,30 +7,30 @@ ob_start();
 
 $toolId = 'htmlEntityTool';
 $lang = 'de';
+$featuresSectionTitle = 'Funktionen';
+$resourcesSectionTitle = 'Nützliche Ressourcen';
 
-$customAboutContent = '
-  <p class="mb-2">
+$customAboutContent = <<<HTML
+<p class="mb-2">
     <strong>HTML-Entities</strong> sind spezielle Zeichendarstellungen in HTML, um 
     reservierte Zeichen und Symbole korrekt anzuzeigen. Sie verhindern Browser-Parsing-Probleme 
     und gewährleisten eine korrekte Zeichendarstellung auf verschiedenen Systemen.
-  </p>
-  <p class="mb-0">
+</p>
+<p class="mb-0">
     Dieses Tool unterstützt benannte Entities (&amp;nbsp;), numerische dezimale Entities (&amp;#160;) 
     und hexadezimale Entities (&amp;#xA0;). Alle Konvertierungen erfolgen lokal in Ihrem Browser 
     für vollständigen Datenschutz.
-  </p>
-';
+</p>
+HTML;
 
-$customFeaturesContent = '
-  <ul class="mb-0">
-    <li>Benannte Entities: Konvertierung zu Standard-HTML-Entities wie &amp;nbsp;, &amp;lt;, &amp;gt;</li>
-    <li>Numerische Entities: Dezimal (&amp;#160;) oder Hexadezimal (&amp;#xA0;) Format</li>
-    <li>Bidirektional: Text zu Entities encodieren oder Entities zu Text decodieren</li>
-    <li>Auto-Konvertierung: Echtzeit-Konvertierung während der Eingabe</li>
-    <li>Zeichen-Referenz: Schneller Link zur Übersicht aller HTML-Entities</li>
-    <li>Download-Unterstützung: Ergebnisse als Textdatei speichern</li>
-  </ul>
-';
+$features = [
+    'Benannte Entities: Konvertierung zu Standard-HTML-Entities wie &nbsp;, &lt;, &gt;',
+    'Numerische Entities: Dezimal (&#160;) oder Hexadezimal (&#xA0;) Format',
+    'Bidirektional: Text zu Entities encodieren oder Entities zu Text decodieren',
+    'Auto-Konvertierung: Echtzeit-Konvertierung während der Eingabe',
+    'Zeichen-Referenz: Schneller Link zur Übersicht aller HTML-Entities',
+    'Download-Unterstützung: Ergebnisse als Textdatei speichern'
+];
 
 $additionalSections = [
   [

@@ -19,16 +19,15 @@ $customAboutContent = <<<HTML
 </p>
 HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Geração de UUID v4 (aleatório) com segurança criptográfica</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Geração em lote: crie vários UUIDs de uma vez</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Formatos: padrão, maiúsculo, sem hífens</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Copie UUIDs individualmente ou todos de uma vez</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Conformidade com RFC 4122</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Processamento 100% no navegador</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Geração instantânea sem atrasos</li>
-</ul>
+$features = [
+    'Geração de UUID v4 (aleatório) com segurança criptográfica',
+    'Geração em lote: crie vários UUIDs de uma vez',
+    'Formatos: padrão, maiúsculo, sem hífens',
+    'Copie UUIDs individualmente ou todos de uma vez',
+    'Conformidade com RFC 4122',
+    'Processamento 100% no navegador',
+    'Geração instantânea sem atrasos'
+];
 HTML;
 
 $customNoticeType = 'info';

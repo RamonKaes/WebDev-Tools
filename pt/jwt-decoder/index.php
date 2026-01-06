@@ -7,28 +7,28 @@ ob_start();
 
 $toolId = 'jwtDecoderTool';
 $lang = 'pt';
+$featuresSectionTitle = 'Recursos';
+$resourcesSectionTitle = 'Recursos Úteis';
 
-$customAboutContent = '
-  <p class="mb-2">
+$customAboutContent = <<<HTML
+<p class="mb-2">
     <strong>JSON Web Tokens (JWT)</strong> são uma forma compacta e segura para transportar afirmações entre duas partes.
     Muito usados em autenticação e troca de informações em aplicações web modernas e APIs.
-  </p>
-  <p class="mb-0">
+</p>
+<p class="mb-0">
     Este decodificador separa e exibe o cabeçalho, o payload e a assinatura de um JWT.
     Atenção: verificar a assinatura exige a chave secreta e deve ser feito no servidor.
-  </p>
-';
+</p>
+HTML;
 
-$customFeaturesContent = '
-  <ul class="mb-0">
-    <li>Decodificação do header: veja algoritmo (alg) e tipo (typ)</li>
-    <li>Extração do payload: decode de claims e dados de usuário</li>
-    <li>Checagem de expiração: valida automaticamente se o token expirou</li>
-    <li>Destaque de sintaxe: JSON colorido para leitura fácil</li>
-    <li>Assinatura: exibe a assinatura codificada em Base64URL</li>
-    <li>Processamento local: tudo ocorre no navegador</li>
-  </ul>
-';
+$features = [
+    'Decodificação do header: veja algoritmo (alg) e tipo (typ)',
+    'Extração do payload: decode de claims e dados de usuário',
+    'Checagem de expiração: valida automaticamente se o token expirou',
+    'Destaque de sintaxe: JSON colorido para leitura fácil',
+    'Assinatura: exibe a assinatura codificada em Base64URL',
+    'Processamento local: tudo ocorre no navegador'
+];
 
 $customNoticeType = 'warning';
 $customNoticeContent = <<<HTML

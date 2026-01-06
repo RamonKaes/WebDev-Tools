@@ -7,6 +7,8 @@ ob_start();
 
 $toolId = 'hashGeneratorTool';
 $lang = 'fr';
+$featuresSectionTitle = 'Fonctionnalités';
+$resourcesSectionTitle = 'Ressources Utiles';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
@@ -19,18 +21,16 @@ $customAboutContent = <<<HTML
 </p>
 HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Multiples algorithmes&nbsp;: MD5, SHA-1, SHA-256, SHA-384, SHA-512</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Hachage de texte et de fichiers</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Comparaison des empreintes pour vérification</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Prise en charge HMAC avec clés personnalisées</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Sortie en majuscules ou minuscules</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Copie des empreintes en un clic</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Génération en temps réel</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Traitement 100&nbsp;% côté client&nbsp;: vos données restent sur votre appareil</li>
-</ul>
-HTML;
+$features = [
+    'Multiples algorithmes : MD5, SHA-1, SHA-256, SHA-384, SHA-512',
+    'Hachage de texte et de fichiers',
+    'Comparaison des empreintes pour vérification',
+    'Prise en charge HMAC avec clés personnalisées',
+    'Sortie en majuscules ou minuscules',
+    'Copie des empreintes en un clic',
+    'Génération en temps réel',
+    'Traitement 100 % côté client : vos données restent sur votre appareil'
+];
 
 $customNoticeType = 'warning';
 $customNoticeContent = <<<HTML

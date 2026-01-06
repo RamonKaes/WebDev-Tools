@@ -7,6 +7,8 @@ ob_start();
 
 $toolId = 'pxToRemConverter';
 $lang = 'pt';
+$featuresSectionTitle = 'Recursos';
+$resourcesSectionTitle = 'Recursos Úteis';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
@@ -20,17 +22,15 @@ $customAboutContent = <<<HTML
 </p>
 HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Conversão px → rem e rem → px</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Tamanho de fonte base personalizável (padrão: 16 px)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Conversão em lote: vários valores de uma vez</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Resultados em tempo real enquanto digita</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Copie os valores convertidos com um clique</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Predefinições de breakpoints mais comuns</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Processamento 100% no navegador</li>
-</ul>
-HTML;
+$features = [
+    'Conversão px → rem e rem → px',
+    'Tamanho de fonte base personalizável (padrão: 16 px)',
+    'Conversão em lote: vários valores de uma vez',
+    'Resultados em tempo real enquanto digita',
+    'Copie os valores convertidos com um clique',
+    'Predefinições de breakpoints mais comuns',
+    'Processamento 100% no navegador'
+];
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML

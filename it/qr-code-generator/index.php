@@ -7,6 +7,8 @@ ob_start();
 
 $toolId = 'qrCodeGeneratorTool';
 $lang = 'it';
+$featuresSectionTitle = 'Funzionalità';
+$resourcesSectionTitle = 'Risorse Utili';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
@@ -20,12 +22,15 @@ $customAboutContent = <<<HTML
 </p>
 HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Genera QR code per URL, testo, numeri di telefono, email e altro</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Dimensione e qualità personalizzabili</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Colori personalizzati per sfondo e primo piano</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Livelli di correzione errori (L, M, Q, H)</li>
+$features = [
+    'Genera QR code per URL, testo, numeri di telefono, email e altro',
+    'Dimensione e qualità personalizzabili',
+    'Colori personalizzati per sfondo e primo piano',
+    'Livelli di correzione errori (L, M, Q, H)',
+    'Download in formato PNG o SVG',
+    'Anteprima in tempo reale',
+    'Generazione 100% lato client'
+];
     <li><i class="bi bi-check-circle-fill text-success me-2"></i>Download come PNG o SVG</li>
     <li><i class="bi bi-check-circle-fill text-success me-2"></i>Anteprima in tempo reale</li>
     <li><i class="bi bi-check-circle-fill text-success me-2"></i>Generazione 100% lato client</li>

@@ -7,29 +7,29 @@ ob_start();
 
 $toolId = 'punycodeConverterTool';
 $lang = 'fr';
+$featuresSectionTitle = 'Fonctionnalités';
+$resourcesSectionTitle = 'Ressources Utiles';
 
-$customAboutContent = '
-  <p class="mb-2">
-    <strong>Punycode</strong> est une syntaxe d\'encodage qui permet de représenter des caractères Unicode
+$customAboutContent = <<<HTML
+<p class="mb-2">
+    <strong>Punycode</strong> est une syntaxe d'encodage qui permet de représenter des caractères Unicode
     dans des noms de domaine en utilisant uniquement des caractères ASCII. Il rend possibles les noms de domaine internationalisés (IDN)
-    tout en restant compatible avec l\'infrastructure DNS existante.
-  </p>
-  <p class="mb-0">
+    tout en restant compatible avec l'infrastructure DNS existante.
+</p>
+<p class="mb-0">
     Cet outil implémente la RFC 3492 pour convertir des domaines Unicode (münchen.de) en leurs équivalents Punycode (xn--mnchen-3ya.de) et inversement.
-    Toutes les conversions s\'effectuent localement dans votre navigateur.
-  </p>
-';
+    Toutes les conversions s'effectuent localement dans votre navigateur.
+</p>
+HTML;
 
-$customFeaturesContent = '
-  <ul class="mb-0">
-    <li>Conversion bidirectionnelle&nbsp;: Unicode vers Punycode et inversement</li>
-    <li>Détection automatique&nbsp;: identifie automatiquement le format d\'entrée</li>
-    <li>Conformité RFC 3492&nbsp;: implémentation complète de la norme Punycode</li>
-    <li>Traitement par lot&nbsp;: convertissez plusieurs domaines en même temps (ligne par ligne)</li>
-    <li>Domaines d\'exemple&nbsp;: chargez des domaines internationaux à tester</li>
-    <li>Conversion en temps réel&nbsp;: transformation automatique pendant la saisie</li>
-  </ul>
-';
+$features = [
+    'Conversion bidirectionnelle : Unicode vers Punycode et inversement',
+    'Détection automatique : identifie automatiquement le format d\'entrée',
+    'Conformité RFC 3492 : implémentation complète de la norme Punycode',
+    'Traitement par lot : convertissez plusieurs domaines en même temps (ligne par ligne)',
+    'Domaines d\'exemple : chargez des domaines internationaux à tester',
+    'Conversion en temps réel : transformation automatique pendant la saisie'
+];
 
 $additionalSections = [
   [

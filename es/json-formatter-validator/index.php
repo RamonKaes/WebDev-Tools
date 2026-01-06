@@ -7,6 +7,8 @@ ob_start();
 
 $toolId = 'jsonFormatterValidator';
 $lang = 'es';
+$featuresSectionTitle = 'Características';
+$resourcesSectionTitle = 'Recursos Útiles';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
@@ -19,18 +21,16 @@ $customAboutContent = <<<HTML
 </p>
 HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Formatea y embellece JSON con indentación configurable (2 o 4 espacios)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Valida la sintaxis con mensajes de error detallados</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Minifica JSON para reducir el tamaño</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Validación en tiempo real</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Detección de errores línea por línea</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Copiar el resultado formateado con un clic</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Resaltado claro de errores y mensajes comprensibles</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Privacidad: todo sucede en tu navegador</li>
-</ul>
-HTML;
+$features = [
+    'Formatea y embellece JSON con indentación configurable (2 o 4 espacios)',
+    'Valida la sintaxis con mensajes de error detallados',
+    'Minifica JSON para reducir el tamaño',
+    'Validación en tiempo real',
+    'Detección de errores línea por línea',
+    'Copiar el resultado formateado con un clic',
+    'Resaltado claro de errores y mensajes comprensibles',
+    'Privacidad: todo sucede en tu navegador'
+];
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML

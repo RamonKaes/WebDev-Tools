@@ -7,6 +7,17 @@ ob_start();
 
 $toolId = 'regexTesterTool';
 $lang = 'it';
+$featuresSectionTitle = 'Funzionalità';
+$resourcesSectionTitle = 'Risorse Utili';
+
+$features = [
+    'Corrispondenza di pattern in tempo reale',
+    'Supporto per più flag (g, i, m, s, u)',
+    'Evidenziazione delle corrispondenze con gruppi di cattura',
+    'Informazioni dettagliate e statistiche',
+    'Libreria di pattern regex comuni',
+    'Elaborazione 100% lato client'
+];
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML

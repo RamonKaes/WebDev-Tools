@@ -7,6 +7,8 @@ ob_start();
 
 $toolId = 'jsonFormatterValidator';
 $lang = 'it';
+$featuresSectionTitle = 'Funzionalità';
+$resourcesSectionTitle = 'Risorse Utili';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
@@ -17,15 +19,16 @@ $customAboutContent = <<<HTML
     Tutto il processo avviene nel tuo browser per garantire la massima riservatezza.</p>
 HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Formattazione e beautify con indentazione a 2 o 4 spazi</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Validazione sintattica con messaggi chiari</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Minificazione del JSON per ridurre la dimensione</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Validazione in tempo reale</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Rilevamento errori riga per riga</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Copia del risultato con un clic</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Evidenziazione chiara degli errori</li>
+$features = [
+    'Formattazione e beautify con indentazione a 2 o 4 spazi',
+    'Validazione sintattica con messaggi chiari',
+    'Minificazione del JSON per ridurre la dimensione',
+    'Validazione in tempo reale',
+    'Rilevamento errori riga per riga',
+    'Copia del risultato con un clic',
+    'Evidenziazione chiara degli errori',
+    'Elaborazione lato client: privacy garantita'
+];
     <li><i class="bi bi-check-circle-fill text-success me-2"></i>Privacy garantita: tutto resta nel browser</li>
 </ul>
 HTML;

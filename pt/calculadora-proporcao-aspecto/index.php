@@ -7,6 +7,8 @@ ob_start();
 
 $toolId = 'aspectRatioCalculator';
 $lang = 'pt';
+$featuresSectionTitle = 'Recursos';
+$resourcesSectionTitle = 'Recursos Úteis';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
@@ -20,17 +22,15 @@ $customAboutContent = <<<HTML
 </p>
 HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Calcular largura ou altura ausente a partir da proporção de aspecto</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Predefinições de proporções comuns (16:9, 4:3, 21:9, 1:1, etc.)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Gerador do truque CSS padding-bottom</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Múltiplos formatos de proporção (proporção, decimal, porcentagem)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Calculadora de tamanhos de imagem responsivos</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Cálculo em tempo real</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Processamento 100% no lado do cliente</li>
-</ul>
-HTML;
+$features = [
+    'Calcular largura ou altura ausente a partir da proporção de aspecto',
+    'Predefinições de proporções comuns (16:9, 4:3, 21:9, 1:1, etc.)',
+    'Gerador do truque CSS padding-bottom',
+    'Múltiplos formatos de proporção (proporção, decimal, porcentagem)',
+    'Calculadora de tamanhos de imagem responsivos',
+    'Cálculo em tempo real',
+    'Processamento 100% no lado do cliente'
+];
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML

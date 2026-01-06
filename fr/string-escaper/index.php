@@ -7,6 +7,8 @@ ob_start();
 
 $toolId = 'stringEscaperTool';
 $lang = 'fr';
+$featuresSectionTitle = 'Fonctionnalités';
+$resourcesSectionTitle = 'Ressources Utiles';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
@@ -18,17 +20,15 @@ $customAboutContent = <<<HTML
 </p>
 HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Échappement HTML/XML&nbsp;: encode les caractères spéciaux comme &lt;, &gt;, &amp;</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Échappement JavaScript&nbsp;: gère guillemets, retours à la ligne et caractères spéciaux</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Échappement JSON&nbsp;: respect des chaînes JSON valides</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Échappement SQL&nbsp;: prévention des injections SQL</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Échappement CSV&nbsp;: gestion des guillemets et délimiteurs</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Traitement côté client (privacy-first)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Copie en un clic</li>
-</ul>
-HTML;
+$features = [
+    'Échappement HTML/XML : encode les caractères spéciaux comme <, >, &',
+    'Échappement JavaScript : gère guillemets, retours à la ligne et caractères spéciaux',
+    'Échappement JSON : respect des chaînes JSON valides',
+    'Échappement SQL : prévention des injections SQL',
+    'Échappement CSV : gestion des guillemets et délimiteurs',
+    'Traitement côté client (privacy-first)',
+    'Copie en un clic'
+];
 
 $additionalSections = [
     [

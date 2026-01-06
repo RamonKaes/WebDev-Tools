@@ -7,25 +7,18 @@ ob_start();
 
 $toolId = 'codeFormatterTool';
 $lang = 'de';
+$featuresSectionTitle = 'Funktionen';
+$resourcesSectionTitle = 'Nützliche Ressourcen';
 
+$features = [
+    'HTML, CSS, JavaScript, XML, SQL Formatierung',
+    'Verschönerungs- und Minifizierungs-Modi',
+    'Anpassbare Einrückung (2/4 Leerzeichen, Tabs)',
+    'Echtzeit-Automatische Formatierung',
+    'Syntax-Validierung',
+    'Kopier- und Download-Unterstützung'
+];
 
-
-$toolId = 'codeFormatterTool';
-$lang = 'de';
-
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>HTML, CSS, JavaScript, XML, SQL Formatierung</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Verschönerungs- und Minifizierungs-Modi</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Anpassbare Einrückung (2/4 Leerzeichen, Tabs)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Echtzeit-Automatische Formatierung</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Syntax-Validierung</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Kopier- und Download-Unterstützung</li>
-</ul>
-HTML;
-
-
-/*
 $customNoticeContent = <<<HTML
 <div class="alert alert-info" role="alert">
   <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Formatierungsoptionen</h2>
@@ -36,7 +29,6 @@ $customNoticeContent = <<<HTML
   </ul>
 </div>
 HTML;
-*/
 
 $additionalSections = [
     [

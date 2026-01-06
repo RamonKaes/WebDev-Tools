@@ -7,27 +7,29 @@ ob_start();
 
 $toolId = 'urlEncoderDecoder';
 $lang = 'it';
+$featuresSectionTitle = 'Funzionalità';
+$resourcesSectionTitle = 'Risorse Utili';
 
-$customAboutContent = '
-  <p class="mb-2">
+$customAboutContent = <<<HTML
+<p class="mb-2">
     La <strong>codifica URL</strong> (percent-encoding) converte i caratteri in un formato sicuro per la trasmissione sul web.
     I caratteri speciali sono sostituiti da "%" seguito da due cifre esadecimali.
-  </p>
-  <p class="mb-0">
+</p>
+<p class="mb-0">
     Tutto il processo avviene localmente nel browser, senza invio di dati a server esterni.
-  </p>
-';
+</p>
+HTML;
 
-$customFeaturesContent = '
-  <ul class="mb-0">
-    <li>Codifica URL: encoding di URL complete e parametri di query</li>
-    <li>Decodifica URL: converti percent-encoding in testo originale</li>
-    <li>Componenti: codifica parti specifiche dell\'URL</li>
-    <li>Batch: elabora più righe contemporaneamente</li>
-    <li>Analisi: estrai protocollo, host, percorso e query string</li>
-    <li>Rilevamento automatico: identifica quando codificare o decodificare</li>
-  </ul>
-';
+$features = [
+    'Codifica URL: encoding di URL complete e parametri di query',
+    'Decodifica URL: converti percent-encoding in testo originale',
+    'Componenti: codifica parti specifiche dell\'URL',
+    'Batch: elabora più righe contemporaneamente',
+    'Analisi: estrai protocollo, host, percorso e query string',
+    'Rilevamento automatico: identifica quando codificare o decodificare'
+];
+</ul>
+HTML;
 
 $customNoticeContent = '
   <h3 class="h6 mb-2">

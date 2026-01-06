@@ -7,6 +7,8 @@ ob_start();
 
 $toolId = 'pxToRemConverter';
 $lang = 'it';
+$featuresSectionTitle = 'Funzionalità';
+$resourcesSectionTitle = 'Risorse Utili';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
@@ -20,12 +22,15 @@ $customAboutContent = <<<HTML
 </p>
 HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Conversione px → rem e rem → px</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Dimensione font base personalizzabile (predefinito: 16 px)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Conversione batch: più valori contemporaneamente</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Risultati in tempo reale mentre digiti</li>
+$features = [
+    'Conversione px → rem e rem → px',
+    'Dimensione font base personalizzabile (predefinito: 16 px)',
+    'Conversione batch: più valori contemporaneamente',
+    'Risultati in tempo reale mentre digiti',
+    'Copia veloce dei valori convertiti',
+    'Preset per breakpoint comuni',
+    'Elaborazione 100% lato client'
+];
     <li><i class="bi bi-check-circle-fill text-success me-2"></i>Copia i valori convertiti con un clic</li>
     <li><i class="bi bi-check-circle-fill text-success me-2"></i>Preset dei breakpoint più comuni</li>
     <li><i class="bi bi-check-circle-fill text-success me-2"></i>Elaborazione 100% nel browser</li>

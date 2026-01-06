@@ -7,6 +7,8 @@ ob_start();
 
 $toolId = 'qrCodeGeneratorTool';
 $lang = 'fr';
+$featuresSectionTitle = 'Fonctionnalités';
+$resourcesSectionTitle = 'Ressources Utiles';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
@@ -20,17 +22,15 @@ $customAboutContent = <<<HTML
 </p>
 HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Générer des codes QR pour les URL, textes, numéros de téléphone, e-mails, etc.</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Taille et qualité personnalisables</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Couleurs de premier plan et d'arrière-plan personnalisées</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Niveaux de correction d'erreur (L, M, Q, H)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Téléchargement en PNG ou SVG</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Aperçu en temps réel</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Génération 100&nbsp;% côté client</li>
-</ul>
-HTML;
+$features = [
+    'Générer des codes QR pour les URL, textes, numéros de téléphone, e-mails, etc.',
+    'Taille et qualité personnalisables',
+    'Couleurs de premier plan et d\'arrière-plan personnalisées',
+    'Niveaux de correction d\'erreur (L, M, Q, H)',
+    'Téléchargement en PNG ou SVG',
+    'Aperçu en temps réel',
+    'Génération 100 % côté client'
+];
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML

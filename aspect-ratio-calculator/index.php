@@ -7,6 +7,8 @@ ob_start();
 
 $toolId = 'aspectRatioCalculator';
 $lang = 'en';
+$featuresSectionTitle = 'Features';
+$resourcesSectionTitle = 'Useful Resources';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
@@ -20,17 +22,15 @@ $customAboutContent = <<<HTML
 </p>
 HTML;
 
-$customFeaturesContent = <<<HTML
-<ul class="list-unstyled">
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Calculate missing width or height from aspect ratio</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Common ratio presets (16:9, 4:3, 21:9, 1:1, etc.)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>CSS padding-bottom trick generator</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Multiple ratio formats (ratio, decimal, percentage)</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Responsive image size calculator</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Real-time calculation</li>
-    <li><i class="bi bi-check-circle-fill text-success me-2"></i>100% client-side processing</li>
-</ul>
-HTML;
+$features = [
+    'Calculate missing width or height from aspect ratio',
+    'Common ratio presets (16:9, 4:3, 21:9, 1:1, etc.)',
+    'CSS padding-bottom trick generator',
+    'Multiple ratio formats (ratio, decimal, percentage)',
+    'Responsive image size calculator',
+    'Real-time calculation',
+    '100% client-side processing'
+];
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML

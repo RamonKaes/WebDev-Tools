@@ -7,30 +7,30 @@ ob_start();
 
 $toolId = 'htmlEntityTool';
 $lang = 'en';
+$featuresSectionTitle = 'Features';
+$resourcesSectionTitle = 'Useful Resources';
 
-$customAboutContent = '
-  <p class="mb-2">
+$customAboutContent = <<<HTML
+<p class="mb-2">
     <strong>HTML Entities</strong> are special character representations used in HTML to display 
     reserved characters and symbols. They prevent browser parsing issues and ensure proper 
     character rendering across different systems and encodings.
-  </p>
-  <p class="mb-0">
+</p>
+<p class="mb-0">
     This tool supports named entities (&amp;nbsp;), numeric decimal entities (&amp;#160;), 
     and hexadecimal entities (&amp;#xA0;). All conversions happen locally in your browser 
     for complete privacy.
-  </p>
-';
+</p>
+HTML;
 
-$customFeaturesContent = '
-  <ul class="mb-0">
-    <li>Named Entities: Convert to standard HTML entities like &amp;nbsp;, &amp;lt;, &amp;gt;</li>
-    <li>Numeric Entities: Decimal (&amp;#160;) or hexadecimal (&amp;#xA0;) format</li>
-    <li>Bidirectional: Encode text to entities or decode entities to text</li>
-    <li>Auto-Convert: Real-time conversion as you type</li>
-    <li>Character Reference: Quick link to browse all available HTML entities</li>
-    <li>Download Support: Save results as text file</li>
-  </ul>
-';
+$features = [
+    'Named Entities: Convert to standard HTML entities like &nbsp;, &lt;, &gt;',
+    'Numeric Entities: Decimal (&#160;) or hexadecimal (&#xA0;) format',
+    'Bidirectional: Encode text to entities or decode entities to text',
+    'Auto-Convert: Real-time conversion as you type',
+    'Character Reference: Quick link to browse all available HTML entities',
+    'Download Support: Save results as text file'
+];
 
 $additionalSections = [
   [

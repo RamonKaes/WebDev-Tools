@@ -7,6 +7,17 @@ ob_start();
 
 $toolId = 'regexTesterTool';
 $lang = 'en';
+$featuresSectionTitle = 'Features';
+$resourcesSectionTitle = 'Useful Resources';
+
+$features = [
+    'Real-time pattern matching',
+    'Support for multiple regex flags (g, i, m, s, u)',
+    'Match highlighting with capture groups',
+    'Detailed match information and statistics',
+    'Common regex patterns library',
+    '100% client-side processing'
+];
 
 $toolId = 'regexTesterTool';
 $lang = 'en';

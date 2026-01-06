@@ -384,8 +384,8 @@ button:active:not(:disabled) {
 
 /* Layout Toggle Button - Stacked Position (top-right) */
 .btn-layout-toggle-stacked {
-  margin: 1.125rem;
-  transform: translateX(calc(100% + 0.75rem));
+  top: 1.125rem !important;
+  right: -1.5rem !important;
 }
 
 /* Scrollable Pre-formatted Text Container */

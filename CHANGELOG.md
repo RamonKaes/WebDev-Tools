@@ -9,6 +9,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### 🐛 Bug Fixes
+- **[2026-01-06]** Fixed Layout Toggle Button functionality
+  - Removed `transform: translateX()` from `.btn-layout-toggle-stacked` that caused toggle failures
+  - Replaced with explicit `top` and `right` positioning (`right: -1.5rem`)
+  - Button now correctly toggles between side-by-side and stacked layouts multiple times
+  - Positioned button closer to card edge for better visibility on smaller screens
+  - Root cause: CSS transform conflict between `.btn-layout-toggle-stacked` and `.translate-middle`
+
+### ✨ Features
+- **[2026-01-06]** Implemented accordion behavior for sidebar navigation
+  - Only one category opens at a time in both desktop sidebar and mobile offcanvas
+  - Automatically closes other categories when opening a new one
+  - Improved user experience with cleaner, more focused navigation
+  - Enhanced `sidebar-navigation.js` with `initAccordionBehavior()` function
+
 ### 🏗️ Build System
 - **[2026-01-05]** Simplified build system - removed JavaScript bundling
   - Removed complex IIFE concatenation (382 → 129 lines in build.sh)

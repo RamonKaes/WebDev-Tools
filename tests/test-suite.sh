@@ -6,6 +6,9 @@ set -e
 ERRORS=0
 WARNINGS=0
 
+# Change to project root
+cd "$(dirname "$0")/.." || exit 1
+
 echo "╔════════════════════════════════════════════════════════════╗"
 echo "║  WebDev-Tools - Comprehensive Code Quality Test Suite     ║"
 echo "║  Based on: Copilot Instructions v5.1 (Omni-Lead)          ║"

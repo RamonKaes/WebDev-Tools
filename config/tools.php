@@ -327,7 +327,8 @@ return [
     'jsLibraries' => ['clipboard-utils'],
     'features' => ['search', 'categories', 'toggle-view', 'copy-codes'],
     'seoTemplate' => 'default',
-    'hasFeaturesSection' => true
+    'hasFeaturesSection' => true,
+    'hasAboutSection' => false
   ],
 
   'emojiReferenceTool' => [

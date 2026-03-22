@@ -961,7 +961,23 @@
             "toc_title": "Referência de Caracteres",
             "h1_title": "Referência de Caracteres — Referência de entidades HTML Unicode",
             "card_description": "Referência completa de entidades HTML com 2.231+ símbolos, setas e operadores matemáticos. Pesquise por nome, decimal, hexadecimal ou Unicode para uso.",
-            "tool_description": "Referência abrangente de entidades de caracteres HTML, símbolos Unicode e caracteres especiais. Procure por milhares de símbolos matemáticos, setas, diacríticos, pontuação, símbolos gregos e caracteres de desenho de caixas. Copie o caractere ou a sua entidade HTML com um único clique. Perfeito para desenvolvimento web, criação de conteúdo e trabalho com texto internacional."
+            "tool_description": "Referência abrangente de entidades de caracteres HTML, símbolos Unicode e caracteres especiais. Procure por milhares de símbolos matemáticos, setas, diacríticos, pontuação, símbolos gregos e caracteres de desenho de caixas. Copie o caractere ou a sua entidade HTML com um único clique. Perfeito para desenvolvimento web, criação de conteúdo e trabalho com texto internacional.",
+            "noResults": "Nenhum carácter encontrado",
+            "noResultsHint": "Tente um termo de pesquisa ou categoria diferente",
+            "copyUnicode": "Copiar Unicode",
+            "copyDecimal": "Copiar decimal",
+            "copiedChar": "Carácter copiado",
+            "copiedEntity": "Entidade HTML copiada",
+            "copiedUnicode": "Unicode copiado",
+            "copiedDecimal": "Código decimal copiado",
+            "loadCommonCount": "Caracteres comuns carregados ({count})",
+            "loadCommonHint": "Carregar conjunto de dados completo com mais de 2.200 caracteres",
+            "loadFullBtn": "Carregar todos os caracteres",
+            "loadFullSuccess": "Conjunto de dados completo carregado com sucesso!",
+            "loadFullError": "Falha ao carregar conjunto de dados completo",
+            "loadingText": "A carregar...",
+            "loadMore": "Carregar mais ({remaining} restantes)",
+            "encodeDecodeLabel": "Codificar/Descodificar"
         },
         "emojiReferenceTool": {
             "linkTitle": {

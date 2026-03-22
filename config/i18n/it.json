@@ -961,7 +961,23 @@
             "toc_title": "Riferimento Caratteri",
             "h1_title": "Riferimento Caratteri — Riferimento entità HTML Unicode",
             "card_description": "Riferimento completo entità HTML con 2.231+ simboli, frecce e operatori matematici. Cerca per nome, decimale, esadecimale o Unicode per sviluppo web.",
-            "tool_description": "Riferimento completo dei caratteri HTML con oltre 2.231 entità e caratteri speciali. Cerca per nome, codice decimale o esadecimale con funzione di copia istantanea. Perfetto per sviluppatori web, designer e creatori di contenuti che necessitano di accesso rapido a entità HTML, caratteri Unicode e simboli speciali."
+            "tool_description": "Riferimento completo dei caratteri HTML con oltre 2.231 entità e caratteri speciali. Cerca per nome, codice decimale o esadecimale con funzione di copia istantanea. Perfetto per sviluppatori web, designer e creatori di contenuti che necessitano di accesso rapido a entità HTML, caratteri Unicode e simboli speciali.",
+            "noResults": "Nessun carattere trovato",
+            "noResultsHint": "Prova un termine di ricerca o una categoria diversa",
+            "copyUnicode": "Copia Unicode",
+            "copyDecimal": "Copia decimale",
+            "copiedChar": "Carattere copiato",
+            "copiedEntity": "Entità HTML copiata",
+            "copiedUnicode": "Unicode copiato",
+            "copiedDecimal": "Codice decimale copiato",
+            "loadCommonCount": "Caratteri comuni caricati ({count})",
+            "loadCommonHint": "Carica il set di dati completo con oltre 2.200 caratteri",
+            "loadFullBtn": "Carica tutti i caratteri",
+            "loadFullSuccess": "Set di dati completo caricato con successo!",
+            "loadFullError": "Impossibile caricare il set di dati completo",
+            "loadingText": "Caricamento...",
+            "loadMore": "Carica altri ({remaining} rimanenti)",
+            "encodeDecodeLabel": "Codifica/Decodifica"
         },
         "emojiReferenceTool": {
             "linkTitle": {

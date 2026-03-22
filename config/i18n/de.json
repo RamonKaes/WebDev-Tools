@@ -961,7 +961,23 @@
             "toc_title": "Zeichen-Referenz",
             "h1_title": "Zeichen-Referenz — HTML-Entities & Unicode-Symbole",
             "card_description": "Durchsuche 2.231+ HTML-Entities und Sonderzeichen mit Unicode-Codes. Suche nach Name, Dezimal oder Hex-Code. Vollständige Referenz für Webentwicklung.",
-            "tool_description": "Vollständige HTML-Zeichen-Referenz mit über 2.231 Entities und Sonderzeichen. Suche nach Name, Dezimal- oder Hex-Code mit sofortiger Kopierfunktion. Perfekt für Webentwickler, Designer und Content-Ersteller, die schnellen Zugriff auf HTML-Entities, Unicode-Zeichen und Sondersymbole benötigen."
+            "tool_description": "Vollständige HTML-Zeichen-Referenz mit über 2.231 Entities und Sonderzeichen. Suche nach Name, Dezimal- oder Hex-Code mit sofortiger Kopierfunktion. Perfekt für Webentwickler, Designer und Content-Ersteller, die schnellen Zugriff auf HTML-Entities, Unicode-Zeichen und Sondersymbole benötigen.",
+            "noResults": "Keine Zeichen gefunden",
+            "noResultsHint": "Versuche einen anderen Suchbegriff oder eine andere Kategorie",
+            "copyUnicode": "Unicode kopieren",
+            "copyDecimal": "Dezimalcode kopieren",
+            "copiedChar": "Zeichen kopiert",
+            "copiedEntity": "HTML-Entity kopiert",
+            "copiedUnicode": "Unicode kopiert",
+            "copiedDecimal": "Dezimalcode kopiert",
+            "loadCommonCount": "Häufige Zeichen geladen ({count})",
+            "loadCommonHint": "Vollständigen Datensatz mit über 2.200 Zeichen laden",
+            "loadFullBtn": "Alle Zeichen laden",
+            "loadFullSuccess": "Vollständiger Datensatz erfolgreich geladen!",
+            "loadFullError": "Vollständiger Datensatz konnte nicht geladen werden",
+            "loadingText": "Wird geladen...",
+            "loadMore": "Mehr laden ({remaining} verbleibend)",
+            "encodeDecodeLabel": "Kodieren/Dekodieren"
         },
         "emojiReferenceTool": {
             "linkTitle": {

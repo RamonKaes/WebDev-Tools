@@ -961,7 +961,23 @@
             "toc_title": "Référence de Caractères",
             "h1_title": "Référence de Caractères — Référence HTML entities Unicode",
             "card_description": "Parcourez et copiez entités HTML et caractères spéciaux avec codes Unicode. Référence de 2.231+ entités organisées par catégories pour développement web.",
-            "tool_description": "Référence complète de caractères HTML avec plus de 2.231 entités et caractères spéciaux. Recherchez par nom, code décimal ou hexadécimal avec fonction de copie instantanée. Parfait pour les développeurs web, designers et créateurs de contenu qui ont besoin d'un accès rapide aux entités HTML, caractères Unicode et symboles spéciaux."
+            "tool_description": "Référence complète de caractères HTML avec plus de 2.231 entités et caractères spéciaux. Recherchez par nom, code décimal ou hexadécimal avec fonction de copie instantanée. Parfait pour les développeurs web, designers et créateurs de contenu qui ont besoin d'un accès rapide aux entités HTML, caractères Unicode et symboles spéciaux.",
+            "noResults": "Aucun caractère trouvé",
+            "noResultsHint": "Essayez un terme de recherche ou une catégorie différente",
+            "copyUnicode": "Copier Unicode",
+            "copyDecimal": "Copier décimal",
+            "copiedChar": "Caractère copié",
+            "copiedEntity": "Entité HTML copiée",
+            "copiedUnicode": "Unicode copié",
+            "copiedDecimal": "Code décimal copié",
+            "loadCommonCount": "Caractères courants chargés ({count})",
+            "loadCommonHint": "Charger le jeu de données complet avec plus de 2 200 caractères",
+            "loadFullBtn": "Charger tous les caractères",
+            "loadFullSuccess": "Jeu de données complet chargé avec succès !",
+            "loadFullError": "Échec du chargement du jeu de données complet",
+            "loadingText": "Chargement...",
+            "loadMore": "Charger plus ({remaining} restants)",
+            "encodeDecodeLabel": "Encoder/Décoder"
         },
         "emojiReferenceTool": {
             "linkTitle": {

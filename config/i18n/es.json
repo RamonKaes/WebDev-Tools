@@ -961,7 +961,23 @@
             "toc_title": "Referencia de Caracteres",
             "h1_title": "Referencia de Caracteres — Entidades HTML y Símbolos",
             "card_description": "Navega y copia entidades HTML y caracteres especiales con códigos Unicode. Referencia completa de 2.231+ entidades HTML organizadas por categorías.",
-            "tool_description": "Referencia completa de caracteres HTML con más de 2.231 entidades y caracteres especiales. Busca por nombre, código decimal o hexadecimal con función de copia instantánea. Perfecto para desarrolladores web, diseñadores y creadores de contenido que necesitan acceso rápido a entidades HTML, caracteres Unicode y símbolos especiales."
+            "tool_description": "Referencia completa de caracteres HTML con más de 2.231 entidades y caracteres especiales. Busca por nombre, código decimal o hexadecimal con función de copia instantánea. Perfecto para desarrolladores web, diseñadores y creadores de contenido que necesitan acceso rápido a entidades HTML, caracteres Unicode y símbolos especiales.",
+            "noResults": "No se encontraron caracteres",
+            "noResultsHint": "Prueba con un término de búsqueda o categoría diferente",
+            "copyUnicode": "Copiar Unicode",
+            "copyDecimal": "Copiar decimal",
+            "copiedChar": "Carácter copiado",
+            "copiedEntity": "Entidad HTML copiada",
+            "copiedUnicode": "Unicode copiado",
+            "copiedDecimal": "Código decimal copiado",
+            "loadCommonCount": "Caracteres comunes cargados ({count})",
+            "loadCommonHint": "Cargar conjunto de datos completo con más de 2.200 caracteres",
+            "loadFullBtn": "Cargar todos los caracteres",
+            "loadFullSuccess": "¡Conjunto de datos completo cargado!",
+            "loadFullError": "Error al cargar el conjunto de datos completo",
+            "loadingText": "Cargando...",
+            "loadMore": "Cargar más ({remaining} restantes)",
+            "encodeDecodeLabel": "Codificar/Decodificar"
         },
         "emojiReferenceTool": {
             "linkTitle": {

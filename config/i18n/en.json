@@ -961,7 +961,23 @@
             "toc_title": "Character Reference",
             "h1_title": "Character Reference — HTML Entities & Unicode Symbols",
             "card_description": "Complete HTML character entity reference with 2,231+ symbols, arrows, and mathematical operators. Search by name, decimal, hex, or Unicode for web development.",
-            "tool_description": "Complete HTML character reference with over 2,231 entities and special characters. Search by name, decimal, or hex code with instant copy functionality. Perfect for web developers, designers, and content creators who need quick access to HTML entities, Unicode characters, and special symbols."
+            "tool_description": "Complete HTML character reference with over 2,231 entities and special characters. Search by name, decimal, or hex code with instant copy functionality. Perfect for web developers, designers, and content creators who need quick access to HTML entities, Unicode characters, and special symbols.",
+            "noResults": "No characters found",
+            "noResultsHint": "Try a different search term or category",
+            "copyUnicode": "Copy Unicode",
+            "copyDecimal": "Copy decimal",
+            "copiedChar": "Character copied",
+            "copiedEntity": "HTML entity copied",
+            "copiedUnicode": "Unicode copied",
+            "copiedDecimal": "Decimal code copied",
+            "loadCommonCount": "Common characters loaded ({count})",
+            "loadCommonHint": "Load full dataset for all 2,200+ characters",
+            "loadFullBtn": "Load All Characters",
+            "loadFullSuccess": "Full dataset loaded successfully!",
+            "loadFullError": "Failed to load full dataset",
+            "loadingText": "Loading...",
+            "loadMore": "Load More ({remaining} remaining)",
+            "encodeDecodeLabel": "Encode/Decode"
         },
         "emojiReferenceTool": {
             "linkTitle": {

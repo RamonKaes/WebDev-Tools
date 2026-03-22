@@ -328,7 +328,7 @@
             "category": "references",
             "icon": "bi-table",
             "jsPath": "/assets/js/tools/characterReferenceTool.js",
-            "ogImage": "default.svg",
+            "ogImage": "character-reference.svg",
             "externalLibraries": [],
             "jsLibraries": [
                 "clipboard-utils"

@@ -49,11 +49,13 @@ HTML
 ];
 
 $usefulResources = [
-    [        'url' => 'https://fr.wikipedia.org/wiki/Base64',
+    [
+        'url' => 'https://fr.wikipedia.org/wiki/Base64',
         'title' => 'Base64 - Wikipédia',
         'description' => 'Introduction au concept et à l\'histoire de l\'encodage Base64'
     ],
-    [        'url' => 'https://datatracker.ietf.org/doc/html/rfc4648',
+    [
+        'url' => 'https://datatracker.ietf.org/doc/html/rfc4648',
         'title' => 'RFC 4648&nbsp;: Encodages Base16, Base32 et Base64',
         'description' => 'Spécification officielle de l\'IETF qui définit la norme d\'encodage Base64'
     ],
@@ -62,11 +64,11 @@ $usefulResources = [
         'title' => 'Guide d\'encodage Base64 MDN',
         'description' => 'Guide complet sur l\'encodage Base64 en développement web'
     ],
-  [
-    'url' => 'https://developer.mozilla.org/en-US/docs/Web/API/btoa',
-    'title' => 'MDN btoa()',
-    'description' => 'Fonction JavaScript pour encoder des chaînes en Base64'
-  ],
+    [
+        'url' => 'https://developer.mozilla.org/en-US/docs/Web/API/btoa',
+        'title' => 'MDN btoa()',
+        'description' => 'Fonction JavaScript pour encoder des chaînes en Base64'
+    ],
     [
         'url' => 'https://developer.mozilla.org/en-US/docs/Web/API/atob',
         'title' => 'MDN atob()',

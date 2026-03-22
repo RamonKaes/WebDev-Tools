@@ -1,6 +1,6 @@
 /**
  * Base64 Encoder/Decoder Tool
- * 
+ *
  * Bidirectional Base64 encoding and decoding for text and files.
  * Supports UTF-8 text, file uploads (max 10MB), and binary data handling.
  */
@@ -15,18 +15,19 @@
     return;
   }
 
+  // Fix #7: t-Funktion einmalig auf Modulebene definiert (war doppelt in open + initializeTool)
+  const t = (key, params) => {
+    if (window.i18n && typeof window.i18n.t === 'function') {
+      return window.i18n.t(key, params);
+    }
+    return key.split('.').pop();
+  };
+
   window.Tools.register('base64EncoderDecoder', {
     init: function () {
     },
 
     open: function (container) {
-      const t = (key, params) => {
-        if (window.i18n && typeof window.i18n.t === 'function') {
-          return window.i18n.t(key, params);
-        }
-        return key.split('.').pop();
-      };
-
       container.innerHTML = `
       <div class="row g-4" id="mainRow">
         <div class="col-12 position-relative" id="inputOutputWrapper">
@@ -66,22 +67,22 @@
                     <div class="form-check form-check-inline">
                       <input class="form-check-input" type="checkbox" id="urlSafe" checked>
                       <label class="form-check-label" for="urlSafe">${t('tools.base64EncoderDecoder.url_safe')}</label>
+                    </div>
                   </div>
-                </div>
 
-                <div id="decodeOptions" class="d-none">
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="autoDecode">
-                    <label class="form-check-label" for="autoDecode">${t('tools.base64EncoderDecoder.auto_decode')}</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="detectFormat" checked>
-                    <label class="form-check-label" for="detectFormat">${t('tools.base64EncoderDecoder.detect_format')}</label>
+                  <div id="decodeOptions" class="d-none">
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="autoDecode">
+                      <label class="form-check-label" for="autoDecode">${t('tools.base64EncoderDecoder.auto_decode')}</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="detectFormat" checked>
+                      <label class="form-check-label" for="detectFormat">${t('tools.base64EncoderDecoder.detect_format')}</label>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
           <div class="col-12 col-lg-6">
             <div class="card h-100">
@@ -120,14 +121,6 @@
     },
 
     initializeTool: function (container) {
-      const t = (key, params) => {
-        if (window.i18n && typeof window.i18n.t === 'function') {
-          return window.i18n.t(key, params);
-        }
-        return key.split('.').pop();
-      };
-
-
       const toggleLayoutBtn = container.querySelector('#toggleLayoutBtn');
       const wrapper = container.querySelector('#inputOutputWrapper');
 
@@ -183,11 +176,22 @@
       let encodedFileName = 'file';
       let decodedFileName = 'decoded.txt';
       let decodedMimeType = 'text/plain';
-
+      // Fix #3: Object-URL für Bildvorschau verfolgen, damit sie korrekt freigegeben werden kann
+      let currentImageObjectUrl = null;
 
       const show = (el) => el.classList.remove('d-none');
       const hide = (el) => el.classList.add('d-none');
       const isVisible = (el) => !el.classList.contains('d-none');
+
+      // Fix #3: Hilfsfunktion zum sauberen Freigeben der Bildvorschau-URL
+      function revokeImagePreview() {
+        if (currentImageObjectUrl) {
+          URL.revokeObjectURL(currentImageObjectUrl);
+          currentImageObjectUrl = null;
+        }
+        imagePreview.src = '';
+        hide(imagePreviewContainer);
+      }
 
       /**
        * Update UI based on current mode (encode/decode)
@@ -200,7 +204,7 @@
           output.placeholder = t('tools.base64EncoderDecoder.encode_output_placeholder');
           processBtn.innerHTML = '<i class="bi bi-arrow-right me-2"></i>' + t('tools.base64EncoderDecoder.encode_btn');
           fileInput.accept = '*/*';
-          hide(imagePreviewContainer);
+          revokeImagePreview(); // Fix #3: Object-URL beim Moduswechsel freigeben
         } else {
           hide(encodeOptions);
           show(decodeOptions);
@@ -324,7 +328,7 @@
           output.classList.add('is-invalid');
           outputInfo.textContent = t('tools.base64EncoderDecoder.current_size', {size: (file.size / (1024 * 1024)).toFixed(2)}) ||
             `Current file size: ${(file.size / (1024 * 1024)).toFixed(2)}MB`;
-          hide(imagePreviewContainer);
+          revokeImagePreview();
           return;
         }
 
@@ -368,10 +372,15 @@
             base64Data = format.data;
           }
 
-          let binary = atob(urlSafeCheck.checked ?
-            base64Data.replace(/-/g, '+').replace(/_/g, '/') :
-            base64Data);
+          // Fix #1: URL-safe-Padding ergänzen (wie in decodeBase64), damit atob() nicht wirft
+          let base64ForDecode = urlSafeCheck.checked
+            ? base64Data.replace(/-/g, '+').replace(/_/g, '/')
+            : base64Data;
+          while (base64ForDecode.length % 4) {
+            base64ForDecode += '=';
+          }
 
+          const binary = atob(base64ForDecode);
           const bytes = new Uint8Array(binary.length);
           for (let i = 0; i < binary.length; i++) {
             bytes[i] = binary.charCodeAt(i);
@@ -381,19 +390,23 @@
 
           if (mimeType.startsWith('image/')) {
             const blob = new Blob([bytes], { type: mimeType });
-            const url = URL.createObjectURL(blob);
-            imagePreview.src = url;
+            // Fix #3: Alte Object-URL freigeben bevor neue gesetzt wird
+            if (currentImageObjectUrl) {
+              URL.revokeObjectURL(currentImageObjectUrl);
+            }
+            currentImageObjectUrl = URL.createObjectURL(blob);
+            imagePreview.src = currentImageObjectUrl;
             show(imagePreviewContainer);
             output.value = t('tools.base64EncoderDecoder.binary_preview_note');
             decodedFileName = 'image.' + mimeType.split('/')[1];
           } else if (mimeType.startsWith('text/')) {
             const text = new TextDecoder().decode(bytes);
             output.value = text;
-            hide(imagePreviewContainer);
+            revokeImagePreview();
             decodedFileName = 'decoded.txt';
           } else {
             output.value = t('tools.base64EncoderDecoder.binary_file_note');
-            hide(imagePreviewContainer);
+            revokeImagePreview();
             decodedFileName = 'decoded.bin';
           }
 
@@ -409,7 +422,7 @@
         const inputValue = input.value;
         if (!inputValue) {
           output.value = '';
-          hide(imagePreviewContainer);
+          revokeImagePreview();
           return;
         }
 
@@ -421,11 +434,12 @@
           } else {
             const format = detectFormatCheck.checked ? detectBase64Format(inputValue) : { type: 'standard', data: inputValue };
 
-            if (format.type === 'data-url' || /^[A-Za-z0-9+/=_-]{20,}/.test(inputValue)) {
+            // Fix #2: Regex mit $-Anker, damit nicht jeder String mit 20 alphanumerischen Zeichen matcht
+            if (format.type === 'data-url' || /^[A-Za-z0-9+/=_-]{20,}$/.test(inputValue.trim())) {
               decodeToFile(inputValue, format);
             } else {
               output.value = decodeBase64(format.data, format.type === 'url-safe');
-              hide(imagePreviewContainer);
+              revokeImagePreview();
               outputInfo.textContent = '';
             }
             output.classList.remove('is-invalid');
@@ -433,7 +447,7 @@
         } catch (e) {
           output.value = t('tools.base64EncoderDecoder.error') + ': ' + e.message;
           output.classList.add('is-invalid');
-          hide(imagePreviewContainer);
+          revokeImagePreview();
         }
       });
 
@@ -458,7 +472,12 @@
         output.value = '';
         output.classList.remove('is-invalid');
         outputInfo.textContent = '';
-        hide(imagePreviewContainer);
+        // Fix #5: State-Variablen beim Clear zurücksetzen
+        encodedFileName = 'file';
+        decodedFileName = 'decoded.txt';
+        decodedMimeType = 'text/plain';
+        // Fix #3: Object-URL beim Clear freigeben
+        revokeImagePreview();
       });
 
       loadSampleBtn.addEventListener('click', function () {
@@ -481,6 +500,16 @@
         e.stopPropagation();
       }
 
+      // Fix #6: Duplizierte FileReader-Logik in Hilfsfunktion extrahiert
+      function loadTextFileForDecoding(file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          input.value = e.target.result;
+          if (autoDecodeCheck.checked) processBtn.click();
+        };
+        reader.readAsText(file);
+      }
+
       dropArea.addEventListener('click', () => fileInput.click());
 
       fileInput.addEventListener('change', function() {
@@ -488,12 +517,7 @@
           if (currentMode === 'encode') {
             encodeFile(this.files[0]);
           } else {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-              input.value = e.target.result;
-              if (autoDecodeCheck.checked) processBtn.click();
-            };
-            reader.readAsText(this.files[0]);
+            loadTextFileForDecoding(this.files[0]);
           }
         }
       });
@@ -516,12 +540,7 @@
           if (currentMode === 'encode') {
             encodeFile(files[0]);
           } else {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-              input.value = e.target.result;
-              if (autoDecodeCheck.checked) processBtn.click();
-            };
-            reader.readAsText(files[0]);
+            loadTextFileForDecoding(files[0]);
           }
         }
       });
@@ -529,7 +548,7 @@
       copyBtn.addEventListener('click', async function () {
         if (output.value) {
           const success = await window.ClipboardUtils.copyToClipboard(output.value);
-          
+
           if (success) {
             const icon = copyBtn.querySelector('i');
             if (icon) {
@@ -541,10 +560,11 @@
       });
 
       downloadBtn.addEventListener('click', function () {
-        if (!output.value && !imagePreview.src) return;
+        // Fix #4: Prüfung mit isVisible() statt imagePreview.src (bleibt nach Clear gesetzt)
+        if (!output.value && !isVisible(imagePreviewContainer)) return;
 
-        if (imagePreview.src && isVisible(imagePreviewContainer)) {
-          fetch(imagePreview.src)
+        if (isVisible(imagePreviewContainer) && currentImageObjectUrl) {
+          fetch(currentImageObjectUrl)
             .then(res => res.blob())
             .then(blob => {
               const url = URL.createObjectURL(blob);

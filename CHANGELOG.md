@@ -9,7 +9,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### 🔒 Security
+- **[2026-03-22]** XSS-Absicherung in `tool-loader.js` und `tool-registry.js`
+  - `toolId` und Tool-Namen werden vor Einfügung in `innerHTML` via `escapeHtml()` gesichert
+- **[2026-03-22]** `getCookie()` in `i18n.js` nutzt jetzt Regex-Escaping (ReDoS-Prävention)
+
 ### 🐛 Bug Fixes
+- **[2026-03-22]** Code-Review-Findings in `assets/js` behoben (20 Fixes)
+  - `i18n.js`: Race Condition in `init()` behoben (Flag sofort setzen); `t()` nutzt einen einzigen `replace()`-Durchlauf statt RegExp pro Parameter
+  - `mobile-navigation.js`: Hartkodiertes `setTimeout(150ms)` durch `hidden.bs.offcanvas`-Event ersetzt
+  - `performance-guards.js`: `throttle()` sichert `this`-Kontext korrekt; `hasOwnProperty` auf `Object.prototype.hasOwnProperty.call()` umgestellt
+  - `color-modes.js`: Null-Checks für `btnToActive` und `svg use` vor Attribut-Zugriff
+  - `sidebar-navigation.js`: Bootstrap-Guard am Modulanfang; `scrollToActiveLink()` funktioniert jetzt für Desktop- und Mobile-Sidebar
+  - `storage-utils.js`: `clearStorage()` normalisiert `local`/`session`-Alias; `getStorageSize()` nutzt `Object.keys()` statt `for...in`
+  - `validators.js`: Fehlende i18n-Übersetzung für Passwort-Feedback ergänzt
+  - `logger.js`: `?debug`-Parameter nur noch in lokalen Umgebungen wirksam; doppelter JSDoc-Block entfernt
+  - `dom-utils.js`: `setTextContent()` vereinfacht
+  - `toc-generator.js`: `console.log` ohne Dev-Guard entfernt
+  - `performance-budget.js`: Unnötiges `console.log` bei OK-Metriken entfernt; veraltete `performance.timing`-API durch `getEntriesByType('navigation')` ersetzt
+  - `sidebar-persistence.js`: Duplizierte ID-Arrays zu gemeinsamen Konstanten zusammengeführt
+  - `tool-registry.js`: Ungenutzten `METADATA`-Symbol entfernt
 - **[2026-01-06]** Fixed Layout Toggle Button functionality
   - Removed `transform: translateX()` from `.btn-layout-toggle-stacked` that caused toggle failures
   - Replaced with explicit `top` and `right` positioning (`right: -1.5rem`)

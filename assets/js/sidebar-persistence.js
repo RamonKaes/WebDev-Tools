@@ -8,39 +8,30 @@
 (function() {
   'use strict';
 
+  const DESKTOP_COLLAPSE_IDS = [
+    'encoders-collapse',
+    'formatters-collapse',
+    'converter-collapse',
+    'generator-collapse',
+    'stringtools-collapse',
+    'references-collapse',
+    'utilities-collapse'
+  ];
+  const MOBILE_COLLAPSE_IDS = DESKTOP_COLLAPSE_IDS.map(id => 'mobile-' + id);
+  const ALL_COLLAPSE_IDS = [...DESKTOP_COLLAPSE_IDS, ...MOBILE_COLLAPSE_IDS];
+
   restoreStatesEarly();
 
   /**
    * Setup event listeners for sidebar state persistence on DOM ready
    */
   document.addEventListener('DOMContentLoaded', function() {
-    const desktopCollapseIds = [
-      'encoders-collapse',
-      'formatters-collapse',
-      'converter-collapse',
-      'generator-collapse',
-      'stringtools-collapse',
-      'references-collapse',
-      'utilities-collapse'
-    ];
-    const mobileCollapseIds = [
-      'mobile-encoders-collapse',
-      'mobile-formatters-collapse',
-      'mobile-converter-collapse',
-      'mobile-generator-collapse',
-      'mobile-stringtools-collapse',
-      'mobile-references-collapse',
-      'mobile-utilities-collapse'
-    ];
-
-    const allCollapseIds = [...desktopCollapseIds, ...mobileCollapseIds];
-
     /**
      * Attach event listeners to save/remove collapse state
      *
      * @param {string} id - Collapse element ID
      */
-    allCollapseIds.forEach(id => {
+    ALL_COLLAPSE_IDS.forEach(id => {
       const element = document.getElementById(id);
       if (!element) return;
 
@@ -58,25 +49,7 @@
    * Restore sidebar states before DOMContentLoaded to prevent layout shifts
    */
   function restoreStatesEarly() {
-    const desktopCollapseIds = [
-      'encoders-collapse',
-      'formatters-collapse',
-      'converter-collapse',
-      'generator-collapse',
-      'stringtools-collapse',
-      'references-collapse',
-      'utilities-collapse'
-    ];
-    const mobileCollapseIds = [
-      'mobile-encoders-collapse',
-      'mobile-formatters-collapse',
-      'mobile-converter-collapse',
-      'mobile-generator-collapse',
-      'mobile-stringtools-collapse',
-      'mobile-references-collapse',
-      'mobile-utilities-collapse'
-    ];
-    const allCollapseIds = [...desktopCollapseIds, ...mobileCollapseIds];
+    const allCollapseIds = ALL_COLLAPSE_IDS;
 
     allCollapseIds.forEach(id => {
       const savedState = localStorage.getItem('sidebar-' + id);

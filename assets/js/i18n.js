@@ -33,6 +33,7 @@ class I18n {
    */
   async init() {
   if (this.initialized) return;
+  this.initialized = true;
 
   const detectedLang = this.detectLanguage();
   const success = await this.setLanguage(detectedLang, false);
@@ -46,8 +47,6 @@ class I18n {
   this.setupLanguageSwitcher();
   this.updateLanguageSwitcher();
 
-  this.initialized = true;
-
   console.debug('[i18n] Initialized with language:', this.currentLang);
   }
 
@@ -58,7 +57,8 @@ class I18n {
    * @returns {string|null} Cookie value or null if not found
    */
   getCookie(name) {
-    const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    const escapedName = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const match = document.cookie.match(new RegExp('(^| )' + escapedName + '=([^;]+)'));
     return match ? match[2] : null;
   }
 
@@ -247,9 +247,7 @@ class I18n {
   }
 
   if (typeof value === 'string' && Object.keys(params).length > 0) {
-  Object.keys(params).forEach(paramKey => {
-  value = value.replace(new RegExp(`{{${paramKey}}}`, 'g'), params[paramKey]);
-  });
+    value = value.replace(/\{\{(\w+)\}\}/g, (_, k) => (k in params ? params[k] : `{{${k}}}`));
   }
 
   return value;

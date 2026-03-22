@@ -32,8 +32,7 @@ export function escapeHtml(text) {
  * @param {string} text - Text to set
  */
 export function setTextContent(element, text) {
-  element.textContent = '';
-  element.appendChild(document.createTextNode(text));
+  element.textContent = text;
 }
 
 /**

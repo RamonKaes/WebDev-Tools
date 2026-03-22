@@ -342,10 +342,11 @@
 
     } catch (error) {
       console.error('[ToolLoader] Error:', error);
+      const escapedId = (window.AppHelpers?.escapeHtml(toolId)) || toolId.replace(/[<>"'&]/g, c => ({'<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;','&':'&amp;'}[c]));
       container.innerHTML = `
         <div class="alert alert-danger mt-4">
           <i class="bi bi-x-circle me-2"></i>
-          Error loading tool "${toolId}". Please try refreshing the page.
+          Error loading tool "${escapedId}". Please try refreshing the page.
         </div>
       `;
     }

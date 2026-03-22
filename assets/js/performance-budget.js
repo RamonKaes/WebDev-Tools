@@ -38,8 +38,8 @@ class PerformanceBudget {
       this.observeLayoutShift();
     }
 
-    // Fallback to Navigation Timing API
-    if (window.performance && window.performance.timing) {
+    // Fallback to Navigation Timing API Level 2
+    if (window.performance && typeof window.performance.getEntriesByType === 'function') {
       this.measureNavigationTiming();
     }
 
@@ -120,25 +120,20 @@ class PerformanceBudget {
   }
 
   /**
-   * Measure using Navigation Timing API (fallback)
+   * Measure using Navigation Timing API Level 2 (fallback)
    */
   measureNavigationTiming() {
     window.addEventListener('load', () => {
-      const timing = performance.timing;
-      const navigationStart = timing.navigationStart;
+      const entries = performance.getEntriesByType('navigation');
+      if (!entries || entries.length === 0) return;
+
+      const nav = entries[0];
 
       // TTFB
-      const ttfb = timing.responseStart - navigationStart;
-      this.recordMetric('TTFB', ttfb);
-
-      // DOM Content Loaded
-      const domContentLoaded = timing.domContentLoadedEventEnd - navigationStart;
-      
-      // Load Complete
-      const loadComplete = timing.loadEventEnd - navigationStart;
+      this.recordMetric('TTFB', nav.responseStart);
 
       // Estimate TTI (simplified - not accurate)
-      this.recordMetric('TTI', loadComplete);
+      this.recordMetric('TTI', nav.loadEventEnd);
     });
   }
 
@@ -165,11 +160,6 @@ class PerformanceBudget {
         `  Actual: ${value.toFixed(2)} ${metric === 'CLS' ? '' : 'ms'}\n` +
         `  Budget: ${budget} ${metric === 'CLS' ? '' : 'ms'}\n` +
         `  Overage: ${(value - budget).toFixed(2)} ${metric === 'CLS' ? '' : 'ms'}`
-      );
-    } else {
-      console.log(
-        `✓ ${metric}: ${value.toFixed(2)} ${metric === 'CLS' ? '' : 'ms'} ` +
-        `(within budget: ${budget} ${metric === 'CLS' ? '' : 'ms'})`
       );
     }
   }

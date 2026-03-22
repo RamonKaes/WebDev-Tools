@@ -126,7 +126,7 @@
       tocNav.appendChild(link);
     });
 
-    console.log('[TOC] Total links added:', tocNav.children.length);
+
   }
 
   /**

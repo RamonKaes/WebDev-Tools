@@ -28,11 +28,11 @@
         e.preventDefault();
         const targetUrl = this.getAttribute('href');
 
-        offcanvasInstance.hide();
-
-        setTimeout(() => {
+        mobileSidebar.addEventListener('hidden.bs.offcanvas', () => {
           window.location.href = targetUrl;
-        }, 150);
+        }, { once: true });
+
+        offcanvasInstance.hide();
       });
     });
   });

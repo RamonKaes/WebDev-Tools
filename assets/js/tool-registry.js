@@ -17,7 +17,6 @@
    * Private symbols for internal state
    */
   const REGISTRY = Symbol('registry');
-  const METADATA = Symbol('metadata');
   const LIFECYCLE = Symbol('lifecycle');
 
   /**
@@ -109,10 +108,11 @@
       window.currentToolName = name;
 
       if (!tool) {
-        container.innerHTML =
+        const safeName = window.AppHelpers ? window.AppHelpers.escapeHtml(name) : name.replace(/[<>"'&]/g, c => ({'<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;','&':'&amp;'}[c]));
+      container.innerHTML =
           '<div class="alert alert-warning mt-4">' +
           '<i class="bi bi-exclamation-triangle me-2"></i>' +
-          'Tool "' + name + '" not found.' +
+          'Tool "' + safeName + '" not found.' +
           '</div>';
         console.error('[ToolRegistry] Tool not found:', name);
         return;
@@ -147,7 +147,7 @@
         container.innerHTML =
           '<div class="alert alert-danger mt-4">' +
           '<i class="bi bi-x-circle me-2"></i>' +
-          'Error loading tool "' + name + '".' +
+          'Error loading tool "' + safeName + '".' +
           '</div>';
         console.error('[ToolRegistry] Error opening tool:', name, e);
       }

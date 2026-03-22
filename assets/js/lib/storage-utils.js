@@ -118,16 +118,19 @@ export function removeStorageItem(key, type = 'localStorage') {
  * @returns {boolean} - True if successful
  */
 export function clearStorage(type = 'localStorage') {
-  if (!isStorageAvailable(type)) {
+  const storageType = type === 'local' ? 'localStorage' :
+                     type === 'session' ? 'sessionStorage' : type;
+
+  if (!isStorageAvailable(storageType)) {
     return false;
   }
 
   try {
-    const storage = window[type];
+    const storage = window[storageType];
     storage.clear();
     return true;
   } catch (e) {
-    console.error(`Failed to clear ${type}:`, e);
+    console.error(`Failed to clear ${storageType}:`, e);
     return false;
   }
 }
@@ -167,11 +170,9 @@ export function getStorageSize(type = 'localStorage') {
     const storage = window[type];
     let size = 0;
 
-    for (let key in storage) {
-      if (storage.hasOwnProperty(key)) {
-        size += key.length + storage[key].length;
-      }
-    }
+    Object.keys(storage).forEach(key => {
+      size += key.length + storage[key].length;
+    });
 
     return size;
   } catch (e) {

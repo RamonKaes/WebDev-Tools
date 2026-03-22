@@ -34,8 +34,9 @@ class Logger {
                   hostname.endsWith('.local') ||
                   hostname.endsWith('.test');
 
+    // ?debug nur in lokalen Umgebungen erlauben, nicht in Produktion
     const urlParams = new URLSearchParams(window.location.search);
-    const debugMode = urlParams.has('debug');
+    const debugMode = isDev && urlParams.has('debug');
 
     return isDev || debugMode;
   }
@@ -96,7 +97,6 @@ class Logger {
     this.log(message, context);
   }
 
-  /**
   /**
    * Warning logging (shown in both dev and production)
    *

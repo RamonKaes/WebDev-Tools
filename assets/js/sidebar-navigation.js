@@ -9,6 +9,11 @@
 (function() {
   'use strict';
 
+  if (typeof bootstrap === 'undefined') {
+    console.warn('[SidebarNav] Bootstrap nicht geladen – Initialisierung übersprungen');
+    return;
+  }
+
   /**
    * Initialize accordion behavior for sidebar categories
    */
@@ -42,6 +47,27 @@
             } else {
               new bootstrap.Collapse(collapse, { toggle: false }).hide();
             }
+          }
+        });
+      });
+    });
+
+    // Add event listener to Home link to close all categories
+    const homeLinks = document.querySelectorAll('#desktop-sidebar .btn-toggle[data-tool="home"], #mobileSidebar .btn-toggle[data-tool="home"]');
+    
+    homeLinks.forEach(homeLink => {
+      homeLink.addEventListener('click', function() {
+        const sidebar = this.closest('#desktop-sidebar, #mobileSidebar');
+        if (!sidebar) return;
+        
+        // Close all collapse elements
+        const allCollapses = sidebar.querySelectorAll('.collapse.show');
+        allCollapses.forEach(collapse => {
+          const bsCollapse = bootstrap.Collapse.getInstance(collapse);
+          if (bsCollapse) {
+            bsCollapse.hide();
+          } else {
+            new bootstrap.Collapse(collapse, { toggle: false }).hide();
           }
         });
       });
@@ -104,12 +130,12 @@
 
   /**
    * Scroll the active link into view within the sidebar
-   * 
+   *
    * @param {HTMLElement} link - The active tool link element
    */
   function scrollToActiveLink(link) {
-    const sidebar = document.querySelector('#desktop-sidebar');
-    
+    const sidebar = link.closest('#desktop-sidebar, #mobileSidebar');
+
     if (!sidebar) {
       return;
     }
@@ -117,17 +143,15 @@
     // Calculate the position to scroll to
     const linkRect = link.getBoundingClientRect();
     const sidebarRect = sidebar.getBoundingClientRect();
-    
+
     // Calculate offset: link position relative to sidebar minus some padding
     const offset = linkRect.top - sidebarRect.top - (sidebar.clientHeight / 3);
-    
+
     // Smooth scroll to the active link
     sidebar.scrollTo({
       top: sidebar.scrollTop + offset,
       behavior: 'smooth'
     });
-
-    console.debug('[SidebarNav] Scrolled to active tool:', link.textContent.trim());
   }
 
   // Initialize when DOM is ready

@@ -77,7 +77,7 @@ export function getJSONDepth(obj, currentDepth = 0) {
   let maxDepth = currentDepth;
 
   for (const key in obj) {
-    if (obj.hasOwnProperty(key)) {
+    if (Object.prototype.hasOwnProperty.call(obj, key)) {
       const depth = getJSONDepth(obj[key], currentDepth + 1);
       maxDepth = Math.max(maxDepth, depth);
     }
@@ -105,7 +105,7 @@ export function countJSONNodes(obj, maxCount = JSON_LIMITS.MAX_TREE_NODES) {
 
     if (node !== null && typeof node === 'object') {
       for (const key in node) {
-        if (node.hasOwnProperty(key)) {
+        if (Object.prototype.hasOwnProperty.call(node, key)) {
           traverse(node[key]);
         }
       }
@@ -213,11 +213,12 @@ export function throttle(func, delay) {
   let lastExec = 0;
 
   return function (...args) {
+    const context = this;
     const elapsed = Date.now() - lastExec;
 
     const execute = () => {
       lastExec = Date.now();
-      func.apply(this, args);
+      func.apply(context, args);
     };
 
     if (elapsed > delay) {

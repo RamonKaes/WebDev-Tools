@@ -139,7 +139,7 @@ export function validatePasswordStrength(password) {
 
   if (password.length >= 8) score++;
   if (password.length >= 12) score++;
-  if (password.length < 8) feedback.push('Use at least 8 characters');
+  if (password.length < 8) feedback.push(window.i18n?.t('validation.use_min_length') || 'Use at least 8 characters');
 
   if (/[a-z]/.test(password) && /[A-Z]/.test(password)) {
     score++;

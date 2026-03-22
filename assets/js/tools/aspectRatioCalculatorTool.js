@@ -140,7 +140,7 @@
                       <div class="input-group input-group-sm">
                         <input type="text" class="form-control bg-body-secondary" id="calculatedHeight" readonly>
                         <span class="input-group-text">px</span>
-                        <button class="btn btn-outline-secondary btn-sm d-inline-flex align-items-center" type="button" id="copyHeight">
+                        <button class="btn btn-outline-secondary btn-sm copy-btn d-inline-flex align-items-center" type="button" data-target="calculatedHeight">
                           <i class="bi bi-clipboard"></i>
                         </button>
                       </div>
@@ -160,7 +160,7 @@
                       <div class="input-group input-group-sm">
                         <input type="text" class="form-control bg-body-secondary" id="calculatedWidth" readonly>
                         <span class="input-group-text">px</span>
-                        <button class="btn btn-outline-secondary btn-sm d-inline-flex align-items-center" type="button" id="copyWidth">
+                        <button class="btn btn-outline-secondary btn-sm copy-btn d-inline-flex align-items-center" type="button" data-target="calculatedWidth">
                           <i class="bi bi-clipboard"></i>
                         </button>
                       </div>
@@ -376,11 +376,12 @@
        * @returns {object} - Simplified ratio {width, height}
        */
       function simplifyRatio(width, height) {
-        const divisor = gcd(Math.round(width * 1000), Math.round(height * 1000));
-        return {
-          width: Math.round(width * 1000) / divisor,
-          height: Math.round(height * 1000) / divisor
-        };
+        const decimals = (n) => (String(n).split('.')[1] || '').length;
+        const scale = Math.pow(10, Math.min(Math.max(decimals(width), decimals(height)), 4));
+        const w = Math.round(width * scale);
+        const h = Math.round(height * scale);
+        const divisor = gcd(w, h);
+        return { width: w / divisor, height: h / divisor };
       }
 
       /**
@@ -546,31 +547,6 @@
             }
           }
         });
-      });
-
-      // Individual copy buttons for dimensions
-      container.querySelector('#copyWidth').addEventListener('click', async () => {
-        const text = calculatedWidth.value;
-        if (!text) return;
-        
-        const success = await window.ClipboardUtils.copyToClipboard(text);
-        if (success) {
-          const icon = container.querySelector('#copyWidth i');
-          icon.className = 'bi bi-check';
-          setTimeout(() => icon.className = 'bi bi-clipboard', 1500);
-        }
-      });
-
-      container.querySelector('#copyHeight').addEventListener('click', async () => {
-        const text = calculatedHeight.value;
-        if (!text) return;
-        
-        const success = await window.ClipboardUtils.copyToClipboard(text);
-        if (success) {
-          const icon = container.querySelector('#copyHeight i');
-          icon.className = 'bi bi-check';
-          setTimeout(() => icon.className = 'bi bi-clipboard', 1500);
-        }
       });
 
       // Copy CSS button

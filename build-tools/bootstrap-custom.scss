@@ -32,6 +32,10 @@
 @import "../node_modules/bootstrap/scss/navbar";
 @import "../node_modules/bootstrap/scss/card";
 @import "../node_modules/bootstrap/scss/badge";
+@import "../node_modules/bootstrap/scss/alert";
+@import "../node_modules/bootstrap/scss/close";
+@import "../node_modules/bootstrap/scss/accordion";
+@import "../node_modules/bootstrap/scss/tables";
 @import "../node_modules/bootstrap/scss/forms";
 @import "../node_modules/bootstrap/scss/forms/input-group";
 @import "../node_modules/bootstrap/scss/dropdown";
@@ -51,18 +55,14 @@
 // ============================================
 // NICHT importiert (nicht genutzt im Projekt):
 // ============================================
-// - Accordion
-// - Alert
 // - Breadcrumb
 // - Carousel
-// - Close button
 // - List group
 // - Pagination
 // - Placeholders
 // - Popovers
 // - Progress
 // - Spinners
-// - Tables
 // - Toasts
 
 // ============================================

@@ -13,6 +13,13 @@
     return;
   }
 
+  function t(key, params) {
+    if (window.i18n && typeof window.i18n.t === 'function') {
+      return window.i18n.t(key, params);
+    }
+    return key.split('.').pop();
+  }
+
   window.Tools.register('aspectRatioCalculator', {
     /**
      * Initialize the Aspect Ratio Calculator Tool
@@ -26,13 +33,6 @@
      * @param {HTMLElement} container - Container element to render the tool
      */
     open: function (container) {
-      const t = (key, params) => {
-        if (window.i18n && typeof window.i18n.t === 'function') {
-          return window.i18n.t(key, params);
-        }
-        return key.split('.').pop();
-      };
-
       container.innerHTML = `
         <div class="row g-4">
           <!-- Aspect Ratio Presets -->
@@ -46,49 +46,49 @@
                   <div class="col">
                     <button class="btn btn-sm btn-outline-primary ratio-preset w-100" data-ratio="16:9">
                       <div>16:9</div>
-                      <small class="d-block text-body-secondary">HD Video</small>
+                      <small class="d-block text-body-secondary">${t('tools.aspectRatioCalculator.preset_hd_video')}</small>
                     </button>
                   </div>
                   <div class="col">
                     <button class="btn btn-sm btn-outline-primary ratio-preset w-100" data-ratio="4:3">
                       <div>4:3</div>
-                      <small class="d-block text-body-secondary">Classic TV</small>
+                      <small class="d-block text-body-secondary">${t('tools.aspectRatioCalculator.preset_classic_tv')}</small>
                     </button>
                   </div>
                   <div class="col">
                     <button class="btn btn-sm btn-outline-primary ratio-preset w-100" data-ratio="21:9">
                       <div>21:9</div>
-                      <small class="d-block text-body-secondary">Ultrawide</small>
+                      <small class="d-block text-body-secondary">${t('tools.aspectRatioCalculator.preset_ultrawide')}</small>
                     </button>
                   </div>
                   <div class="col">
                     <button class="btn btn-sm btn-outline-primary ratio-preset w-100" data-ratio="1:1">
                       <div>1:1</div>
-                      <small class="d-block text-body-secondary">Square</small>
+                      <small class="d-block text-body-secondary">${t('tools.aspectRatioCalculator.preset_square')}</small>
                     </button>
                   </div>
                   <div class="col">
                     <button class="btn btn-sm btn-outline-primary ratio-preset w-100" data-ratio="9:16">
                       <div>9:16</div>
-                      <small class="d-block text-body-secondary">Vertical</small>
+                      <small class="d-block text-body-secondary">${t('tools.aspectRatioCalculator.preset_vertical')}</small>
                     </button>
                   </div>
                   <div class="col">
                     <button class="btn btn-sm btn-outline-primary ratio-preset w-100" data-ratio="3:2">
                       <div>3:2</div>
-                      <small class="d-block text-body-secondary">Photo</small>
+                      <small class="d-block text-body-secondary">${t('tools.aspectRatioCalculator.preset_photo')}</small>
                     </button>
                   </div>
                   <div class="col">
                     <button class="btn btn-sm btn-outline-primary ratio-preset w-100" data-ratio="2:1">
                       <div>2:1</div>
-                      <small class="d-block text-body-secondary">Wide Banner</small>
+                      <small class="d-block text-body-secondary">${t('tools.aspectRatioCalculator.preset_wide_banner')}</small>
                     </button>
                   </div>
                   <div class="col">
                     <button class="btn btn-sm btn-outline-primary ratio-preset w-100" data-ratio="5:4">
                       <div>5:4</div>
-                      <small class="d-block text-body-secondary">Large Format</small>
+                      <small class="d-block text-body-secondary">${t('tools.aspectRatioCalculator.preset_large_format')}</small>
                     </button>
                   </div>
                 </div>
@@ -274,49 +274,49 @@
                         <td><strong>Full HD</strong></td>
                         <td>1920 × 1080</td>
                         <td>16:9</td>
-                        <td>YouTube, Standard HD</td>
+                        <td>${t('tools.aspectRatioCalculator.res_full_hd_use')}</td>
                       </tr>
                       <tr class="table-row-clickable" data-width="1280" data-height="720">
                         <td><strong>HD</strong></td>
                         <td>1280 × 720</td>
                         <td>16:9</td>
-                        <td>720p Video</td>
+                        <td>${t('tools.aspectRatioCalculator.res_hd_use')}</td>
                       </tr>
                       <tr class="table-row-clickable" data-width="3840" data-height="2160">
                         <td><strong>4K UHD</strong></td>
                         <td>3840 × 2160</td>
                         <td>16:9</td>
-                        <td>4K Video, Modern Displays</td>
+                        <td>${t('tools.aspectRatioCalculator.res_4k_use')}</td>
                       </tr>
                       <tr class="table-row-clickable" data-width="2560" data-height="1440">
                         <td><strong>QHD</strong></td>
                         <td>2560 × 1440</td>
                         <td>16:9</td>
-                        <td>1440p Gaming</td>
+                        <td>${t('tools.aspectRatioCalculator.res_qhd_use')}</td>
                       </tr>
                       <tr class="table-row-clickable" data-width="1080" data-height="1080">
                         <td><strong>Square</strong></td>
                         <td>1080 × 1080</td>
                         <td>1:1</td>
-                        <td>Instagram Post</td>
+                        <td>${t('tools.aspectRatioCalculator.res_square_use')}</td>
                       </tr>
                       <tr class="table-row-clickable" data-width="1080" data-height="1920">
                         <td><strong>Vertical HD</strong></td>
                         <td>1080 × 1920</td>
                         <td>9:16</td>
-                        <td>Instagram Stories, TikTok</td>
+                        <td>${t('tools.aspectRatioCalculator.res_vertical_use')}</td>
                       </tr>
                       <tr class="table-row-clickable" data-width="2560" data-height="1080">
                         <td><strong>Ultrawide</strong></td>
                         <td>2560 × 1080</td>
                         <td>21:9</td>
-                        <td>Ultrawide Monitor</td>
+                        <td>${t('tools.aspectRatioCalculator.res_ultrawide_use')}</td>
                       </tr>
                       <tr class="table-row-clickable" data-width="1024" data-height="768">
                         <td><strong>XGA</strong></td>
                         <td>1024 × 768</td>
                         <td>4:3</td>
-                        <td>Classic Display</td>
+                        <td>${t('tools.aspectRatioCalculator.res_classic_use')}</td>
                       </tr>
                     </tbody>
                   </table>
@@ -339,13 +339,6 @@
      * @param {HTMLElement} container - Container element
      */
     initializeTool: function (container) {
-      const t = (key, params) => {
-        if (window.i18n && typeof window.i18n.t === 'function') {
-          return window.i18n.t(key, params);
-        }
-        return key.split('.').pop();
-      };
-
       // Get all input elements
       const ratioWidth = container.querySelector('#ratioWidth');
       const ratioHeight = container.querySelector('#ratioHeight');
@@ -367,7 +360,12 @@
        * @returns {number} - GCD
        */
       function gcd(a, b) {
-        return b === 0 ? a : gcd(b, a % b);
+        while (b !== 0) {
+          const tmp = b;
+          b = a % b;
+          a = tmp;
+        }
+        return a;
       }
 
       /**
@@ -605,7 +603,11 @@
         cssOutput.value = t('tools.aspectRatioCalculator.css_enter_ratio');
         
         // Remove active state from presets
-        presetButtons.forEach(b => b.classList.remove('active'));
+        presetButtons.forEach(b => {
+          b.classList.remove('active');
+          const small = b.querySelector('small');
+          if (small) small.classList.replace('text-white', 'text-body-secondary');
+        });
       });
 
       // Initial CSS message

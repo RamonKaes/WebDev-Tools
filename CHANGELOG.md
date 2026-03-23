@@ -1,399 +1,62 @@
-# 📋 WebDev-Tools Changelog
+# Changelog – WebDev-Tools
 
-All notable changes to this project will be documented in this file.
-
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: [SemVer](https://semver.org/)
 
 ---
 
 ## [Unreleased]
 
 ### 🔒 Security
-- **[2026-03-22]** XSS-Absicherung in `tool-loader.js` und `tool-registry.js`
-  - `toolId` und Tool-Namen werden vor Einfügung in `innerHTML` via `escapeHtml()` gesichert
-- **[2026-03-22]** `getCookie()` in `i18n.js` nutzt jetzt Regex-Escaping (ReDoS-Prävention)
+- `tool-loader.js` / `tool-registry.js`: `toolId` via `escapeHtml()` vor `innerHTML` gesichert (XSS)
+- `i18n.js`: `getCookie()` nutzt Regex-Escaping (ReDoS-Prävention)
 
 ### 🐛 Bug Fixes
-- **[2026-03-23]** Data Converter Tool Code-Review-Findings behoben
-  - `handleConversion` → `performConversion` (ReferenceError beim Load-Sample mit Auto-Convert)
-  - `indentationWrapper` nach Wechsel Timestamp → XML/CSV korrekt wieder eingeblendet
-  - Tote Sample-Einträge (`base64ToHex`, `hexToBase64`) entfernt; fehlende Samples für alle 8 Konverter-Typen ergänzt
-  - Unbenutzte Variablen `optionsContainer` und `index` entfernt
-- **[2026-03-23]** Timestamp-Konvertierung auf UTC normiert
-  - `timestampToDate` gibt nun explizit ` UTC` aus (z.B. `2023-11-06 12:00:00 UTC`)
-  - Roundtrip Timestamp → Datum → Timestamp ist dadurch timezone-unabhängig korrekt
-  - Placeholder und Samples entsprechend aktualisiert
-- **[2026-03-23]** Code-Formatter Code-Review-Findings behoben
-  - Terser-Laden: Busy-Wait durch Promise-Kette ersetzt, SRI-Hash ergänzt
-  - HTML-Beautifier: Void-Elemente, self-closing Tags und complete inline Elements korrekt behandelt (kein falsches Indent-Increment mehr)
-  - CSS-Minifier: Doppelpunkt-Stripping entfernt (hätte String-Werte beschädigt)
-  - `handleFormat()` → `formatCode()` (ReferenceError-Bug beim Load-Sample behoben)
-  - Toten `json`-Eintrag in Samples durch `xml`/`sql`-Samples ersetzt
-  - `document.execCommand('copy')` durch `navigator.clipboard.writeText` ersetzt
-  - Mismatched `</h2>` → `</h3>` in `de/code-formatierer/index.php` korrigiert
-  - Duplizierte `t()`-Funktion entfernt
-- **[2026-03-22]** Aspect Ratio Calculator Code-Review-Findings behoben
-  - `t()`-Funktion dedupliziert: einmalig als IIFE-Closure definiert statt doppelt innerhalb `open()`
-  - `clearAll`: Preset-Farben (`text-white → text-body-secondary`) korrekt zurückgesetzt
-  - GCD-Algorithmus: rekursiv → iterativ (Stack-Overflow-Prävention bei großen Zahlen)
-  - Preset-Labels und Tabelleninhalte via `t()` internationalisiert (16 neue i18n-Keys)
-  - Individuelle `copyWidth/copyHeight`-Handler entfernt, unified via `.copy-btn`
-  - `simplifyRatio`: präzisionsbasiertes Decimal-Scaling statt hartem `*1000`
-    (16:9 → scale=1, 1.5:1 → scale=10, Integer-Eingaben bleiben exakt)
-- **[2026-03-22]** Base64 Encoder/Decoder Code-Review-Findings behoben
-  - Fehlendes `=`-Padding in `decodeToFile()` bei URL-safe-Modus ergänzt (`atob()` warf DOMException)
-  - Regex ohne `$`-Anker in `processBtn`-Handler korrigiert (verhindert falsches Routing zu `decodeToFile`)
-  - Memory Leak durch unrevokte Object-URLs behoben (`revokeImagePreview()`-Helper)
-  - `downloadBtn`-Check auf `isVisible()` umgestellt (`imagePreview.src` bleibt nach Clear gesetzt)
-  - `clearBtn` setzt nun `encodedFileName`/`decodedFileName`/`decodedMimeType` zurück
-  - Duplizierte FileReader-Logik in `loadTextFileForDecoding()` extrahiert
-  - `t()`-Funktion einmalig auf Modulebene konsolidiert (war doppelt in `open()` + `initializeTool()`)
-- **[2026-03-22]** Character Reference Code-Review-Findings behoben
-  - `showToast`-Stub durch `window.ClipboardUtils.showToast` ersetzt
-  - `t()` an 10 Stellen korrekt aufgerufen (`t.xxx` → `t('xxx')`)
-  - Doppelten Event-Listener auf `loadFullDatasetBtn` entfernt
-  - `escapeForAttribute()` null-sicher gemacht
-  - `buildRowHTML()` extrahiert (Duplizierung in `renderTableRows`/`appendTableRows` beseitigt)
-  - `appendLoadMoreRow()` extrahiert (Load-More-Logik zentralisiert)
-  - 8 hartkodierte englische Strings durch i18n-Keys ersetzt
-  - Kategorie-Counts dynamisch aus geladenem Datensatz berechnet
-  - Unnötiges `setTimeout(50)` entfernt
-  - 16 fehlende i18n-Keys in allen 6 Sprachen ergänzt
-- **[2026-03-22]** Code-Review-Findings in `assets/js` behoben (20 Fixes)
-  - `i18n.js`: Race Condition in `init()` behoben (Flag sofort setzen); `t()` nutzt einen einzigen `replace()`-Durchlauf statt RegExp pro Parameter
-  - `mobile-navigation.js`: Hartkodiertes `setTimeout(150ms)` durch `hidden.bs.offcanvas`-Event ersetzt
-  - `performance-guards.js`: `throttle()` sichert `this`-Kontext korrekt; `hasOwnProperty` auf `Object.prototype.hasOwnProperty.call()` umgestellt
-  - `color-modes.js`: Null-Checks für `btnToActive` und `svg use` vor Attribut-Zugriff
-  - `sidebar-navigation.js`: Bootstrap-Guard am Modulanfang; `scrollToActiveLink()` funktioniert jetzt für Desktop- und Mobile-Sidebar
-  - `storage-utils.js`: `clearStorage()` normalisiert `local`/`session`-Alias; `getStorageSize()` nutzt `Object.keys()` statt `for...in`
-  - `validators.js`: Fehlende i18n-Übersetzung für Passwort-Feedback ergänzt
-  - `logger.js`: `?debug`-Parameter nur noch in lokalen Umgebungen wirksam; doppelter JSDoc-Block entfernt
-  - `dom-utils.js`: `setTextContent()` vereinfacht
-  - `toc-generator.js`: `console.log` ohne Dev-Guard entfernt
-  - `performance-budget.js`: Unnötiges `console.log` bei OK-Metriken entfernt; veraltete `performance.timing`-API durch `getEntriesByType('navigation')` ersetzt
-  - `sidebar-persistence.js`: Duplizierte ID-Arrays zu gemeinsamen Konstanten zusammengeführt
-  - `tool-registry.js`: Ungenutzten `METADATA`-Symbol entfernt
-- **[2026-01-06]** Fixed Layout Toggle Button functionality
-  - Removed `transform: translateX()` from `.btn-layout-toggle-stacked` that caused toggle failures
-  - Replaced with explicit `top` and `right` positioning (`right: -1.5rem`)
-  - Button now correctly toggles between side-by-side and stacked layouts multiple times
-  - Positioned button closer to card edge for better visibility on smaller screens
-  - Root cause: CSS transform conflict between `.btn-layout-toggle-stacked` and `.translate-middle`
+- **Data Converter** – `handleConversion` → `performConversion` (ReferenceError); `indentationWrapper` nach Timestamp → XML/CSV wieder eingeblendet; tote Samples ersetzt; unbenutzte Variablen entfernt
+- **Data Converter** – `timestampToDate` gibt ` UTC`-Suffix aus; Roundtrip Timestamp ↔ Datum ist damit timezone-unabhängig korrekt
+- **Code Formatter** – `handleFormat` → `formatCode` (ReferenceError); HTML-Beautifier Void/Self-closing-Handling; CSS-Minifier Doppelpunkt-Stripping entfernt; `execCommand` → `clipboard.writeText`; tote Samples ersetzt; duplizierte `t()` entfernt
+- **Aspect Ratio Calculator** – GCD rekursiv → iterativ; `simplifyRatio` Decimal-Scaling präzisiert; Preset-Labels i18n-isiert; `t()`-Duplikat entfernt
+- **Base64 Encoder/Decoder** – `=`-Padding für URL-safe in `decodeToFile()`; Regex `$`-Anker ergänzt; Memory Leak (unrevokte Object-URLs) behoben; `clearBtn` setzt Datei-State zurück
+- **Character Reference** – `t.xxx` → `t('xxx')` (10 Stellen); doppelter Event-Listener entfernt; `buildRowHTML` / `appendLoadMoreRow` extrahiert; 16 fehlende i18n-Keys ergänzt
+- **assets/js (20 Fixes)** – Race Condition in `i18n.js`; `throttle()` this-Kontext; Null-Checks in `color-modes.js`; Sidebar-Scroll für Desktop+Mobile; veraltete `performance.timing`-API ersetzt; u. a.
+- **Layout Toggle Button** – CSS-Transform-Konflikt behoben (`translate-middle` vs. `.btn-layout-toggle-stacked`)
 
 ### ✨ Features
-- **[2026-01-06]** Implemented accordion behavior for sidebar navigation
-  - Only one category opens at a time in both desktop sidebar and mobile offcanvas
-  - Automatically closes other categories when opening a new one
-  - Improved user experience with cleaner, more focused navigation
-  - Enhanced `sidebar-navigation.js` with `initAccordionBehavior()` function
+- Sidebar-Navigation: Accordion-Verhalten (nur eine Kategorie gleichzeitig geöffnet)
 
-### 🏗️ Build System
-- **[2026-01-05]** Simplified build system - removed JavaScript bundling
-  - Removed complex IIFE concatenation (382 → 129 lines in build.sh)
-  - Archived old bundling script as `build-bundled.sh.old` for reference
-  - JavaScript files now loaded individually (more maintainable & debuggable)
-  - Build process now only: copy files + CSS minification + sitemap generation
-  - Fixed production deployment to use `.htaccess.production`
-  - Reason: Bundling caused fragile IIFE issues and wrong tool loading
-- Removed duplicate logger implementation (`assets/js/lib/logger.js`)
-  - Kept singleton logger (`assets/js/logger.js`) used by 3 tools
-  - ES6 module version was unused and caused browser compatibility issues
+### 🏗️ Build
+- JS-Bundling entfernt (382 → 129 Zeilen `build.sh`); Dateien werden einzeln geladen
+- Dupliziertes Logger-Modul (`assets/js/lib/logger.js`) entfernt
 
-### 🧪 Testing Infrastructure
-- **[2026-03-23]** Unit-Tests für Code-Formatter und Data-Converter hinzugefügt
-  - `tests/unit/codeFormatterTool.test.js` – 35 Tests (HTML/CSS/JS/XML/SQL Beautify+Minify, UI)
-  - `tests/unit/dataConverterTool.test.js` – 45 Tests (JSON↔XML, JSON↔YAML, JSON↔CSV, Timestamp↔Datum, UI)
-  - Gesamte Test-Suite: **128 Tests** (5 Suites)
-- **[2026-03-22]** Jest-Unit-Tests für die drei refaktorierten Tools eingeführt
-  - `tests/unit/aspectRatioCalculator.test.js` – 14 Tests (Berechnung, Vereinfachung, CSS, UI)
-  - `tests/unit/base64EncoderDecoder.test.js` – 13 Tests (Kodierung, Dekodierung, URL-safe, Zustand)
-  - `tests/unit/characterReference.test.js` – 16 Tests (XSS-Escaping, Filter, Suche, Kopieren)
-  - Jest 29 + `jest-environment-jsdom` als Test-Umgebung
-  - Alte Shell-basierte Skripte durch fokussierte Unit-Tests ersetzt
-- Moved all test scripts to dedicated `/tests` directory
-- Created comprehensive test suite with 4 scripts covering 33 tests:
-  - `test-suite.sh` - 10 core tests (PHP, i18n, security, SEO)
-  - `advanced-tests.sh` - 5 code quality tests (ESLint, complexity, accessibility)
-  - `performance-security-tests.sh` - 8 performance/security tests
-  - `copilot-compliance-check.sh` - 9 Omni-Lead v5.1 role compliance tests
-- Master test runner `run-all-tests.sh` consolidates all results
-- Test documentation in `/tests/README.md`
-- Current production readiness score: **97%**
-
-### 📊 Industry Benchmark Analysis
-- Comprehensive industry comparison completed
-- **TOP 5%** overall ranking among web projects
-- Security: **TOP 5%** (100% OWASP Top 10 compliant)
-- Code Quality: **TOP 1%** (PHP strict_types coverage)
-- I18N: **TOP 5%** (6 languages vs. industry avg 1.8)
-- Performance: **TOP 10%** (GZIP optimization)
-- **+27 percentage points** above industry average (97% vs. 70%)
-
-### 🔧 Code Quality Improvements
-- Added `declare(strict_types=1)` to ALL 158 PHP files
-- Corrected DOMPurify SRI hash (3.0.9)
-- Removed duplicate closing tags in partials
-- JavaScript i18n migration:
-  - `validators.js` - password strength feedback fully localized
-  - `formatters.js` - time/date formatting with dynamic locale
-  - All 6 language files extended with validation.*, time.*, date.* sections
-- CSS accessibility improvements:
-  - Added `:focus-visible` styles for keyboard navigation
-  - Button state styling (hover, focus, disabled)
-  - `aspect-ratio` CSS property for CLS prevention
-
-### 📚 Documentation
-- Updated copilot-instructions.md to v5.1 (Omni-Lead)
-- Added I18N-GLOT role for internationalization standards
-- Build process documentation (BUILD-CONCEPT.md)
-- Industry comparison report generated
-- Test suite comprehensive README
-- Clarified Bootstrap 5 framework choice (vs. Tailwind)
-
-### 🔐 Security
-- Content-Security-Policy with nonce-based script execution
-- DOMPurify 3.0.9 XSS protection with verified SRI hash
-- HSTS, X-Frame-Options, X-Content-Type-Options headers
-- Permissions-Policy and Referrer-Policy configured
-- Cookie security: Secure, SameSite attributes
-- 100% OWASP Top 10 compliance verified
-
-### 🚀 Performance
-- .htaccess.production created with:
-  - GZIP compression for JS, CSS, JSON, HTML (80% reduction)
-  - Aggressive caching: versioned assets 1 year immutable
-  - Cache-Control headers with proper max-age values
-  - ETag removal (explicit Cache-Control used)
-- Expected Lighthouse Performance score: 95/100 (from 78/100)
-
-### 🌐 Internationalization
-- 6-language system fully operational (en, de, es, pt, fr, it)
-- Client-side i18n with graceful fallbacks
-- Dynamic locale switching without page reload
-- Consistent translation structure across all languages (1261 lines each)
-
-### 🗂️ Repository Setup
-- Git repository initialized
-- Comprehensive .gitignore created
-- Changelog started (this file)
-- README.md enhanced with comprehensive documentation
-- copilot-instructions.md included in repository
+### 🧪 Tests
+- `codeFormatterTool.test.js` – 35 Tests (HTML/CSS/JS/XML/SQL Beautify+Minify, UI)
+- `dataConverterTool.test.js` – 45 Tests (JSON↔XML, JSON↔YAML, JSON↔CSV, Timestamp↔Datum, UI)
+- `aspectRatioCalculator.test.js` – 14 Tests · `base64EncoderDecoder.test.js` – 13 Tests · `characterReference.test.js` – 16 Tests
+- Gesamt: **128 Tests** (5 Suites) · Framework: Jest 29 + jsdom · Shell-Skripte entfernt
 
 ---
 
-## [1.0.0] - 2026-01-03 (Initial Release)
+## [1.0.0] – 2026-01-03
 
-### 🎉 Initial Production-Ready Release
+Initiales Production-Release: 19 Tools × 6 Sprachen, Client-Side-only, 100% OWASP-konform.
 
-The WebDev-Tools platform launches with enterprise-grade quality standards and comprehensive feature set.
+### Tools
+| Kategorie | Tools |
+|-----------|-------|
+| Kryptografie | UUID Generator, Password Generator, Hash Generator, JWT Decoder |
+| Daten | JSON Formatter, Code Formatter, Data Converter |
+| Encoding | Base64, URL Encoder, Punycode, HTML Entity |
+| Strings | String Escaper, Regex Tester |
+| Frontend | Aspect Ratio Calculator, Px→Rem, QR Code, Lorem Ipsum |
+| Referenz | Character Reference, Emoji Reference |
 
-### ✨ Features
-
-#### 🔐 Cryptography & Security Tools
-- **UUID Generator** - RFC 4122/9562 compliant (v1, v4, v7)
-- **Password Generator** - NIST SP 800-63B guidelines
-- **Hash Generator** - MD5, SHA-1/256/512 with HMAC
-- **JWT Decoder** - RFC 7519 compliant token parsing
-
-#### 📊 Data Formatting & Serialization
-- **JSON Formatter & Validator** - RFC 8259 compliant
-- **Code Formatter** - HTML, CSS, JS, XML, SQL support
-- **Data Converter** - JSON ↔ XML ↔ YAML ↔ CSV ↔ TOML
-
-#### 🌐 Encoding & Network Tools
-- **Base64 Encoder/Decoder** - RFC 4648 (standard & URL-safe)
-- **URL Encoder/Decoder** - RFC 3986 compliant
-- **Punycode Converter** - RFC 3492 (IDNA)
-- **HTML Entity Encoder/Decoder** - HTML5 entities
-
-#### 🛡️ String Manipulation
-- **String Escaper** - HTML, SQL, JSON, CSV, JS escaping
-- **Regex Tester** - ECMAScript regex with real-time matching
-
-#### 🎨 Frontend & Design Tools
-- **Aspect Ratio Calculator** - Responsive design helper
-- **Px to Rem Converter** - WCAG-compliant typography
-- **QR Code Generator** - ISO/IEC 18004 compliant
-- **Lorem Ipsum Generator** - Layout testing
-
-#### 📚 Reference Tools
-- **Character Reference** - Unicode character lookup
-- **Emoji Reference** - Categorized emoji reference
-
-### 🌍 Internationalization
-- **6 Languages Supported:** English, German, Spanish, Portuguese, French, Italian
-- **1261+ Translated Strings** per language
-- **SEO-Optimized:** Language-specific sitemaps (6 total)
-- **Cultural Awareness:** Context-appropriate translations
-
-### 🔒 Security Architecture
-- **Client-Side-Only Execution** - Zero server-side data processing
-- **No Data Transmission** - All operations execute locally
-- **CSPRNG for Security Tools** - Web Crypto API (`crypto.getRandomValues()`)
-- **Content Security Policy** - Strict nonce-based script execution
-- **Security Headers** - HSTS, CSP, X-Frame-Options, Referrer-Policy, Permissions-Policy
-- **Subresource Integrity** - All external libraries verified with SRI hashes
-- **DOMPurify 3.0.9** - XSS protection for user-generated content
-- **Zero Tracking** - No analytics, no cookies (except language preference)
-
-### 📈 Performance
-- **Modular JavaScript** - 46 separate files for maintainability
-- **Responsive Design** - Mobile-first with Bootstrap 5
-- **Progressive Enhancement** - Works without JavaScript where applicable
-- **Offline Capable** - Works after initial load without internet
-- **Optimized Assets** - 743-line CSS (minimal custom styles)
-
-### 🎯 Standards Compliance
-- **RFC Specifications:** 4648, 8259, 4122, 9562, 7519, 3986, 3492
-- **ISO Standards:** ISO/IEC 18004 (QR Codes)
-- **NIST Guidelines:** SP 800-63B (Password Authentication)
-- **W3C Standards:** WCAG 2.1, HTML5
-- **Cryptographic Standards:** FIPS 180-4 (SHA family)
-
-### 💻 Technical Stack
-- **Frontend:** Bootstrap 5.3.0, Bootstrap Icons 1.11.0, Vanilla JavaScript
-- **Backend:** PHP 7.4+, Apache 2.4+
-- **Architecture:** Client-side processing, Progressive Enhancement
-- **Security:** Web Crypto API, CSP nonce-based execution
-- **SEO:** Dynamic sitemaps, Schema.org markup, OpenGraph tags
-
-### 📚 Documentation
-- Comprehensive README.md with technical details
-- Security documentation (SECURITY.md)
-- Code review learnings documented
-- Standards compliance matrix
-- AI-assisted development methodology explained
-
-### 🏗️ Development Process
-- **AI-Assisted Development** - Claude Sonnet 4.5, GitHub Copilot, GPT-5
-- **Quality Assurance** - Adversarial AI review, manual testing
-- **Version Control** - Git-based workflow
-- **Standards Validation** - RFC/ISO conformity checks
-- **PHP Strict Types** - 100% coverage across 158 files
-- **PSR-12 Compliant** - PHP coding standards
-
-### 🎖️ Quality Metrics
-- **Production Readiness:** 97%
-- **Security Score:** 100% (OWASP Top 10)
-- **Code Quality:** 95%
-- **I18N Coverage:** 95%
-- **Performance:** 97%
-- **Industry Ranking:** TOP 5% globally
-
-### 🚀 Deployment
-- **Live Platform:** https://webdev-tools.info/
-- **18 Tools** × 6 Languages = **108 Tool Instances**
-- **Zero Server-Side Processing** - Pure client-side architecture
-- **GDPR/CCPA Compliant** - Data minimization by design
-
----
-
-## Version History Summary
-
-| Version | Release Date | Status | Highlights |
-|---------|-------------|--------|------------|
-| **1.0.0** | 2026-01-03 | ✅ Released | Initial production release with 18 tools, 6 languages |
-
----
-
-## Comparison to Industry Standards
-
-| Metric | WebDev-Tools | Industry Avg | Gap |
-|--------|--------------|--------------|-----|
-| **Overall Score** | 97% | 70% | +27% 🏆 |
-| **Security** | 100% | 65% | +35% 🏆 |
-| **Code Quality** | 95% | 68% | +27% 🏆 |
-| **I18N Support** | 6 languages | 1.8 avg | +233% 🏆 |
-| **Performance** | 97% | 72% | +25% 🏆 |
-
-**Ranking:** TOP 5% globally among web projects
-
-**Comparable Projects:**
-- Stripe Dashboard (Security-focused)
-- GitHub Web UI (Code Quality)
-- Cloudflare Dashboard (Performance-optimized)
-
----
-
-## Development Philosophy
-
-### "Privacy-by-Design"
-All sensitive operations (passwords, tokens, API keys) execute client-side. No data ever leaves the user's browser.
-
-### "Standards-First"
-Every tool implements industry specifications (RFCs, ISOs, NIST guidelines) rather than proprietary formats.
-
-### "Done Over Perfect"
-Pragmatic engineering choices favoring maintainability, reliability, and real-world usability over theoretical perfection.
-
-### "AI-Augmented, Human-Reviewed"
-Leveraging AI for efficiency while maintaining human oversight for architecture, security, and quality assurance.
-
----
-
-## Future Roadmap
-
-### Planned for v1.1.0
-- [ ] Production Build System implementation (see BUILD-CONCEPT.md)
-- [ ] Asset minification & bundling (87% size reduction)
-- [ ] Bootstrap Custom Build (228KB → 120KB)
-- [ ] Cache-busting with content hashes
-- [ ] Automated deployment pipeline
-
-### Planned for v1.2.0
-- [ ] Dark Mode theme switching
-- [ ] PWA support (offline-first Progressive Web App)
-- [ ] Additional tools: XML Formatter, Markdown Previewer, Diff Checker
-- [ ] Export/Import tool configurations
-
-### Planned for v2.0.0
-- [ ] API Mode for CI/CD integration
-- [ ] Command-line interface
-- [ ] Batch processing endpoints
-- [ ] Webhook integrations
-
----
-
-## Breaking Changes
-
-### None (v1.0.0 is first release)
-
-Future breaking changes will be clearly documented here with migration guides.
+### Stack
+- Frontend: Bootstrap 5.3.0 + Bootstrap Icons 1.11.0 + Vanilla JS
+- Backend: PHP 7.4+ (100% `strict_types`) + Apache 2.4+
+- Security: Web Crypto API, CSP (nonce), DOMPurify 3.0.9, SRI, HSTS
+- i18n: 6 Sprachen (en, de, es, pt, fr, it), ~1261 Keys pro Sprache
 
 ---
 
 ## Contributors
-
-- **Ramon Kaes** - Initial development, architecture, AI orchestration
-- **Claude Sonnet 4.5** (Anthropic) - Primary coding assistant
-- **GitHub Copilot** - Code completion
-- **GPT-5 Codex** (OpenAI) - Code review and translation
-
----
-
-## License
-
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
-
----
-
-## Acknowledgments
-
-- **IETF** - For maintaining open RFC specifications
-- **ISO** - For international standards
-- **NIST** - For security guidelines
-- **W3C** - For web standards
-- **Bootstrap Team** - For robust UI framework
-- **MDN Web Docs** - For comprehensive documentation
-- **Open-source community** - For tools and libraries
-
----
-
-<div align="center">
-
-**🎉 Thank you for using WebDev-Tools! 🎉**
-
-[Website](https://webdev-tools.info/) • [Documentation](docs/README.md) • [Security](SECURITY.md) • [Contributing](CONTRIBUTING.md)
-
-</div>
+- **Ramon Kaes** – Entwicklung, Architektur
+- **Claude Sonnet 4.6** (Anthropic) – Code-Assistent & Reviewer

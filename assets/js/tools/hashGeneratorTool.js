@@ -120,10 +120,6 @@
         throw new Error('Web Crypto API not supported in this browser');
       }
 
-      const chunkSize = 1024 * 1024;
-      const chunks = Math.ceil(file.size / chunkSize);
-      let offset = 0;
-
       const arrayBuffer = await file.arrayBuffer();
 
       if (progressCallback) {
@@ -829,23 +825,26 @@
        */
       const hide = (el) => el?.classList.add('d-none');
 
-      hashResults.addEventListener('click', async function(e) {
-        const btn = e.target.closest('.sri-copy-btn');
-        if (!btn) return;
+      if (!hashResults._sriCopyListenerAttached) {
+        hashResults._sriCopyListenerAttached = true;
+        hashResults.addEventListener('click', async function(e) {
+          const btn = e.target.closest('.sri-copy-btn');
+          if (!btn) return;
 
-        const value = btn.getAttribute('data-copy-value');
-        if (value) {
-          const success = await window.ClipboardUtils.copyToClipboard(value);
-          
-          if (success) {
-            const originalHtml = btn.innerHTML;
-            btn.innerHTML = '<i class="bi bi-check"></i>';
-            setTimeout(() => {
-              btn.innerHTML = originalHtml;
-            }, 1500);
+          const value = btn.getAttribute('data-copy-value');
+          if (value) {
+            const success = await window.ClipboardUtils.copyToClipboard(value);
+
+            if (success) {
+              const originalHtml = btn.innerHTML;
+              btn.innerHTML = '<i class="bi bi-check"></i>';
+              setTimeout(() => {
+                btn.innerHTML = originalHtml;
+              }, 1500);
+            }
           }
-        }
-      });
+        });
+      }
 
       const url = sriURL.value.trim();
       const algorithm = sriAlgorithm.value;

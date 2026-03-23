@@ -34,7 +34,7 @@ $features = [
 
 $customNoticeType = 'warning';
 $customNoticeContent = <<<HTML
-    <h3 class="h5 alert-heading"><i class="bi bi-shield-exclamation me-2"></i>Sicherheitsüberlegungen</h2>
+    <h3 class="h5 alert-heading"><i class="bi bi-shield-exclamation me-2"></i>Sicherheitsüberlegungen</h3>
     <ul class="mb-0">
         <li>SHA-256 oder höher verwenden: MD5 und SHA-1 sind kryptografisch gebrochen</li>
         <li>Keine einfachen Hashes für Passwörter: Verwenden Sie stattdessen bcrypt, scrypt oder PBKDF2</li>

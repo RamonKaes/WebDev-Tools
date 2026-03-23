@@ -22,7 +22,7 @@ $customAboutContent = <<<HTML
 HTML;
 
 $features = [
-    'Longueur personnalisable (4 à 128 caractères)',
+    'Longueur personnalisable (8 à 128 caractères)',
     'Inclure majuscules, minuscules, chiffres et symboles',
     'Exclure les caractères ambigus (0, O, l, 1, etc.)',
     'Générer plusieurs mots de passe en une fois',
@@ -33,7 +33,7 @@ $features = [
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
-    <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Conseils de sécurité</h2>
+    <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Conseils de sécurité</h3>
     <ul class="mb-0">
         <li>La longueur compte&nbsp;: plus un mot de passe est long, plus il est difficile à casser</li>
         <li>Mélangez les types de caractères&nbsp;: combinez majuscules, minuscules, chiffres et symboles</li>

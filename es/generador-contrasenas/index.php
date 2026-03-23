@@ -20,7 +20,7 @@ $customAboutContent = <<<HTML
 HTML;
 
 $features = [
-    'Longitud configurable (4-128 caracteres)',
+    'Longitud configurable (8-128 caracteres)',
     'Incluye mayúsculas, minúsculas, números y símbolos',
     'Excluye caracteres ambiguos (0, O, l, 1, etc.)',
     'Genera varias contraseñas a la vez',
@@ -31,7 +31,7 @@ $features = [
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
-    <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Consejos de seguridad para contraseñas</h2>
+    <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Consejos de seguridad para contraseñas</h3>
     <ul class="mb-0">
         <li>La longitud importa: cuanto más larga, más difícil de descifrar</li>
         <li>Mezcla todos los tipos de caracteres: mayúsculas, minúsculas, números y símbolos</li>

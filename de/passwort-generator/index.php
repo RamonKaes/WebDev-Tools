@@ -23,7 +23,7 @@ $customAboutContent = <<<HTML
 HTML;
 
 $features = [
-    'Anpassbare Passwortlänge (4-128 Zeichen)',
+    'Anpassbare Passwortlänge (8-128 Zeichen)',
     'Großbuchstaben, Kleinbuchstaben, Zahlen und Symbole einschließen',
     'Mehrdeutige Zeichen ausschließen (0,O,l,1, etc.)',
     'Mehrere Passwörter auf einmal generieren',
@@ -34,7 +34,7 @@ $features = [
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
-    <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Passwort-Sicherheitstipps</h2>
+    <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Passwort-Sicherheitstipps</h3>
     <ul class="mb-0">
         <li>Länge zählt: Längere Passwörter sind exponentiell sicherer</li>
         <li>Alle Zeichentypen verwenden: Mischen Sie Groß-, Kleinbuchstaben, Zahlen und Symbole</li>

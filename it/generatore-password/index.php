@@ -22,7 +22,7 @@ $customAboutContent = <<<HTML
 HTML;
 
 $features = [
-    'Lunghezza configurabile (4-128 caratteri)',
+    'Lunghezza configurabile (8-128 caratteri)',
     'Includi lettere maiuscole, minuscole, numeri e simboli',
     'Escludi caratteri ambigui (0, O, l, 1, ...)',
     'Genera più password contemporaneamente',
@@ -33,7 +33,7 @@ $features = [
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
-    <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Consigli di sicurezza</h2>
+    <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Consigli di sicurezza</h3>
     <ul class="mb-0">
         <li>La lunghezza conta: password più lunghe sono esponenzialmente più sicure</li>
         <li>Mescola i caratteri: combina maiuscole, minuscole, numeri e simboli</li>

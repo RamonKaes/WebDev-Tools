@@ -37,6 +37,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
 - Dupliziertes Logger-Modul (`assets/js/lib/logger.js`) entfernt
 
 ### 🐛 Bug Fixes
+- **Password Generator** – `d-none` statt `hidden` für `#customCharsetOptions` (Bootstrap 5 kennt kein `.hidden`; Custom-Charset-Panel war in allen Modi sichtbar); `</h3>` statt `</h2>` in `$customNoticeContent` aller 5 Nicht-EN-Sprachversionen (de, es, fr, it, pt); Mindestlänge in Features-Liste von „4" auf „8" korrigiert (entspricht `min="8"` des Sliders) – alle 6 Sprachversionen; `require()`-Fallback in `loadWordlist()` für CJS-Umgebungen (Jest) ergänzt
 - **JWT Decoder** – `</h3>` statt `</h2>` in `$customNoticeContent` der deutschen Version (`de/jwt-dekodierer/index.php`)
 - **Lorem Ipsum** – `</h3>` statt `</h2>` in `$customNoticeContent` aller 5 Nicht-EN-Sprachversionen (de, es, fr, it, pt); fehlende `</p>` in `it/lorem-ipsum/index.php`; fehlende Zeilentrennung in `es/lorem-ipsum/index.php`; falsche HTML-Output-Feature-Claims aus allen 6 PHP-Dateien und `config/tools.php` entfernt (Feature nicht implementiert)
 
@@ -50,7 +51,8 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
 - `jsonFormatterValidatorTool.test.js` – 44 Tests (Registration, UI-Rendering, Format, Validate, Minify, Sort Keys, Auto-fix, Clear, Load Sample, Copy, Download, Path Extractor, Escape/Unescape)
 - `jwtDecoderTool.test.js` – 30 Tests (Registration, UI-Rendering, Decode Happy Path, No-Expiry, Error Handling, Clear, Load Example, Keyboard Shortcut, Whitespace Trimming)
 - `loremIpsumTool.test.js` – 42 Tests (Registration, UI-Rendering, Auto-Generation, Paragraphs, Sentences, Words, Combined, Validation, Counts, Clear, Copy)
-- Gesamt: **319 Tests** (11 Suites) · Framework: Jest 29 + jsdom · Shell-Skripte entfernt
+- `passwordGeneratorTool.test.js` – 55 Tests (Registration, UI-Rendering, Auto-Generation, Password-Generation, Pattern-Generation, Passphrase-Generation, Strength-Indicator, Download, Mode-Switching, Copy, Clear, Custom-Charset)
+- Gesamt: **374 Tests** (12 Suites) · Framework: Jest 30 + jsdom · Shell-Skripte entfernt
 
 ---
 

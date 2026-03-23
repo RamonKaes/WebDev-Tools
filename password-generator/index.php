@@ -23,7 +23,7 @@ $customAboutContent = <<<HTML
 HTML;
 
 $features = [
-    'Customizable password length (4-128 characters)',
+    'Customizable password length (8-128 characters)',
     'Include uppercase letters, lowercase letters, numbers, and symbols',
     'Exclude ambiguous characters (0,O,l,1, etc.)',
     'Generate multiple passwords at once',

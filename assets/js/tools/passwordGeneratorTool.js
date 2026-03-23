@@ -44,8 +44,15 @@
         const module = await import('../lib/wordlist.js');
         WORDLIST = module.WORDLIST;
       } catch (error) {
-        console.error('Failed to load wordlist:', error);
-        throw new Error(t('errors.wordlist_load_failed'));
+        // Fallback for CommonJS environments (e.g. Jest tests) where dynamic
+        // import() is unavailable but require() is.
+        if (typeof require === 'function') {
+          const mod = require('../lib/wordlist.js');
+          WORDLIST = mod.WORDLIST;
+        } else {
+          console.error('Failed to load wordlist:', error);
+          throw new Error(t('errors.wordlist_load_failed'));
+        }
       }
     }
     return WORDLIST;
@@ -271,7 +278,7 @@
                       </label>
                     </div>
                   </div>
-                  <div class="col-md-6 hidden" id="customCharsetOptions">
+                  <div class="col-md-6 d-none" id="customCharsetOptions">
                     <div class="form-check">
                       <input class="form-check-input" type="checkbox" id="includeUppercase" checked>
                       <label class="form-check-label" for="includeUppercase">

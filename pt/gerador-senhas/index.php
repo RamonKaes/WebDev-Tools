@@ -22,7 +22,7 @@ $customAboutContent = <<<HTML
 HTML;
 
 $features = [
-    'Comprimento configurável (4-128 caracteres)',
+    'Comprimento configurável (8-128 caracteres)',
     'Inclua letras maiúsculas, minúsculas, números e símbolos',
     'Exclua caracteres ambíguos (0, O, l, 1, ...)',
     'Gere várias senhas de uma vez',
@@ -33,7 +33,7 @@ $features = [
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
-    <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Dicas de segurança</h2>
+    <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Dicas de segurança</h3>
     <ul class="mb-0">
         <li>Comprimento importa: senhas mais longas são exponencialmente mais seguras</li>
         <li>Varie os caracteres: combine maiúsculas, minúsculas, números e símbolos</li>

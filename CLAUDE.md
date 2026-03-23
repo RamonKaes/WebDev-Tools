@@ -51,7 +51,7 @@ $usefulResources = [
 // $customNoticeContent / $customNoticeType ('info'|'warning'|'success')
 ```
 
-**Regel:** Überschriften hardcoded in PHP, **nicht** aus i18n-JSON. Alle 6 Sprachen brauchen eigene `de/tool-name/index.php` etc.
+**Regel:** Der gesamte PHP-Content (Überschriften, Features, Ressourcen, Additional Sections) bleibt **hardcoded in PHP** — kein i18n-JSON. Jede Sprachversion (`de/`, `es/`, …) wird **manuell gepflegt**, da Übersetzungen keine 1:1-Entsprechungen sind, sondern kulturell angepasst.
 
 ---
 
@@ -90,10 +90,10 @@ $usefulResources = [
 
 ## i18n-Regeln
 
-- Alle UI-Strings in `config/i18n/{lang}.json` unter `tools.myToolName.*`
-- Schlüssel-Struktur: `tools.toolId.label`, `tools.toolId.meta_title`, etc.
-- **Alle 6 Sprachen** gleichzeitig pflegen (en, de, es, pt, fr, it)
-- Überschriften (H2/H3 in PHP) bleiben hardcoded in PHP
+- **JS-UI-Strings** (Labels, Buttons, Fehlermeldungen im Tool) → `config/i18n/{lang}.json` unter `tools.myToolName.*`
+- **PHP-Content** (Features-Liste, Ressourcen, Additional Sections, Seitentexte) → hardcoded in jeder Sprachversion, **nie** aus JSON
+- Schlüssel-Struktur JSON: `tools.toolId.label`, `tools.toolId.meta_title`, etc.
+- Alle 6 Sprach-JSON-Dateien gleichzeitig pflegen
 
 ---
 

@@ -6,6 +6,15 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
 
 ## [Unreleased]
 
+### 🐛 Bug Fixes
+- **String Escaper** – `loadSampleBtn`-Handler rief `handleProcess()` auf (undefiniert) statt `process()` — Sample-Daten wurden geladen, aber nie automatisch verarbeitet wenn Auto-Process aktiviert war
+- **String Escaper** – Tote äußere `t()`-Hilfsfunktion entfernt (wurde durch identische lokale `t()` in `open()` überschattet und nie aufgerufen)
+- **String Escaper** – Unbenutzte Variable `mainRow` in `open()` entfernt
+
+### 🧪 Tests
+- `stringEscaperTool.test.js` – 83 Tests (Registration, UI-Rendering, HTML/XML/JavaScript/JSON/SQL/CSV Escape+Unescape, leere Eingabe, Output-Info, Clear, Auto-Process, Load-Sample, Copy, Layout-Toggle)
+- Gesamt: **675 Tests** (17 Suites)
+
 ### 🔒 Security
 - **Regex Tester** – XSS-Lücke in `highlightMatches()` behoben: `before`/`after`-Textsegmente wurden nie mit `escapeHtml()` escaped, bevor sie per `innerHTML` gerendert wurden — `<script>`-Tags im Test-String konnten ausgeführt werden; Highlighting-Logik auf linearen Aufbau (aufsteigend sortiert) umgestellt, alle Segmente werden jetzt korrekt escaped
 

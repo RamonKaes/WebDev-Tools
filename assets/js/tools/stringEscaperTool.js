@@ -14,20 +14,6 @@
   }
 
   /**
-   * Helper function for internationalization
-   *
-   * @param {string} key - Translation key
-   * @param {object} params - Parameters for interpolation
-   * @returns {string} - Translated string
-   */
-  function t(key, params) {
-    if (window.i18n && typeof window.i18n.t === 'function') {
-      return window.i18n.t(key, params);
-    }
-    return key.split('.').pop().replace(/([A-Z])/g, ' $1').trim();
-  }
-
-  /**
    * Format-specific escape and unescape functions
    *
    * Security: Proper escaping prevents XSS, SQL injection, and CSV injection attacks.
@@ -301,7 +287,6 @@
 
       // DOM elements
       const toggleLayoutBtn = document.getElementById('toggleLayoutBtn');
-      const mainRow = document.getElementById('mainRow');
       const inputText = document.getElementById('inputText');
       const outputText = document.getElementById('outputText');
       const formatSelect = document.getElementById('escapeFormat');
@@ -424,7 +409,7 @@
           inputText.value = 'Hello \\"World\\"!\\nThis has \\\'quotes\\\' and special chars: &lt;&gt;&amp;\\nBackslash: \\\\ and newlines\\nTabs:\\there';
         }
         if (autoProcess.checked) {
-          handleProcess();
+          process();
         }
       });
 

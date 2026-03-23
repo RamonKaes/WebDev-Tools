@@ -7,7 +7,7 @@ Privacyfirst Developer-Toolbox. Alle Operationen laufen **client-side im Browser
 ## Befehle
 
 ```bash
-npm test                        # Jest Unit-Tests (128 Tests, 5 Suites)
+npm test                        # Jest Unit-Tests (147 Tests, 6 Suites)
 npm run test:coverage           # Mit Coverage-Report
 bash build.sh                   # Production-Build nach dist/
 php config/generate-manifest.php    # Nach neuem Tool ausführen
@@ -114,6 +114,20 @@ Muster: `tests/unit/toolNameTool.test.js`
 
 ---
 
+## URL-Änderungen → htaccess-Rewrite-Rules
+
+Bei jeder URL-Änderung (neuer Slug, umbenanntes Tool, neue Sprachversion) **immer beide** Dateien aktualisieren:
+
+- `.htaccess` — Entwicklungsumgebung
+- `.htaccess.production` — Produktionsumgebung
+
+Muster (301-Redirect vom alten zum neuen Slug):
+```apache
+RewriteRule ^de/alter-slug/?$ /de/neuer-slug/ [R=301,L]
+```
+
+---
+
 ## Neues Tool hinzufügen – Checkliste
 
 1. `tool-name/index.php` + Sprachversionen (`de/`, `es/`, `fr/`, `it/`, `pt/`)
@@ -123,3 +137,4 @@ Muster: `tests/unit/toolNameTool.test.js`
 5. `php config/generate-manifest.php && php config/generate-sitemaps.php`
 6. `tests/unit/toolNameTool.test.js`
 7. `bash build.sh`
+8. Bei lokalisierten Slugs: Rewrite-Rules in `.htaccess` **und** `.htaccess.production`

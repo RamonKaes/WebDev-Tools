@@ -34,7 +34,7 @@ $features = [
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
-    <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Pourquoi utiliser des unités rem&nbsp;?</h2>
+    <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Pourquoi utiliser des unités rem&nbsp;?</h3>
     <ul class="mb-0">
         <li>Accessibilité&nbsp;: les utilisateurs peuvent ajuster la taille de police du navigateur</li>
         <li>Consistance&nbsp;: toutes les tailles évoluent proportionnellement</li>

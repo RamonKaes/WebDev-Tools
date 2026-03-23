@@ -24,7 +24,7 @@ $features = [
 ];
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
-    <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Warum rem-Einheiten verwenden?</h2>
+    <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Warum rem-Einheiten verwenden?</h3>
     <ul class="mb-0">
         <li>Barrierefreiheit: Benutzer können die Schriftgröße ihres Browsers anpassen</li>
         <li>Konsistenz: Alle Größen skalieren proportional</li>

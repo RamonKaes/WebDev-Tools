@@ -15,56 +15,32 @@
 
   // Terser minifier lazy-loading
   let terserLoaded = false;
-  let terserLoading = false;
+  let terserLoadPromise = null;
 
   /**
    * Load Terser library from CDN (lazy-loaded on first minify)
    * @returns {Promise<boolean>} - True if loaded successfully
    */
-  async function loadTerser() {
-    if (terserLoaded) return true;
-    if (terserLoading) {
-      // Wait for existing load to complete
-      while (terserLoading) {
-        await new Promise(resolve => setTimeout(resolve, 100));
-      }
-      return terserLoaded;
-    }
+  function loadTerser() {
+    if (terserLoaded) return Promise.resolve(true);
+    if (terserLoadPromise) return terserLoadPromise;
 
-    terserLoading = true;
-    try {
+    terserLoadPromise = new Promise((resolve) => {
       const script = document.createElement('script');
       script.src = 'https://cdn.jsdelivr.net/npm/terser@5.31.0/dist/bundle.min.js';
+      script.integrity = 'sha384-Be6gQ8oRB6kvVWiyo9hE8EhvDDgFKZlw6eWFcDjnoN0SvHE2gQHRgDENlZG1v7dX';
+      script.crossOrigin = 'anonymous';
       script.async = true;
-      
-      await new Promise((resolve, reject) => {
-        script.onload = resolve;
-        script.onerror = reject;
-        document.head.appendChild(script);
-      });
-      
-      terserLoaded = true;
-      return true;
-    } catch (error) {
-      console.error('[codeFormatterTool] Failed to load Terser:', error);
-      return false;
-    } finally {
-      terserLoading = false;
-    }
-  }
+      script.onload = () => { terserLoaded = true; resolve(true); };
+      script.onerror = () => {
+        console.error('[codeFormatterTool] Failed to load Terser.');
+        terserLoadPromise = null;
+        resolve(false);
+      };
+      document.head.appendChild(script);
+    });
 
-  /**
-   * Helper function for internationalization
-   *
-   * @param {string} key - Translation key
-   * @param {object} params - Parameters for interpolation
-   * @returns {string} - Translated string
-   */
-  function t(key, params) {
-    if (window.i18n && typeof window.i18n.t === 'function') {
-      return window.i18n.t(key, params);
-    }
-    return key.split('.').pop().replace(/([A-Z])/g, ' $1').trim();
+    return terserLoadPromise;
   }
 
   const formatters = {
@@ -77,6 +53,11 @@
        * @returns {string} - Formatted HTML
        */
       beautify: (code, indent = '  ') => {
+        const voidElements = new Set([
+          'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input',
+          'link', 'meta', 'param', 'source', 'track', 'wbr'
+        ]);
+
         let formatted = '';
         let indentLevel = 0;
         const lines = code.split(/>\s*</);
@@ -85,7 +66,15 @@
           if (index > 0) line = '<' + line;
           if (index < lines.length - 1) line = line + '>';
 
-          if (line.match(/^<\//) || line.match(/^<.*\/>/)) {
+          const tagName = (line.match(/^<\/?([a-zA-Z][a-zA-Z0-9]*)/i) || [])[1]?.toLowerCase();
+          const isVoid = voidElements.has(tagName);
+          const isClosingTag = /^<\//.test(line);
+          const isSelfClosing = /\/>$/.test(line);
+          // Complete inline element: <tag>content</tag> within a single token
+          const isCompleteElement = !isClosingTag && tagName &&
+            new RegExp(`</${tagName}>$`, 'i').test(line);
+
+          if (isClosingTag) {
             indentLevel = Math.max(0, indentLevel - 1);
           }
 
@@ -93,7 +82,8 @@
             formatted += indent.repeat(indentLevel) + line.trim() + '\n';
           }
 
-          if (line.match(/^<[^/!?]/) && !line.match(/\/>$/)) {
+          if (!isClosingTag && !isSelfClosing && !isVoid && !isCompleteElement &&
+              /^<[^!?]/.test(line)) {
             indentLevel++;
           }
         });
@@ -159,13 +149,15 @@
        * @returns {string} - Minified CSS
        */
       minify: (code) => {
+        // Strip comments first, then collapse whitespace around structural tokens.
+        // The colon replacement is intentionally omitted because it would corrupt
+        // string values (e.g. content: "a: b") without a full CSS tokenizer.
         return code
           .replace(/\/\*[\s\S]*?\*\//g, '')
           .replace(/\s+/g, ' ')
           .replace(/\s*{\s*/g, '{')
           .replace(/\s*}\s*/g, '}')
           .replace(/\s*;\s*/g, ';')
-          .replace(/\s*:\s*/g, ':')
           .replace(/\s*,\s*/g, ',')
           .trim();
       }
@@ -610,11 +602,12 @@
           javascript: 'function greet(name){console.log("Hello, "+name+"!");}const user={name:"John",age:30,hobbies:["coding","reading"]};greet(user.name);',
           html: '<!DOCTYPE html><html><head><title>Example</title></head><body><div class="container"><h1>Hello World</h1><p>This is a sample.</p></div></body></html>',
           css: 'body{margin:0;padding:0;font-family:Arial,sans-serif;}.container{max-width:1200px;margin:0 auto;padding:20px;}h1{color:#333;font-size:2rem;}',
-          json: '{"name":"John Doe","age":30,"email":"john@example.com","address":{"street":"Main St","city":"Berlin","country":"Germany"},"hobbies":["coding","reading"]}'
+          xml: '<?xml version="1.0"?><root><item id="1"><name>Example</name><value>42</value></item><item id="2"><name>Sample</name><value>99</value></item></root>',
+          sql: 'SELECT id,name,email FROM users WHERE active=1 AND created_at>\'2024-01-01\' ORDER BY name LIMIT 10'
         };
         inputCode.value = samples[lang] || samples.javascript;
         if (autoFormat.checked) {
-          handleFormat();
+          formatCode();
         }
       });
 
@@ -643,13 +636,16 @@
         if (window.ClipboardUtils && typeof window.ClipboardUtils.copyToClipboard === 'function') {
           window.ClipboardUtils.copyToClipboard(outputCode.value, copyBtn);
         } else {
-          outputCode.select();
-          document.execCommand('copy');
-          const originalText = copyBtn.innerHTML;
-          copyBtn.innerHTML = '<i class="bi bi-check me-2"></i>' + t('common.copied');
-          setTimeout(() => {
-            copyBtn.innerHTML = originalText;
-          }, 2000);
+          navigator.clipboard.writeText(outputCode.value).then(() => {
+            const originalText = copyBtn.innerHTML;
+            copyBtn.innerHTML = '<i class="bi bi-check me-2"></i>' + t('common.copied');
+            setTimeout(() => {
+              copyBtn.innerHTML = originalText;
+            }, 2000);
+          }).catch(() => {
+            outputCode.select();
+            outputCode.setSelectionRange(0, 99999);
+          });
         }
       });
 

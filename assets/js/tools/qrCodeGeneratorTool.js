@@ -40,6 +40,7 @@
      */
     open: function (container) {
       const t = window.i18n ? window.i18n.t.bind(window.i18n) : (key) => key;
+      this.t = t;
 
       try {
         container.innerHTML = '';
@@ -553,7 +554,7 @@
         if (downloadPngBtn) downloadPngBtn.disabled = false;
         if (downloadSvgBtn) downloadSvgBtn.disabled = false;
 
-        console.log('QR Code generated successfully');
+        console.debug('[qrCodeGeneratorTool] QR Code generated successfully');
       } catch (error) {
         console.error('Error generating QR code:', error);
         alert(t('tools.qrCodeGeneratorTool.errorGeneration'));
@@ -566,8 +567,10 @@
      * @param {string} format - File format (png or svg)
      */
     downloadQRCode: function (format) {
+      const t = this.t || ((key) => key);
+
       if (!this.currentQRCode) {
-        alert('No QR code to download');
+        alert(t('tools.qrCodeGeneratorTool.noQRCodeToDownload'));
         return;
       }
 
@@ -617,7 +620,7 @@
         }
       } catch (error) {
         console.error('Error downloading QR code:', error);
-        alert('Error downloading QR code');
+        alert(t('tools.qrCodeGeneratorTool.errorDownload'));
       }
     },
 

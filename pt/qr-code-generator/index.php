@@ -26,7 +26,7 @@ $features = [
     'Crie QR codes para URLs, textos, telefones, e-mails e muito mais',
     'Tamanho e qualidade configuráveis',
     'Cores personalizadas de fundo e primeiro plano',
-    'Níveis de correção de erro (L, M, Q, H)',
+    'Correção de erro máxima (nível H, ~30 % de recuperação)',
     'Download como PNG ou SVG',
     'Pré-visualização em tempo real',
     'Geração 100% local'
@@ -34,7 +34,7 @@ $features = [
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
-    <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Níveis de correção de erro</h2>
+    <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Níveis de correção de erro</h3>
     <ul class="mb-0">
         <li>L (Low): ~7% de recuperação – indicado para ambientes controlados</li>
         <li>M (Medium): ~15% de recuperação – recomendado para a maioria dos casos</li>
@@ -71,9 +71,9 @@ $usefulResources = [
         'description' => 'Conteúdo da DENSO WAVE, criadora do QR code'
     ],
     [
-        'url' => 'https://github.com/davidshimjs/qrcodejs',
-        'title' => 'QRCode.js',
-        'description' => 'Biblioteca JavaScript para gerar QR codes no navegador'
+        'url' => 'https://github.com/kazuhikoarase/qrcode-generator',
+        'title' => 'qrcode-generator',
+        'description' => 'Biblioteca JavaScript utilizada por esta ferramenta para gerar QR codes no navegador'
     ],
     [
         'url' => 'https://en.wikipedia.org/wiki/QR_code',

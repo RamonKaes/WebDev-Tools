@@ -7,6 +7,18 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
 ## [Unreleased]
 
 ### 🐛 Bug Fixes
+- **QR Code Generator** – `<h3>...</h2>` Tag-Mismatch in `$customNoticeContent` aller 5 Nicht-EN-Sprachversionen (de, es, fr, it, pt) behoben
+- **QR Code Generator** – Größen-Labels in allen 6 i18n-JSONs korrigiert: Dropdown-Optionen zeigten falsche Pixel (200×200/300×300/400×400/512×512 statt tatsächlich 128×128/256×256/512×512/1024×1024)
+- **QR Code Generator** – Library-Ressourcenlink in allen 6 PHP-Dateien korrigiert: verlinkten auf `davidshimjs/qrcodejs` (nicht genutzte Library), jetzt korrekt `kazuhikoarase/qrcode-generator`
+- **QR Code Generator** – Hardcodierte englische Fehlermeldungen in `downloadQRCode()` (`'No QR code to download'`, `'Error downloading QR code'`) durch i18n-Schlüssel ersetzt; 2 neue Keys (`noQRCodeToDownload`, `errorDownload`) in alle 6 Sprach-JSONs ergänzt
+- **QR Code Generator** – `console.log` → `console.debug` in `generateQRCode()`
+- **QR Code Generator** – Irreführender Feature-Claim „Error correction levels (L, M, Q, H)" in allen 6 PHP-Dateien korrigiert: Tool hardcoded Stufe H ohne UI-Selektor; jetzt als „Maximum error correction (level H)" deklariert
+
+### 🧪 Tests
+- `qrCodeGeneratorTool.test.js` – 65 Tests (Registration, UI-Rendering, Mode-Switching, URL/Text/vCard/WiFi Content-Builder, WiFi-Escaping, QR-Generierung, Download-Button-States, clearAll)
+- Gesamt: **541 Tests** (15 Suites)
+
+### 🐛 Bug Fixes
 - **Homepage (index.php)** – Falsche Tool-Keys `characterReference` / `emojiReference` in es/, fr/, it/, pt/ korrigiert (korrekt: `characterReferenceTool` / `emojiReferenceTool`); i18n-Daten für diese beiden Karten wurden nie geladen
 - **Homepage (index.php)** – Fehlende HTML-Minifizierung in allen 5 Sprachversionen (de/, es/, fr/, it/, pt/) nachgezogen: `ob_start()` am Anfang und `minify_html_output(ob_get_clean())` am Ende ergänzt
 - **Homepage (index.php)** – Deutsche Fallback-Texte (`'Daten-Konverter'`, `'PX ⇄ REM Konverter'`, `'Passwort Generator'`) in es/, fr/, it/, pt/ durch englische Fallbacks (`'Data Converter'`, `'PX ⇄ REM Converter'`, `'Password Generator'`) ersetzt

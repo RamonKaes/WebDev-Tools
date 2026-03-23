@@ -12,16 +12,16 @@ $resourcesSectionTitle = 'Ressources Utiles';
 
 $features = [
     'Correspondance de motifs en temps réel',
-    'Prise en charge de plusieurs indicateurs (g, i, m, s, u)',
+    'Tous les indicateurs regex (g, i, m, s, u, y)',
     'Mise en surbrillance des correspondances avec groupes de capture',
     'Informations détaillées et statistiques',
-    'Bibliothèque de motifs regex courants',
+    'Copier et télécharger les résultats',
     'Traitement 100% côté client'
 ];
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
-<h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Test des expressions régulières</h2>
+<h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Test des expressions régulières</h3>
 <ul class="mb-0">
     <li>Moteur JavaScript&nbsp;: cet outil utilise le moteur RegExp de JavaScript pour tester les motifs</li>
     <li>Tests en direct&nbsp;: évaluez vos motifs sur du texte réel avec un retour visuel instantané</li>

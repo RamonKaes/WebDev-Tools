@@ -914,6 +914,8 @@
       "copy_matches": "Copier les correspondances",
       "download_results": "Télécharger les résultats",
       "copied": "Copié dans le presse-papiers !",
+      "highlighted_matches_title": "Correspondances Surlignées",
+      "match_label": "Correspondance {number}",
       "about_title": "À propos",
       "how_to_use_steps": [
         "Entrez votre motif d'expression régulière",

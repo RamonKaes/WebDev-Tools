@@ -12,16 +12,16 @@ $resourcesSectionTitle = 'Risorse Utili';
 
 $features = [
     'Corrispondenza di pattern in tempo reale',
-    'Supporto per più flag (g, i, m, s, u)',
+    'Tutti i flag regex (g, i, m, s, u, y)',
     'Evidenziazione delle corrispondenze con gruppi di cattura',
     'Informazioni dettagliate e statistiche',
-    'Libreria di pattern regex comuni',
+    'Copia e scarica i risultati',
     'Elaborazione 100% lato client'
 ];
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
-<h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Test di espressioni regolari</h2>
+<h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Test di espressioni regolari</h3>
 <ul class="mb-0">
     <li>Motore JavaScript: il test utilizza il motore RegExp del browser</li>
     <li>Feedback in tempo reale: valida pattern su testi e vedi i risultati istantaneamente</li>

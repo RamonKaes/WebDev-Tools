@@ -910,6 +910,8 @@
       "copy_matches": "Copiar Coincidencias",
       "download_results": "Descargar Resultados",
       "copied": "¡Copiado al portapapeles!",
+      "highlighted_matches_title": "Coincidencias Resaltadas",
+      "match_label": "Coincidencia {number}",
       "linkTitle": {
         "card": "Probar y depurar expresiones regulares en línea",
         "nav": "Probador Regex"

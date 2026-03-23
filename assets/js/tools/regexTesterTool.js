@@ -193,7 +193,7 @@
           <div class="card">
             <div class="card-body">
               <h2 class="h5 card-title mb-3">
-                <i class="bi bi-brush me-2"></i>Highlighted Matches
+                <i class="bi bi-brush me-2"></i>${t('tools.regexTesterTool.highlighted_matches_title')}
               </h2>
               <pre id="highlightedText" class="p-3 bg-body-secondary rounded mb-0 font-monospace pre-wrap"></pre>
             </div>
@@ -262,7 +262,6 @@
   function renderResults(result) {
     const container = document.getElementById('resultsContainer');
     const highlightedContainer = document.getElementById('highlightedContainer');
-    const highlightedText = document.getElementById('highlightedText');
 
     if (!result.success) {
       container.innerHTML = `
@@ -304,7 +303,7 @@
       html += `
         <div class="card mb-3">
           <div class="card-header bg-primary text-white">
-            <strong>Match ${index + 1}</strong>
+            <strong>${t('tools.regexTesterTool.match_label', {number: index + 1})}</strong>
           </div>
           <div class="card-body">
             <table class="table table-sm mb-0">
@@ -351,7 +350,7 @@
   /**
    * Highlight regex matches in the test string
    *
-   * Security: Uses escapeHtml to prevent XSS when displaying matched text.
+   * Security: All text segments are escaped with escapeHtml to prevent XSS.
    *
    * @param {object} result - Test result object containing matches
    */
@@ -364,21 +363,19 @@
       return;
     }
 
-    // Sort matches by index (descending) to replace from end to start
-    const sortedMatches = [...result.matches].sort((a, b) => b.index - a.index);
+    // Sort matches ascending by index and build HTML linearly
+    const sortedMatches = [...result.matches].sort((a, b) => a.index - b.index);
+    let html = '';
+    let lastIndex = 0;
 
-    let highlightedString = testString;
-    sortedMatches.forEach((match, index) => {
-      const before = highlightedString.substring(0, match.index);
-      const matchedText = highlightedString.substring(match.index, match.index + match.fullMatch.length);
-      const after = highlightedString.substring(match.index + match.fullMatch.length);
-
-      highlightedString = before +
-        `<mark class="bg-warning text-dark">${escapeHtml(matchedText)}</mark>` +
-        after;
+    sortedMatches.forEach((match) => {
+      html += escapeHtml(testString.slice(lastIndex, match.index));
+      html += `<mark class="bg-warning text-dark">${escapeHtml(match.fullMatch)}</mark>`;
+      lastIndex = match.index + match.fullMatch.length;
     });
 
-    highlightedText.innerHTML = highlightedString;
+    html += escapeHtml(testString.slice(lastIndex));
+    highlightedText.innerHTML = html;
   }
 
   /**
@@ -410,10 +407,10 @@
     document.getElementById('regexFlags').value = '';
     document.getElementById('testString').value = '';
     document.getElementById('resultsContainer').innerHTML = `
-      <p class="text-muted mb-0">
+      <div class="alert alert-light mb-0">
         <i class="bi bi-info-circle me-2"></i>
-        ${t('tools.regexTesterTool.test_button')}
-      </p>
+        <small class="text-muted">${t('tools.regexTesterTool.placeholder_text').replace('{button}', t('tools.regexTesterTool.test_button'))}</small>
+      </div>
     `;
     document.getElementById('highlightedContainer').classList.add('d-none');
 
@@ -434,6 +431,7 @@
       `Match ${i + 1}: "${match.fullMatch}" at position ${match.index}`
     ).join('\n');
 
+    copyToClipboard(matchesText);
     showToast(t('tools.regexTesterTool.copied'), 'success', 2000);
   }
 

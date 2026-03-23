@@ -914,6 +914,8 @@
       "copy_matches": "Übereinstimmungen kopieren",
       "download_results": "Ergebnisse herunterladen",
       "copied": "In Zwischenablage kopiert!",
+      "highlighted_matches_title": "Hervorgehobene Treffer",
+      "match_label": "Treffer {number}",
       "about_title": "Über",
       "how_to_use_steps": [
         "Geben Sie Ihr reguläres Ausdrucksmuster ein",

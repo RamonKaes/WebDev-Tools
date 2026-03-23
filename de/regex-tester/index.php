@@ -12,16 +12,16 @@ $resourcesSectionTitle = 'Nützliche Ressourcen';
 
 $features = [
     'Echtzeit-Musterabgleich',
-    'Mehrere Regex-Flags (g, i, m, s, u)',
-    'Match-Hervorhebung mit Erfassungsgruppen',
-    'Detaillierte Match-Informationen und Statistiken',
-    'Bibliothek häufiger Regex-Muster',
+    'Alle Regex-Flags (g, i, m, s, u, y)',
+    'Treffer-Hervorhebung mit Erfassungsgruppen',
+    'Detaillierte Treffer-Informationen und Statistiken',
+    'Treffer kopieren und herunterladen',
     '100% clientseitige Verarbeitung'
 ];
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
-<h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Reguläre Ausdrücke testen</h2>
+<h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Reguläre Ausdrücke testen</h3>
 <ul class="mb-0">
     <li>JavaScript Engine: Dieses Tool nutzt JavaScripts RegExp-Engine zum Testen von Mustern</li>
     <li>Live-Testing: Teste deine Muster gegen echten Text mit sofortigem visuellem Feedback</li>

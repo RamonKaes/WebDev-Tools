@@ -914,6 +914,8 @@
       "copy_matches": "Copiar Correspondências",
       "download_results": "Descarregar Resultados",
       "copied": "Copiado para área de transferência!",
+      "highlighted_matches_title": "Correspondências Destacadas",
+      "match_label": "Correspondência {number}",
       "about_title": "Sobre",
       "how_to_use_title": "Como Usar",
       "how_to_use_steps": [

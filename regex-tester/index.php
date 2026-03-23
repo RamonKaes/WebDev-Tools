@@ -12,10 +12,10 @@ $resourcesSectionTitle = 'Useful Resources';
 
 $features = [
     'Real-time pattern matching',
-    'Support for multiple regex flags (g, i, m, s, u)',
+    'Support for all regex flags (g, i, m, s, u, y)',
     'Match highlighting with capture groups',
     'Detailed match information and statistics',
-    'Common regex patterns library',
+    'Copy and download match results',
     '100% client-side processing'
 ];
 

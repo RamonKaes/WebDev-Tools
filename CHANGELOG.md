@@ -6,6 +6,22 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
 
 ## [Unreleased]
 
+### 🔒 Security
+- **Regex Tester** – XSS-Lücke in `highlightMatches()` behoben: `before`/`after`-Textsegmente wurden nie mit `escapeHtml()` escaped, bevor sie per `innerHTML` gerendert wurden — `<script>`-Tags im Test-String konnten ausgeführt werden; Highlighting-Logik auf linearen Aufbau (aufsteigend sortiert) umgestellt, alle Segmente werden jetzt korrekt escaped
+
+### 🐛 Bug Fixes
+- **Regex Tester** – `handleCopyMatches()` hat `matchesText` aufgebaut, aber `copyToClipboard()` nie aufgerufen — Clipboard blieb leer, Toast erschien trotzdem; `copyToClipboard(matchesText)` ergänzt
+- **Regex Tester** – `handleClear()` zeigte `test_button`-Übersetzungsschlüssel als Platzhaltertext statt des korrekten `placeholder_text`-Hinweises; Placeholder-HTML jetzt identisch mit `renderUI()`
+- **Regex Tester** – `<h3>...</h2>` HTML-Tag-Mismatch in `$customNoticeContent` aller 5 Nicht-EN-Sprachversionen (de, es, fr, it, pt) behoben
+- **Regex Tester** – Feature-Liste: „Common regex patterns library" (nicht implementiert) in allen 6 Sprachversionen entfernt und durch „Copy and download match results" ersetzt
+- **Regex Tester** – Flag-Auflistung in allen 6 Sprachversionen von `(g, i, m, s, u)` auf `(g, i, m, s, u, y)` korrigiert (`y`-Flag ist implementiert, fehlte aber in der Beschreibung)
+- **Regex Tester** – Hardcodierte englische Strings `"Highlighted Matches"` und `"Match N"` durch i18n-Schlüssel ersetzt (`highlighted_matches_title`, `match_label`); 2 neue Keys in alle 6 Sprach-JSONs ergänzt
+- **Regex Tester** – Unbenutzte Variable `highlightedText` in `renderResults()` entfernt
+
+### 🧪 Tests
+- `regexTesterTool.test.js` – 51 Tests (Registration, UI-Rendering, Flag-Sync, Erfolgreiche Matches, Kein Match, Ungültiges Pattern, XSS-Sicherheit, Clear, Copy-Matches, Download, Infinite-Loop-Prevention, Keyboard-Shortcuts)
+- Gesamt: **592 Tests** (16 Suites)
+
 ### 🐛 Bug Fixes
 - **QR Code Generator** – `<h3>...</h2>` Tag-Mismatch in `$customNoticeContent` aller 5 Nicht-EN-Sprachversionen (de, es, fr, it, pt) behoben
 - **QR Code Generator** – Größen-Labels in allen 6 i18n-JSONs korrigiert: Dropdown-Optionen zeigten falsche Pixel (200×200/300×300/400×400/512×512 statt tatsächlich 128×128/256×256/512×512/1024×1024)

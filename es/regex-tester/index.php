@@ -12,16 +12,16 @@ $resourcesSectionTitle = 'Recursos Útiles';
 
 $features = [
     'Coincidencia de patrones en tiempo real',
-    'Soporte para múltiples flags (g, i, m, s, u)',
+    'Todos los flags regex (g, i, m, s, u, y)',
     'Resaltado de coincidencias con grupos de captura',
     'Información detallada de coincidencias y estadísticas',
-    'Biblioteca de patrones regex comunes',
+    'Copiar y descargar resultados',
     'Procesamiento 100% del lado del cliente'
 ];
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
-<h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Pruebas de expresiones regulares</h2>
+<h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Pruebas de expresiones regulares</h3>
 <ul class="mb-0">
     <li>Motor JavaScript: la herramienta usa el motor RegExp de JavaScript para evaluar patrones</li>
     <li>Pruebas en vivo: valida tus patrones con texto real y retroalimentación instantánea</li>

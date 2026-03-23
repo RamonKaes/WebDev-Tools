@@ -922,6 +922,8 @@
       "copy_matches": "Copia Corrispondenze",
       "download_results": "Scarica Risultati",
       "copied": "Copiato negli appunti!",
+      "highlighted_matches_title": "Corrispondenze Evidenziate",
+      "match_label": "Corrispondenza {number}",
       "toc_title": "Tester Regex",
       "h1_title": "Tester Regex — Test espressioni regolari e pattern",
       "card_description": "Testa e debug espressioni regolari con evidenziazione in tempo reale. Tester regex con JavaScript, Python, PHP e analisi gruppi di cattura per sviluppatori.",

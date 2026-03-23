@@ -922,6 +922,8 @@
       "copy_matches": "Copy Matches",
       "download_results": "Download Results",
       "copied": "Copied to clipboard!",
+      "highlighted_matches_title": "Highlighted Matches",
+      "match_label": "Match {number}",
       "toc_title": "Regex Tester",
       "h1_title": "Regex Tester — Test Regular Expressions with Live Match",
       "card_description": "Test regular expressions with real-time pattern matching and highlighting. Supports JavaScript, Python, PHP flavors with capture groups and flags analysis.",

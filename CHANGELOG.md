@@ -15,6 +15,33 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **[2026-03-22]** `getCookie()` in `i18n.js` nutzt jetzt Regex-Escaping (ReDoS-Prävention)
 
 ### 🐛 Bug Fixes
+- **[2026-03-22]** Aspect Ratio Calculator Code-Review-Findings behoben
+  - `t()`-Funktion dedupliziert: einmalig als IIFE-Closure definiert statt doppelt innerhalb `open()`
+  - `clearAll`: Preset-Farben (`text-white → text-body-secondary`) korrekt zurückgesetzt
+  - GCD-Algorithmus: rekursiv → iterativ (Stack-Overflow-Prävention bei großen Zahlen)
+  - Preset-Labels und Tabelleninhalte via `t()` internationalisiert (16 neue i18n-Keys)
+  - Individuelle `copyWidth/copyHeight`-Handler entfernt, unified via `.copy-btn`
+  - `simplifyRatio`: präzisionsbasiertes Decimal-Scaling statt hartem `*1000`
+    (16:9 → scale=1, 1.5:1 → scale=10, Integer-Eingaben bleiben exakt)
+- **[2026-03-22]** Base64 Encoder/Decoder Code-Review-Findings behoben
+  - Fehlendes `=`-Padding in `decodeToFile()` bei URL-safe-Modus ergänzt (`atob()` warf DOMException)
+  - Regex ohne `$`-Anker in `processBtn`-Handler korrigiert (verhindert falsches Routing zu `decodeToFile`)
+  - Memory Leak durch unrevokte Object-URLs behoben (`revokeImagePreview()`-Helper)
+  - `downloadBtn`-Check auf `isVisible()` umgestellt (`imagePreview.src` bleibt nach Clear gesetzt)
+  - `clearBtn` setzt nun `encodedFileName`/`decodedFileName`/`decodedMimeType` zurück
+  - Duplizierte FileReader-Logik in `loadTextFileForDecoding()` extrahiert
+  - `t()`-Funktion einmalig auf Modulebene konsolidiert (war doppelt in `open()` + `initializeTool()`)
+- **[2026-03-22]** Character Reference Code-Review-Findings behoben
+  - `showToast`-Stub durch `window.ClipboardUtils.showToast` ersetzt
+  - `t()` an 10 Stellen korrekt aufgerufen (`t.xxx` → `t('xxx')`)
+  - Doppelten Event-Listener auf `loadFullDatasetBtn` entfernt
+  - `escapeForAttribute()` null-sicher gemacht
+  - `buildRowHTML()` extrahiert (Duplizierung in `renderTableRows`/`appendTableRows` beseitigt)
+  - `appendLoadMoreRow()` extrahiert (Load-More-Logik zentralisiert)
+  - 8 hartkodierte englische Strings durch i18n-Keys ersetzt
+  - Kategorie-Counts dynamisch aus geladenem Datensatz berechnet
+  - Unnötiges `setTimeout(50)` entfernt
+  - 16 fehlende i18n-Keys in allen 6 Sprachen ergänzt
 - **[2026-03-22]** Code-Review-Findings in `assets/js` behoben (20 Fixes)
   - `i18n.js`: Race Condition in `init()` behoben (Flag sofort setzen); `t()` nutzt einen einzigen `replace()`-Durchlauf statt RegExp pro Parameter
   - `mobile-navigation.js`: Hartkodiertes `setTimeout(150ms)` durch `hidden.bs.offcanvas`-Event ersetzt
@@ -56,6 +83,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - ES6 module version was unused and caused browser compatibility issues
 
 ### 🧪 Testing Infrastructure
+- **[2026-03-22]** Jest-Unit-Tests für die drei refaktorierten Tools eingeführt
+  - `tests/unit/aspectRatioCalculator.test.js` – 14 Tests (Berechnung, Vereinfachung, CSS, UI)
+  - `tests/unit/base64EncoderDecoder.test.js` – 13 Tests (Kodierung, Dekodierung, URL-safe, Zustand)
+  - `tests/unit/characterReference.test.js` – 16 Tests (XSS-Escaping, Filter, Suche, Kopieren)
+  - Jest 29 + `jest-environment-jsdom` als Test-Umgebung
+  - Alte Shell-basierte Skripte durch fokussierte Unit-Tests ersetzt
 - Moved all test scripts to dedicated `/tests` directory
 - Created comprehensive test suite with 4 scripts covering 33 tests:
   - `test-suite.sh` - 10 core tests (PHP, i18n, security, SEO)

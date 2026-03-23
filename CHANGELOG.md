@@ -15,6 +15,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **[2026-03-22]** `getCookie()` in `i18n.js` nutzt jetzt Regex-Escaping (ReDoS-Prävention)
 
 ### 🐛 Bug Fixes
+- **[2026-03-23]** Data Converter Tool Code-Review-Findings behoben
+  - `handleConversion` → `performConversion` (ReferenceError beim Load-Sample mit Auto-Convert)
+  - `indentationWrapper` nach Wechsel Timestamp → XML/CSV korrekt wieder eingeblendet
+  - Tote Sample-Einträge (`base64ToHex`, `hexToBase64`) entfernt; fehlende Samples für alle 8 Konverter-Typen ergänzt
+  - Unbenutzte Variablen `optionsContainer` und `index` entfernt
+- **[2026-03-23]** Timestamp-Konvertierung auf UTC normiert
+  - `timestampToDate` gibt nun explizit ` UTC` aus (z.B. `2023-11-06 12:00:00 UTC`)
+  - Roundtrip Timestamp → Datum → Timestamp ist dadurch timezone-unabhängig korrekt
+  - Placeholder und Samples entsprechend aktualisiert
+- **[2026-03-23]** Code-Formatter Code-Review-Findings behoben
+  - Terser-Laden: Busy-Wait durch Promise-Kette ersetzt, SRI-Hash ergänzt
+  - HTML-Beautifier: Void-Elemente, self-closing Tags und complete inline Elements korrekt behandelt (kein falsches Indent-Increment mehr)
+  - CSS-Minifier: Doppelpunkt-Stripping entfernt (hätte String-Werte beschädigt)
+  - `handleFormat()` → `formatCode()` (ReferenceError-Bug beim Load-Sample behoben)
+  - Toten `json`-Eintrag in Samples durch `xml`/`sql`-Samples ersetzt
+  - `document.execCommand('copy')` durch `navigator.clipboard.writeText` ersetzt
+  - Mismatched `</h2>` → `</h3>` in `de/code-formatierer/index.php` korrigiert
+  - Duplizierte `t()`-Funktion entfernt
 - **[2026-03-22]** Aspect Ratio Calculator Code-Review-Findings behoben
   - `t()`-Funktion dedupliziert: einmalig als IIFE-Closure definiert statt doppelt innerhalb `open()`
   - `clearAll`: Preset-Farben (`text-white → text-body-secondary`) korrekt zurückgesetzt
@@ -83,6 +101,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - ES6 module version was unused and caused browser compatibility issues
 
 ### 🧪 Testing Infrastructure
+- **[2026-03-23]** Unit-Tests für Code-Formatter und Data-Converter hinzugefügt
+  - `tests/unit/codeFormatterTool.test.js` – 35 Tests (HTML/CSS/JS/XML/SQL Beautify+Minify, UI)
+  - `tests/unit/dataConverterTool.test.js` – 45 Tests (JSON↔XML, JSON↔YAML, JSON↔CSV, Timestamp↔Datum, UI)
+  - Gesamte Test-Suite: **128 Tests** (5 Suites)
 - **[2026-03-22]** Jest-Unit-Tests für die drei refaktorierten Tools eingeführt
   - `tests/unit/aspectRatioCalculator.test.js` – 14 Tests (Berechnung, Vereinfachung, CSS, UI)
   - `tests/unit/base64EncoderDecoder.test.js` – 13 Tests (Kodierung, Dekodierung, URL-safe, Zustand)

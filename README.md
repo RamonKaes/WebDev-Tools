@@ -679,8 +679,8 @@ The platform provides complete localization across all tools and documentation:
 
 ### Translation Methodology
 
-- **Static Content**: Translated using GPT-5 Codex for technical accuracy
-- **Cultural Content**: Translated using Claude Sonnet 4.5 for nuanced, contextually appropriate language
+- **Static Content**: Translated using Claude Sonnet 4.6 for technical accuracy
+- **Cultural Content**: Translated using Claude Sonnet 4.6 for nuanced, contextually appropriate language
 - **Consistency**: Centralized translation files ensure terminology consistency
 - **Quality Assurance**: Manual review by native speakers for critical pages
 
@@ -728,7 +728,7 @@ Architecture:
 │   ├── js/                      # JavaScript utilities
 │   └── img/                     # Static assets
 ├── [tool-name]/
-│   └── index.php                # Individual tool (18 tools)
+│   └── index.php                # Individual tool (19 tools)
 ├── de/, es/, pt/, fr/, it/      # Language-specific directories
 ├── CHANGELOG.md                 # Version history
 ├── SECURITY.md                  # Security documentation
@@ -760,23 +760,22 @@ WebDev-Tools was developed using a **hybrid human-AI approach** that combines th
 
 #### AI Models Utilized
 
-- **Claude Sonnet 4.5** (Anthropic) — Primary coding assistant
-- **GitHub Copilot** — Code completion and suggestion
-- **GPT-5 Codex** (OpenAI) — Code review and translation
+- **Claude Sonnet 4.6** (Anthropic) — Primary coding assistant
+- **Claude Code** (Anthropic) — Automated code review and quality assurance
 
 #### Quality Assurance Process
 
-1. **Adversarial Review**: Different AI models cross-review each other's code
+1. **Automated Code Review**: Claude Code performs systematic review after each implementation
 2. **Human Architecture**: All design decisions made by human developer
 3. **Version Control**: Git-based workflow with rollback capability (`git reset --hard`)
-4. **Manual Testing**: Comprehensive QA across all 108 tool instances (18 tools × 6 languages)
+4. **Manual Testing**: Comprehensive QA across all 114 tool instances (19 tools × 6 languages)
 5. **Standards Validation**: Conformity checks against RFC/ISO specifications
 
 #### Challenges & Solutions
 
 | Challenge | Mitigation |
 |-----------|------------|
-| **AI Hallucinations** | Multiple AI models review each other's output |
+| **AI Hallucinations** | Claude Code automated review + human oversight |
 | **Framework Bias** | Switched from Tailwind to Bootstrap for stability |
 | **Code Complexity** | Enforced modular architecture with centralized templates |
 | **Translation Quality** | Model selection based on content type (technical vs. cultural) |
@@ -871,7 +870,7 @@ WebDev-Tools has undergone comprehensive third-party technical auditing:
 
 ### Audit Highlights
 
-✅ **Functional Integrity**: All 18 tools generate RFC/ISO-compliant output  
+✅ **Functional Integrity**: All 19 tools generate RFC/ISO-compliant output  
 ✅ **Security Architecture**: Client-side-only execution verified  
 ✅ **Cryptographic Security**: CSPRNG usage confirmed for sensitive operations  
 ✅ **Standards Adherence**: Explicit referencing of normative specifications  
@@ -989,7 +988,7 @@ This project is licensed under the **MIT License**.
 ```
 MIT License
 
-Copyright (c) 2025 WebDev-Tools.info
+Copyright (c) 2026 WebDev-Tools.info
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -1022,9 +1021,8 @@ SOFTWARE.
 
 ### AI Development Partners
 
-- **Anthropic (Claude)** — Primary development assistant
-- **OpenAI (GPT-5)** — Code review and translation
-- **GitHub Copilot** — Code completion support
+- **Anthropic (Claude Sonnet 4.6)** — Primary development assistant
+- **Anthropic (Claude Code)** — Automated code review and quality assurance
 
 ### Community
 

@@ -4,7 +4,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
 
 ---
 
-## [Unreleased]
+## [2.0.0] – 2026-03-23
 
 ### 🐛 Bug Fixes
 - **UUID Generator** – `generateUUIDv1()` produzierte systematisch falsche UUIDs: JavaScript-Bitwise-Operatoren (`>>`, `&`) truncaten auf 32-bit-Integer, sodass der 60-bit-Timestamp (~1.4×10¹⁷) überlief — `timeMid` war immer `0000`, `timeHiVersion` immer `1000` unabhängig von der Systemzeit; auf `BigInt`-Arithmetik umgestellt, RFC 4122 korrekte v1-UUIDs werden jetzt generiert

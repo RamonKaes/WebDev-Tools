@@ -222,7 +222,6 @@
     const loadSampleBtn = document.getElementById('loadSampleBtn');
     const autoConvert = document.getElementById('autoConvert');
     const indentationSelect = document.getElementById('indentation');
-    const optionsContainer = document.getElementById('conversionOptions');
 
     // Layout toggle functionality
     const toggleLayoutBtn = document.getElementById('toggleLayoutBtn');
@@ -263,8 +262,10 @@
       // Show relevant options based on conversion type
       if (type === 'jsonToXml' || type === 'xmlToJson') {
         document.getElementById('xmlOptions')?.classList.remove('d-none');
+        document.getElementById('indentationWrapper')?.classList.remove('d-none');
       } else if (type === 'csvToJson' || type === 'jsonToCsv') {
         document.getElementById('csvOptions')?.classList.remove('d-none');
+        document.getElementById('indentationWrapper')?.classList.remove('d-none');
       } else if (type === 'timestampToDate' || type === 'dateToTimestamp') {
         document.getElementById('timestampOptions')?.classList.remove('d-none');
         document.getElementById('indentationWrapper')?.classList.add('d-none');
@@ -751,7 +752,7 @@
       const headers = hasHeader ? parseCsvLine(lines[0], delimiter) : null;
       const startIndex = hasHeader ? 1 : 0;
 
-      return lines.slice(startIndex).map((line, index) => {
+      return lines.slice(startIndex).map((line) => {
         const values = parseCsvLine(line, delimiter);
         const obj = {};
 
@@ -936,14 +937,16 @@
         const samples = {
           jsonToXml: '{"name":"John Doe","age":30,"email":"john@example.com","address":{"street":"Main St","city":"Berlin","country":"Germany"},"hobbies":["coding","reading"]}',
           xmlToJson: '<person><name>John Doe</name><age>30</age><email>john@example.com</email><address><street>Main St</street><city>Berlin</city><country>Germany</country></address></person>',
-          csvToJson: 'name,age,email\nJohn Doe,30,john@example.com\nJane Smith,25,jane@example.com',
+          jsonToYaml: '{"name":"John Doe","age":30,"active":true,"address":{"city":"Berlin","country":"Germany"},"hobbies":["coding","reading"]}',
+          yamlToJson: 'name: John Doe\nage: 30\nactive: true\naddress:\n  city: Berlin\n  country: Germany\nhobbies:\n  - coding\n  - reading',
           jsonToCsv: '[{"name":"John Doe","age":30,"email":"john@example.com"},{"name":"Jane Smith","age":25,"email":"jane@example.com"}]',
-          base64ToHex: 'SGVsbG8gV29ybGQh',
-          hexToBase64: '48656c6c6f20576f726c6421'
+          csvToJson: 'name,age,email\nJohn Doe,30,john@example.com\nJane Smith,25,jane@example.com',
+          timestampToDate: '1699272000',
+          dateToTimestamp: '2023-11-06 12:00:00'
         };
         inputArea.value = samples[type] || samples.jsonToXml;
         if (autoConvert.checked) {
-          handleConversion();
+          performConversion();
         }
       });
     }

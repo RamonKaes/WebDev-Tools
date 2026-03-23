@@ -13,7 +13,7 @@ build-manifest.json
 *.min.js.map
 *.css.map
 
-# Temporary Build Files
+# Temporary Files
 *.temp.js
 *.temp.css
 
@@ -52,8 +52,6 @@ coverage/
 .idea/
 *.swp
 *.swo
-*~
-.DS_Store
 
 # AI Assistant Instructions (personal workflow)
 copilot-instructions.md
@@ -64,7 +62,6 @@ vendor/
 
 # SASS/SCSS Cache
 .sass-cache/
-*.css.map
 
 # ============================================
 # LOGS & DATABASES
@@ -91,9 +88,9 @@ logs/
 .Trashes
 ehthumbs.db
 Thumbs.db
+*~
 
 # Linux
-*~
 .directory
 
 # Windows

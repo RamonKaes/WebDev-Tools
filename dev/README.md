@@ -14,9 +14,9 @@ The production site (https://webdev-tools.info/) runs as a standard PHP/Apache s
 
 	```bash
 	# from the project root
-	./dev/start-server.sh
+	./maintenance/start-server.sh
 	# or use custom host/port
-	HOST=0.0.0.0 PORT=8080 ./dev/start-server.sh
+	HOST=0.0.0.0 PORT=8080 ./maintenance/start-server.sh
 	```
 
 2. Run minimal server-side checks (PHP CLI):

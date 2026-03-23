@@ -239,7 +239,7 @@
       "how_to_use_title": "How to Use",
       "toc_title": "JSON Formatter",
       "h1_title": "JSON Formatter & Validator — Beautify, Minify & Fix",
-      "card_description": "Format, validate and beautify JSON with syntax highlighting. Minify JSON, view tree structure, and detect errors. in your browser with privacy.",
+      "card_description": "Format, validate and beautify JSON with syntax highlighting. Minify JSON, view tree structure, and detect errors in your browser with privacy.",
       "tool_description": "Format, validate, and beautify your JSON data with our powerful JSON Formatter & Validator. The tool offers automatic error correction, alphabetical key sorting, various indentation options, and an intuitive tree view. Additionally, you can minify JSON, escape strings, and use the integrated path extractor to retrieve specific values. All operations are performed client-side for maximum security."
     },
     "aspectRatioCalculator": {

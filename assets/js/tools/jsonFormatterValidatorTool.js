@@ -328,17 +328,17 @@
       const downloadBtn = container.querySelector('#downloadBtn');
       const copyBtn = container.querySelector('#copyBtn');
       const jsonPath = container.querySelector('#jsonPath');
-      var extractPathBtn = container.querySelector('#extractPathBtn');
-      var pathResult = container.querySelector('#pathResult');
-      var escapeBtn = container.querySelector('#escapeBtn');
-      var unescapeBtn = container.querySelector('#unescapeBtn');
-      var autoFixCheck = container.querySelector('#autoFixCheck');
-      var sortKeysCheck = container.querySelector('#sortKeysCheck');
-      var dropArea = container.querySelector('#dropArea');
-      var viewTextRadio = container.querySelector('#viewText');
-      var viewTreeRadio = container.querySelector('#viewTree');
+      const extractPathBtn = container.querySelector('#extractPathBtn');
+      const pathResult = container.querySelector('#pathResult');
+      const escapeBtn = container.querySelector('#escapeBtn');
+      const unescapeBtn = container.querySelector('#unescapeBtn');
+      const autoFixCheck = container.querySelector('#autoFixCheck');
+      const sortKeysCheck = container.querySelector('#sortKeysCheck');
+      const dropArea = container.querySelector('#dropArea');
+      const viewTextRadio = container.querySelector('#viewText');
+      const viewTreeRadio = container.querySelector('#viewTree');
 
-      var currentParsedJSON = null;
+      let currentParsedJSON = null;
 
       // Drag & Drop functionality
       ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
@@ -411,14 +411,6 @@
           statusOutput.innerHTML = `<div class="alert alert-danger mb-0"><i class="bi bi-x-circle me-2"></i>${t('tools.jsonFormatterValidator.file_error')}</div>`;
         };
         reader.readAsText(file);
-      }
-
-      /**
-       * Get indentation setting from UI
-       *
-       * @returns {string|number} - Tab character or number of spaces
-       */
-      function getIndent() {
       }
 
       // View mode toggle
@@ -832,13 +824,7 @@
           statusOutput.innerHTML = `<p class="text-warning mb-0"><i class="bi bi-exclamation-triangle me-2"></i>${t('tools.jsonFormatterValidator.no_output_download')}</p>`;
           return;
         }
-        var blob = new Blob([jsonOutput.value], { type: 'application/json' });
-        var url = URL.createObjectURL(blob);
-        var a = document.createElement('a');
-        a.href = url;
-        a.download = 'formatted.json';
-        a.click();
-        URL.revokeObjectURL(url);
+        window.DownloadUtils.downloadText(jsonOutput.value, 'formatted.json', 'application/json');
         statusOutput.innerHTML = `<p class="text-success mb-0"><i class="bi bi-check-circle me-2"></i>${t('tools.jsonFormatterValidator.downloaded')}</p>`;
       });
 

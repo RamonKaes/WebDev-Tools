@@ -239,7 +239,7 @@
       "not_escaped_string": "Eingabe ist kein escaped JSON-String",
       "toc_title": "JSON Formatter",
       "h1_title": "JSON Formatter & Validator — Formatieren, Minifizieren",
-      "card_description": "Professioneller JSON Formatter und Validator mit Syntax-Highlighting. Formatiere, verschönere, minifiziere und validiere JSON-Daten. Features:.",
+      "card_description": "Professioneller JSON Formatter und Validator mit Syntax-Highlighting. Formatiere, verschönere, minifiziere und validiere JSON-Daten – direkt im Browser.",
       "tool_description": "Formatiere, validiere und verschönere deine JSON-Daten mit unserem leistungsstarken JSON Formatter & Validator. Das Tool bietet automatische Fehlerkorrektur, alphabetische Sortierung von Schlüsseln, verschiedene Einrückungsoptionen und eine intuitive Tree-Ansicht. Zusätzlich kannst du JSON minifizieren, escapen und mit dem integrierten Pfad-Extraktor gezielt Werte extrahieren. Alle Operationen erfolgen clientseitig für maximale Sicherheit."
     },
     "aspectRatioCalculator": {

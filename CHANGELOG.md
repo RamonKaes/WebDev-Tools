@@ -11,6 +11,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
 - `i18n.js`: `getCookie()` nutzt Regex-Escaping (ReDoS-Prävention)
 
 ### 🐛 Bug Fixes
+- **JSON Formatter & Validator** – Leere `getIndent()`-Deklaration (Zeile 421) entfernt (duplizierte Funktion ohne Body); `var` → `const`/`let` für alle Variablen in `initializeTool()` (9 Variablen); `downloadBtn` nutzt jetzt `window.DownloadUtils.downloadText()` statt manuellem Blob/URL-Pattern
 - **HTML Entity Encoder/Decoder** – `performConversion` → `convert` (ReferenceError in `loadSampleBtn`-Handler); `encodeToAllNamedEntities` Regex `/./g` → `/[\s\S]/g` (Newlines wurden übersprungen); Download nutzt jetzt `window.DownloadUtils.downloadText()` statt manuellem Blob/URL
 - **Hash Generator** – `</h3>` statt `</h2>` in `$customNoticeContent` aller 5 Sprachversionen (de, es, fr, it, pt); tote Variablen (`chunkSize`, `chunks`, `offset`) in `hashFile()` entfernt; Event-Listener-Leak in `generateSRI()` behoben (Guard-Flag verhindert doppelte Registrierung)
 - **Emoji Reference** – Suche ignorierte aktive Kategorie (`renderEmojis()` ohne `currentCategory`); `setupCopyButtons()` häufte Event-Listener bei jeder Paginierung an (jetzt einmalig in `setupEventListeners`)
@@ -24,6 +25,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
 - **Layout Toggle Button** – CSS-Transform-Konflikt behoben (`translate-middle` vs. `.btn-layout-toggle-stacked`)
 
 ### 🌐 i18n
+- **JSON Formatter & Validator** – `en.json` `card_description`: ". in" → "in" (fehlerhafter Satzumbruch); `de.json` `card_description`: abgeschnittenes "Features:." → vollständiger Satz
 - **HTML Entity Encoder/Decoder** – `featureList` und `keywords` in SEO-Sektion aller 6 Sprach-JSONs befüllt (waren leer)
 - **Emoji Reference** – 7 hardcodierte englische UI-Strings in alle 6 Sprach-JSONs extrahiert (`loadingEmojis`, `loadError`, `noResults`, `loadMore`, `loading`, `copyEmoji`, `copyCode`); Tippfehler in `en.json` `card_description` behoben
 
@@ -41,7 +43,8 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
 - `emojiReferenceTool.test.js` – 19 Tests (Registration, Initial Render, Category Filter, Search, XSS, Copy, Fetch Error)
 - `hashGeneratorTool.test.js` – 26 Tests (Registration, UI-Rendering alle 5 Modi, CryptoUtils, Text-Hashing, HMAC, Hash-Vergleich, Uppercase-Toggle)
 - `htmlEntityTool.test.js` – 30 Tests (Named/Decimal/Hex/All-Named Encoding, Decoding, Round-trip, UI-State, Copy, Download)
-- Gesamt: **203 Tests** (8 Suites) · Framework: Jest 29 + jsdom · Shell-Skripte entfernt
+- `jsonFormatterValidatorTool.test.js` – 44 Tests (Registration, UI-Rendering, Format, Validate, Minify, Sort Keys, Auto-fix, Clear, Load Sample, Copy, Download, Path Extractor, Escape/Unescape)
+- Gesamt: **247 Tests** (9 Suites) · Framework: Jest 29 + jsdom · Shell-Skripte entfernt
 
 ---
 

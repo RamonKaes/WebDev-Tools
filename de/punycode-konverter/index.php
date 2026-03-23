@@ -41,13 +41,13 @@ $additionalSections = [
 <div class="row mb-3">
   <div class="col-md-6">
     <div class="bg-body-secondary p-3 rounded">
-      <h3 class="h6">Unicode-Domain</h4>
+      <h3 class="h6">Unicode-Domain</h3>
       <code class="text-primary">münchen.de</code>
     </div>
   </div>
   <div class="col-md-6">
     <div class="bg-body-secondary p-3 rounded">
-      <h3 class="h6">Punycode-Domain</h4>
+      <h3 class="h6">Punycode-Domain</h3>
       <code class="text-success">xn--mnchen-3ya.de</code>
     </div>
   </div>

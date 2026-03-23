@@ -474,13 +474,22 @@
         try {
           let mode = container.querySelector('input[name="mode"]:checked').value;
 
-          // Auto-detect mode
-          if (mode === 'auto') {
-            mode = isPunycode(text) ? 'decode' : 'encode';
-          }
+          // Process each line independently (batch mode)
+          const lines = text.split('\n');
+          const results = lines.map(line => {
+            const trimmed = line.trim();
+            if (!trimmed) return '';
 
-          const result = convertDomain(text, mode === 'encode');
-          outputText.value = result;
+            // Auto-detect mode per line
+            let lineMode = mode;
+            if (lineMode === 'auto') {
+              lineMode = isPunycode(trimmed) ? 'decode' : 'encode';
+            }
+
+            return convertDomain(trimmed, lineMode === 'encode');
+          });
+
+          outputText.value = results.join('\n');
           updateStats();
 
         } catch (e) {
@@ -563,13 +572,7 @@
       downloadBtn.addEventListener('click', () => {
         if (!outputText.value) return;
 
-        const blob = new Blob([outputText.value], { type: 'text/plain' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'punycode.txt';
-        a.click();
-        URL.revokeObjectURL(url);
+        window.DownloadUtils.downloadText(outputText.value, 'punycode.txt');
       });
 
       // Initial stats

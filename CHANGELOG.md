@@ -6,6 +6,13 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
 
 ## [Unreleased]
 
+### 🐛 Bug Fixes
+- **Punycode Converter** – `<h3>...</h4>` Tag-Mismatch in allen 5 Nicht-EN-Sprachversionen (de, es, fr, it, pt) behoben; `downloadBtn` nutzt jetzt `window.DownloadUtils.downloadText()` statt manuellem Blob/URL-Pattern; Batch-Verarbeitung (mehrzeilige Eingabe) implementiert – jede Zeile wird separat konvertiert (zuvor wurde der gesamte Text als eine Domain behandelt)
+
+### 🧪 Tests
+- `punycodeConverterTool.test.js` – 36 Tests (Registration, UI-Rendering, Encoding Unicode→Punycode, Decoding Punycode→Unicode, Auto-Erkennung, Example-Button, Clear, Manual-Convert, Copy, Download, Stats)
+- Gesamt: **410 Tests** (13 Suites)
+
 ### 🔒 Security
 - `tool-loader.js` / `tool-registry.js`: `toolId` via `escapeHtml()` vor `innerHTML` gesichert (XSS)
 - `i18n.js`: `getCookie()` nutzt Regex-Escaping (ReDoS-Prävention)

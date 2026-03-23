@@ -290,8 +290,8 @@
         'yamlToJson': { input: 'name: value', output: '{"name": "value"}' },
         'jsonToCsv': { input: '[{"name":"John","age":30}]', output: 'name,age\nJohn,30' },
         'csvToJson': { input: 'name,age\nJohn,30', output: '[{"name":"John","age":"30"}]' },
-        'timestampToDate': { input: '1699272000', output: '2023-11-06 12:00:00' },
-        'dateToTimestamp': { input: '2023-11-06 12:00:00', output: '1699272000' }
+        'timestampToDate': { input: '1699272000', output: '2023-11-06 12:00:00 UTC' },
+        'dateToTimestamp': { input: '2023-11-06 12:00:00 UTC', output: '1699272000' }
       };
 
       if (placeholders[type]) {
@@ -410,7 +410,7 @@
         const ms = unit === 'milliseconds' ? timestamp : timestamp * 1000;
         const date = new Date(ms);
 
-        return date.toISOString().replace('T', ' ').substring(0, 19);
+        return date.toISOString().replace('T', ' ').substring(0, 19) + ' UTC';
       },
 
       /**

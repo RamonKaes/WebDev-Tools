@@ -308,9 +308,9 @@ describe('DataConverterTool – Timestamp to Date', () => {
   });
   afterEach(() => cleanup(c));
 
-  test('converts Unix timestamp (seconds) to ISO date string', () => {
+  test('converts Unix timestamp (seconds) to ISO date string with UTC suffix', () => {
     const output = convert('0');
-    expect(output).toMatch(/^1970-01-01 00:00:00$/);
+    expect(output).toMatch(/^1970-01-01 00:00:00 UTC$/);
   });
 
   test('invalid timestamp shows error', () => {
@@ -460,11 +460,15 @@ describe('DataConverterTool – Round-trips', () => {
     expect(parsed[0].age).toBe('30');
   });
 
-  test('dateToTimestamp (seconds) result is a valid integer', () => {
+  test('timestamp seconds → date → timestamp round-trip is exact', () => {
+    setConversionType('timestampToDate');
+    document.querySelector('input[name="timestampUnit"][value="seconds"]').checked = true;
+    const date = convert('1699272000');
+    expect(date).toBe('2023-11-06 12:00:00 UTC');
+
     setConversionType('dateToTimestamp');
     document.querySelector('input[name="timestampUnit"][value="seconds"]').checked = true;
-    const ts = convert('2023-11-06T12:00:00Z');
-    expect(ts).toMatch(/^\d+$/);
-    expect(parseInt(ts, 10)).toBeGreaterThan(0);
+    const ts = convert(date);
+    expect(parseInt(ts, 10)).toBe(1699272000);
   });
 });

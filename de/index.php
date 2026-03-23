@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+ob_start();
+
 require_once __DIR__ . '/../config/config.php';
 require_once __DIR__ . '/../config/helpers.php';
 require_once __DIR__ . '/../config/security-headers.php';
@@ -513,3 +515,4 @@ if ($manifest && isset($manifest['generatedAt'])) {
   <script src="../assets/js/category-filter.js?v=<?= $buildHash ?>"></script>
 
 <?php include __DIR__ . '/../partials/footer.php'; ?>
+<?php echo minify_html_output(ob_get_clean()); ?>

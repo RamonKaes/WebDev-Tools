@@ -7,6 +7,12 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
 ## [Unreleased]
 
 ### 🐛 Bug Fixes
+- **Homepage (index.php)** – Falsche Tool-Keys `characterReference` / `emojiReference` in es/, fr/, it/, pt/ korrigiert (korrekt: `characterReferenceTool` / `emojiReferenceTool`); i18n-Daten für diese beiden Karten wurden nie geladen
+- **Homepage (index.php)** – Fehlende HTML-Minifizierung in allen 5 Sprachversionen (de/, es/, fr/, it/, pt/) nachgezogen: `ob_start()` am Anfang und `minify_html_output(ob_get_clean())` am Ende ergänzt
+- **Homepage (index.php)** – Deutsche Fallback-Texte (`'Daten-Konverter'`, `'PX ⇄ REM Konverter'`, `'Passwort Generator'`) in es/, fr/, it/, pt/ durch englische Fallbacks (`'Data Converter'`, `'PX ⇄ REM Converter'`, `'Password Generator'`) ersetzt
+- **Homepage pt/index.php** – Gebrochener Button-Text `Utilit\n\nários` (Zeilenumbruch mitten im Wort) zu `Utilitários` zusammengeführt
+- **Homepage (index.php)** – Veraltete deutsche HTML-Kommentare `<!-- Dienstprogramme Kategorie -->` in es/, fr/, it/, pt/ durch `<!-- Utilities -->` ersetzt
+
 - **PX to REM Converter** – `<h3>...</h2>` Tag-Mismatch in allen 5 Nicht-EN-Sprachversionen (de, es, fr, it, pt) behoben
 - **Punycode Converter** – `<h3>...</h4>` Tag-Mismatch in allen 5 Nicht-EN-Sprachversionen (de, es, fr, it, pt) behoben; `downloadBtn` nutzt jetzt `window.DownloadUtils.downloadText()` statt manuellem Blob/URL-Pattern; Batch-Verarbeitung (mehrzeilige Eingabe) implementiert – jede Zeile wird separat konvertiert (zuvor wurde der gesamte Text als eine Domain behandelt)
 

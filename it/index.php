@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+ob_start();
+
 require_once __DIR__ . '/../config/config.php';
 require_once __DIR__ . '/../config/helpers.php';
 require_once __DIR__ . '/../config/security-headers.php';
@@ -318,7 +320,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
               <div class="card-body d-flex flex-column">
                   <h3 class="card-title fs-5 mb-2">
                   <i class="bi bi-arrow-left-right me-2"></i>
-                  <?= htmlspecialchars($tools['dataConverterTool']['toc_title'] ?? 'Daten-Konverter', ENT_QUOTES, 'UTF-8') ?>
+                  <?= htmlspecialchars($tools['dataConverterTool']['toc_title'] ?? 'Data Converter', ENT_QUOTES, 'UTF-8') ?>
                 </h3>
                 <p class="card-text text-secondary flex-grow-1">
                   <?= htmlspecialchars($tools['dataConverterTool']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
@@ -333,7 +335,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
               <div class="card-body d-flex flex-column">
                   <h3 class="card-title fs-5 mb-2">
                   <i class="bi bi-arrows-angle-expand me-2"></i>
-                  <?= htmlspecialchars($tools['pxToRemConverter']['toc_title'] ?? 'PX ⇄ REM Konverter', ENT_QUOTES, 'UTF-8') ?>
+                  <?= htmlspecialchars($tools['pxToRemConverter']['toc_title'] ?? 'PX ⇄ REM Converter', ENT_QUOTES, 'UTF-8') ?>
                 </h3>
                 <p class="card-text text-secondary flex-grow-1">
                   <?= htmlspecialchars($tools['pxToRemConverter']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
@@ -380,7 +382,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
               <div class="card-body d-flex flex-column">
                   <h3 class="card-title fs-5 mb-2">
                   <i class="bi bi-shield-lock me-2"></i>
-                  <?= htmlspecialchars($tools['passwordGeneratorTool']['toc_title'] ?? 'Passwort Generator', ENT_QUOTES, 'UTF-8') ?>
+                  <?= htmlspecialchars($tools['passwordGeneratorTool']['toc_title'] ?? 'Password Generator', ENT_QUOTES, 'UTF-8') ?>
                 </h3>
                 <p class="card-text text-secondary flex-grow-1">
                   <?= htmlspecialchars($tools['passwordGeneratorTool']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
@@ -459,10 +461,10 @@ if ($manifest && isset($manifest['generatedAt'])) {
               <div class="card-body d-flex flex-column">
                   <h3 class="card-title fs-5 mb-2">
                   <i class="bi bi-table me-2"></i>
-                  <?= htmlspecialchars($tools['characterReference']['toc_title'] ?? 'Riferimento Caratteri HTML', ENT_QUOTES, 'UTF-8') ?>
+                  <?= htmlspecialchars($tools['characterReferenceTool']['toc_title'] ?? 'Riferimento Caratteri HTML', ENT_QUOTES, 'UTF-8') ?>
                 </h3>
                 <p class="card-text text-secondary flex-grow-1">
-                  <?= htmlspecialchars($tools['characterReference']['card_description'] ?? 'Esplorare entità HTML, caratteri Unicode e simboli speciali', ENT_QUOTES, 'UTF-8') ?>
+                  <?= htmlspecialchars($tools['characterReferenceTool']['card_description'] ?? 'Esplorare entità HTML, caratteri Unicode e simboli speciali', ENT_QUOTES, 'UTF-8') ?>
                 </p>
               </div>
             </div>
@@ -476,17 +478,17 @@ if ($manifest && isset($manifest['generatedAt'])) {
               <div class="card-body d-flex flex-column">
                   <h3 class="card-title fs-5 mb-2">
                   <i class="bi bi-emoji-smile me-2"></i>
-                  <?= htmlspecialchars($tools['emojiReference']['toc_title'] ?? 'Riferimento Emoji', ENT_QUOTES, 'UTF-8') ?>
+                  <?= htmlspecialchars($tools['emojiReferenceTool']['toc_title'] ?? 'Riferimento Emoji', ENT_QUOTES, 'UTF-8') ?>
                 </h3>
                 <p class="card-text text-secondary flex-grow-1">
-                  <?= htmlspecialchars($tools['emojiReference']['card_description'] ?? 'Esplorare e copiare emoji con codici Unicode', ENT_QUOTES, 'UTF-8') ?>
+                  <?= htmlspecialchars($tools['emojiReferenceTool']['card_description'] ?? 'Esplorare e copiare emoji con codici Unicode', ENT_QUOTES, 'UTF-8') ?>
                 </p>
               </div>
             </div>
           </a>
         </div>
 
-        <!-- Dienstprogramme Kategorie -->
+        <!-- Utilities -->
         <div class="col-12 col-md-6 col-lg-4 tool-item" data-category="utilities">
           <a href="<?= getToolUrl('regexTesterTool', 'it') ?>" data-tool-id="regexTesterTool" class="text-decoration-none">
             <div class="card h-100 tool-card">
@@ -513,3 +515,4 @@ if ($manifest && isset($manifest['generatedAt'])) {
   <script src="../assets/js/category-filter.js?v=<?= $buildHash ?>"></script>
 
 <?php include __DIR__ . '/../partials/footer.php'; ?>
+<?php echo minify_html_output(ob_get_clean()); ?>

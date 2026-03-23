@@ -22,10 +22,8 @@ HTML;
 
 $features = [
     'Generate paragraphs, sentences, or words',
-    'Customizable quantity (1-100 units)',
-    'Start with "Lorem ipsum dolor sit amet..."',
-    'HTML paragraph tags option',
-    'Plain text output',
+    'Combine multiple types (paragraphs + sentences + words)',
+    'Customizable quantity per type',
     'Copy to clipboard with one click',
     'Real-time character and word count'
 ];

@@ -258,7 +258,7 @@ return [
     'icon' => 'bi-file-text',
     'jsModule' => 'tools/loremIpsumTool.js',
     'jsLibraries' => ['clipboard-utils', 'download-utils'],
-    'features' => ['paragraphs', 'words', 'sentences', 'html-output'],
+    'features' => ['paragraphs', 'words', 'sentences'],
     'seoTemplate' => 'default',
     'hasFeaturesSection' => true
   ],

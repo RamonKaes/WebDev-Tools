@@ -20,17 +20,15 @@ $customAboutContent = <<<HTML
 HTML;
 $features = [
     'Gere parágrafos, frases ou palavras',
-    'Quantidade ajustável (1-100 unidades)',
-    'Opção para iniciar com "Lorem ipsum dolor sit amet..."',
-    'Saída com tags HTML de parágrafo',
-    'Saída em texto simples',
+    'Combine vários tipos (parágrafos + frases + palavras)',
+    'Quantidade ajustável por tipo',
     'Cópia para a área de transferência com um clique',
     'Contador de caracteres e palavras em tempo real'
 ];
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
-    <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Sobre o Lorem Ipsum</h2>
+    <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Sobre o Lorem Ipsum</h3>
     <p class="mb-2">
         O texto Lorem Ipsum deriva das seções 1.10.32 e 1.10.33 de "de Finibus Bonorum et Malorum",
         obra de Cícero escrita em 45 a.C. Desde os anos 1500 é o padrão do setor.

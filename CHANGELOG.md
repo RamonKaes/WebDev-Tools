@@ -38,6 +38,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
 
 ### 🐛 Bug Fixes
 - **JWT Decoder** – `</h3>` statt `</h2>` in `$customNoticeContent` der deutschen Version (`de/jwt-dekodierer/index.php`)
+- **Lorem Ipsum** – `</h3>` statt `</h2>` in `$customNoticeContent` aller 5 Nicht-EN-Sprachversionen (de, es, fr, it, pt); fehlende `</p>` in `it/lorem-ipsum/index.php`; fehlende Zeilentrennung in `es/lorem-ipsum/index.php`; falsche HTML-Output-Feature-Claims aus allen 6 PHP-Dateien und `config/tools.php` entfernt (Feature nicht implementiert)
 
 ### 🧪 Tests
 - `codeFormatterTool.test.js` – 35 Tests (HTML/CSS/JS/XML/SQL Beautify+Minify, UI)
@@ -48,7 +49,8 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
 - `htmlEntityTool.test.js` – 30 Tests (Named/Decimal/Hex/All-Named Encoding, Decoding, Round-trip, UI-State, Copy, Download)
 - `jsonFormatterValidatorTool.test.js` – 44 Tests (Registration, UI-Rendering, Format, Validate, Minify, Sort Keys, Auto-fix, Clear, Load Sample, Copy, Download, Path Extractor, Escape/Unescape)
 - `jwtDecoderTool.test.js` – 30 Tests (Registration, UI-Rendering, Decode Happy Path, No-Expiry, Error Handling, Clear, Load Example, Keyboard Shortcut, Whitespace Trimming)
-- Gesamt: **277 Tests** (10 Suites) · Framework: Jest 29 + jsdom · Shell-Skripte entfernt
+- `loremIpsumTool.test.js` – 42 Tests (Registration, UI-Rendering, Auto-Generation, Paragraphs, Sentences, Words, Combined, Validation, Counts, Clear, Copy)
+- Gesamt: **319 Tests** (11 Suites) · Framework: Jest 29 + jsdom · Shell-Skripte entfernt
 
 ---
 

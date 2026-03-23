@@ -22,18 +22,17 @@ $customAboutContent = <<<HTML
 HTML;
 
 $features = [
-    'Generieren Sie Absätze, Wörter oder Zeichen',
-    'Anpassbare Menge (1-50 Absätze)',
-    'Beginnen Sie mit "Lorem ipsum dolor sit amet"',
-    'HTML-Absatz-Tags einschließen',
+    'Absätze, Sätze oder Wörter generieren',
+    'Mehrere Typen kombinieren (Absätze + Sätze + Wörter)',
+    'Anpassbare Menge pro Typ',
     'Mit einem Klick in die Zwischenablage kopieren',
-    'Zeichenanzahl und Statistiken',
-    '100% clientseitig - funktioniert offline'
+    'Zeichen- und Wortzähler in Echtzeit',
+    '100% clientseitig – funktioniert offline'
 ];
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
-    <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Über Lorem Ipsum</h2>
+    <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Über Lorem Ipsum</h3>
     <p class="mb-2">
         Lorem Ipsum stammt aus den Abschnitten 1.10.32 und 1.10.33 von "de Finibus Bonorum et Malorum" 
         (Die Extreme von Gut und Böse) von Cicero, geschrieben 45 v. Chr. Es ist seit den 1500er Jahren 

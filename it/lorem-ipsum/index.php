@@ -17,21 +17,20 @@ $customAboutContent = <<<HTML
 <p class="mb-0">
     Lorem Ipsum è il testo fittizio standard usato da designer e sviluppatori fin dal XVI secolo.
     Questo strumento ti aiuta a generare la quantità ideale di testo per concentrarti sul design senza preoccuparti del contenuto.
+</p>
 HTML;
 
 $features = [
     'Genera paragrafi, frasi o parole',
-    'Quantità personalizzabile (1-100 unità)',
-    'Opzione per iniziare con "Lorem ipsum dolor sit amet..."',
-    'Output con tag HTML di paragrafo',
-    'Output in testo semplice',
+    'Combina più tipi (paragrafi + frasi + parole)',
+    'Quantità personalizzabile per tipo',
     'Copia negli appunti con un clic',
     'Contatore di caratteri e parole in tempo reale'
 ];
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
-    <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Informazioni su Lorem Ipsum</h2>
+    <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Informazioni su Lorem Ipsum</h3>
     <p class="mb-2">
         Il testo Lorem Ipsum deriva dalle sezioni 1.10.32 e 1.10.33 del "de Finibus Bonorum et Malorum",
         opera di Cicerone scritta nel 45 a.C. È lo standard del settore fin dal XVI secolo.

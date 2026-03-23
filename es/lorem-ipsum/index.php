@@ -6,7 +6,8 @@ declare(strict_types=1);
 ob_start();
 
 $toolId = 'loremIpsumTool';
-$lang = 'es';$featuresSectionTitle = 'Características';
+$lang = 'es';
+$featuresSectionTitle = 'Características';
 $resourcesSectionTitle = 'Recursos Útiles';
 $customAboutContent = <<<HTML
 <p class="mb-2">
@@ -21,16 +22,15 @@ HTML;
 
 $features = [
     'Genera párrafos, frases o palabras',
-    'Cantidad personalizable (1-100 unidades)',
-    'Opcionalmente comienza con «Lorem ipsum dolor sit amet...»',
-    'Salida en texto plano o con etiquetas HTML <p>',
+    'Combina varios tipos (párrafos + frases + palabras)',
+    'Cantidad personalizable por tipo',
     'Copiar al portapapeles con un clic',
     'Conteo de palabras y caracteres en tiempo real'
 ];
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
-    <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Sobre Lorem Ipsum</h2>
+    <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Sobre Lorem Ipsum</h3>
     <p class="mb-2">
         Lorem Ipsum proviene de las secciones 1.10.32 y 1.10.33 de «De Finibus Bonorum et Malorum» de Cicerón, escrito en el año 45 a.C.
         Se ha utilizado como texto de relleno estándar desde el siglo XVI.

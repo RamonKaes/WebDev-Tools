@@ -23,17 +23,15 @@ HTML;
 
 $features = [
     'Générer des paragraphes, phrases ou mots',
-    'Quantité personnalisable (1 à 100 unités)',
-    'Démarrer par « Lorem ipsum dolor sit amet... »',
-    'Option d\'encapsulation dans des balises HTML <p>',
-    'Sortie en texte brut',
+    'Combiner plusieurs types (paragraphes + phrases + mots)',
+    'Quantité personnalisable par type',
     'Copie en un clic',
     'Compteur de mots et de caractères en temps réel'
 ];
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
-    <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>À propos de Lorem Ipsum</h2>
+    <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>À propos de Lorem Ipsum</h3>
     <p class="mb-2">
         Lorem Ipsum provient des sections 1.10.32 et 1.10.33 de «&nbsp;de Finibus Bonorum et Malorum&nbsp;» (Des extrêmes du bien et du mal) de Cicéron, écrit en 45 av. J.-C.
         Il est utilisé comme texte de remplissage standard depuis les années 1500.

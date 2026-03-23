@@ -75,11 +75,11 @@
 
       // Load data if not yet loaded
       if (EMOJI_DATA.length === 0) {
-        container.innerHTML = '<div class="text-center p-5"><div class="spinner-border" role="status"></div><p class="mt-2">Loading emojis...</p></div>';
+        container.innerHTML = `<div class="text-center p-5"><div class="spinner-border" role="status"></div><p class="mt-2">${t('loadingEmojis')}</p></div>`;
         try {
           await loadEmojiData();
         } catch (error) {
-          container.innerHTML = '<div class="alert alert-danger">Failed to load emoji data.</div>';
+          container.innerHTML = `<div class="alert alert-danger">${t('loadError')}</div>`;
           return;
         }
       }
@@ -103,15 +103,16 @@
 
       setupEventListeners();
       renderCategories();
-      renderEmojis();
+      renderEmojis(currentCategory);
     }
   });
 
   function setupEventListeners() {
     const searchInput = document.getElementById('emojiSearch');
     if (searchInput) {
-      searchInput.addEventListener('input', () => renderEmojis());
+      searchInput.addEventListener('input', () => renderEmojis(currentCategory));
     }
+    setupCopyButtons();
   }
 
   /**
@@ -163,7 +164,7 @@
     });
 
     if (filtered.length === 0) {
-      grid.innerHTML = `<div class="col-12"><div class="alert alert-info">No emojis found.</div></div>`;
+      grid.innerHTML = `<div class="col-12"><div class="alert alert-info">${t('noResults')}</div></div>`;
       return;
     }
 
@@ -178,7 +179,7 @@
       loadMoreBtn.className = 'col-12 text-center mt-3';
       loadMoreBtn.innerHTML = `
         <button class="btn btn-primary" id="loadMoreEmojis">
-          <i class="bi bi-arrow-down-circle"></i> Load More (${filtered.length - ITEMS_PER_PAGE} remaining)
+          <i class="bi bi-arrow-down-circle"></i> ${t('loadMore', { remaining: filtered.length - ITEMS_PER_PAGE })}
         </button>
       `;
       grid.appendChild(loadMoreBtn);
@@ -188,7 +189,7 @@
         currentPage++;
         const btn = this;
         btn.disabled = true;
-        btn.innerHTML = '<span class="spinner-border spinner-border-sm"></span> Loading...';
+        btn.innerHTML = `<span class="spinner-border spinner-border-sm"></span> ${t('loading')}`;
 
         setTimeout(() => {
           renderEmojiPage(filtered, grid);
@@ -196,7 +197,7 @@
 
           if (remaining > 0) {
             btn.disabled = false;
-            btn.innerHTML = `<i class="bi bi-arrow-down-circle"></i> Load More (${remaining} remaining)`;
+            btn.innerHTML = `<i class="bi bi-arrow-down-circle"></i> ${t('loadMore', { remaining })}`;
           } else {
             btn.remove();
           }
@@ -233,10 +234,10 @@
               <div class="fs-1 mb-2">${safeEmoji}</div>
               <small class="d-block mb-1">${safeName}</small>
               <div class="btn-group-vertical w-100" role="group">
-                <button class="btn btn-sm btn-outline-primary copy-emoji" data-value="${safeEmojiAttr}" title="Copy emoji">
+                <button class="btn btn-sm btn-outline-primary copy-emoji" data-value="${safeEmojiAttr}" title="${t('copyEmoji')}">
                   <i class="bi bi-clipboard"></i>
                 </button>
-                <button class="btn btn-sm btn-outline-secondary copy-code" data-value="&amp;#${decimal};" title="Copy HTML code">
+                <button class="btn btn-sm btn-outline-secondary copy-code" data-value="&amp;#${decimal};" title="${t('copyCode')}">
                   &amp;#${decimal};
                 </button>
               </div>
@@ -254,8 +255,6 @@
     while (tempDiv.firstChild) {
       grid.appendChild(tempDiv.firstChild);
     }
-
-    setupCopyButtons();
   }
 
   /**

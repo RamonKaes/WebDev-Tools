@@ -28,7 +28,7 @@ $features = [
     'Component Encoding: Encode individual URL components',
     'Bulk Processing: Encode/decode multiple lines at once',
     'URL Parsing: Extract protocol, host, path, and query strings',
-    'Auto-detection: Automatically detect encoding requirements'
+    'Live Mode: Real-time encoding/decoding as you type'
 ];
 
 $customNoticeContent = '

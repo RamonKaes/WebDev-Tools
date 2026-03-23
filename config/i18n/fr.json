@@ -136,7 +136,7 @@
       "parser_title": "Analyseur URL",
       "parser_placeholder": "Entrez l'URL à analyser...",
       "parse_btn": "Analyser l'URL",
-      "uri_info": "Informations URI",
+      "uri_info": "Le mode URI préserve la structure de l'URL, encode uniquement les caractères spéciaux",
       "protocol": "Protocole",
       "hostname": "Nom d'hôte",
       "host": "Hôte",

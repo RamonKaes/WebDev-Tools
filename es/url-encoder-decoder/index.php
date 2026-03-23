@@ -27,7 +27,7 @@ $features = [
     'Componentes: codifica segmentos individuales de URLs',
     'Procesamiento masivo: codifica/decodifica múltiples líneas a la vez',
     'Análisis: extrae protocolo, host, ruta y query string',
-    'Detección automática: reconoce el formato apropiado para cada entrada'
+    'Modo en vivo: codificación/decodificación en tiempo real mientras escribes'
 ];
 
 $customNoticeContent = '

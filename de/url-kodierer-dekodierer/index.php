@@ -29,7 +29,7 @@ $features = [
     'Komponenten-Kodierung: Kodieren einzelner URL-Komponenten',
     'Stapelverarbeitung: Mehrere Zeilen gleichzeitig kodieren/dekodieren',
     'URL-Parsing: Extrahieren von Protokoll, Host, Pfad und Query-Strings',
-    'Auto-Erkennung: Automatische Erkennung der Kodierungsanforderungen'
+    'Live-Modus: Echtzeit-Kodierung/Dekodierung während der Eingabe'
 ];
 
 $customNoticeContent = '

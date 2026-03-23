@@ -7,6 +7,14 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
 ## [Unreleased]
 
 ### 🐛 Bug Fixes
+- **URL Encoder/Decoder** – `uri_info`-Übersetzung in `fr.json` war `"Informations URI"` (unvollständig/fehlerhaft) statt der korrekten französischen Beschreibung — durch vollständige Übersetzung ersetzt
+- **URL Encoder/Decoder** – Feature-Claim „Auto-detection: Automatically detect encoding requirements" in allen 6 PHP-Sprachversionen entfernt; das Feature ist im JS nicht implementiert — ersetzt durch „Live Mode: Real-time encoding/decoding as you type" (tatsächlich vorhanden)
+
+### 🧪 Tests
+- `urlEncoderDecoderTool.test.js` – 75 Tests (Registration, UI-Rendering, Mode-Switching, Encode/Decode Component+URI, Line-by-Line, Error-Handling, Clear, Load-Sample, Live-Mode, Copy, Keyboard-Shortcuts, URL-Parser, ModeInfo-Banner)
+- Gesamt: **750 Tests** (18 Suites)
+
+### 🐛 Bug Fixes
 - **String Escaper** – `loadSampleBtn`-Handler rief `handleProcess()` auf (undefiniert) statt `process()` — Sample-Daten wurden geladen, aber nie automatisch verarbeitet wenn Auto-Process aktiviert war
 - **String Escaper** – Tote äußere `t()`-Hilfsfunktion entfernt (wurde durch identische lokale `t()` in `open()` überschattet und nie aufgerufen)
 - **String Escaper** – Unbenutzte Variable `mainRow` in `open()` entfernt

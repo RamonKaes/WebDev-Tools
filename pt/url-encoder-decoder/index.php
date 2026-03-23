@@ -26,7 +26,7 @@ $features = [
     'Componentes: codifique partes específicas da URL',
     'Lotes: processe múltiplas linhas de uma vez',
     'Análise: extraia protocolo, host, caminho e query string',
-    'Detecção automática: identifica quando codificar ou decodificar'
+    'Modo ao vivo: codificação/decodificação em tempo real durante a digitação'
 ];
 
 $customNoticeContent = '

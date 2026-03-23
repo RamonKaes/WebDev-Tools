@@ -27,7 +27,7 @@ $features = [
     'Encodage de composants : encodez des segments individuels d\'URL',
     'Traitement en masse : encodez/décodez plusieurs lignes en une fois',
     'Analyse d\'URL : extrayez protocole, hôte, chemin et chaîne de requête',
-    'Détection automatique : reconnaît automatiquement les besoins d\'encodage'
+    'Mode en direct : encodage/décodage en temps réel pendant la saisie'
 ];
 
 $customNoticeContent = '

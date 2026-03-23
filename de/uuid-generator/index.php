@@ -24,7 +24,7 @@ $features = [
 ];
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
-    <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Über UUID Version 4</h2>
+    <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Über UUID Version 4</h3>
     <p class="mb-2">UUID v4 verwendet Zufalls- oder Pseudozufallszahlen. Das Format ist:</p>
     <code>xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx</code>
     <p class="mt-2 mb-0">Wobei <code>x</code> eine beliebige hexadezimale Ziffer und <code>y</code> eine von 8, 9, A oder B ist. Die 4 zeigt die UUID-Version an, und die Varianten-Bits gewährleisten RFC-Konformität. Mit 122 Zufallsbits ist die Kollisionswahrscheinlichkeit astronomisch gering.</p>

@@ -7,7 +7,7 @@ Privacyfirst Developer-Toolbox. Alle Operationen laufen **client-side im Browser
 ## Befehle
 
 ```bash
-npm test                        # Jest Unit-Tests (750 Tests, 18 Suites)
+npm test                        # Jest Unit-Tests (810 Tests, 19 Suites)
 npm run test:coverage           # Mit Coverage-Report
 bash build.sh                   # Production-Build nach dist/
 php config/generate-manifest.php    # Nach neuem Tool ausführen

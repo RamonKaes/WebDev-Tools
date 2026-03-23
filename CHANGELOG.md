@@ -7,6 +7,17 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
 ## [Unreleased]
 
 ### 🐛 Bug Fixes
+- **UUID Generator** – `generateUUIDv1()` produzierte systematisch falsche UUIDs: JavaScript-Bitwise-Operatoren (`>>`, `&`) truncaten auf 32-bit-Integer, sodass der 60-bit-Timestamp (~1.4×10¹⁷) überlief — `timeMid` war immer `0000`, `timeHiVersion` immer `1000` unabhängig von der Systemzeit; auf `BigInt`-Arithmetik umgestellt, RFC 4122 korrekte v1-UUIDs werden jetzt generiert
+- **UUID Generator** – `<h3>...</h2>` HTML-Tag-Mismatch in `$customNoticeContent` aller 5 Nicht-EN-Sprachversionen (de, es, fr, it, pt) behoben
+- **UUID Generator** – `$featuresSectionTitle` und `$resourcesSectionTitle` fehlten in `pt/uuid-generator/index.php`
+- **UUID Generator** – Download-Button nutzte direkte DOM-Manipulation (`Blob`, `URL.createObjectURL`, `<a>.click()`) statt `window.DownloadUtils.downloadText()` — Projektkonvention wiederhergestellt
+- **UUID Generator** – Copy-Icon-Reset-Bug: nach erfolgreichem Kopieren wurde das Icon auf `'bi bi-clipboard'` zurückgesetzt, verlor dabei aber die `me-2`-Klasse des Bulk-Copy-Buttons; Icon-Klassen werden jetzt vollständig erhalten und nur `bi-clipboard` durch `bi-check` ersetzt
+
+### 🧪 Tests
+- `uuidGeneratorTool.test.js` – 60 Tests (Registration, UI-Rendering, UUID-v4/v1/v7/NIL-Generierung, Versionsformat-Validierung, Einzelformat-Optionen, Version-Help-Text, Bulk-Generierung, Bulk-Ausgabeformate, Copy-Buttons, Download-Button, Auto-Generate-Checkbox, Crypto-Error-Handling)
+- Gesamt: **810 Tests** (19 Suites)
+
+### 🐛 Bug Fixes
 - **URL Encoder/Decoder** – `uri_info`-Übersetzung in `fr.json` war `"Informations URI"` (unvollständig/fehlerhaft) statt der korrekten französischen Beschreibung — durch vollständige Übersetzung ersetzt
 - **URL Encoder/Decoder** – Feature-Claim „Auto-detection: Automatically detect encoding requirements" in allen 6 PHP-Sprachversionen entfernt; das Feature ist im JS nicht implementiert — ersetzt durch „Live Mode: Real-time encoding/decoding as you type" (tatsächlich vorhanden)
 

@@ -7,6 +7,8 @@ ob_start();
 
 $toolId = 'uuidGeneratorTool';
 $lang = 'pt';
+$featuresSectionTitle = 'Funcionalidades';
+$resourcesSectionTitle = 'Recursos Úteis';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
@@ -31,7 +33,7 @@ $features = [
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
-    <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Sobre UUID versão 4</h2>
+    <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Sobre UUID versão 4</h3>
     <p class="mb-2">
         UUID v4 utiliza números aleatórios. O formato é:
     </p>

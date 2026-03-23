@@ -33,7 +33,7 @@ $features = [
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
-    <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Informazioni su UUID versione 4</h2>
+    <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Informazioni su UUID versione 4</h3>
     <p class="mb-2">
         UUID v4 utilizza numeri casuali. Il formato è:
     </p>

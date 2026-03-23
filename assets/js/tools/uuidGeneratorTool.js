@@ -173,24 +173,25 @@
        */
       function generateUUIDv1() {
         try {
-          const d = new Date().getTime();
-          const timeBytes = new Uint8Array(8);
-          crypto.getRandomValues(timeBytes);
-          
+          const clockBytes = new Uint8Array(8);
+          crypto.getRandomValues(clockBytes);
+
           // Timestamp (60-bit, 100ns intervals since 1582-10-15)
-          const timestamp = (d * 10000) + 0x01B21DD213814000;
-          
+          // Use BigInt to avoid 32-bit integer overflow from JS bitwise operators
+          const gregorianOffset = BigInt('122192928000000000');
+          const timestamp = BigInt(Date.now()) * BigInt(10000) + gregorianOffset;
+
           // Build UUID v1: time_low-time_mid-time_hi_and_version-clock_seq-node
-          const timeLow = (timestamp & 0xFFFFFFFF).toString(16).padStart(8, '0');
-          const timeMid = ((timestamp >> 32) & 0xFFFF).toString(16).padStart(4, '0');
-          const timeHiVersion = (((timestamp >> 48) & 0x0FFF) | 0x1000).toString(16).padStart(4, '0');
-          
+          const timeLow = Number(timestamp & BigInt(0xFFFFFFFF)).toString(16).padStart(8, '0');
+          const timeMid = Number((timestamp >> BigInt(32)) & BigInt(0xFFFF)).toString(16).padStart(4, '0');
+          const timeHiVersion = Number(((timestamp >> BigInt(48)) & BigInt(0x0FFF)) | BigInt(0x1000)).toString(16).padStart(4, '0');
+
           // Clock sequence (14 bits) + variant bits
-          const clockSeq = ((timeBytes[0] << 8 | timeBytes[1]) & 0x3FFF | 0x8000).toString(16).padStart(4, '0');
-          
+          const clockSeq = ((clockBytes[0] << 8 | clockBytes[1]) & 0x3FFF | 0x8000).toString(16).padStart(4, '0');
+
           // Node ID (48 bits from random)
-          const node = Array.from(timeBytes.slice(2, 8), b => b.toString(16).padStart(2, '0')).join('');
-          
+          const node = Array.from(clockBytes.slice(2, 8), b => b.toString(16).padStart(2, '0')).join('');
+
           return `${timeLow}-${timeMid}-${timeHiVersion}-${clockSeq}-${node}`;
         } catch (e) {
           // If crypto is unavailable, throw error to disable v1 in UI
@@ -310,12 +311,13 @@
        */
       async function copyToClipboard(text, button) {
         const success = await window.ClipboardUtils.copyToClipboard(text);
-        
+
         if (success) {
           const icon = button.querySelector('i');
           if (icon) {
-            icon.className = 'bi bi-check';
-            setTimeout(() => { icon.className = 'bi bi-clipboard'; }, 2000);
+            const originalClass = icon.className;
+            icon.className = originalClass.replace('bi-clipboard', 'bi-check');
+            setTimeout(() => { icon.className = originalClass; }, 2000);
           }
         }
       }
@@ -392,13 +394,7 @@
 
       downloadBulkBtn.addEventListener('click', () => {
         if (!bulkOutputTextarea.value) return;
-        const blob = new Blob([bulkOutputTextarea.value], { type: 'text/plain' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'uuids.txt';
-        a.click();
-        URL.revokeObjectURL(url);
+        window.DownloadUtils.downloadText(bulkOutputTextarea.value, 'uuids.txt');
       });
 
       bulkCountInput.addEventListener('keydown', (e) => {

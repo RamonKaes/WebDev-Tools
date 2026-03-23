@@ -1251,8 +1251,17 @@
     "htmlEntityTool": {
       "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
-      "featureList": [],
-      "keywords": "",
+      "featureList": [
+        "Entidades HTML con nombre (&amp;nbsp;, &amp;lt;, &amp;gt;)",
+        "Entidades decimales numéricas (&#160;)",
+        "Entidades hexadecimales (&#xA0;)",
+        "Codificación y decodificación bidireccional",
+        "Conversión automática al escribir",
+        "Explorador de referencia de caracteres",
+        "Descargar como archivo de texto",
+        "Copiar al portapapeles"
+      ],
+      "keywords": "codificador entidades html, decodificador entidades html, escape html, unescape html, caracteres especiales, entidades con nombre, entidades numéricas",
       "meta_title": "Codificador y Decodificador HTML Entity – Escapar Caracteres",
       "meta_description": "Convierte texto a entidades HTML y viceversa. Herramienta de escape gratuita con entidades con nombre (&nbsp;), decimales numéricas (&#160;)."
     },

@@ -1252,8 +1252,17 @@
     "htmlEntityTool": {
       "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
-      "featureList": [],
-      "keywords": "",
+      "featureList": [
+        "Named HTML entities (&amp;nbsp;, &amp;lt;, &amp;gt;)",
+        "Numeric decimal entities (&#160;)",
+        "Hexadecimal entities (&#xA0;)",
+        "Bidirectional encode and decode",
+        "Auto-convert on input",
+        "Character reference browser",
+        "Download as text file",
+        "Copy to clipboard"
+      ],
+      "keywords": "html entity encoder, html entity decoder, html escape, html unescape, special characters, named entities, numeric entities, html encoding",
       "meta_title": "HTML Entity Encoder & Decoder – Convert Special Characters",
       "meta_description": "Encode and decode HTML entities. Convert special characters to HTML entity codes and vice versa with support for named and numeric entity references."
     },

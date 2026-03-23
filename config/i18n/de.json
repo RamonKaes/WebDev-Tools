@@ -1251,8 +1251,17 @@
     "htmlEntityTool": {
       "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
-      "featureList": [],
-      "keywords": "",
+      "featureList": [
+        "Benannte HTML-Entities (&amp;nbsp;, &amp;lt;, &amp;gt;)",
+        "Numerische Dezimal-Entities (&#160;)",
+        "Hexadezimale Entities (&#xA0;)",
+        "Bidirektionales Encodieren und Decodieren",
+        "Auto-Konvertierung bei Eingabe",
+        "Zeichen-Referenz-Browser",
+        "Download als Textdatei",
+        "In Zwischenablage kopieren"
+      ],
+      "keywords": "html entity encoder, html entity decoder, html escape, html unescape, sonderzeichen, benannte entities, numerische entities, html kodierung",
       "meta_title": "HTML Entity Encoder & Decoder – Sonderzeichen konvertieren",
       "meta_description": "Konvertiere Text in HTML-Entities und zurück. Unterstützt benannte Entities (&nbsp;), numerische Dezimal- (&#160;) und Hex-Entities (&#xA0;)."
     },

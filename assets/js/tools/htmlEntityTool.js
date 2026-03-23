@@ -116,7 +116,7 @@
    * @returns {string} - Text with all characters encoded to named entities
    */
   function encodeToAllNamedEntities(text) {
-    return text.replace(/./g, char => {
+    return text.replace(/[\s\S]/g, char => {
       return NAMED_ENTITIES[char] || char;
     });
   }
@@ -410,7 +410,7 @@
           inputText.value = '&lt;div class=&quot;example&quot;&gt;\n  &lt;h1&gt;Hello World!&lt;/h1&gt;\n  &lt;p&gt;Special characters: &copy; &reg; &trade; &euro; &pound; &yen; &amp;lt;&amp;gt;&lt;/p&gt;\n  &lt;a href=&quot;https://example.com?id=123&amp;name=test&quot;&gt;Link&lt;/a&gt;\n&lt;/div&gt;';
         }
         if (autoConvert.checked) {
-          performConversion();
+          convert();
         }
         updateStats();
       });
@@ -445,14 +445,7 @@
       // Download button
       downloadBtn.addEventListener('click', () => {
         if (!outputText.value) return;
-
-        const blob = new Blob([outputText.value], { type: 'text/plain' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'html-entities.txt';
-        a.click();
-        URL.revokeObjectURL(url);
+        window.DownloadUtils.downloadText(outputText.value, 'html-entities.txt');
       });
 
       // View Reference button

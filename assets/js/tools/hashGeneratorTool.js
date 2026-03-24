@@ -428,9 +428,14 @@
                   ${t('tools.hashGeneratorTool.liveMode')}
                 </label>
               </div>
-              <button class="btn btn-primary btn-sm" id="generateHash">
-                <i class="bi bi-arrow-clockwise me-2"></i>${t('tools.hashGeneratorTool.generate')}
-              </button>
+              <div class="d-flex gap-2 flex-wrap">
+                <button class="btn btn-primary btn-sm" id="generateHash">
+                  <i class="bi bi-arrow-clockwise me-2"></i>${t('tools.hashGeneratorTool.generate')}
+                </button>
+                <button class="btn btn-outline-secondary btn-sm" id="loadExampleText">
+                  <i class="bi bi-lightning me-2"></i>${t('tools.hashGeneratorTool.loadExample')}
+                </button>
+              </div>
             </div>
           </div>
         `;
@@ -489,9 +494,14 @@
                   <option value="SHA-512">HMAC-SHA-512</option>
                 </select>
               </div>
-              <button class="btn btn-primary btn-sm" id="generateHMAC">
-                <i class="bi bi-arrow-clockwise me-2"></i>${t('tools.hashGeneratorTool.generate')}
-              </button>
+              <div class="d-flex gap-2 flex-wrap">
+                <button class="btn btn-primary btn-sm" id="generateHMAC">
+                  <i class="bi bi-arrow-clockwise me-2"></i>${t('tools.hashGeneratorTool.generate')}
+                </button>
+                <button class="btn btn-outline-secondary btn-sm" id="loadExampleHMAC">
+                  <i class="bi bi-lightning me-2"></i>${t('tools.hashGeneratorTool.loadExample')}
+                </button>
+              </div>
             </div>
           </div>
         `;
@@ -575,6 +585,12 @@
 
         generateBtn.addEventListener('click', generate);
 
+        const exampleTextBtn = container.querySelector('#loadExampleText');
+        exampleTextBtn.addEventListener('click', () => {
+          textInput.value = 'Hello, World!';
+          generate();
+        });
+
         textInput.addEventListener('input', () => {
           if (liveHash.checked) {
             generate();
@@ -600,6 +616,13 @@
       } else if (mode === 'hmac') {
         const generateBtn = container.querySelector('#generateHMAC');
         generateBtn.addEventListener('click', () => this.generateHMAC(container));
+
+        const exampleHMACBtn = container.querySelector('#loadExampleHMAC');
+        exampleHMACBtn.addEventListener('click', () => {
+          container.querySelector('#hmacText').value = 'The quick brown fox jumps over the lazy dog';
+          container.querySelector('#hmacSecret').value = 'secret-key';
+          this.generateHMAC(container);
+        });
 
       } else if (mode === 'sri') {
         const generateBtn = container.querySelector('#generateSRI');

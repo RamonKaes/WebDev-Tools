@@ -219,6 +219,7 @@ if (!isset($assetPrefix)) {
   <link rel="stylesheet" href="<?= $assetPrefix ?>assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?= $assetPrefix ?>assets/bootstrap-icons/bootstrap-icons.min.css">
   <link rel="stylesheet" href="<?= $assetPrefix ?>assets/css/style.css?v=<?= $buildHash ?>">
+  <link rel="stylesheet" href="<?= $assetPrefix ?>assets/css/clipboard-toast.css?v=<?= $buildHash ?>">
   
   <link rel="preload" href="<?= $assetPrefix ?>assets/js/tool-registry.js?v=<?= $buildHash ?>" as="script">
   

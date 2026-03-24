@@ -517,6 +517,7 @@
       "hash2": "Hash 2",
       "hashPlaceholder": "Insira hash...",
       "compare": "Comparar",
+      "loadExample": "Carregar exemplo",
       "linkTitle": {
         "card": "Gerar hashes criptográficos e checksums",
         "nav": "Gerador Hash"
@@ -901,6 +902,12 @@
       "flag_sticky": "Sticky (y) - Corresponder apenas a partir de lastIndex",
       "test_button": "Testar Padrão",
       "clear_button": "Limpar Tudo",
+      "example_placeholder": "Carregar exemplo…",
+      "example_email": "Endereço de email",
+      "example_url": "URL",
+      "example_date": "Data (AAAA-MM-DD)",
+      "example_ipv4": "Endereço IPv4",
+      "example_named_groups": "Grupos nomeados",
       "placeholder_text": "Digite um padrão e string de teste, depois clique em \"{button}\"",
       "results_title": "Resultados",
       "matches_found": "Correspondência encontrada | {count} correspondências encontradas",

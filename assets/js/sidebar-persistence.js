@@ -55,6 +55,9 @@
       const savedState = localStorage.getItem('sidebar-' + id);
       if (savedState === 'show') {
         requestAnimationFrame(() => {
+          // If there's an active tool, sidebar-navigation.js handles the state
+          if (document.querySelector('.tool-link.active')) return;
+
           const element = document.getElementById(id);
           if (element) {
             element.classList.add('show');

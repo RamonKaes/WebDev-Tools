@@ -4,6 +4,21 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
 
 ---
 
+## [2.0.1] – 2026-03-24
+
+### 🐛 Bug Fixes
+- **Sidebar Navigation** – Bootstrap-Ladereihenfolge korrigiert: `sidebar-navigation.js` prüfte `typeof bootstrap` beim Laden, fand aber noch kein Bootstrap-Objekt, da `footer.php` (mit Bootstrap) erst danach eingebunden wurde; Reihenfolge in `partials/tool-base.php` und allen 6 Homepage-Varianten (en, de, es, fr, it, pt) getauscht
+- **Sidebar Navigation** – Race Condition zwischen `sidebar-persistence.js` und `sidebar-navigation.js` behoben: `restoreStatesEarly()` öffnete per `requestAnimationFrame` gespeicherte Kategorien **nach** DOMContentLoaded und überschrieb damit den von `initSidebarNavigation()` korrekt gesetzten Zustand; rAF-Callback bricht jetzt ab wenn ein aktives Tool-Link vorhanden ist
+
+### 🔒 Security / CSP
+- **clipboard-utils.js** – CSP-Verstoß (`style-src-elem`) behoben: `addToastStyles()` injizierte ein dynamisches `<style>`-Element per JavaScript, das von `style-src 'self'` blockiert wurde; Styles in `assets/css/clipboard-toast.css` ausgelagert und via `<link>` in `partials/head.php` eingebunden
+
+### ✨ Features
+- **Hash Generator** – „Load Example"-Button in Text-Modus (`Hello, World!`) und HMAC-Modus (`The quick brown fox…` / Secret `secret-key`) hinzugefügt; befüllt Eingabefelder und triggert sofort die Berechnung; i18n in allen 6 Sprachen ergänzt
+- **Regex Tester** – Beispiel-Dropdown mit 5 vordefinierten Patterns hinzugefügt (Email, URL, Datum YYYY-MM-DD, IPv4, Named Groups); befüllt Pattern, Flags und Teststring auf einmal und triggert den Test automatisch; i18n in allen 6 Sprachen ergänzt
+
+---
+
 ## [2.0.0] – 2026-03-23
 
 ### 🐛 Bug Fixes

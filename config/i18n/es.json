@@ -517,6 +517,7 @@
       "hash2": "Hash 2",
       "hashPlaceholder": "Ingresa hash...",
       "compare": "Comparar",
+      "loadExample": "Cargar ejemplo",
       "linkTitle": {
         "card": "Generar hashes criptográficos y checksums",
         "nav": "Generador Hash"
@@ -897,6 +898,12 @@
       "flag_sticky": "Pegajoso (y) - Coincide solo desde lastIndex",
       "test_button": "Probar Patrón",
       "clear_button": "Limpiar Todo",
+      "example_placeholder": "Cargar ejemplo…",
+      "example_email": "Dirección de email",
+      "example_url": "URL",
+      "example_date": "Fecha (AAAA-MM-DD)",
+      "example_ipv4": "Dirección IPv4",
+      "example_named_groups": "Grupos con nombre",
       "placeholder_text": "Ingrese un patrón y cadena de prueba, luego haga clic en \"{button}\"",
       "results_title": "Resultados",
       "matches_found": "Coincidencia encontrada | {count} coincidencias encontradas",

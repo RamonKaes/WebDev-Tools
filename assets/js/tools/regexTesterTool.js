@@ -35,6 +35,39 @@
   let currentPattern = '';
   let currentFlags = '';
 
+  const EXAMPLES = [
+    {
+      key: 'email',
+      pattern: '[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\\.[a-zA-Z]{2,}',
+      flags: 'g',
+      testString: 'Contact us at support@example.com or sales@company.org\nInvalid: not-an-email, @missing.com, user@'
+    },
+    {
+      key: 'url',
+      pattern: 'https?:\\/\\/[^\\s\\/$.?#][^\\s]*',
+      flags: 'gi',
+      testString: 'Visit https://www.example.com or http://docs.example.org/path?query=1&page=2\nNot a URL: ftp://other.com'
+    },
+    {
+      key: 'date',
+      pattern: '\\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])',
+      flags: 'g',
+      testString: 'Valid dates: 2024-01-15, 2024-12-31, 2023-06-01\nInvalid: 2024-13-01, 2024-00-10, 20240115'
+    },
+    {
+      key: 'ipv4',
+      pattern: '\\b(?:(?:25[0-5]|2[0-4]\\d|[01]?\\d\\d?)\\.){3}(?:25[0-5]|2[0-4]\\d|[01]?\\d\\d?)\\b',
+      flags: 'g',
+      testString: 'Servers: 192.168.1.1, 10.0.0.255, 172.16.254.1\nInvalid: 999.0.0.1, 256.1.2.3, 192.168.1'
+    },
+    {
+      key: 'named_groups',
+      pattern: '(?<year>\\d{4})-(?<month>\\d{2})-(?<day>\\d{2})',
+      flags: 'g',
+      testString: 'Dates with named groups: 2024-03-15, 2023-11-28, 2025-07-04'
+    }
+  ];
+
   /**
    * Render the regex tester UI
    *
@@ -138,13 +171,21 @@
                     aria-label="${t('tools.regexTesterTool.test_string_label')}"></textarea>
 
                   <!-- Action Buttons -->
-                  <div class="d-flex gap-2 flex-wrap">
+                  <div class="d-flex gap-2 flex-wrap align-items-center">
                     <button id="testButton" class="btn btn-sm btn-primary">
                       <i class="bi bi-play-circle me-1"></i>${t('tools.regexTesterTool.test_button')}
                     </button>
                     <button id="clearButton" class="btn btn-sm btn-outline-secondary">
                       <i class="bi bi-x-circle me-1"></i>${t('tools.regexTesterTool.clear_button')}
                     </button>
+                    <select id="exampleSelect" class="form-select form-select-sm w-auto" aria-label="${t('tools.regexTesterTool.example_placeholder')}">
+                      <option value="">${t('tools.regexTesterTool.example_placeholder')}</option>
+                      <option value="email">${t('tools.regexTesterTool.example_email')}</option>
+                      <option value="url">${t('tools.regexTesterTool.example_url')}</option>
+                      <option value="date">${t('tools.regexTesterTool.example_date')}</option>
+                      <option value="ipv4">${t('tools.regexTesterTool.example_ipv4')}</option>
+                      <option value="named_groups">${t('tools.regexTesterTool.example_named_groups')}</option>
+                    </select>
                   </div>
                 </div>
               </div>
@@ -514,6 +555,27 @@
   }
 
   /**
+   * Handle example selection
+   *
+   * @param {string} key - Example key to load
+   */
+  function handleLoadExample(key) {
+    const example = EXAMPLES.find(e => e.key === key);
+    if (!example) return;
+
+    document.getElementById('regexPattern').value = example.pattern;
+    document.getElementById('regexFlags').value = example.flags;
+    document.getElementById('testString').value = example.testString;
+
+    document.querySelectorAll('[data-flag]').forEach(cb => {
+      cb.checked = example.flags.includes(cb.dataset.flag);
+    });
+
+    handleTest();
+    document.getElementById('exampleSelect').value = '';
+  }
+
+  /**
    * Toggle layout between horizontal and vertical split
    */
   function toggleLayout() {
@@ -562,6 +624,9 @@
       // Event listeners
       document.getElementById('testButton').addEventListener('click', handleTest);
       document.getElementById('clearButton').addEventListener('click', handleClear);
+      document.getElementById('exampleSelect').addEventListener('change', (e) => {
+        if (e.target.value) handleLoadExample(e.target.value);
+      });
       document.getElementById('copyMatchesButton').addEventListener('click', handleCopyMatches);
       document.getElementById('downloadButton').addEventListener('click', handleDownload);
       document.getElementById('regexFlags').addEventListener('input', handleFlagsInput);

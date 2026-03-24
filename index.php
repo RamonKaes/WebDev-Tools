@@ -502,11 +502,11 @@ if ($manifest && isset($manifest['generatedAt'])) {
     </main>
   </div>
 
+<?php include __DIR__ . '/partials/footer.php'; ?>
+
 <?php include __DIR__ . '/partials/common-scripts.php'; ?>
 
   <script src="assets/js/category-filter.js?v=<?= $buildHash ?>"></script>
-
-<?php include __DIR__ . '/partials/footer.php'; ?>
 
 </body>
 </html>

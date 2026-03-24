@@ -524,6 +524,7 @@
       "hash2": "Hash 2",
       "hashPlaceholder": "Hash eingeben...",
       "compare": "Vergleichen",
+      "loadExample": "Beispiel laden",
       "linkTitle": {
         "card": "Kryptografische Hashes und Prüfsummen generieren",
         "nav": "Hash-Generator"
@@ -901,6 +902,12 @@
       "flag_sticky": "Sticky (y) - Nur ab lastIndex übereinstimmen",
       "test_button": "Muster testen",
       "clear_button": "Alles löschen",
+      "example_placeholder": "Beispiel laden…",
+      "example_email": "E-Mail-Adresse",
+      "example_url": "URL",
+      "example_date": "Datum (JJJJ-MM-TT)",
+      "example_ipv4": "IPv4-Adresse",
+      "example_named_groups": "Benannte Gruppen",
       "placeholder_text": "Geben Sie ein Muster und einen Teststring ein, dann klicken Sie auf \"{button}\"",
       "results_title": "Ergebnisse",
       "matches_found": "Übereinstimmung gefunden | {count} Übereinstimmungen gefunden",

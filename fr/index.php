@@ -510,9 +510,9 @@ if ($manifest && isset($manifest['generatedAt'])) {
   
   </div> <!-- Close d-flex wrapper -->
 
+<?php include __DIR__ . '/../partials/footer.php'; ?>
+
 <?php include __DIR__ . '/../partials/common-scripts.php'; ?>
 
   <script src="../assets/js/category-filter.js?v=<?= $buildHash ?>"></script>
-
-<?php include __DIR__ . '/../partials/footer.php'; ?>
 <?php echo minify_html_output(ob_get_clean()); ?>

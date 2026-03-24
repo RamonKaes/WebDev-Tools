@@ -189,10 +189,10 @@ return [
     'slugs' => [
       'en' => 'uuid-generator',
       'de' => 'uuid-generator',
-      'es' => 'uuid-generator',
-      'pt' => 'uuid-generator',
-      'fr' => 'uuid-generator',
-      'it' => 'uuid-generator'
+      'es' => 'generador-uuid',
+      'pt' => 'gerador-uuid',
+      'fr' => 'generateur-uuid',
+      'it' => 'generatore-uuid'
     ],
     'category' => 'generators',
     'icon' => 'bi-fingerprint',
@@ -229,10 +229,10 @@ return [
     'slugs' => [
       'en' => 'hash-generator',
       'de' => 'hash-generator',
-      'es' => 'hash-generator',
-      'pt' => 'hash-generator',
-      'fr' => 'hash-generator',
-      'it' => 'hash-generator'
+      'es' => 'generador-hash',
+      'pt' => 'gerador-hash',
+      'fr' => 'generateur-hash',
+      'it' => 'generatore-hash'
     ],
     'category' => 'generators',
     'icon' => 'bi-hash',
@@ -269,10 +269,10 @@ return [
     'slugs' => [
       'en' => 'qr-code-generator',
       'de' => 'qr-code-generator',
-      'es' => 'qr-code-generator',
-      'pt' => 'qr-code-generator',
-      'fr' => 'qr-code-generator',
-      'it' => 'qr-code-generator'
+      'es' => 'generador-qr',
+      'pt' => 'gerador-qr',
+      'fr' => 'generateur-qr',
+      'it' => 'generatore-qr'
     ],
     'category' => 'generators',
     'icon' => 'bi-qr-code',
@@ -297,9 +297,9 @@ return [
       'en' => 'string-escaper',
       'de' => 'string-maskierer',
       'es' => 'escapador-cadenas',
-      'pt' => 'string-escaper',
-      'fr' => 'string-escaper',
-      'it' => 'string-escaper'
+      'pt' => 'escapador-strings',
+      'fr' => 'echappeur-chaines',
+      'it' => 'escapatore-stringhe'
     ],
     'category' => 'stringtools',
     'icon' => 'bi-code-slash',
@@ -357,10 +357,10 @@ return [
     'slugs' => [
       'en' => 'regex-tester',
       'de' => 'regex-tester',
-      'es' => 'regex-tester',
-      'pt' => 'regex-tester',
-      'fr' => 'regex-tester',
-      'it' => 'regex-tester'
+      'es' => 'testador-regex',
+      'pt' => 'testador-regex',
+      'fr' => 'testeur-regex',
+      'it' => 'tester-regex'
     ],
     'category' => 'utilities',
     'icon' => 'bi-regex',

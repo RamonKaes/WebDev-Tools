@@ -1,0 +1,25 @@
+/* TEAM */
+
+Name: Ramon Kaes
+Role: Developer & Designer
+Email: ramon.kaes@webdev-tools.info
+Location: Germany
+
+/* THANKS */
+
+Bootstrap — CSS framework and component library
+Bootstrap Icons — open-source SVG icon library
+qrcode-generator — QR code generation library by Kazuhiko Arase
+Jest — JavaScript testing framework
+
+/* SITE */
+
+Last update: 2026-03-24
+Language: English, German, Spanish, Portuguese, French, Italian
+Doctype: HTML5
+Standards: HTML5, CSS3, ES2020+
+CSS Framework: Bootstrap 5.3
+Testing: Jest (810 unit tests)
+Philosophy: Privacy-first, client-side only, no tracking
+
+humanstxt.org

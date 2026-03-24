@@ -1,10 +1,28 @@
 # robots.txt for WebDev-Tools
-# Last updated: 20. November 2025
+# Last updated: 2026-03-24
 
 User-agent: *
 Disallow: /config/
 Disallow: /_archive/
 Disallow: /partials/
+
+# AI / LLM
+User-agent: GPTBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+# AI-readable content
+# llms.txt: https://webdev-tools.info/llms.txt
+# llms-full.txt: https://webdev-tools.info/llms-full.txt
+# faq-ai.txt: https://webdev-tools.info/faq-ai.txt
+# developer-ai.txt: https://webdev-tools.info/developer-ai.txt
+# security.txt: https://webdev-tools.info/.well-known/security.txt
+# humans.txt: https://webdev-tools.info/humans.txt
 
 # Sitemap Index
 Sitemap: https://webdev-tools.info/sitemap.xml

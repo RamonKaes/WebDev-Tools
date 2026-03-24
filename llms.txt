@@ -1,0 +1,57 @@
+# WebDev-Tools
+
+> Privacy-first developer toolbox. All 19 tools run entirely client-side in the browser — no server processing, no data transmission, no tracking.
+
+WebDev-Tools (https://webdev-tools.info) is a free collection of web developer utilities. Every computation happens locally in the user's browser via JavaScript. No input data is ever sent to a server.
+
+## Tools
+
+### Encoders & Decoders
+- [Base64 Encoder/Decoder](https://webdev-tools.info/base64-encoder-decoder/): Encode and decode Base64 strings and files. Supports drag-and-drop, file upload, and live mode.
+- [URL Encoder/Decoder](https://webdev-tools.info/url-encoder-decoder/): Percent-encode and decode URLs. Supports bulk processing and URL parsing.
+- [HTML Entity Encoder/Decoder](https://webdev-tools.info/html-entity-encoder-decoder/): Convert special characters to named and numeric HTML entities and back.
+- [JWT Decoder](https://webdev-tools.info/jwt-decoder/): Decode JWT tokens, inspect header and payload, verify expiry, and detect algorithms.
+- [Punycode Converter](https://webdev-tools.info/punycode-converter/): Convert internationalized domain names (IDN) between Unicode and Punycode (ACE).
+
+### Formatters
+- [JSON Formatter & Validator](https://webdev-tools.info/json-formatter-validator/): Format, validate, minify, and explore JSON with syntax highlighting and tree view.
+- [Code Formatter](https://webdev-tools.info/code-formatter/): Format code for HTML, CSS, JavaScript, and other languages.
+
+### Generators
+- [UUID Generator](https://webdev-tools.info/uuid-generator/): Generate RFC 4122 compliant UUID v4 values, single or in bulk.
+- [Password Generator](https://webdev-tools.info/password-generator/): Create random passwords or passphrases with configurable rules and strength meter.
+- [Hash Generator](https://webdev-tools.info/hash-generator/): Generate MD5, SHA-1, SHA-256, SHA-512 hashes from text or files.
+- [Lorem Ipsum Generator](https://webdev-tools.info/lorem-ipsum/): Generate placeholder text by paragraphs, sentences, or words.
+- [QR Code Generator](https://webdev-tools.info/qr-code-generator/): Create QR codes from any text or URL. Downloadable as SVG or PNG.
+
+### Converters
+- [PX to REM Converter](https://webdev-tools.info/px-to-rem-converter/): Convert pixel values to REM with live calculation, conversion tables, and Tailwind support.
+- [Data Converter](https://webdev-tools.info/data-converter/): Convert between JSON, CSV, XML, YAML, and TOML formats. Supports timestamp conversion.
+- [Aspect Ratio Calculator](https://webdev-tools.info/aspect-ratio-calculator/): Calculate image/video dimensions for any aspect ratio. Includes common presets and CSS padding trick.
+
+### String Tools
+- [String Escaper](https://webdev-tools.info/string-escaper/): Escape and unescape strings for JavaScript, JSON, HTML, CSS, and SQL.
+
+### References
+- [Character Reference](https://webdev-tools.info/character-reference/): Searchable table of HTML character entities, Unicode code points, and CSS escape codes.
+- [Emoji Reference](https://webdev-tools.info/emoji-reference/): Searchable emoji table with copy support for emoji characters and code points.
+
+### Utilities
+- [Regex Tester](https://webdev-tools.info/regex-tester/): Live regular expression tester with match highlighting, group extraction, and flag support.
+
+## Languages
+
+Available in 6 languages: English, German (/de/), Spanish (/es/), Portuguese (/pt/), French (/fr/), Italian (/it/).
+
+## Privacy & Security
+
+- No analytics, no tracking, no cookies
+- No data ever leaves the browser
+- Content Security Policy (CSP) active
+- All sensitive values (passwords, hashes, tokens) are processed and discarded locally
+
+## Contact
+
+Email: ramon.kaes@webdev-tools.info
+Imprint: https://webdev-tools.info/imprint.php
+Privacy: https://webdev-tools.info/privacy.php

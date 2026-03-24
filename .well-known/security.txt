@@ -1,0 +1,20 @@
+Contact: mailto:ramon.kaes@webdev-tools.info
+Expires: 2027-03-24T00:00:00.000Z
+Preferred-Languages: en, de
+Canonical: https://webdev-tools.info/.well-known/security.txt
+
+# WebDev-Tools Security Policy
+#
+# If you discover a security vulnerability, please report it via the
+# contact address above. We appreciate responsible disclosure.
+#
+# Scope: https://webdev-tools.info/
+#
+# Note: All tools run client-side only. There is no user database,
+# no authentication system, and no server-side data storage.
+# Typical attack surfaces (SQLi, auth bypass, stored XSS) do not apply.
+#
+# We are particularly interested in:
+# - Cross-site scripting (XSS) in tool outputs
+# - Content Security Policy (CSP) bypasses
+# - Privacy leaks (data unexpectedly leaving the browser)

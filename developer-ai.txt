@@ -1,0 +1,141 @@
+# WebDev-Tools — Developer Reference for AI Systems
+# https://webdev-tools.info/developer-ai.txt
+# Last updated: 2026-03-24
+
+---
+
+## Project Overview
+
+Name: WebDev-Tools
+URL: https://webdev-tools.info
+Version: 2.0.1
+Author: Ramon Kaes <ramon.kaes@webdev-tools.info>
+Description: Privacy-first, client-side developer toolbox with 19 tools.
+
+---
+
+## Architecture
+
+### Rendering
+- Server: PHP 8 with strict_types=1
+- Pattern: Server-side PHP renders HTML shell; JavaScript initializes tool UI on demand
+- No client-side routing (each tool is a separate PHP page)
+- No SPA framework
+
+### JavaScript
+- Pattern: IIFE (Immediately Invoked Function Expression) per tool
+- Registration: window.Tools.register('toolId', { open: initFn })
+- Loader: tools are initialized lazily when user opens a tab
+- No bundler (Webpack, Vite, etc.) — individual files loaded via script tags
+- No external JS frameworks (no React, Vue, Angular)
+- ES2020+ syntax (const, let, async/await, optional chaining)
+
+### CSS
+- Bootstrap 5.3 (custom compiled subset for production)
+- Custom CSS: assets/css/style.css
+- Dark mode: Bootstrap native (data-bs-theme="auto" on <html>)
+- Theme detection: localStorage → prefers-color-scheme media query
+
+### i18n
+- JS UI strings: config/i18n/{en,de,es,pt,fr,it}.json
+- PHP content (features, resources): hardcoded per language version
+- 6 languages: en (default), de, es, pt, fr, it
+
+### Security
+- Content Security Policy (CSP) active
+- XSS prevention: textContent in JS, htmlspecialchars() in PHP
+- Subresource Integrity (SRI) on all external CDN scripts
+- No inline JavaScript outside IIFE modules
+
+---
+
+## File Structure
+
+```
+/                           Root
+├── {tool-slug}/index.php   Tool page (EN)
+├── de/{tool-slug}/         German tool pages
+├── es/{tool-slug}/         Spanish tool pages
+├── fr/{tool-slug}/         French tool pages
+├── it/{tool-slug}/         Italian tool pages
+├── pt/{tool-slug}/         Portuguese tool pages
+├── assets/
+│   ├── css/style.css       Custom CSS
+│   ├── js/
+│   │   ├── tools/          Tool modules (one JS file per tool)
+│   │   └── lib/            Shared utilities
+│   └── bootstrap/          Bootstrap CSS
+├── config/
+│   ├── tools.php           Tool registry (metadata, slugs, features)
+│   └── i18n/               JSON translation files
+├── partials/               PHP template partials
+└── tests/unit/             Jest unit tests
+```
+
+---
+
+## Tool Registry
+
+Each tool is registered in config/tools.php with:
+- id: camelCase identifier
+- slug / slugs: URL slugs per language
+- category: encoders | formatters | generators | converters | stringtools | references | utilities
+- jsModule: path to JS file
+- features: array of feature flags
+- externalLibraries: CDN dependencies with SRI hashes (if any)
+
+---
+
+## Available Tools (19)
+
+| ID | Slug (EN) | Category |
+|----|-----------|----------|
+| base64EncoderDecoder | base64-encoder-decoder | encoders |
+| urlEncoderDecoder | url-encoder-decoder | encoders |
+| htmlEntityTool | html-entity-encoder-decoder | encoders |
+| jwtDecoderTool | jwt-decoder | encoders |
+| punycodeConverterTool | punycode-converter | encoders |
+| jsonFormatterValidator | json-formatter-validator | formatters |
+| codeFormatterTool | code-formatter | formatters |
+| uuidGeneratorTool | uuid-generator | generators |
+| passwordGeneratorTool | password-generator | generators |
+| hashGeneratorTool | hash-generator | generators |
+| loremIpsumTool | lorem-ipsum | generators |
+| qrCodeGeneratorTool | qr-code-generator | generators |
+| pxToRemConverter | px-to-rem-converter | converters |
+| dataConverterTool | data-converter | converters |
+| aspectRatioCalculator | aspect-ratio-calculator | converters |
+| stringEscaperTool | string-escaper | stringtools |
+| characterReferenceTool | character-reference | references |
+| emojiReferenceTool | emoji-reference | references |
+| regexTesterTool | regex-tester | utilities |
+
+---
+
+## Testing
+
+Framework: Jest
+Test count: 810 unit tests, 19 test suites (one per tool)
+Location: tests/unit/{toolId}.test.js
+Run: npm test
+Coverage: npm run test:coverage
+
+---
+
+## Build
+
+Script: bash build.sh
+Output: dist/ (production-ready, includes .htaccess.production as .htaccess)
+Sitemaps: php config/generate-sitemaps.php (auto-run during build)
+CSS minification: csso (optional)
+Bootstrap: custom SCSS compilation via sass (optional, falls back to full Bootstrap)
+
+---
+
+## Shared Utilities (assets/js/lib/)
+
+- clipboard-utils.js: window.ClipboardUtils.copyToClipboard()
+- download-utils.js: window.DownloadUtils.downloadText()
+- dragdrop-utils.js: drag-and-drop file handling
+- validators.js: input validation helpers
+- formatters.js: data formatting helpers

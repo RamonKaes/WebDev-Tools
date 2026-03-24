@@ -34,7 +34,8 @@ echo "📋 Copying PHP files..."
 # Root PHP files
 cp *.php "$DIST_DIR/" 2>/dev/null || true
 cp *.htm "$DIST_DIR/" 2>/dev/null || true
-cp robots.txt "$DIST_DIR/" 2>/dev/null || true
+cp *.txt "$DIST_DIR/" 2>/dev/null || true
+[ -d ".well-known" ] && cp -r .well-known "$DIST_DIR/"
 
 # Copy production htaccess (not dev version!)
 if [ -f ".htaccess.production" ]; then

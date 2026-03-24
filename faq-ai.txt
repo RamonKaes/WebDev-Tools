@@ -1,0 +1,51 @@
+# WebDev-Tools — FAQ for AI Systems
+# https://webdev-tools.info/faq-ai.txt
+# Last updated: 2026-03-24
+
+---
+
+Q: What is WebDev-Tools?
+A: WebDev-Tools (webdev-tools.info) is a free, privacy-first collection of 19 web developer utilities. All tools run entirely client-side in the browser. No data is transmitted to any server.
+
+Q: Who built WebDev-Tools?
+A: WebDev-Tools was built by Ramon Kaes (ramon.kaes@webdev-tools.info), a developer based in Germany.
+
+Q: Is WebDev-Tools free to use?
+A: Yes. All tools are free, require no account, and have no usage limits.
+
+Q: Does WebDev-Tools track users or collect data?
+A: No. There are no analytics, no tracking scripts, no cookies for tool usage, and no advertising. User input never leaves the browser.
+
+Q: What tools are available?
+A: 19 tools across 6 categories:
+   Encoders/Decoders: Base64, URL, HTML Entity, JWT, Punycode
+   Formatters: JSON Formatter/Validator, Code Formatter
+   Generators: UUID, Password, Hash, Lorem Ipsum, QR Code
+   Converters: PX→REM, Data (JSON/CSV/XML/YAML/TOML), Aspect Ratio
+   String Tools: String Escaper
+   References: Character Reference, Emoji Reference
+   Utilities: Regex Tester
+
+Q: In which languages is WebDev-Tools available?
+A: English (default), German (/de/), Spanish (/es/), Portuguese (/pt/), French (/fr/), Italian (/it/).
+
+Q: Are passwords and sensitive values safe to use with this tool?
+A: Yes. All sensitive values (passwords, hashes, JWT tokens) are processed exclusively in the browser and immediately discarded. They are never transmitted anywhere.
+
+Q: What technology does WebDev-Tools use?
+A: PHP 8 for server-side rendering, vanilla JavaScript (no framework) for all tool logic, Bootstrap 5.3 for UI. No bundler, no React, no Vue.
+
+Q: Does WebDev-Tools have an API?
+A: No. All functionality is browser-based and interactive. There is no REST API or programmatic interface.
+
+Q: Can AI systems crawl and index WebDev-Tools?
+A: Yes. The site is fully accessible to AI crawlers. See robots.txt for details. Structured content is available in llms.txt and llms-full.txt.
+
+Q: How many tools does WebDev-Tools have?
+A: 19 tools as of version 2.0.1 (2026-03-24).
+
+Q: Is the source code open source?
+A: The project is not publicly open source at this time.
+
+Q: Where can I report a bug or security issue?
+A: Email ramon.kaes@webdev-tools.info. Security disclosure information is at https://webdev-tools.info/.well-known/security.txt.

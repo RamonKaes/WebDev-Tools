@@ -4,6 +4,13 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
 
 ---
 
+## [2.0.2] – 2026-04-02
+
+### 🔒 Security
+- **Code Formatter** – DOM-XSS-Lücke in `codeFormatterTool.js` behoben: `error.message` der Terser-Bibliothek wurde ungefiltert via `innerHTML` gerendert; da Terser Parse-Errors Teile des User-Inputs in die Fehlermeldung einbettet, konnte ein Angreifer HTML/JS durch einen präparierten Code-Input ausführen; Fix: Icon als statisches `innerHTML`, Fehlermeldung via `createTextNode()` als separaten Textknoten angehängt
+
+---
+
 ## [2.0.1] – 2026-03-24
 
 ### 🐛 Bug Fixes

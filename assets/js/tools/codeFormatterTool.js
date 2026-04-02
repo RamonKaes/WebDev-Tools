@@ -572,7 +572,8 @@
           if (!isBeautify && language === 'javascript') {
             minifyInfo.classList.remove('alert-info');
             minifyInfo.classList.add('alert-danger');
-            minifyInfoText.innerHTML = `<i class="bi bi-exclamation-triangle me-1"></i>${error.message}`;
+            minifyInfoText.innerHTML = '<i class="bi bi-exclamation-triangle me-1"></i>';
+            minifyInfoText.appendChild(document.createTextNode(error.message));
           }
         }
       };

@@ -88,6 +88,25 @@ $ogLocales = ['en' => 'en_US', 'de' => 'de_DE', 'es' => 'es_ES', 'pt' => 'pt_PT'
 $ogLocale = $ogLocales[$lang] ?? 'en_US';
 $langPrefix = getLangPrefix($lang);
 
+$goToHomepageLabels = [
+  'en' => 'Go to Homepage',
+  'de' => 'Zur Startseite',
+  'es' => 'Ir al inicio',
+  'pt' => 'Ir para a página inicial',
+  'fr' => "Aller à l'accueil",
+  'it' => 'Vai alla home',
+];
+$goBackLabels = [
+  'en' => 'Go Back',
+  'de' => 'Zurück',
+  'es' => 'Volver',
+  'pt' => 'Voltar',
+  'fr' => 'Retour',
+  'it' => 'Indietro',
+];
+$goToHomepageLabel = $goToHomepageLabels[$lang] ?? 'Go to Homepage';
+$goBackLabel = $goBackLabels[$lang] ?? 'Go Back';
+
 // Build hash for cache busting
 $manifest = getManifest();
 $buildHash = '1.0.0';
@@ -195,13 +214,13 @@ $ogImageUrl = $baseUrlEscaped . BASE_PATH . '/assets/img/og/home.svg';
           <p class="text-muted mb-4"><?= htmlspecialchars($errorContent['suggestion']) ?></p>
           
           <div class="d-flex gap-3 justify-content-center flex-wrap">
-            <a href="<?= BASE_PATH . ($lang === 'de' ? '/de/' : '/') ?>" class="btn btn-primary">
+            <a href="<?= BASE_PATH . $langPrefix . '/' ?>" class="btn btn-primary">
               <i class="bi bi-house-door me-2"></i>
-              <?= $lang === 'de' ? 'Zur Startseite' : 'Go to Homepage' ?>
+              <?= $goToHomepageLabel ?>
             </a>
             <button type="button" class="btn btn-outline-secondary" id="goBackBtn">
               <i class="bi bi-arrow-left me-2"></i>
-              <?= $lang === 'de' ? 'Zurück' : 'Go Back' ?>
+              <?= $goBackLabel ?>
             </button>
           </div>
         </div>

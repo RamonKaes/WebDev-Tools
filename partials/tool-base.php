@@ -326,10 +326,20 @@ include __DIR__ . '/head.php';
   </div>
 
   <!-- On This Page Sidebar - Visible on screens >= 1480px -->
+  <?php
+  $onThisPageLabels = [
+    'en' => 'On this page',
+    'de' => 'Auf dieser Seite',
+    'es' => 'En esta página',
+    'pt' => 'Nesta página',
+    'fr' => 'Sur cette page',
+    'it' => 'In questa pagina',
+  ];
+  ?>
   <aside class="bg-body toc-sidebar-fixed p-3 pt-5">
     <div id="toc-sidebar" class="pt-3">
       <h6 class="text-muted text-uppercase fw-bold mb-3 toc-heading small">
-        <?= $lang === 'de' ? 'Auf dieser Seite' : 'On this page' ?>
+        <?= $onThisPageLabels[$lang] ?? 'On this page' ?>
       </h6>
       <nav class="nav flex-column" id="toc-nav">
         <!-- Will be populated by JavaScript -->

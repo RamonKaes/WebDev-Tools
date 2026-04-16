@@ -1,6 +1,6 @@
 {
     "version": "1.0.0",
-    "generatedAt": "2026-03-24T07:42:21+00:00",
+    "generatedAt": "2026-04-16T09:33:23+00:00",
     "tools": {
         "base64EncoderDecoder": {
             "id": "base64EncoderDecoder",
@@ -399,6 +399,30 @@
                 "common-presets",
                 "css-padding-trick",
                 "responsive-design"
+            ],
+            "hasFeaturesSection": true,
+            "hasAboutSection": false
+        },
+        "sriGeneratorTool": {
+            "id": "sriGeneratorTool",
+            "slug": "sri-generator",
+            "url": "/sri-generator/",
+            "category": "utilities",
+            "icon": "bi-shield-check",
+            "jsPath": "/assets/js/tools/sriGeneratorTool.js",
+            "ogImage": "default.svg",
+            "externalLibraries": [],
+            "jsLibraries": [
+                "clipboard-utils",
+                "download-utils"
+            ],
+            "features": [
+                "sha256",
+                "sha384",
+                "sha512",
+                "url-fetch",
+                "file-upload",
+                "tag-generation"
             ],
             "hasFeaturesSection": true,
             "hasAboutSection": false

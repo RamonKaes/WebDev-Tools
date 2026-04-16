@@ -101,6 +101,11 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://webdev-tools.info/sri-generator/</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://webdev-tools.info/string-escaper/</loc>
     <lastmod>2026-04-16</lastmod>
     <changefreq>weekly</changefreq>

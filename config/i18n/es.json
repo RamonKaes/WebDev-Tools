@@ -1016,6 +1016,62 @@
       "loading": "Cargando...",
       "copyEmoji": "Copiar emoji",
       "copyCode": "Copiar código HTML"
+    },
+    "sriGeneratorTool": {
+      "linkTitle": {
+        "card": "Genera hashes SRI para la carga segura de recursos CDN",
+        "nav": "Generador SRI"
+      },
+      "features_title": "Características",
+      "about_title": "Acerca de",
+      "how_to_use_title": "Cómo usar",
+      "how_to_use_steps": [
+        "Elige el modo de entrada: URL, carga de archivo o pegar texto",
+        "Selecciona uno o más algoritmos de hash (SHA-384 es recomendado)",
+        "Haz clic en 'Generar Hash SRI'",
+        "Copia el atributo integrity o la etiqueta HTML completa",
+        "Agrega la etiqueta a tu HTML con crossorigin='anonymous'"
+      ],
+      "inputTitle": "Entrada",
+      "modeLabel": "Modo de entrada",
+      "modeUrl": "URL",
+      "modeFile": "Archivo",
+      "modeText": "Pegar texto",
+      "urlLabel": "URL del recurso",
+      "urlHint": "Introduce la URL completa de un recurso CDN (CORS debe estar habilitado en el servidor)",
+      "fileLabel": "Seleccionar archivo",
+      "fileHint": "Sube un archivo JS o CSS — todo el hash se ejecuta localmente en tu navegador",
+      "textLabel": "Contenido del recurso",
+      "textPlaceholder": "Pega aquí el contenido sin procesar del recurso...",
+      "textHint": "Pega el contenido exacto del archivo para hacer hash (p. ej., JS o CSS minificado)",
+      "optionsTitle": "Opciones",
+      "algorithmsLabel": "Algoritmos de hash",
+      "algorithmsHint": "Selecciona uno o más algoritmos — se pueden usar múltiples hashes en un atributo integrity",
+      "recommended": "recomendado",
+      "resourceTypeLabel": "Tipo de recurso",
+      "resourceTypeHint": "Determina el tipo de etiqueta HTML generada",
+      "typeScript": "JavaScript (\u003cscript\u003e)",
+      "typeStylesheet": "Hoja de estilos (\u003clink rel=\"stylesheet\"\u003e)",
+      "examplesTitle": "Ejemplos rápidos",
+      "generateBtn": "Generar hash SRI",
+      "integrityAttr": "atributo integrity",
+      "htmlTag": "etiqueta HTML",
+      "noResult": "Introduce una URL, sube un archivo o pega contenido y haz clic en 'Generar hash SRI'",
+      "toc_title": "Generador SRI",
+      "h1_title": "Generador de Hashes SRI — Subresource Integrity para CDN",
+      "card_description": "Genera hashes Subresource Integrity (SRI) para recursos CDN. SHA-256, SHA-384, SHA-512 con etiquetas script y link listas para usar.",
+      "tool_description": "Genera hashes Subresource Integrity (SRI) para proteger tu sitio web de recursos CDN comprometidos. Introduce una URL, sube un archivo o pega el contenido del recurso para calcular hashes SHA-256, SHA-384 y SHA-512. La herramienta genera etiquetas HTML \u003cscript\u003e y \u003clink\u003e listas para usar con el atributo integrity incluido. Todo el hash se ejecuta en tu navegador.",
+      "errors": {
+        "noWebCrypto": "Web Crypto API no compatible. Usa un navegador moderno.",
+        "noAlgorithm": "Selecciona al menos un algoritmo de hash.",
+        "noUrl": "Introduce una URL.",
+        "invalidUrl": "Introduce una URL válida que empiece con http:// o https://",
+        "fetchFailed": "No se pudo obtener el recurso. El servidor puede no permitir solicitudes de origen cruzado",
+        "fetchError": "Error HTTP {status} al obtener el recurso.",
+        "noFile": "Selecciona un archivo.",
+        "noText": "Pega contenido para hacer hash.",
+        "processingFailed": "Falló la generación de hash. Inténtalo de nuevo."
+      }
     }
   },
   "seo": {
@@ -1291,6 +1347,21 @@
       "keywords": "",
       "meta_title": "Convertidor Punycode – IDN a ASCII y Unicode a Punycode",
       "meta_description": "Convierte nombres de dominio internacionales (IDN) a Punycode y viceversa. Herramienta gratuita para transformar dominios Unicode a formato."
+    },
+    "sriGeneratorTool": {
+      "ogImage": "og-default.png",
+      "applicationCategory": "SecurityApplication",
+      "featureList": [
+        "Generación de hash SRI desde URL, archivo o texto",
+        "Soporte SHA-256, SHA-384, SHA-512",
+        "Etiquetas HTML script y link listas para usar",
+        "Copia con un clic del atributo integrity",
+        "Procesamiento del lado del cliente via Web Crypto API",
+        "Ejemplos rápidos para Bootstrap, jQuery, Alpine.js"
+      ],
+      "keywords": "generador sri, subresource integrity, seguridad cdn, sha384, sha256, sha512, atributo integrity, etiqueta script, etiqueta link",
+      "meta_title": "Generador Hash SRI — Subresource Integrity para Seguridad CDN",
+      "meta_description": "Genera hashes Subresource Integrity (SRI) para recursos CDN. SHA-256, SHA-384, SHA-512 con etiquetas script y link listas. Lado del cliente, privacidad primero."
     }
   },
   "validation": {

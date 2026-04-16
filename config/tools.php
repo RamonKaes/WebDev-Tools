@@ -389,5 +389,25 @@ return [
     'features' => ['dimension-calculation', 'common-presets', 'css-padding-trick', 'responsive-design'],
     'seoTemplate' => 'default',
     'hasFeaturesSection' => true
+  ],
+
+  'sriGeneratorTool' => [
+    'id' => 'sriGeneratorTool',
+    'slug' => 'sri-generator',
+    'slugs' => [
+      'en' => 'sri-generator',
+      'de' => 'sri-generator',
+      'es' => 'generador-sri',
+      'pt' => 'gerador-sri',
+      'fr' => 'generateur-sri',
+      'it' => 'generatore-sri'
+    ],
+    'category' => 'utilities',
+    'icon' => 'bi-shield-check',
+    'jsModule' => 'tools/sriGeneratorTool.js',
+    'jsLibraries' => ['clipboard-utils', 'download-utils'],
+    'features' => ['sha256', 'sha384', 'sha512', 'url-fetch', 'file-upload', 'tag-generation'],
+    'seoTemplate' => 'default',
+    'hasFeaturesSection' => true
   ]
 ];

@@ -30,6 +30,7 @@
   RewriteRule ^es/hash-generator/?$ /es/generador-hash/ [R=301,L]
   RewriteRule ^es/qr-code-generator/?$ /es/generador-qr/ [R=301,L]
   RewriteRule ^es/regex-tester/?$ /es/testador-regex/ [R=301,L]
+  RewriteRule ^es/sri-generator/?$ /es/generador-sri/ [R=301,L]
 
   # French (FR)
   RewriteRule ^fr/password-generator/?$ /fr/generateur-mots-de-passe/ [R=301,L]
@@ -42,6 +43,7 @@
   RewriteRule ^fr/qr-code-generator/?$ /fr/generateur-qr/ [R=301,L]
   RewriteRule ^fr/regex-tester/?$ /fr/testeur-regex/ [R=301,L]
   RewriteRule ^fr/string-escaper/?$ /fr/echappeur-chaines/ [R=301,L]
+  RewriteRule ^fr/sri-generator/?$ /fr/generateur-sri/ [R=301,L]
 
   # Italian (IT)
   RewriteRule ^it/password-generator/?$ /it/generatore-password/ [R=301,L]
@@ -53,6 +55,7 @@
   RewriteRule ^it/qr-code-generator/?$ /it/generatore-qr/ [R=301,L]
   RewriteRule ^it/regex-tester/?$ /it/tester-regex/ [R=301,L]
   RewriteRule ^it/string-escaper/?$ /it/escapatore-stringhe/ [R=301,L]
+  RewriteRule ^it/sri-generator/?$ /it/generatore-sri/ [R=301,L]
 
   # Portuguese (PT)
   RewriteRule ^pt/password-generator/?$ /pt/gerador-senhas/ [R=301,L]
@@ -65,6 +68,7 @@
   RewriteRule ^pt/qr-code-generator/?$ /pt/gerador-qr/ [R=301,L]
   RewriteRule ^pt/regex-tester/?$ /pt/testador-regex/ [R=301,L]
   RewriteRule ^pt/string-escaper/?$ /pt/escapador-strings/ [R=301,L]
+  RewriteRule ^pt/sri-generator/?$ /pt/gerador-sri/ [R=301,L]
 
   # ====================================
   # ERROR PAGES

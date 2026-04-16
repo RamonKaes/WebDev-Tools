@@ -1016,6 +1016,62 @@
       "loading": "Loading...",
       "copyEmoji": "Copy emoji",
       "copyCode": "Copy HTML code"
+    },
+    "sriGeneratorTool": {
+      "linkTitle": {
+        "card": "Generate SRI hashes for secure CDN resource loading",
+        "nav": "SRI Generator"
+      },
+      "features_title": "Features",
+      "about_title": "About",
+      "how_to_use_title": "How to Use",
+      "how_to_use_steps": [
+        "Choose input mode: URL, file upload, or paste text",
+        "Select one or more hash algorithms (SHA-384 is recommended)",
+        "Click 'Generate SRI Hash'",
+        "Copy the integrity attribute or the complete HTML tag",
+        "Add the tag to your HTML with crossorigin='anonymous'"
+      ],
+      "inputTitle": "Input",
+      "modeLabel": "Input Mode",
+      "modeUrl": "URL",
+      "modeFile": "File Upload",
+      "modeText": "Paste Text",
+      "urlLabel": "Resource URL",
+      "urlHint": "Enter the full URL of a CDN resource (CORS must be enabled on the server)",
+      "fileLabel": "Select File",
+      "fileHint": "Upload a JS or CSS file — all hashing runs locally in your browser",
+      "textLabel": "Resource Content",
+      "textPlaceholder": "Paste the raw content of the resource here...",
+      "textHint": "Paste the exact file content to hash (e.g., minified JS or CSS)",
+      "optionsTitle": "Options",
+      "algorithmsLabel": "Hash Algorithms",
+      "algorithmsHint": "Select one or more algorithms — multiple hashes can be used in one integrity attribute",
+      "recommended": "recommended",
+      "resourceTypeLabel": "Resource Type",
+      "resourceTypeHint": "Determines the generated HTML tag type",
+      "typeScript": "JavaScript (\u003cscript\u003e)",
+      "typeStylesheet": "Stylesheet (\u003clink rel=\"stylesheet\"\u003e)",
+      "examplesTitle": "Quick Examples",
+      "generateBtn": "Generate SRI Hash",
+      "integrityAttr": "integrity attribute",
+      "htmlTag": "HTML tag",
+      "noResult": "Enter a URL, upload a file, or paste content and click 'Generate SRI Hash'",
+      "toc_title": "SRI Generator",
+      "h1_title": "SRI Hash Generator — Subresource Integrity for CDN Resources",
+      "card_description": "Generate Subresource Integrity (SRI) hashes for CDN resources. SHA-256, SHA-384, SHA-512 support with ready-to-use script and link HTML tags.",
+      "tool_description": "Generate Subresource Integrity (SRI) hashes to protect your website from compromised CDN resources. Enter a URL, upload a file, or paste resource content to compute SHA-256, SHA-384, and SHA-512 hashes. The tool generates ready-to-use \u003cscript\u003e and \u003clink\u003e HTML tags with the integrity attribute included. SHA-384 is recommended by the W3C for most use cases. All hashing runs entirely in your browser via the Web Crypto API.",
+      "errors": {
+        "noWebCrypto": "Web Crypto API not supported. Please use a modern browser.",
+        "noAlgorithm": "Please select at least one hash algorithm.",
+        "noUrl": "Please enter a URL.",
+        "invalidUrl": "Please enter a valid URL starting with http:// or https://",
+        "fetchFailed": "Could not fetch the resource. The server may not allow cross-origin requests",
+        "fetchError": "HTTP error {status} while fetching the resource.",
+        "noFile": "Please select a file.",
+        "noText": "Please paste some content to hash.",
+        "processingFailed": "Hash generation failed. Please try again."
+      }
     }
   },
   "seo": {
@@ -1309,6 +1365,22 @@
       "very_strong": "Very Strong"
     },
     "empty_input": "Empty input"
+  },
+    "sriGeneratorTool": {
+      "ogImage": "og-default.png",
+      "applicationCategory": "SecurityApplication",
+      "featureList": [
+        "SRI hash generation from URL, file, or text",
+        "SHA-256, SHA-384, SHA-512 support",
+        "Ready-to-use script and link HTML tags",
+        "One-click copy of integrity attribute",
+        "Client-side processing via Web Crypto API",
+        "Quick examples for Bootstrap, jQuery, Alpine.js"
+      ],
+      "keywords": "sri generator, subresource integrity, cdn security, sha384, sha256, sha512, integrity attribute, script tag, link tag",
+      "meta_title": "SRI Hash Generator — Subresource Integrity for CDN Security",
+      "meta_description": "Generate Subresource Integrity (SRI) hashes for CDN resources. SHA-256, SHA-384, SHA-512 with ready-to-use script and link tags. Client-side, privacy-first."
+    }
   },
   "time": {
     "just_now": "just now",

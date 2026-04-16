@@ -278,10 +278,8 @@
         <!-- Input Card -->
         <div class="col-12">
           <div class="card">
-            <div class="card-header">
-              <h5 class="mb-0"><i class="bi bi-input-cursor-text me-2"></i>${t('tools.sriGeneratorTool.inputTitle')}</h5>
-            </div>
             <div class="card-body">
+              <h2 class="h5 card-title mb-3"><i class="bi bi-input-cursor-text me-2"></i>${t('tools.sriGeneratorTool.inputTitle')}</h2>
 
               <!-- Mode Selector -->
               <div class="mb-3">
@@ -338,10 +336,8 @@
         <!-- Options Card -->
         <div class="col-12 col-md-6">
           <div class="card h-100">
-            <div class="card-header">
-              <h5 class="mb-0"><i class="bi bi-sliders me-2"></i>${t('tools.sriGeneratorTool.optionsTitle')}</h5>
-            </div>
             <div class="card-body">
+              <h2 class="h5 card-title mb-3"><i class="bi bi-sliders me-2"></i>${t('tools.sriGeneratorTool.optionsTitle')}</h2>
 
               <!-- Algorithms -->
               <div class="mb-3">
@@ -379,11 +375,10 @@
         <!-- Quick examples -->
         <div class="col-12 col-md-6">
           <div class="card h-100">
-            <div class="card-header">
-              <h5 class="mb-0"><i class="bi bi-lightning me-2"></i>${t('tools.sriGeneratorTool.examplesTitle')}</h5>
+            <div class="card-body pb-0">
+              <h2 class="h5 card-title mb-3"><i class="bi bi-lightning me-2"></i>${t('tools.sriGeneratorTool.examplesTitle')}</h2>
             </div>
-            <div class="card-body p-0">
-              <div class="list-group list-group-flush rounded-bottom" id="sri-examples">
+            <div class="list-group list-group-flush" id="sri-examples">
                 <button class="list-group-item list-group-item-action py-2 px-3 example-btn"
                   data-url="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
                   data-type="stylesheet">
@@ -404,7 +399,6 @@
                   data-type="script">
                   <span class="badge bg-warning text-dark me-2">JS</span>Alpine.js 3
                 </button>
-              </div>
             </div>
           </div>
         </div>

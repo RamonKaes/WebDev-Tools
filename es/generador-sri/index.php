@@ -9,7 +9,7 @@ $featuresSectionTitle = 'Funciones';
 $features = [
     'Genera hashes SRI a partir de una URL, archivo subido o texto pegado',
     'Compatible con SHA-256, SHA-384 (recomendado) y SHA-512 simultáneamente',
-    'Genera etiquetas HTML &lt;script&gt; y &lt;link&gt; listas para usar',
+    'Genera etiquetas HTML <script> y <link> listas para usar',
     'Copia el atributo integrity y la etiqueta HTML completa con un clic',
     'Privacidad primero: todo el hashing se ejecuta en el navegador',
     'Ejemplos rápidos para Bootstrap, jQuery y Alpine.js',

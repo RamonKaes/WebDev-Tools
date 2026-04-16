@@ -9,7 +9,7 @@ $featuresSectionTitle = 'Fonctionnalités';
 $features = [
     'Générez des hashes SRI depuis une URL, un fichier ou un texte collé',
     'Prend en charge SHA-256, SHA-384 (recommandé) et SHA-512 simultanément',
-    'Génère des balises HTML &lt;script&gt; et &lt;link&gt; prêtes à l\'emploi',
+    'Génère des balises HTML <script> et <link> prêtes à l\'emploi',
     'Copiez l\'attribut integrity et la balise HTML complète en un clic',
     'Confidentialité : tout le hachage s\'exécute côté client dans le navigateur',
     'Exemples rapides pour Bootstrap, jQuery et Alpine.js',

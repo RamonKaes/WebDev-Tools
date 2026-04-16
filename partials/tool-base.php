@@ -151,6 +151,11 @@ include __DIR__ . '/head.php';
         'emojiReferenceTool' => [
           ['label' => 'Unicode', 'tooltip' => 'Unicode Emoji Standard'],
           ['label' => 'HTML5', 'tooltip' => 'HTML Entity Support']
+        ],
+        'sriGeneratorTool' => [
+          ['label' => 'W3C SRI', 'tooltip' => 'Subresource Integrity W3C Recommendation'],
+          ['label' => 'Web Crypto API', 'tooltip' => 'Browser Cryptography Standard'],
+          ['label' => 'Client-Side Only', 'type' => 'security']
         ]
         ];
 

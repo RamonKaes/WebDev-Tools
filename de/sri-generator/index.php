@@ -9,7 +9,7 @@ $featuresSectionTitle = 'Funktionen';
 $features = [
     'SRI-Hashes aus URL, Datei-Upload oder eingefügtem Text generieren',
     'Unterstützt SHA-256, SHA-384 (empfohlen) und SHA-512 gleichzeitig',
-    'Erzeugt fertige &lt;script&gt;- und &lt;link&gt;-HTML-Tags',
+    'Erzeugt fertige <script>- und <link>-HTML-Tags',
     'Integrity-Attribut und vollständigen HTML-Tag mit einem Klick kopieren',
     'Datenschutz: Alle Hash-Berechnungen laufen client-seitig im Browser',
     'Schnellbeispiele für Bootstrap, jQuery und Alpine.js',
@@ -43,7 +43,7 @@ $usefulResources = [
 $additionalSections = [
     [
         'title'   => 'Was ist Subresource Integrity?',
-        'icon'    => 'bi-info-circle',
+        'icon'    => 'info-circle',
         'content' => <<<HTML
 <p>
   <strong>Subresource Integrity (SRI)</strong> ist eine Sicherheitsfunktion, die es Browsern ermöglicht,
@@ -62,7 +62,7 @@ HTML,
     ],
     [
         'title'   => 'Welchen Algorithmus sollte ich verwenden?',
-        'icon'    => 'bi-shield-check',
+        'icon'    => 'shield-check',
         'content' => <<<HTML
 <ul>
   <li><strong>SHA-384</strong> — Empfohlen. Starke Sicherheit, weit verbreitet, Standardwahl für CDN-Ressourcen.</li>

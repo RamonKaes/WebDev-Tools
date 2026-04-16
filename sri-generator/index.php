@@ -9,7 +9,7 @@ $featuresSectionTitle = 'Features';
 $features = [
     'Generate SRI hashes from a URL, file upload, or pasted text',
     'Supports SHA-256, SHA-384 (recommended), and SHA-512 simultaneously',
-    'Auto-generates ready-to-use &lt;script&gt; and &lt;link&gt; HTML tags',
+    'Auto-generates ready-to-use <script> and <link> HTML tags',
     'One-click copy of integrity attribute and full HTML tag',
     'Privacy-first: All hashing runs client-side in your browser',
     'Quick-load examples for Bootstrap, jQuery, and Alpine.js',
@@ -43,7 +43,7 @@ $usefulResources = [
 $additionalSections = [
     [
         'title'   => 'What is Subresource Integrity?',
-        'icon'    => 'bi-info-circle',
+        'icon'    => 'info-circle',
         'content' => <<<HTML
 <p>
   <strong>Subresource Integrity (SRI)</strong> is a security feature that allows browsers to verify
@@ -63,7 +63,7 @@ HTML,
     ],
     [
         'title'   => 'Which Algorithm Should I Use?',
-        'icon'    => 'bi-shield-check',
+        'icon'    => 'shield-check',
         'content' => <<<HTML
 <ul>
   <li><strong>SHA-384</strong> — Recommended. Strong security, widely supported, standard choice for most CDN resources.</li>

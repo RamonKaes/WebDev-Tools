@@ -55,7 +55,7 @@ $ogImageMap = [
 ];
 
 $manifest = [
-  'version' => '1.0.0',
+  'version' => date('Ymd.His'),
   'generatedAt' => date('c'),
   'tools' => []
 ];

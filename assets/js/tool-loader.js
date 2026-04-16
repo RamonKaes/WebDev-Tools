@@ -64,8 +64,13 @@
         try {
           const { manifest, cachedAt } = JSON.parse(cached);
           const age = Date.now() - cachedAt;
+          const expectedVersion = window.MANIFEST_VERSION;
 
-          if (age < CACHE_DURATION) {
+          // Invalidate cache if version mismatch or expired
+          if (expectedVersion && manifest.version !== expectedVersion) {
+            console.debug(`[ToolLoader] Manifest version mismatch (cached: ${manifest.version}, expected: ${expectedVersion}), reloading`);
+            localStorage.removeItem(CACHE_KEY);
+          } else if (age < CACHE_DURATION) {
             TOOL_MANIFEST = manifest;
             console.debug(`[ToolLoader] Using cached manifest (age: ${Math.round(age / 1000 / 60)}min)`);
 

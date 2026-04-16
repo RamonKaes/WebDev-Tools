@@ -11,6 +11,8 @@ if (!isset($buildHash)) {
 
   <script nonce="<?= $nonce ?>">
     window.APP_BASE_PATH = '<?= BASE_PATH ?>';
+    <?php $manifest = getManifest(); ?>
+    window.MANIFEST_VERSION = '<?= htmlspecialchars($manifest['version'] ?? '', ENT_QUOTES, 'UTF-8') ?>';
   </script>
 
   <!-- DOMPurify: XSS sanitization library for safe innerHTML operations -->

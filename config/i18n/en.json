@@ -1348,6 +1348,21 @@
       "keywords": "",
       "meta_title": "Punycode Converter – Convert International Domain Names IDN",
       "meta_description": "Convert international domain names to Punycode and back. IDN converter supporting Unicode domains for DNS compatibility and email address encoding."
+    },
+    "sriGeneratorTool": {
+      "ogImage": "og-default.png",
+      "applicationCategory": "SecurityApplication",
+      "featureList": [
+        "SRI hash generation from URL, file, or text",
+        "SHA-256, SHA-384, SHA-512 support",
+        "Ready-to-use script and link HTML tags",
+        "One-click copy of integrity attribute",
+        "Client-side processing via Web Crypto API",
+        "Quick examples for Bootstrap, jQuery, Alpine.js"
+      ],
+      "keywords": "sri generator, subresource integrity, cdn security, sha384, sha256, sha512, integrity attribute, script tag, link tag",
+      "meta_title": "SRI Hash Generator — Subresource Integrity for CDN Security",
+      "meta_description": "Generate Subresource Integrity (SRI) hashes for CDN resources. SHA-256, SHA-384, SHA-512 with ready-to-use script and link tags. Client-side, privacy-first."
     }
   },
   "validation": {
@@ -1365,22 +1380,6 @@
       "very_strong": "Very Strong"
     },
     "empty_input": "Empty input"
-  },
-    "sriGeneratorTool": {
-      "ogImage": "og-default.png",
-      "applicationCategory": "SecurityApplication",
-      "featureList": [
-        "SRI hash generation from URL, file, or text",
-        "SHA-256, SHA-384, SHA-512 support",
-        "Ready-to-use script and link HTML tags",
-        "One-click copy of integrity attribute",
-        "Client-side processing via Web Crypto API",
-        "Quick examples for Bootstrap, jQuery, Alpine.js"
-      ],
-      "keywords": "sri generator, subresource integrity, cdn security, sha384, sha256, sha512, integrity attribute, script tag, link tag",
-      "meta_title": "SRI Hash Generator — Subresource Integrity for CDN Security",
-      "meta_description": "Generate Subresource Integrity (SRI) hashes for CDN resources. SHA-256, SHA-384, SHA-512 with ready-to-use script and link tags. Client-side, privacy-first."
-    }
   },
   "time": {
     "just_now": "just now",

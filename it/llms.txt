@@ -1,0 +1,68 @@
+# WebDev-Tools.info
+
+> Collezione selezionata di strumenti web gratuiti online per sviluppatori.
+
+## Lingue / Languages / Sprachen
+- [English (Primary)](https://webdev-tools.info/llms.txt)
+- [Deutsch (German)](https://webdev-tools.info/de/llms.txt)
+- [Español (Spanish)](https://webdev-tools.info/es/llms.txt)
+- [Français (French)](https://webdev-tools.info/fr/llms.txt)
+- [Português (Portuguese)](https://webdev-tools.info/pt/llms.txt)
+- [Italiano (Italian)](https://webdev-tools.info/it/llms.txt)
+
+## Funzionalità
+
+WebDev-Tools (https://webdev-tools.info) è una raccolta gratuita di utility per sviluppatori web. Tutti i calcoli vengono eseguiti localmente nel browser dell'utente. Nessun dato di input viene inviato a un server.
+
+## Strumenti
+
+### Encoder & Decoder
+- [Base64 Encoder/Decoder](https://webdev-tools.info/base64-encoder-decoder/): Codifica e decodifica stringhe e file Base64. Supporta trascina e rilascia, caricamento file e modalità live.
+- [URL Encoder/Decoder](https://webdev-tools.info/url-encoder-decoder/): Codifica e decodifica URL. Supporta elaborazione batch e parsing delle URL.
+- [HTML Entity Encoder/Decoder](https://webdev-tools.info/html-entity-encoder-decoder/): Converte caratteri speciali in entità HTML nominate e numeriche e viceversa.
+- [JWT Decoder](https://webdev-tools.info/jwt-decoder/): Decodifica token JWT, mostra header e payload, verifica la scadenza e rileva gli algoritmi.
+- [Punycode Converter](https://webdev-tools.info/punycode-converter/): Converte nomi di dominio internazionalizzati (IDN) tra Unicode e Punycode (ACE).
+
+### Formatter
+- [JSON Formatter & Validator](https://webdev-tools.info/json-formatter-validator/): Formatà, valida, minimizza ed esplora JSON con evidenziazione della sintassi e vista ad albero.
+- [Code Formatter](https://webdev-tools.info/code-formatter/): Formatà HTML, CSS, JavaScript e altri linguaggi.
+
+### Generator
+- [UUID Generator](https://webdev-tools.info/uuid-generator/): Genera UUID v4 conformi a RFC 4122, singoli o in blocco.
+- [Password Generator](https://webdev-tools.info/password-generator/): Crea password casuali o frasi di password con regole configurabili e indicatore di forza.
+- [Hash Generator](https://webdev-tools.info/hash-generator/): Genera hash MD5, SHA-1, SHA-256 e SHA-512 da testo o file.
+- [Lorem Ipsum Generator](https://webdev-tools.info/lorem-ipsum/): Genera testo segnaposto per paragrafi, frasi o parole.
+- [QR Code Generator](https://webdev-tools.info/qr-code-generator/): Crea codici QR da qualsiasi testo o URL. Scaricabile come SVG o PNG.
+
+### Converter
+- [PX to REM Converter](https://webdev-tools.info/px-to-rem-converter/): Converte valori in pixel in REM con calcolo live, tabelle di conversione e supporto Tailwind.
+- [Data Converter](https://webdev-tools.info/data-converter/): Converte tra JSON, CSV, XML, YAML e TOML. Supporta la conversione di timestamp.
+- [Aspect Ratio Calculator](https://webdev-tools.info/aspect-ratio-calculator/): Calcola dimensioni immagine/video per qualsiasi rapporto di aspetto. Include preset comuni e trucco padding CSS.
+
+### String Tools
+- [String Escaper](https://webdev-tools.info/string-escaper/): Escapa e desescapa stringhe per JavaScript, JSON, HTML, CSS e SQL.
+
+### Riferimenti
+- [Character Reference](https://webdev-tools.info/character-reference/): Tabella ricercabile di entità di caratteri HTML, punti codice Unicode e codici di escape CSS.
+- [Emoji Reference](https://webdev-tools.info/emoji-reference/): Tabella di emoji ricercabile con funzione copia per caratteri emoji e punti codice.
+
+### Utilities
+- [SRI Generator](https://webdev-tools.info/sri-generator/): Genera hash Subresource Integrity per script e fogli di stile.
+- [Regex Tester](https://webdev-tools.info/regex-tester/): Tester di espressioni regolari live con evidenziazione delle corrispondenze, estrazione dei gruppi e supporto delle flag.
+
+## Lingue
+
+Disponibile in 6 lingue: inglese, tedesco (/de/), spagnolo (/es/), portoghese (/pt/), francese (/fr/), italiano (/it/).
+
+## Privacy & Sicurezza
+
+- Niente analytics, niente tracking, niente cookie
+- Nessun dato esce mai dal browser
+- Content Security Policy (CSP) attiva
+- Tutti i valori sensibili (password, hash, token) vengono elaborati e scartati localmente
+
+## Contatto
+
+Email: ramon.kaes@webdev-tools.info
+Imprint: https://webdev-tools.info/imprint.php
+Privacy: https://webdev-tools.info/privacy.php

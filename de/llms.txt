@@ -1,0 +1,68 @@
+# WebDev-Tools.info
+
+> Kuratierte Sammlung kostenloser Online-Webentwicklertools.
+
+## Sprachen / Languages / Idiomas
+- [English (Primary)](https://webdev-tools.info/llms.txt)
+- [Deutsch (German)](https://webdev-tools.info/de/llms.txt)
+- [Español (Spanish)](https://webdev-tools.info/es/llms.txt)
+- [Français (French)](https://webdev-tools.info/fr/llms.txt)
+- [Português (Portuguese)](https://webdev-tools.info/pt/llms.txt)
+- [Italiano (Italian)](https://webdev-tools.info/it/llms.txt)
+
+## Funktionen
+
+WebDev-Tools (https://webdev-tools.info) ist eine kostenlose Sammlung von Webentwickler-Utilities. Alle Berechnungen erfolgen lokal im Browser des Nutzers. Es werden keine Eingabedaten an einen Server gesendet.
+
+## Tools
+
+### Encoder & Decoder
+- [Base64 Encoder/Decoder](https://webdev-tools.info/base64-encoder-decoder/): Kodieren und dekodieren Sie Base64-Zeichenfolgen und Dateien. Unterstützt Drag & Drop, Datei-Upload und Live-Modus.
+- [URL Encoder/Decoder](https://webdev-tools.info/url-encoder-decoder/): Prozentkodierung und Dekodierung von URLs. Unterstützt Bulk-Verarbeitung und URL-Parsing.
+- [HTML Entity Encoder/Decoder](https://webdev-tools.info/html-entity-encoder-decoder/): Konvertiert Sonderzeichen in benannte und numerische HTML-Entitäten und zurück.
+- [JWT Decoder](https://webdev-tools.info/jwt-decoder/): Dekodiert JWT-Tokens, zeigt Header und Payload an, prüft das Ablaufdatum und erkennt Algorithmen.
+- [Punycode Converter](https://webdev-tools.info/punycode-converter/): Konvertiert internationalisierte Domainnamen (IDN) zwischen Unicode und Punycode (ACE).
+
+### Formatierer
+- [JSON Formatter & Validator](https://webdev-tools.info/json-formatter-validator/): Formatiert, validiert, minimiert und durchsucht JSON mit Syntaxhighlighting und Baumansicht.
+- [Code Formatter](https://webdev-tools.info/code-formatter/): Formatiert HTML, CSS, JavaScript und andere Sprachen.
+
+### Generatoren
+- [UUID Generator](https://webdev-tools.info/uuid-generator/): Generiert RFC 4122-konforme UUID v4-Werte, einzeln oder im Batch.
+- [Password Generator](https://webdev-tools.info/password-generator/): Erzeugt zufällige Passwörter oder Passphrasen mit konfigurierbaren Regeln und Stärkeanzeige.
+- [Hash Generator](https://webdev-tools.info/hash-generator/): Generiert MD5-, SHA-1-, SHA-256- und SHA-512-Hashes aus Text oder Dateien.
+- [Lorem Ipsum Generator](https://webdev-tools.info/lorem-ipsum/): Erzeugt Platzhaltertext als Absätze, Sätze oder Wörter.
+- [QR Code Generator](https://webdev-tools.info/qr-code-generator/): Erstellt QR-Codes aus beliebigem Text oder URLs. Download als SVG oder PNG.
+
+### Konverter
+- [PX to REM Converter](https://webdev-tools.info/px-to-rem-converter/): Wandelt Pixelwerte in REM um, mit Live-Berechnung, Umrechnungstabellen und Tailwind-Unterstützung.
+- [Data Converter](https://webdev-tools.info/data-converter/): Konvertiert zwischen JSON, CSV, XML, YAML und TOML. Unterstützt Zeitstempelkonvertierung.
+- [Aspect Ratio Calculator](https://webdev-tools.info/aspect-ratio-calculator/): Berechnet Bild-/Videodimensionen für beliebige Seitenverhältnisse. Enthält gängige Presets und CSS-Padding-Trick.
+
+### String-Tools
+- [String Escaper](https://webdev-tools.info/string-escaper/): Escapet und unescapet Zeichenketten für JavaScript, JSON, HTML, CSS und SQL.
+
+### Referenzen
+- [Character Reference](https://webdev-tools.info/character-reference/): Durchsuchbare Tabelle mit HTML-Zeichenentitäten, Unicode-Codepunkten und CSS-Escape-Codes.
+- [Emoji Reference](https://webdev-tools.info/emoji-reference/): Durchsuchbare Emoji-Tabelle mit Kopierfunktion für Emoji-Zeichen und Codepunkte.
+
+### Utilities
+- [SRI Generator](https://webdev-tools.info/sri-generator/): Generiert Subresource Integrity-Hashes für Skripte und Stylesheets.
+- [Regex Tester](https://webdev-tools.info/regex-tester/): Live-Reguläre-Ausdrucks-Tester mit Trefferhervorhebung, Gruppenauswahl und Flag-Unterstützung.
+
+## Sprachen
+
+Verfügbar in 6 Sprachen: Englisch, Deutsch (/de/), Spanisch (/es/), Portugiesisch (/pt/), Französisch (/fr/), Italienisch (/it/).
+
+## Datenschutz & Sicherheit
+
+- Keine Analysen, kein Tracking, keine Cookies
+- Es verlassen niemals Daten den Browser
+- Content Security Policy (CSP) aktiv
+- Alle sensiblen Werte (Passwörter, Hashes, Token) werden lokal verarbeitet und verworfen
+
+## Kontakt
+
+Email: ramon.kaes@webdev-tools.info
+Impressum: https://webdev-tools.info/imprint.php
+Datenschutz: https://webdev-tools.info/privacy.php

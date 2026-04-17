@@ -71,7 +71,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
   <meta property="og:url" content="<?= htmlspecialchars($currentUrl, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>">
   <meta property="og:title" content="<?= htmlspecialchars($pageTitle, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>">
   <meta property="og:description" content="<?= htmlspecialchars($pageDescription, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>">
-  <meta property="og:image" content="<?= htmlspecialchars($baseUrl, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') . BASE_PATH ?>/assets/img/og/home.svg">
+  <meta property="og:image" content="<?= htmlspecialchars($baseUrl, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') . BASE_PATH ?>/assets/img/webdev-tools.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="<?= htmlspecialchars($pageTitle, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>">
@@ -87,7 +87,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
   <meta name="twitter:url" content="<?= htmlspecialchars($currentUrl, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>">
   <meta name="twitter:title" content="<?= htmlspecialchars($pageTitle, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>">
   <meta name="twitter:description" content="<?= htmlspecialchars($pageDescription, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>">
-  <meta name="twitter:image" content="<?= htmlspecialchars($baseUrl, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') . BASE_PATH ?>/assets/img/og/home.svg">
+  <meta name="twitter:image" content="<?= htmlspecialchars($baseUrl, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') . BASE_PATH ?>/assets/img/webdev-tools.png">
   <meta name="twitter:image:alt" content="<?= htmlspecialchars($pageTitle, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>">
 
   <link rel="canonical" href="<?= htmlspecialchars($currentUrl, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>">
@@ -227,7 +227,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
           </div>
 
           <div class="col-12 col-md-6 col-lg-4 tool-item" data-category="encoders">
-            <a href="<?= getToolUrl('htmlEntityTool', 'en') ?>" data-tool-id="htmlEntityTool" class="text-decoration-none">
+            <a href="<?= getToolUrl('htmlEntityTool', 'en') ?>" data-tool-id="htmlEntityTool" class="text-decoration-none" title="<?= htmlspecialchars($tools['htmlEntityTool']['linkTitle']['card'] ?? $tools['htmlEntityTool']['toc_title'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
               <div class="card h-100 tool-card">
                 <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
@@ -243,7 +243,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
           </div>
 
           <div class="col-12 col-md-6 col-lg-4 tool-item" data-category="encoders">
-            <a href="<?= getToolUrl('jwtDecoderTool', 'en') ?>" data-tool-id="jwtDecoderTool" class="text-decoration-none">
+            <a href="<?= getToolUrl('jwtDecoderTool', 'en') ?>" data-tool-id="jwtDecoderTool" class="text-decoration-none" title="<?= htmlspecialchars($tools['jwtDecoderTool']['linkTitle']['card'] ?? $tools['jwtDecoderTool']['toc_title'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
               <div class="card h-100 tool-card">
                 <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
@@ -259,7 +259,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
           </div>
 
           <div class="col-12 col-md-6 col-lg-4 tool-item" data-category="encoders">
-            <a href="<?= getToolUrl('punycodeConverterTool', 'en') ?>" data-tool-id="punycodeConverterTool" class="text-decoration-none">
+            <a href="<?= getToolUrl('punycodeConverterTool', 'en') ?>" data-tool-id="punycodeConverterTool" class="text-decoration-none" title="<?= htmlspecialchars($tools['punycodeConverterTool']['linkTitle']['card'] ?? $tools['punycodeConverterTool']['toc_title'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
               <div class="card h-100 tool-card">
                 <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
@@ -275,7 +275,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
           </div>
 
           <div class="col-12 col-md-6 col-lg-4 tool-item" data-category="formatters">
-            <a href="<?= getToolUrl('jsonFormatterValidator', 'en') ?>" data-tool-id="jsonFormatterValidator" class="text-decoration-none">
+            <a href="<?= getToolUrl('jsonFormatterValidator', 'en') ?>" data-tool-id="jsonFormatterValidator" class="text-decoration-none" title="<?= htmlspecialchars($tools['jsonFormatterValidator']['linkTitle']['card'] ?? $tools['jsonFormatterValidator']['toc_title'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
               <div class="card h-100 tool-card">
                 <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
@@ -291,7 +291,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
           </div>
 
           <div class="col-12 col-md-6 col-lg-4 tool-item" data-category="formatters">
-            <a href="<?= getToolUrl('codeFormatterTool', 'en') ?>" data-tool-id="codeFormatterTool" class="text-decoration-none">
+            <a href="<?= getToolUrl('codeFormatterTool', 'en') ?>" data-tool-id="codeFormatterTool" class="text-decoration-none" title="<?= htmlspecialchars($tools['codeFormatterTool']['linkTitle']['card'] ?? $tools['codeFormatterTool']['toc_title'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
               <div class="card h-100 tool-card">
                 <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
@@ -307,7 +307,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
           </div>
 
           <div class="col-12 col-md-6 col-lg-4 tool-item" data-category="converters">
-            <a href="<?= getToolUrl('dataConverterTool', 'en') ?>" data-tool-id="dataConverterTool" class="text-decoration-none">
+            <a href="<?= getToolUrl('dataConverterTool', 'en') ?>" data-tool-id="dataConverterTool" class="text-decoration-none" title="<?= htmlspecialchars($tools['dataConverterTool']['linkTitle']['card'] ?? $tools['dataConverterTool']['toc_title'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
               <div class="card h-100 tool-card">
                 <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
@@ -323,7 +323,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
           </div>
 
           <div class="col-12 col-md-6 col-lg-4 tool-item" data-category="converters">
-            <a href="<?= getToolUrl('pxToRemConverter', 'en') ?>" data-tool-id="pxToRemConverter" class="text-decoration-none">
+            <a href="<?= getToolUrl('pxToRemConverter', 'en') ?>" data-tool-id="pxToRemConverter" class="text-decoration-none" title="<?= htmlspecialchars($tools['pxToRemConverter']['linkTitle']['card'] ?? $tools['pxToRemConverter']['toc_title'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
               <div class="card h-100 tool-card">
                 <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
@@ -339,7 +339,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
           </div>
 
           <div class="col-12 col-md-6 col-lg-4 tool-item" data-category="converters">
-            <a href="<?= getToolUrl('aspectRatioCalculator', 'en') ?>" data-tool-id="aspectRatioCalculator" class="text-decoration-none">
+            <a href="<?= getToolUrl('aspectRatioCalculator', 'en') ?>" data-tool-id="aspectRatioCalculator" class="text-decoration-none" title="<?= htmlspecialchars($tools['aspectRatioCalculator']['linkTitle']['card'] ?? $tools['aspectRatioCalculator']['toc_title'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
               <div class="card h-100 tool-card">
                 <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
@@ -355,7 +355,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
           </div>
 
           <div class="col-12 col-md-6 col-lg-4 tool-item" data-category="generators">
-            <a href="<?= getToolUrl('uuidGeneratorTool', 'en') ?>" data-tool-id="uuidGeneratorTool" class="text-decoration-none">
+            <a href="<?= getToolUrl('uuidGeneratorTool', 'en') ?>" data-tool-id="uuidGeneratorTool" class="text-decoration-none" title="<?= htmlspecialchars($tools['uuidGeneratorTool']['linkTitle']['card'] ?? $tools['uuidGeneratorTool']['toc_title'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
               <div class="card h-100 tool-card">
                 <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
@@ -371,7 +371,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
           </div>
 
           <div class="col-12 col-md-6 col-lg-4 tool-item" data-category="generators">
-            <a href="<?= getToolUrl('passwordGeneratorTool', 'en') ?>" data-tool-id="passwordGeneratorTool" class="text-decoration-none">
+            <a href="<?= getToolUrl('passwordGeneratorTool', 'en') ?>" data-tool-id="passwordGeneratorTool" class="text-decoration-none" title="<?= htmlspecialchars($tools['passwordGeneratorTool']['linkTitle']['card'] ?? $tools['passwordGeneratorTool']['toc_title'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
               <div class="card h-100 tool-card">
                 <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
@@ -387,7 +387,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
           </div>
 
           <div class="col-12 col-md-6 col-lg-4 tool-item" data-category="generators">
-            <a href="<?= getToolUrl('hashGeneratorTool', 'en') ?>" data-tool-id="hashGeneratorTool" class="text-decoration-none">
+            <a href="<?= getToolUrl('hashGeneratorTool', 'en') ?>" data-tool-id="hashGeneratorTool" class="text-decoration-none" title="<?= htmlspecialchars($tools['hashGeneratorTool']['linkTitle']['card'] ?? $tools['hashGeneratorTool']['toc_title'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
               <div class="card h-100 tool-card">
                 <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
@@ -403,7 +403,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
           </div>
 
           <div class="col-12 col-md-6 col-lg-4 tool-item" data-category="generators">
-            <a href="<?= getToolUrl('loremIpsumTool', 'en') ?>" data-tool-id="loremIpsumTool" class="text-decoration-none">
+            <a href="<?= getToolUrl('loremIpsumTool', 'en') ?>" data-tool-id="loremIpsumTool" class="text-decoration-none" title="<?= htmlspecialchars($tools['loremIpsumTool']['linkTitle']['card'] ?? $tools['loremIpsumTool']['toc_title'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
               <div class="card h-100 tool-card">
                 <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
@@ -419,7 +419,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
           </div>
 
           <div class="col-12 col-md-6 col-lg-4 tool-item" data-category="generators">
-            <a href="<?= getToolUrl('qrCodeGeneratorTool', 'en') ?>" data-tool-id="qrCodeGeneratorTool" class="text-decoration-none">
+            <a href="<?= getToolUrl('qrCodeGeneratorTool', 'en') ?>" data-tool-id="qrCodeGeneratorTool" class="text-decoration-none" title="<?= htmlspecialchars($tools['qrCodeGeneratorTool']['linkTitle']['card'] ?? $tools['qrCodeGeneratorTool']['toc_title'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
               <div class="card h-100 tool-card">
                 <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
@@ -435,7 +435,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
           </div>
 
           <div class="col-12 col-md-6 col-lg-4 tool-item" data-category="stringtools">
-            <a href="<?= getToolUrl('stringEscaperTool', 'en') ?>" data-tool-id="stringEscaperTool" class="text-decoration-none">
+            <a href="<?= getToolUrl('stringEscaperTool', 'en') ?>" data-tool-id="stringEscaperTool" class="text-decoration-none" title="<?= htmlspecialchars($tools['stringEscaperTool']['linkTitle']['card'] ?? $tools['stringEscaperTool']['toc_title'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
               <div class="card h-100 tool-card">
                 <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
@@ -451,7 +451,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
           </div>
 
           <div class="col-12 col-md-6 col-lg-4 tool-item" data-category="references">
-            <a href="<?= getToolUrl('characterReferenceTool', 'en') ?>" data-tool-id="characterReferenceTool" class="text-decoration-none">
+            <a href="<?= getToolUrl('characterReferenceTool', 'en') ?>" data-tool-id="characterReferenceTool" class="text-decoration-none" title="<?= htmlspecialchars($tools['characterReferenceTool']['linkTitle']['card'] ?? $tools['characterReferenceTool']['toc_title'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
               <div class="card h-100 tool-card">
                 <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
@@ -467,7 +467,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
           </div>
 
           <div class="col-12 col-md-6 col-lg-4 tool-item" data-category="references">
-            <a href="<?= getToolUrl('emojiReferenceTool', 'en') ?>" data-tool-id="emojiReferenceTool" class="text-decoration-none">
+            <a href="<?= getToolUrl('emojiReferenceTool', 'en') ?>" data-tool-id="emojiReferenceTool" class="text-decoration-none" title="<?= htmlspecialchars($tools['emojiReferenceTool']['linkTitle']['card'] ?? $tools['emojiReferenceTool']['toc_title'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
               <div class="card h-100 tool-card">
                 <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
@@ -483,7 +483,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
           </div>
 
           <div class="col-12 col-md-6 col-lg-4 tool-item" data-category="utilities">
-            <a href="<?= getToolUrl('regexTesterTool', 'en') ?>" data-tool-id="regexTesterTool" class="text-decoration-none">
+            <a href="<?= getToolUrl('regexTesterTool', 'en') ?>" data-tool-id="regexTesterTool" class="text-decoration-none" title="<?= htmlspecialchars($tools['regexTesterTool']['linkTitle']['card'] ?? $tools['regexTesterTool']['toc_title'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
               <div class="card h-100 tool-card">
                 <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">

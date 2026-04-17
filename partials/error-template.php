@@ -123,7 +123,7 @@ $esUrl = $baseUrlEscaped . BASE_PATH . '/es/';
 $ptUrl = $baseUrlEscaped . BASE_PATH . '/pt/';
 $frUrl = $baseUrlEscaped . BASE_PATH . '/fr/';
 $itUrl = $baseUrlEscaped . BASE_PATH . '/it/';
-$ogImageUrl = $baseUrlEscaped . BASE_PATH . '/assets/img/og/home.svg';
+$ogImageUrl = $baseUrlEscaped . BASE_PATH . '/assets/img/webdev-tools.png';
 ?>
 <!DOCTYPE html>
 <html lang="<?= htmlspecialchars($lang) ?>" data-bs-theme="auto">

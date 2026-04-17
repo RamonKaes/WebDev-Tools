@@ -24,7 +24,7 @@ echo ""
 # ============================================
 echo "🧹 Cleaning previous build..."
 rm -rf "$DIST_DIR"
-mkdir -p "$DIST_DIR"/{assets/{css,js,img,data,bootstrap},config/i18n,og,partials}
+mkdir -p "$DIST_DIR"/{assets/{css,js,img,data,bootstrap},config/i18n,partials}
 
 # ============================================
 # 2. Copy PHP Files
@@ -144,12 +144,6 @@ done
 for lang_dir in de es fr it pt; do
   [ -d "$lang_dir" ] && cp -r "$lang_dir" "$DIST_DIR/"
 done
-
-# ============================================
-# 9. Copy OG Images
-# ============================================
-echo "🖼️  Copying OG images..."
-cp og/*.png "$DIST_DIR/og/" 2>/dev/null || echo "  ⚠ No OG images found"
 
 # ============================================
 # Done!

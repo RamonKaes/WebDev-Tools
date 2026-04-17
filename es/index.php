@@ -8,6 +8,8 @@ require_once __DIR__ . '/../config/config.php';
 require_once __DIR__ . '/../config/helpers.php';
 require_once __DIR__ . '/../config/security-headers.php';
 
+$toolsConfig = require __DIR__ . '/../config/tools.php';
+
 $lang = 'es';
 $currentTool = 'home';
 $assetPrefix = BASE_PATH . '/';
@@ -58,7 +60,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
   <meta property="og:url" content="<?= htmlspecialchars($currentUrl, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>">
   <meta property="og:title" content="<?= htmlspecialchars($pageTitle, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>">
   <meta property="og:description" content="<?= htmlspecialchars($pageDescription, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>">
-  <meta property="og:image" content="<?= htmlspecialchars($baseUrl, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') . BASE_PATH ?>/assets/img/og/home-es.svg">
+  <meta property="og:image" content="<?= htmlspecialchars($baseUrl, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') . BASE_PATH ?>/assets/img/webdev-tools.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="<?= htmlspecialchars($pageTitle, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>">
@@ -74,7 +76,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
   <meta name="twitter:url" content="<?= htmlspecialchars($currentUrl, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>">
   <meta name="twitter:title" content="<?= htmlspecialchars($pageTitle, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>">
   <meta name="twitter:description" content="<?= htmlspecialchars($pageDescription, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>">
-  <meta name="twitter:image" content="<?= htmlspecialchars($baseUrl, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') . BASE_PATH ?>/assets/img/og/home-es.svg">
+  <meta name="twitter:image" content="<?= htmlspecialchars($baseUrl, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') . BASE_PATH ?>/assets/img/webdev-tools.png">
   <meta name="twitter:image:alt" content="<?= htmlspecialchars($pageTitle, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>">
 
   <link rel="canonical" href="<?= htmlspecialchars($currentUrl, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>" />
@@ -205,233 +207,233 @@ if ($manifest && isset($manifest['generatedAt'])) {
       
       <div class="row g-4" id="toolsGrid">
         <div class="col-12 col-md-6 col-lg-4 tool-item" data-category="encoders">
-          <a href="<?= getToolUrl('base64EncoderDecoder', 'es') ?>" data-tool-id="base64EncoderDecoder" class="text-decoration-none">
-            <div class="card h-100 tool-card">
+          <a href="<?= getToolUrl('base64EncoderDecoder', 'es') ?>" data-tool-id="base64EncoderDecoder" class="text-decoration-none" title="<?= htmlspecialchars($tools['base64EncoderDecoder']['linkTitle']['card'] ?? $tools['base64EncoderDecoder']['toc_title'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
+              <div class="card h-100 tool-card">
                 <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
-                  <i class="bi bi-file-binary me-2"></i>
-                  <?= htmlspecialchars($tools['base64EncoderDecoder']['toc_title'] ?? 'Base64 Encoder/Decoder', ENT_QUOTES, 'UTF-8') ?>
-                </h3>
-                <p class="card-text text-secondary flex-grow-1">
-                  <?= htmlspecialchars($tools['base64EncoderDecoder']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
-                </p>
+                    <i class="bi bi-file-binary me-2"></i>
+                    <?= htmlspecialchars($tools['base64EncoderDecoder']['toc_title'] ?? 'Base64 Encoder/Decoder', ENT_QUOTES, 'UTF-8') ?>
+                  </div>
+                  <p class="card-text text-secondary flex-grow-1">
+                    <?= htmlspecialchars($tools['base64EncoderDecoder']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
+                  </p>
               </div>
             </div>
           </a>
         </div>
         <div class="col-12 col-md-6 col-lg-4 tool-item" data-category="encoders">
-          <a href="<?= getToolUrl('urlEncoderDecoder', 'es') ?>" data-tool-id="urlEncoderDecoder" class="text-decoration-none">
-            <div class="card h-100 tool-card">
-              <div class="card-body d-flex flex-column">
+          <a href="<?= getToolUrl('urlEncoderDecoder', 'es') ?>" data-tool-id="urlEncoderDecoder" class="text-decoration-none" title="<?= htmlspecialchars($tools['urlEncoderDecoder']['linkTitle']['card'] ?? $tools['urlEncoderDecoder']['toc_title'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
+              <div class="card h-100 tool-card">
+                <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
-                  <i class="bi bi-link-45deg me-2"></i>
-                  <?= htmlspecialchars($tools['urlEncoderDecoder']['toc_title'] ?? 'URL Encoder/Decoder', ENT_QUOTES, 'UTF-8') ?>
-                </h3>
-                <p class="card-text text-secondary flex-grow-1">
-                  <?= htmlspecialchars($tools['urlEncoderDecoder']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-12 col-md-6 col-lg-4 tool-item" data-category="encoders">
-          <a href="<?= getToolUrl('htmlEntityTool', 'es') ?>" data-tool-id="htmlEntityTool" class="text-decoration-none">
-            <div class="card h-100 tool-card">
-              <div class="card-body d-flex flex-column">
-                  <div class="card-title fs-6 fw-semibold mb-2">
-                  <i class="bi bi-code-square me-2"></i>
-                  <?= htmlspecialchars($tools['htmlEntityTool']['toc_title'] ?? 'HTML Entity Encoder/Decoder', ENT_QUOTES, 'UTF-8') ?>
-                </h3>
-                <p class="card-text text-secondary flex-grow-1">
-                  <?= htmlspecialchars($tools['htmlEntityTool']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
-                </p>
+                    <i class="bi bi-link-45deg me-2"></i>
+                    <?= htmlspecialchars($tools['urlEncoderDecoder']['toc_title'] ?? 'URL Encoder/Decoder', ENT_QUOTES, 'UTF-8') ?>
+                  </div>
+                  <p class="card-text text-secondary flex-grow-1">
+                    <?= htmlspecialchars($tools['urlEncoderDecoder']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
+                  </p>
               </div>
             </div>
           </a>
         </div>
 
         <div class="col-12 col-md-6 col-lg-4 tool-item" data-category="encoders">
-          <a href="<?= getToolUrl('jwtDecoderTool', 'es') ?>" data-tool-id="jwtDecoderTool" class="text-decoration-none">
-            <div class="card h-100 tool-card">
-              <div class="card-body d-flex flex-column">
+          <a href="<?= getToolUrl('htmlEntityTool', 'es') ?>" data-tool-id="htmlEntityTool" class="text-decoration-none" title="<?= htmlspecialchars($tools['htmlEntityTool']['linkTitle']['card'] ?? $tools['htmlEntityTool']['toc_title'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
+              <div class="card h-100 tool-card">
+                <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
-                  <i class="bi bi-shield-lock me-2"></i>
-                  <?= htmlspecialchars($tools['jwtDecoderTool']['toc_title'] ?? 'JWT Decoder', ENT_QUOTES, 'UTF-8') ?>
-                </h3>
-                <p class="card-text text-secondary flex-grow-1">
-                  <?= htmlspecialchars($tools['jwtDecoderTool']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
-                </p>
+                    <i class="bi bi-code-square me-2"></i>
+                    <?= htmlspecialchars($tools['htmlEntityTool']['toc_title'] ?? 'HTML Entity Encoder/Decoder', ENT_QUOTES, 'UTF-8') ?>
+                  </div>
+                  <p class="card-text text-secondary flex-grow-1">
+                    <?= htmlspecialchars($tools['htmlEntityTool']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
+                  </p>
               </div>
             </div>
           </a>
         </div>
 
         <div class="col-12 col-md-6 col-lg-4 tool-item" data-category="encoders">
-          <a href="<?= getToolUrl('punycodeConverterTool', 'es') ?>" data-tool-id="punycodeConverterTool" class="text-decoration-none">
-            <div class="card h-100 tool-card">
-              <div class="card-body d-flex flex-column">
+          <a href="<?= getToolUrl('jwtDecoderTool', 'es') ?>" data-tool-id="jwtDecoderTool" class="text-decoration-none" title="<?= htmlspecialchars($tools['jwtDecoderTool']['linkTitle']['card'] ?? $tools['jwtDecoderTool']['toc_title'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
+              <div class="card h-100 tool-card">
+                <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
-                  <i class="bi bi-globe me-2"></i>
-                  <?= htmlspecialchars($tools['punycodeConverterTool']['toc_title'] ?? 'Punycode Converter', ENT_QUOTES, 'UTF-8') ?>
-                </h3>
-                <p class="card-text text-secondary flex-grow-1">
-                  <?= htmlspecialchars($tools['punycodeConverterTool']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
-                </p>
+                    <i class="bi bi-shield-lock me-2"></i>
+                    <?= htmlspecialchars($tools['jwtDecoderTool']['toc_title'] ?? 'JWT Decoder', ENT_QUOTES, 'UTF-8') ?>
+                  </div>
+                  <p class="card-text text-secondary flex-grow-1">
+                    <?= htmlspecialchars($tools['jwtDecoderTool']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
+                  </p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 tool-item" data-category="encoders">
+          <a href="<?= getToolUrl('punycodeConverterTool', 'es') ?>" data-tool-id="punycodeConverterTool" class="text-decoration-none" title="<?= htmlspecialchars($tools['punycodeConverterTool']['linkTitle']['card'] ?? $tools['punycodeConverterTool']['toc_title'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
+              <div class="card h-100 tool-card">
+                <div class="card-body d-flex flex-column">
+                  <div class="card-title fs-6 fw-semibold mb-2">
+                    <i class="bi bi-globe me-2"></i>
+                    <?= htmlspecialchars($tools['punycodeConverterTool']['toc_title'] ?? 'Punycode Converter', ENT_QUOTES, 'UTF-8') ?>
+                  </div>
+                  <p class="card-text text-secondary flex-grow-1">
+                    <?= htmlspecialchars($tools['punycodeConverterTool']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
+                  </p>
               </div>
             </div>
           </a>
         </div>
 
         <div class="col-12 col-md-6 col-lg-4 tool-item" data-category="formatters">
-          <a href="<?= getToolUrl('jsonFormatterValidator', 'es') ?>" data-tool-id="jsonFormatterValidator" class="text-decoration-none">
-            <div class="card h-100 tool-card">
-              <div class="card-body d-flex flex-column">
+          <a href="<?= getToolUrl('jsonFormatterValidator', 'es') ?>" data-tool-id="jsonFormatterValidator" class="text-decoration-none" title="<?= htmlspecialchars($tools['jsonFormatterValidator']['linkTitle']['card'] ?? $tools['jsonFormatterValidator']['toc_title'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
+              <div class="card h-100 tool-card">
+                <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
-                  <i class="bi bi-filetype-json me-2"></i>
-                  <?= htmlspecialchars($tools['jsonFormatterValidator']['toc_title'] ?? 'JSON Formatter/Validator', ENT_QUOTES, 'UTF-8') ?>
-                </h3>
-                <p class="card-text text-secondary flex-grow-1">
-                  <?= htmlspecialchars($tools['jsonFormatterValidator']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
-                </p>
+                    <i class="bi bi-filetype-json me-2"></i>
+                    <?= htmlspecialchars($tools['jsonFormatterValidator']['toc_title'] ?? 'JSON Formatter/Validator', ENT_QUOTES, 'UTF-8') ?>
+                  </div>
+                  <p class="card-text text-secondary flex-grow-1">
+                    <?= htmlspecialchars($tools['jsonFormatterValidator']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
+                  </p>
               </div>
             </div>
           </a>
         </div>
         <div class="col-12 col-md-6 col-lg-4 tool-item" data-category="formatters">
-          <a href="<?= getToolUrl('codeFormatterTool', 'es') ?>" data-tool-id="codeFormatterTool" class="text-decoration-none">
-            <div class="card h-100 tool-card">
-              <div class="card-body d-flex flex-column">
+          <a href="<?= getToolUrl('codeFormatterTool', 'es') ?>" data-tool-id="codeFormatterTool" class="text-decoration-none" title="<?= htmlspecialchars($tools['codeFormatterTool']['linkTitle']['card'] ?? $tools['codeFormatterTool']['toc_title'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
+              <div class="card h-100 tool-card">
+                <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
-                  <i class="bi bi-code-square me-2"></i>
-                  <?= htmlspecialchars($tools['codeFormatterTool']['toc_title'] ?? 'Code Formatter & Beautifier', ENT_QUOTES, 'UTF-8') ?>
-                </h3>
-                <p class="card-text text-secondary flex-grow-1">
-                  <?= htmlspecialchars($tools['codeFormatterTool']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
-                </p>
+                    <i class="bi bi-code-square me-2"></i>
+                    <?= htmlspecialchars($tools['codeFormatterTool']['toc_title'] ?? 'Code Formatter & Beautifier', ENT_QUOTES, 'UTF-8') ?>
+                  </div>
+                  <p class="card-text text-secondary flex-grow-1">
+                    <?= htmlspecialchars($tools['codeFormatterTool']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
+                  </p>
               </div>
             </div>
           </a>
         </div>
 
         <div class="col-12 col-md-6 col-lg-4 tool-item" data-category="converters">
-          <a href="<?= getToolUrl('dataConverterTool', 'es') ?>" data-tool-id="dataConverterTool" class="text-decoration-none">
-            <div class="card h-100 tool-card">
-              <div class="card-body d-flex flex-column">
+          <a href="<?= getToolUrl('dataConverterTool', 'es') ?>" data-tool-id="dataConverterTool" class="text-decoration-none" title="<?= htmlspecialchars($tools['dataConverterTool']['linkTitle']['card'] ?? $tools['dataConverterTool']['toc_title'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
+              <div class="card h-100 tool-card">
+                <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
-                  <i class="bi bi-arrow-left-right me-2"></i>
-                  <?= htmlspecialchars($tools['dataConverterTool']['toc_title'] ?? 'Data Converter', ENT_QUOTES, 'UTF-8') ?>
-                </h3>
-                <p class="card-text text-secondary flex-grow-1">
-                  <?= htmlspecialchars($tools['dataConverterTool']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
-                </p>
+                    <i class="bi bi-arrow-left-right me-2"></i>
+                    <?= htmlspecialchars($tools['dataConverterTool']['toc_title'] ?? 'Data Converter', ENT_QUOTES, 'UTF-8') ?>
+                  </div>
+                  <p class="card-text text-secondary flex-grow-1">
+                    <?= htmlspecialchars($tools['dataConverterTool']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
+                  </p>
               </div>
             </div>
           </a>
         </div>
         <div class="col-12 col-md-6 col-lg-4 tool-item" data-category="converters">
-          <a href="<?= getToolUrl('pxToRemConverter', 'es') ?>" data-tool-id="pxToRemConverter" class="text-decoration-none">
-            <div class="card h-100 tool-card">
-              <div class="card-body d-flex flex-column">
+          <a href="<?= getToolUrl('pxToRemConverter', 'es') ?>" data-tool-id="pxToRemConverter" class="text-decoration-none" title="<?= htmlspecialchars($tools['pxToRemConverter']['linkTitle']['card'] ?? $tools['pxToRemConverter']['toc_title'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
+              <div class="card h-100 tool-card">
+                <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
-                  <i class="bi bi-arrows-angle-expand me-2"></i>
-                  <?= htmlspecialchars($tools['pxToRemConverter']['toc_title'] ?? 'PX ⇄ REM Converter', ENT_QUOTES, 'UTF-8') ?>
-                </h3>
-                <p class="card-text text-secondary flex-grow-1">
-                  <?= htmlspecialchars($tools['pxToRemConverter']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
-                </p>
+                    <i class="bi bi-arrows-angle-expand me-2"></i>
+                    <?= htmlspecialchars($tools['pxToRemConverter']['toc_title'] ?? 'PX ⇄ REM Converter', ENT_QUOTES, 'UTF-8') ?>
+                  </div>
+                  <p class="card-text text-secondary flex-grow-1">
+                    <?= htmlspecialchars($tools['pxToRemConverter']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
+                  </p>
               </div>
             </div>
           </a>
         </div>
 
         <div class="col-12 col-md-6 col-lg-4 tool-item" data-category="converters">
-          <a href="<?= getToolUrl('aspectRatioCalculator', 'es') ?>" data-tool-id="aspectRatioCalculator" class="text-decoration-none">
-            <div class="card h-100 tool-card">
-              <div class="card-body d-flex flex-column">
+          <a href="<?= getToolUrl('aspectRatioCalculator', 'es') ?>" data-tool-id="aspectRatioCalculator" class="text-decoration-none" title="<?= htmlspecialchars($tools['aspectRatioCalculator']['linkTitle']['card'] ?? $tools['aspectRatioCalculator']['toc_title'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
+              <div class="card h-100 tool-card">
+                <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
-                  <i class="bi bi-aspect-ratio me-2"></i>
-                  <?= htmlspecialchars($tools['aspectRatioCalculator']['toc_title'] ?? 'Relación de Aspecto', ENT_QUOTES, 'UTF-8') ?>
-                </h3>
-                <p class="card-text text-secondary flex-grow-1">
-                  <?= htmlspecialchars($tools['aspectRatioCalculator']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
-                </p>
+                    <i class="bi bi-aspect-ratio me-2"></i>
+                    <?= htmlspecialchars($tools['aspectRatioCalculator']['toc_title'] ?? 'Relación de Aspecto', ENT_QUOTES, 'UTF-8') ?>
+                  </div>
+                  <p class="card-text text-secondary flex-grow-1">
+                    <?= htmlspecialchars($tools['aspectRatioCalculator']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
+                  </p>
               </div>
             </div>
           </a>
         </div>
 
         <div class="col-12 col-md-6 col-lg-4 tool-item" data-category="generators">
-          <a href="<?= getToolUrl('uuidGeneratorTool', 'es') ?>" data-tool-id="uuidGeneratorTool" class="text-decoration-none">
-            <div class="card h-100 tool-card">
-              <div class="card-body d-flex flex-column">
+          <a href="<?= getToolUrl('uuidGeneratorTool', 'es') ?>" data-tool-id="uuidGeneratorTool" class="text-decoration-none" title="<?= htmlspecialchars($tools['uuidGeneratorTool']['linkTitle']['card'] ?? $tools['uuidGeneratorTool']['toc_title'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
+              <div class="card h-100 tool-card">
+                <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
-                  <i class="bi bi-fingerprint me-2"></i>
-                  <?= htmlspecialchars($tools['uuidGeneratorTool']['toc_title'] ?? 'UUID Generator', ENT_QUOTES, 'UTF-8') ?>
-                </h3>
-                <p class="card-text text-secondary flex-grow-1">
-                  <?= htmlspecialchars($tools['uuidGeneratorTool']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
-                </p>
+                    <i class="bi bi-fingerprint me-2"></i>
+                    <?= htmlspecialchars($tools['uuidGeneratorTool']['toc_title'] ?? 'UUID Generator', ENT_QUOTES, 'UTF-8') ?>
+                  </div>
+                  <p class="card-text text-secondary flex-grow-1">
+                    <?= htmlspecialchars($tools['uuidGeneratorTool']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
+                  </p>
               </div>
             </div>
           </a>
         </div>
         <div class="col-12 col-md-6 col-lg-4 tool-item" data-category="generators">
-          <a href="<?= getToolUrl('passwordGeneratorTool', 'es') ?>" data-tool-id="passwordGeneratorTool" class="text-decoration-none">
-            <div class="card h-100 tool-card">
-              <div class="card-body d-flex flex-column">
+          <a href="<?= getToolUrl('passwordGeneratorTool', 'es') ?>" data-tool-id="passwordGeneratorTool" class="text-decoration-none" title="<?= htmlspecialchars($tools['passwordGeneratorTool']['linkTitle']['card'] ?? $tools['passwordGeneratorTool']['toc_title'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
+              <div class="card h-100 tool-card">
+                <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
-                  <i class="bi bi-shield-lock me-2"></i>
-                  <?= htmlspecialchars($tools['passwordGeneratorTool']['toc_title'] ?? 'Password Generator', ENT_QUOTES, 'UTF-8') ?>
-                </h3>
-                <p class="card-text text-secondary flex-grow-1">
-                  <?= htmlspecialchars($tools['passwordGeneratorTool']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
-                </p>
+                    <i class="bi bi-shield-lock me-2"></i>
+                    <?= htmlspecialchars($tools['passwordGeneratorTool']['toc_title'] ?? 'Password Generator', ENT_QUOTES, 'UTF-8') ?>
+                  </div>
+                  <p class="card-text text-secondary flex-grow-1">
+                    <?= htmlspecialchars($tools['passwordGeneratorTool']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
+                  </p>
               </div>
             </div>
           </a>
         </div>
         <div class="col-12 col-md-6 col-lg-4 tool-item" data-category="generators">
-          <a href="<?= getToolUrl('hashGeneratorTool', 'es') ?>" data-tool-id="hashGeneratorTool" class="text-decoration-none">
-            <div class="card h-100 tool-card">
-              <div class="card-body d-flex flex-column">
+          <a href="<?= getToolUrl('hashGeneratorTool', 'es') ?>" data-tool-id="hashGeneratorTool" class="text-decoration-none" title="<?= htmlspecialchars($tools['hashGeneratorTool']['linkTitle']['card'] ?? $tools['hashGeneratorTool']['toc_title'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
+              <div class="card h-100 tool-card">
+                <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
-                  <i class="bi bi-hash me-2"></i>
-                  <?= htmlspecialchars($tools['hashGeneratorTool']['toc_title'] ?? 'Hash Generator', ENT_QUOTES, 'UTF-8') ?>
-                </h3>
-                <p class="card-text text-secondary flex-grow-1">
-                  <?= htmlspecialchars($tools['hashGeneratorTool']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
-                </p>
+                    <i class="bi bi-hash me-2"></i>
+                    <?= htmlspecialchars($tools['hashGeneratorTool']['toc_title'] ?? 'Hash Generator', ENT_QUOTES, 'UTF-8') ?>
+                  </div>
+                  <p class="card-text text-secondary flex-grow-1">
+                    <?= htmlspecialchars($tools['hashGeneratorTool']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
+                  </p>
               </div>
             </div>
           </a>
         </div>
         <div class="col-12 col-md-6 col-lg-4 tool-item" data-category="generators">
-          <a href="<?= getToolUrl('loremIpsumTool', 'es') ?>" data-tool-id="loremIpsumTool" class="text-decoration-none">
-            <div class="card h-100 tool-card">
-              <div class="card-body d-flex flex-column">
+          <a href="<?= getToolUrl('loremIpsumTool', 'es') ?>" data-tool-id="loremIpsumTool" class="text-decoration-none" title="<?= htmlspecialchars($tools['loremIpsumTool']['linkTitle']['card'] ?? $tools['loremIpsumTool']['toc_title'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
+              <div class="card h-100 tool-card">
+                <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
-                  <i class="bi bi-file-text me-2"></i>
-                  <?= htmlspecialchars($tools['loremIpsumTool']['toc_title'] ?? 'Lorem Ipsum Generator', ENT_QUOTES, 'UTF-8') ?>
-                </h3>
-                <p class="card-text text-secondary flex-grow-1">
-                  <?= htmlspecialchars($tools['loremIpsumTool']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
-                </p>
+                    <i class="bi bi-file-text me-2"></i>
+                    <?= htmlspecialchars($tools['loremIpsumTool']['toc_title'] ?? 'Lorem Ipsum Generator', ENT_QUOTES, 'UTF-8') ?>
+                  </div>
+                  <p class="card-text text-secondary flex-grow-1">
+                    <?= htmlspecialchars($tools['loremIpsumTool']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
+                  </p>
               </div>
             </div>
           </a>
         </div>
         <div class="col-12 col-md-6 col-lg-4 tool-item" data-category="generators">
-          <a href="<?= getToolUrl('qrCodeGeneratorTool', 'es') ?>" data-tool-id="qrCodeGeneratorTool" class="text-decoration-none">
-            <div class="card h-100 tool-card">
-              <div class="card-body d-flex flex-column">
+          <a href="<?= getToolUrl('qrCodeGeneratorTool', 'es') ?>" data-tool-id="qrCodeGeneratorTool" class="text-decoration-none" title="<?= htmlspecialchars($tools['qrCodeGeneratorTool']['linkTitle']['card'] ?? $tools['qrCodeGeneratorTool']['toc_title'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
+              <div class="card h-100 tool-card">
+                <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
-                  <i class="bi bi-qr-code me-2"></i>
-                  <?= htmlspecialchars($tools['qrCodeGeneratorTool']['toc_title'] ?? 'QR Code Generator', ENT_QUOTES, 'UTF-8') ?>
-                </h3>
-                <p class="card-text text-secondary flex-grow-1">
-                  <?= htmlspecialchars($tools['qrCodeGeneratorTool']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
-                </p>
+                    <i class="bi bi-qr-code me-2"></i>
+                    <?= htmlspecialchars($tools['qrCodeGeneratorTool']['toc_title'] ?? 'QR Code Generator', ENT_QUOTES, 'UTF-8') ?>
+                  </div>
+                  <p class="card-text text-secondary flex-grow-1">
+                    <?= htmlspecialchars($tools['qrCodeGeneratorTool']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
+                  </p>
               </div>
             </div>
           </a>
@@ -439,16 +441,16 @@ if ($manifest && isset($manifest['generatedAt'])) {
 
         <!-- String Escaper -->
         <div class="col-12 col-md-6 col-lg-4 tool-item" data-category="stringtools">
-          <a href="<?= getToolUrl('stringEscaperTool', 'es') ?>" data-tool-id="stringEscaperTool" class="text-decoration-none">
-            <div class="card h-100 tool-card">
-              <div class="card-body d-flex flex-column">
+          <a href="<?= getToolUrl('stringEscaperTool', 'es') ?>" data-tool-id="stringEscaperTool" class="text-decoration-none" title="<?= htmlspecialchars($tools['stringEscaperTool']['linkTitle']['card'] ?? $tools['stringEscaperTool']['toc_title'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
+              <div class="card h-100 tool-card">
+                <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
-                  <i class="bi bi-code-slash me-2"></i>
-                  <?= htmlspecialchars($tools['stringEscaperTool']['toc_title'] ?? 'String Escaper', ENT_QUOTES, 'UTF-8') ?>
-                </h3>
-                <p class="card-text text-secondary flex-grow-1">
-                  <?= htmlspecialchars($tools['stringEscaperTool']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
-                </p>
+                    <i class="bi bi-code-slash me-2"></i>
+                    <?= htmlspecialchars($tools['stringEscaperTool']['toc_title'] ?? 'String Escaper', ENT_QUOTES, 'UTF-8') ?>
+                  </div>
+                  <p class="card-text text-secondary flex-grow-1">
+                    <?= htmlspecialchars($tools['stringEscaperTool']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
+                  </p>
               </div>
             </div>
           </a>
@@ -456,16 +458,16 @@ if ($manifest && isset($manifest['generatedAt'])) {
 
         <!-- Referencia de Caracteres HTML -->
         <div class="col-12 col-md-6 col-lg-4 tool-item" data-category="references">
-          <a href="<?= getToolUrl('characterReferenceTool', 'es') ?>" data-tool-id="characterReferenceTool" class="text-decoration-none">
-            <div class="card h-100 tool-card">
-              <div class="card-body d-flex flex-column">
+          <a href="<?= getToolUrl('characterReferenceTool', 'es') ?>" data-tool-id="characterReferenceTool" class="text-decoration-none" title="<?= htmlspecialchars($tools['characterReferenceTool']['linkTitle']['card'] ?? $tools['characterReferenceTool']['toc_title'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
+              <div class="card h-100 tool-card">
+                <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
-                  <i class="bi bi-table me-2"></i>
-                  <?= htmlspecialchars($tools['characterReferenceTool']['toc_title'] ?? 'Referencia de Caracteres HTML', ENT_QUOTES, 'UTF-8') ?>
-                </h3>
-                <p class="card-text text-secondary flex-grow-1">
-                  <?= htmlspecialchars($tools['characterReferenceTool']['card_description'] ?? 'Explorar entidades HTML, caracteres Unicode y símbolos especiales', ENT_QUOTES, 'UTF-8') ?>
-                </p>
+                    <i class="bi bi-table me-2"></i>
+                    <?= htmlspecialchars($tools['characterReferenceTool']['toc_title'] ?? 'Referencia de Caracteres HTML', ENT_QUOTES, 'UTF-8') ?>
+                  </div>
+                  <p class="card-text text-secondary flex-grow-1">
+                    <?= htmlspecialchars($tools['characterReferenceTool']['card_description'] ?? 'Explorar entidades HTML, caracteres Unicode y símbolos especiales', ENT_QUOTES, 'UTF-8') ?>
+                  </p>
               </div>
             </div>
           </a>
@@ -473,16 +475,16 @@ if ($manifest && isset($manifest['generatedAt'])) {
 
         <!-- Referencia de Emojis -->
         <div class="col-12 col-md-6 col-lg-4 tool-item" data-category="references">
-          <a href="<?= getToolUrl('emojiReferenceTool', 'es') ?>" data-tool-id="emojiReferenceTool" class="text-decoration-none">
-            <div class="card h-100 tool-card">
-              <div class="card-body d-flex flex-column">
+          <a href="<?= getToolUrl('emojiReferenceTool', 'es') ?>" data-tool-id="emojiReferenceTool" class="text-decoration-none" title="<?= htmlspecialchars($tools['emojiReferenceTool']['linkTitle']['card'] ?? $tools['emojiReferenceTool']['toc_title'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
+              <div class="card h-100 tool-card">
+                <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
-                  <i class="bi bi-emoji-smile me-2"></i>
-                  <?= htmlspecialchars($tools['emojiReferenceTool']['toc_title'] ?? 'Referencia de Emojis', ENT_QUOTES, 'UTF-8') ?>
-                </h3>
-                <p class="card-text text-secondary flex-grow-1">
-                  <?= htmlspecialchars($tools['emojiReferenceTool']['card_description'] ?? 'Explorar y copiar emojis con códigos Unicode', ENT_QUOTES, 'UTF-8') ?>
-                </p>
+                    <i class="bi bi-emoji-smile me-2"></i>
+                    <?= htmlspecialchars($tools['emojiReferenceTool']['toc_title'] ?? 'Referencia de Emojis', ENT_QUOTES, 'UTF-8') ?>
+                  </div>
+                  <p class="card-text text-secondary flex-grow-1">
+                    <?= htmlspecialchars($tools['emojiReferenceTool']['card_description'] ?? 'Explorar y copiar emojis con códigos Unicode', ENT_QUOTES, 'UTF-8') ?>
+                  </p>
               </div>
             </div>
           </a>
@@ -490,16 +492,16 @@ if ($manifest && isset($manifest['generatedAt'])) {
 
         <!-- Utilities -->
         <div class="col-12 col-md-6 col-lg-4 tool-item" data-category="utilities">
-          <a href="<?= getToolUrl('regexTesterTool', 'es') ?>" data-tool-id="regexTesterTool" class="text-decoration-none">
-            <div class="card h-100 tool-card">
-              <div class="card-body d-flex flex-column">
+          <a href="<?= getToolUrl('regexTesterTool', 'es') ?>" data-tool-id="regexTesterTool" class="text-decoration-none" title="<?= htmlspecialchars($tools['regexTesterTool']['linkTitle']['card'] ?? $tools['regexTesterTool']['toc_title'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
+              <div class="card h-100 tool-card">
+                <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
                     <i class="bi bi-regex me-2"></i>
                     <?= htmlspecialchars($tools['regexTesterTool']['toc_title'] ?? 'Regex Tester', ENT_QUOTES, 'UTF-8') ?>
                   </div>
-                <p class="card-text text-secondary flex-grow-1">
-                  <?= htmlspecialchars($tools['regexTesterTool']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
-                </p>
+                  <p class="card-text text-secondary flex-grow-1">
+                    <?= htmlspecialchars($tools['regexTesterTool']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
+                  </p>
               </div>
             </div>
           </a>
@@ -507,15 +509,15 @@ if ($manifest && isset($manifest['generatedAt'])) {
 
         <div class="col-12 col-md-6 col-lg-4 tool-item" data-category="utilities">
           <a href="<?= getToolUrl('sriGeneratorTool', 'es') ?>" data-tool-id="sriGeneratorTool" class="text-decoration-none" title="<?= htmlspecialchars($tools['sriGeneratorTool']['linkTitle']['card'] ?? 'SRI Generator', ENT_QUOTES, 'UTF-8') ?>">
-            <div class="card h-100 tool-card">
-              <div class="card-body d-flex flex-column">
+              <div class="card h-100 tool-card">
+                <div class="card-body d-flex flex-column">
                 <div class="card-title fs-6 fw-semibold mb-2">
-                  <i class="bi bi-shield-check me-2"></i>
-                  <?= htmlspecialchars($tools['sriGeneratorTool']['toc_title'] ?? 'SRI Generator', ENT_QUOTES, 'UTF-8') ?>
-                </h3>
-                <p class="card-text text-secondary flex-grow-1">
-                  <?= htmlspecialchars($tools['sriGeneratorTool']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
-                </p>
+                    <i class="bi bi-shield-check me-2"></i>
+                    <?= htmlspecialchars($tools['sriGeneratorTool']['toc_title'] ?? 'SRI Generator', ENT_QUOTES, 'UTF-8') ?>
+                  </div>
+                  <p class="card-text text-secondary flex-grow-1">
+                    <?= htmlspecialchars($tools['sriGeneratorTool']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
+                  </p>
               </div>
             </div>
           </a>

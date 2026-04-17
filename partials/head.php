@@ -145,7 +145,7 @@ $itUrl = htmlspecialchars($itUrl, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
 // Pre-escape CSP nonce for all inline script nonces in this template
 $nonceEscaped = htmlspecialchars(getCspNonce(), ENT_QUOTES, 'UTF-8');
 
-$ogImageUrl = $baseUrlEscaped . BASE_PATH . '/assets/img/og/' . $ogImageFile;
+$ogImageUrl = $baseUrlEscaped . BASE_PATH . '/assets/img/webdev-tools.png';
 
 if (!isset($assetPrefix)) {
     $assetPrefix = BASE_PATH . '/';

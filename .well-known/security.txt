@@ -1,5 +1,5 @@
 Contact: mailto:ramon.kaes@webdev-tools.info
-Expires: 2027-03-24T00:00:00.000Z
+Expires: 2027-04-17T00:00:00.000Z
 Preferred-Languages: en, de
 Canonical: https://webdev-tools.info/.well-known/security.txt
 

@@ -3,7 +3,8 @@
 Name: Ramon Kaes
 Role: Developer & Designer
 Email: ramon.kaes@webdev-tools.info
-Location: Germany
+Location: Portugal
+Site: https://webdev-tools.info
 
 /* THANKS */
 
@@ -11,15 +12,21 @@ Bootstrap — CSS framework and component library
 Bootstrap Icons — open-source SVG icon library
 qrcode-generator — QR code generation library by Kazuhiko Arase
 Jest — JavaScript testing framework
+Sass — CSS preprocessor
+CSSO — CSS minifier
+Terser — JavaScript minifier
+GitHub — source code hosting
 
 /* SITE */
 
-Last update: 2026-03-24
-Language: English, German, Spanish, Portuguese, French, Italian
+Last update: 2026-04-17
+Languages: English, German, Spanish, Portuguese, French, Italian
 Doctype: HTML5
 Standards: HTML5, CSS3, ES2020+
 CSS Framework: Bootstrap 5.3
-Testing: Jest (810 unit tests)
-Philosophy: Privacy-first, client-side only, no tracking
+Architecture: Privacy-first, client-side only, no tracking
+Build: bash build.sh
+License: MIT
+Source: https://github.com/RamonKaes/WebDev-Tools
 
 humanstxt.org

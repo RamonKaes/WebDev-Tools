@@ -151,3 +151,4 @@ config/manifest.json.backup
 
 # Server Configs (keep production template)
 # .htaccess (keep for dev, production uses .htaccess.production)
+.claude/

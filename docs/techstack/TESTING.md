@@ -1,34 +1,34 @@
 # Testing – WebDev-Tools
 
-**Jest 30 mit jsdom** – 841 Tests, 20 Suites, Unit-Tests für alle Tools.
+**Jest 30 with jsdom** – 841 tests, 20 suites, unit tests for all tools.
 
 ---
 
-## Test-Befehle
+## Test Commands
 
 ```bash
-# Alle Tests ausführen
+# Run all tests
 npm test
 
-# Watch-Modus (während Entwicklung)
+# Watch mode (during development)
 npm run test:watch
 
-# Coverage-Report
+# Coverage report
 npm run test:coverage
 ```
 
 ---
 
-## Jest-Konfiguration (`jest.config.js`)
+## Jest Configuration (`jest.config.js`)
 
 ```javascript
 module.exports = {
-  testEnvironment: 'jsdom',           // Browser-Umgebung simulieren
+  testEnvironment: 'jsdom',           // Simulate browser environment
   testMatch: ['**/tests/unit/**/*.test.js'],
   collectCoverageFrom: [
     'assets/js/tools/**/*.js',
     'assets/js/lib/**/*.js',
-    '!assets/js/lib/external/**'      // Externe Libraries ausschließen
+    '!assets/js/lib/external/**'      // Exclude external libraries
   ],
   coverageThreshold: {
     global: {
@@ -44,15 +44,15 @@ module.exports = {
 
 ---
 
-## Test-Setup (`tests/unit/setup.js`)
+## Test Setup (`tests/unit/setup.js`)
 
-Globale Mocks für alle Tests:
+Global mocks for all tests:
 
 ```javascript
 // i18n-Mock
 global.window.i18n = {
   t: jest.fn((key, params) => {
-    // Einfache Template-String-Replacement
+    // Simple template string replacement
     let str = key;
     if (params) {
       Object.keys(params).forEach(k => {
@@ -120,9 +120,9 @@ global.window.performance = {
 
 ---
 
-## Test-Pattern (Tool-Tests)
+## Test Pattern (Tool Tests)
 
-### Grundstruktur
+### Basic Structure
 
 ```javascript
 describe('MyTool', () => {

@@ -1,20 +1,20 @@
 # Frontend – WebDev-Tools
 
-**Vanilla JavaScript mit IIFE-Pattern** – Kein Framework, maximale Performance und Sicherheit.
+**Vanilla JavaScript with IIFE Pattern** – No framework, maximum performance and security.
 
 ---
 
-## JavaScript-Architektur
+## JavaScript Architecture
 
-### IIFE-Pattern (Tool-Module)
+### IIFE Pattern (Tool Modules)
 
-Jedes Tool ist ein selbstregistrierendes Modul:
+Every tool is a self-registering module:
 
 ```javascript
 (function() {
   'use strict';
   
-  // Guard: Tools-Registry vorhanden?
+  // Guard: Tools registry available?
   if (typeof window.Tools === 'undefined') {
     const msg = (window.i18n && typeof window.i18n.t === 'function')
       ? window.i18n.t('errors.registry_missing', {tool: 'myToolName'})
@@ -23,7 +23,7 @@ Jedes Tool ist ein selbstregistrierendes Modul:
     return;
   }
 
-  // i18n-Helper (Modul-Ebene, außerhalb von open())
+  // i18n helper (module level, outside of open())
   const t = (key, params) => {
     if (window.i18n && typeof window.i18n.t === 'function') {
       return window.i18n.t(key, params);
@@ -39,29 +39,29 @@ Jedes Tool ist ein selbstregistrierendes Modul:
       </div>
     `;
     
-    // Event-Listener registrieren
+    // Register event listeners
     document.getElementById('input').addEventListener('input', handleInput);
   }
 
-  // Registrierung im globalen Tools-Objekt
+  // Registration in global Tools object
   window.Tools.register('myToolName', {
-    init: function() {},   // Wird automatisch bei register() aufgerufen
-    open: init             // Wird bei Tool-Aufruf mit container-Parameter aufgerufen
+    init: function() {},   // Called automatically on register()
+    open: init             // Called on tool invocation with container parameter
   });
 })();
 ```
 
-**Wichtig:**
-- `'use strict'` am Anfang jeder IIFE
-- Guard prüft ob `window.Tools` existiert, bevor registriert wird
-- `t()` als `const` auf Modul-Ebene (nicht innerhalb `open()`)
-- `init: function(){}` + `open: init` – beide Methoden werden benötigt
-- `open(container)` erhält den Container als Parameter
-- `toolId` muss `config/tools.php`-Key matchen
+**Important:**
+- `'use strict'` at the beginning of every IIFE
+- Guard checks if `window.Tools` exists before registering
+- `t()` as `const` at module level (not inside `open()`)
+- `init: function(){}` + `open: init` – both methods are required
+- `open(container)` receives the container as parameter
+- `toolId` must match `config/tools.php` key
 
 ---
 
-## Gemeinsame Utilities (`assets/js/lib/`)
+## Shared Utilities (`assets/js/lib/`)
 
 ### Clipboard Utils (`clipboard-utils.js`)
 
@@ -69,7 +69,7 @@ Jedes Tool ist ein selbstregistrierendes Modul:
 window.ClipboardUtils.copyToClipboard(text, successCallback, errorCallback);
 ```
 
-**Verwendung:**
+**Usage:**
 ```javascript
 const copyBtn = document.getElementById('copy-btn');
 copyBtn.addEventListener('click', () => {
@@ -91,7 +91,7 @@ window.DownloadUtils.downloadText(content, filename, mimeType);
 window.DownloadUtils.downloadBlob(blob, filename);
 ```
 
-**Verwendung:**
+**Usage:**
 ```javascript
 const downloadBtn = document.getElementById('download-btn');
 downloadBtn.addEventListener('click', () => {
@@ -104,22 +104,22 @@ downloadBtn.addEventListener('click', () => {
 
 ### Drag & Drop Utils (`dragdrop-utils.js`)
 
-Ermöglicht File-Upload via Drag & Drop:
+Enables file upload via drag & drop:
 
 ```javascript
 window.DragDropUtils.init(
   dropZoneElement,
   (file, content) => {
-    // File erfolgreich geladen
+    // File successfully loaded
     console.log('File:', file.name, 'Content:', content);
   },
   (error) => {
-    // Fehlerbehandlung
+    // Error handling
     console.error('Drop failed:', error);
   },
   {
-    acceptedTypes: ['.json', '.txt'],  // Optional: File-Type-Beschränkung
-    maxSizeMB: 10                      // Optional: Max-Größe
+    acceptedTypes: ['.json', '.txt'],  // Optional: file type restriction
+    maxSizeMB: 10                      // Optional: max size
   }
 );
 ```
@@ -135,7 +135,7 @@ window.Validators.isValidEmail(str);
 window.Validators.isValidHex(str);
 ```
 
-**Verwendung:**
+**Usage:**
 ```javascript
 const input = document.getElementById('json-input').value;
 if (!window.Validators.isValidJSON(input)) {
@@ -159,7 +159,7 @@ window.Formatters.unescapeHTML(str);
 
 ### Storage Utils (`storage-utils.js`)
 
-Wrapper für localStorage mit Fehlerbehandlung:
+Wrapper for localStorage with error handling:
 
 ```javascript
 window.StorageUtils.set(key, value);
@@ -172,7 +172,7 @@ window.StorageUtils.clear();
 
 ### Performance Guards (`performance-guards.js`)
 
-Verhindert Rendering-Blockierung bei großen Inputs:
+Prevents rendering blocking on large inputs:
 
 ```javascript
 window.PerformanceGuards.checkInputSize(text, maxChars = 1000000);
@@ -181,49 +181,49 @@ window.PerformanceGuards.checkInputSize(text, maxChars = 1000000);
 
 ---
 
-## Sicherheits-Best Practices
+## Security Best Practices
 
-### ❌ Niemals:
+### ❌ Never:
 ```javascript
-// FALSCH: innerHTML mit User-Input
+// WRONG: innerHTML with user input
 element.innerHTML = userInput;
 
-// FALSCH: eval() oder new Function()
+// WRONG: eval() or new Function()
 eval(userCode);
 
-// FALSCH: document.execCommand (deprecated)
+// WRONG: document.execCommand (deprecated)
 document.execCommand('copy');
 ```
 
-### ✅ Immer:
+### ✅ Always:
 ```javascript
-// RICHTIG: textContent für User-Input
+// CORRECT: textContent for user input
 element.textContent = userInput;
 
-// RICHTIG: Clipboard API via ClipboardUtils
+// CORRECT: Clipboard API via ClipboardUtils
 window.ClipboardUtils.copyToClipboard(text);
 
-// RICHTIG: DOMPurify für HTML (falls notwendig)
+// CORRECT: DOMPurify for HTML (if necessary)
 element.innerHTML = DOMPurify.sanitize(html);
 ```
 
 ---
 
-## i18n-Integration
+## i18n Integration
 
-### UI-Strings abrufen
+### Retrieving UI strings
 
 ```javascript
 function t(key, params) {
   return window.i18n.t(key, params);
 }
 
-// Verwendung
+// Usage
 const label = t('tools.myTool.inputLabel');
 const error = t('tools.myTool.errors.invalidInput', { maxLength: 1000 });
 ```
 
-### JSON-Struktur (`config/i18n/{lang}.json`)
+### JSON Structure (`config/i18n/{lang}.json`)
 
 ```json
 {
@@ -239,13 +239,13 @@ const error = t('tools.myTool.errors.invalidInput', { maxLength: 1000 });
 }
 ```
 
-**Regel:** Nur JS-UI-Strings (Labels, Buttons, Fehlermeldungen) in JSON – kein PHP-Content!
+**Rule:** Only JS UI strings (labels, buttons, error messages) in JSON – no PHP content!
 
 ---
 
-## Event-Handling
+## Event Handling
 
-### Debouncing für Live-Mode
+### Debouncing for Live Mode
 
 ```javascript
 let debounceTimer;
@@ -253,18 +253,18 @@ inputElement.addEventListener('input', () => {
   clearTimeout(debounceTimer);
   debounceTimer = setTimeout(() => {
     processInput();
-  }, 300); // 300ms Delay
+  }, 300); // 300ms delay
 });
 ```
 
 ---
 
-## CSS-Framework
+## CSS Framework
 
 **Bootstrap 5.3** + Custom Sass:
 
 ```html
-<!-- Tool-Container -->
+<!-- Tool Container -->
 <div class="tool-section">
   <label class="form-label">Input</label>
   <textarea class="form-control" rows="8"></textarea>
@@ -276,19 +276,19 @@ inputElement.addEventListener('input', () => {
 
 **Bootstrap Icons:**
 - Via `<i class="bi bi-icon-name"></i>`
-- Tool-Icons in `config/tools.php` definiert
+- Tool icons defined in `config/tools.php`
 
 ---
 
-## Performance-Tipps
+## Performance Tips
 
-1. **Lazy Loading:** Tools werden erst bei Aufruf geladen (tool-loader.js)
-2. **Input-Size-Checks:** `PerformanceGuards.checkInputSize()` vor Verarbeitung
-3. **Debouncing:** Bei Live-Convertern 300-500ms Delay
-4. **Web Workers:** Für CPU-intensive Tasks (z.B. Hash-Generierung)
+1. **Lazy Loading:** Tools are loaded only on invocation (tool-loader.js)
+2. **Input Size Checks:** `PerformanceGuards.checkInputSize()` before processing
+3. **Debouncing:** For live converters 300-500ms delay
+4. **Web Workers:** For CPU-intensive tasks (e.g., hash generation)
 
 ---
 
-**Weitere Infos:**
-- [BACKEND.md](BACKEND.md) – PHP-Integration
-- [TESTING.md](TESTING.md) – Frontend-Tests mit Jest
+**More Information:**
+- [BACKEND.md](BACKEND.md) – PHP integration
+- [TESTING.md](TESTING.md) – Frontend tests with Jest

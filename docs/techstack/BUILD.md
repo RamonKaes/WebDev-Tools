@@ -1,31 +1,31 @@
-# Build-Prozess – WebDev-Tools
+# Build Process – WebDev-Tools
 
-**Production-Build mit Minification & Optimierung** – Bash-Script, Terser, csso/cssnano.
+**Production build with minification & optimization** – Bash script, Terser, csso/cssnano.
 
 ---
 
-## Build-Befehle
+## Build Commands
 
 ```bash
-# Production-Build (kompletter Build-Prozess)
+# Production build (complete build process)
 bash build.sh
 
-# Nur CSS minifizieren (manuell)
+# Only minify CSS (manual)
 npm run build:css
 
-# Deploy auf Server (rsync)
+# Deploy to server (rsync)
 npm run deploy
 ```
 
 ---
 
-## Build-Script (`build.sh`)
+## Build Script (`build.sh`)
 
-Automatisierter Build-Prozess:
+Automated build process:
 
 ```bash
 #!/bin/bash
-set -e  # Exit bei Fehler
+set -e  # Exit on error
 
 echo "🔨 Starting production build..."
 
@@ -33,7 +33,7 @@ echo "🔨 Starting production build..."
 rm -rf dist/
 mkdir -p dist/
 
-# 2. Copy PHP-Files & Assets
+# 2. Copy PHP files & assets
 rsync -av --exclude='node_modules' --exclude='tests' --exclude='dist' \
   --exclude='.git' --exclude='build-tools' \
   ./ dist/
@@ -42,8 +42,8 @@ rsync -av --exclude='node_modules' --exclude='tests' --exclude='dist' \
 echo "📦 Minifying JavaScript..."
 find dist/assets/js -name "*.js" ! -name "*.min.js" -type f | while read file; do
   terser "$file" -c -m -o "${file%.js}.min.js"
-  rm "$file"  # Original entfernen
-  mv "${file%.js}.min.js" "$file"  # Minified umbenennen
+  rm "$file"  # Remove original
+  mv "${file%.js}.min.js" "$file"  # Rename minified
 done
 
 # 4. Minify CSS
@@ -52,14 +52,14 @@ csso dist/assets/css/style.css -o dist/assets/css/style.min.css
 rm dist/assets/css/style.css
 mv dist/assets/css/style.min.css dist/assets/css/style.css
 
-# 5. Optimize Images (optional)
+# 5. Optimize images (optional)
 # echo "🖼️  Optimizing images..."
 # find dist/assets/img -type f -name "*.png" -exec optipng -o7 {} \;
 
-# 6. Copy Production .htaccess
+# 6. Copy production .htaccess
 cp .htaccess.production dist/.htaccess
 
-# 7. Generate Manifest & Sitemaps
+# 7. Generate manifest & sitemaps
 echo "📄 Generating manifest & sitemaps..."
 php config/generate-manifest.php
 php config/generate-sitemaps.php
@@ -82,13 +82,13 @@ terser input.js \
   -o output.min.js
 ```
 
-**Optionen:**
+**Options:**
 - `-c` (compress): Dead-code elimination, constant folding
-- `-m` (mangle): Verkürzt Variablennamen (außer globals)
-- `--keep-fnames`: Function-Namen beibehalten (für Debugging)
+- `-m` (mangle): Shortens variable names (except globals)
+- `--keep-fnames`: Keep function names (for debugging)
 
-**Excluded Files:**
-- `*.min.js` – Bereits minifiziert
+**Excluded files:**
+- `*.min.js` – Already minified
 - `node_modules/**` – Dependencies
 
 ---
@@ -96,30 +96,30 @@ terser input.js \
 ### CSS (csso / cssnano)
 
 ```bash
-# Via csso (aktuell)
+# Via csso (current)
 csso assets/css/style.css -o dist/assets/css/style.min.css
 
 # Alternative: cssnano (npm script)
 npm run build:css
 ```
 
-**Optimierungen:**
-- Entfernt Whitespace & Kommentare
-- Kombiniert identische Regeln
-- Verkürzt Farb-Codes (`#ffffff` → `#fff`)
-- Optimiert `calc()` Expressions
+**Optimizations:**
+- Removes whitespace & comments
+- Combines identical rules
+- Shortens color codes (`#ffffff` → `#fff`)
+- Optimizes `calc()` expressions
 
 ---
 
 ### Sass Compilation
 
-**Entwicklung:**
+**Development:**
 
 ```bash
 sass build-tools/bootstrap-custom.scss assets/css/bootstrap-custom.css
 ```
 
-**Produktion (mit Kompression):**
+**Production (with compression):**
 
 ```bash
 sass --style=compressed build-tools/bootstrap-custom.scss dist/assets/css/bootstrap-custom.css
@@ -129,7 +129,7 @@ sass --style=compressed build-tools/bootstrap-custom.scss dist/assets/css/bootst
 
 ## Deployment
 
-### Rsync-Deploy (`npm run deploy`)
+### Rsync Deploy (`npm run deploy`)
 
 ```bash
 rsync -avz --delete \
@@ -138,80 +138,80 @@ rsync -avz --delete \
 ```
 
 **Flags:**
-- `-a`: Archive-Modus (preserves permissions, timestamps)
+- `-a`: Archive mode (preserves permissions, timestamps)
 - `-v`: Verbose
-- `-z`: Kompression während Transfer
-- `--delete`: Entfernt Dateien auf Server, die lokal nicht existieren
+- `-z`: Compression during transfer
+- `--delete`: Removes files on server that don't exist locally
 
-**Sicherheit:**
-- SSH-Key-basierte Authentifizierung
-- `--dry-run` zum Testen vor echtem Deploy
+**Security:**
+- SSH key-based authentication
+- `--dry-run` to test before actual deploy
 
 ---
 
-## .htaccess-Management
+## .htaccess Management
 
-### Entwicklung vs. Produktion
+### Development vs. Production
 
-**2 separate Dateien:**
+**2 separate files:**
 
-| Datei | Verwendung |
-|-------|------------|
-| `.htaccess` | Lokale Entwicklung (XAMPP, Docker) |
-| `.htaccess.production` | Production-Server (wird bei Build kopiert) |
+| File | Usage |
+|------|-------|
+| `.htaccess` | Local development (XAMPP, Docker) |
+| `.htaccess.production` | Production server (copied during build) |
 
-**Wichtig:** Bei URL-Änderungen **beide** Dateien aktualisieren!
+**Important:** When URLs change, update **both** files!
 
-### Typische Rewrite-Rules
+### Typical Rewrite Rules
 
 ```apache
 RewriteEngine On
 
-# Trailing Slash erzwingen
+# Enforce trailing slash
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_URI} !(.*)/$
 RewriteRule ^(.*)$ /$1/ [R=301,L]
 
-# 301-Redirect bei Slug-Änderung
+# 301 redirect on slug change
 RewriteRule ^de/alter-slug/?$ /de/neuer-slug/ [R=301,L]
 
-# PHP-Extension verstecken
+# Hide PHP extension
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^(.*)$ $1.php [L]
 
-# Sprachversion-Routing
+# Language version routing
 RewriteRule ^de/(.*)$ de/$1 [L]
 RewriteRule ^es/(.*)$ es/$1 [L]
 ```
 
 ---
 
-## Asset-Pipeline
+## Asset Pipeline
 
-### JavaScript-Loading
+### JavaScript Loading
 
-**Entwicklung:**
+**Development:**
 ```html
 <script src="/assets/js/tools/myTool.js"></script>
 ```
 
-**Produktion (minified):**
+**Production (minified):**
 ```html
 <script src="/assets/js/tools/myTool.js"></script>
-<!-- Datei ist minifiziert, aber behält denselben Namen -->
+<!-- File is minified but keeps the same name -->
 ```
 
 **Lazy Loading:**
-- Tools werden erst bei Aufruf geladen (via `tool-loader.js`)
-- Kein Bundle – jedes Tool ist ein separates Modul
+- Tools are loaded only on invocation (via `tool-loader.js`)
+- No bundling – each tool is a separate module
 
 ---
 
-### CSS-Loading
+### CSS Loading
 
-**Critical CSS:** Inline im `<head>` (Layout, Above-the-Fold)
+**Critical CSS:** Inline in `<head>` (layout, above-the-fold)
 
-**Non-Critical CSS:** Asynchron geladen:
+**Non-Critical CSS:** Asynchronously loaded:
 
 ```html
 <link rel="preload" href="/assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -219,41 +219,41 @@ RewriteRule ^es/(.*)$ es/$1 [L]
 
 ---
 
-## Cache-Busting
+## Cache Busting
 
-### Via Query-Parameter
+### Via Query Parameter
 
 ```php
 <?php
-$version = '2.1.2'; // Aus package.json oder config.php
+$version = '2.1.2'; // From package.json or config.php
 ?>
 <link rel="stylesheet" href="/assets/css/style.css?v=<?= $version ?>">
 <script src="/assets/js/app.js?v=<?= $version ?>"></script>
 ```
 
-### Via .htaccess (Cache-Headers)
+### Via .htaccess (Cache Headers)
 
 ```apache
 <IfModule mod_expires.c>
   ExpiresActive On
   
-  # CSS & JS: 1 Jahr
+  # CSS & JS: 1 year
   ExpiresByType text/css "access plus 1 year"
   ExpiresByType application/javascript "access plus 1 year"
   
-  # Images: 1 Monat
+  # Images: 1 month
   ExpiresByType image/jpeg "access plus 1 month"
   ExpiresByType image/png "access plus 1 month"
   ExpiresByType image/webp "access plus 1 month"
   
-  # HTML: Kein Cache
+  # HTML: No cache
   ExpiresByType text/html "access plus 0 seconds"
 </IfModule>
 ```
 
 ---
 
-## Performance-Optimierung
+## Performance Optimization
 
 ### Compression (gzip/brotli)
 
@@ -267,33 +267,33 @@ $version = '2.1.2'; // Aus package.json oder config.php
 ### Preloading
 
 ```html
-<!-- DNS-Prefetch für externe Ressourcen -->
+<!-- DNS prefetch for external resources -->
 <link rel="dns-prefetch" href="//cdn.example.com">
 
-<!-- Preconnect für kritische Verbindungen -->
+<!-- Preconnect for critical connections -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
-<!-- Preload für kritische Ressourcen -->
+<!-- Preload for critical resources -->
 <link rel="preload" href="/assets/js/tool-loader.js" as="script">
 ```
 
 ---
 
-## Build-Validierung
+## Build Validation
 
-### Nach Build prüfen:
+### After build, check:
 
 ```bash
-# Dateigröße vergleichen
+# Compare file sizes
 du -sh assets/js/tools/ dist/assets/js/tools/
 
-# Syntax-Check minified JS
+# Syntax check minified JS
 node -c dist/assets/js/tools/myTool.js
 
-# CSS-Validierung
+# CSS validation
 npx stylelint dist/assets/css/*.css
 
-# .htaccess-Syntax (Apache)
+# .htaccess syntax (Apache)
 apachectl configtest
 ```
 

@@ -1,22 +1,22 @@
 # Dependencies – WebDev-Tools
 
-**Externe Dependencies & deren Zweck** – Versions-Übersicht und Upgrade-Strategien.
+**External dependencies & their purpose** – Version overview and upgrade strategies.
 
 ---
 
 ## Production Dependencies
 
-### Frontend-Framework
+### Frontend Framework
 
 #### Bootstrap 5.3.0
 ```json
 "bootstrap": "^5.3.0"
 ```
 
-**Zweck:**
-- Responsive Grid-System
-- Form-Controls & Button-Styles
-- Utility-Classes (Spacing, Flexbox)
+**Purpose:**
+- Responsive grid system
+- Form controls & button styles
+- Utility classes (spacing, flexbox)
 
 **Verwendung:**
 - Custom Sass-Build (`build-tools/bootstrap-custom.scss`)

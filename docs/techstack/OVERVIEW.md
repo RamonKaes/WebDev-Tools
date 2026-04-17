@@ -1,81 +1,81 @@
 # Tech Stack Overview – WebDev-Tools
 
-**Privacy-First Developer Toolbox** – Alle Operationen laufen client-side im Browser, kein Server-State, keine Datenübertragung.
+**Privacy-First Developer Toolbox** – All operations run client-side in the browser, no server state, no data transmission.
 
 ---
 
-## Architektur-Prinzipien
+## Architecture Principles
 
 ### 1. **Client-Side Only**
-- Alle sensiblen Daten (Passwörter, Tokens, Hashes) bleiben im Browser
-- Kein Backend-Processing, kein Analytics-Tracking
-- CSP (Content Security Policy) aktiv
+- All sensitive data (passwords, tokens, hashes) stays in the browser
+- No backend processing, no analytics tracking
+- CSP (Content Security Policy) active
 
-### 2. **Mehrsprachigkeit (i18n)**
-- 6 Sprachen: EN, DE, ES, PT, FR, IT
-- PHP-Content (Features, Ressourcen) hardcoded pro Sprache
-- JS-UI-Strings (Labels, Buttons) in JSON-Dateien (`config/i18n/`)
+### 2. **Multi-language (i18n)**
+- 6 languages: EN, DE, ES, PT, FR, IT
+- PHP content (features, resources) hardcoded per language
+- JS UI strings (labels, buttons) in JSON files (`config/i18n/`)
 
-### 3. **Tool-Registry System**
-- Zentrale Konfiguration in `config/tools.php`
-- Jedes Tool: Metadaten, Libraries, Features, SEO-Template
-- Automatische Manifest-/Sitemap-Generierung
-
----
-
-## Stack-Komponenten
-
-| Layer | Technologie | Details |
-|-------|-------------|---------|
-| **Frontend** | Vanilla JS (IIFE-Pattern) | Gemeinsame Utilities, kein Framework |
-| **Styling** | Bootstrap 5.3 + Custom Sass | Responsive, konsistentes Design |
-| **Backend** | PHP 8+ (strict_types) | Tool-Registry, i18n, Routing |
-| **Build** | Bash, Terser, csso/cssnano | Minification, Optimierung |
-| **Testing** | Jest 30 + jsdom | 841 Tests, 20 Suites |
-| **Deployment** | rsync + htaccess Rewrites | Production-Build nach `dist/` |
+### 3. **Tool Registry System**
+- Central configuration in `config/tools.php`
+- Each tool: metadata, libraries, features, SEO template
+- Automatic manifest/sitemap generation
 
 ---
 
-## Projekt-Lifecycle
+## Stack Components
+
+| Layer | Technology | Details |
+|-------|------------|---------|
+| **Frontend** | Vanilla JS (IIFE pattern) | Shared utilities, no framework |
+| **Styling** | Bootstrap 5.3 + Custom Sass | Responsive, consistent design |
+| **Backend** | PHP 8+ (strict_types) | Tool registry, i18n, routing |
+| **Build** | Bash, Terser, csso/cssnano | Minification, optimization |
+| **Testing** | Jest 30 + jsdom | 841 tests, 20 suites |
+| **Deployment** | rsync + htaccess rewrites | Production build to `dist/` |
+
+---
+
+## Project Lifecycle
 
 ```bash
-# Entwicklung
-npm test                  # Jest Unit-Tests ausführen
-npm run test:coverage     # Mit Coverage-Report
+# Development
+npm test                  # Run Jest unit tests
+npm run test:coverage     # With coverage report
 
 # Build
-bash build.sh             # Production-Build → dist/
+bash build.sh             # Production build → dist/
 
-# Nach neuem Tool
+# After new tool
 php config/generate-manifest.php
 php config/generate-sitemaps.php
 ```
 
 ---
 
-## Ordnerstruktur (vereinfacht)
+## Folder Structure (simplified)
 
 ```
-tool-name/index.php              # Tool-Seite (PHP)
-de/tool-name/index.php           # Deutsche Version
-assets/js/tools/toolNameTool.js  # Tool-Logik (IIFE)
-assets/js/lib/*.js               # Gemeinsame Utilities
-config/tools.php                 # Tool-Registry
-config/i18n/{lang}.json          # UI-Strings pro Sprache
-tests/unit/toolNameTool.test.js  # Jest-Tests
-partials/tool-base.php           # Gemeinsames Layout
+tool-name/index.php              # Tool page (PHP)
+de/tool-name/index.php           # German version
+assets/js/tools/toolNameTool.js  # Tool logic (IIFE)
+assets/js/lib/*.js               # Shared utilities
+config/tools.php                 # Tool registry
+config/i18n/{lang}.json          # UI strings per language
+tests/unit/toolNameTool.test.js  # Jest tests
+partials/tool-base.php           # Shared layout
 ```
 
 ---
 
-## Weitere Dokumentation
+## Further Documentation
 
-- **[FRONTEND.md](FRONTEND.md)** – JS-Pattern, IIFE-Konventionen, gemeinsame Utilities
-- **[BACKEND.md](BACKEND.md)** – PHP-Standards, tools.php-Registry, i18n-System
-- **[BUILD.md](BUILD.md)** – build.sh, Minification, dist/-Struktur
-- **[TESTING.md](TESTING.md)** – Jest-Setup, Test-Patterns, Mocking
-- **[INTEGRATION.md](INTEGRATION.md)** – Checkliste für neue Tools
+- **[FRONTEND.md](FRONTEND.md)** – JS patterns, IIFE conventions, shared utilities
+- **[BACKEND.md](BACKEND.md)** – PHP standards, tools.php registry, i18n system
+- **[BUILD.md](BUILD.md)** – build.sh, minification, dist/ structure
+- **[TESTING.md](TESTING.md)** – Jest setup, test patterns, mocking
+- **[INTEGRATION.md](INTEGRATION.md)** – Checklist for new tools
 
 ---
 
-**Stand:** April 2026 | **Version:** 2.1.2 | **Tools:** 20 | **Sprachen:** 6
+**Status:** April 2026 | **Version:** 2.1.2 | **Tools:** 20 | **Languages:** 6

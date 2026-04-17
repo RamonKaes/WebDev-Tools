@@ -1,33 +1,33 @@
 # WebDev-Tools Documentation
 
-**Umfassende Dokumentation für Entwickler** – Tech-Stack, Integration-Guides, Best Practices.
+**Comprehensive Documentation for Developers** – Tech stack, integration guides, best practices.
 
 ---
 
-## 📚 Dokumentations-Übersicht
+## 📚 Documentation Overview
 
-### Tech-Stack-Dokumentation (`techstack/`)
+### Tech Stack Documentation (`techstack/`)
 
-Detaillierte Beschreibung der technischen Architektur und Best Practices:
+Detailed description of the technical architecture and best practices:
 
-| Dokument | Inhalt |
-|----------|--------|
-| **[OVERVIEW](techstack/OVERVIEW.md)** | Architektur-Übersicht, Stack-Komponenten, Lifecycle |
-| **[FRONTEND](techstack/FRONTEND.md)** | JavaScript (IIFE-Pattern), gemeinsame Utilities, Security |
-| **[BACKEND](techstack/BACKEND.md)** | PHP-Standards, Tool-Registry, i18n-System, Routing |
-| **[BUILD](techstack/BUILD.md)** | Build-Prozess, Minification, Deployment |
-| **[TESTING](techstack/TESTING.md)** | Jest-Setup, Test-Patterns, Coverage |
-| **[INTEGRATION](techstack/INTEGRATION.md)** | **Neues Tool hinzufügen** – Schritt-für-Schritt-Anleitung |
-| **[DEPENDENCIES](techstack/DEPENDENCIES.md)** | Externe Dependencies, Versionen, Upgrade-Strategien |
-| **[SECURITY](techstack/SECURITY.md)** | Security-Best Practices, Privacy, CSP, XSS-Prevention |
-| **[TEMPLATES](techstack/TEMPLATES.md)** | **Code-Templates** – Ready-to-use PHP, JS, Test-Vorlagen |
-| **[CONVENTIONS](techstack/CONVENTIONS.md)** | Naming, Struktur, CSS, Accessibility, Error-Handling |
+| Document | Content |
+|----------|---------|
+| **[OVERVIEW](techstack/OVERVIEW.md)** | Architecture overview, stack components, lifecycle |
+| **[FRONTEND](techstack/FRONTEND.md)** | JavaScript (IIFE pattern), shared utilities, security |
+| **[BACKEND](techstack/BACKEND.md)** | PHP standards, tool registry, i18n system, routing |
+| **[BUILD](techstack/BUILD.md)** | Build process, minification, deployment |
+| **[TESTING](techstack/TESTING.md)** | Jest setup, test patterns, coverage |
+| **[INTEGRATION](techstack/INTEGRATION.md)** | **Add new tool** – Step-by-step guide |
+| **[DEPENDENCIES](techstack/DEPENDENCIES.md)** | External dependencies, versions, upgrade strategies |
+| **[SECURITY](techstack/SECURITY.md)** | Security best practices, privacy, CSP, XSS prevention |
+| **[TEMPLATES](techstack/TEMPLATES.md)** | **Code templates** – Ready-to-use PHP, JS, test templates |
+| **[CONVENTIONS](techstack/CONVENTIONS.md)** | Naming, structure, CSS, accessibility, error handling |
 
 ---
 
-## 🚀 Quick Start (für neue Entwickler)
+## 🚀 Quick Start (for new developers)
 
-### 1. Repository klonen & Setup
+### 1. Clone repository & setup
 
 ```bash
 git clone https://github.com/RamonKaes/WebDev-Tools.git
@@ -37,69 +37,69 @@ npm install
 
 ---
 
-### 2. Entwicklungsumgebung
+### 2. Development environment
 
-**Lokaler Server (PHP 8+):**
+**Local server (PHP 8+):**
 ```bash
-# Variante 1: PHP Built-in Server
+# Option 1: PHP built-in server
 cd /var/www/html/WebDev-Tools
 php -S localhost:8000 -t . dev/router.php
 
-# Variante 2: XAMPP/MAMP
-# Projekt in htdocs/ kopieren, Apache starten
+# Option 2: XAMPP/MAMP
+# Copy project to htdocs/, start Apache
 ```
 
-**Tests ausführen:**
+**Run tests:**
 ```bash
-npm test                  # Alle Tests
-npm run test:watch        # Watch-Modus
-npm run test:coverage     # Mit Coverage-Report
+npm test                  # All tests
+npm run test:watch        # Watch mode
+npm run test:coverage     # With coverage report
 ```
 
 ---
 
-### 3. Neues Tool erstellen
+### 3. Create new tool
 
-**Empfohlene Reihenfolge:**
-1. **[INTEGRATION.md](techstack/INTEGRATION.md)** lesen – Schritt-für-Schritt-Checkliste
-2. **[FRONTEND.md](techstack/FRONTEND.md)** konsultieren – Utilities & Patterns
-3. **[TESTING.md](techstack/TESTING.md)** – Tests schreiben
-4. **[BUILD.md](techstack/BUILD.md)** – Production-Build
+**Recommended order:**
+1. **[INTEGRATION.md](techstack/INTEGRATION.md)** read – Step-by-step checklist
+2. **[FRONTEND.md](techstack/FRONTEND.md)** consult – Utilities & patterns
+3. **[TESTING.md](techstack/TESTING.md)** – Write tests
+4. **[BUILD.md](techstack/BUILD.md)** – Production build
 
-**Typischer Workflow:**
+**Typical workflow:**
 ```bash
-# 1. Feature-Branch erstellen
+# 1. Create feature branch
 git checkout -b feature/my-new-tool
 
-# 2. PHP-Dateien erstellen (6 Sprachen)
+# 2. Create PHP files (6 languages)
 # - tool-name/index.php
 # - de/tool-name/index.php
 # - es/tool-name/index.php
-# - ... (siehe INTEGRATION.md)
+# - ... (see INTEGRATION.md)
 
-# 3. JavaScript-Modul erstellen
+# 3. Create JavaScript module
 # - assets/js/tools/myToolNameTool.js
 
-# 4. Tool-Registry aktualisieren
+# 4. Update tool registry
 # - config/tools.php
 
-# 5. i18n-Strings hinzufügen
+# 5. Add i18n strings
 # - config/i18n/{en,de,es,pt,fr,it}.json
 
-# 6. Tests schreiben
+# 6. Write tests
 # - tests/unit/myToolNameTool.test.js
 
-# 7. Tests ausführen
+# 7. Run tests
 npm test
 
-# 8. Manifest & Sitemaps generieren
+# 8. Generate manifest & sitemaps
 php config/generate-manifest.php
 php config/generate-sitemaps.php
 
-# 9. Production-Build
+# 9. Production build
 bash build.sh
 
-# 10. Commit & Push
+# 10. Commit & push
 git add .
 git commit -m "feat: add MyTool"
 git push origin feature/my-new-tool
@@ -107,21 +107,21 @@ git push origin feature/my-new-tool
 
 ---
 
-## 🏗️ Projekt-Architektur
+## 🏗️ Project Architecture
 
 ```
 WebDev-Tools/
-├── tool-name/               # Tool-Seiten (EN)
+├── tool-name/               # Tool pages (EN)
 │   └── index.php
-├── de/tool-name/            # Deutsche Versionen
+├── de/tool-name/            # German versions
 │   └── index.php
-├── es/tool-name/            # Spanische Versionen
+├── es/tool-name/            # Spanish versions
 │   └── index.php
 ├── assets/
 │   ├── js/
-│   │   ├── tools/           # Tool-Module (IIFE)
+│   │   ├── tools/           # Tool modules (IIFE)
 │   │   │   └── myToolTool.js
-│   │   └── lib/             # Gemeinsame Utilities
+│   │   └── lib/             # Shared utilities
 │   │       ├── clipboard-utils.js
 │   │       ├── download-utils.js
 │   │       ├── dragdrop-utils.js
@@ -130,37 +130,37 @@ WebDev-Tools/
 │   ├── css/                 # Stylesheets
 │   └── img/                 # Images
 ├── config/
-│   ├── tools.php            # Tool-Registry
-│   ├── i18n/                # Übersetzungen (6 Sprachen)
+│   ├── tools.php            # Tool registry
+│   ├── i18n/                # Translations (6 languages)
 │   │   ├── en.json
 │   │   ├── de.json
 │   │   └── ...
 │   ├── generate-manifest.php
 │   └── generate-sitemaps.php
 ├── partials/
-│   └── tool-base.php        # Gemeinsames Layout
+│   └── tool-base.php        # Shared layout
 ├── tests/
-│   ├── unit/                # Jest-Tests
+│   ├── unit/                # Jest tests
 │   │   └── myToolTool.test.js
-│   └── setup.js             # Test-Setup (Mocks)
-├── docs/                    # Diese Dokumentation
+│   └── setup.js             # Test setup (mocks)
+├── docs/                    # This documentation
 │   ├── README.md
 │   └── techstack/
-├── dist/                    # Production-Build (generiert)
-├── .htaccess                # Entwicklung
-├── .htaccess.production     # Produktion
-├── build.sh                 # Build-Script
+├── dist/                    # Production build (generated)
+├── .htaccess                # Development
+├── .htaccess.production     # Production
+├── build.sh                 # Build script
 ├── package.json
 └── jest.config.js
 ```
 
 ---
 
-## 🔧 Häufige Aufgaben
+## 🔧 Common Tasks
 
-### Tool-Kategorie wechseln
+### Switch tool category
 
-**Datei:** `config/tools.php`
+**File:** `config/tools.php`
 ```php
 'myToolName' => [
   'category' => 'converters',  // encoders|formatters|generators|converters|references
@@ -170,9 +170,9 @@ WebDev-Tools/
 
 ---
 
-### Neue Utility hinzufügen
+### Add new utility
 
-**Datei:** `assets/js/lib/my-new-util.js`
+**File:** `assets/js/lib/my-new-util.js`
 ```javascript
 (function() {
   'use strict';
@@ -186,16 +186,16 @@ WebDev-Tools/
 })();
 ```
 
-**Registrieren in `config/tools.php`:**
+**Register in `config/tools.php`:**
 ```php
 'jsLibraries' => ['my-new-util', 'clipboard-utils']
 ```
 
 ---
 
-### i18n-Strings aktualisieren
+### Update i18n strings
 
-**Alle 6 Dateien gleichzeitig bearbeiten:**
+**Edit all 6 files simultaneously:**
 - `config/i18n/en.json`
 - `config/i18n/de.json`
 - `config/i18n/es.json`
@@ -203,7 +203,7 @@ WebDev-Tools/
 - `config/i18n/fr.json`
 - `config/i18n/it.json`
 
-**Verwendung in JS:**
+**Usage in JS:**
 ```javascript
 function t(key, params) {
   return window.i18n.t(key, params);
@@ -214,9 +214,9 @@ const label = t('tools.myTool.inputLabel');
 
 ---
 
-### URL-Slug ändern (mit Redirect)
+### Change URL slug (with redirect)
 
-**1. `config/tools.php` aktualisieren:**
+**1. Update `config/tools.php`:**
 ```php
 'slugs' => [
   'en' => 'new-tool-name',
@@ -225,36 +225,36 @@ const label = t('tools.myTool.inputLabel');
 ]
 ```
 
-**2. `.htaccess` UND `.htaccess.production`:**
+**2. `.htaccess` AND `.htaccess.production`:**
 ```apache
-# 301-Redirect Alt → Neu
+# 301 redirect old → new
 RewriteRule ^old-tool-name/?$ /new-tool-name/ [R=301,L]
 RewriteRule ^de/alter-werkzeug-name/?$ /de/neuer-werkzeug-name/ [R=301,L]
 ```
 
-**3. Sitemap neu generieren:**
+**3. Regenerate sitemap:**
 ```bash
 php config/generate-sitemaps.php
 ```
 
 ---
 
-## 📊 Code-Qualität
+## 📊 Code Quality
 
-### Code-Standards
+### Code Standards
 
-| Aspekt | Standard |
+| Aspect | Standard |
 |--------|----------|
-| **PHP** | PSR-12, strict_types, XSS-Protection |
-| **JavaScript** | IIFE-Pattern, 'use strict', keine `var` |
-| **CSS** | Bootstrap 5.3, Custom Sass |
-| **Tests** | Jest, 80% Coverage-Ziel |
+| **PHP** | PSR-12, strict_types, XSS protection |
+| **JavaScript** | IIFE pattern, 'use strict', no `var` |
+| **CSS** | Bootstrap 5.3, custom Sass |
+| **Tests** | Jest, 80% coverage target |
 
 ---
 
-### Linting (geplant)
+### Linting (planned)
 
-**ESLint-Config (zukünftig):**
+**ESLint config (future):**
 ```json
 {
   "extends": "eslint:recommended",
@@ -272,27 +272,27 @@ php config/generate-sitemaps.php
 
 ---
 
-## 🔒 Security-Checkliste
+## 🔒 Security Checklist
 
-Vor jedem Release prüfen:
+Before each release check:
 
-- [ ] `npm audit` – Keine Critical/High Vulnerabilities
-- [ ] CSP-Header korrekt (kein `'unsafe-eval'`)
-- [ ] Alle User-Inputs validiert & escaped
-- [ ] HTTPS erzwungen (HSTS)
-- [ ] Keine sensiblen Daten in Logs/Console
-- [ ] Tests grün (inkl. XSS-Tests)
+- [ ] `npm audit` – No critical/high vulnerabilities
+- [ ] CSP header correct (no `'unsafe-eval'`)
+- [ ] All user inputs validated & escaped
+- [ ] HTTPS enforced (HSTS)
+- [ ] No sensitive data in logs/console
+- [ ] Tests green (including XSS tests)
 
-**Siehe:** [SECURITY.md](techstack/SECURITY.md) für Details
+**See:** [SECURITY.md](techstack/SECURITY.md) for details
 
 ---
 
-## 📈 Performance-Metriken
+## 📈 Performance Metrics
 
-### Aktuelle Ziele (April 2026)
+### Current Targets (April 2026)
 
-| Metrik | Ziel | Aktuell |
-|--------|------|---------|
+| Metric | Target | Current |
+|--------|--------|---------|
 | **Lighthouse Score** | > 90 | 94 |
 | **First Contentful Paint** | < 1.5s | 1.2s |
 | **Time to Interactive** | < 3s | 2.8s |
@@ -311,17 +311,17 @@ Vor jedem Release prüfen:
 ### Pull Request Workflow
 
 1. **Fork & Branch:** `git checkout -b feature/my-feature`
-2. **Code:** Implementierung + Tests
-3. **Tests:** `npm test` (alle grün)
-4. **Commit:** Conventional Commits (`feat:`, `fix:`, `docs:`)
+2. **Code:** Implementation + tests
+3. **Tests:** `npm test` (all green)
+4. **Commit:** Conventional commits (`feat:`, `fix:`, `docs:`)
 5. **Push:** `git push origin feature/my-feature`
-6. **PR:** Auf GitHub erstellen, Template ausfüllen
-7. **Review:** Feedback umsetzen
-8. **Merge:** Nach Approval durch Maintainer
+6. **PR:** Create on GitHub, fill template
+7. **Review:** Implement feedback
+8. **Merge:** After approval by maintainer
 
 ---
 
-### Commit-Message-Format
+### Commit Message Format
 
 ```
 <type>(<scope>): <subject>
@@ -331,16 +331,16 @@ Vor jedem Release prüfen:
 <footer>
 ```
 
-**Typen:**
-- `feat`: Neues Feature
-- `fix`: Bugfix
-- `docs`: Dokumentations-Änderung
-- `style`: Code-Formatierung (kein Logic-Change)
-- `refactor`: Code-Refactoring
-- `test`: Tests hinzufügen/ändern
-- `chore`: Build-Prozess, Dependencies
+**Types:**
+- `feat`: New feature
+- `fix`: Bug fix
+- `docs`: Documentation change
+- `style`: Code formatting (no logic change)
+- `refactor`: Code refactoring
+- `test`: Add/change tests
+- `chore`: Build process, dependencies
 
-**Beispiele:**
+**Examples:**
 ```
 feat(uuid-generator): add UUID v7 support
 
@@ -360,60 +360,60 @@ Fixes #456
 
 ---
 
-## 🌍 Internationalisierung (i18n)
+## 🌍 Internationalization (i18n)
 
-### Unterstützte Sprachen
+### Supported Languages
 
-1. **Englisch (EN)** – Default, Referenz-Sprache
-2. **Deutsch (DE)** – Vollständig
-3. **Spanisch (ES)** – Vollständig
-4. **Portugiesisch (PT)** – Vollständig
-5. **Französisch (FR)** – Vollständig
-6. **Italienisch (IT)** – Vollständig
+1. **English (EN)** – Default, reference language
+2. **German (DE)** – Complete
+3. **Spanish (ES)** – Complete
+4. **Portuguese (PT)** – Complete
+5. **French (FR)** – Complete
+6. **Italian (IT)** – Complete
 
-### Neue Sprache hinzufügen
+### Add New Language
 
-**1. JSON-Datei erstellen:**
+**1. Create JSON file:**
 ```bash
 cp config/i18n/en.json config/i18n/nl.json
-# Übersetzen...
+# Translate...
 ```
 
-**2. Language-Handler erweitern:**
+**2. Extend language handler:**
 ```php
 // config/language-handler.php
 $supportedLangs = ['en', 'de', 'es', 'pt', 'fr', 'it', 'nl'];
 ```
 
-**3. Tool-Verzeichnisse erstellen:**
+**3. Create tool directories:**
 ```bash
 mkdir nl/
-# Für jedes Tool:
+# For each tool:
 mkdir nl/tool-name/
 cp tool-name/index.php nl/tool-name/index.php
-# Übersetzen...
+# Translate...
 ```
 
-**4. `config/tools.php` aktualisieren:**
+**4. Update `config/tools.php`:**
 ```php
 'slugs' => [
   'en' => 'tool-name',
   'de' => 'werkzeug-name',
-  'nl' => 'gereedschap-naam',  // Neu
+  'nl' => 'gereedschap-naam',  // New
   // ...
 ]
 ```
 
 ---
 
-## 📞 Support & Kontakt
+## 📞 Support & Contact
 
-### Fragen?
+### Questions?
 
-1. **Dokumentation durchsuchen** (diese Docs)
-2. **CLAUDE.md lesen** – Projekt-Übersicht
-3. **GitHub Issues** – Bug-Reports, Feature-Requests
-4. **GitHub Discussions** – Allgemeine Fragen
+1. **Search documentation** (these docs)
+2. **Read CLAUDE.md** – Project overview
+3. **GitHub Issues** – Bug reports, feature requests
+4. **GitHub Discussions** – General questions
 
 ### Links
 
@@ -426,8 +426,8 @@ cp tool-name/index.php nl/tool-name/index.php
 
 ## 📝 License
 
-**MIT License** – Siehe [LICENSE](../LICENSE) für Details.
+**MIT License** – See [LICENSE](../LICENSE) for details.
 
 ---
 
-**Letzte Aktualisierung:** April 2026 | **Version:** 2.1.2
+**Last updated:** April 2026 | **Version:** 2.1.2

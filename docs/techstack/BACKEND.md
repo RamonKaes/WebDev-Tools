@@ -1,56 +1,56 @@
 # Backend – WebDev-Tools
 
-**PHP 8+ mit strict_types** – Tool-Registry, i18n-System, Routing.
+**PHP 8+ with strict_types** – Tool registry, i18n system, routing.
 
 ---
 
-## PHP-Standards
+## PHP Standards
 
-### Strict Types (Pflicht)
+### Strict Types (Mandatory)
 
-**Jede PHP-Datei** muss mit `declare(strict_types=1);` beginnen:
+**Every PHP file** must start with `declare(strict_types=1);`:
 
 ```php
 <?php
-declare(strict_types=1);  // ← ERSTE Zeile nach <?php
+declare(strict_types=1);  // ← FIRST line after <?php
 
-// Restlicher Code
+// Remaining code
 ```
 
-**Warum?**
-- Verhindert Type-Coercion-Bugs
-- Erzwingt strikte Parameter-/Return-Types
-- Bessere IDE-Unterstützung
+**Why?**
+- Prevents type coercion bugs
+- Enforces strict parameter/return types
+- Better IDE support
 
 ---
 
-### XSS-Schutz
+### XSS Protection
 
-**IMMER** `htmlspecialchars()` für User-Input-Output:
+**ALWAYS** use `htmlspecialchars()` for user input output:
 
 ```php
-// FALSCH
+// WRONG
 echo $_GET['name'];
 
-// RICHTIG
+// CORRECT
 echo htmlspecialchars($_GET['name'], ENT_QUOTES, 'UTF-8');
 
-// Helper-Funktion (config/helpers.php)
+// Helper function (config/helpers.php)
 echo esc($_GET['name']);
 ```
 
 ---
 
-## Tool-Registry (`config/tools.php`)
+## Tool Registry (`config/tools.php`)
 
-Zentrale Konfiguration aller Tools:
+Central configuration of all tools:
 
 ```php
 return [
   'myToolName' => [
-    'id' => 'myToolName',                    // camelCase, muss Tool-ID in JS matchen
-    'slug' => 'my-tool-name',                // EN-Slug (default)
-    'slugs' => [                             // Lokalisierte Slugs
+    'id' => 'myToolName',                    // camelCase, must match JS tool ID
+    'slug' => 'my-tool-name',                // EN slug (default)
+    'slugs' => [                             // Localized slugs
       'en' => 'my-tool-name',
       'de' => 'mein-tool-name',
       'es' => 'mi-herramienta',
@@ -60,27 +60,27 @@ return [
     ],
     'category' => 'converters',              // encoders|formatters|generators|converters|references|stringtools|utilities
     'icon' => 'bi-gear',                     // Bootstrap Icon
-    'jsModule' => 'tools/myToolNameTool.js', // JS-File (relativ zu assets/js/)
-    'jsLibraries' => [                       // Benötigte Utilities
+    'jsModule' => 'tools/myToolNameTool.js', // JS file (relative to assets/js/)
+    'jsLibraries' => [                       // Required utilities
       'clipboard-utils',
       'download-utils',
       'validators'
     ],
-    'features' => [                          // Feature-Tags
+    'features' => [                          // Feature tags
       'drag-drop',
       'bulk-processing',
       'live-mode'
     ],
-    'seoTemplate' => 'default',              // SEO-Template
-    'hasFeaturesSection' => true             // Features-Sektion anzeigen?
+    'seoTemplate' => 'default',              // SEO template
+    'hasFeaturesSection' => true             // Show features section?
   ]
 ];
 ```
 
-### Kategorien
+### Categories
 
-| Kategorie | Beispiele |
-|-----------|-----------|
+| Category | Examples |
+|----------|----------|
 | `encoders` | Base64, URL, HTML Entity, JWT, Punycode |
 | `formatters` | JSON, Code Formatter |
 | `generators` | UUID, Password, QR Code, Hash, Lorem Ipsum |
@@ -89,31 +89,31 @@ return [
 | `stringtools` | String Escaper |
 | `utilities` | Regex Tester, SRI Generator |
 
-### Optionale Keys
+### Optional Keys
 
-| Key | Beschreibung | Beispiel |
-|-----|-------------|----------|
-| `externalLibraries` | Externe CDN-Libraries mit SRI-Hash | `['url' => '...', 'integrity' => 'sha384-...', 'crossorigin' => 'anonymous']` |
-| `hasAboutSection` | About-Sektion anzeigen (default: `false`) | `true` (Character Reference) |
+| Key | Description | Example |
+|-----|-------------|---------|
+| `externalLibraries` | External CDN libraries with SRI hash | `['url' => '...', 'integrity' => 'sha384-...', 'crossorigin' => 'anonymous']` |
+| `hasAboutSection` | Show about section (default: `false`) | `true` (Character Reference) |
 
 ---
 
-## Tool-PHP-Interface (`tool-name/index.php`)
+## Tool PHP Interface (`tool-name/index.php`)
 
-Jede Tool-Seite folgt diesem Pattern:
+Every tool page follows this pattern:
 
 ```php
 <?php
 declare(strict_types=1);
-ob_start();  // ← Pflicht! Wird von tool-base.php für HTML-Minification benötigt
+ob_start();  // ← Mandatory! Required by tool-base.php for HTML minification
 
-// Tool-Konfiguration
-$toolId = 'myToolName';                     // Muss tools.php-Key matchen
-$lang = 'en';                               // Sprachcode
-$featuresSectionTitle = 'Features';         // Überschrift Features-Sektion
-$resourcesSectionTitle = 'Useful Resources'; // Überschrift Ressourcen-Sektion
+// Tool configuration
+$toolId = 'myToolName';                     // Must match tools.php key
+$lang = 'en';                               // Language code
+$featuresSectionTitle = 'Features';         // Features section heading
+$resourcesSectionTitle = 'Useful Resources'; // Resources section heading
 
-// Features-Liste (einfaches Array)
+// Features list (simple array)
 $features = [
     'Privacy-first: All operations run locally',
     'Drag & Drop file upload support',
@@ -121,7 +121,7 @@ $features = [
     'Live conversion mode'
 ];
 
-// Ressourcen (Array of Arrays)
+// Resources (array of arrays)
 $usefulResources = [
     [
         'url' => 'https://example.com/docs',
@@ -155,40 +155,40 @@ HTML
 // $customNoticeContent = 'Important: This tool requires JavaScript';
 // $customNoticeType = 'warning'; // 'info' | 'warning' | 'success'
 
-// Layout laden (rendert das Tool)
+// Load layout (renders the tool)
 include __DIR__ . '/../partials/tool-base.php';
 ```
 
 ---
 
-## i18n-System
+## i18n System
 
-### Mehrsprachigkeit-Strategie
+### Multi-language Strategy
 
-**Wichtig:** Es gibt **KEINE** i18n-Library für PHP-Content!
+**Important:** There is **NO** i18n library for PHP content!
 
-**PHP-Content (hardcoded in jeder Sprachversion):**
-- Features-Liste (`$features`)
-- Ressourcen (`$usefulResources` - Title, Description)
+**PHP content (hardcoded in each language version):**
+- Features list (`$features`)
+- Resources (`$usefulResources` - Title, Description)
 - Additional Sections (`$additionalSections` - Title, Content)
-- Seitentexte, Überschriften (`$featuresSectionTitle`, etc.)
+- Page texts, headings (`$featuresSectionTitle`, etc.)
 
-**JavaScript-UI (JSON-Dateien `config/i18n/{lang}.json`):**
-- Labels, Buttons, Placeholders (Tool-UI)
-- Fehlermeldungen im Tool
+**JavaScript UI (JSON files `config/i18n/{lang}.json`):**
+- Labels, Buttons, Placeholders (tool UI)
+- Error messages in tool
 - Tooltips, Hints
-- Meta-Daten (SEO: `meta_title`, `meta_description`)
+- Meta data (SEO: `meta_title`, `meta_description`)
 
-**Warum kein PHP-i18n?**
-- ✅ Jede Sprachversion ist kulturell angepasst, keine 1:1-Übersetzung
-- ✅ Features & Ressourcen variieren je nach Zielgruppe
-- ✅ SEO-optimierte Texte pro Sprache (nicht maschinell übersetzt)
-- ✅ Einfacher Workflow: Copy-Paste → Übersetzen
-- ❌ i18n-Library wäre Overhead für statische Inhalte
+**Why no PHP i18n?**
+- ✅ Each language version is culturally adapted, not 1:1 translation
+- ✅ Features & resources vary by target audience
+- ✅ SEO-optimized texts per language (not machine translated)
+- ✅ Simple workflow: Copy-paste → Translate
+- ❌ i18n library would be overhead for static content
 
-### Sprachversionen pflegen
+### Maintaining Language Versions
 
-Für jede Sprache existiert ein separates Tool-Directory:
+For each language exists a separate tool directory:
 
 ```
 base64-encoder-decoder/index.php          # EN (default)
@@ -199,15 +199,15 @@ fr/base64-encoder-decoder/index.php       # FR
 it/base64-encoder-decoder/index.php       # IT
 ```
 
-**Regel:** Keine automatische Übersetzung – jede Sprachversion wird manuell gepflegt für kulturelle Anpassungen.
+**Rule:** No automatic translation – each language version is manually maintained for cultural adaptations.
 
 ---
 
-### PHP-Übersetzungs-Workflow
+### PHP Translation Workflow
 
-**Schritt-für-Schritt:**
+**Step-by-step:**
 
-1. **EN-Version als Basis** (`tool-name/index.php`)
+1. **EN version as base** (`tool-name/index.php`)
    ```php
    $features = [
        'Privacy-first: All operations run client-side',
@@ -215,7 +215,7 @@ it/base64-encoder-decoder/index.php       # IT
    ];
    ```
 
-2. **DE-Version kopieren & übersetzen** (`de/tool-name/index.php`)
+2. **Copy & translate DE version** (`de/tool-name/index.php`)
    ```php
    $features = [
        'Datenschutz: Alle Operationen laufen client-seitig',
@@ -223,28 +223,28 @@ it/base64-encoder-decoder/index.php       # IT
    ];
    ```
 
-3. **Weitere Sprachen analog**
-   - ES: Spanisch (europäisch, nicht lateinamerikanisch)
-   - PT: Portugiesisch (europäisch)
-   - FR: Französisch (europäisch)
-   - IT: Italienisch
+3. **Other languages analogously**
+   - ES: Spanish (European, not Latin American)
+   - PT: Portuguese (European)
+   - FR: French (European)
+   - IT: Italian
 
-**Checkliste pro Sprachversion:**
-- [ ] `$featuresSectionTitle` übersetzt
-- [ ] Alle `$features` übersetzt
-- [ ] `$resourcesSectionTitle` übersetzt
-- [ ] Alle `$usefulResources` (Title + Description) übersetzt
-- [ ] `$additionalSections` (Title + Content) übersetzt (falls vorhanden)
-- [ ] `$customNoticeContent` übersetzt (falls vorhanden)
-- [ ] Relative Pfad zu `tool-base.php` korrekt (`../` für EN, `../../` für Sprach-Ordner)
+**Checklist per language version:**
+- [ ] `$featuresSectionTitle` translated
+- [ ] All `$features` translated
+- [ ] `$resourcesSectionTitle` translated
+- [ ] All `$usefulResources` (Title + Description) translated
+- [ ] `$additionalSections` (Title + Content) translated (if present)
+- [ ] `$customNoticeContent` translated (if present)
+- [ ] Relative path to `tool-base.php` correct (`../` for EN, `../../` for language folders)
 
-**Tipp:** Multi-Cursor-Editing in VS Code für paralleles Übersetzen aller Sprachen.
+**Tip:** Multi-cursor editing in VS Code for parallel translation of all languages.
 
 ---
 
 ## Language Handler (`config/language-handler.php`)
 
-Automatische Spracherkennung:
+Automatic language detection:
 
 ```php
 function detectLanguage(): string {
@@ -254,7 +254,7 @@ function detectLanguage(): string {
 }
 
 function getLanguageFromPath(): ?string {
-    // Extrahiert Sprachcode aus URL
+    // Extracts language code from URL
 }
 ```
 
@@ -262,20 +262,20 @@ function getLanguageFromPath(): ?string {
 
 ## Routing (`.htaccess`)
 
-### URL-Rewrite-Rules
+### URL Rewrite Rules
 
-Bei URL-Änderungen (neuer Slug, umbenanntes Tool) **beide** Dateien aktualisieren:
+When URLs change (new slug, renamed tool), update **both** files:
 
-- `.htaccess` – Entwicklung
-- `.htaccess.production` – Produktion
+- `.htaccess` – Development
+- `.htaccess.production` – Production
 
-**Beispiel (301-Redirect):**
+**Example (301 redirect):**
 
 ```apache
-# Alter Slug → Neuer Slug
+# Old slug → New slug
 RewriteRule ^de/alter-slug/?$ /de/neuer-slug/ [R=301,L]
 
-# Sprachversion ohne Trailing Slash → mit Slash
+# Language version without trailing slash → with slash
 RewriteRule ^de/tool-name$ /de/tool-name/ [R=301,L]
 ```
 
@@ -290,22 +290,22 @@ header("X-Frame-Options: DENY");
 header("Referrer-Policy: strict-origin-when-cross-origin");
 ```
 
-**CSP:** Kein Inline-JavaScript außerhalb IIFEs, keine externen Scripts (außer CDN-Fallbacks).
+**CSP:** No inline JavaScript outside IIFEs, no external scripts (except CDN fallbacks).
 
 ---
 
 ## Manifest & Sitemap Generation
 
-### Nach neuem Tool ausführen:
+### Execute after new tool:
 
 ```bash
 php config/generate-manifest.php    # PWA Manifest
-php config/generate-sitemaps.php    # XML-Sitemaps
+php config/generate-sitemaps.php    # XML sitemaps
 ```
 
 ### Manifest (`config/manifest.json`)
 
-Generiert aus `tools.php` für alle Sprachen:
+Generated from `tools.php` for all languages:
 
 ```json
 {
@@ -324,13 +324,13 @@ Generiert aus `tools.php` für alle Sprachen:
 
 ### Sitemaps (`sitemap-{lang}.xml`)
 
-Eine Sitemap pro Sprache + `sitemap.xml` (Sitemap-Index).
+One sitemap per language + `sitemap.xml` (sitemap index).
 
 ---
 
-## Konfiguration (`config/config.php`)
+## Configuration (`config/config.php`)
 
-Globale Settings:
+Global settings:
 
 ```php
 return [
@@ -369,11 +369,11 @@ function getToolById(string $id): ?array {
 - `403.php` – Forbidden
 - `500.php` – Internal Server Error
 
-Alle mit `declare(strict_types=1);` und konsistentem Layout.
+All with `declare(strict_types=1);` and consistent layout.
 
 ---
 
-**Weitere Infos:**
-- [FRONTEND.md](FRONTEND.md) – JavaScript-Integration
-- [BUILD.md](BUILD.md) – Build-Prozess
-- [INTEGRATION.md](INTEGRATION.md) – Neues Tool hinzufügen
+**More Information:**
+- [FRONTEND.md](FRONTEND.md) – JavaScript integration
+- [BUILD.md](BUILD.md) – Build process
+- [INTEGRATION.md](INTEGRATION.md) – Adding a new tool

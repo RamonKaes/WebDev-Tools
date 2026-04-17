@@ -1,104 +1,104 @@
 # Naming & Conventions – WebDev-Tools
 
-**Konsistente Namensgebung & Code-Struktur** – Standards für alle Tools.
+**Consistent naming and code structure standards** for all tools.
 
 ---
 
 ## Naming Conventions
 
-### Tool-IDs
+### Tool IDs
 
 **Format:** `camelCase`
 
-**Regeln:**
-- Beschreibend, nicht zu kurz (min. 2 Wörter kombiniert)
-- Keine Abkürzungen (außer etabliert wie `jwt`, `uuid`, `url`)
-- Suffix vermeiden (kein `Tool`, `Converter` am Ende)
+**Rules:**
+- Descriptive, not too short (minimum 2 combined words)
+- No abbreviations (except established ones like `jwt`, `uuid`, `url`)
+- Avoid suffixes (no `Tool`, `Converter` at the end)
 
-**Beispiele:**
+**Examples:**
 
-| ✅ Richtig | ❌ Falsch | Grund |
-|-----------|----------|-------|
-| `base64EncoderDecoder` | `base64Tool` | Zu generisch |
-| `jsonFormatterValidator` | `jsonFV` | Abkürzung unklar |
-| `passwordGenerator` | `pwdGen` | Abkürzung, kein camelCase |
-| `qrCodeGenerator` | `qrcode` | Zu kurz |
-| `htmlEntityTool` | `htmlEntityToolConverter` | Redundantes Suffix |
+| ✅ Correct | ❌ Wrong | Reason |
+|-----------|----------|--------|
+| `base64EncoderDecoder` | `base64Tool` | Too generic |
+| `jsonFormatterValidator` | `jsonFV` | Unclear abbreviation |
+| `passwordGenerator` | `pwdGen` | Abbreviation, not camelCase |
+| `qrCodeGenerator` | `qrcode` | Too short |
+| `htmlEntityTool` | `htmlEntityToolConverter` | Redundant suffix |
 
 ---
 
 ### File & Folder Names
 
-#### PHP-Dateien
+#### PHP Files
 
 **Format:** `kebab-case`
 
-**Struktur:**
+**Structure:**
 ```
 tool-name/index.php           # EN (root-level)
 de/tool-name/index.php        # DE
 es/tool-name/index.php        # ES
 ```
 
-**Regeln:**
-- Slug = File-Ordner-Name (ohne Sprach-Präfix)
-- Immer `index.php` (kein Custom-Name)
-- Keine Unterordner innerhalb Tool-Ordner
+**Rules:**
+- Slug = folder name (without language prefix)
+- Always `index.php` (no custom name)
+- No subfolders within tool folders
 
 ---
 
-#### JavaScript-Dateien
+#### JavaScript Files
 
-**Format:** `camelCase` + `Tool.js` Suffix
+**Format:** `camelCase` + `Tool.js` suffix
 
-**Struktur:**
+**Structure:**
 ```
 assets/js/tools/myToolNameTool.js
 ```
 
-**Regeln:**
-- Dateiname = `toolId` + `Tool.js`
-- MUSS mit Tool-ID in `config/tools.php` matchen
-- Keine Unterordner in `tools/`
+**Rules:**
+- Filename = `toolId` + `Tool.js`
+- MUST match tool ID in `config/tools.php`
+- No subfolders in `tools/`
 
-**Beispiele:**
+**Examples:**
 
-| Tool-ID | JS-Dateiname |
-|---------|--------------|
+| Tool ID | JS Filename |
+|---------|-------------|
 | `base64EncoderDecoder` | `base64EncoderDecoderTool.js` |
 | `jsonFormatterValidator` | `jsonFormatterValidatorTool.js` |
 | `passwordGenerator` | `passwordGeneratorTool.js` |
 
 ---
 
-#### Test-Dateien
+#### Test Files
 
 **Format:** `camelCase` + `Tool.test.js`
 
-**Struktur:**
+**Structure:**
 ```
 tests/unit/myToolNameTool.test.js
 ```
 
-**Regel:** Exakt wie JS-Dateiname, aber `.test.js` statt `.js`
+**Rule:** Exactly like JS filename, but `.test.js` instead of `.js`
 
 ---
 
-### URL-Slugs
+### URL Slugs
 
 **Format:** `kebab-case`
 
-**Englisch (Default):**
-- Beschreibend, SEO-freundlich
-- 2-4 Wörter, keine Stopwords (`the`, `a`, etc.)
-- Keine Verben (außer bei Generatoren/Convertern)
+**English (Default):**
+- Descriptive, SEO-friendly
+- 2-4 words, no stop words (`the`, `a`, etc.)
+- No verbs (except for generators/converters)
 
-**Lokalisierte Slugs:**
-- Übersetzung ins Ziel-Sprache
-- Idiomatisch (nicht wörtlich)
-- In `config/tools.php` unter `slugs` definiert
+**Localized Slugs:**
+- Translation into target language
+- Idiomatic (not literal)
+- Defined in `config/tools.php` under `slugs`
 
-**Beispiele:**
+**Examples:**
 
 | EN | DE | ES | PT |
 |----|----|----|-----|
@@ -108,22 +108,22 @@ tests/unit/myToolNameTool.test.js
 
 ---
 
-### i18n-Keys
+### i18n Keys
 
-**Format:** Hierarchisch, dot-notation
+**Format:** Hierarchical, dot-notation
 
-**Struktur:**
+**Structure:**
 ```
 tools.{toolId}.{category}.{key}
 ```
 
-**Kategorien:**
+**Categories:**
 - `meta_title`, `meta_description` (SEO)
 - `{elementName}Label`, `{elementName}Placeholder` (UI)
-- `errors.{errorType}` (Fehlermeldungen)
-- `messages.{messageType}` (Success/Info-Messages)
+- `errors.{errorType}` (Error messages)
+- `messages.{messageType}` (Success/Info messages)
 
-**Beispiele:**
+**Examples:**
 
 ```json
 {
@@ -147,24 +147,24 @@ tools.{toolId}.{category}.{key}
 }
 ```
 
-**Naming-Rules für Keys:**
-- Element-Labels: `{elementId}Label` (z.B. `inputLabel`, `outputLabel`)
+**Naming Rules for Keys:**
+- Element labels: `{elementId}Label` (e.g., `inputLabel`, `outputLabel`)
 - Placeholders: `{elementId}Placeholder`
 - Hints: `{elementId}Hint`
-- Options/Checkboxes: Beschreibend (z.B. `includeUppercase`, `enableLiveMode`)
-- Errors: `errors.{errorType}` (z.B. `errors.invalidInput`)
+- Options/Checkboxes: Descriptive (e.g., `includeUppercase`, `enableLiveMode`)
+- Errors: `errors.{errorType}` (e.g., `errors.invalidInput`)
 
 ---
 
-## Code-Struktur
+## Code Structure
 
-### PHP-Datei-Struktur
+### PHP File Structure
 
-**Standard-Reihenfolge (immer identisch):**
+**Standard order (always identical):**
 
 ```php
 <?php
-declare(strict_types=1);  // ← IMMER erste Zeile
+declare(strict_types=1);  // ← ALWAYS first line
 
 // 1. Tool Configuration
 $toolId = 'myToolName';
@@ -189,16 +189,16 @@ $usefulResources = [ /* ... */ ];
 require_once __DIR__ . '/../partials/tool-base.php';
 ```
 
-**Wichtig:**
-- Kommentare für Sections (bessere Lesbarkeit)
-- Optional-Bereiche auskommentiert (nicht löschen, als Template)
-- Kein zusätzlicher Code nach `require_once`
+**Important:**
+- Section comments (better readability)
+- Optional areas commented out (don't delete, keep as template)
+- No additional code after `require_once`
 
 ---
 
-### JavaScript-Datei-Struktur
+### JavaScript File Structure
 
-**Standard-Reihenfolge:**
+**Standard order:**
 
 ```javascript
 /**
@@ -251,17 +251,17 @@ require_once __DIR__ . '/../partials/tool-base.php';
 })();
 ```
 
-**Wichtig:**
-- Kommentar-Trennlinien (`// ====...`) für Sections
-- Funktionen gruppiert nach Zweck
-- `init()` immer vor Event-Handlern
-- `register()` immer als letztes
+**Important:**
+- Comment separator lines (`// ====...`) for sections
+- Functions grouped by purpose
+- `init()` always before event handlers
+- `register()` always last
 
 ---
 
-### Test-Datei-Struktur
+### Test File Structure
 
-**Standard-Reihenfolge:**
+**Standard order:**
 
 ```javascript
 describe('ToolName', () => {
@@ -300,22 +300,22 @@ describe('ToolName', () => {
 
 ## CSS & Styling
 
-### Bootstrap-Klassen (bevorzugt)
+### Bootstrap Classes (Preferred)
 
-**Standard-UI-Komponenten:**
+**Standard UI Components:**
 
-| Element | Klassen |
+| Element | Classes |
 |---------|---------|
-| **Section** | `tool-section` (Custom-Klasse für Spacing) |
+| **Section** | `tool-section` (custom class for spacing) |
 | **Label** | `form-label` |
 | **Input/Textarea** | `form-control` |
 | **Checkbox** | `form-check`, `form-check-input`, `form-check-label` |
 | **Radio** | `form-check`, `form-check-input`, `form-check-label` |
 | **Select** | `form-select` |
-| **Button (Primary)** | `btn btn-primary` oder `btn btn-outline-primary` |
-| **Button (Secondary)** | `btn btn-secondary` oder `btn btn-outline-secondary` |
-| **Button (Danger)** | `btn btn-danger` oder `btn btn-outline-danger` |
-| **Button Group** | `button-group mt-2` (Custom-Wrapper) |
+| **Button (Primary)** | `btn btn-primary` or `btn btn-outline-primary` |
+| **Button (Secondary)** | `btn btn-secondary` or `btn btn-outline-secondary` |
+| **Button (Danger)** | `btn btn-danger` or `btn btn-outline-danger` |
+| **Button Group** | `button-group mt-2` (custom wrapper) |
 | **Alert (Error)** | `alert alert-danger` |
 | **Alert (Warning)** | `alert alert-warning` |
 | **Alert (Info)** | `alert alert-info` |
@@ -323,30 +323,30 @@ describe('ToolName', () => {
 
 ---
 
-### Custom-CSS (nur wenn nötig)
+### Custom CSS (Only When Necessary)
 
-**Regel:** Bootstrap-First, Custom nur für spezifische Fälle.
+**Rule:** Bootstrap-first, custom only for specific cases.
 
-**Erlaubt:**
-- `.tool-section` (Standard-Spacing zwischen Sektionen)
-- `.button-group` (Button-Layout)
-- Tool-spezifische Klassen (z.B. `.json-tree`, `.color-preview`)
+**Allowed:**
+- `.tool-section` (standard spacing between sections)
+- `.button-group` (button layout)
+- Tool-specific classes (e.g., `.json-tree`, `.color-preview`)
 
-**Verboten:**
-- Inline-Styles in HTML (CSP-Violation)
-- `!important` (außer Override von Bootstrap-Bugs)
-- ID-Selektoren in CSS (nur für JS-Interaktion nutzen)
+**Forbidden:**
+- Inline styles in HTML (CSP violation)
+- `!important` (except override of Bootstrap bugs)
+- ID selectors in CSS (use only for JS interaction)
 
 ---
 
-### Icon-Conventions
+### Icon Conventions
 
-**Bootstrap Icons:** Immer mit `bi bi-{icon-name}`
+**Bootstrap Icons:** Always with `bi bi-{icon-name}`
 
-**Standard-Icons:**
+**Standard Icons:**
 
-| Aktion | Icon | Klasse |
-|--------|------|--------|
+| Action | Icon | Class |
+|--------|------|-------|
 | **Copy** | Clipboard | `bi bi-clipboard` |
 | **Download** | Download | `bi bi-download` |
 | **Clear** | X-Circle | `bi bi-x-circle` |
@@ -357,10 +357,10 @@ describe('ToolName', () => {
 | **Upload** | Upload | `bi bi-upload` |
 | **File** | File-Earmark | `bi bi-file-earmark` |
 
-**Tool-Kategorie-Icons (in `config/tools.php`):**
+**Tool Category Icons (in `config/tools.php`):**
 
-| Kategorie | Beispiel-Icons |
-|-----------|----------------|
+| Category | Example Icons |
+|----------|---------------|
 | **Encoders** | `bi-file-binary`, `bi-code-square` |
 | **Formatters** | `bi-filetype-json`, `bi-code-square` |
 | **Generators** | `bi-key`, `bi-qr-code`, `bi-hash` |
@@ -373,69 +373,69 @@ describe('ToolName', () => {
 
 ### JavaScript
 
-**Variablen:**
-- `camelCase` für normale Variablen
-- `UPPER_SNAKE_CASE` für Konstanten (nur echte Konstanten, nicht Config)
-- Beschreibend, nicht zu kurz
+**Variables:**
+- `camelCase` for regular variables
+- `UPPER_SNAKE_CASE` for constants (only true constants, not config)
+- Descriptive, not too short
 
 ```javascript
-// ✅ Richtig
+// ✅ Correct
 const inputElement = document.getElementById('input');
 const maxPasswordLength = 128;
-const MAX_FILE_SIZE_MB = 10;  // Echte Konstante
+const MAX_FILE_SIZE_MB = 10;  // True constant
 
-// ❌ Falsch
-const inp = document.getElementById('input');  // Zu kurz
-const maxPwdLen = 128;  // Abkürzung
-const max_file_size_mb = 10;  // snake_case statt camelCase
+// ❌ Wrong
+const inp = document.getElementById('input');  // Too short
+const maxPwdLen = 128;  // Abbreviation
+const max_file_size_mb = 10;  // snake_case instead of camelCase
 ```
 
-**Funktionen:**
+**Functions:**
 - `camelCase`
-- Verb am Anfang (außer `init`)
-- Beschreibend, klar
+- Verb at beginning (except `init`)
+- Descriptive, clear
 
 ```javascript
-// ✅ Richtig
+// ✅ Correct
 function handleInput() { }
 function transformData(input) { }
 function validateEmail(email) { }
 function showError(message) { }
 
-// ❌ Falsch
-function input() { }  // Nicht beschreibend
-function data(input) { }  // Kein Verb
-function chkEmail(email) { }  // Abkürzung
+// ❌ Wrong
+function input() { }  // Not descriptive
+function data(input) { }  // No verb
+function chkEmail(email) { }  // Abbreviation
 ```
 
 ---
 
 ### PHP
 
-**Variablen:**
-- `camelCase` für normale Variablen
-- `$UPPER_CASE` für Konstanten (via `define()`)
+**Variables:**
+- `camelCase` for regular variables
+- `$UPPER_CASE` for constants (via `define()`)
 
 ```php
-// ✅ Richtig
+// ✅ Correct
 $toolId = 'myToolName';
 $featuresSectionTitle = 'Features';
 
-// ❌ Falsch
+// ❌ Wrong
 $tool_id = 'myToolName';  // snake_case
-$TOOL_ID = 'myToolName';  // Nur für Konstanten
+$TOOL_ID = 'myToolName';  // Only for constants
 ```
 
-**Funktionen:**
-- `camelCase` (Helper-Funktionen)
-- `snake_case` (Legacy-Code, wird zu camelCase migriert)
+**Functions:**
+- `camelCase` (helper functions)
+- `snake_case` (legacy code, migrating to camelCase)
 
 ```php
-// ✅ Richtig
+// ✅ Correct
 function escapeHtml(string $str): string { }
 function loadToolConfig(string $id): ?array { }
 
-// ❌ Falsch
+// ❌ Wrong
 function escape_html(string $str): string { }  // Legacy
 function LoadToolConfig(string $id): ?array { }  // PascalCase
 ```
@@ -444,49 +444,49 @@ function LoadToolConfig(string $id): ?array { }  // PascalCase
 
 ## Accessibility (a11y)
 
-### ARIA-Labels
+### ARIA Labels
 
-**Pflicht für:**
-- Inputs ohne sichtbares Label
-- Icon-Only-Buttons
-- Dynamische Inhalte (Live-Regions)
+**Required for:**
+- Inputs without visible label
+- Icon-only buttons
+- Dynamic content (live regions)
 
 ```html
-<!-- ✅ Richtig -->
+<!-- ✅ Correct -->
 <textarea id="input" aria-label="Input text"></textarea>
 <button aria-label="Copy to clipboard">
   <i class="bi bi-clipboard"></i>
 </button>
 
-<!-- ❌ Falsch -->
-<textarea id="input"></textarea>  <!-- Kein Label -->
-<button><i class="bi bi-clipboard"></i></button>  <!-- Icon ohne Label -->
+<!-- ❌ Wrong -->
+<textarea id="input"></textarea>  <!-- No label -->
+<button><i class="bi bi-clipboard"></i></button>  <!-- Icon without label -->
 ```
 
 ---
 
-### Keyboard-Navigation
+### Keyboard Navigation
 
-**Pflicht:**
-- Alle interaktiven Elemente via Tab erreichbar
-- Enter/Space für Buttons
-- Escape für Modals/Dialogs (falls vorhanden)
+**Required:**
+- All interactive elements reachable via Tab
+- Enter/Space for buttons
+- Escape for modals/dialogs (if present)
 
-**Tab-Order:**
+**Tab Order:**
 1. Input
 2. Options/Checkboxes
-3. Output (readonly, aber fokussierbar)
-4. Action-Buttons (Copy, Download, Clear)
+3. Output (readonly, but focusable)
+4. Action buttons (Copy, Download, Clear)
 
 ```javascript
-// Optionale Keyboard-Shortcuts
+// Optional keyboard shortcuts
 document.addEventListener('keydown', (e) => {
   // Ctrl+Enter: Submit/Process
   if (e.ctrlKey && e.key === 'Enter') {
     handleInput();
   }
   
-  // Ctrl+C: Copy Output (wenn Output fokussiert)
+  // Ctrl+C: Copy output (when output focused)
   if (e.ctrlKey && e.key === 'c' && document.activeElement.id === 'output') {
     copyOutput();
   }
@@ -495,15 +495,15 @@ document.addEventListener('keydown', (e) => {
 
 ---
 
-### Semantisches HTML
+### Semantic HTML
 
-**Pflicht:**
-- `<label for="...">` für alle Inputs
-- `<button>` statt `<div onclick="...">`
-- `role="alert"` für Error-Messages
+**Required:**
+- `<label for="...">` for all inputs
+- `<button>` instead of `<div onclick="...">`
+- `role="alert"` for error messages
 
 ```html
-<!-- ✅ Richtig -->
+<!-- ✅ Correct -->
 <label for="input" class="form-label">Input</label>
 <textarea id="input"></textarea>
 
@@ -511,25 +511,25 @@ document.addEventListener('keydown', (e) => {
 
 <div role="alert" class="alert alert-danger">Error message</div>
 
-<!-- ❌ Falsch -->
-<div>Input</div>  <!-- Kein <label> -->
+<!-- ❌ Wrong -->
+<div>Input</div>  <!-- No <label> -->
 <textarea></textarea>
 
-<div onclick="copy()">Copy</div>  <!-- Kein <button> -->
+<div onclick="copy()">Copy</div>  <!-- No <button> -->
 
-<div class="alert alert-danger">Error</div>  <!-- Kein role="alert" -->
+<div class="alert alert-danger">Error</div>  <!-- No role="alert" -->
 ```
 
 ---
 
 ## Error Handling Patterns
 
-### Standardisierte Fehlerbehandlung
+### Standardized Error Handling
 
 **Pattern:**
-1. **Validation-Fehler** → User-freundliche Message
-2. **Processing-Fehler** → Generische Message + Console-Log
-3. **System-Fehler** → Fallback-Message
+1. **Validation errors** → User-friendly message
+2. **Processing errors** → Generic message + console log
+3. **System errors** → Fallback message
 
 ```javascript
 function handleInput() {
@@ -546,7 +546,7 @@ function handleInput() {
     hideError();
 
   } catch (error) {
-    // 3. System-Error
+    // 3. System error
     console.error('Processing error:', error);
     showError(t('tools.myTool.errors.processingFailed'));
   }
@@ -555,29 +555,29 @@ function handleInput() {
 
 ---
 
-### Error-Message-Kategorien
+### Error Message Categories
 
-| Kategorie | Beispiel-Key | Wann verwenden |
-|-----------|--------------|----------------|
-| **Validation** | `errors.invalidInput` | Format-Fehler, fehlende Daten |
-| **Size-Limit** | `errors.inputTooLarge` | Performance-Guards |
-| **Processing** | `errors.processingFailed` | Unerwartete Exceptions |
-| **Action-Failed** | `errors.copyFailed` | Clipboard/Download fehlgeschlagen |
-| **Empty-State** | `errors.nothingToCopy` | User-Aktion ohne Daten |
+| Category | Example Key | When to Use |
+|----------|-------------|-------------|
+| **Validation** | `errors.invalidInput` | Format errors, missing data |
+| **Size Limit** | `errors.inputTooLarge` | Performance guards |
+| **Processing** | `errors.processingFailed` | Unexpected exceptions |
+| **Action Failed** | `errors.copyFailed` | Clipboard/download failed |
+| **Empty State** | `errors.nothingToCopy` | User action without data |
 
 ---
 
 ## Performance Best Practices
 
-### Input-Size-Guards
+### Input Size Guards
 
-**IMMER vor CPU-intensiven Operationen:**
+**ALWAYS before CPU-intensive operations:**
 
 ```javascript
 function handleInput() {
   const input = document.getElementById('input').value;
 
-  // Size-Check
+  // Size check
   if (window.PerformanceGuards) {
     const sizeCheck = window.PerformanceGuards.checkInputSize(input, 10000000);
     if (!sizeCheck.safe) {
@@ -588,13 +588,13 @@ function handleInput() {
     }
   }
 
-  // Weiter mit Processing...
+  // Continue with processing...
 }
 ```
 
 ---
 
-### Debouncing für Live-Mode
+### Debouncing for Live Mode
 
 **Pattern:**
 
@@ -605,7 +605,7 @@ function handleInput() {
   clearTimeout(debounceTimer);
   debounceTimer = setTimeout(() => {
     processInput();
-  }, 300);  // 300ms Standard-Delay
+  }, 300);  // 300ms standard delay
 }
 ```
 
@@ -613,24 +613,24 @@ function handleInput() {
 
 ## Security Best Practices
 
-### XSS-Prevention
+### XSS Prevention
 
-**Regel:** `textContent` für User-Input, `innerHTML` nur für vertrauenswürdige Daten
+**Rule:** `textContent` for user input, `innerHTML` only for trusted data
 
 ```javascript
-// ✅ Richtig
+// ✅ Correct
 element.textContent = userInput;
 element.innerText = userInput;
 
-// ❌ NIEMALS
-element.innerHTML = userInput;  // XSS-Risiko!
+// ❌ NEVER
+element.innerHTML = userInput;  // XSS risk!
 ```
 
 ---
 
-### Input-Sanitization
+### Input Sanitization
 
-**IMMER Null-Bytes entfernen:**
+**ALWAYS remove null bytes:**
 
 ```javascript
 function sanitizeInput(input) {
@@ -640,7 +640,7 @@ function sanitizeInput(input) {
 
 ---
 
-**Weitere Infos:**
-- [TEMPLATES.md](TEMPLATES.md) – Code-Templates
-- [SECURITY.md](SECURITY.md) – Security-Details
-- [FRONTEND.md](FRONTEND.md) – JavaScript-Utilities
+**More Information:**
+- [TEMPLATES.md](TEMPLATES.md) – Code templates
+- [SECURITY.md](SECURITY.md) – Security details
+- [FRONTEND.md](FRONTEND.md) – JavaScript utilities

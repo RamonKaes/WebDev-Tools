@@ -7,66 +7,66 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
 ## [2.1.2] – 2026-04-17
 
 ### 🖼️ Assets
-- **OG Images** – Vereinheitlichung auf ein einzelnes Bild:
-  - Alle Seiten nutzen jetzt `assets/img/webdev-tools.png` (41 KB)
-  - Entfernt: `assets/img/og/` Verzeichnis (~140 KB, 24+ SVG-Dateien)
-  - Entfernt: `config/generate-og-images.php` und `config/validate-og-images.php`
-  - Aktualisiert: 15 PHP-Dateien (index.php, about.php für alle 6 Sprachen, partials, config)
-  - Aktualisiert: `build.sh` (OG-Kopier-Sektion entfernt)
-  - Betrifft: Homepage, About-Seiten, alle ~120 Tool-Seiten, Fehlerseiten
+- **OG Images** – Standardized to single image:
+  - All pages now use `assets/img/webdev-tools.png` (41 KB)
+  - Removed: `assets/img/og/` directory (~140 KB, 24+ SVG files)
+  - Removed: `config/generate-og-images.php` and `config/validate-og-images.php`
+  - Updated: 15 PHP files (index.php, about.php for all 6 languages, partials, config)
+  - Updated: `build.sh` (removed OG copy section)
+  - Affects: Homepage, About pages, all ~120 tool pages, error pages
 
 ### 🐛 Bugfixes
-- **Homepage Tool Cards** – Konsistenz-Probleme behoben:
-  - Fehlende `$toolsConfig`-Variable in lokalisierten index.php hinzugefügt (DE/ES/PT/FR/IT)
-  - Doppelte Variablendefinitionen in de/index.php entfernt
-  - 19 falsche `</h3>` Tags durch `</div>` ersetzt
-  - Card-Body-Einrückung vereinheitlicht (16 Leerzeichen in allen Sprachen)
-  - Card-Einrückung vereinheitlicht (14 Leerzeichen in allen Sprachen)
-  - Icon- und Content-Einrückung korrigiert (20 Leerzeichen)
-  - 120 fehlende `title`-Attribute hinzugefügt (20 Tools × 6 Sprachen)
-  - Ergebnis: Identische HTML-Struktur über alle 6 Sprachen
+- **Homepage Tool Cards** – Fixed consistency issues:
+  - Added missing `$toolsConfig` variable in localized index.php (DE/ES/PT/FR/IT)
+  - Removed duplicate variable definitions in de/index.php
+  - Replaced 19 incorrect `</h3>` tags with `</div>`
+  - Standardized card-body indentation (16 spaces across all languages)
+  - Standardized card indentation (14 spaces across all languages)
+  - Corrected icon and content indentation (20 spaces)
+  - Added 120 missing `title` attributes (20 tools × 6 languages)
+  - Result: Identical HTML structure across all 6 languages
 
 ---
 
 ## [2.1.1] – 2026-04-17
 
 ### 🔍 SEO
-- **Page Titles** – 26 problematische Seitentitel optimiert (55-65 Zeichen, keyword-optimiert):
-  - 24 PHP-Seiten: index, about, privacy, imprint (alle 6 Sprachen)
-  - 6 i18n JSON-Einträge: aspectRatioCalculator meta_title
+- **Page Titles** – Optimized 26 problematic page titles (55-65 characters, keyword-optimized):
+  - 24 PHP pages: index, about, privacy, imprint (all 6 languages)
+  - 6 i18n JSON entries: aspectRatioCalculator meta_title
   - Template: "[Tool] – [Function] [Benefits] [Keywords]"
-- **Internal Link Texts** – Interne Linktexte verbessert:
-  - linkTitle.card von <60 auf 60-80 Zeichen erweitert (EN: 95%, DE: 80%)
-  - Keywords ergänzt: Format-Namen (HTML, JSON), Features (drag & drop), Benefits (secure, online)
-  - Navigation: title-Attribute für Legal-Links (About, Imprint, Privacy) in allen 6 Sprachen
-- **Heading Structure** – Überschriften-Hierarchie korrigiert:
-  - Hierarchie-Lücken: 6 → 0 (100% behoben)
-  - Leere Headings: 120 → 0 (100% behoben)
-  - Template: `<h6>` → `<h3>` für "On this page" Sidebar
-  - Homepage: `<h3>` Tool-Cards → `<div>` (keine semantischen Überschriften für Navigation)
-  - Tools: `<h3>` alert-headings → `<div>` in customNoticeContent (~60 Dateien)
-  - Korrekte Hierarchie: H1 (Tool-Titel) → H2 (Sections) → H3 (Unterabschnitte)
-  - Dual-Title-System: `h1_title` (SEO-optimiert, keyword-reich) + `toc_title` (navigation-freundlich, kurz)
-  - tool-base.php: `h1_title` für `<h1>` Content, `toc_title` für `data-toc-title` Attribut
-  - index.php (6 Sprachen): `h1_title` in link title-Attributen für bessere Tooltips
-- **Meta-Descriptions** – Meta-Descriptions für statische Seiten hinzugefügt:
-  - 24 neue Meta-Descriptions: 4 statische Seiten (home, about, privacy, imprint) × 6 Sprachen
-  - Kritische Issues: 24 → 0 (100% behoben)
-  - Optimale Descriptions (140-160 Zeichen): 75 → 83
-  - Template: Call-to-Action + Keywords + klarer Mehrwert
-- **Strong/Bold Tags** – Audit durchgeführt, Optimierung nicht notwendig:
-  - 10 zu lange Tags (>70 Zeichen) gefunden, alle in privacy.php
-  - Privacy-Seiten haben `noindex, follow` → keine SEO-Relevanz
-  - Hervorhebung nur für User-Experience, nicht für Suchmaschinen
-  - Entscheidung: Keine Änderung notwendig
+- **Internal Link Texts** – Improved internal link texts:
+  - linkTitle.card expanded from <60 to 60-80 characters (EN: 95%, DE: 80%)
+  - Added keywords: Format names (HTML, JSON), features (drag & drop), benefits (secure, online)
+  - Navigation: title attributes for legal links (About, Imprint, Privacy) in all 6 languages
+- **Heading Structure** – Fixed heading hierarchy:
+  - Hierarchy gaps: 6 → 0 (100% fixed)
+  - Empty headings: 120 → 0 (100% fixed)
+  - Template: `<h6>` → `<h3>` for "On this page" sidebar
+  - Homepage: `<h3>` tool-cards → `<div>` (no semantic headings for navigation)
+  - Tools: `<h3>` alert-headings → `<div>` in customNoticeContent (~60 files)
+  - Correct hierarchy: H1 (tool title) → H2 (sections) → H3 (subsections)
+  - Dual-title system: `h1_title` (SEO-optimized, keyword-rich) + `toc_title` (navigation-friendly, short)
+  - tool-base.php: `h1_title` for `<h1>` content, `toc_title` for `data-toc-title` attribute
+  - index.php (6 languages): `h1_title` in link title attributes for better tooltips
+- **Meta-Descriptions** – Added meta-descriptions for static pages:
+  - 24 new meta-descriptions: 4 static pages (home, about, privacy, imprint) × 6 languages
+  - Critical issues: 24 → 0 (100% fixed)
+  - Optimal descriptions (140-160 characters): 75 → 83
+  - Template: Call-to-action + keywords + clear value proposition
+- **Strong/Bold Tags** – Audit completed, optimization not necessary:
+  - Found 10 overly long tags (>70 characters), all in privacy.php
+  - Privacy pages have `noindex, follow` → no SEO relevance
+  - Emphasis for user experience only, not for search engines
+  - Decision: No changes needed
 
 ### 🎨 UI/UX
-- **Tabler-Style Alert Colors** – Alert-Farben an Tabler-Design angepasst:
-  - Light Mode: Hellere pastellige Hintergründe (#fbe7e7, #fff8e1, #e6f4ea, #e7f1ff)
-  - Light Mode: Weichere Border-Farben (25% Transparenz)
-  - Dark Mode: Halbtransparente Hintergründe (15% Opacity) + sichtbare Borders (40% Opacity)
-  - Dark Mode: Hellere Textfarben für bessere Lesbarkeit (#f8b4b4, #ffd966, #8fd19e, #74c0fc)
-  - Keine linken Borders (subtileres Design)
+- **Tabler-Style Alert Colors** – Adapted alert colors to Tabler design:
+  - Light mode: Brighter pastel backgrounds (#fbe7e7, #fff8e1, #e6f4ea, #e7f1ff)
+  - Light mode: Softer border colors (25% transparency)
+  - Dark mode: Semi-transparent backgrounds (15% opacity) + visible borders (40% opacity)
+  - Dark mode: Brighter text colors for better readability (#f8b4b4, #ffd966, #8fd19e, #74c0fc)
+  - No left borders (subtler design)
 
 
 
@@ -75,195 +75,195 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
 ## [2.1.0] – 2026-04-17
 
 ### ✨ Features
-- **SRI Generator** – Neues Tool (#20): Subresource Integrity Hashes für CDN-Ressourcen generieren; SHA-256, SHA-384, SHA-512; URL-Fetch, Datei-Upload oder Text-Eingabe; fertige `<script>`/`<link>`-Tags mit integrity-Attribut; Web Crypto API basiert
-- **UI-Redesign** – Kompaktere Heading-Hierarchie: Tool-Titel h3→h5, Section-Headings h5→h6, Grid-Gaps g-4→g-3
-- **Tabler Color Palette** – Bootstrap-Farben durch Tabler-inspirierte Palette ersetzt (#066fd1 Blue, #2fb344 Green, etc.)
+- **SRI Generator** – New tool (#20): Generate Subresource Integrity hashes for CDN resources; SHA-256, SHA-384, SHA-512; URL fetch, file upload or text input; ready-made `<script>`/`<link>` tags with integrity attribute; Web Crypto API based
+- **UI Redesign** – More compact heading hierarchy: Tool titles h3→h5, section headings h5→h6, grid gaps g-4→g-3
+- **Tabler Color Palette** – Replaced Bootstrap colors with Tabler-inspired palette (#066fd1 Blue, #2fb344 Green, etc.)
 
 ### 🔒 Security
-- **CSP** – `connect-src 'self' https:` ergänzt (für SRI URL-Fetch)
+- **CSP** – Added `connect-src 'self' https:` (for SRI URL fetch)
 
 ### 🐛 Bug Fixes
-- **TOC Generator** – Tool-Header-Überschrift erschien fälschlicherweise im Inhaltsverzeichnis
-- **Tool Cards** – Hover-Animation (translateY) entfernt für weniger Ablenkung
+- **TOC Generator** – Tool header heading incorrectly appeared in table of contents
+- **Tool Cards** – Removed hover animation (translateY) for less distraction
 
 ### 🧪 Tests
-- `sriGeneratorTool.test.js` – 31 Tests (Registration, UI-Rendering, Hash-Generierung, Algorithmus-Auswahl, Copy, Sample)
-- Gesamt: **841 Tests** (20 Suites)
+- `sriGeneratorTool.test.js` – 31 tests (Registration, UI rendering, hash generation, algorithm selection, copy, sample)
+- Total: **841 tests** (20 suites)
 
 ### 🏗️ Build
-- `sri-generator` in Build-Skript aufgenommen
-- sass von ^1.70.0 auf ^1.99.0 aktualisiert
-- Sitemaps mit aktualisierten Daten regeneriert
+- `sri-generator` included in build script
+- sass updated from ^1.70.0 to ^1.99.0
+- Sitemaps regenerated with updated data
 
 ---
 
 ## [2.0.2] – 2026-04-02
 
 ### 🔒 Security
-- **Code Formatter** – DOM-XSS-Lücke in `codeFormatterTool.js` behoben: `error.message` der Terser-Bibliothek wurde ungefiltert via `innerHTML` gerendert; da Terser Parse-Errors Teile des User-Inputs in die Fehlermeldung einbettet, konnte ein Angreifer HTML/JS durch einen präparierten Code-Input ausführen; Fix: Icon als statisches `innerHTML`, Fehlermeldung via `createTextNode()` als separaten Textknoten angehängt
+- **Code Formatter** – Fixed DOM XSS vulnerability in `codeFormatterTool.js`: `error.message` from Terser library was rendered unfiltered via `innerHTML`; since Terser embeds parts of user input in parse error messages, an attacker could execute HTML/JS through crafted code input; Fix: Icon as static `innerHTML`, error message appended as separate text node via `createTextNode()`
 
 ---
 
 ## [2.0.1] – 2026-03-24
 
 ### 🐛 Bug Fixes
-- **Sidebar Navigation** – Bootstrap-Ladereihenfolge korrigiert: `sidebar-navigation.js` prüfte `typeof bootstrap` beim Laden, fand aber noch kein Bootstrap-Objekt, da `footer.php` (mit Bootstrap) erst danach eingebunden wurde; Reihenfolge in `partials/tool-base.php` und allen 6 Homepage-Varianten (en, de, es, fr, it, pt) getauscht
-- **Sidebar Navigation** – Race Condition zwischen `sidebar-persistence.js` und `sidebar-navigation.js` behoben: `restoreStatesEarly()` öffnete per `requestAnimationFrame` gespeicherte Kategorien **nach** DOMContentLoaded und überschrieb damit den von `initSidebarNavigation()` korrekt gesetzten Zustand; rAF-Callback bricht jetzt ab wenn ein aktives Tool-Link vorhanden ist
+- **Sidebar Navigation** – Fixed Bootstrap loading order: `sidebar-navigation.js` checked `typeof bootstrap` on load but couldn't find Bootstrap object yet since `footer.php` (with Bootstrap) was included afterwards; swapped order in `partials/tool-base.php` and all 6 homepage variants (en, de, es, fr, it, pt)
+- **Sidebar Navigation** – Fixed race condition between `sidebar-persistence.js` and `sidebar-navigation.js`: `restoreStatesEarly()` opened saved categories via `requestAnimationFrame` **after** DOMContentLoaded and overwrote the correctly set state from `initSidebarNavigation()`; rAF callback now aborts if active tool link exists
 
 ### 🔒 Security / CSP
-- **clipboard-utils.js** – CSP-Verstoß (`style-src-elem`) behoben: `addToastStyles()` injizierte ein dynamisches `<style>`-Element per JavaScript, das von `style-src 'self'` blockiert wurde; Styles in `assets/css/clipboard-toast.css` ausgelagert und via `<link>` in `partials/head.php` eingebunden
+- **clipboard-utils.js** – Fixed CSP violation (`style-src-elem`): `addToastStyles()` injected a dynamic `<style>` element via JavaScript that was blocked by `style-src 'self'`; styles extracted to `assets/css/clipboard-toast.css` and included via `<link>` in `partials/head.php`
 
 ### ✨ Features
-- **Hash Generator** – „Load Example"-Button in Text-Modus (`Hello, World!`) und HMAC-Modus (`The quick brown fox…` / Secret `secret-key`) hinzugefügt; befüllt Eingabefelder und triggert sofort die Berechnung; i18n in allen 6 Sprachen ergänzt
-- **Regex Tester** – Beispiel-Dropdown mit 5 vordefinierten Patterns hinzugefügt (Email, URL, Datum YYYY-MM-DD, IPv4, Named Groups); befüllt Pattern, Flags und Teststring auf einmal und triggert den Test automatisch; i18n in allen 6 Sprachen ergänzt
+- **Hash Generator** – Added "Load Example" button in text mode (`Hello, World!`) and HMAC mode (`The quick brown fox…` / Secret `secret-key`); fills input fields and triggers calculation immediately; i18n added in all 6 languages
+- **Regex Tester** – Added example dropdown with 5 predefined patterns (Email, URL, Date YYYY-MM-DD, IPv4, Named Groups); fills pattern, flags and test string at once and triggers test automatically; i18n added in all 6 languages
 
 ---
 
 ## [2.0.0] – 2026-03-23
 
 ### 🐛 Bug Fixes
-- **UUID Generator** – `generateUUIDv1()` produzierte systematisch falsche UUIDs: JavaScript-Bitwise-Operatoren (`>>`, `&`) truncaten auf 32-bit-Integer, sodass der 60-bit-Timestamp (~1.4×10¹⁷) überlief — `timeMid` war immer `0000`, `timeHiVersion` immer `1000` unabhängig von der Systemzeit; auf `BigInt`-Arithmetik umgestellt, RFC 4122 korrekte v1-UUIDs werden jetzt generiert
-- **UUID Generator** – `<h3>...</h2>` HTML-Tag-Mismatch in `$customNoticeContent` aller 5 Nicht-EN-Sprachversionen (de, es, fr, it, pt) behoben
-- **UUID Generator** – `$featuresSectionTitle` und `$resourcesSectionTitle` fehlten in `pt/uuid-generator/index.php`
-- **UUID Generator** – Download-Button nutzte direkte DOM-Manipulation (`Blob`, `URL.createObjectURL`, `<a>.click()`) statt `window.DownloadUtils.downloadText()` — Projektkonvention wiederhergestellt
-- **UUID Generator** – Copy-Icon-Reset-Bug: nach erfolgreichem Kopieren wurde das Icon auf `'bi bi-clipboard'` zurückgesetzt, verlor dabei aber die `me-2`-Klasse des Bulk-Copy-Buttons; Icon-Klassen werden jetzt vollständig erhalten und nur `bi-clipboard` durch `bi-check` ersetzt
+- **UUID Generator** – `generateUUIDv1()` systematically produced incorrect UUIDs: JavaScript bitwise operators (`>>`, `&`) truncate to 32-bit integers, causing the 60-bit timestamp (~1.4×10¹⁷) to overflow — `timeMid` was always `0000`, `timeHiVersion` always `1000` regardless of system time; switched to `BigInt` arithmetic, now generates RFC 4122 compliant v1 UUIDs
+- **UUID Generator** – Fixed `<h3>...</h2>` HTML tag mismatch in `$customNoticeContent` of all 5 non-EN language versions (de, es, fr, it, pt)
+- **UUID Generator** – `$featuresSectionTitle` and `$resourcesSectionTitle` were missing in `pt/uuid-generator/index.php`
+- **UUID Generator** – Download button used direct DOM manipulation (`Blob`, `URL.createObjectURL`, `<a>.click()`) instead of `window.DownloadUtils.downloadText()` — restored project convention
+- **UUID Generator** – Copy icon reset bug: after successful copy, icon was reset to `'bi bi-clipboard'`, losing the `me-2` class of the bulk copy button; icon classes are now fully preserved and only `bi-clipboard` is replaced with `bi-check`
 
 ### 🧪 Tests
-- `uuidGeneratorTool.test.js` – 60 Tests (Registration, UI-Rendering, UUID-v4/v1/v7/NIL-Generierung, Versionsformat-Validierung, Einzelformat-Optionen, Version-Help-Text, Bulk-Generierung, Bulk-Ausgabeformate, Copy-Buttons, Download-Button, Auto-Generate-Checkbox, Crypto-Error-Handling)
-- Gesamt: **810 Tests** (19 Suites)
+- `uuidGeneratorTool.test.js` – 60 tests (Registration, UI rendering, UUID v4/v1/v7/NIL generation, version format validation, single format options, version help text, bulk generation, bulk output formats, copy buttons, download button, auto-generate checkbox, crypto error handling)
+- Total: **810 tests** (19 suites)
 
 ### 🐛 Bug Fixes
-- **URL Encoder/Decoder** – `uri_info`-Übersetzung in `fr.json` war `"Informations URI"` (unvollständig/fehlerhaft) statt der korrekten französischen Beschreibung — durch vollständige Übersetzung ersetzt
-- **URL Encoder/Decoder** – Feature-Claim „Auto-detection: Automatically detect encoding requirements" in allen 6 PHP-Sprachversionen entfernt; das Feature ist im JS nicht implementiert — ersetzt durch „Live Mode: Real-time encoding/decoding as you type" (tatsächlich vorhanden)
+- **URL Encoder/Decoder** – `uri_info` translation in `fr.json` was `"Informations URI"` (incomplete/incorrect) instead of the correct French description — replaced with complete translation
+- **URL Encoder/Decoder** – Removed feature claim "Auto-detection: Automatically detect encoding requirements" in all 6 PHP language versions; feature not implemented in JS — replaced with "Live Mode: Real-time encoding/decoding as you type" (actually present)
 
 ### 🧪 Tests
-- `urlEncoderDecoderTool.test.js` – 75 Tests (Registration, UI-Rendering, Mode-Switching, Encode/Decode Component+URI, Line-by-Line, Error-Handling, Clear, Load-Sample, Live-Mode, Copy, Keyboard-Shortcuts, URL-Parser, ModeInfo-Banner)
-- Gesamt: **750 Tests** (18 Suites)
+- `urlEncoderDecoderTool.test.js` – 75 tests (Registration, UI rendering, mode switching, encode/decode component+URI, line-by-line, error handling, clear, load sample, live mode, copy, keyboard shortcuts, URL parser, mode info banner)
+- Total: **750 tests** (18 suites)
 
 ### 🐛 Bug Fixes
-- **String Escaper** – `loadSampleBtn`-Handler rief `handleProcess()` auf (undefiniert) statt `process()` — Sample-Daten wurden geladen, aber nie automatisch verarbeitet wenn Auto-Process aktiviert war
-- **String Escaper** – Tote äußere `t()`-Hilfsfunktion entfernt (wurde durch identische lokale `t()` in `open()` überschattet und nie aufgerufen)
-- **String Escaper** – Unbenutzte Variable `mainRow` in `open()` entfernt
+- **String Escaper** – `loadSampleBtn` handler called `handleProcess()` (undefined) instead of `process()` — sample data was loaded but never automatically processed when auto-process was enabled
+- **String Escaper** – Removed dead outer `t()` helper function (was shadowed by identical local `t()` in `open()` and never called)
+- **String Escaper** – Removed unused variable `mainRow` in `open()`
 
 ### 🧪 Tests
-- `stringEscaperTool.test.js` – 83 Tests (Registration, UI-Rendering, HTML/XML/JavaScript/JSON/SQL/CSV Escape+Unescape, leere Eingabe, Output-Info, Clear, Auto-Process, Load-Sample, Copy, Layout-Toggle)
-- Gesamt: **675 Tests** (17 Suites)
+- `stringEscaperTool.test.js` – 83 tests (Registration, UI rendering, HTML/XML/JavaScript/JSON/SQL/CSV escape+unescape, empty input, output info, clear, auto-process, load sample, copy, layout toggle)
+- Total: **675 tests** (17 suites)
 
 ### 🔒 Security
-- **Regex Tester** – XSS-Lücke in `highlightMatches()` behoben: `before`/`after`-Textsegmente wurden nie mit `escapeHtml()` escaped, bevor sie per `innerHTML` gerendert wurden — `<script>`-Tags im Test-String konnten ausgeführt werden; Highlighting-Logik auf linearen Aufbau (aufsteigend sortiert) umgestellt, alle Segmente werden jetzt korrekt escaped
+- **Regex Tester** – Fixed XSS vulnerability in `highlightMatches()`: `before`/`after` text segments were never escaped with `escapeHtml()` before being rendered via `innerHTML` — `<script>` tags in test string could be executed; highlighting logic switched to linear construction (ascending sorted), all segments now properly escaped
 
 ### 🐛 Bug Fixes
-- **Regex Tester** – `handleCopyMatches()` hat `matchesText` aufgebaut, aber `copyToClipboard()` nie aufgerufen — Clipboard blieb leer, Toast erschien trotzdem; `copyToClipboard(matchesText)` ergänzt
-- **Regex Tester** – `handleClear()` zeigte `test_button`-Übersetzungsschlüssel als Platzhaltertext statt des korrekten `placeholder_text`-Hinweises; Placeholder-HTML jetzt identisch mit `renderUI()`
-- **Regex Tester** – `<h3>...</h2>` HTML-Tag-Mismatch in `$customNoticeContent` aller 5 Nicht-EN-Sprachversionen (de, es, fr, it, pt) behoben
-- **Regex Tester** – Feature-Liste: „Common regex patterns library" (nicht implementiert) in allen 6 Sprachversionen entfernt und durch „Copy and download match results" ersetzt
-- **Regex Tester** – Flag-Auflistung in allen 6 Sprachversionen von `(g, i, m, s, u)` auf `(g, i, m, s, u, y)` korrigiert (`y`-Flag ist implementiert, fehlte aber in der Beschreibung)
-- **Regex Tester** – Hardcodierte englische Strings `"Highlighted Matches"` und `"Match N"` durch i18n-Schlüssel ersetzt (`highlighted_matches_title`, `match_label`); 2 neue Keys in alle 6 Sprach-JSONs ergänzt
-- **Regex Tester** – Unbenutzte Variable `highlightedText` in `renderResults()` entfernt
+- **Regex Tester** – `handleCopyMatches()` built `matchesText` but never called `copyToClipboard()` — clipboard stayed empty, toast appeared anyway; added `copyToClipboard(matchesText)`
+- **Regex Tester** – `handleClear()` showed `test_button` translation key as placeholder text instead of the correct `placeholder_text` hint; placeholder HTML now identical to `renderUI()`
+- **Regex Tester** – Fixed `<h3>...</h2>` HTML tag mismatch in `$customNoticeContent` of all 5 non-EN language versions (de, es, fr, it, pt)
+- **Regex Tester** – Feature list: Removed "Common regex patterns library" (not implemented) in all 6 language versions and replaced with "Copy and download match results"
+- **Regex Tester** – Flag listing in all 6 language versions corrected from `(g, i, m, s, u)` to `(g, i, m, s, u, y)` (`y` flag is implemented but was missing in description)
+- **Regex Tester** – Replaced hardcoded English strings `"Highlighted Matches"` and `"Match N"` with i18n keys (`highlighted_matches_title`, `match_label`); added 2 new keys to all 6 language JSONs
+- **Regex Tester** – Removed unused variable `highlightedText` in `renderResults()`
 
 ### 🧪 Tests
-- `regexTesterTool.test.js` – 51 Tests (Registration, UI-Rendering, Flag-Sync, Erfolgreiche Matches, Kein Match, Ungültiges Pattern, XSS-Sicherheit, Clear, Copy-Matches, Download, Infinite-Loop-Prevention, Keyboard-Shortcuts)
-- Gesamt: **592 Tests** (16 Suites)
+- `regexTesterTool.test.js` – 51 tests (Registration, UI rendering, flag sync, successful matches, no match, invalid pattern, XSS security, clear, copy matches, download, infinite loop prevention, keyboard shortcuts)
+- Total: **592 tests** (16 suites)
 
 ### 🐛 Bug Fixes
-- **QR Code Generator** – `<h3>...</h2>` Tag-Mismatch in `$customNoticeContent` aller 5 Nicht-EN-Sprachversionen (de, es, fr, it, pt) behoben
-- **QR Code Generator** – Größen-Labels in allen 6 i18n-JSONs korrigiert: Dropdown-Optionen zeigten falsche Pixel (200×200/300×300/400×400/512×512 statt tatsächlich 128×128/256×256/512×512/1024×1024)
-- **QR Code Generator** – Library-Ressourcenlink in allen 6 PHP-Dateien korrigiert: verlinkten auf `davidshimjs/qrcodejs` (nicht genutzte Library), jetzt korrekt `kazuhikoarase/qrcode-generator`
-- **QR Code Generator** – Hardcodierte englische Fehlermeldungen in `downloadQRCode()` (`'No QR code to download'`, `'Error downloading QR code'`) durch i18n-Schlüssel ersetzt; 2 neue Keys (`noQRCodeToDownload`, `errorDownload`) in alle 6 Sprach-JSONs ergänzt
-- **QR Code Generator** – `console.log` → `console.debug` in `generateQRCode()`
-- **QR Code Generator** – Irreführender Feature-Claim „Error correction levels (L, M, Q, H)" in allen 6 PHP-Dateien korrigiert: Tool hardcoded Stufe H ohne UI-Selektor; jetzt als „Maximum error correction (level H)" deklariert
+- **QR Code Generator** – Fixed `<h3>...</h2>` tag mismatch in `$customNoticeContent` of all 5 non-EN language versions (de, es, fr, it, pt)
+- **QR Code Generator** – Corrected size labels in all 6 i18n JSONs: dropdown options showed wrong pixels (200×200/300×300/400×400/512×512 instead of actual 128×128/256×256/512×512/1024×1024)
+- **QR Code Generator** – Fixed library resource link in all 6 PHP files: linked to `davidshimjs/qrcodejs` (unused library), now correctly `kazuhikoarase/qrcode-generator`
+- **QR Code Generator** – Replaced hardcoded English error messages in `downloadQRCode()` (`'No QR code to download'`, `'Error downloading QR code'`) with i18n keys; added 2 new keys (`noQRCodeToDownload`, `errorDownload`) to all 6 language JSONs
+- **QR Code Generator** – Changed `console.log` → `console.debug` in `generateQRCode()`
+- **QR Code Generator** – Corrected misleading feature claim "Error correction levels (L, M, Q, H)" in all 6 PHP files: tool hardcodes level H without UI selector; now declared as "Maximum error correction (level H)"
 
 ### 🧪 Tests
-- `qrCodeGeneratorTool.test.js` – 65 Tests (Registration, UI-Rendering, Mode-Switching, URL/Text/vCard/WiFi Content-Builder, WiFi-Escaping, QR-Generierung, Download-Button-States, clearAll)
-- Gesamt: **541 Tests** (15 Suites)
+- `qrCodeGeneratorTool.test.js` – 65 tests (Registration, UI rendering, mode switching, URL/text/vCard/WiFi content builder, WiFi escaping, QR generation, download button states, clearAll)
+- Total: **541 tests** (15 suites)
 
 ### 🐛 Bug Fixes
-- **Homepage (index.php)** – Falsche Tool-Keys `characterReference` / `emojiReference` in es/, fr/, it/, pt/ korrigiert (korrekt: `characterReferenceTool` / `emojiReferenceTool`); i18n-Daten für diese beiden Karten wurden nie geladen
-- **Homepage (index.php)** – Fehlende HTML-Minifizierung in allen 5 Sprachversionen (de/, es/, fr/, it/, pt/) nachgezogen: `ob_start()` am Anfang und `minify_html_output(ob_get_clean())` am Ende ergänzt
-- **Homepage (index.php)** – Deutsche Fallback-Texte (`'Daten-Konverter'`, `'PX ⇄ REM Konverter'`, `'Passwort Generator'`) in es/, fr/, it/, pt/ durch englische Fallbacks (`'Data Converter'`, `'PX ⇄ REM Converter'`, `'Password Generator'`) ersetzt
-- **Homepage pt/index.php** – Gebrochener Button-Text `Utilit\n\nários` (Zeilenumbruch mitten im Wort) zu `Utilitários` zusammengeführt
-- **Homepage (index.php)** – Veraltete deutsche HTML-Kommentare `<!-- Dienstprogramme Kategorie -->` in es/, fr/, it/, pt/ durch `<!-- Utilities -->` ersetzt
+- **Homepage (index.php)** – Corrected wrong tool keys `characterReference` / `emojiReference` in es/, fr/, it/, pt/ (correct: `characterReferenceTool` / `emojiReferenceTool`); i18n data for these two cards was never loaded
+- **Homepage (index.php)** – Applied missing HTML minification in all 5 language versions (de/, es/, fr/, it/, pt/): added `ob_start()` at beginning and `minify_html_output(ob_get_clean())` at end
+- **Homepage (index.php)** – Replaced German fallback texts (`'Daten-Konverter'`, `'PX ⇄ REM Konverter'`, `'Passwort Generator'`) in es/, fr/, it/, pt/ with English fallbacks (`'Data Converter'`, `'PX ⇄ REM Converter'`, `'Password Generator'`)
+- **Homepage pt/index.php** – Fixed broken button text `Utilit\n\nários` (line break in middle of word) to `Utilitários`
+- **Homepage (index.php)** – Replaced outdated German HTML comments `<!-- Dienstprogramme Kategorie -->` in es/, fr/, it/, pt/ with `<!-- Utilities -->`
 
-- **PX to REM Converter** – `<h3>...</h2>` Tag-Mismatch in allen 5 Nicht-EN-Sprachversionen (de, es, fr, it, pt) behoben
-- **Punycode Converter** – `<h3>...</h4>` Tag-Mismatch in allen 5 Nicht-EN-Sprachversionen (de, es, fr, it, pt) behoben; `downloadBtn` nutzt jetzt `window.DownloadUtils.downloadText()` statt manuellem Blob/URL-Pattern; Batch-Verarbeitung (mehrzeilige Eingabe) implementiert – jede Zeile wird separat konvertiert (zuvor wurde der gesamte Text als eine Domain behandelt)
+- **PX to REM Converter** – Fixed `<h3>...</h2>` tag mismatch in all 5 non-EN language versions (de, es, fr, it, pt)
+- **Punycode Converter** – Fixed `<h3>...</h4>` tag mismatch in all 5 non-EN language versions (de, es, fr, it, pt); `downloadBtn` now uses `window.DownloadUtils.downloadText()` instead of manual blob/URL pattern; implemented batch processing (multi-line input) – each line is converted separately (previously entire text was treated as one domain)
 
 ### 🧪 Tests
-- `pxToRemConverterTool.test.js` – 66 Tests (Registration, UI-Rendering, px→rem/em/percent/tailwind, Reverse-Konvertierung, Preset-Buttons, Clear-Buttons, Copy-Buttons, Conversion Table, Reverse-Labels)
-- `punycodeConverterTool.test.js` – 36 Tests (Registration, UI-Rendering, Encoding Unicode→Punycode, Decoding Punycode→Unicode, Auto-Erkennung, Example-Button, Clear, Manual-Convert, Copy, Download, Stats)
-- Gesamt: **476 Tests** (14 Suites)
+- `pxToRemConverterTool.test.js` – 66 tests (Registration, UI rendering, px→rem/em/percent/tailwind, reverse conversion, preset buttons, clear buttons, copy buttons, conversion table, reverse labels)
+- `punycodeConverterTool.test.js` – 36 tests (Registration, UI rendering, encoding Unicode→Punycode, decoding Punycode→Unicode, auto-detection, example button, clear, manual convert, copy, download, stats)
+- Total: **476 tests** (14 suites)
 
 ### 🔒 Security
-- `tool-loader.js` / `tool-registry.js`: `toolId` via `escapeHtml()` vor `innerHTML` gesichert (XSS)
-- `i18n.js`: `getCookie()` nutzt Regex-Escaping (ReDoS-Prävention)
+- `tool-loader.js` / `tool-registry.js`: `toolId` secured via `escapeHtml()` before `innerHTML` (XSS)
+- `i18n.js`: `getCookie()` uses regex escaping (ReDoS prevention)
 
 ### 🐛 Bug Fixes
-- **JSON Formatter & Validator** – Leere `getIndent()`-Deklaration (Zeile 421) entfernt (duplizierte Funktion ohne Body); `var` → `const`/`let` für alle Variablen in `initializeTool()` (9 Variablen); `downloadBtn` nutzt jetzt `window.DownloadUtils.downloadText()` statt manuellem Blob/URL-Pattern
-- **HTML Entity Encoder/Decoder** – `performConversion` → `convert` (ReferenceError in `loadSampleBtn`-Handler); `encodeToAllNamedEntities` Regex `/./g` → `/[\s\S]/g` (Newlines wurden übersprungen); Download nutzt jetzt `window.DownloadUtils.downloadText()` statt manuellem Blob/URL
-- **Hash Generator** – `</h3>` statt `</h2>` in `$customNoticeContent` aller 5 Sprachversionen (de, es, fr, it, pt); tote Variablen (`chunkSize`, `chunks`, `offset`) in `hashFile()` entfernt; Event-Listener-Leak in `generateSRI()` behoben (Guard-Flag verhindert doppelte Registrierung)
-- **Emoji Reference** – Suche ignorierte aktive Kategorie (`renderEmojis()` ohne `currentCategory`); `setupCopyButtons()` häufte Event-Listener bei jeder Paginierung an (jetzt einmalig in `setupEventListeners`)
-- **Data Converter** – `handleConversion` → `performConversion` (ReferenceError); `indentationWrapper` nach Timestamp → XML/CSV wieder eingeblendet; tote Samples ersetzt; unbenutzte Variablen entfernt
-- **Data Converter** – `timestampToDate` gibt ` UTC`-Suffix aus; Roundtrip Timestamp ↔ Datum ist damit timezone-unabhängig korrekt
-- **Code Formatter** – `handleFormat` → `formatCode` (ReferenceError); HTML-Beautifier Void/Self-closing-Handling; CSS-Minifier Doppelpunkt-Stripping entfernt; `execCommand` → `clipboard.writeText`; tote Samples ersetzt; duplizierte `t()` entfernt
-- **Aspect Ratio Calculator** – GCD rekursiv → iterativ; `simplifyRatio` Decimal-Scaling präzisiert; Preset-Labels i18n-isiert; `t()`-Duplikat entfernt
-- **Base64 Encoder/Decoder** – `=`-Padding für URL-safe in `decodeToFile()`; Regex `$`-Anker ergänzt; Memory Leak (unrevokte Object-URLs) behoben; `clearBtn` setzt Datei-State zurück
-- **Character Reference** – `t.xxx` → `t('xxx')` (10 Stellen); doppelter Event-Listener entfernt; `buildRowHTML` / `appendLoadMoreRow` extrahiert; 16 fehlende i18n-Keys ergänzt
-- **assets/js (20 Fixes)** – Race Condition in `i18n.js`; `throttle()` this-Kontext; Null-Checks in `color-modes.js`; Sidebar-Scroll für Desktop+Mobile; veraltete `performance.timing`-API ersetzt; u. a.
-- **Layout Toggle Button** – CSS-Transform-Konflikt behoben (`translate-middle` vs. `.btn-layout-toggle-stacked`)
+- **JSON Formatter & Validator** – Removed empty `getIndent()` declaration (line 421) (duplicate function without body); changed `var` → `const`/`let` for all variables in `initializeTool()` (9 variables); `downloadBtn` now uses `window.DownloadUtils.downloadText()` instead of manual blob/URL pattern
+- **HTML Entity Encoder/Decoder** – Fixed `performConversion` → `convert` (ReferenceError in `loadSampleBtn` handler); `encodeToAllNamedEntities` regex `/./g` → `/[\s\S]/g` (newlines were skipped); download now uses `window.DownloadUtils.downloadText()` instead of manual blob/URL
+- **Hash Generator** – Fixed `</h3>` instead of `</h2>` in `$customNoticeContent` of all 5 language versions (de, es, fr, it, pt); removed dead variables (`chunkSize`, `chunks`, `offset`) in `hashFile()`; fixed event listener leak in `generateSRI()` (guard flag prevents double registration)
+- **Emoji Reference** – Search ignored active category (`renderEmojis()` without `currentCategory`); `setupCopyButtons()` accumulated event listeners on every pagination (now once in `setupEventListeners`)
+- **Data Converter** – Fixed `handleConversion` → `performConversion` (ReferenceError); `indentationWrapper` shown again after timestamp → XML/CSV; replaced dead samples; removed unused variables
+- **Data Converter** – `timestampToDate` outputs ` UTC` suffix; roundtrip timestamp ↔ date now timezone-independent and correct
+- **Code Formatter** – Fixed `handleFormat` → `formatCode` (ReferenceError); HTML beautifier void/self-closing handling; CSS minifier removed colon stripping; `execCommand` → `clipboard.writeText`; replaced dead samples; removed duplicate `t()`
+- **Aspect Ratio Calculator** – GCD recursive → iterative; `simplifyRatio` decimal scaling refined; preset labels i18n-ized; removed `t()` duplicate
+- **Base64 Encoder/Decoder** – `=` padding for URL-safe in `decodeToFile()`; added regex `$` anchor; fixed memory leak (unrevoked object URLs); `clearBtn` resets file state
+- **Character Reference** – Fixed `t.xxx` → `t('xxx')` (10 places); removed duplicate event listener; extracted `buildRowHTML` / `appendLoadMoreRow`; added 16 missing i18n keys
+- **assets/js (20 Fixes)** – Race condition in `i18n.js`; `throttle()` this context; null checks in `color-modes.js`; sidebar scroll for desktop+mobile; replaced deprecated `performance.timing` API; etc.
+- **Layout Toggle Button** – Fixed CSS transform conflict (`translate-middle` vs. `.btn-layout-toggle-stacked`)
 
 ### 🌐 i18n
-- **JSON Formatter & Validator** – `en.json` `card_description`: ". in" → "in" (fehlerhafter Satzumbruch); `de.json` `card_description`: abgeschnittenes "Features:." → vollständiger Satz
-- **HTML Entity Encoder/Decoder** – `featureList` und `keywords` in SEO-Sektion aller 6 Sprach-JSONs befüllt (waren leer)
-- **Emoji Reference** – 7 hardcodierte englische UI-Strings in alle 6 Sprach-JSONs extrahiert (`loadingEmojis`, `loadError`, `noResults`, `loadMore`, `loading`, `copyEmoji`, `copyCode`); Tippfehler in `en.json` `card_description` behoben
+- **JSON Formatter & Validator** – `en.json` `card_description`: ". in" → "in" (faulty sentence break); `de.json` `card_description`: truncated "Features:." → complete sentence
+- **HTML Entity Encoder/Decoder** – Filled `featureList` and `keywords` in SEO section of all 6 language JSONs (were empty)
+- **Emoji Reference** – Extracted 7 hardcoded English UI strings to all 6 language JSONs (`loadingEmojis`, `loadError`, `noResults`, `loadMore`, `loading`, `copyEmoji`, `copyCode`); fixed typo in `en.json` `card_description`
 
 ### ✨ Features
-- Sidebar-Navigation: Accordion-Verhalten (nur eine Kategorie gleichzeitig geöffnet)
+- Sidebar navigation: Accordion behavior (only one category open at a time)
 
 ### 🏗️ Build
-- JS-Bundling entfernt (382 → 129 Zeilen `build.sh`); Dateien werden einzeln geladen
-- Dupliziertes Logger-Modul (`assets/js/lib/logger.js`) entfernt
+- Removed JS bundling (382 → 129 lines `build.sh`); files loaded individually
+- Removed duplicate logger module (`assets/js/lib/logger.js`)
 
 ### 🐛 Bug Fixes
-- **Password Generator** – `d-none` statt `hidden` für `#customCharsetOptions` (Bootstrap 5 kennt kein `.hidden`; Custom-Charset-Panel war in allen Modi sichtbar); `</h3>` statt `</h2>` in `$customNoticeContent` aller 5 Nicht-EN-Sprachversionen (de, es, fr, it, pt); Mindestlänge in Features-Liste von „4" auf „8" korrigiert (entspricht `min="8"` des Sliders) – alle 6 Sprachversionen; `require()`-Fallback in `loadWordlist()` für CJS-Umgebungen (Jest) ergänzt
-- **JWT Decoder** – `</h3>` statt `</h2>` in `$customNoticeContent` der deutschen Version (`de/jwt-dekodierer/index.php`)
-- **Lorem Ipsum** – `</h3>` statt `</h2>` in `$customNoticeContent` aller 5 Nicht-EN-Sprachversionen (de, es, fr, it, pt); fehlende `</p>` in `it/lorem-ipsum/index.php`; fehlende Zeilentrennung in `es/lorem-ipsum/index.php`; falsche HTML-Output-Feature-Claims aus allen 6 PHP-Dateien und `config/tools.php` entfernt (Feature nicht implementiert)
+- **Password Generator** – Used `d-none` instead of `hidden` for `#customCharsetOptions` (Bootstrap 5 doesn't know `.hidden`; custom charset panel was visible in all modes); fixed `</h3>` instead of `</h2>` in `$customNoticeContent` of all 5 non-EN language versions (de, es, fr, it, pt); corrected minimum length in feature list from "4" to "8" (matches `min="8"` of slider) – all 6 language versions; added `require()` fallback in `loadWordlist()` for CJS environments (Jest)
+- **JWT Decoder** – Fixed `</h3>` instead of `</h2>` in `$customNoticeContent` of German version (`de/jwt-dekodierer/index.php`)
+- **Lorem Ipsum** – Fixed `</h3>` instead of `</h2>` in `$customNoticeContent` of all 5 non-EN language versions (de, es, fr, it, pt); fixed missing `</p>` in `it/lorem-ipsum/index.php`; fixed missing line breaks in `es/lorem-ipsum/index.php`; removed false HTML output feature claims from all 6 PHP files and `config/tools.php` (feature not implemented)
 
 ### 🧪 Tests
-- `codeFormatterTool.test.js` – 35 Tests (HTML/CSS/JS/XML/SQL Beautify+Minify, UI)
-- `dataConverterTool.test.js` – 45 Tests (JSON↔XML, JSON↔YAML, JSON↔CSV, Timestamp↔Datum, UI)
-- `aspectRatioCalculator.test.js` – 14 Tests · `base64EncoderDecoder.test.js` – 13 Tests · `characterReference.test.js` – 16 Tests
-- `emojiReferenceTool.test.js` – 19 Tests (Registration, Initial Render, Category Filter, Search, XSS, Copy, Fetch Error)
-- `hashGeneratorTool.test.js` – 26 Tests (Registration, UI-Rendering alle 5 Modi, CryptoUtils, Text-Hashing, HMAC, Hash-Vergleich, Uppercase-Toggle)
-- `htmlEntityTool.test.js` – 30 Tests (Named/Decimal/Hex/All-Named Encoding, Decoding, Round-trip, UI-State, Copy, Download)
-- `jsonFormatterValidatorTool.test.js` – 44 Tests (Registration, UI-Rendering, Format, Validate, Minify, Sort Keys, Auto-fix, Clear, Load Sample, Copy, Download, Path Extractor, Escape/Unescape)
-- `jwtDecoderTool.test.js` – 30 Tests (Registration, UI-Rendering, Decode Happy Path, No-Expiry, Error Handling, Clear, Load Example, Keyboard Shortcut, Whitespace Trimming)
-- `loremIpsumTool.test.js` – 42 Tests (Registration, UI-Rendering, Auto-Generation, Paragraphs, Sentences, Words, Combined, Validation, Counts, Clear, Copy)
-- `passwordGeneratorTool.test.js` – 55 Tests (Registration, UI-Rendering, Auto-Generation, Password-Generation, Pattern-Generation, Passphrase-Generation, Strength-Indicator, Download, Mode-Switching, Copy, Clear, Custom-Charset)
-- Gesamt: **374 Tests** (12 Suites) · Framework: Jest 30 + jsdom · Shell-Skripte entfernt
+- `codeFormatterTool.test.js` – 35 tests (HTML/CSS/JS/XML/SQL beautify+minify, UI)
+- `dataConverterTool.test.js` – 45 tests (JSON↔XML, JSON↔YAML, JSON↔CSV, timestamp↔date, UI)
+- `aspectRatioCalculator.test.js` – 14 tests · `base64EncoderDecoder.test.js` – 13 tests · `characterReference.test.js` – 16 tests
+- `emojiReferenceTool.test.js` – 19 tests (Registration, initial render, category filter, search, XSS, copy, fetch error)
+- `hashGeneratorTool.test.js` – 26 tests (Registration, UI rendering all 5 modes, CryptoUtils, text hashing, HMAC, hash comparison, uppercase toggle)
+- `htmlEntityTool.test.js` – 30 tests (Named/decimal/hex/all-named encoding, decoding, round-trip, UI state, copy, download)
+- `jsonFormatterValidatorTool.test.js` – 44 tests (Registration, UI rendering, format, validate, minify, sort keys, auto-fix, clear, load sample, copy, download, path extractor, escape/unescape)
+- `jwtDecoderTool.test.js` – 30 tests (Registration, UI rendering, decode happy path, no-expiry, error handling, clear, load example, keyboard shortcut, whitespace trimming)
+- `loremIpsumTool.test.js` – 42 tests (Registration, UI rendering, auto-generation, paragraphs, sentences, words, combined, validation, counts, clear, copy)
+- `passwordGeneratorTool.test.js` – 55 tests (Registration, UI rendering, auto-generation, password generation, pattern generation, passphrase generation, strength indicator, download, mode switching, copy, clear, custom charset)
+- Total: **374 tests** (12 suites) · Framework: Jest 30 + jsdom · Shell scripts removed
 
 ---
 
 ## [1.0.0] – 2026-01-03
 
-Initiales Production-Release: 19 Tools × 6 Sprachen, Client-Side-only, 100% OWASP-konform.
+Initial production release: 19 tools × 6 languages, client-side only, 100% OWASP compliant.
 
 ### Tools
-| Kategorie | Tools |
-|-----------|-------|
-| Kryptografie | UUID Generator, Password Generator, Hash Generator, JWT Decoder |
-| Daten | JSON Formatter, Code Formatter, Data Converter |
+| Category | Tools |
+|----------|-------|
+| Cryptography | UUID Generator, Password Generator, Hash Generator, JWT Decoder |
+| Data | JSON Formatter, Code Formatter, Data Converter |
 | Encoding | Base64, URL Encoder, Punycode, HTML Entity |
 | Strings | String Escaper, Regex Tester |
 | Frontend | Aspect Ratio Calculator, Px→Rem, QR Code, Lorem Ipsum |
-| Referenz | Character Reference, Emoji Reference |
+| Reference | Character Reference, Emoji Reference |
 
 ### Stack
 - Frontend: Bootstrap 5.3.0 + Bootstrap Icons 1.11.0 + Vanilla JS
 - Backend: PHP 8+ (100% `strict_types`) + Apache 2.4+
 - Security: Web Crypto API, CSP (nonce), DOMPurify 3.0.9, SRI, HSTS
-- i18n: 6 Sprachen (en, de, es, pt, fr, it), ~1261 Keys pro Sprache
+- i18n: 6 languages (en, de, es, pt, fr, it), ~1261 keys per language
 
 ---
 
 ## Contributors
-- **Ramon Kaes** – Entwicklung, Architektur
-- **Claude Sonnet 4.6** (Anthropic) – Code-Assistent & Reviewer
+- **Ramon Kaes** – Development, Architecture
+- **Claude Sonnet 4.6** (Anthropic) – Code Assistant & Reviewer

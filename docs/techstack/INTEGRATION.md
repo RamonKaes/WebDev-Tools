@@ -1,24 +1,24 @@
-# Integration Guide – Neues Tool hinzufügen
+# Integration Guide – Adding a New Tool
 
-**Checkliste für die Integration eines neuen Tools** – Schritt-für-Schritt-Anleitung.
+**Checklist for integrating a new tool** – Step-by-step guide.
 
 ---
 
-## Übersicht
+## Overview
 
-Ein neues Tool benötigt:
+A new tool requires:
 
-1. ✅ PHP-Dateien (EN + 5 Sprachversionen)
-2. ✅ JavaScript-Modul (IIFE-Pattern)
-3. ✅ Eintrag in `config/tools.php`
-4. ✅ i18n-Keys in allen 6 JSON-Dateien
-5. ✅ Jest-Tests
-6. ✅ (Optional) Standards-Badges in `partials/tool-base.php`
-7. ✅ (Optional) .htaccess-Rewrites
-8. ✅ Manifest & Sitemaps generieren
-9. ✅ Production-Build
+1. ✅ PHP files (EN + 5 language versions)
+2. ✅ JavaScript module (IIFE pattern)
+3. ✅ Entry in `config/tools.php`
+4. ✅ i18n keys in all 6 JSON files
+5. ✅ Jest tests
+6. ✅ (Optional) Standards badges in `partials/tool-base.php`
+7. ✅ (Optional) .htaccess rewrites
+8. ✅ Generate manifest & sitemaps
+9. ✅ Production build
 
-**Geschätzte Zeit:** 2-4 Stunden (je nach Tool-Komplexität)
+**Estimated time:** 2-4 hours (depending on tool complexity)
 
 ---
 

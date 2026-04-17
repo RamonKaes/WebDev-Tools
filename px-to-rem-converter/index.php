@@ -34,7 +34,7 @@ $features = [
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
-    <h3 class="h6 fw-semibold alert-heading mb-3"><i class="bi bi-info-circle me-2"></i>Why Use rem Units?</h3>
+    <div class="h6 fw-semibold alert-heading mb-3"><i class="bi bi-info-circle me-2"></i>Why Use rem Units?</div>
     <ul class="mb-0">
         <li>Accessibility: Users can adjust their browser's font size</li>
         <li>Consistency: All sizes scale proportionally</li>

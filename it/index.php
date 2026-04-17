@@ -208,7 +208,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
           <a href="<?= getToolUrl('base64EncoderDecoder', 'it') ?>" data-tool-id="base64EncoderDecoder" class="text-decoration-none">
             <div class="card h-100 tool-card">
                 <div class="card-body d-flex flex-column">
-                  <h3 class="card-title fs-6 fw-semibold mb-2">
+                  <div class="card-title fs-6 fw-semibold mb-2">
                   <i class="bi bi-file-binary me-2"></i>
                   <?= htmlspecialchars($tools['base64EncoderDecoder']['toc_title'] ?? 'Base64 Encoder/Decoder', ENT_QUOTES, 'UTF-8') ?>
                 </h3>
@@ -223,7 +223,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
           <a href="<?= getToolUrl('urlEncoderDecoder', 'it') ?>" data-tool-id="urlEncoderDecoder" class="text-decoration-none">
             <div class="card h-100 tool-card">
               <div class="card-body d-flex flex-column">
-                  <h3 class="card-title fs-6 fw-semibold mb-2">
+                  <div class="card-title fs-6 fw-semibold mb-2">
                   <i class="bi bi-link-45deg me-2"></i>
                   <?= htmlspecialchars($tools['urlEncoderDecoder']['toc_title'] ?? 'URL Encoder/Decoder', ENT_QUOTES, 'UTF-8') ?>
                 </h3>
@@ -239,7 +239,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
           <a href="<?= getToolUrl('htmlEntityTool', 'it') ?>" data-tool-id="htmlEntityTool" class="text-decoration-none">
             <div class="card h-100 tool-card">
               <div class="card-body d-flex flex-column">
-                  <h3 class="card-title fs-6 fw-semibold mb-2">
+                  <div class="card-title fs-6 fw-semibold mb-2">
                   <i class="bi bi-code-square me-2"></i>
                   <?= htmlspecialchars($tools['htmlEntityTool']['toc_title'] ?? 'HTML Entity Encoder/Decoder', ENT_QUOTES, 'UTF-8') ?>
                 </h3>
@@ -255,7 +255,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
           <a href="<?= getToolUrl('jwtDecoderTool', 'it') ?>" data-tool-id="jwtDecoderTool" class="text-decoration-none">
             <div class="card h-100 tool-card">
               <div class="card-body d-flex flex-column">
-                  <h3 class="card-title fs-6 fw-semibold mb-2">
+                  <div class="card-title fs-6 fw-semibold mb-2">
                   <i class="bi bi-shield-lock me-2"></i>
                   <?= htmlspecialchars($tools['jwtDecoderTool']['toc_title'] ?? 'JWT Decoder', ENT_QUOTES, 'UTF-8') ?>
                 </h3>
@@ -271,7 +271,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
           <a href="<?= getToolUrl('punycodeConverterTool', 'it') ?>" data-tool-id="punycodeConverterTool" class="text-decoration-none">
             <div class="card h-100 tool-card">
               <div class="card-body d-flex flex-column">
-                  <h3 class="card-title fs-6 fw-semibold mb-2">
+                  <div class="card-title fs-6 fw-semibold mb-2">
                   <i class="bi bi-globe me-2"></i>
                   <?= htmlspecialchars($tools['punycodeConverterTool']['toc_title'] ?? 'Punycode Converter', ENT_QUOTES, 'UTF-8') ?>
                 </h3>
@@ -287,7 +287,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
           <a href="<?= getToolUrl('jsonFormatterValidator', 'it') ?>" data-tool-id="jsonFormatterValidator" class="text-decoration-none">
             <div class="card h-100 tool-card">
               <div class="card-body d-flex flex-column">
-                  <h3 class="card-title fs-6 fw-semibold mb-2">
+                  <div class="card-title fs-6 fw-semibold mb-2">
                   <i class="bi bi-filetype-json me-2"></i>
                   <?= htmlspecialchars($tools['jsonFormatterValidator']['toc_title'] ?? 'JSON Formatter/Validator', ENT_QUOTES, 'UTF-8') ?>
                 </h3>
@@ -302,7 +302,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
           <a href="<?= getToolUrl('codeFormatterTool', 'it') ?>" data-tool-id="codeFormatterTool" class="text-decoration-none">
             <div class="card h-100 tool-card">
               <div class="card-body d-flex flex-column">
-                  <h3 class="card-title fs-6 fw-semibold mb-2">
+                  <div class="card-title fs-6 fw-semibold mb-2">
                   <i class="bi bi-code-square me-2"></i>
                   <?= htmlspecialchars($tools['codeFormatterTool']['toc_title'] ?? 'Code Formatter & Beautifier', ENT_QUOTES, 'UTF-8') ?>
                 </h3>
@@ -318,7 +318,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
           <a href="<?= getToolUrl('dataConverterTool', 'it') ?>" data-tool-id="dataConverterTool" class="text-decoration-none">
             <div class="card h-100 tool-card">
               <div class="card-body d-flex flex-column">
-                  <h3 class="card-title fs-6 fw-semibold mb-2">
+                  <div class="card-title fs-6 fw-semibold mb-2">
                   <i class="bi bi-arrow-left-right me-2"></i>
                   <?= htmlspecialchars($tools['dataConverterTool']['toc_title'] ?? 'Data Converter', ENT_QUOTES, 'UTF-8') ?>
                 </h3>
@@ -333,7 +333,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
           <a href="<?= getToolUrl('pxToRemConverter', 'it') ?>" data-tool-id="pxToRemConverter" class="text-decoration-none">
             <div class="card h-100 tool-card">
               <div class="card-body d-flex flex-column">
-                  <h3 class="card-title fs-6 fw-semibold mb-2">
+                  <div class="card-title fs-6 fw-semibold mb-2">
                   <i class="bi bi-arrows-angle-expand me-2"></i>
                   <?= htmlspecialchars($tools['pxToRemConverter']['toc_title'] ?? 'PX ⇄ REM Converter', ENT_QUOTES, 'UTF-8') ?>
                 </h3>
@@ -349,7 +349,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
           <a href="<?= getToolUrl('aspectRatioCalculator', 'it') ?>" data-tool-id="aspectRatioCalculator" class="text-decoration-none">
             <div class="card h-100 tool-card">
               <div class="card-body d-flex flex-column">
-                  <h3 class="card-title fs-6 fw-semibold mb-2">
+                  <div class="card-title fs-6 fw-semibold mb-2">
                   <i class="bi bi-aspect-ratio me-2"></i>
                   <?= htmlspecialchars($tools['aspectRatioCalculator']['toc_title'] ?? 'Rapporto d\'Aspetto', ENT_QUOTES, 'UTF-8') ?>
                 </h3>
@@ -365,7 +365,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
           <a href="<?= getToolUrl('uuidGeneratorTool', 'it') ?>" data-tool-id="uuidGeneratorTool" class="text-decoration-none">
             <div class="card h-100 tool-card">
               <div class="card-body d-flex flex-column">
-                  <h3 class="card-title fs-6 fw-semibold mb-2">
+                  <div class="card-title fs-6 fw-semibold mb-2">
                   <i class="bi bi-fingerprint me-2"></i>
                   <?= htmlspecialchars($tools['uuidGeneratorTool']['toc_title'] ?? 'UUID Generator', ENT_QUOTES, 'UTF-8') ?>
                 </h3>
@@ -380,7 +380,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
           <a href="<?= getToolUrl('passwordGeneratorTool', 'it') ?>" data-tool-id="passwordGeneratorTool" class="text-decoration-none">
             <div class="card h-100 tool-card">
               <div class="card-body d-flex flex-column">
-                  <h3 class="card-title fs-6 fw-semibold mb-2">
+                  <div class="card-title fs-6 fw-semibold mb-2">
                   <i class="bi bi-shield-lock me-2"></i>
                   <?= htmlspecialchars($tools['passwordGeneratorTool']['toc_title'] ?? 'Password Generator', ENT_QUOTES, 'UTF-8') ?>
                 </h3>
@@ -395,7 +395,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
           <a href="<?= getToolUrl('hashGeneratorTool', 'it') ?>" data-tool-id="hashGeneratorTool" class="text-decoration-none">
             <div class="card h-100 tool-card">
               <div class="card-body d-flex flex-column">
-                  <h3 class="card-title fs-6 fw-semibold mb-2">
+                  <div class="card-title fs-6 fw-semibold mb-2">
                   <i class="bi bi-hash me-2"></i>
                   <?= htmlspecialchars($tools['hashGeneratorTool']['toc_title'] ?? 'Hash Generator', ENT_QUOTES, 'UTF-8') ?>
                 </h3>
@@ -410,7 +410,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
           <a href="<?= getToolUrl('loremIpsumTool', 'it') ?>" data-tool-id="loremIpsumTool" class="text-decoration-none">
             <div class="card h-100 tool-card">
               <div class="card-body d-flex flex-column">
-                  <h3 class="card-title fs-6 fw-semibold mb-2">
+                  <div class="card-title fs-6 fw-semibold mb-2">
                   <i class="bi bi-file-text me-2"></i>
                   <?= htmlspecialchars($tools['loremIpsumTool']['toc_title'] ?? 'Lorem Ipsum Generator', ENT_QUOTES, 'UTF-8') ?>
                 </h3>
@@ -425,7 +425,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
           <a href="<?= getToolUrl('qrCodeGeneratorTool', 'it') ?>" data-tool-id="qrCodeGeneratorTool" class="text-decoration-none">
             <div class="card h-100 tool-card">
               <div class="card-body d-flex flex-column">
-                  <h3 class="card-title fs-6 fw-semibold mb-2">
+                  <div class="card-title fs-6 fw-semibold mb-2">
                   <i class="bi bi-qr-code me-2"></i>
                   <?= htmlspecialchars($tools['qrCodeGeneratorTool']['toc_title'] ?? 'QR Code Generator', ENT_QUOTES, 'UTF-8') ?>
                 </h3>
@@ -442,7 +442,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
           <a href="<?= getToolUrl('stringEscaperTool', 'it') ?>" data-tool-id="stringEscaperTool" class="text-decoration-none">
             <div class="card h-100 tool-card">
               <div class="card-body d-flex flex-column">
-                  <h3 class="card-title fs-6 fw-semibold mb-2">
+                  <div class="card-title fs-6 fw-semibold mb-2">
                   <i class="bi bi-code-slash me-2"></i>
                   <?= htmlspecialchars($tools['stringEscaperTool']['toc_title'] ?? 'String Escaper', ENT_QUOTES, 'UTF-8') ?>
                 </h3>
@@ -459,7 +459,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
           <a href="<?= getToolUrl('characterReferenceTool', 'it') ?>" data-tool-id="characterReferenceTool" class="text-decoration-none">
             <div class="card h-100 tool-card">
               <div class="card-body d-flex flex-column">
-                  <h3 class="card-title fs-6 fw-semibold mb-2">
+                  <div class="card-title fs-6 fw-semibold mb-2">
                   <i class="bi bi-table me-2"></i>
                   <?= htmlspecialchars($tools['characterReferenceTool']['toc_title'] ?? 'Riferimento Caratteri HTML', ENT_QUOTES, 'UTF-8') ?>
                 </h3>
@@ -476,7 +476,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
           <a href="<?= getToolUrl('emojiReferenceTool', 'it') ?>" data-tool-id="emojiReferenceTool" class="text-decoration-none">
             <div class="card h-100 tool-card">
               <div class="card-body d-flex flex-column">
-                  <h3 class="card-title fs-6 fw-semibold mb-2">
+                  <div class="card-title fs-6 fw-semibold mb-2">
                   <i class="bi bi-emoji-smile me-2"></i>
                   <?= htmlspecialchars($tools['emojiReferenceTool']['toc_title'] ?? 'Riferimento Emoji', ENT_QUOTES, 'UTF-8') ?>
                 </h3>
@@ -493,10 +493,10 @@ if ($manifest && isset($manifest['generatedAt'])) {
           <a href="<?= getToolUrl('regexTesterTool', 'it') ?>" data-tool-id="regexTesterTool" class="text-decoration-none">
             <div class="card h-100 tool-card">
               <div class="card-body d-flex flex-column">
-                  <h3 class="card-title fs-6 fw-semibold mb-2">
+                  <div class="card-title fs-6 fw-semibold mb-2">
                     <i class="bi bi-regex me-2"></i>
                     <?= htmlspecialchars($tools['regexTesterTool']['toc_title'] ?? 'Regex Tester', ENT_QUOTES, 'UTF-8') ?>
-                  </h3>
+                  </div>
                 <p class="card-text text-secondary flex-grow-1">
                   <?= htmlspecialchars($tools['regexTesterTool']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
                 </p>
@@ -509,7 +509,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
           <a href="<?= getToolUrl('sriGeneratorTool', 'it') ?>" data-tool-id="sriGeneratorTool" class="text-decoration-none" title="<?= htmlspecialchars($tools['sriGeneratorTool']['linkTitle']['card'] ?? 'SRI Generator', ENT_QUOTES, 'UTF-8') ?>">
             <div class="card h-100 tool-card">
               <div class="card-body d-flex flex-column">
-                <h3 class="card-title fs-6 fw-semibold mb-2">
+                <div class="card-title fs-6 fw-semibold mb-2">
                   <i class="bi bi-shield-check me-2"></i>
                   <?= htmlspecialchars($tools['sriGeneratorTool']['toc_title'] ?? 'SRI Generator', ENT_QUOTES, 'UTF-8') ?>
                 </h3>

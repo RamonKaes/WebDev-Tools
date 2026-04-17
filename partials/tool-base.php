@@ -343,9 +343,9 @@ include __DIR__ . '/head.php';
   ?>
   <aside class="bg-body toc-sidebar-fixed p-3 pt-5">
     <div id="toc-sidebar" class="pt-3">
-      <h6 class="text-muted text-uppercase fw-bold mb-3 toc-heading small">
+      <h3 class="text-muted text-uppercase fw-bold mb-3 toc-heading small">
         <?= $onThisPageLabels[$lang] ?? 'On this page' ?>
-      </h6>
+      </h3>
       <nav class="nav flex-column" id="toc-nav">
         <!-- Will be populated by JavaScript -->
       </nav>

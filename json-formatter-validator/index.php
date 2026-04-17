@@ -34,7 +34,7 @@ $features = [
 
 $customNoticeType = 'info'; // Blue info alert
 $customNoticeContent = <<<HTML
-<h3 class="h6 fw-semibold alert-heading mb-3"><i class="bi bi-info-circle me-2"></i>JSON Formatting Options</h3>
+<div class="h6 fw-semibold alert-heading mb-3"><i class="bi bi-info-circle me-2"></i>JSON Formatting Options</div>
 <ul class="mb-0">
     <li>Beautify (2 spaces): Standard formatting with 2-space indentation</li>
     <li>Beautify (4 spaces): More readable formatting with 4-space indentation</li>

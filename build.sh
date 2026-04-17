@@ -136,7 +136,7 @@ for tool_dir in uuid-generator password-generator hash-generator base64-encoder-
                 json-formatter-validator code-formatter data-converter url-encoder-decoder \
                 html-entity-encoder-decoder jwt-decoder punycode-converter string-escaper \
                 regex-tester px-to-rem-converter aspect-ratio-calculator lorem-ipsum \
-                qr-code-generator character-reference emoji-reference; do
+                qr-code-generator sri-generator character-reference emoji-reference; do
   [ -d "$tool_dir" ] && cp -r "$tool_dir" "$DIST_DIR/"
 done
 

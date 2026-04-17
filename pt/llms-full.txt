@@ -1,0 +1,170 @@
+# WebDev-Tools — Referência completa para modelos de linguagem IA
+
+> Versão: 2.0.0
+> Última atualização: 2026-04-17
+> Idioma: Português
+> Canônica: https://webdev-tools.info/pt/llms-full.txt
+
+WebDev-Tools é uma coleção para desenvolvedores com foco em privacidade e execução no cliente. As 20 ferramentas funcionam completamente no navegador do usuário. Nenhum dado é enviado a um servidor. O projeto usa PHP (renderização server-side), JavaScript vanilla (módulos IIFE) e Bootstrap 5.3.
+
+---
+
+## Estrutura do site
+
+- Página inicial: https://webdev-tools.info/
+- About: https://webdev-tools.info/about.php
+- Política de privacidade: https://webdev-tools.info/privacy.php
+- Imprint: https://webdev-tools.info/imprint.php
+- Autor: Ramon Kaes <ramon.kaes@webdev-tools.info>
+
+---
+
+## Referência de ferramentas
+
+### Base64 Encoder/Decoder
+URL: https://webdev-tools.info/base64-encoder-decoder/
+Categoria: Codificadores & Decodificadores
+Recursos: Codifica texto ou arquivos em Base64; decodifica Base64 para texto ou arquivo. Suporta arrastar e soltar e download de arquivo.
+Entrada: Texto simples ou arquivo binário
+Saída: String Base64 ou texto/arquivo decodificado
+
+### URL Encoder/Decoder
+URL: https://webdev-tools.info/url-encoder-decoder/
+Categoria: Codificadores & Decodificadores
+Recursos: Codifica caracteres especiais em URLs; decodifica strings codificadas. Modo em lote, análise de componentes de URL.
+Padrões: RFC 3986
+
+### HTML Entity Encoder/Decoder
+URL: https://webdev-tools.info/html-entity-encoder-decoder/
+Categoria: Codificadores & Decodificadores
+Recursos: Converte caracteres especiais em entidades HTML nomeadas (por ex. &amp;) ou numéricas (&#38; / &#x26;). Conversão bidirecional.
+
+### JWT Decoder
+URL: https://webdev-tools.info/jwt-decoder/
+Categoria: Codificadores & Decodificadores
+Recursos: Decodifica tokens JWT (header, payload, signature). Verifica expiração (claim exp), detecta algoritmo de assinatura (HS256, RS256, etc.).
+Nota: Não verifica assinatura criptograficamente porque a chave privada não está disponível no cliente.
+
+### Punycode Converter
+URL: https://webdev-tools.info/punycode-converter/
+Categoria: Codificadores & Decodificadores
+Recursos: Converte nomes de domínio internacionalizados (IDN) entre Unicode e Punycode/ACE. Detecta automaticamente a direção de entrada.
+Exemplo: münchen.de ↔ xn--mnchen-3ya.de
+
+### JSON Formatter & Validator
+URL: https://webdev-tools.info/json-formatter-validator/
+Categoria: Formatadores
+Recursos: Formata JSON com indentação configurável (2 ou 4 espaços). Valida sintaxe JSON com realce de erros. Minifica JSON. Visualização em árvore interativa. Realce de sintaxe.
+
+### Code Formatter
+URL: https://webdev-tools.info/code-formatter/
+Categoria: Formatadores
+Recursos: Formata HTML, CSS, JavaScript, TypeScript, JSON, XML, Markdown. Formatação no navegador sem servidores externos.
+
+### UUID Generator
+URL: https://webdev-tools.info/uuid-generator/
+Categoria: Geradores
+Padrões: RFC 4122 UUID v4
+Recursos: Gera UUID v4 criptograficamente aleatórios. Geração em lote (1–1000 UUIDs). Copia para área de transferência ou download como texto.
+
+### Password Generator
+URL: https://webdev-tools.info/password-generator/
+Categoria: Geradores
+Recursos:
+- Senha aleatória: comprimento e conjuntos de caracteres configuráveis
+- Frase de senha: baseada em palavras com quantidade e separador configuráveis
+- Baseado em padrão: strings de formato personalizadas
+- Medidor de força com cálculo de entropia
+- Nenhuma senha é armazenada
+
+### Hash Generator
+URL: https://webdev-tools.info/hash-generator/
+Categoria: Geradores
+Algoritmos: MD5, SHA-1, SHA-256, SHA-384, SHA-512
+Recursos: Gera hashes de texto ou arquivos. Usa SubtleCrypto para variantes SHA. MD5 implementado em JavaScript puro. Hash de arquivos usando FileReader.
+
+### Lorem Ipsum Generator
+URL: https://webdev-tools.info/lorem-ipsum/
+Categoria: Geradores
+Recursos: Gera texto Lorem Ipsum de placeholder. Modos: parágrafos, sentenças, palavras. Quantidade configurável. Copiar ou baixar.
+
+### QR Code Generator
+URL: https://webdev-tools.info/qr-code-generator/
+Categoria: Geradores
+Recursos: Gera códigos QR de texto, URL ou string de dados. Nível de correção configurável (L/M/Q/H). Download em SVG ou PNG. Usa qrcode-generator.
+
+### PX to REM Converter
+URL: https://webdev-tools.info/px-to-rem-converter/
+Categoria: Conversores
+Recursos: Converte valores de pixels para REM com base em tamanho de fonte configurável (padrão 16px). Cálculo em vivo, tabelas de conversão, escala Tailwind.
+
+### Data Converter
+URL: https://webdev-tools.info/data-converter/
+Categoria: Conversores
+Formatos: JSON ↔ CSV, JSON ↔ XML, JSON ↔ YAML, JSON ↔ TOML
+Recursos: Conversão bidirecional entre formatos. Conversão de timestamp (Unix ↔ ISO 8601). Suporte múltiplo de formato.
+
+### Aspect Ratio Calculator
+URL: https://webdev-tools.info/aspect-ratio-calculator/
+Categoria: Conversores
+Recursos: Calcula dimensão faltante para uma proporção de aspecto dada. Presets comuns (16:9, 4:3, 1:1, 21:9). Truque CSS padding-top para contêineres responsivos.
+
+### String Escaper
+URL: https://webdev-tools.info/string-escaper/
+Categoria: Ferramentas de Strings
+Modos: JavaScript, JSON, HTML, CSS, SQL
+Recursos: Escapa e desscapa strings para o contexto selecionado. Trata caracteres especiais, aspas, quebras de linha e escapes Unicode.
+
+### Character Reference
+URL: https://webdev-tools.info/character-reference/
+Categoria: Referências
+Recursos: Tabela pesquisável de entidades de caracteres HTML. Colunas: caractere, entidade nomeada, entidade decimal, entidade hexadecimal, ponto de código Unicode, escape CSS. Filtro por categoria.
+
+### Emoji Reference
+URL: https://webdev-tools.info/emoji-reference/
+Categoria: Referências
+Recursos: Tabela de emojis pesquisável por categorias. Copie emoji ou ponto de código com um clique.
+
+### Regex Tester
+URL: https://webdev-tools.info/regex-tester/
+Categoria: Utilitários
+Recursos: Testador de expressões regulares em tempo real com destaque de correspondências, extração de grupos e suporte a flags. Contagem de correspondências e posição.
+
+### SRI Generator
+URL: https://webdev-tools.info/sri-generator/
+Categoria: Utilitários
+Recursos: Gera hashes Subresource Integrity para scripts e folhas de estilo.
+
+---
+
+## Pilha tecnológica
+
+- Servidor: PHP 8.x com declare(strict_types=1)
+- Frontend: Vanilla JavaScript (módulos IIFE, sem framework)
+- CSS: Bootstrap 5.3 + CSS personalizado
+- Ícones: Bootstrap Icons
+- Build: script bash personalizado, sem bundler
+- Testes: Jest (810 testes unitários, 20 suítes)
+- Idiomas: 6 (en, de, es, pt, fr, it)
+
+---
+
+## Arquitetura de privacidade
+
+- Sem processamento server-side de entradas de ferramentas
+- Sem cookies, sem sessões para uso de ferramentas
+- Sem análises de terceiros nem scripts de rastreamento
+- CSP aplicada
+- Valores sensíveis permanecem apenas no navegador
+
+---
+
+## Sitemap
+
+Index completo: https://webdev-tools.info/sitemap.xml
+Inglês: https://webdev-tools.info/sitemap-en.xml
+Alemão: https://webdev-tools.info/de/sitemap.xml
+Espanhol: https://webdev-tools.info/es/sitemap.xml
+Português: https://webdev-tools.info/pt/sitemap.xml
+Francês: https://webdev-tools.info/fr/sitemap.xml
+Italiano: https://webdev-tools.info/it/sitemap.xml

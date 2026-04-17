@@ -117,3 +117,30 @@ $cyan:   #17a2b8;
   --bs-alert-bg: #e7f1ff;
   --bs-alert-border-color: rgba(6, 111, 209, 0.25);
 }
+
+// Dark Mode Alert Styles
+[data-bs-theme="dark"] {
+  .alert-danger {
+    --bs-alert-color: #f8b4b4;
+    --bs-alert-bg: rgba(214, 57, 57, 0.15);
+    --bs-alert-border-color: rgba(214, 57, 57, 0.4);
+  }
+
+  .alert-warning {
+    --bs-alert-color: #ffd966;
+    --bs-alert-bg: rgba(245, 159, 0, 0.15);
+    --bs-alert-border-color: rgba(245, 159, 0, 0.4);
+  }
+
+  .alert-success {
+    --bs-alert-color: #8fd19e;
+    --bs-alert-bg: rgba(47, 179, 68, 0.15);
+    --bs-alert-border-color: rgba(47, 179, 68, 0.4);
+  }
+
+  .alert-info {
+    --bs-alert-color: #74c0fc;
+    --bs-alert-bg: rgba(6, 111, 209, 0.15);
+    --bs-alert-border-color: rgba(6, 111, 209, 0.4);
+  }
+}

@@ -10,6 +10,22 @@
 // Configuration
 // ============================================
 @import "../node_modules/bootstrap/scss/functions";
+
+// ============================================
+// Color Overrides (Tabler palette)
+// Must be defined before variables to override !default values
+// ============================================
+$blue:   #066fd1;
+$indigo: #4263eb;
+$purple: #ae3ec9;
+$pink:   #d6336c;
+$red:    #d63939;
+$orange: #f76707;
+$yellow: #f59f00;
+$green:  #2fb344;
+$teal:   #0ca678;
+$cyan:   #17a2b8;
+
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/maps";
 @import "../node_modules/bootstrap/scss/mixins";

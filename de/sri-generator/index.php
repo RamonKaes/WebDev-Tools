@@ -12,7 +12,6 @@ $features = [
     'Erzeugt fertige <script>- und <link>-HTML-Tags',
     'Integrity-Attribut und vollständigen HTML-Tag mit einem Klick kopieren',
     'Datenschutz: Alle Hash-Berechnungen laufen client-seitig im Browser',
-    'Schnellbeispiele für Bootstrap, jQuery und Alpine.js',
     'Erkennt Ressourcentyp (JS vs. CSS) automatisch aus URL oder Dateiname',
 ];
 

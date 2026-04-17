@@ -82,6 +82,12 @@ function switchMode(container, mode) {
   radio.dispatchEvent(new Event('change'));
 }
 
+function clickGenerateBtn(container) {
+  const mode = (container.querySelector('input[name="sri-mode"]:checked') || {}).value || 'url';
+  const btn = container.querySelector(`#sri-generate-from-${mode}-btn`);
+  if (btn) btn.click();
+}
+
 // ─── Registration ─────────────────────────────────────────────────────────────
 
 describe('SriGeneratorTool – Registration', () => {
@@ -145,21 +151,18 @@ describe('SriGeneratorTool – UI Rendering', () => {
   });
 
   test('renders generate and clear buttons', () => {
-    expect(c.querySelector('#sri-generate-btn')).not.toBeNull();
+    expect(c.querySelector('#sri-generate-from-url-btn')).not.toBeNull();
+    expect(c.querySelector('#sri-generate-from-file-btn')).not.toBeNull();
+    expect(c.querySelector('#sri-generate-from-text-btn')).not.toBeNull();
     expect(c.querySelector('#sri-clear-btn')).not.toBeNull();
   });
 
-  test('renders results area (hidden) and no-result placeholder (visible)', () => {
-    const results = c.querySelector('#sri-results');
-    const noResult = c.querySelector('#sri-no-result');
-    expect(results.classList.contains('d-none')).toBe(true);
-    expect(noResult.classList.contains('d-none')).toBe(false);
+  test('renders results section (hidden by default)', () => {
+    const section = c.querySelector('#sri-results-section');
+    expect(section).not.toBeNull();
+    expect(section.classList.contains('d-none')).toBe(true);
   });
 
-  test('renders quick example buttons', () => {
-    const examples = c.querySelectorAll('.example-btn');
-    expect(examples.length).toBeGreaterThanOrEqual(4);
-  });
 });
 
 // ─── Mode switching ───────────────────────────────────────────────────────────
@@ -201,7 +204,7 @@ describe('SriGeneratorTool – Validation Errors', () => {
     c.querySelector('#sri-algo-sha256').checked = false;
     c.querySelector('#sri-algo-sha384').checked = false;
     c.querySelector('#sri-algo-sha512').checked = false;
-    c.querySelector('#sri-generate-btn').click();
+    clickGenerateBtn(c);
     await Promise.resolve();
     const err = c.querySelector('#sri-error');
     expect(err.classList.contains('d-none')).toBe(false);
@@ -210,7 +213,7 @@ describe('SriGeneratorTool – Validation Errors', () => {
 
   test('shows error when URL mode and URL is empty', async () => {
     c.querySelector('#sri-url').value = '';
-    c.querySelector('#sri-generate-btn').click();
+    clickGenerateBtn(c);
     await Promise.resolve();
     const err = c.querySelector('#sri-error');
     expect(err.classList.contains('d-none')).toBe(false);
@@ -219,7 +222,7 @@ describe('SriGeneratorTool – Validation Errors', () => {
 
   test('shows error when URL does not start with http(s)://', async () => {
     c.querySelector('#sri-url').value = 'ftp://example.com/file.js';
-    c.querySelector('#sri-generate-btn').click();
+    clickGenerateBtn(c);
     await Promise.resolve();
     const err = c.querySelector('#sri-error');
     expect(err.classList.contains('d-none')).toBe(false);
@@ -229,7 +232,7 @@ describe('SriGeneratorTool – Validation Errors', () => {
   test('shows error when text mode and text area is empty', async () => {
     switchMode(c, 'text');
     c.querySelector('#sri-text').value = '';
-    c.querySelector('#sri-generate-btn').click();
+    clickGenerateBtn(c);
     await Promise.resolve();
     const err = c.querySelector('#sri-error');
     expect(err.classList.contains('d-none')).toBe(false);
@@ -249,29 +252,29 @@ describe('SriGeneratorTool – Text Hashing', () => {
     c.querySelector('#sri-text').value = 'body { color: red; }';
     c.querySelector('#sri-algo-sha384').checked = true;
 
-    c.querySelector('#sri-generate-btn').click();
+    clickGenerateBtn(c);
     await new Promise(r => setTimeout(r, 20));
 
-    const results = c.querySelector('#sri-results');
-    expect(results.classList.contains('d-none')).toBe(false);
-    expect(results.innerHTML).not.toBe('');
+    const section = c.querySelector('#sri-results-section');
+    expect(section.classList.contains('d-none')).toBe(false);
+    expect(c.querySelector('#sri-results').innerHTML).not.toBe('');
   });
 
-  test('no-result placeholder is hidden after generation', async () => {
+  test('results section is visible after generation', async () => {
     switchMode(c, 'text');
     c.querySelector('#sri-text').value = 'test content';
 
-    c.querySelector('#sri-generate-btn').click();
+    clickGenerateBtn(c);
     await new Promise(r => setTimeout(r, 20));
 
-    expect(c.querySelector('#sri-no-result').classList.contains('d-none')).toBe(true);
+    expect(c.querySelector('#sri-results-section').classList.contains('d-none')).toBe(false);
   });
 
   test('result card contains integrity badge', async () => {
     switchMode(c, 'text');
     c.querySelector('#sri-text').value = 'hello world';
 
-    c.querySelector('#sri-generate-btn').click();
+    clickGenerateBtn(c);
     await new Promise(r => setTimeout(r, 20));
 
     const badge = c.querySelector('#sri-results .badge');
@@ -283,7 +286,7 @@ describe('SriGeneratorTool – Text Hashing', () => {
     switchMode(c, 'text');
     c.querySelector('#sri-text').value = 'test';
 
-    c.querySelector('#sri-generate-btn').click();
+    clickGenerateBtn(c);
     await new Promise(r => setTimeout(r, 20));
 
     const pre = c.querySelector('#sri-results pre');
@@ -298,7 +301,7 @@ describe('SriGeneratorTool – Text Hashing', () => {
     c.querySelector('#sri-algo-sha384').checked = true;
     c.querySelector('#sri-algo-sha512').checked = true;
 
-    c.querySelector('#sri-generate-btn').click();
+    clickGenerateBtn(c);
     await new Promise(r => setTimeout(r, 20));
 
     const cards = c.querySelectorAll('#sri-results .card');
@@ -309,7 +312,7 @@ describe('SriGeneratorTool – Text Hashing', () => {
     switchMode(c, 'text');
     c.querySelector('#sri-text').value = 'copy test';
 
-    c.querySelector('#sri-generate-btn').click();
+    clickGenerateBtn(c);
     await new Promise(r => setTimeout(r, 20));
 
     expect(c.querySelector('.copy-integrity-btn')).not.toBeNull();
@@ -318,14 +321,14 @@ describe('SriGeneratorTool – Text Hashing', () => {
   test('error is hidden after successful generation', async () => {
     // First trigger an error
     c.querySelector('#sri-url').value = '';
-    c.querySelector('#sri-generate-btn').click();
+    clickGenerateBtn(c);
     await Promise.resolve();
     expect(c.querySelector('#sri-error').classList.contains('d-none')).toBe(false);
 
     // Then succeed with text
     switchMode(c, 'text');
     c.querySelector('#sri-text').value = 'recovery test';
-    c.querySelector('#sri-generate-btn').click();
+    clickGenerateBtn(c);
     await new Promise(r => setTimeout(r, 20));
 
     expect(c.querySelector('#sri-error').classList.contains('d-none')).toBe(true);
@@ -347,7 +350,7 @@ describe('SriGeneratorTool – Clear Button', () => {
 
   test('clear button hides error', async () => {
     c.querySelector('#sri-url').value = '';
-    c.querySelector('#sri-generate-btn').click();
+    clickGenerateBtn(c);
     await Promise.resolve();
     c.querySelector('#sri-clear-btn').click();
     expect(c.querySelector('#sri-error').classList.contains('d-none')).toBe(true);
@@ -356,13 +359,12 @@ describe('SriGeneratorTool – Clear Button', () => {
   test('clear button hides results and shows no-result placeholder', async () => {
     switchMode(c, 'text');
     c.querySelector('#sri-text').value = 'clear test';
-    c.querySelector('#sri-generate-btn').click();
+    clickGenerateBtn(c);
     await new Promise(r => setTimeout(r, 20));
 
     c.querySelector('#sri-clear-btn').click();
 
-    expect(c.querySelector('#sri-results').classList.contains('d-none')).toBe(true);
-    expect(c.querySelector('#sri-no-result').classList.contains('d-none')).toBe(false);
+    expect(c.querySelector('#sri-results-section').classList.contains('d-none')).toBe(true);
   });
 });
 
@@ -376,7 +378,7 @@ describe('SriGeneratorTool – Copy Button', () => {
   test('clicking copy integrity button calls ClipboardUtils.copyToClipboard', async () => {
     switchMode(c, 'text');
     c.querySelector('#sri-text').value = 'clipboard test';
-    c.querySelector('#sri-generate-btn').click();
+    clickGenerateBtn(c);
     await new Promise(r => setTimeout(r, 20));
 
     global.ClipboardUtils.copyToClipboard.mockClear();
@@ -404,7 +406,7 @@ describe('SriGeneratorTool – Resource Type Auto-Detection', () => {
       ok: true,
       arrayBuffer: () => Promise.resolve(new TextEncoder().encode('body{}').buffer),
     });
-    c.querySelector('#sri-generate-btn').click();
+    clickGenerateBtn(c);
     await new Promise(r => setTimeout(r, 30));
 
     const typeSelect = c.querySelector('#sri-resource-type');

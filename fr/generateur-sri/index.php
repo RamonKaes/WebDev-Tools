@@ -12,7 +12,6 @@ $features = [
     'Génère des balises HTML <script> et <link> prêtes à l\'emploi',
     'Copiez l\'attribut integrity et la balise HTML complète en un clic',
     'Confidentialité : tout le hachage s\'exécute côté client dans le navigateur',
-    'Exemples rapides pour Bootstrap, jQuery et Alpine.js',
     'Détecte automatiquement le type de ressource (JS ou CSS)',
 ];
 

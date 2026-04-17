@@ -12,7 +12,6 @@ $features = [
     'Gera tags HTML <script> e <link> prontas para uso',
     'Copia o atributo integrity e a tag HTML completa com um clique',
     'Privacidade: todo o hashing é executado no navegador (client-side)',
-    'Exemplos rápidos para Bootstrap, jQuery e Alpine.js',
     'Detecta automaticamente o tipo de recurso (JS ou CSS)',
 ];
 

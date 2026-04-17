@@ -12,7 +12,6 @@ $features = [
     'Auto-generates ready-to-use <script> and <link> HTML tags',
     'One-click copy of integrity attribute and full HTML tag',
     'Privacy-first: All hashing runs client-side in your browser',
-    'Quick-load examples for Bootstrap, jQuery, and Alpine.js',
     'Auto-detects resource type (JS vs. CSS) from URL or filename',
 ];
 

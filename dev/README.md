@@ -19,10 +19,10 @@ The production site (https://webdev-tools.info/) runs as a standard PHP/Apache s
 	HOST=0.0.0.0 PORT=8080 ./maintenance/start-server.sh
 	```
 
-2. Run minimal server-side checks (PHP CLI):
+2. Run unit tests (requires Node.js/npm):
 
 	```bash
-	php tests/run.php
+	npm test
 	```
 
 Notes

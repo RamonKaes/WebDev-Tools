@@ -4,10 +4,9 @@
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Standards](https://img.shields.io/badge/standards-RFC%20%7C%20ISO%20%7C%20W3C-green.svg)](#standards-compliance)
-[![Security](https://img.shields.io/badge/security-client--side%20only-brightgreen.svg)](#security-architecture)
+[![Security](https://img.shields.io/badge/security-client--side%20only-brightgreen.svg)](#-security-architecture)
 [![Languages](https://img.shields.io/badge/languages-6-orange.svg)](#internationalization)
-[![Production Ready](https://img.shields.io/badge/production%20ready-97%25-success.svg)](#quality-metrics)
-[![Industry Ranking](https://img.shields.io/badge/industry%20ranking-TOP%205%25-gold.svg)](#industry-comparison)
+[![Tools](https://img.shields.io/badge/tools-20-success.svg)](#%EF%B8%8F-available-tools)
 
 ### **Privacy-First Developer Utilities for Modern Web Development**
 
@@ -33,8 +32,6 @@
 
 ---
 
----
-
 ## 📑 Table of Contents
 
 <details>
@@ -49,7 +46,7 @@
 - [🔐 Security Architecture](#-security-architecture)
   - [Client-Side-Only Execution](#client-side-only-execution)
   - [Cryptographic Security](#cryptographic-security)
-  - [Risk Mitigation](#risk-mitigation)
+  - [Risk Mitigation Matrix](#risk-mitigation-matrix)
   - [Open Source & Auditability](#open-source--auditability)
   - [Security Guarantees](#security-guarantees)
 - [🛠️ Available Tools](#%EF%B8%8F-available-tools)
@@ -59,31 +56,30 @@
   - [🛡️ String Manipulation & Security](#%EF%B8%8F-string-manipulation--security)
   - [🎨 Frontend & Design](#-frontend--design)
   - [📚 Reference & Documentation](#-reference--documentation)
-- [📜 Standards Compliance](#-standards-compliance)
-- [📊 Quality Metrics](#-quality-metrics)
-- [📈 Industry Comparison](#-industry-comparison)
-- [🌍 Internationalization](#-internationalization)
-- [💻 Technical Foundation](#-technical-foundation)
+- [Standards Compliance](#standards-compliance)
+- [Code Review & Learnings](#code-review--learnings)
+- [Internationalization](#internationalization)
+- [Technical Foundation](#technical-foundation)
   - [Technology Stack](#technology-stack)
   - [Project Structure](#project-structure)
-  - [Content Security Policy](#content-security-policy)
-- [🤖 Development Methodology](#-development-methodology)
+  - [Content Security Policy (CSP)](#content-security-policy-csp)
+- [Development Methodology](#development-methodology)
   - [AI-Assisted Development](#ai-assisted-development)
   - [Quality Assurance Process](#quality-assurance-process)
   - [Challenges & Solutions](#challenges--solutions)
-- [🚀 Getting Started](#-getting-started)
+- [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
   - [Configuration](#configuration)
   - [Development Setup](#development-setup)
-- [🌐 Browser Compatibility](#-browser-compatibility)
-- [🧪 Testing & Quality Assurance](#-testing--quality-assurance)
-- [📚 Documentation](#-documentation)
-- [🗺️ Roadmap](#%EF%B8%8F-roadmap)
-- [🤝 Contributing](#-contributing)
-- [📄 License](#-license)
-- [🙏 Acknowledgments](#-acknowledgments)
-- [📧 Contact & Support](#-contact--support)
+- [Browser Compatibility](#browser-compatibility)
+- [Technical Audit](#technical-audit)
+- [Contributing](#contributing)
+- [Documentation](#documentation)
+- [Roadmap](#roadmap)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
+- [Contact & Support](#contact--support)
 
 </details>
 
@@ -600,7 +596,7 @@ Security-critical tools utilize the **Web Crypto API** (`crypto.getRandomValues(
 <div align="center">
 
 **🔍 Need something else?**  
-[Request a new tool](https://github.com/RamonKaes/WebDev-Tools/issues/new?template=feature_request.md) • [View Roadmap](#-roadmap)
+[Request a new tool](https://github.com/RamonKaes/WebDev-Tools/issues/new?template=feature_request.md) • [View Roadmap](#roadmap)
 
 </div>
 
@@ -668,7 +664,7 @@ As part of an external review, four critical issues were identified and addresse
 - Build scripts must be environment-aware
 - Automated checks help prevent regressions
 
-All fixes have been implemented, tested, and documented. See the [Code Review Report](CODE_REVIEW_REPORT.md) for details.
+All fixes have been implemented, tested, and documented. See the [CHANGELOG](CHANGELOG.md) for details.
 
 ---
 
@@ -796,19 +792,15 @@ WebDev-Tools was developed using a **hybrid human-AI approach** that combines th
 
 ### Developer Artifacts
 
-NOTE: To keep the core project lightweight and focused on the tool collection, developer artifacts are located under `/dev`. Historical development harnesses have been removed from this repository.
+Developer utilities and helper scripts are located under `/dev` and `/maintenance`. These are intended solely for developers and do not affect production assets.
 
 
 ## Getting Started
-### Developer Artifacts
-
-This repository contains a small set of developer utilities and helper scripts under `/dev` used for optional local tasks. These utilities are intended solely for developers and do not affect production assets.
-
 
 ### Prerequisites
 
 - **Web Server (production)**: Apache/Nginx with PHP support — the live site (https://webdev-tools.info/) runs entirely as a PHP/Apache site and **does not require Node.js or npm**. All production assets are static/PHP and safe for hosting environments without Node.
-- **Local development (optional)**: Node.js/npm are useful convenience tools for developers (local servers, scripts) but are **not required** for the site to run in production. Use the PHP CLI or the `dev/start-server.sh` router for local testing when Node isn't available.
+- **Local development (optional)**: Node.js/npm are useful convenience tools for developers (local servers, scripts) but are **not required** for the site to run in production. Use the PHP CLI or `maintenance/start-server.sh` for local testing when Node isn't available.
 - **PHP**: Version 8.0 or higher
 - **Browser**: Modern browser with JavaScript enabled
 
@@ -850,7 +842,7 @@ This repository contains a small set of developer utilities and helper scripts u
 php -S localhost:8000
 
 # Or use the helper script
-./dev/start-server.sh
+./maintenance/start-server.sh
 ```
 
 ---
@@ -924,27 +916,24 @@ We welcome contributions from the community! Here's how you can help:
 
 ### Single-Developer Workflow (Recommended)
 
-As the sole maintainer of this repository, you can keep changes lightweight while remaining safe and traceable. We recommend the following minimal workflow:
+As the sole maintainer of this repository, you can keep changes lightweight while remaining safe and traceable:
 
-- **CI & Local checks**: GitHub Actions workflows and in-repo CI files have been removed (see cleanup PR). For local verification, continue to use `./bin/check` which performs PHP syntax checks and a lightweight phar-based style check (no Composer required). Node/npm support has been removed from the repository.
-- **Trivial changes (docs, typos)**: Commit directly to `main` after running `./bin/check`:
+- **Trivial changes (docs, typos)**: Commit directly to `main`:
    ```bash
    git add -A
    git commit -m "docs: fix typo"
-   ./bin/check
    git push origin main
    ```
-- **Code changes (recommended)**: Use a feature branch and a quick self-review PR. This keeps your change history clean and reversible:
+- **Code changes (recommended)**: Use a feature branch and a quick self-review PR:
    ```bash
    git checkout -b feat/your-change
-   ./bin/check
+   npm test
    git add -A
    git commit -m "feat: add ..."
    git push --set-upstream origin feat/your-change
    gh pr create --title "feat: add ..." --body "Short description"
    ```
-- **Merge policy**: For most changes, merge PRs yourself once you're confident after running `./bin/check` and a quick smoke check in the browser.
-- **Self-hosted runner (optional)**: If you want CI without GitHub minutes, consider a self-hosted runner (local machine or server you control). See `.github/NO_GITHUB_ACTIONS.md`.
+- **Merge policy**: For most changes, merge PRs yourself once you're confident after running `npm test` and a quick smoke check in the browser.
 
 This workflow keeps friction low while ensuring code quality and traceability.
 
@@ -956,10 +945,12 @@ This workflow keeps friction low while ensuring code quality and traceability.
 
 Detailed technical documentation is available in the [`/docs`](docs/) directory:
 
-- **[Sitemap Generation](docs/SITEMAP-GENERATION.md)** - How sitemaps are automatically generated from tool configurations
-- **[Code Splitting](docs/CODE-SPLITTING.md)** - Strategy for optimizing large tools (1000+ LOC)
-- **[Logger Migration](docs/LOGGER-MIGRATION.md)** - Guide for unified error handling and logging
-- **[JSDoc Status](docs/JSDOC-STATUS.md)** - Type annotations and documentation standards
+- **[Tech Stack Overview](docs/techstack/OVERVIEW.md)** — Architecture, stack components, project lifecycle
+- **[Frontend](docs/techstack/FRONTEND.md)** — JavaScript conventions, IIFE pattern, utilities
+- **[Backend](docs/techstack/BACKEND.md)** — PHP tool registry, i18n, routing
+- **[Security](docs/techstack/SECURITY.md)** — CSP, XSS prevention, cryptographic security
+- **[Testing](docs/techstack/TESTING.md)** — Jest setup, test patterns, mocking strategy
+- **[Build](docs/techstack/BUILD.md)** — Build script, minification, deployment
 
 ### 🧪 Testing Documentation
 
@@ -1051,7 +1042,6 @@ SOFTWARE.
   - [Developer Docs](docs/README.md)
   - [Security Policy](SECURITY.md)
   - [Changelog](CHANGELOG.md)
-  - [Contributing Guide](CONTRIBUTING.md)
 
 ---
 

@@ -78,4 +78,4 @@ partials/tool-base.php           # Gemeinsames Layout
 
 ---
 
-**Stand:** April 2026 | **Version:** 2.0.2 | **Tools:** 20 | **Sprachen:** 6
+**Stand:** April 2026 | **Version:** 2.1.0 | **Tools:** 20 | **Sprachen:** 6

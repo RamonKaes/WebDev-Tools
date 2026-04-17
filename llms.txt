@@ -1,6 +1,16 @@
-# WebDev-Tools
+# WebDev-Tools.info
 
-> Privacy-first developer toolbox. All 19 tools run entirely client-side in the browser — no server processing, no data transmission, no tracking.
+> Curated collection of free online web developer tools.
+
+## Languages / Sprachen / Idiomas
+- [English (Primary)](https://webdev-tools.info/llms.txt)
+- [Deutsch (German)](https://webdev-tools.info/de/llms.txt)
+- [Español (Spanish)](https://webdev-tools.info/es/llms.txt)
+- [Français (French)](https://webdev-tools.info/fr/llms.txt)
+- [Português (Portuguese)](https://webdev-tools.info/pt/llms.txt)
+- [Italiano (Italian)](https://webdev-tools.info/it/llms.txt)
+
+## Features (English)
 
 WebDev-Tools (https://webdev-tools.info) is a free collection of web developer utilities. Every computation happens locally in the user's browser via JavaScript. No input data is ever sent to a server.
 
@@ -37,6 +47,7 @@ WebDev-Tools (https://webdev-tools.info) is a free collection of web developer u
 - [Emoji Reference](https://webdev-tools.info/emoji-reference/): Searchable emoji table with copy support for emoji characters and code points.
 
 ### Utilities
+- [SRI Generator](https://webdev-tools.info/sri-generator/): Generate Subresource Integrity hashes for scripts and stylesheets.
 - [Regex Tester](https://webdev-tools.info/regex-tester/): Live regular expression tester with match highlighting, group extraction, and flag support.
 
 ## Languages

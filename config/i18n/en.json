@@ -1075,6 +1075,18 @@
     }
   },
   "seo": {
+    "home": {
+      "meta_description": "Free developer tools for web development. JSON formatter, Base64 encoder, UUID generator, and 15+ utilities. Privacy-first with 100% client-side processing."
+    },
+    "about": {
+      "meta_description": "WebDev-Tools: privacy-first developer utilities running 100% client-side. No tracking, no data collection. Free open-source tools for web developers worldwide."
+    },
+    "privacy": {
+      "meta_description": "Privacy Policy: All tools process data locally in your browser. No server uploads, no tracking, no cookies. Your data stays private with client-side processing."
+    },
+    "imprint": {
+      "meta_description": "Legal information and contact details for WebDev-Tools. Responsible for content, data protection officer contact, and legal notices for our utilities."
+    },
     "base64EncoderDecoder": {
       "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",

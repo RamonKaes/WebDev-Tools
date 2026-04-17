@@ -1075,6 +1075,18 @@
     }
   },
   "seo": {
+    "home": {
+      "meta_description": "Kostenlose Entwickler-Tools für Webentwicklung. JSON Formatierer, Base64 Encoder, UUID Generator und 15+ Werkzeuge. Datenschutzfreundlich, clientseitig."
+    },
+    "about": {
+      "meta_description": "WebDev-Tools: Datenschutzfreundliche Entwickler-Werkzeuge mit 100% clientseitiger Verarbeitung. Kein Tracking, keine Datensammlung. Kostenlose Open-Source Tools."
+    },
+    "privacy": {
+      "meta_description": "Datenschutzerklärung: Alle Tools verarbeiten Daten lokal im Browser. Keine Server-Uploads, kein Tracking, keine Cookies. Maximaler Datenschutz durch clientseitige Verarbeitung."
+    },
+    "imprint": {
+      "meta_description": "Impressum und Kontaktdaten für WebDev-Tools. Verantwortlich für Inhalte, Datenschutzbeauftragter Kontakt und rechtliche Hinweise für unsere Entwickler-Werkzeuge."
+    },
     "base64EncoderDecoder": {
       "keywords": "base64, encoder, decoder, binär zu text, data uri, url-sichere kodierung, datei kodierung",
       "ogImage": "og-default.png",

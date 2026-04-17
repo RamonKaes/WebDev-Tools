@@ -1075,6 +1075,18 @@
     }
   },
   "seo": {
+    "home": {
+      "meta_description": "Strumenti gratuiti per sviluppatori web. Formattatore JSON, encoder Base64, generatore UUID e 15+ utility. Elaborazione lato client e privacy-first."
+    },
+    "about": {
+      "meta_description": "WebDev-Tools: utility per sviluppatori con elaborazione 100% lato client. Nessun tracking, nessuna raccolta dati. Strumenti open-source gratuiti per sviluppatori."
+    },
+    "privacy": {
+      "meta_description": "Informativa sulla privacy: Tutti gli strumenti elaborano i dati localmente nel browser. Nessun upload al server, nessun tracking, nessun cookie. Massima privacy."
+    },
+    "imprint": {
+      "meta_description": "Informazioni legali e contatti per WebDev-Tools. Responsabile dei contenuti, contatto del responsabile della protezione dati e note legali per le nostre utility."
+    },
     "base64EncoderDecoder": {
       "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",

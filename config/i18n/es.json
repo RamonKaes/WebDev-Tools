@@ -1075,6 +1075,18 @@
     }
   },
   "seo": {
+    "home": {
+      "meta_description": "Herramientas gratuitas para desarrollo web. Formateador JSON, codificador Base64, generador UUID y 15+ utilidades. Procesamiento del lado del cliente y privacidad."
+    },
+    "about": {
+      "meta_description": "WebDev-Tools: utilidades para desarrolladores con procesamiento 100% del lado del cliente. Sin seguimiento ni recopilación de datos. Herramientas open-source gratuitas."
+    },
+    "privacy": {
+      "meta_description": "Política de privacidad: Todas las herramientas procesan datos localmente en tu navegador. Sin cargas al servidor, sin seguimiento, sin cookies. Máxima privacidad."
+    },
+    "imprint": {
+      "meta_description": "Información legal y contacto para WebDev-Tools. Responsable del contenido, contacto del delegado de protección de datos y avisos legales para nuestras utilidades."
+    },
     "base64EncoderDecoder": {
       "keywords": "base64, codificador, decodificador, binario a texto, uri de datos, codificación segura url, codificación de archivos",
       "ogImage": "og-default.png",

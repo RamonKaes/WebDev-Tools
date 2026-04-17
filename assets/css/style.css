@@ -275,8 +275,7 @@ button:active:not(:disabled) {
 
 /* Tool cards hover/focus states */
 .tool-card:hover {
-  transform: translateY(-2px);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .tool-card:focus-within {
@@ -721,3 +720,5 @@ button:active:not(:disabled) {
     padding-top: 100%;
   }
 }
+
+.form-control { font-size: inherit;}

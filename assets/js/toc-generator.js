@@ -25,7 +25,7 @@
    * Ensures all TOC links have valid anchor targets
    */
   function ensureHeadingIds() {
-    const headings = document.querySelectorAll('#main-content h2:not(#tool-container h2), #main-content .h5:not(#tool-container .h5), #main-content h5:not(#tool-container h5)');
+    const headings = document.querySelectorAll('#main-content h2:not(#tool-container h2):not(#tool-header h2), #main-content .h5:not(#tool-container .h5):not(#tool-header .h5), #main-content h5:not(#tool-container h5):not(#tool-header h5)');
     const usedIds = new Set();
 
     headings.forEach((heading, index) => {
@@ -88,7 +88,7 @@
       }
     }
 
-    const headings = document.querySelectorAll('#main-content h2:not(#tool-container h2), #main-content .h5:not(#tool-container .h5), #main-content h5:not(#tool-container h5)');
+    const headings = document.querySelectorAll('#main-content h2:not(#tool-container h2):not(#tool-header h2), #main-content .h5:not(#tool-container .h5):not(#tool-header .h5), #main-content h5:not(#tool-container h5):not(#tool-header h5)');
 
     if (headings.length === 0 && !toolHeader) {
       const sidebar = document.getElementById('toc-sidebar');

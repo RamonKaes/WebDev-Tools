@@ -22,6 +22,27 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
   - Homepage: `<h3>` Tool-Cards → `<div>` (keine semantischen Überschriften für Navigation)
   - Tools: `<h3>` alert-headings → `<div>` in customNoticeContent (~60 Dateien)
   - Korrekte Hierarchie: H1 (Tool-Titel) → H2 (Sections) → H3 (Unterabschnitte)
+  - Dual-Title-System: `h1_title` (SEO-optimiert, keyword-reich) + `toc_title` (navigation-freundlich, kurz)
+  - tool-base.php: `h1_title` für `<h1>` Content, `toc_title` für `data-toc-title` Attribut
+  - index.php (6 Sprachen): `h1_title` in link title-Attributen für bessere Tooltips
+- **Meta-Descriptions (TODO #4)** – Meta-Descriptions für statische Seiten hinzugefügt:
+  - 24 neue Meta-Descriptions: 4 statische Seiten (home, about, privacy, imprint) × 6 Sprachen
+  - Kritische Issues: 24 → 0 (100% behoben)
+  - Optimale Descriptions (140-160 Zeichen): 75 → 83
+  - Template: Call-to-Action + Keywords + klarer Mehrwert
+- **Strong/Bold Tags (TODO #5)** – Audit durchgeführt, Optimierung nicht notwendig:
+  - 10 zu lange Tags (>70 Zeichen) gefunden, alle in privacy.php
+  - Privacy-Seiten haben `noindex, follow` → keine SEO-Relevanz
+  - Hervorhebung nur für User-Experience, nicht für Suchmaschinen
+  - Entscheidung: Keine Änderung notwendig
+
+### 🎨 UI/UX
+- **Tabler-Style Alert Colors** – Alert-Farben an Tabler-Design angepasst:
+  - Light Mode: Hellere pastellige Hintergründe (#fbe7e7, #fff8e1, #e6f4ea, #e7f1ff)
+  - Light Mode: Weichere Border-Farben (25% Transparenz)
+  - Dark Mode: Halbtransparente Hintergründe (15% Opacity) + sichtbare Borders (40% Opacity)
+  - Dark Mode: Hellere Textfarben für bessere Lesbarkeit (#f8b4b4, #ffd966, #8fd19e, #74c0fc)
+  - Keine linken Borders (subtileres Design)
 
 ### 🛠️ Tools
 - **Audit Scripts** – Python-Scripts für SEO-Analyse erstellt:
@@ -30,9 +51,11 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
   - `audit_link_texts.py` – Generische/leere/zu lange Linktexte
   - `audit_card_titles.py` – linkTitle.card Längen-Analyse (60-80 Zeichen)
   - `audit_headings.py` – Heading-Hierarchie-Analyse (H1-H6)
+  - `audit_meta_descriptions.py` – Meta-Description-Analyse (120-200 Zeichen)
+  - `audit_strong_tags.py` – Strong/Bold-Tag-Analyse (leere, zu lange, verschachtelte Tags)
 
 ### 📝 Documentation
-- **TODO.md** – SEO-Optimierungen dokumentiert (TODO #1, #2, #3 abgeschlossen)
+- **TODO.md** – SEO-Optimierungen dokumentiert (TODO #1-4 abgeschlossen, #5 übersprungen)
 
 ---
 

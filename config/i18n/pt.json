@@ -302,7 +302,7 @@
       "how_to_use_title": "Como Usar",
       "toc_title": "Proporção de Aspecto",
       "h1_title": "Calculadora de Proporção de Aspecto — Dimensões Responsive",
-      "meta_title": "Calculadora de Proporção de Aspecto — Dimensões CSS",
+      "meta_title": "Calculadora Proporção Aspecto — Dimensões Responsive CSS",
       "card_description": "Calcule dimensões faltantes a partir de proporções de aspecto. Gere código CSS com propriedade aspect-ratio moderna ou técnica padding-bottom. Inclui presets 16:9, 4:3, 21:9.",
       "meta_description": "Calcule dimensões a partir de proporções de aspecto para design responsivo. Gere CSS com propriedade aspect-ratio ou fallback padding-bottom. Presets comuns e tabela de resoluções.",
       "tool_description": "Calcule dimensões faltantes a partir de proporções de aspecto com nossa Calculadora de Proporção de Aspecto. Gere código CSS para mídia responsiva com propriedade moderna aspect-ratio ou técnica legacy padding-bottom. Perfeito para imagens responsivas, embeds de vídeo e design de layout com presets comuns como 16:9, 4:3, 21:9 e mais."

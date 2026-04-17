@@ -50,7 +50,7 @@
   "tools": {
     "base64EncoderDecoder": {
       "linkTitle": {
-        "card": "Encode or decode Base64 strings and files",
+        "card": "Encode or decode Base64 strings and files with drag & drop support",
         "nav": "Base64 Encoder"
       },
       "features_title": "Features",
@@ -110,7 +110,7 @@
     },
     "urlEncoderDecoder": {
       "linkTitle": {
-        "card": "Encode or decode URL parameters and components",
+        "card": "Encode or decode URL parameters and components with parser online",
         "nav": "URL Encoder"
       },
       "features_title": "Features",
@@ -168,7 +168,7 @@
     },
     "jsonFormatterValidator": {
       "linkTitle": {
-        "card": "Format, validate and beautify JSON data",
+        "card": "Format, validate and beautify JSON data with tree view and minify",
         "nav": "JSON Formatter"
       },
       "features_title": "Features",
@@ -244,7 +244,7 @@
     },
     "aspectRatioCalculator": {
       "linkTitle": {
-        "card": "Calculate dimensions and maintain aspect ratios",
+        "card": "Calculate dimensions and maintain aspect ratios with CSS generator",
         "nav": "Aspect Ratio"
       },
       "presets_title": "Common Aspect Ratios",
@@ -302,7 +302,7 @@
       "how_to_use_title": "How to Use",
       "toc_title": "Aspect Ratio",
       "h1_title": "Aspect Ratio Calculator — Responsive Design Dimensions",
-      "meta_title": "Aspect Ratio Calculator — Responsive Dimensions & CSS",
+      "meta_title": "Aspect Ratio Calculator — Responsive Design Dimensions & CSS",
       "card_description": "Calculate missing dimensions from aspect ratios. Generate CSS code with modern aspect-ratio property or legacy padding-bottom technique. Includes 16:9, 4:3, 21:9 presets.",
       "meta_description": "Calculate dimensions from aspect ratios for responsive design. Generate CSS with aspect-ratio property or padding-bottom fallback. Common presets and resolution table included.",
       "tool_description": "Calculate missing dimensions from aspect ratios with our Aspect Ratio Calculator. Generate CSS code for responsive media with modern aspect-ratio property or legacy padding-bottom technique. Perfect for responsive images, video embeds, and layout design with common presets like 16:9, 4:3, 21:9, and more."
@@ -348,7 +348,7 @@
     },
     "uuidGeneratorTool": {
       "linkTitle": {
-        "card": "Generate unique identifiers in multiple formats",
+        "card": "Generate unique identifiers in v1, v4, v7 formats with batch creation",
         "nav": "UUID Generator"
       },
       "features_title": "Features",
@@ -399,7 +399,7 @@
     },
     "passwordGeneratorTool": {
       "linkTitle": {
-        "card": "Create secure passwords and passphrases",
+        "card": "Create secure passwords and passphrases with customizable strength",
         "nav": "Password Generator"
       },
       "features_title": "Features",
@@ -488,7 +488,7 @@
     },
     "hashGeneratorTool": {
       "linkTitle": {
-        "card": "Generate cryptographic hashes and checksums",
+        "card": "Generate cryptographic hashes and checksums with MD5, SHA-256, SHA-512",
         "nav": "Hash Generator"
       },
       "features_title": "Features",
@@ -537,7 +537,7 @@
     },
     "loremIpsumTool": {
       "linkTitle": {
-        "card": "Generate placeholder text for mockups",
+        "card": "Generate placeholder text for mockups with customizable paragraphs",
         "nav": "Lorem Ipsum"
       },
       "features_title": "Features",
@@ -575,7 +575,7 @@
     },
     "qrCodeGeneratorTool": {
       "linkTitle": {
-        "card": "Create customizable QR codes instantly",
+        "card": "Create customizable QR codes instantly with color and logo options",
         "nav": "QR Code Generator"
       },
       "features_title": "Features",
@@ -647,7 +647,7 @@
     },
     "htmlEntityTool": {
       "linkTitle": {
-        "card": "Convert text to HTML entities and back",
+        "card": "Convert text to HTML entities and back with special character support",
         "nav": "HTML Entity Encoder"
       },
       "inputTitle": "Input",
@@ -691,7 +691,7 @@
     },
     "jwtDecoderTool": {
       "linkTitle": {
-        "card": "Decode and analyze JSON Web Tokens",
+        "card": "Decode and analyze JSON Web Tokens with header and payload inspection",
         "nav": "JWT Decoder"
       },
       "inputTitle": "JWT Token",
@@ -735,7 +735,7 @@
     },
     "punycodeConverterTool": {
       "linkTitle": {
-        "card": "Convert international domain names to Punycode",
+        "card": "Convert international domain names to Punycode and ASCII format",
         "nav": "Punycode Converter"
       },
       "inputTitle": "Input",
@@ -773,7 +773,7 @@
     },
     "stringEscaperTool": {
       "linkTitle": {
-        "card": "Escape strings for multiple programming contexts",
+        "card": "Escape strings for HTML, JavaScript, JSON, SQL and CSV contexts",
         "nav": "String Escaper"
       },
       "features_title": "Features",
@@ -797,7 +797,7 @@
     },
     "codeFormatterTool": {
       "linkTitle": {
-        "card": "Format and beautify code in multiple languages",
+        "card": "Format and beautify HTML, CSS, JavaScript, XML and SQL code online",
         "nav": "Code Formatter"
       },
       "features_title": "Features",
@@ -832,7 +832,7 @@
     },
     "dataConverterTool": {
       "linkTitle": {
-        "card": "Convert between data formats and timestamps",
+        "card": "Convert between JSON, XML, YAML, CSV and Unix timestamps online",
         "nav": "Data Converter"
       },
       "features_title": "Features",
@@ -885,7 +885,7 @@
     },
     "regexTesterTool": {
       "linkTitle": {
-        "card": "Test and debug regular expressions online",
+        "card": "Test and debug regular expressions online with live match results",
         "nav": "Regex Tester"
       },
       "features_title": "Features",
@@ -938,7 +938,7 @@
     },
     "characterReferenceTool": {
       "linkTitle": {
-        "card": "Browse and copy HTML entities and symbols",
+        "card": "Browse and copy HTML entities and Unicode symbols with search",
         "nav": "Character Reference"
       },
       "errorLoading": "Error loading character reference",
@@ -992,7 +992,7 @@
     },
     "emojiReferenceTool": {
       "linkTitle": {
-        "card": "Search and copy emojis with Unicode codes",
+        "card": "Search and copy emojis with Unicode codes and shortcodes reference",
         "nav": "Emoji Reference"
       },
       "features_title": "Features",
@@ -1019,7 +1019,7 @@
     },
     "sriGeneratorTool": {
       "linkTitle": {
-        "card": "Generate SRI hashes for secure CDN resource loading",
+        "card": "Generate SRI hashes for secure CDN resource loading with integrity",
         "nav": "SRI Generator"
       },
       "features_title": "Features",

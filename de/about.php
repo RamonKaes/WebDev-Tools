@@ -28,7 +28,7 @@ $currentTool = 'about';
 $assetPrefix = BASE_PATH . '/';
 $toolBaseUrl = BASE_PATH . '/de';
 $homeUrl = BASE_PATH . '/de';
-$pageTitle = 'Über WebDev-Tools – Kostenlose Entwickler-Utilities';
+$pageTitle = 'Über WebDev-Tools – Datenschutzfreundliche Entwickler-Utilities';
 $pageDescription = 'Erfahren Sie mehr über WebDev-Tools, eine Sammlung kostenloser, datenschutzfreundlicher Entwickler-Utilities, entwickelt mit Leidenschaft von Ramon Kaes.';
 
 $i18nData = loadI18n($lang) ?: [];

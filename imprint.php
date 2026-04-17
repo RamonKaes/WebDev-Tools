@@ -27,7 +27,7 @@ $currentTool = 'imprint';
 $assetPrefix = BASE_PATH . '/';
 $toolBaseUrl = BASE_PATH;
 $homeUrl = BASE_PATH;
-$pageTitle = 'Imprint – Legal Information | WebDev-Tools';
+$pageTitle = 'Imprint – Legal Information Contact Details WebDev-Tools';
 $pageDescription = 'Legal information and contact details for WebDev-Tools.';
 
 $i18nData = loadI18n($lang) ?: [];

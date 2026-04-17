@@ -102,6 +102,34 @@ $mainNavLabels = [
 ];
 $mainNavLabel = $mainNavLabels[$lang] ?? 'Main navigation';
 
+// Legal page title labels for navigation
+$aboutTitleLabels = [
+  'en' => 'About WebDev-Tools',
+  'de' => 'Über WebDev-Tools',
+  'es' => 'Acerca de WebDev-Tools',
+  'pt' => 'Sobre WebDev-Tools',
+  'fr' => 'À propos de WebDev-Tools',
+  'it' => 'Informazioni su WebDev-Tools'
+];
+
+$imprintTitleLabels = [
+  'en' => 'Legal Information',
+  'de' => 'Rechtliche Informationen',
+  'es' => 'Información Legal',
+  'pt' => 'Informações Legais',
+  'fr' => 'Mentions Légales',
+  'it' => 'Informazioni Legali'
+];
+
+$privacyTitleLabels = [
+  'en' => 'Privacy Policy',
+  'de' => 'Datenschutzerklärung',
+  'es' => 'Política de Privacidad',
+  'pt' => 'Política de Privacidade',
+  'fr' => 'Politique de Confidentialité',
+  'it' => 'Informativa sulla Privacy'
+];
+
 // Open menu labels
 $openMenuLabels = [
   'en' => 'Open menu',
@@ -316,7 +344,10 @@ $openMenuLabel = $openMenuLabels[$lang] ?? 'Open menu';
     <div class="p-3 border-top">
       <ul class="list-unstyled ps-0 mb-0">
         <li class="mb-2 d-flex gap-2">
-          <a href="<?= $toolBaseUrl ?>/about.php" class="flex-fill d-flex align-items-center justify-content-center text-secondary text-decoration-none rounded tool-link <?php echo $currentTool === 'about' ? 'active' : ''; ?>" data-tool="about">
+          <a href="<?= $toolBaseUrl ?>/about.php" 
+             class="flex-fill d-flex align-items-center justify-content-center text-secondary text-decoration-none rounded tool-link <?php echo $currentTool === 'about' ? 'active' : ''; ?>" 
+             data-tool="about"
+             title="<?php echo htmlspecialchars($aboutTitleLabels[$lang] ?? 'About WebDev-Tools', ENT_QUOTES, 'UTF-8'); ?>">
             <i class="bi bi-info-circle me-1"></i><span><?php echo htmlspecialchars($nav['about'] ?? 'About', ENT_QUOTES, 'UTF-8'); ?></span>
           </a>
           <a href="https://github.com/RamonKaes/WebDev-Tools" target="_blank" rel="noopener noreferrer" class="flex-fill d-flex align-items-center justify-content-center text-secondary text-decoration-none rounded tool-link" title="GitHub Repository">
@@ -324,10 +355,16 @@ $openMenuLabel = $openMenuLabels[$lang] ?? 'Open menu';
           </a>
         </li>
         <li class="d-flex gap-2">
-          <a href="<?= $toolBaseUrl ?>/imprint.php" class="flex-fill d-flex align-items-center justify-content-center text-secondary text-decoration-none rounded tool-link <?php echo $currentTool === 'imprint' ? 'active' : ''; ?>" data-tool="imprint">
+          <a href="<?= $toolBaseUrl ?>/imprint.php" 
+             class="flex-fill d-flex align-items-center justify-content-center text-secondary text-decoration-none rounded tool-link <?php echo $currentTool === 'imprint' ? 'active' : ''; ?>" 
+             data-tool="imprint"
+             title="<?php echo htmlspecialchars($imprintTitleLabels[$lang] ?? 'Legal Information', ENT_QUOTES, 'UTF-8'); ?>">
             <i class="bi bi-file-text me-1"></i><span><?php echo htmlspecialchars($nav['imprint'] ?? 'Imprint', ENT_QUOTES, 'UTF-8'); ?></span>
           </a>
-          <a href="<?= $toolBaseUrl ?>/privacy.php" class="flex-fill d-flex align-items-center justify-content-center text-secondary text-decoration-none rounded tool-link <?php echo $currentTool === 'privacy' ? 'active' : ''; ?>" data-tool="privacy">
+          <a href="<?= $toolBaseUrl ?>/privacy.php" 
+             class="flex-fill d-flex align-items-center justify-content-center text-secondary text-decoration-none rounded tool-link <?php echo $currentTool === 'privacy' ? 'active' : ''; ?>" 
+             data-tool="privacy"
+             title="<?php echo htmlspecialchars($privacyTitleLabels[$lang] ?? 'Privacy Policy', ENT_QUOTES, 'UTF-8'); ?>">
             <i class="bi bi-shield-check me-1"></i><span><?php echo htmlspecialchars($nav['privacy'] ?? 'Privacy', ENT_QUOTES, 'UTF-8'); ?></span>
           </a>
         </li>

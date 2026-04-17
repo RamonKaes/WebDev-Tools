@@ -11,7 +11,7 @@ $currentTool = 'privacy';
 $assetPrefix = BASE_PATH . '/';
 $toolBaseUrl = BASE_PATH . '/es';
 $homeUrl = BASE_PATH . '/es';
-$pageTitle = 'Política de Privacidad – WebDev-Tools';
+$pageTitle = 'Política Privacidad – Protección Datos WebDev-Tools Online';
 $pageDescription = 'Política de privacidad e información sobre protección de datos para WebDev-Tools.';
 
 $i18nData = loadI18n($lang) ?: [];

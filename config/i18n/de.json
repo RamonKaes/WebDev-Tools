@@ -90,7 +90,7 @@
       "detect_format": "Format automatisch erkennen",
       "image_preview": "Bildvorschau",
       "linkTitle": {
-        "card": "Base64-Strings und Dateien kodieren oder dekodieren",
+        "card": "Base64-Strings und Dateien kodieren oder dekodieren mit Drag & Drop",
         "nav": "Base64-Kodierer"
       },
       "file_encoded": "Datei kodiert: {filename} ({size} KB)",
@@ -141,7 +141,7 @@
       "parser_placeholder": "URL zum Parsen eingeben...",
       "parse_btn": "URL parsen",
       "linkTitle": {
-        "card": "URL-Parameter und Komponenten kodieren oder dekodieren",
+        "card": "URL-Parameter und Komponenten kodieren oder dekodieren mit Parser online",
         "nav": "URL-Kodierer"
       },
       "uri_info": "URI-Modus erhält URL-Struktur, kodiert nur Sonderzeichen",
@@ -244,7 +244,7 @@
     },
     "aspectRatioCalculator": {
       "linkTitle": {
-        "card": "Berechne Dimensionen und erhalte Seitenverhältnisse",
+        "card": "Dimensionen berechnen und Seitenverhältnisse mit CSS-Generator beibehalten",
         "nav": "Seitenverhältnis"
       },
       "presets_title": "Gängige Seitenverhältnisse",
@@ -302,7 +302,7 @@
       "how_to_use_title": "So funktioniert's",
       "toc_title": "Seitenverhältnis",
       "h1_title": "Seitenverhältnis Rechner — Responsive Design Dimensionen",
-      "meta_title": "Seitenverhältnis Rechner — Responsive Dimensionen & CSS",
+      "meta_title": "Seitenverhältnis Rechner — Responsive Design Dimensionen CSS",
       "card_description": "Berechne fehlende Dimensionen aus Seitenverhältnissen. Generiere CSS-Code mit moderner aspect-ratio Eigenschaft oder padding-bottom Technik. Mit 16:9, 4:3, 21:9 Presets.",
       "meta_description": "Berechne Dimensionen aus Seitenverhältnissen für Responsive Design. Generiere CSS mit aspect-ratio Eigenschaft oder padding-bottom Fallback. Gängige Presets und Auflösungstabelle.",
       "tool_description": "Berechne fehlende Dimensionen aus Seitenverhältnissen mit unserem Seitenverhältnis Rechner. Generiere CSS-Code für responsive Medien mit moderner aspect-ratio-Eigenschaft oder klassischer padding-bottom Technik. Perfekt für responsive Bilder, Video-Embeds und Layout-Design mit gängigen Presets wie 16:9, 4:3, 21:9 und mehr."
@@ -338,7 +338,7 @@
       "tailwind_info": "Tailwind CSS: Nutzt rem-Einheiten mit Basis 16px (0,25rem = 4px).",
       "conversion_table_title": "Konvertierungstabelle",
       "linkTitle": {
-        "card": "Pixel zu Rem-Einheiten für Responsive Design konvertieren",
+        "card": "Pixel zu Rem-Einheiten für Responsive Web Design CSS konvertieren",
         "nav": "PX zu REM"
       },
       "toc_title": "Px zu Rem Konverter",
@@ -384,7 +384,7 @@
       "copy_all_btn": "Alle kopieren",
       "download_btn": "Herunterladen",
       "linkTitle": {
-        "card": "Eindeutige Identifikatoren in mehreren Formaten generieren",
+        "card": "Eindeutige Identifikatoren in v1, v4, v7 Formaten mit Batch erstellen",
         "nav": "UUID-Generator"
       },
       "version_v1_help": "Zeitstempel-basierte UUID (verwendet MAC-Adresse und aktuelle Zeit)",
@@ -445,7 +445,7 @@
       "charset": "Zeichensatz",
       "crackTime": "Geschätzte Knackzeit",
       "linkTitle": {
-        "card": "Sichere Passwörter und Passphrasen erstellen",
+        "card": "Sichere Passwörter und Passphrasen mit anpassbarer Stärke erstellen",
         "nav": "Passwort-Generator"
       },
       "strengthVeryWeak": "Sehr schwach",
@@ -526,7 +526,7 @@
       "compare": "Vergleichen",
       "loadExample": "Beispiel laden",
       "linkTitle": {
-        "card": "Kryptografische Hashes und Prüfsummen generieren",
+        "card": "Kryptografische Hashes und Prüfsummen mit MD5, SHA-256, SHA-512 generieren",
         "nav": "Hash-Generator"
       },
       "hmacSecretPlaceholder": "Geheimen Schlüssel für HMAC eingeben...",
@@ -561,7 +561,7 @@
       "copy": "Kopieren",
       "clear": "Löschen",
       "linkTitle": {
-        "card": "Platzhaltertext für Mockups generieren",
+        "card": "Platzhaltertext für Mockups mit anpassbaren Absätzen generieren",
         "nav": "Lorem Ipsum"
       },
       "copied": "In Zwischenablage kopiert!",
@@ -629,7 +629,7 @@
       "downloadSVG": "SVG herunterladen",
       "clear": "Löschen",
       "linkTitle": {
-        "card": "Anpassbare QR-Codes sofort erstellen",
+        "card": "Anpassbare QR-Codes sofort mit Farbe und Logo-Optionen erstellen",
         "nav": "QR-Code-Generator"
       },
       "enterContent": "Bitte geben Sie Inhalt ein, um einen QR-Code zu generieren",
@@ -671,7 +671,7 @@
       "convert": "Konvertieren",
       "viewReference": "Zeichen-Referenz",
       "linkTitle": {
-        "card": "Text in HTML-Entities konvertieren und zurück",
+        "card": "Text in HTML-Entities konvertieren und zurück mit Sonderzeichen-Support",
         "nav": "HTML-Entity-Kodierer"
       },
       "how_to_use_title": "So funktioniert's",
@@ -753,7 +753,7 @@
       "convert": "Konvertieren",
       "example": "Beispiele",
       "linkTitle": {
-        "card": "Internationale Domainnamen in Punycode konvertieren",
+        "card": "Internationale Domainnamen in Punycode und ASCII-Format konvertieren",
         "nav": "Punycode-Konverter"
       },
       "how_to_use_title": "So funktioniert's",
@@ -833,7 +833,7 @@
     "dataConverterTool": {
       "features_title": "Funktionen",
       "linkTitle": {
-        "card": "Zwischen Datenformaten und Zeitstempeln konvertieren",
+        "card": "Zwischen JSON, XML, YAML, CSV und Unix-Zeitstempeln online konvertieren",
         "nav": "Daten-Konverter"
       },
       "conversionLabel": "Konvertierungstyp",
@@ -885,7 +885,7 @@
     },
     "regexTesterTool": {
       "linkTitle": {
-        "card": "Reguläre Ausdrücke online testen und debuggen",
+        "card": "Reguläre Ausdrücke online mit Live-Match-Ergebnissen testen und debuggen",
         "nav": "Regex-Tester"
       },
       "features_title": "Funktionen",
@@ -938,7 +938,7 @@
     },
     "characterReferenceTool": {
       "linkTitle": {
-        "card": "HTML-Entities und Symbole durchsuchen und kopieren",
+        "card": "HTML-Entities und Unicode-Symbole mit Suchfunktion durchsuchen und kopieren",
         "nav": "Zeichen-Referenz"
       },
       "errorLoading": "Fehler beim Laden der Zeichen-Referenz",
@@ -992,7 +992,7 @@
     },
     "emojiReferenceTool": {
       "linkTitle": {
-        "card": "Emojis mit Unicode-Codes suchen und kopieren",
+        "card": "Emojis mit Unicode-Codes und Shortcodes-Referenz suchen und kopieren",
         "nav": "Emoji-Referenz"
       },
       "features_title": "Funktionen",
@@ -1019,7 +1019,7 @@
     },
     "sriGeneratorTool": {
       "linkTitle": {
-        "card": "SRI-Hashes für sicheres CDN-Laden generieren",
+        "card": "SRI-Hashes für sicheres CDN-Laden mit Integritätsprüfung generieren",
         "nav": "SRI-Generator"
       },
       "features_title": "Funktionen",

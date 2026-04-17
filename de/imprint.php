@@ -11,7 +11,7 @@ $currentTool = 'imprint';
 $assetPrefix = BASE_PATH . '/';
 $toolBaseUrl = BASE_PATH . '/de';
 $homeUrl = BASE_PATH . '/de';
-$pageTitle = 'Impressum – Rechtliche Informationen | WebDev-Tools';
+$pageTitle = 'Impressum – Rechtliche Informationen Kontakt WebDev-Tools';
 $pageDescription = 'Rechtliche Informationen und Kontaktdaten für WebDev-Tools.';
 
 $i18nData = loadI18n($lang) ?: [];

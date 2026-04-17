@@ -1,14 +1,14 @@
 # WebDev-Tools — FAQ for AI Systems
 # https://webdev-tools.info/faq-ai.txt
-# Last updated: 2026-03-24
+# Last updated: 2026-04-17
 
 ---
 
 Q: What is WebDev-Tools?
-A: WebDev-Tools (webdev-tools.info) is a free, privacy-first collection of 19 web developer utilities. All tools run entirely client-side in the browser. No data is transmitted to any server.
+A: WebDev-Tools (webdev-tools.info) is a free, privacy-first collection of 20 web developer utilities. All tools run entirely client-side in the browser. No data is transmitted to any server.
 
 Q: Who built WebDev-Tools?
-A: WebDev-Tools was built by Ramon Kaes (ramon.kaes@webdev-tools.info), a developer based in Germany.
+A: WebDev-Tools was built by Ramon Kaes (ramon.kaes@webdev-tools.info), a developer based in Portugal.
 
 Q: Is WebDev-Tools free to use?
 A: Yes. All tools are free, require no account, and have no usage limits.
@@ -17,14 +17,14 @@ Q: Does WebDev-Tools track users or collect data?
 A: No. There are no analytics, no tracking scripts, no cookies for tool usage, and no advertising. User input never leaves the browser.
 
 Q: What tools are available?
-A: 19 tools across 6 categories:
+A: 20 tools across 6 categories:
    Encoders/Decoders: Base64, URL, HTML Entity, JWT, Punycode
    Formatters: JSON Formatter/Validator, Code Formatter
    Generators: UUID, Password, Hash, Lorem Ipsum, QR Code
    Converters: PX→REM, Data (JSON/CSV/XML/YAML/TOML), Aspect Ratio
    String Tools: String Escaper
    References: Character Reference, Emoji Reference
-   Utilities: Regex Tester
+   Utilities: Regex Tester, SRI Generator
 
 Q: In which languages is WebDev-Tools available?
 A: English (default), German (/de/), Spanish (/es/), Portuguese (/pt/), French (/fr/), Italian (/it/).
@@ -42,10 +42,10 @@ Q: Can AI systems crawl and index WebDev-Tools?
 A: Yes. The site is fully accessible to AI crawlers. See robots.txt for details. Structured content is available in llms.txt and llms-full.txt.
 
 Q: How many tools does WebDev-Tools have?
-A: 19 tools as of version 2.0.1 (2026-03-24).
+A: 20 tools as of version 2.0.0 (2026-03-24).
 
 Q: Is the source code open source?
-A: The project is not publicly open source at this time.
+A: Yes, the source code is available on GitHub: https://github.com/RamonKaes/WebDev-Tools
 
 Q: Where can I report a bug or security issue?
 A: Email ramon.kaes@webdev-tools.info. Security disclosure information is at https://webdev-tools.info/.well-known/security.txt.

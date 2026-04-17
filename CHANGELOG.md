@@ -4,6 +4,38 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
 
 ---
 
+## [2.1.1] – 2026-04-17
+
+### 🔍 SEO
+- **Page Titles (TODO #1)** – 26 problematische Seitentitel optimiert (55-65 Zeichen, keyword-optimiert):
+  - 24 PHP-Seiten: index, about, privacy, imprint (alle 6 Sprachen)
+  - 6 i18n JSON-Einträge: aspectRatioCalculator meta_title
+  - Template: "[Tool] – [Function] [Benefits] [Keywords]"
+- **Internal Link Texts (TODO #2)** – Interne Linktexte verbessert:
+  - linkTitle.card von <60 auf 60-80 Zeichen erweitert (EN: 95%, DE: 80%)
+  - Keywords ergänzt: Format-Namen (HTML, JSON), Features (drag & drop), Benefits (secure, online)
+  - Navigation: title-Attribute für Legal-Links (About, Imprint, Privacy) in allen 6 Sprachen
+- **Heading Structure (TODO #3)** – Überschriften-Hierarchie korrigiert:
+  - Hierarchie-Lücken: 6 → 0 (100% behoben)
+  - Leere Headings: 120 → 0 (100% behoben)
+  - Template: `<h6>` → `<h3>` für "On this page" Sidebar
+  - Homepage: `<h3>` Tool-Cards → `<div>` (keine semantischen Überschriften für Navigation)
+  - Tools: `<h3>` alert-headings → `<div>` in customNoticeContent (~60 Dateien)
+  - Korrekte Hierarchie: H1 (Tool-Titel) → H2 (Sections) → H3 (Unterabschnitte)
+
+### 🛠️ Tools
+- **Audit Scripts** – Python-Scripts für SEO-Analyse erstellt:
+  - `audit_meta_titles.py` – Page Title Längen-Analyse
+  - `audit_all_titles.py` – Vollständige Title-Validierung
+  - `audit_link_texts.py` – Generische/leere/zu lange Linktexte
+  - `audit_card_titles.py` – linkTitle.card Längen-Analyse (60-80 Zeichen)
+  - `audit_headings.py` – Heading-Hierarchie-Analyse (H1-H6)
+
+### 📝 Documentation
+- **TODO.md** – SEO-Optimierungen dokumentiert (TODO #1, #2, #3 abgeschlossen)
+
+---
+
 ## [2.1.0] – 2026-04-17
 
 ### ✨ Features

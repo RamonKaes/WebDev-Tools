@@ -131,7 +131,7 @@ $ogImageUrl = $baseUrlEscaped . BASE_PATH . '/assets/img/og/home.svg';
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="<?= htmlspecialchars($pageDescription, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>">
-  <meta name="theme-color" content="#0d6efd">
+  <meta name="theme-color" content="#066fd1">
   <meta name="color-scheme" content="light dark">
   <meta name="author" content="WebDev-Tools">
   <title><?= htmlspecialchars($pageTitle, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?></title>

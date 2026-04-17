@@ -45,7 +45,7 @@ $currentUrl = getFullUrl('/imprint.php', $lang);
   <meta name="description" content="<?= htmlspecialchars($pageDescription, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>">
   <meta name="robots" content="noindex, follow">
   <meta name="googlebot" content="noindex, follow">
-  <meta name="theme-color" content="#0d6efd">
+  <meta name="theme-color" content="#066fd1">
   <meta name="color-scheme" content="light dark">
   <meta name="author" content="Ramon Kaes">
 

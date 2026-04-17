@@ -48,7 +48,7 @@ $currentUrl = getFullUrl('/about.php', $lang);
   <meta name="keywords" content="WebDev-Tools, Über, Ramon Kaes, Entwickler-Tools, Datenschutzfreundlich">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="googlebot" content="index, follow">
-  <meta name="theme-color" content="#0d6efd">
+  <meta name="theme-color" content="#066fd1">
   <meta name="color-scheme" content="light dark">
   <meta name="author" content="Ramon Kaes">
 

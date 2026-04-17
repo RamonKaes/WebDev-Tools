@@ -7,15 +7,15 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
 ## [2.1.1] – 2026-04-17
 
 ### 🔍 SEO
-- **Page Titles (TODO #1)** – 26 problematische Seitentitel optimiert (55-65 Zeichen, keyword-optimiert):
+- **Page Titles** – 26 problematische Seitentitel optimiert (55-65 Zeichen, keyword-optimiert):
   - 24 PHP-Seiten: index, about, privacy, imprint (alle 6 Sprachen)
   - 6 i18n JSON-Einträge: aspectRatioCalculator meta_title
   - Template: "[Tool] – [Function] [Benefits] [Keywords]"
-- **Internal Link Texts (TODO #2)** – Interne Linktexte verbessert:
+- **Internal Link Texts** – Interne Linktexte verbessert:
   - linkTitle.card von <60 auf 60-80 Zeichen erweitert (EN: 95%, DE: 80%)
   - Keywords ergänzt: Format-Namen (HTML, JSON), Features (drag & drop), Benefits (secure, online)
   - Navigation: title-Attribute für Legal-Links (About, Imprint, Privacy) in allen 6 Sprachen
-- **Heading Structure (TODO #3)** – Überschriften-Hierarchie korrigiert:
+- **Heading Structure** – Überschriften-Hierarchie korrigiert:
   - Hierarchie-Lücken: 6 → 0 (100% behoben)
   - Leere Headings: 120 → 0 (100% behoben)
   - Template: `<h6>` → `<h3>` für "On this page" Sidebar
@@ -25,12 +25,12 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
   - Dual-Title-System: `h1_title` (SEO-optimiert, keyword-reich) + `toc_title` (navigation-freundlich, kurz)
   - tool-base.php: `h1_title` für `<h1>` Content, `toc_title` für `data-toc-title` Attribut
   - index.php (6 Sprachen): `h1_title` in link title-Attributen für bessere Tooltips
-- **Meta-Descriptions (TODO #4)** – Meta-Descriptions für statische Seiten hinzugefügt:
+- **Meta-Descriptions** – Meta-Descriptions für statische Seiten hinzugefügt:
   - 24 neue Meta-Descriptions: 4 statische Seiten (home, about, privacy, imprint) × 6 Sprachen
   - Kritische Issues: 24 → 0 (100% behoben)
   - Optimale Descriptions (140-160 Zeichen): 75 → 83
   - Template: Call-to-Action + Keywords + klarer Mehrwert
-- **Strong/Bold Tags (TODO #5)** – Audit durchgeführt, Optimierung nicht notwendig:
+- **Strong/Bold Tags** – Audit durchgeführt, Optimierung nicht notwendig:
   - 10 zu lange Tags (>70 Zeichen) gefunden, alle in privacy.php
   - Privacy-Seiten haben `noindex, follow` → keine SEO-Relevanz
   - Hervorhebung nur für User-Experience, nicht für Suchmaschinen

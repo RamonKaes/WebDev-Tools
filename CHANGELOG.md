@@ -44,18 +44,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
   - Dark Mode: Hellere Textfarben für bessere Lesbarkeit (#f8b4b4, #ffd966, #8fd19e, #74c0fc)
   - Keine linken Borders (subtileres Design)
 
-### 🛠️ Tools
-- **Audit Scripts** – Python-Scripts für SEO-Analyse erstellt:
-  - `audit_meta_titles.py` – Page Title Längen-Analyse
-  - `audit_all_titles.py` – Vollständige Title-Validierung
-  - `audit_link_texts.py` – Generische/leere/zu lange Linktexte
-  - `audit_card_titles.py` – linkTitle.card Längen-Analyse (60-80 Zeichen)
-  - `audit_headings.py` – Heading-Hierarchie-Analyse (H1-H6)
-  - `audit_meta_descriptions.py` – Meta-Description-Analyse (120-200 Zeichen)
-  - `audit_strong_tags.py` – Strong/Bold-Tag-Analyse (leere, zu lange, verschachtelte Tags)
 
-### 📝 Documentation
-- **TODO.md** – SEO-Optimierungen dokumentiert (TODO #1-4 abgeschlossen, #5 übersprungen)
 
 ---
 

@@ -1050,17 +1050,16 @@
       "recommended": "recommended",
       "resourceTypeLabel": "Resource Type",
       "resourceTypeHint": "Determines the generated HTML tag type",
-      "typeScript": "JavaScript (\u003cscript\u003e)",
-      "typeStylesheet": "Stylesheet (\u003clink rel=\"stylesheet\"\u003e)",
-      "examplesTitle": "Quick Examples",
+      "typeScript": "JavaScript (<script>)",
+      "typeStylesheet": "Stylesheet (<link rel=\"stylesheet\">)",
       "generateBtn": "Generate SRI Hash",
       "integrityAttr": "integrity attribute",
       "htmlTag": "HTML tag",
-      "noResult": "Enter a URL, upload a file, or paste content and click 'Generate SRI Hash'",
+      "outputTitle": "SRI Hashes",
       "toc_title": "SRI Generator",
       "h1_title": "SRI Hash Generator — Subresource Integrity for CDN Resources",
       "card_description": "Generate Subresource Integrity (SRI) hashes for CDN resources. SHA-256, SHA-384, SHA-512 support with ready-to-use script and link HTML tags.",
-      "tool_description": "Generate Subresource Integrity (SRI) hashes to protect your website from compromised CDN resources. Enter a URL, upload a file, or paste resource content to compute SHA-256, SHA-384, and SHA-512 hashes. The tool generates ready-to-use \u003cscript\u003e and \u003clink\u003e HTML tags with the integrity attribute included. SHA-384 is recommended by the W3C for most use cases. All hashing runs entirely in your browser via the Web Crypto API.",
+      "tool_description": "Generate Subresource Integrity (SRI) hashes to protect your website from compromised CDN resources. Enter a URL, upload a file, or paste resource content to compute SHA-256, SHA-384, and SHA-512 hashes. The tool generates ready-to-use <script> and <link> HTML tags with the integrity attribute included. SHA-384 is recommended by the W3C for most use cases. All hashing runs entirely in your browser via the Web Crypto API.",
       "errors": {
         "noWebCrypto": "Web Crypto API not supported. Please use a modern browser.",
         "noAlgorithm": "Please select at least one hash algorithm.",
@@ -1071,7 +1070,8 @@
         "noFile": "Please select a file.",
         "noText": "Please paste some content to hash.",
         "processingFailed": "Hash generation failed. Please try again."
-      }
+      },
+      "loadSampleBtn": "Load Sample"
     }
   },
   "seo": {

@@ -1050,17 +1050,16 @@
       "recommended": "recomendado",
       "resourceTypeLabel": "Tipo de recurso",
       "resourceTypeHint": "Determina el tipo de etiqueta HTML generada",
-      "typeScript": "JavaScript (\u003cscript\u003e)",
-      "typeStylesheet": "Hoja de estilos (\u003clink rel=\"stylesheet\"\u003e)",
-      "examplesTitle": "Ejemplos rápidos",
+      "typeScript": "JavaScript (<script>)",
+      "typeStylesheet": "Hoja de estilos (<link rel=\"stylesheet\">)",
       "generateBtn": "Generar hash SRI",
       "integrityAttr": "atributo integrity",
       "htmlTag": "etiqueta HTML",
-      "noResult": "Introduce una URL, sube un archivo o pega contenido y haz clic en 'Generar hash SRI'",
+      "outputTitle": "Hashes SRI",
       "toc_title": "Generador SRI",
       "h1_title": "Generador de Hashes SRI — Subresource Integrity para CDN",
       "card_description": "Genera hashes Subresource Integrity (SRI) para recursos CDN. SHA-256, SHA-384, SHA-512 con etiquetas script y link listas para usar.",
-      "tool_description": "Genera hashes Subresource Integrity (SRI) para proteger tu sitio web de recursos CDN comprometidos. Introduce una URL, sube un archivo o pega el contenido del recurso para calcular hashes SHA-256, SHA-384 y SHA-512. La herramienta genera etiquetas HTML \u003cscript\u003e y \u003clink\u003e listas para usar con el atributo integrity incluido. Todo el hash se ejecuta en tu navegador.",
+      "tool_description": "Genera hashes Subresource Integrity (SRI) para proteger tu sitio web de recursos CDN comprometidos. Introduce una URL, sube un archivo o pega el contenido del recurso para calcular hashes SHA-256, SHA-384 y SHA-512. La herramienta genera etiquetas HTML <script> y <link> listas para usar con el atributo integrity incluido. Todo el hash se ejecuta en tu navegador.",
       "errors": {
         "noWebCrypto": "Web Crypto API no compatible. Usa un navegador moderno.",
         "noAlgorithm": "Selecciona al menos un algoritmo de hash.",
@@ -1071,7 +1070,8 @@
         "noFile": "Selecciona un archivo.",
         "noText": "Pega contenido para hacer hash.",
         "processingFailed": "Falló la generación de hash. Inténtalo de nuevo."
-      }
+      },
+      "loadSampleBtn": "Cargar ejemplo"
     }
   },
   "seo": {

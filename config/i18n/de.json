@@ -1050,17 +1050,16 @@
       "recommended": "empfohlen",
       "resourceTypeLabel": "Ressourcentyp",
       "resourceTypeHint": "Bestimmt den generierten HTML-Tag-Typ",
-      "typeScript": "JavaScript (\u003cscript\u003e)",
-      "typeStylesheet": "Stylesheet (\u003clink rel=\"stylesheet\"\u003e)",
-      "examplesTitle": "Schnellbeispiele",
+      "typeScript": "JavaScript (<script>)",
+      "typeStylesheet": "Stylesheet (<link rel=\"stylesheet\">)",
       "generateBtn": "SRI-Hash generieren",
       "integrityAttr": "integrity-Attribut",
       "htmlTag": "HTML-Tag",
-      "noResult": "URL eingeben, Datei hochladen oder Inhalt einfügen und 'SRI-Hash generieren' klicken",
+      "outputTitle": "SRI-Hashes",
       "toc_title": "SRI Generator",
       "h1_title": "SRI-Hash-Generator — Subresource Integrity für CDN-Ressourcen",
       "card_description": "Subresource Integrity (SRI) Hashes für CDN-Ressourcen generieren. SHA-256, SHA-384, SHA-512 mit fertigen script- und link-Tags.",
-      "tool_description": "Generiere Subresource Integrity (SRI) Hashes, um deine Website vor kompromittierten CDN-Ressourcen zu schützen. Gib eine URL ein, lade eine Datei hoch oder füge den Ressourceninhalt ein, um SHA-256, SHA-384 und SHA-512 Hashes zu berechnen. Das Tool generiert fertige \u003cscript\u003e- und \u003clink\u003e-HTML-Tags mit dem integrity-Attribut. SHA-384 wird vom W3C empfohlen. Das gesamte Hashing läuft via Web Crypto API direkt im Browser.",
+      "tool_description": "Generiere Subresource Integrity (SRI) Hashes, um deine Website vor kompromittierten CDN-Ressourcen zu schützen. Gib eine URL ein, lade eine Datei hoch oder füge den Ressourceninhalt ein, um SHA-256, SHA-384 und SHA-512 Hashes zu berechnen. Das Tool generiert fertige <script>- und <link>-HTML-Tags mit dem integrity-Attribut. SHA-384 wird vom W3C empfohlen. Das gesamte Hashing läuft via Web Crypto API direkt im Browser.",
       "errors": {
         "noWebCrypto": "Web Crypto API nicht unterstützt. Bitte verwenden Sie einen modernen Browser.",
         "noAlgorithm": "Bitte wählen Sie mindestens einen Hash-Algorithmus.",
@@ -1071,7 +1070,8 @@
         "noFile": "Bitte wählen Sie eine Datei aus.",
         "noText": "Bitte fügen Sie Inhalt zum Hashen ein.",
         "processingFailed": "Hash-Generierung fehlgeschlagen. Bitte erneut versuchen."
-      }
+      },
+      "loadSampleBtn": "Beispiel laden"
     }
   },
   "seo": {

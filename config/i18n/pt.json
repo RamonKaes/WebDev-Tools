@@ -1050,13 +1050,12 @@
       "recommended": "recomendado",
       "resourceTypeLabel": "Tipo de recurso",
       "resourceTypeHint": "Determina o tipo de tag HTML gerada",
-      "typeScript": "JavaScript (\u003cscript\u003e)",
-      "typeStylesheet": "Folha de estilos (\u003clink rel=\"stylesheet\"\u003e)",
-      "examplesTitle": "Exemplos rápidos",
+      "typeScript": "JavaScript (<script>)",
+      "typeStylesheet": "Folha de estilos (<link rel=\"stylesheet\">)",
       "generateBtn": "Gerar hash SRI",
       "integrityAttr": "atributo integrity",
       "htmlTag": "tag HTML",
-      "noResult": "Introduz um URL, carrega um ficheiro ou cola conteúdo e clica 'Gerar hash SRI'",
+      "outputTitle": "Hashes SRI",
       "toc_title": "Gerador SRI",
       "h1_title": "Gerador de Hash SRI — Subresource Integrity para CDN",
       "card_description": "Gera hashes Subresource Integrity (SRI) para recursos CDN. SHA-256, SHA-384, SHA-512 com tags script e link prontas a usar.",
@@ -1071,7 +1070,8 @@
         "noFile": "Seleciona um ficheiro.",
         "noText": "Cola conteúdo para hash.",
         "processingFailed": "Falha na geração do hash. Tenta novamente."
-      }
+      },
+      "loadSampleBtn": "Carregar exemplo"
     }
   },
   "seo": {

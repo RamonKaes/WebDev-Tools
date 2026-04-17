@@ -87,7 +87,7 @@ return [
 | `converters` | Data Converter, Px→Rem, Aspect Ratio |
 | `references` | Character Reference, Emoji Reference |
 | `stringtools` | String Escaper |
-| `utilities` | Regex Tester |
+| `utilities` | Regex Tester, SRI Generator |
 
 ### Optionale Keys
 
@@ -225,7 +225,7 @@ it/base64-encoder-decoder/index.php       # IT
 
 3. **Weitere Sprachen analog**
    - ES: Spanisch (europäisch, nicht lateinamerikanisch)
-   - PT: Portugiesisch (brasilianisch bevorzugt)
+   - PT: Portugiesisch (europäisch)
    - FR: Französisch (europäisch)
    - IT: Italienisch
 

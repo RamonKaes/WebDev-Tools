@@ -11,7 +11,7 @@
 
 ### **Privacy-First Developer Utilities for Modern Web Development**
 
-*A professional-grade, client-side-only platform providing 19 essential tools for software developers, system administrators, and web engineers. All operations execute locally in your browser — **your data never leaves your device.***
+*A professional-grade, client-side-only platform providing 20 essential tools for software developers, system administrators, and web engineers. All operations execute locally in your browser — **your data never leaves your device.***
 
 **🔗 Live Platform:** [https://webdev-tools.info/](https://webdev-tools.info/)
 
@@ -317,7 +317,7 @@ Security-critical tools utilize the **Web Crypto API** (`crypto.getRandomValues(
 
 <div align="center">
 
-### **19 Professional-Grade Developer Utilities**
+### **20 Professional-Grade Developer Utilities**
 
 *All tools RFC/ISO compliant • Client-side only • Zero data transmission*
 
@@ -373,6 +373,16 @@ Security-critical tools utilize the **Web Crypto API** (`crypto.getRandomValues(
 • Claims extraction
 </td>
 </tr>
+<tr>
+<td><strong><a href="./sri-generator/">SRI Generator</a></strong></td>
+<td>W3C SRI</td>
+<td>
+• SHA-256, SHA-384, SHA-512<br>
+• Ready-to-use HTML tags<br>
+• URL, file, and text input<br>
+• Web Crypto API based
+</td>
+</tr>
 </table>
 
 ---
@@ -407,9 +417,9 @@ Security-critical tools utilize the **Web Crypto API** (`crypto.getRandomValues(
 </tr>
 <tr>
 <td><strong><a href="./data-converter/">Data Converter</a></strong></td>
-<td>YAML, TOML, CSV</td>
+<td>YAML, CSV</td>
 <td>
-• JSON ↔ XML ↔ YAML ↔ CSV ↔ TOML<br>
+• JSON ↔ XML ↔ YAML ↔ CSV<br>
 • Bidirectional conversion<br>
 • Syntax pre-validation<br>
 • Preserves data types
@@ -535,7 +545,7 @@ Security-critical tools utilize the **Web Crypto API** (`crypto.getRandomValues(
 <td><strong><a href="./qr-code-generator/">QR Code Generator</a></strong></td>
 <td>ISO/IEC 18004</td>
 <td>
-• Error correction levels (L, M, Q, H)<br>
+• Maximum error correction (level H)<br>
 • SVG/PNG export<br>
 • WiFi/vCard/URL formats<br>
 • Customizable size & color
@@ -546,8 +556,8 @@ Security-critical tools utilize the **Web Crypto API** (`crypto.getRandomValues(
 <td>N/A</td>
 <td>
 • Configurable paragraphs/words<br>
-• HTML tag injection<br>
 • Layout testing<br>
+• Paragraph/sentence/word modes<br>
 • Copy-to-clipboard
 </td>
 </tr>
@@ -698,7 +708,7 @@ Frontend:
 └── Web Crypto API          # Secure random number generation
 
 Backend:
-├── PHP 7.4+                # Server-side routing and templating
+├── PHP 8.0+                # Server-side routing and templating
 ├── Apache 2.4+             # Web server with mod_rewrite
 └── Client-side processing  # No backend data processing
 
@@ -728,7 +738,7 @@ Architecture:
 │   ├── js/                      # JavaScript utilities
 │   └── img/                     # Static assets
 ├── [tool-name]/
-│   └── index.php                # Individual tool (19 tools)
+│   └── index.php                # Individual tool (20 tools)
 ├── de/, es/, pt/, fr/, it/      # Language-specific directories
 ├── CHANGELOG.md                 # Version history
 ├── SECURITY.md                  # Security documentation
@@ -741,11 +751,11 @@ Strict CSP enforced to prevent XSS attacks:
 
 ```
 default-src 'self';
-script-src 'self' 'nonce-{random}';
-style-src 'self' 'nonce-{random}';
-img-src 'self' data:;
-font-src 'self';
-connect-src 'none';
+script-src 'self' 'nonce-{random}' https://cdn.jsdelivr.net;
+style-src 'self' https://cdn.jsdelivr.net;
+img-src 'self' data: blob: https:;
+font-src 'self' https://cdn.jsdelivr.net;
+connect-src 'self' https:;
 ```
 
 **No inline scripts** — All JavaScript uses nonce-based execution.
@@ -768,7 +778,7 @@ WebDev-Tools was developed using a **hybrid human-AI approach** that combines th
 1. **Automated Code Review**: Claude Code performs systematic review after each implementation
 2. **Human Architecture**: All design decisions made by human developer
 3. **Version Control**: Git-based workflow with rollback capability (`git reset --hard`)
-4. **Manual Testing**: Comprehensive QA across all 114 tool instances (19 tools × 6 languages)
+4. **Manual Testing**: Comprehensive QA across all 120 tool instances (20 tools × 6 languages)
 5. **Standards Validation**: Conformity checks against RFC/ISO specifications
 
 #### Challenges & Solutions
@@ -799,14 +809,14 @@ This repository contains a small set of developer utilities and helper scripts u
 
 - **Web Server (production)**: Apache/Nginx with PHP support — the live site (https://webdev-tools.info/) runs entirely as a PHP/Apache site and **does not require Node.js or npm**. All production assets are static/PHP and safe for hosting environments without Node.
 - **Local development (optional)**: Node.js/npm are useful convenience tools for developers (local servers, scripts) but are **not required** for the site to run in production. Use the PHP CLI or the `dev/start-server.sh` router for local testing when Node isn't available.
-- **PHP**: Version 7.4 or higher (8.x recommended)
+- **PHP**: Version 8.0 or higher
 - **Browser**: Modern browser with JavaScript enabled
 
 ### Installation
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/WebDev-Tools.git
+   git clone https://github.com/RamonKaes/WebDev-Tools.git
    cd WebDev-Tools
    ```
 
@@ -870,7 +880,7 @@ WebDev-Tools has undergone comprehensive third-party technical auditing:
 
 ### Audit Highlights
 
-✅ **Functional Integrity**: All 19 tools generate RFC/ISO-compliant output  
+✅ **Functional Integrity**: All 20 tools generate RFC/ISO-compliant output  
 ✅ **Security Architecture**: Client-side-only execution verified  
 ✅ **Cryptographic Security**: CSPRNG usage confirmed for sensitive operations  
 ✅ **Standards Adherence**: Explicit referencing of normative specifications  
@@ -1035,7 +1045,7 @@ SOFTWARE.
 ## Contact & Support
 
 - **Website**: [https://webdev-tools.info/](https://webdev-tools.info/)
-- **Issues**: [GitHub Issues](https://github.com/yourusername/WebDev-Tools/issues)
+- **Issues**: [GitHub Issues](https://github.com/RamonKaes/WebDev-Tools/issues)
 - **Email**: [Contact Form](https://webdev-tools.info/imprint.php)
 - **Documentation**: 
   - [Developer Docs](docs/README.md)

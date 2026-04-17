@@ -4,6 +4,31 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
 
 ---
 
+## [2.1.0] – 2026-04-17
+
+### ✨ Features
+- **SRI Generator** – Neues Tool (#20): Subresource Integrity Hashes für CDN-Ressourcen generieren; SHA-256, SHA-384, SHA-512; URL-Fetch, Datei-Upload oder Text-Eingabe; fertige `<script>`/`<link>`-Tags mit integrity-Attribut; Web Crypto API basiert
+- **UI-Redesign** – Kompaktere Heading-Hierarchie: Tool-Titel h3→h5, Section-Headings h5→h6, Grid-Gaps g-4→g-3
+- **Tabler Color Palette** – Bootstrap-Farben durch Tabler-inspirierte Palette ersetzt (#066fd1 Blue, #2fb344 Green, etc.)
+
+### 🔒 Security
+- **CSP** – `connect-src 'self' https:` ergänzt (für SRI URL-Fetch)
+
+### 🐛 Bug Fixes
+- **TOC Generator** – Tool-Header-Überschrift erschien fälschlicherweise im Inhaltsverzeichnis
+- **Tool Cards** – Hover-Animation (translateY) entfernt für weniger Ablenkung
+
+### 🧪 Tests
+- `sriGeneratorTool.test.js` – 31 Tests (Registration, UI-Rendering, Hash-Generierung, Algorithmus-Auswahl, Copy, Sample)
+- Gesamt: **841 Tests** (20 Suites)
+
+### 🏗️ Build
+- `sri-generator` in Build-Skript aufgenommen
+- sass von ^1.70.0 auf ^1.99.0 aktualisiert
+- Sitemaps mit aktualisierten Daten regeneriert
+
+---
+
 ## [2.0.2] – 2026-04-02
 
 ### 🔒 Security
@@ -165,7 +190,7 @@ Initiales Production-Release: 19 Tools × 6 Sprachen, Client-Side-only, 100% OWA
 
 ### Stack
 - Frontend: Bootstrap 5.3.0 + Bootstrap Icons 1.11.0 + Vanilla JS
-- Backend: PHP 7.4+ (100% `strict_types`) + Apache 2.4+
+- Backend: PHP 8+ (100% `strict_types`) + Apache 2.4+
 - Security: Web Crypto API, CSP (nonce), DOMPurify 3.0.9, SRI, HSTS
 - i18n: 6 Sprachen (en, de, es, pt, fr, it), ~1261 Keys pro Sprache
 

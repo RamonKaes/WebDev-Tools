@@ -32,13 +32,14 @@ ini_set('session.use_cookies', '0');
 
 **Header (`config/security-headers.php`):**
 ```php
+$cspNonce = base64_encode(random_bytes(16));
 header("Content-Security-Policy: " .
   "default-src 'self'; " .
-  "script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; " .
-  "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; " .
-  "img-src 'self' data: https:; " .
+  "script-src 'self' 'nonce-{$cspNonce}' https://cdn.jsdelivr.net https://www.googletagmanager.com; " .
+  "style-src 'self' https://cdn.jsdelivr.net; " .
+  "img-src 'self' data: blob: https:; " .
   "font-src 'self' https://cdn.jsdelivr.net; " .
-  "connect-src 'self'; " .
+  "connect-src 'self' https:; " .
   "frame-ancestors 'none'; " .
   "base-uri 'self'; " .
   "form-action 'self'"
@@ -50,26 +51,14 @@ header("Content-Security-Policy: " .
 | Direktive | Wert | Zweck |
 |-----------|------|-------|
 | `default-src` | `'self'` | Nur Ressourcen von eigener Domain |
-| `script-src` | `'self' 'unsafe-inline'` | Inline-JS erlaubt (für IIFE-Pattern) |
+| `script-src` | `'self' 'nonce-...'` | Nonce-basiert, kein unsafe-inline |
 | `frame-ancestors` | `'none'` | Clickjacking-Schutz |
-| `connect-src` | `'self'` | Keine externen API-Calls |
+| `connect-src` | `'self' https:` | HTTPS-Requests erlaubt (z. B. SRI URL-Fetch) |
 
-**`'unsafe-inline'` Begründung:**
-- Tool-Module verwenden IIFE-Pattern (keine externen Scripts)
-- Nonces wären Overhead für statische PHP-Seiten
-- Alternative: Nonce-basierte CSP für strengere Policy
-
-**Upgrade-Path zu Nonce-based CSP:**
-```php
-// Nonce generieren
-$nonce = base64_encode(random_bytes(16));
-
-// In CSP-Header
-header("Content-Security-Policy: script-src 'nonce-$nonce'");
-
-// In HTML
-echo "<script nonce='$nonce'>/* ... */</script>";
-```
+**Nonce-basierte CSP:**
+- Jeder Request generiert einen kryptografischen Nonce via `random_bytes(16)`
+- Alle `<script>`-Tags müssen `nonce="..."` enthalten
+- Kein `'unsafe-inline'` nötig – sicherer als erlaubt
 
 ---
 

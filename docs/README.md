@@ -430,4 +430,4 @@ cp tool-name/index.php nl/tool-name/index.php
 
 ---
 
-**Letzte Aktualisierung:** April 2026 | **Version:** 2.0.0
+**Letzte Aktualisierung:** April 2026 | **Version:** 2.0.2

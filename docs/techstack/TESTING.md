@@ -1,6 +1,6 @@
 # Testing – WebDev-Tools
 
-**Jest 30 mit jsdom** – 810 Tests, 19 Suites, Unit-Tests für alle Tools.
+**Jest 30 mit jsdom** – 841 Tests, 20 Suites, Unit-Tests für alle Tools.
 
 ---
 

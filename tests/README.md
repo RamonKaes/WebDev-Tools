@@ -13,6 +13,21 @@ tests/
     characterReference.test.js        – 16 Tests (inkl. Debounce-Fake-Timer-Tests)
     codeFormatterTool.test.js         – 35 Tests
     dataConverterTool.test.js         – 45 Tests
+    emojiReferenceTool.test.js        – 19 Tests
+    hashGeneratorTool.test.js         – 26 Tests
+    htmlEntityTool.test.js            – 30 Tests
+    jsonFormatterValidatorTool.test.js – 44 Tests
+    jwtDecoderTool.test.js            – 30 Tests
+    loremIpsumTool.test.js            – 42 Tests
+    passwordGeneratorTool.test.js     – 55 Tests
+    punycodeConverterTool.test.js     – 36 Tests
+    pxToRemConverterTool.test.js      – 66 Tests
+    qrCodeGeneratorTool.test.js       – 65 Tests
+    regexTesterTool.test.js           – 51 Tests
+    sriGeneratorTool.test.js          – 31 Tests
+    stringEscaperTool.test.js         – 83 Tests
+    urlEncoderDecoderTool.test.js     – 75 Tests
+    uuidGeneratorTool.test.js         – 60 Tests
   README.md
 ```
 
@@ -115,7 +130,7 @@ npm run test:coverage
 
 ## Technische Details
 
-- **Framework:** Jest 29 + `jest-environment-jsdom`
+- **Framework:** Jest 30 + `jest-environment-jsdom`
 - **Konfiguration:** `jest.config.js` mit `setupFilesAfterFramework: ['./tests/unit/setup.js']`
 - **Strategie:** IIFE-Skripte werden per `require()` geladen; Globals werden vor
   dem Laden als Mocks gesetzt (`window.Tools`, `window.i18n`, `window.ClipboardUtils`,

@@ -234,11 +234,11 @@ npm run test:watch
 **Warum Node 18+?**
 - Native `fetch()` Support
 - Performance-Verbesserungen
-- LTS-Version (Long-Term Support bis April 2025)
+- Node 18 LTS ist abgelaufen (April 2025)
 
 **Entwicklungs-Empfehlung:**
-- Node 20 LTS (bis April 2026)
-- nvm für Version-Management: `nvm use 20`
+- Node 22 LTS (bis April 2027)
+- nvm für Version-Management: `nvm use 22`
 
 ---
 

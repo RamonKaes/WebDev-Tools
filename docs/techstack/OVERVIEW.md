@@ -31,7 +31,7 @@
 | **Styling** | Bootstrap 5.3 + Custom Sass | Responsive, konsistentes Design |
 | **Backend** | PHP 8+ (strict_types) | Tool-Registry, i18n, Routing |
 | **Build** | Bash, Terser, csso/cssnano | Minification, Optimierung |
-| **Testing** | Jest 30 + jsdom | 810 Tests, 19 Suites |
+| **Testing** | Jest 30 + jsdom | 841 Tests, 20 Suites |
 | **Deployment** | rsync + htaccess Rewrites | Production-Build nach `dist/` |
 
 ---
@@ -78,4 +78,4 @@ partials/tool-base.php           # Gemeinsames Layout
 
 ---
 
-**Stand:** April 2026 | **Version:** 2.0.0 | **Tools:** 19 | **Sprachen:** 6
+**Stand:** April 2026 | **Version:** 2.0.2 | **Tools:** 20 | **Sprachen:** 6

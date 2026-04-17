@@ -16,7 +16,7 @@ All OG images follow the Tango Color Scheme, with colors assigned by tool catego
 |---------------|-----------|---------------|------------|
 | Encoders      | `#cc0000` | Red           | 5          |
 | Formatters    | `#c17d11` | Orange        | 2          |
-| Converters    | `#75507b` | Purple        | 2          |
+| Converters    | `#75507b` | Purple        | 3          |
 | Generators    | `#3465a4` | Blue          | 5          |
 | References    | `#ce5c00` | Dark Orange   | 2          |
 | String Tools  | `#4e9a06` | Green         | 1          |
@@ -79,5 +79,5 @@ OG images are automatically loaded via:
 ---
 
 **Generated**: 2025-11-07  
-**Last Update**: 2025-11-07  
-**Total Images**: 19 tools + 1 home
+**Last Update**: 2026-04-17  
+**Total Images**: 20 tools + 1 home

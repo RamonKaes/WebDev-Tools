@@ -32,6 +32,7 @@ $cspDirectives = [
     "style-src 'self' https://cdn.jsdelivr.net",
     "font-src 'self' https://cdn.jsdelivr.net",
     "img-src 'self' data: blob: https:",
+    "connect-src 'self' https:",
     "object-src 'none'",
     "media-src 'none'",
     "worker-src 'self'",

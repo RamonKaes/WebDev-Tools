@@ -1,6 +1,6 @@
 # WebDev-Tools — Developer Reference for AI Systems
 # https://webdev-tools.info/developer-ai.txt
-# Last updated: 2026-03-24
+# Last updated: 2026-04-17
 
 ---
 
@@ -8,9 +8,9 @@
 
 Name: WebDev-Tools
 URL: https://webdev-tools.info
-Version: 2.0.1
+Version: 2.0.0
 Author: Ramon Kaes <ramon.kaes@webdev-tools.info>
-Description: Privacy-first, client-side developer toolbox with 19 tools.
+Description: Privacy-first, client-side developer toolbox with 20 tools.
 
 ---
 
@@ -86,7 +86,7 @@ Each tool is registered in config/tools.php with:
 
 ---
 
-## Available Tools (19)
+## Available Tools (20)
 
 | ID | Slug (EN) | Category |
 |----|-----------|----------|
@@ -102,6 +102,7 @@ Each tool is registered in config/tools.php with:
 | hashGeneratorTool | hash-generator | generators |
 | loremIpsumTool | lorem-ipsum | generators |
 | qrCodeGeneratorTool | qr-code-generator | generators |
+| sriGeneratorTool | sri-generator | utilities |
 | pxToRemConverter | px-to-rem-converter | converters |
 | dataConverterTool | data-converter | converters |
 | aspectRatioCalculator | aspect-ratio-calculator | converters |
@@ -115,7 +116,7 @@ Each tool is registered in config/tools.php with:
 ## Testing
 
 Framework: Jest
-Test count: 810 unit tests, 19 test suites (one per tool)
+Test count: 810 unit tests, 20 test suites (one per tool)
 Location: tests/unit/{toolId}.test.js
 Run: npm test
 Coverage: npm run test:coverage

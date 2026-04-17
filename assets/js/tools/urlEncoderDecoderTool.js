@@ -54,11 +54,11 @@
       };
 
       container.innerHTML = `
-      <div class="row g-4">
+      <div class="row g-3">
         <div class="col-12 col-lg-6">
           <div class="card h-100">
             <div class="card-body">
-              <h2 class="h5 card-title mb-3"><i class="bi bi-pencil me-2"></i>${t('tools.urlEncoderDecoder.input_title')}</h2>
+              <p class="h6 fw-semibold card-title mb-3"><i class="bi bi-pencil me-2"></i>${t('tools.urlEncoderDecoder.input_title')}</p>
 
               <div class="btn-group btn-group-sm mb-3 w-100" role="group">
                 <input type="radio" class="btn-check" name="mode" id="modeEncode" autocomplete="off" checked>
@@ -120,7 +120,7 @@
         <div class="col-12 col-lg-6">
           <div class="card h-100">
             <div class="card-body">
-              <h2 class="h5 card-title mb-3"><i class="bi bi-code-square me-2"></i>${t('tools.urlEncoderDecoder.output_title')}</h2>
+              <p class="h6 fw-semibold card-title mb-3"><i class="bi bi-code-square me-2"></i>${t('tools.urlEncoderDecoder.output_title')}</p>
 
               <textarea class="form-control bg-body-secondary font-monospace mb-3" id="output" rows="10" placeholder="${t('tools.urlEncoderDecoder.encode_output_placeholder')}"></textarea>
 
@@ -139,7 +139,7 @@
         <div class="col-12">
           <div class="card">
             <div class="card-body">
-              <h2 class="h5 card-title mb-3"><i class="bi bi-diagram-3 me-2"></i>${t('tools.urlEncoderDecoder.parser_title')}</h2>
+              <p class="h6 fw-semibold card-title mb-3"><i class="bi bi-diagram-3 me-2"></i>${t('tools.urlEncoderDecoder.parser_title')}</p>
 
               <div class="input-group mb-3">
                 <input type="text" class="form-control font-monospace" id="parseInput" placeholder="${t('tools.urlEncoderDecoder.parser_placeholder')}">

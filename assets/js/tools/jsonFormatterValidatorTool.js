@@ -162,13 +162,13 @@
 
       // Render UI
   container.innerHTML = `
-      <div class="row g-4" id="mainRow">
+      <div class="row g-3" id="mainRow">
         <div class="col-12 position-relative" id="inputOutputWrapper">
-          <div class="row g-4">
+          <div class="row g-3">
             <div class="col-12 col-lg-6">
               <div class="card h-100">
                 <div class="card-body">
-                  <h2 class="h5 card-title mb-3"><i class="bi bi-pencil me-2"></i>${t('tools.jsonFormatterValidator.input_title')}</h2>
+                  <p class="h6 fw-semibold card-title mb-3"><i class="bi bi-pencil me-2"></i>${t('tools.jsonFormatterValidator.input_title')}</p>
                   <div class="drag-drop-area mb-3" id="dropArea">
                     <i class="bi bi-cloud-arrow-up fs-1 text-muted"></i>
                     <p class="mb-0">${t('tools.jsonFormatterValidator.drag_drop_hint')}</p>
@@ -198,7 +198,7 @@
             <div class="col-12 col-lg-6">
               <div class="card h-100">
                 <div class="card-body">
-                  <h2 class="h5 card-title mb-3"><i class="bi bi-code-square me-2"></i>${t('tools.jsonFormatterValidator.output_title')}</h2>
+                  <p class="h6 fw-semibold card-title mb-3"><i class="bi bi-code-square me-2"></i>${t('tools.jsonFormatterValidator.output_title')}</p>
 
                   <div class="btn-group btn-group-sm mb-3 w-100" role="group">
                     <input type="radio" class="btn-check" name="viewMode" id="viewText" autocomplete="off" checked>
@@ -237,7 +237,7 @@
         <div class="col-12">
           <div class="card">
             <div class="card-body">
-              <h2 class="h5 card-title mb-3"><i class="bi bi-info-circle me-2"></i>${t('tools.jsonFormatterValidator.status_title')}</h2>
+              <p class="h6 fw-semibold card-title mb-3"><i class="bi bi-info-circle me-2"></i>${t('tools.jsonFormatterValidator.status_title')}</p>
               <div id="statusOutput"><p class="text-muted mb-0">${t('tools.jsonFormatterValidator.status_initial')}</p></div>
             </div>
           </div>
@@ -248,7 +248,7 @@
             <div class="card-body">
               <div class="row">
                 <div class="col-md-6">
-                  <h2 class="h5 mb-2">${t('tools.jsonFormatterValidator.path_extractor_title')}</h2>
+                  <p class="h6 fw-semibold mb-2">${t('tools.jsonFormatterValidator.path_extractor_title')}</p>
                   <div class="input-group input-group-sm mb-2">
                     <input type="text" class="form-control font-monospace" id="jsonPath" placeholder="${t('tools.jsonFormatterValidator.path_placeholder')}">
                     <button class="btn btn-outline-primary btn-sm" id="extractPathBtn">${t('tools.jsonFormatterValidator.btn_extract')}</button>
@@ -257,7 +257,7 @@
                 </div>
 
                 <div class="col-md-6">
-                  <h2 class="h5 mb-2">${t('tools.jsonFormatterValidator.escape_title')}</h2>
+                  <p class="h6 fw-semibold mb-2">${t('tools.jsonFormatterValidator.escape_title')}</p>
                   <div class="d-flex gap-2 mb-2">
                     <button class="btn btn-sm btn-outline-primary" id="escapeBtn">${t('tools.jsonFormatterValidator.btn_escape')}</button>
                     <button class="btn btn-sm btn-outline-primary" id="unescapeBtn">${t('tools.jsonFormatterValidator.btn_unescape')}</button>

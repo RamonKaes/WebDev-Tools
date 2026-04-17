@@ -39,7 +39,7 @@
     }
 
     container.innerHTML = `
-      <div class="row g-4" id="mainRow">
+      <div class="row g-3" id="mainRow">
         <!-- Controls -->
         <div class="col-12">
           <div class="card">
@@ -156,11 +156,11 @@
 
         <!-- Input/Output Areas with Toggle Button -->
         <div class="col-12 position-relative" id="inputOutputWrapper">
-          <div class="row g-4">
+          <div class="row g-3">
             <div class="col-12 col-lg-6">
               <div class="card h-100">
                 <div class="card-body">
-                  <h2 class="h5 card-title mb-3"><i class="bi bi-pencil me-2"></i>${t('tools.dataConverterTool.input_title')}</h2>
+                  <p class="h6 fw-semibold card-title mb-3"><i class="bi bi-pencil me-2"></i>${t('tools.dataConverterTool.input_title')}</p>
 
                   <textarea
                     class="form-control font-monospace mb-3"
@@ -184,7 +184,7 @@
             <div class="col-12 col-lg-6">
               <div class="card h-100">
                 <div class="card-body">
-                  <h2 class="h5 card-title mb-3"><i class="bi bi-arrow-right me-2"></i>${t('tools.dataConverterTool.output_title')}</h2>
+                  <p class="h6 fw-semibold card-title mb-3"><i class="bi bi-arrow-right me-2"></i>${t('tools.dataConverterTool.output_title')}</p>
 
                   <textarea
                     class="form-control bg-body-secondary font-monospace mb-3"

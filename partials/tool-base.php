@@ -57,7 +57,7 @@ include __DIR__ . '/head.php';
   <div class="d-flex flex-grow-1 position-relative">
     <div class="left-sidebar-spacer"></div>
     
-    <main class="flex-grow-1 p-4 p-md-5 bg-body" id="main-content">
+    <main class="flex-grow-1 p-2 p-md-3 bg-body" id="main-content">
     
     <?php
     // Use page_title for H1 heading (SEO-optimized), title is for navigation only
@@ -70,7 +70,7 @@ include __DIR__ . '/head.php';
         ?>
     <div class="tool-container-inner mx-auto" id="tool-header">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h3 mb-0 d-flex align-items-center" data-toc-title="<?= htmlspecialchars($toolNavTitle, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>">
+        <h1 class="h5 fw-semibold mb-0 d-flex align-items-center" data-toc-title="<?= htmlspecialchars($toolNavTitle, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>">
           <i class="bi <?= htmlspecialchars($toolIcon, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?> me-2"></i><span><?= htmlspecialchars($toolH1Title, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?></span>
         </h1>
       </div>
@@ -213,7 +213,7 @@ include __DIR__ . '/head.php';
     <div class="tool-container-inner mx-auto mt-3">
       <div class="card">
         <div class="card-body">
-          <h2 class="h5 card-title mb-3">
+          <h2 class="h6 fw-semibold card-title mb-3">
             <i class="bi bi-list-check me-2"></i><?= htmlspecialchars($featuresTitle, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>
           </h2>
             <?= $featuresContent ?>
@@ -267,7 +267,7 @@ include __DIR__ . '/head.php';
     <div class="tool-container-inner mx-auto mt-3">
       <div class="card">
         <div class="card-body">
-          <h2 class="h5 card-title mb-3">
+          <h2 class="h6 fw-semibold card-title mb-3">
             <i class="bi bi-<?= htmlspecialchars($icon, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?> me-2"></i><?= htmlspecialchars($section['title'], ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>
           </h2>
                 <?= $section['content'] ?>
@@ -295,7 +295,7 @@ include __DIR__ . '/head.php';
     <div class="tool-container-inner mx-auto mt-3">
       <div class="card">
         <div class="card-body">
-          <h2 class="h5 card-title mb-3">
+          <h2 class="h6 fw-semibold card-title mb-3">
             <i class="bi bi-link-45deg me-2"></i><?= htmlspecialchars($resourcesSectionTitle, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>
           </h2>
           <div class="row">

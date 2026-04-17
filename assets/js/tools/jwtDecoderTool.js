@@ -144,14 +144,14 @@
     open: function (container) {
       try {
         container.innerHTML = `
-          <div class="row g-4">
+          <div class="row g-3">
             <!-- JWT Input -->
             <div class="col-12">
               <div class="card">
                 <div class="card-body">
-                  <h2 class="h5 card-title mb-3">
+                  <p class="h6 fw-semibold card-title mb-3">
                     <i class="bi bi-box-arrow-in-down me-2"></i>${t('tools.jwtDecoderTool.inputTitle')}
-                  </h2>
+                  </p>
 
                   <textarea
                     class="form-control font-monospace mb-3"
@@ -179,7 +179,7 @@
 
             <!-- Results -->
             <div class="col-12 d-none" id="resultsSection">
-              <div class="row g-4">
+              <div class="row g-3">
                 <!-- Header -->
                 <div class="col-12 col-lg-6">
                   <div class="card h-100">

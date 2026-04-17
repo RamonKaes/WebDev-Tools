@@ -105,7 +105,7 @@
 
         // Main content
         const row = document.createElement('div');
-        row.className = 'row g-4';
+        row.className = 'row g-3';
 
         // Generator Card
         const generatorCol = document.createElement('div');
@@ -113,7 +113,7 @@
         generatorCol.innerHTML = `
           <div class="card">
             <div class="card-body">
-              <h2 class="card-title h5 mb-3"><i class="bi bi-gear me-2"></i>${t('tools.loremIpsumTool.optionsTitle')}</h2>
+              <h2 class="card-title h6 fw-semibold mb-3"><i class="bi bi-gear me-2"></i>${t('tools.loremIpsumTool.optionsTitle')}</h2>
 
               <div class="row">
                 <div class="col-sm-4">
@@ -159,7 +159,7 @@
         outputCol.innerHTML = `
           <div class="card">
             <div class="card-body">
-              <h2 class="card-title h5 mb-3"><i class="bi bi-file-text me-2"></i>${t('tools.loremIpsumTool.outputTitle')}</h2>
+              <h2 class="card-title h6 fw-semibold mb-3"><i class="bi bi-file-text me-2"></i>${t('tools.loremIpsumTool.outputTitle')}</h2>
               <div class="mb-3">
                 <textarea class="form-control bg-body-secondary font-monospace" id="loremOutput" rows="12" readonly placeholder="${t('tools.loremIpsumTool.outputPlaceholder')}"></textarea>
               </div>

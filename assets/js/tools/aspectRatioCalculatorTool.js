@@ -34,14 +34,14 @@
      */
     open: function (container) {
       container.innerHTML = `
-        <div class="row g-4">
+        <div class="row g-3">
           <!-- Aspect Ratio Presets -->
           <div class="col-12">
             <div class="card">
               <div class="card-body">
-                <h2 class="h5 card-title mb-3">
+                <p class="h6 fw-semibold card-title mb-3">
                   <i class="bi bi-collection me-2"></i>${t('tools.aspectRatioCalculator.presets_title')}
-                </h2>
+                </p>
                 <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-8 g-2" id="ratioPresets">
                   <div class="col">
                     <button class="btn btn-sm btn-outline-primary ratio-preset w-100" data-ratio="16:9">
@@ -100,9 +100,9 @@
           <div class="col-12 col-lg-6">
             <div class="card h-100">
               <div class="card-body">
-                <h2 class="h5 card-title mb-3">
+                <p class="h6 fw-semibold card-title mb-3">
                   <i class="bi bi-calculator me-2"></i>${t('tools.aspectRatioCalculator.calculator_title')}
-                </h2>
+                </p>
                 
                 <!-- Aspect Ratio Input -->
                 <div class="mb-3">
@@ -215,9 +215,9 @@
           <div class="col-12 col-lg-6">
             <div class="card h-100">
               <div class="card-body">
-                <h2 class="h5 card-title mb-3">
+                <p class="h6 fw-semibold card-title mb-3">
                   <i class="bi bi-code-square me-2"></i>${t('tools.aspectRatioCalculator.css_generator_title')}
-                </h2>
+                </p>
 
                 <!-- CSS Method Selection -->
                 <div class="mb-3">
@@ -241,10 +241,10 @@
                 </div>
 
                 <!-- Info Alert -->
-                <div class="alert alert-info small mb-0">
-                  <h3 class="h6 alert-heading">
+                <div class="alert alert-info small">
+                  <p class="h6 fw-semibold alert-heading mb-3">
                     <i class="bi bi-info-circle me-2"></i>${t('tools.aspectRatioCalculator.css_info_title')}
-                  </h3>
+                  </p>
                   <p class="mb-2"><strong>${t('tools.aspectRatioCalculator.css_modern')}:</strong> ${t('tools.aspectRatioCalculator.css_modern_info')}</p>
                   <p class="mb-0"><strong>${t('tools.aspectRatioCalculator.css_padding_trick')}:</strong> ${t('tools.aspectRatioCalculator.css_padding_info')}</p>
                 </div>
@@ -256,7 +256,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-body">
-                <h2 class="h5 card-title mb-3">
+                <h2 class="h6 fw-semibold card-title mb-3">
                   <i class="bi bi-table me-2"></i>${t('tools.aspectRatioCalculator.common_resolutions_title')}
                 </h2>
                 <div class="table-responsive">

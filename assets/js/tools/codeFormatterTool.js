@@ -360,7 +360,7 @@
       };
 
       container.innerHTML = `
-      <div class="row g-4" id="mainRow">
+      <div class="row g-3" id="mainRow">
         <!-- Configuration Card -->
         <div class="col-12">
           <div class="card">
@@ -422,11 +422,11 @@
 
         <!-- Input/Output with Toggle Button -->
         <div class="col-12 position-relative" id="inputOutputWrapper">
-          <div class="row g-4">
+          <div class="row g-3">
             <div class="col-12 col-lg-6">
               <div class="card h-100">
                 <div class="card-body">
-                  <h2 class="h5 card-title mb-3"><i class="bi bi-pencil me-2"></i>${t('tools.codeFormatterTool.input_title')}</h2>
+                  <p class="h6 fw-semibold card-title mb-3"><i class="bi bi-pencil me-2"></i>${t('tools.codeFormatterTool.input_title')}</p>
 
                   <textarea class="form-control font-monospace mb-3" id="inputCode" rows="20" placeholder="${t('tools.codeFormatterTool.inputPlaceholder')}"></textarea>
 
@@ -442,7 +442,7 @@
             <div class="col-12 col-lg-6">
               <div class="card h-100">
                 <div class="card-body">
-                  <h2 class="h5 card-title mb-3"><i class="bi bi-code-square me-2"></i>${t('tools.codeFormatterTool.output_title')}</h2>
+                  <p class="h6 fw-semibold card-title mb-3"><i class="bi bi-code-square me-2"></i>${t('tools.codeFormatterTool.output_title')}</p>
 
                   <textarea class="form-control bg-body-secondary font-monospace mb-3" id="outputCode" rows="20" readonly placeholder="${t('tools.codeFormatterTool.outputPlaceholder')}"></textarea>
 

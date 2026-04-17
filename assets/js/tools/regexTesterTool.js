@@ -75,7 +75,7 @@
    */
   function renderUI(container) {
     container.innerHTML = `
-      <div class="row g-4" id="mainRow">
+      <div class="row g-3" id="mainRow">
         <!-- Settings Card (Full Width) -->
         <div class="col-12">
           <div class="card">
@@ -154,14 +154,14 @@
 
         <!-- Input/Output Row (with floating toggle button) -->
         <div class="col-12 position-relative" id="inputOutputWrapper">
-          <div class="row g-4 position-relative">
+          <div class="row g-3 position-relative">
             <!-- Left Column: Test String Input -->
             <div class="col-12 col-lg-6">
               <div class="card h-100">
                 <div class="card-body">
-                  <h2 class="h5 card-title mb-3">
+                  <p class="h6 fw-semibold card-title mb-3">
                     <i class="bi bi-text-paragraph me-2"></i>${t('tools.regexTesterTool.test_string_label')}
-                  </h2>
+                  </p>
 
                   <textarea
                     class="form-control font-monospace mb-3"
@@ -195,9 +195,9 @@
             <div class="col-12 col-lg-6">
           <div class="card h-100">
             <div class="card-body">
-              <h2 class="h5 card-title mb-3">
+              <p class="h6 fw-semibold card-title mb-3">
                 <i class="bi bi-list-check me-2"></i>${t('tools.regexTesterTool.results_title')}
-              </h2>
+              </p>
 
               <!-- Results Container -->
               <div id="resultsContainer" class="mb-3 results-container">
@@ -233,9 +233,9 @@
         <div class="col-12 d-none" id="highlightedContainer">
           <div class="card">
             <div class="card-body">
-              <h2 class="h5 card-title mb-3">
+              <p class="h6 fw-semibold card-title mb-3">
                 <i class="bi bi-brush me-2"></i>${t('tools.regexTesterTool.highlighted_matches_title')}
-              </h2>
+              </p>
               <pre id="highlightedText" class="p-3 bg-body-secondary rounded mb-0 font-monospace pre-wrap"></pre>
             </div>
           </div>

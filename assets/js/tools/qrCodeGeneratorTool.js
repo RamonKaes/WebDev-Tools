@@ -47,13 +47,13 @@
 
         // Main content
         const mainRow = document.createElement('div');
-        mainRow.className = 'row g-4';
+        mainRow.className = 'row g-3';
         mainRow.innerHTML = `
           <!-- Mode Selection Card -->
           <div class="col-12">
             <div class="card">
               <div class="card-body">
-                <h2 class="card-title h5 mb-3"><i class="bi bi-toggles me-2"></i>${t('tools.qrCodeGeneratorTool.modeTitle')}</h2>
+                <h2 class="card-title h6 fw-semibold mb-3"><i class="bi bi-toggles me-2"></i>${t('tools.qrCodeGeneratorTool.modeTitle')}</h2>
                 <div class="btn-group w-100" role="group">
                   <input type="radio" class="btn-check" name="qr-mode" id="mode-url" value="url" checked>
                   <label class="btn btn-outline-primary btn-sm" for="mode-url">
@@ -84,7 +84,7 @@
             <!-- Input Card -->
             <div class="card h-100">
               <div class="card-body">
-                <h2 class="card-title h5 mb-3"><i class="bi bi-pencil me-2"></i>${t('tools.qrCodeGeneratorTool.inputTitle')}</h2>
+                <h2 class="card-title h6 fw-semibold mb-3"><i class="bi bi-pencil me-2"></i>${t('tools.qrCodeGeneratorTool.inputTitle')}</h2>
 
                 <!-- URL Mode -->
                 <div id="input-url" class="qr-input-mode">
@@ -198,7 +198,7 @@
             <!-- Customization Card -->
             <div class="card mb-3">
               <div class="card-body">
-                <h2 class="card-title h5 mb-3"><i class="bi bi-palette me-2"></i>${t('tools.qrCodeGeneratorTool.customizationTitle')}</h2>
+                <h2 class="card-title h6 fw-semibold mb-3"><i class="bi bi-palette me-2"></i>${t('tools.qrCodeGeneratorTool.customizationTitle')}</h2>
                 <div class="row mb-3">
                   <div class="col-6">
                     <label for="fg-color" class="form-label">${t('tools.qrCodeGeneratorTool.foregroundColor')}</label>
@@ -226,7 +226,7 @@
             <!-- Preview Card -->
             <div class="card">
               <div class="card-body">
-                <h2 class="card-title h5 mb-3"><i class="bi bi-eye me-2"></i>${t('tools.qrCodeGeneratorTool.outputTitle')}</h2>
+                <h2 class="card-title h6 fw-semibold mb-3"><i class="bi bi-eye me-2"></i>${t('tools.qrCodeGeneratorTool.outputTitle')}</h2>
                 <div id="qr-preview" class="mb-3 d-flex justify-content-center align-items-center qr-preview-area">
                   <p class="text-muted mb-0">${t('tools.qrCodeGeneratorTool.noPreview')}</p>
                 </div>

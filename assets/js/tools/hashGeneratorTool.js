@@ -234,7 +234,7 @@
         container.innerHTML = '';
         // Main content
         const row = document.createElement('div');
-        row.className = 'row g-4';
+        row.className = 'row g-3';
 
         // Mode Selector & Settings Card (combined)
         const modeCol = document.createElement('div');
@@ -292,7 +292,7 @@
         inputOutputWrapper.className = 'col-12 position-relative';
         inputOutputWrapper.id = 'inputOutputWrapper';
         inputOutputWrapper.innerHTML = `
-          <div class="row g-4">
+          <div class="row g-3">
             <div class="col-12 col-lg-6">
               <div id="inputCard"></div>
             </div>

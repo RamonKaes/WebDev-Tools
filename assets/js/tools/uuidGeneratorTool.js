@@ -26,11 +26,11 @@
       };
 
       container.innerHTML = `
-      <div class="row g-4">
+      <div class="row g-3">
         <div class="col-12 col-lg-6">
           <div class="card h-100">
             <div class="card-body">
-              <h2 class="h5 card-title mb-3"><i class="bi bi-shuffle me-2"></i>${t('tools.uuidGeneratorTool.single_title')}</h2>
+              <p class="h6 fw-semibold card-title mb-3"><i class="bi bi-shuffle me-2"></i>${t('tools.uuidGeneratorTool.single_title')}</p>
 
               <div class="mb-3">
                 <label for="uuidVersion" class="form-label">${t('tools.uuidGeneratorTool.version_label')}</label>
@@ -78,7 +78,7 @@
         <div class="col-12 col-lg-6">
           <div class="card h-100">
             <div class="card-body">
-              <h2 class="h5 card-title mb-3"><i class="bi bi-list-ul me-2"></i>${t('tools.uuidGeneratorTool.bulk_title')}</h2>
+              <p class="h6 fw-semibold card-title mb-3"><i class="bi bi-list-ul me-2"></i>${t('tools.uuidGeneratorTool.bulk_title')}</p>
 
               <div class="mb-3">
                 <label for="bulkCount" class="form-label">${t('tools.uuidGeneratorTool.bulk_count_label')}</label>

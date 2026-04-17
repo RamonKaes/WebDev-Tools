@@ -29,13 +29,13 @@
 
     open: function (container) {
       container.innerHTML = `
-      <div class="row g-4" id="mainRow">
+      <div class="row g-3" id="mainRow">
         <div class="col-12 position-relative" id="inputOutputWrapper">
-          <div class="row g-4">
+          <div class="row g-3">
             <div class="col-12 col-lg-6">
               <div class="card h-100">
                 <div class="card-body">
-                  <h2 class="h5 card-title mb-3"><i class="bi bi-pencil me-2"></i>${t('tools.base64EncoderDecoder.input_title')}</h2>
+                  <p class="h6 fw-semibold card-title mb-3"><i class="bi bi-pencil me-2"></i>${t('tools.base64EncoderDecoder.input_title')}</p>
 
                   <div class="btn-group btn-group-sm mb-3 w-100" role="group">
                     <input type="radio" class="btn-check" name="mode" id="modeEncode" autocomplete="off" checked>
@@ -87,7 +87,7 @@
           <div class="col-12 col-lg-6">
             <div class="card h-100">
               <div class="card-body">
-                <h2 class="h5 card-title mb-3"><i class="bi bi-code-square me-2"></i>${t('tools.base64EncoderDecoder.output_title')}</h2>
+                <p class="h6 fw-semibold card-title mb-3"><i class="bi bi-code-square me-2"></i>${t('tools.base64EncoderDecoder.output_title')}</p>
 
                 <div id="imagePreviewContainer" class="d-none mb-3">
                   <div class="border rounded p-3 bg-light text-center overflow-auto image-preview-box">

@@ -69,7 +69,7 @@
 
         // Main content
         const row = document.createElement('div');
-        row.className = 'row g-4';
+        row.className = 'row g-3';
 
         // Mode Selector Card
         const modeCol = document.createElement('div');

@@ -155,7 +155,7 @@
     if (!container) return;
 
     container.innerHTML = `
-    <div class="row g-4">
+    <div class="row g-3">
       <!-- Controls -->
       <div class="col-12">
         <div class="card shadow-sm">
@@ -230,7 +230,7 @@
       <div class="col-12">
         <div class="card shadow-sm">
           <div class="card-header bg-primary text-white">
-            <h5 class="mb-0">${t('tableTitle')}</h5>
+            <h2 class="h6 fw-semibold mb-0">${t('tableTitle')}</h5>
             <small id="charCount"></small>
           </div>
           <div class="card-body p-0">

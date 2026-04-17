@@ -1,0 +1,51 @@
+# WebDev-Tools — FAQ pour systèmes IA
+# https://webdev-tools.info/fr/faq-ai.txt
+# Dernière mise à jour : 2026-04-17
+
+---
+
+Q : Qu'est-ce que WebDev-Tools ?
+R : WebDev-Tools (webdev-tools.info) est une collection gratuite d'outils pour développeurs web axée sur la confidentialité. Tous les outils s'exécutent entièrement côté client dans le navigateur. Aucune donnée n'est envoyée à un serveur.
+
+Q : Qui a développé WebDev-Tools ?
+R : WebDev-Tools a été développé par Ramon Kaes (ramon.kaes@webdev-tools.info), un développeur basé au Portugal.
+
+Q : WebDev-Tools est-il gratuit ?
+R : Oui. Tous les outils sont gratuits, ne nécessitent pas de compte et n'ont pas de limite d'utilisation.
+
+Q : WebDev-Tools suit-il les utilisateurs ou collecte-t-il des données ?
+R : Non. Il n'y a pas d'analyses, pas de scripts de suivi et pas de cookies pour l'utilisation des outils. Les données utilisateur ne quittent jamais le navigateur.
+
+Q : Quels outils sont disponibles ?
+R : 20 outils répartis en 6 catégories :
+   Encodeurs/Décodeurs : Base64, URL, HTML Entity, JWT, Punycode
+   Formatteurs : JSON Formatter/Validator, Code Formatter
+   Générateurs : UUID, Mot de passe, Hash, Lorem Ipsum, QR Code
+   Convertisseurs : PX→REM, Données (JSON/CSV/XML/YAML/TOML), Ratio d'aspect
+   Outils de chaînes : String Escaper
+   Références : Character Reference, Emoji Reference
+   Utilitaires : Regex Tester, SRI Generator
+
+Q : WebDev-Tools est-il disponible dans quelles langues ?
+R : Anglais (par défaut), Allemand (/de/), Espagnol (/es/), Portugais (/pt/), Français (/fr/), Italien (/it/).
+
+Q : Les mots de passe et valeurs sensibles sont-ils sûrs ?
+R : Oui. Toutes les valeurs sensibles (mots de passe, hachages, tokens JWT) sont traitées exclusivement dans le navigateur et immédiatement supprimées. Elles ne sont jamais transmises.
+
+Q : Quelle technologie utilise WebDev-Tools ?
+R : PHP 8 pour le rendu côté serveur, JavaScript vanilla (sans framework) pour la logique des outils, Bootstrap 5.3 pour l'interface. Pas de bundler, pas de React, pas de Vue.
+
+Q : WebDev-Tools dispose-t-il d'une API ?
+R : Non. Toutes les fonctionnalités sont basées sur le navigateur et interactives. Il n'y a pas d'API REST ni d'interface programmatique.
+
+Q : Les systèmes IA peuvent-ils crawler et indexer WebDev-Tools ?
+R : Oui. Le site est entièrement accessible aux crawlers IA. Voir robots.txt pour les détails. Le contenu structuré est disponible dans llms.txt et llms-full.txt.
+
+Q : Combien d'outils WebDev-Tools propose-t-il ?
+R : 20 outils depuis la version 2.0.0 (2026-03-24).
+
+Q : Le code source est-il open source ?
+R : Oui, le code source est disponible sur GitHub : https://github.com/RamonKaes/WebDev-Tools
+
+Q : Où puis-je signaler un bug ou un problème de sécurité ?
+R : Email à ramon.kaes@webdev-tools.info. Informations de sécurité : https://webdev-tools.info/.well-known/security.txt.

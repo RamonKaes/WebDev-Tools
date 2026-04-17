@@ -42,7 +42,7 @@ D: I sistemi IA possono eseguire crawling e indicizzare WebDev-Tools?
 R: Sì. Il sito è completamente accessibile ai crawler IA. Vedi robots.txt per i dettagli. Il contenuto strutturato è disponibile in llms.txt e llms-full.txt.
 
 D: Quanti strumenti ha WebDev-Tools?
-R: 20 strumenti dalla versione 2.0.0 (2026-03-24).
+R: 20 strumenti dalla versione 2.1.2 (2026-04-17).
 
 D: Il codice sorgente è open source?
 R: Sì, il codice sorgente è disponibile su GitHub: https://github.com/RamonKaes/WebDev-Tools

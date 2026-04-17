@@ -42,7 +42,7 @@ Q: Can AI systems crawl and index WebDev-Tools?
 A: Yes. The site is fully accessible to AI crawlers. See robots.txt for details. Structured content is available in llms.txt and llms-full.txt.
 
 Q: How many tools does WebDev-Tools have?
-A: 20 tools as of version 2.0.0 (2026-03-24).
+A: 20 tools as of version 2.1.2 (2026-04-17).
 
 Q: Is the source code open source?
 A: Yes, the source code is available on GitHub: https://github.com/RamonKaes/WebDev-Tools

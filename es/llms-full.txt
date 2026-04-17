@@ -1,6 +1,6 @@
 # WebDev-Tools — Referencia completa para modelos de lenguaje IA
 
-> Versión: 2.0.0
+> Versión: 2.1.2
 > Última actualización: 2026-04-17
 > Idioma: Español
 > Canónica: https://webdev-tools.info/es/llms-full.txt

@@ -356,7 +356,7 @@ function generateToolSchema($toolId, $lang, $seoData)
     'operatingSystem' => 'Any',
     'browserRequirements' => 'Requires JavaScript',
     'inLanguage' => array_values(array_unique([$lang, 'en', 'de', 'es', 'pt', 'fr', 'it'])),
-    'softwareVersion' => '1.0.0',
+    'softwareVersion' => '2.1.2',
     'datePublished' => '2025-11-01',
     'author' => [
       '@type' => 'Organization',

@@ -42,7 +42,7 @@ F: Können KI-Systeme WebDev-Tools crawlen und indexieren?
 A: Ja. Die Seite ist vollständig für KI-Crawler zugänglich. Siehe robots.txt für Details. Strukturierter Content ist in llms.txt und llms-full.txt verfügbar.
 
 F: Wie viele Tools hat WebDev-Tools?
-A: 20 Tools seit Version 2.0.0 (2026-03-24).
+A: 20 Tools seit Version 2.1.2 (2026-04-17).
 
 F: Ist der Quellcode öffentlich verfügbar?
 A: Ja, der Quellcode ist auf GitHub verfügbar: https://github.com/RamonKaes/WebDev-Tools

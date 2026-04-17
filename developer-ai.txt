@@ -8,7 +8,7 @@
 
 Name: WebDev-Tools
 URL: https://webdev-tools.info
-Version: 2.0.0
+Version: 2.1.2
 Author: Ramon Kaes <ramon.kaes@webdev-tools.info>
 Description: Privacy-first, client-side developer toolbox with 20 tools.
 

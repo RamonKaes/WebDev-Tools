@@ -34,7 +34,7 @@ $features = [
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
-    <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Password Security Tips</h3>
+    <h3 class="h6 fw-semibold alert-heading mb-3"><i class="bi bi-info-circle me-2"></i>Password Security Tips</h3>
     <ul class="mb-0">
         <li>Length matters: Longer passwords are exponentially more secure</li>
         <li>Use all character types: Mix uppercase, lowercase, numbers, and symbols</li>

@@ -32,7 +32,7 @@ $features = [
 ];
 
 $customNoticeContent = '
-  <h3 class="h6 mb-2">
+  <h3 class="h6 fw-semibold mb-3">
     <i class="bi bi-info-circle me-2"></i>URL Encoding vs Component Encoding
   </h3>
   <p class="mb-0">

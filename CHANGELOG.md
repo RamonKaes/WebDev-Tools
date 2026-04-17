@@ -4,6 +4,30 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
 
 ---
 
+## [2.1.2] – 2026-04-17
+
+### 🖼️ Assets
+- **OG Images** – Vereinheitlichung auf ein einzelnes Bild:
+  - Alle Seiten nutzen jetzt `assets/img/webdev-tools.png` (41 KB)
+  - Entfernt: `assets/img/og/` Verzeichnis (~140 KB, 24+ SVG-Dateien)
+  - Entfernt: `config/generate-og-images.php` und `config/validate-og-images.php`
+  - Aktualisiert: 15 PHP-Dateien (index.php, about.php für alle 6 Sprachen, partials, config)
+  - Aktualisiert: `build.sh` (OG-Kopier-Sektion entfernt)
+  - Betrifft: Homepage, About-Seiten, alle ~120 Tool-Seiten, Fehlerseiten
+
+### 🐛 Bugfixes
+- **Homepage Tool Cards** – Konsistenz-Probleme behoben:
+  - Fehlende `$toolsConfig`-Variable in lokalisierten index.php hinzugefügt (DE/ES/PT/FR/IT)
+  - Doppelte Variablendefinitionen in de/index.php entfernt
+  - 19 falsche `</h3>` Tags durch `</div>` ersetzt
+  - Card-Body-Einrückung vereinheitlicht (16 Leerzeichen in allen Sprachen)
+  - Card-Einrückung vereinheitlicht (14 Leerzeichen in allen Sprachen)
+  - Icon- und Content-Einrückung korrigiert (20 Leerzeichen)
+  - 120 fehlende `title`-Attribute hinzugefügt (20 Tools × 6 Sprachen)
+  - Ergebnis: Identische HTML-Struktur über alle 6 Sprachen
+
+---
+
 ## [2.1.1] – 2026-04-17
 
 ### 🔍 SEO

@@ -152,12 +152,12 @@ Available in **6 languages** with culturally-aware translations:
 
 | Language | Code | Status |
 |----------|------|--------|
-| 🇬🇧 English | `en` | ✅ Complete (1261 strings) |
-| 🇩🇪 German | `de` | ✅ Complete (1261 strings) |
-| 🇪🇸 Spanish | `es` | ✅ Complete (1261 strings) |
-| 🇵🇹 Portuguese | `pt` | ✅ Complete (1261 strings) |
-| 🇫🇷 French | `fr` | ✅ Complete (1261 strings) |
-| 🇮🇹 Italian | `it` | ✅ Complete (1261 strings) |
+| 🇬🇧 English | `en` | ✅ Complete (1008 strings) |
+| 🇩🇪 German | `de` | ✅ Complete (1008 strings) |
+| 🇪🇸 Spanish | `es` | ✅ Complete (1008 strings) |
+| 🇵🇹 Portuguese | `pt` | ✅ Complete (1008 strings) |
+| 🇫🇷 French | `fr` | ✅ Complete (1008 strings) |
+| 🇮🇹 Italian | `it` | ✅ Complete (1008 strings) |
 
 **Dynamic switching** — no page reload required
 
@@ -698,8 +698,8 @@ The platform provides complete localization across all tools and documentation:
 
 ```
 Frontend:
-├── Bootstrap 5.3.0         # UI framework (chosen for stability over Tailwind)
-├── Bootstrap Icons 1.11.0  # Icon system
+├── Bootstrap 5.3.3         # UI framework (chosen for stability over Tailwind)
+├── Bootstrap Icons 1.11.3  # Icon system
 ├── Vanilla JavaScript      # No framework dependencies
 └── Web Crypto API          # Secure random number generation
 
@@ -800,11 +800,7 @@ Developer utilities and helper scripts are located under `/dev` and `/maintenanc
 ### Prerequisites
 
 - **Web Server (production)**: Apache/Nginx with PHP support — the live site (https://webdev-tools.info/) runs entirely as a PHP/Apache site and **does not require Node.js or npm**. All production assets are static/PHP and safe for hosting environments without Node.
-- **Local development (optional)**: Node.js/npm are useful convenience tools for developers (local servers, scripts) but are **not required** for the site to run in production. Use the PHP CLI or `maintenance/start-server.sh` for local testing when Node isn't available.
-- **PHP**: Version 8.0 or higher
-- **Browser**: Modern browser with JavaScript enabled
-
-### Installation
+- **Local development (optional)**: Node.js/npm are useful convenience tools for developers (local servers, scripts) but are **not required** for the site to run in production. Use the PHP CLI or `maintenance/start-server.sh`
 
 1. **Clone the repository**:
    ```bash
@@ -880,7 +876,7 @@ WebDev-Tools has undergone comprehensive third-party technical auditing:
 
 **Classification**: **Industry-Standard Compliant / Safe for Professional Use**
 
-For detailed audit findings, see the technical reports in `/docs/audit/` (if published).
+For detailed audit findings, see the [Technical Documentation](docs/README.md).
 
 ---
 
@@ -935,8 +931,6 @@ As the sole maintainer of this repository, you can keep changes lightweight whil
    ```
 - **Merge policy**: For most changes, merge PRs yourself once you're confident after running `npm test` and a quick smoke check in the browser.
 
-This workflow keeps friction low while ensuring code quality and traceability.
-
 ---
 
 ## Documentation
@@ -951,11 +945,6 @@ Detailed technical documentation is available in the [`/docs`](docs/) directory:
 - **[Security](docs/techstack/SECURITY.md)** — CSP, XSS prevention, cryptographic security
 - **[Testing](docs/techstack/TESTING.md)** — Jest setup, test patterns, mocking strategy
 - **[Build](docs/techstack/BUILD.md)** — Build script, minification, deployment
-
-### 🧪 Testing Documentation
-
-- **[Test Suite](tests/README.md)** - Comprehensive testing documentation
-- **Note:** Legacy E2E test harnesses were archived in the `archive/legacy-scripts` branch to keep the main repository lightweight.
 
 ### 🔧 Configuration
 
@@ -1047,7 +1036,7 @@ SOFTWARE.
 
 <div align="center">
 
-**Built with ❤️ using AI-assisted development**
+**Built with commitment to open standards and developer privacy.**
 
 [![Standards](https://img.shields.io/badge/RFC-Compliant-blue.svg)](https://www.ietf.org/)
 [![Security](https://img.shields.io/badge/Security-Client--Side%20Only-brightgreen.svg)](SECURITY.md)

@@ -50,7 +50,7 @@ $currentUrl = getFullUrl('/about.php', $lang);
   <meta name="googlebot" content="index, follow">
   <meta name="theme-color" content="#066fd1">
   <meta name="color-scheme" content="light dark">
-  <meta name="author" content="Ramon Kaes">
+  <meta name="author" content="Ramon Kaes" >
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="<?= htmlspecialchars($currentUrl, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>">
@@ -114,8 +114,7 @@ $currentUrl = getFullUrl('/about.php', $lang);
         <div class="text-center mb-5">
           <h1 class="display-5 mb-3">Über WebDev Tools</h1>
           <p class="lead text-secondary">
-            Vom lokalen Script zur (ja, der 10.000sten) Tool-Sammlung: Eine Chronik des
-            Zufalls
+            Die 10.000ste Toolsammlung – ein Unfallbericht
           </p>
           
           <!-- Standards-Konformitäts-Badges -->
@@ -150,10 +149,10 @@ $currentUrl = getFullUrl('/about.php', $lang);
         <div class="card mb-4 shadow-sm">
           <div class="card-body p-4 fs-6">
             <p>
-              Ja, ich weiß. Die 10.000ste Toolsammlung im Internet. Wer braucht die schon?
-              Aber ich kann euch beruhigen: Dieses Projekt war nie geplant. Es ist ein Unfall,
-              ein Produkt der Prokrastination und eine Lektion im Umgang mit künstlicher
-              Intelligenz.
+              Ja, ich weiß. Die zehntausendste Toolsammlung im Internet. Wer braucht die
+              schon? Aber ich kann euch beruhigen: Dieses Projekt war nie geplant. Es ist
+              ein Unfall, ein Produkt purer Prokrastination, aber auch eine Lektion im
+              Umgang mit künstlicher Intelligenz.
             </p>
             <p>
               Alles begann ganz harmlos auf meinem Desktop.
@@ -164,116 +163,110 @@ $currentUrl = getFullUrl('/about.php', $lang);
               Am Anfang war das Skript.
             </h2>
             <p>
-              Wie viele Entwickler hatte auch ich einige eigene Tools auf meinem Localhost
-              gespeichert. Kleine Skripte für alltägliche Ärgernisse – eine Em/Px-Umrechnung
-              hier, ein kleiner Helfer dort. Dinge, für die ich zu faul war, immer wieder die
-              gleichen Websites zu suchen und aufzurufen. Mit Lesezeichen stehe ich nämlich
-              auf absolutem Kriegsfuß.
-            </p>
-            <p>
-              Diese kleinen Helferlein taten ihren Dienst. Doch dann fügte ich zwei weitere
-              hinzu. Und dann passierte es: Mein Webentwickler-Instinkt schlug zu.
+              Wie viele Entwickler hatte auch ich diverse Eigenbau-Tools auf meinem
+              Localhost gebunkert. Kleine Skripte für alltägliche Ärgernisse: eine
+              Em/Px-Umrechnung hier, ein kleiner Helfer dort. Dinge, für die ich zu faul
+              war, um jedes Mal die gleichen Websites zu suchen. Mit Lesezeichen stehe
+              ich nämlich auf absolutem Kriegsfuß.
             </p>
             <p class="mb-5">
-              Instinktiv begann ich, die Dinger miteinander zu verknüpfen. Ein Menü musste
-              her. Und ein bisschen Styling. Und alles, was einem sonst noch so in den Sinn
-              kommt, wenn man sich erfolgreich von der eigentlichen Arbeit ablenken möchte. So
-              wurde aus einer einfachen Scriptsammlung ein ausgewachsenes Projekt. Ich musste
-              es einfach „pimpen”, bis ich eine richtige kleine Website mit allem Drum und
-              Dran fertig hatte.
+              Diese Helferlein taten brav ihren Dienst. Doch dann fügte ich zwei weitere
+              hinzu und mein Webentwickler-Instinkt schlug gnadenlos zu: Ich begann, die
+              Dinger zu verknüpfen. Ein Menü musste her. Ein bisschen Styling. Und
+              plötzlich war ich mittendrin in allem, was einem so einfällt, wenn man
+              sich erfolgreich von der eigentlichen Arbeit ablenken möchte. Aus der
+              simplen Sammlung wurde ein ausgewachsenes Projekt. Ich musste es einfach
+              "pimpen", bis eine richtige kleine Website mit allem Drum und Dran vor mir
+              stand.
             </p>
 
             <h2 class="h5 card-title mb-3">
               <i class="bi bi-robot text-primary me-2"></i>
-              „KI, übernimm mal!” – Eine Schnapsidee?
+              „KI, übernimm mal!“ – war das eine Schnapsidee?
             </h2>
             <p>
-              Irgendwann kam mir der Gedanke: Es sind ja nur einfache Skripte. Lass das doch
-              mal die KI machen! Als treuer Nutzer von <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer" title="Visual Studio Code - Kostenloser Code-Editor">VS Code</a> habe ich das Projekt direkt mit
-              <a href="https://www.anthropic.com/" target="_blank" rel="noopener noreferrer" title="Anthropic - KI-Sicherheit und Forschung">Claude Sonnet 4.5</a> (im <a href="https://github.com/features/copilot" target="_blank" rel="noopener noreferrer" title="GitHub Copilot - KI-Programmierhilfe">GitHub CoPilot</a>) aufgesetzt.
+              Irgendwann kam mir der Gedanke: Es sind ja nur einfache Skripte. Lass das
+              doch mal die KI erledigen! Als treuer Nutzer von VS Code habe ich das
+              Projekt direkt mit Claude Code (Sonnet) aufgesetzt.
             </p>
             <p>
-              Ich war überrascht, denn das Ergebnis war eine erstaunlich gute, modular
-              erweiterbare Webanwendung.
-            </p>
-            <p>
-              Natürlich war es nicht so einfach. Man muss die KI permanent davon abhalten, zu
-              übertreiben. Mein wichtigstes Kommando wurde schnell: „Nein, wir brauchen keinen
-              Paketmanager! Und jetzt hör auf, mir noch ein Framework vorschlagen zu wollen!”
+              Doch bevor die KI freie Hand bekam, mussten klare Leitplanken her. Ich
+              definierte also zuallererst einen festen Techstack. Aus diesem leitete ich
+              eine <code>CLAUDE.md</code> (strikt limitiert auf maximal 60 Zeilen – kurze
+              Befehlswege sind bei KIs das A und O) sowie eine <code>.claude/comments/review.md</code>
+              ab. Genauso überlebenswichtig für den eigenen Geldbeutel sind eine
+              konsequente <code>.claudeignore</code> und eine gezielt angepasste
+              <code>.claude/settings.local.json</code>, um beim Coden massiv Tokens zu sparen.
             </p>
             <p class="mb-5">
-              Am Ende kam aber tatsächlich ein brauchbares Grundgerüst heraus.
+              Das Ergebnis war überraschend: eine erstaunlich gute, modular erweiterbare
+              Webanwendung. Aber natürlich lief nicht alles reibungslos. Man muss eine
+              KI permanent davon abhalten, zu übertreiben. Mein wichtigstes Kommando
+              wurde schnell: „Nein, wir brauchen keinen Paketmanager! Und jetzt hör auf,
+              mir schon wieder ein Framework vorschlagen zu wollen!” Am Ende kam aber
+              tatsächlich ein brauchbares Grundgerüst heraus.
             </p>
 
             <h2 class="h5 card-title mb-3">
               <i class="bi bi-tools text-primary me-2"></i>
-              Die Tücken des „Vibe Coding” mit KI
+              Die Tücken des „Vibe Coding“
             </h2>
             <p>
-              Das Projekt nahm Fahrt auf und ich lernte schnell ein paar harte Lektionen über
-              die Zusammenarbeit mit meinen neuen digitalen Kollegen.
+              Das Projekt nahm Fahrt auf und ich lernte schnell einige harte Lektionen
+              über die Zusammenarbeit mit meinen digitalen Kollegen.
             </p>
-            <p>
-              Die Framework-Frage: KIs arbeiten vorzugsweise mit <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer" title="Tailwind CSS - Utility-First CSS-Framework">Tailwind</a>. Das taten sie auch
-              hier. Nach einigen manuellen Anpassungen, bei denen mein Geduldsfaden immer
-              dünner wurde, riss er schließlich. Ich bin kurzerhand auf <a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer" title="Bootstrap - Front-End-Framework">Bootstrap</a> umgestiegen,
-              um die Sammlung schnell und pragmatisch zu einem Ende zu führen. Manchmal ist
-              „fertig" einfach besser als „perfekt" (oder „Tailwind").
-            </p>
-            <p>
-              2. Ohne <a href="https://git-scm.com/book/de/v2" target="_blank" rel="noopener noreferrer" title="Git - Verteilte Versionsverwaltung">Git</a>? Ohne mich! Aus reiner Gewohnheit habe ich direkt ein <a href="https://git-scm.com/book/de/v2/Git-Grundlagen-Ein-Git-Repository-anlegen" target="_blank" rel="noopener noreferrer" title="Git-Repository - Grundlagen der Versionsverwaltung">Git-Repository</a>
-              angelegt. Zum Glück! Ich habe schnell gemerkt, dass das, was ich da tat – dieses
-              planlose „Vibe Coding" mit der KI – ohne Git zu einer erheblichen
-              Zeitverschwendung führt.
-            </p>
-            <p>
-              3. Die Tücken der KI-Logik: Das größte Problem ist, dass KIs sich das Leben
-              gerne leicht machen, aber auf die falsche Art.
-            </p>
-            <ul>
+            <ul class="mb-5">
               <li>
-                Sie spekulieren: Anstatt zu analysieren, was man eigentlich vorhat, raten sie
-                oft wild drauf los. Dieses Spekulieren muss man ganz schnell unterbinden und
-                ihnen jeden Schritt präzise vorgeben, sonst endet es im Chaos.
+                Die Framework-Frage: KIs lieben Tailwind. Nach einigen manuellen
+                Anpassungen, bei denen mein Geduldsfaden gefährlich dünn wurde, riss er
+                schließlich. Ich bin daraufhin auf Bootstrap umgestiegen, um die Sache
+                pragmatisch zu Ende zu bringen. Manchmal ist „fertig“ einfach besser als
+                „perfekt“ (oder Tailwind).
+              </li><br>
               <li>
-                Sie lieben eigene Scripts. Sie neigen dazu, eigene Skripte oder Lösungen
-                vorzuschlagen, die oft zu verheerenden Ergebnissen führen. In nicht wenigen
-                Fällen wäre dadurch ein kompletter Neustart des Projekts erforderlich gewesen,
-                wäre da nicht ein beherztes „git reset --hard” möglich gewesen.
+                Ohne Git? Ohne mich! Aus Gewohnheit habe ich direkt ein Repo angelegt.
+                Zum Glück! Ich merkte schnell, dass dieses planlose „Vibe Coding“ ohne
+                Versionskontrolle in einer massiven Zeitverschwendung endet.
+              </li><br>
+              <li>
+                KI-Logik vs. Realität: KIs machen sich das Leben manchmal zu leicht –
+                oder zu kompliziert. Zwar hat sich Claude hier massiv verbessert und
+                analysiert Code mittlerweile deutlich fundierter statt blind zu
+                spekulieren. Wenn man jedoch nicht präzise vorgibt, wohin die Reise gehen
+                soll, neigen KIs immer noch zu eigenwilligen Skript-Lösungen, die in
+                einer Sackgasse enden. Ohne ein beherztes „git reset --hard” hätte ich
+                das Projekt wohl trotzdem mehr als einmal komplett neu starten müssen.
+              </li><br>
+              <li>
+                KI-Ping-Pong beim Code-Review: Bei der Qualitätssicherung habe ich auf
+                ein System aus „Checks and Balances” gesetzt. Über den Befehl /review
+                triggere ich Claudes interne Prüfung, die strikt nach den Vorgaben in
+                meiner review.md arbeitet. Ergänzend dazu habe ich externe Reviews von
+                ChatGPT und Gemini durchführen lassen und die Ergebnisse abschließend mit
+                Claude Opus diskutiert. Dieses „KI-Review für das KI-Review“ ist zwar
+                ziemlich meta, aber extrem nützlich, um verschiedene Denkweisen
+                gegenzuprüfen und logische Lücken zu schließen.
               </li>
             </ul>
-            </p>
-            <p class="mb-5">
-              4. KI-Ping-Pong bei Code-Reviews
-              Auch bei der Qualitätssicherung habe ich auf die KIs gesetzt, aber mit System:
-              Zünächst habe ich die Code-Reviews von <a href="https://openai.com/o1/" target="_blank" rel="noopener noreferrer" title="OpenAI o1 - Fortgeschrittenes Denkmodell">GPT-5 Codex</a> durchführen lassen und
-              anschließend die Meinung von <a href="https://www.anthropic.com/" target="_blank" rel="noopener noreferrer" title="Anthropic - KI-Sicherheit und Forschung">Claude Sonnet 4.5</a> dazu eingeholt. Ein KI-Review für
-              das KI-Review sozusagen. Das ist ziemlich meta, aber extrem nützlich, um
-              verschiedene „Denkweisen" gegenzuprüfen.
-            </p>
 
             <h2 class="h5 card-title mb-3">
               <i class="bi bi-globe-europe-africa text-primary me-2"></i>
               Bonusrunde: KI als Übersetzer?
             </h2>
             <p>
-              Nachdem die Funktionalität stand, dachte ich an Übersetzungen. Zuerst durfte
-              <a href="https://www.anthropic.com/claude" target="_blank" rel="noopener noreferrer" title="Claude AI von Anthropic">Claude Sonnet 4.5</a> ran. Laut eigener Aussage beherrscht die KI Englisch und
-              Deutsch auf Muttersprachniveau und liefert bei Spanisch, Französisch,
-              Italienisch und Portugiesisch eine Sicherheit von 98 %.
-            </p>
-            <p>
-              Es wurde interessant, als ich nach Hindi, Chinesisch oder Japanisch fragte. Hier
-              gab die KI zu, dass sie hierfür externe Hilfe wie <a href="https://www.deepl.com/de/translator" target="_blank" rel="noopener noreferrer" title="DeepL - KI-Übersetzungsdienst">DeepL</a> benötigt. Noch wichtiger
-              ist, dass sie von sich aus darauf hinwies, dass es nicht nur um eine plumpe
-              Übersetzung geht, sondern dass auch kulturelle Eigenheiten und
-              Höflichkeitsformen beachtet werden müssen.
+              Nachdem die Funktionalität stand, waren die Übersetzungen an der Reihe.
+              Hier zeigte die KI ihre philosophische Seite: Claude Sonnet 4.5 wies mich
+              ungefragt darauf hin, dass es bei Sprachen wie Hindi, Chinesisch oder
+              Japanisch nicht nur um Vokabeln, sondern auch um kulturelle Eigenheiten
+              und Höflichkeitsformen geht. Das war ein erfrischendes Maß an
+              Selbstreflexion.
             </p>
             <p class="mb-5">
-              Ein erfrischendes Maß an Selbstreflexion. Für die eigentliche Batch-Übersetzung
-              des statischen, hardcodierten Teils der romanischen Sprachen war mir Claude dann
-              aber doch zu verkopft. Ich habe das stattdessen von <a href="https://openai.com/index/openai-o1/" target="_blank" rel="noopener noreferrer" title="OpenAI o1 - Fortgeschrittenes KI-Modell">GPT-5-Codex</a> erledigen
-              lassen. Auch hier gilt: Das richtige Tool für den richtigen Job!
+              In der Praxis wurde es dann aber doch pragmatisch: Für die eigentliche
+              Batch-Übersetzung der statischen Inhalte war mir Claude zu „verkopft” und
+              zu kompliziert. Bei Gemini und ChatGPT schwankte die Ausführungsqualität
+              zu stark. Am Ende habe ich alles von DeepL übersetzen lassen. Auch hier
+              gilt: Das richtige Tool für den richtigen Job!
             </p>
 
             <h2 class="h5 card-title mb-3">
@@ -281,25 +274,24 @@ $currentUrl = getFullUrl('/about.php', $lang);
               Vom Intranet ins wilde Web
             </h2>
             <p>
-              Nachdem die Toolsammlung so weit gediehen war (und sogar mehrere Sprachen
-              sprach), stand sie eine ganze Weile nur bei uns im Firmennetzwerk zur Verfügung
-              und leistete gute Dienste.
+              Nachdem die Toolsammlung fertiggestellt war und sogar mehrere Sprachen
+              unterstützte, leistete sie eine ganze Weile gute Dienste in unserem
+              Firmennetzwerk. Irgendwann dachte ich mir: Warum eigentlich nicht teilen?
             </p>
             <p>
-              Irgendwann dachte ich mir: Warum eigentlich nicht? Also habe ich sie aufgeräumt
-              und öffentlich gemacht.
+              Also habe ich aufgeräumt und die Seite öffentlich gemacht. Und weil das
+              Ganze ja ohnehin aus einem „Unfall“ entstanden ist, liegt der Code komplett
+              offen. Wer mitbasteln will oder einen Fehler findet: Das Git-Repo findet
+              ihr hier:
+              <a href="https://github.com/RamonKaes/WebDev-Tools" target="_blank" rel="noopener noreferrer" title="GitHub Repository von WebDev-Tools">https://github.com/RamonKaes/WebDev-Tools</a>.
             </p>
             <p>
-              Und weil das Ganze ja eh aus einem „Unfall” entstanden ist, liegt der Code komplett offen. Wer selbst mitbasteln will oder einen Fehler findet: Das Git-Repo findet ihr hier: <a href="https://github.com/RamonKaes/WebDev-Tools" target="_blank" rel="noopener noreferrer" title="GitHub Repository von WebDev-Tools">https://github.com/RamonKaes/WebDev-Tools</a>.
+              Ja, sorry. Jetzt ist sie also da, die 10.000ste Toolsammlung. Die
+              10.000ste Toolsammlung. Aber hey, immerhin hat sie eine gute
+              Entstehungsgeschichte!
             </p>
-            <p>
-              Ja, sorry. Jetzt ist sie hier. Die 10.000ste Toolsammlung. Aber hey, immerhin
-              hat sie eine Entstehungsgeschichte! :D
-            </p>
-            <p>
-              Viel Spaß damit!
-            </p>
-            <p class="mb-0">Ramon</p>
+            <p>Viel Spaß damit!</p>
+            <p>Ramon</p>
             <div class="text-center">
               <img src="../assets/img/Ramon-Kaes-Logo.svg" alt="Ramon Kaes Logo" title="Ramon Kaes" width="36" height="36" class="mb-0 navbar-brand">
             </div>

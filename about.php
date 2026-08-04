@@ -50,7 +50,7 @@ $currentUrl = getFullUrl('/about.php', $lang);
   <meta name="googlebot" content="index, follow">
   <meta name="theme-color" content="#066fd1">
   <meta name="color-scheme" content="light dark">
-  <meta name="author" content="Ramon Kaes">
+  <meta name="author" content="Ramon Kaes" >
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="<?= htmlspecialchars($currentUrl, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>">
@@ -149,159 +149,47 @@ $currentUrl = getFullUrl('/about.php', $lang);
         <div class="card mb-4 shadow-sm">
           <div class="card-body p-4 fs-6">
             <p>
-              Yeah, I know. The ten-thousandth tool collection on the internet. Who
-              needs that? But I can reassure you: This project was never planned.
-              It's an accident, a product of pure procrastination, but also a lesson
-              in working with artificial intelligence.
-            </p>
-            <p>
-              It all started quite innocently on my desktop.
+              Yeah, I know. The ten-thousandth collection of tools on the internet. Who even needs that?<br>
+              But I can put your minds at ease. This project was never planned. It’s an accident, a product of pure procrastination, but it also arose out of a genuine need. It all started quite innocently on my desktop.
             </p>
 
             <h2 class="h5 card-title mb-3 mt-4">
-              <i class="bi bi-laptop text-primary me-2"></i>
-              In the Beginning Was the Script
+              In the beginning, there was the script.
             </h2>
             <p>
-              Like many developers, I had stockpiled various homemade tools on my
-              localhost. Little scripts for everyday annoyances: an em/px conversion
-              here, a little helper there. Things I was too lazy to look up on the
-              same websites every time. I'm absolutely at war with bookmarks, you see.
+              Like many developers, I had various homemade tools saved on my localhost. Little scripts for everyday annoyances: an em/px conversion here, a little helper there. Things I was too lazy to look up on the same websites every time. I’m absolutely at war with bookmarks, after all.
             </p>
-            <p class="mb-5">
-              These little helpers did their job well. But then I added two more,
-              and my web developer instinct struck mercilessly: I started linking
-              them together. I needed a menu. A little styling. And suddenly I was
-              right in the middle of everything that comes to mind when you want to
-              successfully distract yourself from your actual work. The simple
-              collection turned into a full-fledged project. I just had to "pimp" it
-              until I had a proper little website with all the bells and whistles in
-              front of me.
-            </p>
-
-
-            <h2 class="h5 card-title mb-3">
-              <i class="bi bi-robot text-primary me-2"></i>
-              "AI, Take Over!" - Was That a Crazy Idea?
-            </h2>
-            <p>
-              At some point, it occurred to me: They're just simple scripts. Why not
-              let the AI handle it? As a loyal user of
-              <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer" title="Visual Studio Code - Free code editor">VS Code</a>,
-              I set up the project directly with
-              <a href="https://www.anthropic.com/claude-code" target="_blank" rel="noopener noreferrer" title="Claude Code by Anthropic">Claude Code (Sonnet)</a>.
-            </p>
-            <p>
-              But before giving the AI free rein, I needed clear guidelines. So first
-              and foremost, I defined a fixed tech stack. From this, I derived a
-              <code>CLAUDE.md</code> (strictly limited to a maximum of 60 lines - short
-              command paths are essential for AI) as well as a <code>.claude/comments/review.md</code>.
-              Just as vital for your wallet are a consistent .claudeignore file and a
-              specifically tailored <code>.claude/settings.local.json</code> to save a
-              massive amount of tokens while coding.
-            </p>
-            <p class="mb-5">
-              The result was surprising: an amazingly good, modularly expandable web
-              application. But of course, not everything went smoothly. You have to
-              constantly stop an AI from overdoing it. My most important command
-              quickly became: "No, we don't need a package manager! And now stop
-              trying to suggest another framework to me!"
-              In the end, though, a usable foundation actually emerged.
+            <p class="mb-3">
+              These little helpers did their job well. But then I added two more, and my web developer’s instinct struck mercilessly: I started linking them together. I needed a menu. A little styling. And suddenly I was right in the middle of everything that comes to mind when you’re trying to successfully distract yourself from your actual work. The simple collection turned into a full-fledged project. I just had to “pimp” it until I had a proper little website with all the bells and whistles right in front of me.
             </p>
 
             <h2 class="h5 card-title mb-3">
-              <i class="bi bi-tools text-primary me-2"></i>
-              The Pitfalls of "Vibe Coding"
+              From script chaos to a real web app.
             </h2>
-            <p>
-              The project picked up steam, and I quickly learned some hard lessons
-              about collaborating with my digital colleagues.
-            </p>
-            <ul class="mb-5">
-              <li>
-                The framework question: AIs love
-                <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer" title="Tailwind CSS - Utility-first CSS framework">Tailwind</a>.
-                After a few manual tweaks that stretched my patience to the limit, it
-                finally snapped. I switched to
-                <a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer" title="Bootstrap - Front-end framework">Bootstrap</a>
-                to pragmatically wrap things up. Sometimes "done" is simply better than
-                "perfect" (or Tailwind).
-              </li><br>
-              <li>
-                No Git? No way! Out of habit, I created a
-                <a href="https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository" target="_blank" rel="noopener noreferrer" title="Git Repository - Version control basics">repo</a>
-                right away. Thank goodness! I quickly realized that this haphazard
-                "vibe coding" without version control ends up being a massive waste of
-                time.
-              </li><br>
-              <li>
-                AI logic vs. reality: AIs sometimes make life too easy - or too
-                complicated. Claude has improved massively in this regard and now
-                analyzes code much more thoroughly instead of speculating blindly.
-                However, if you don't specify precisely where the journey should lead,
-                AIs still tend toward idiosyncratic script solutions that end in a dead
-                end. Without a bold "git reset --hard," I would likely have had to
-                completely restart the project more than once anyway.
-              </li><br>
-              <li>
-                AI Ping-Pong During Code Review: For quality assurance, I relied on a
-                system of "checks and balances." Using the /review command, I trigger
-                Claude's internal review, which operates strictly according to the
-                guidelines in my review.md. In addition, I had external reviews
-                conducted by ChatGPT and Gemini and then discussed the results with
-                Claude Opus. This "AI review for the AI review" is pretty meta, but
-                extremely useful for cross-checking different ways of thinking and
-                closing logical gaps.
-              </li>
-            </ul>
-
-            <h2 class="h5 card-title mb-3">
-              <i class="bi bi-globe-europe-africa text-primary me-2"></i>
-              Bonus Round: AI as a Translator?
-            </h2>
-            <p>
-              Once the functionality was in place, it was time for the translations.
-              Here, the AI showed its philosophical side:
-              <a href="https://www.anthropic.com/" target="_blank" rel="noopener noreferrer" title="Anthropic - AI safety and research">Claude Sonnet 4.5</a>
-              pointed out to me, without being asked, that languages like Hindi,
-              Chinese, or Japanese aren't just about vocabulary, but also about
-              cultural idiosyncrasies and forms of politeness. That was a refreshing
-              level of self-reflection.
-            </p>
-            <p class="mb-5">
-              In practice, however, things took a pragmatic turn: For the actual
-              batch translation of the static content, Claude was too "intellectual"
-              and too complicated for me. With Gemini and ChatGPT, the quality of the
-              output fluctuated too much. In the end, I had everything translated by
-              <a href="https://www.deepl.com/" target="_blank" rel="noopener noreferrer" title="DeepL - AI translation service">DeepL</a>.
-              Here, too, the rule applies: The right tool for the right job!
+            <p class="mb-3">
+              I wanted to turn those scattered scripts into a reliable platform. To speed up the development process and make code structuring more efficient, I integrated <a href="https://code.claude.com" target="_blank" rel="noopener noreferrer" title="Claude Code AI assistant">Claude Code</a> directly into my workflow. But the focus was always on pragmatism: the tools should load quickly, be intuitive to use, and do exactly what they’re supposed to do, without unnecessary bells and whistles. Every web developer knows the temptation to get lost in endless discussions about the perfect framework or the most elegant architecture. Instead, I opted for the direct approach: a solid <a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer" title="Bootstrap CSS framework">Bootstrap</a> foundation, a clean codebase, and the ironclad rule that “finished and working” is more valuable than theoretical perfection.
             </p>
 
             <h2 class="h5 card-title mb-3">
-              <i class="bi bi-rocket-takeoff text-primary me-2"></i>
               From the Intranet to the Wild Web
             </h2>
             <p>
-              Once the toolkit was finished and even supported multiple languages, it
-              served us well on our company network for quite some time. At some
-              point, I thought to myself: Why not share it?
+              Once the toolset was complete, it served us well for quite some time on our company network. At some point, I thought to myself: Why not share it with the whole world?
             </p>
             <p>
-              So I cleaned things up and made the site public. And since the whole
-              thing came about by accident anyway, the code is completely open-source.
-              If you want to tinker with it or find a bug: You can find the Git repo
-              here:
-              <a href="https://github.com/RamonKaes/WebDev-Tools" target="_blank" rel="noopener noreferrer" title="GitHub Repository of WebDev-Tools">https://github.com/RamonKaes/WebDev-Tools</a>.
+              However, when releasing a project for the internet, it shouldn’t be held back by language barriers. So I was once again driven by ambition and added multilingual support to the system before its release, to make it accessible to an international audience. To implement this in a pragmatic and efficient way, I relied entirely on <a href="https://www.deepl.com" target="_blank" rel="noopener noreferrer" title="DeepL translation tool">DeepL</a> for the text translations.
             </p>
             <p>
-              Yeah, sorry. So here it is, the 10,000th tool collection. The 10,000th
-              tool collection. But hey, at least it has a good origin story!
+              Afterward, I cleaned up the code and made the site public. Since the whole thing arose from an “accident” anyway and thrives on the open-source philosophy, the code is completely open. Anyone who wants to tinker with it, has an idea for a new tool, or finds a bug is warmly invited to get involved. You can find the Git repo here: <a href="https://github.com/RamonKaes/WebDev-Tools" target="_blank" rel="noopener noreferrer" title="GitHub Repository of WebDev-Tools">https://github.com/RamonKaes/WebDev-Tools</a>.
             </p>
+            <p>
+              Yeah, sorry. So here it is, the 10,000th tool collection. But hey, at least it has a good backstory, and who knows—maybe it’ll save you just as much time searching in your daily life as it did for me!
+            </p>
+
             <p>Have fun with it!</p>
             <p>Ramon</p>
             <div class="text-center">
-              <img src="assets/img/Ramon-Kaes-Logo.svg" alt="Ramon Kaes Logo" title="Ramon Kaes" width="36" height="36" class="mb-0 navbar-brand">
-            </div>
+              <a href="https://kaes-websysteme.de/" target="_blank" rel="noopener noreferrer"><img src="assets/img/Ramon-Kaes-Logo.svg" alt="Ramon Kaes Logo" title="Ramon Kaes" width="36" height="36" class="mb-0 navbar-brand"></a>            </div>
           </div>
         </div>
 

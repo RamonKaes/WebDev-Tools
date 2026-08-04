@@ -143,159 +143,47 @@ $currentUrl = getFullUrl('/about.php', $lang);
         <div class="card mb-4 shadow-sm">
           <div class="card-body p-4 fs-6">
             <p>
-              Sim, eu sei. A 10.000.ª coleção de ferramentas na Internet. Quem é que
-              precisa disso? Mas posso tranquilizá-los: este projeto nunca foi
-              planeado. É um acidente, um produto da pura procrastinação, mas também
-              uma lição sobre como lidar com a inteligência artificial.
-            </p>
-            <p>
-              Tudo começou de forma bastante inofensiva no meu ambiente de trabalho.
+              Sim, eu sei. A décima milésima coleção de ferramentas na Internet. Quem é que precisa disso?<br>
+              Mas posso tranquilizar-vos. Este projeto nunca foi planeado. É um acidente, um produto da pura procrastinação, mas também surgiu de uma necessidade real. Tudo começou de forma bastante inofensiva no meu ambiente de trabalho.
             </p>
 
             <h2 class="h5 card-title mb-3 mt-4">
-              <i class="bi bi-laptop text-primary me-2"></i>
-              No início era o script.
+              No início, havia o script.
             </h2>
             <p>
-              Tal como muitos programadores, eu também tinha várias ferramentas
-              caseiras guardadas no meu localhost. Pequenos scripts para os
-              aborrecimentos do dia-a-dia: uma conversão de Em/Px aqui, um pequeno
-              ajudante ali. Coisas para as quais eu tinha preguiça de procurar sempre os
-              mesmos sites. É que eu estou em guerra total com os favoritos.
+              Tal como muitos programadores, também eu tinha várias ferramentas criadas por mim guardadas no meu localhost. Pequenos scripts para os aborrecimentos do dia-a-dia: uma conversão de em/px aqui, um pequeno auxiliar ali. Coisas para as quais eu tinha preguiça de procurar sempre os mesmos sites. É que estou em guerra aberta com os marcadores.
             </p>
-            <p class="mb-5">
-              Esses ajudantes cumpriam bem o seu papel. Mas depois acrescentei mais dois
-              e o meu instinto de programador web atacou impiedosamente: comecei a
-              ligar as coisas. Era preciso um menu. Um pouco de estilo. E, de repente,
-              estava no meio de tudo aquilo que nos ocorre quando se quer distrair-se
-              com sucesso do trabalho propriamente dito. Da simples coleção, tornou-se
-              um projeto em grande escala. Tive de o «enfeitar» até ter diante de mim
-              um verdadeiro site com tudo o que é necessário.
+            <p class="mb-3">
+              Essas pequenas ferramentas cumpriam bem o seu papel. Mas depois acrescentei mais duas e o meu instinto de programador web entrou em ação sem piedade: comecei a interligá-las. Era preciso um menu. Um pouco de estilo. E, de repente, vi-me no meio de tudo aquilo que nos ocorre quando se quer distrair-se com sucesso do trabalho propriamente dito. Da simples coleção, surgiu um projeto em grande escala. Tive simplesmente de o «melhorar» até ter diante de mim um verdadeiro pequeno site com tudo o que é necessário.
             </p>
 
             <h2 class="h5 card-title mb-3">
-              <i class="bi bi-robot text-primary me-2"></i>
-              «IA, toma conta!» – terá sido uma ideia maluca?
+              Do caos dos scripts a uma verdadeira aplicação web.
             </h2>
-            <p>
-              A certa altura, ocorreu-me: afinal, são apenas scripts simples. Deixa que
-              seja a IA a tratar disso! Como utilizador fiel do
-              <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer" title="Visual Studio Code - Editor de código gratuito">VS Code</a>,
-              criei o projeto diretamente com o
-              <a href="https://www.anthropic.com/claude-code" target="_blank" rel="noopener noreferrer" title="Claude Code da Anthropic">Claude Code (Sonnet)</a>.
-            </p>
-            <p>
-              Mas antes de dar carta branca à IA, era preciso estabelecer limites
-              claros. Assim, em primeiro lugar, defini uma pilha de tecnologias fixa. A
-              partir daí, criei um <code>CLAUDE.md</code> (estritamente limitado a um máximo de 60
-              linhas – comandos curtos são essenciais para as IAs) e um
-              <code>.claude/comments/review.md</code>. Igualmente essenciais para a própria carteira
-              são um ficheiro <code>.claudeignore</code> consistente e um ficheiro
-              <code>.claude/settings.local.json</code> especificamente adaptado, para poupar tokens
-              em grande quantidade durante a codificação.
-            </p>
-            <p class="mb-5">
-              O resultado foi surpreendente: uma aplicação web incrivelmente boa e
-              modularmente expansível. Mas, claro, nem tudo correu na perfeição. É
-              preciso impedir constantemente uma IA de exagerar. O meu comando mais
-              importante tornou-se rapidamente: «Não, não precisamos de um gestor de
-              pacotes! E agora pára de me sugerir outra vez um framework!» No final,
-              porém, saiu realmente uma estrutura básica utilizável.
+            <p class="mb-3">
+              A partir dos scripts dispersos, deveria surgir uma plataforma fiável. Para acelerar o processo de desenvolvimento e tornar a estruturação do código mais eficiente, integrei o <a href="https://code.claude.com" target="_blank" rel="noopener noreferrer" title="Assistente de IA Claude Code">Claude Code</a> diretamente no meu fluxo de trabalho. No entanto, o foco esteve sempre no pragmatismo: as ferramentas deviam carregar rapidamente, ser intuitivas de utilizar e fazer exatamente o que deviam, sem frescuras desnecessárias. Qualquer programador web conhece a tentação de se perder em discussões intermináveis sobre o framework perfeito ou a arquitetura mais elegante. Em vez disso, optei pelo caminho mais direto: uma base sólida em <a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer" title="Framework CSS Bootstrap">Bootstrap</a>, um código limpo e a regra de ferro de que «pronto e a funcionar» é mais valioso do que a perfeição teórica.
             </p>
 
             <h2 class="h5 card-title mb-3">
-              <i class="bi bi-tools text-primary me-2"></i>
-              As armadilhas do «Vibe Coding»
+              Da intranet para a web selvagem
             </h2>
             <p>
-              O projeto ganhou impulso e aprendi rapidamente algumas lições difíceis
-              sobre a colaboração com os meus colegas digitais.
+              Depois de concluída, a coleção de ferramentas prestou bons serviços durante bastante tempo na nossa rede empresarial. A certa altura, pensei: «Porque não partilhar isto com o mundo inteiro?»
             </p>
-            <ul class="mb-5">
-              <li>
-                A questão do framework: as IAs adoram o
-                <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer" title="Tailwind CSS - Framework CSS utilitário">Tailwind</a>.
-                Após alguns ajustes manuais, durante os quais a minha paciência ficou
-                perigosamente a esgotar-se, ela acabou por se esgotar de vez. Mudei
-                então para o
-                <a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer" title="Bootstrap - Framework front-end">Bootstrap</a>,
-                para concluir o projeto de forma pragmática. Às vezes, «pronto» é
-                simplesmente melhor do que «perfeito» (ou Tailwind).
-              </li><br>
-              <li>
-                Sem Git? Sem mim! Por hábito, criei logo um repositório. Ainda bem!
-                Percebi rapidamente que este «Vibe Coding» desorganizado, sem controlo
-                de versões, acabava por ser uma enorme perda de tempo.
-              </li><br>
-              <li>
-                Lógica da IA vs. realidade: as IAs, por vezes, tornam a vida demasiado
-                fácil – ou demasiado complicada. É verdade que o Claude melhorou imenso
-                neste aspeto e, entretanto, analisa o código de forma significativamente
-                mais fundamentada, em vez de especular cegamente. No entanto, se não se
-                especificar com precisão o rumo a seguir, as IAs continuam a tender para
-                soluções de script arbitrárias que acabam num beco sem saída. Sem um
-                corajoso «git reset --hard», provavelmente teria mesmo assim de
-                reiniciar o projeto do zero mais do que uma vez.
-              </li><br>
-              <li>
-                Ping-pong de IA na revisão de código: Na garantia de qualidade, apostei
-                num sistema de «checks and balances». Através do comando /review,
-                aciono a verificação interna do Claude, que funciona estritamente de
-                acordo com as especificações no meu review.md. Em complemento, solicitei
-                revisões externas ao ChatGPT e ao Gemini e, por fim, discuti os
-                resultados com o Claude Opus. Esta «revisão de IA para a revisão de IA»
-                é, de facto, bastante meta, mas extremamente útil para contrastar
-                diferentes formas de pensar e colmatar lacunas lógicas.
-              </li>
-            </ul>
-
-            <h2 class="h5 card-title mb-3">
-              <i class="bi bi-globe-europe-africa text-primary me-2"></i>
-              Ronda bónus: IA como tradutor?
-            </h2>
             <p>
-              Depois de a funcionalidade estar pronta, chegou a vez das traduções.
-              Aqui, a IA mostrou o seu lado filosófico: o
-              <a href="https://www.anthropic.com/" target="_blank" rel="noopener noreferrer" title="Anthropic - Segurança e pesquisa em IA">Claude Sonnet 4.5</a>
-              chamou-me a atenção, sem que eu lhe tivesse pedido, para o facto de que,
-              em línguas como o hindi, o chinês ou o japonês, não se trata apenas de
-              vocabulário, mas também de peculiaridades culturais e formas de cortesia.
-              Foi um nível refrescante de autorreflexão.
+              No entanto, quando se lança um projeto na Internet, este não deve fracassar devido a barreiras linguísticas. Por isso, a ambição voltou a tomar conta de mim e, antes do lançamento, ampliei o sistema para que fosse multilingue, de modo a torná-lo acessível a um público internacional. Para implementar tudo isto de forma pragmática e eficiente, recorri inteiramente ao <a href="https://www.deepl.com" target="_blank" rel="noopener noreferrer" title="Ferramenta de tradução DeepL">DeepL</a> para as traduções dos textos.
             </p>
-            <p class="mb-5">
-              Na prática, porém, a abordagem acabou por ser pragmática: para a
-              tradução em lote do conteúdo estático, o Claude era demasiado
-              «intelectual» e complicado para mim. No caso do Gemini e do ChatGPT, a
-              qualidade da execução variava demasiado. No final, traduzi tudo com o
-              <a href="https://www.deepl.com/pt-BR/translator" target="_blank" rel="noopener noreferrer" title="DeepL - Serviço de tradução por IA">DeepL</a>.
-              Também aqui se aplica: a ferramenta certa para o trabalho certo!
+            <p>
+              Depois, organizei o código e tornei o site público. Como tudo isto surgiu, afinal, de um «acidente» e se baseia na filosofia do código aberto, o código está totalmente disponível. Quem quiser dar uma ajuda, tiver uma ideia para uma nova ferramenta ou encontrar um erro, está cordialmente convidado a participar. Podem encontrar o repositório Git aqui: <a href="https://github.com/RamonKaes/WebDev-Tools" target="_blank" rel="noopener noreferrer" title="Repositório GitHub do WebDev-Tools">https://github.com/RamonKaes/WebDev-Tools</a>.
+            </p>
+            <p>
+              Sim, desculpem. Então, aqui está ela, a 10 000.ª coleção de ferramentas. Mas, afinal, tem uma boa história por trás e, quem sabe, talvez vos poupe tanto tempo de pesquisa no dia a dia como me poupou a mim!
             </p>
 
-            <h2 class="h5 card-title mb-3">
-              <i class="bi bi-rocket-takeoff text-primary me-2"></i>
-              Da intranet para a web
-            </h2>
-            <p>
-              Depois de a coleção de ferramentas ter ficado pronta e de já suportar
-              vários idiomas, prestou bons serviços durante bastante tempo na nossa
-              rede da empresa. A certa altura, pensei: por que não partilhar?
-            </p>
-            <p>
-              Então, organizei tudo e tornei o site público. E como tudo isto surgiu de
-              um «acidente», o código está totalmente aberto. Quem quiser dar uma ajuda
-              ou encontrar um erro: o repositório Git encontra-se aqui:
-              <a href="https://github.com/RamonKaes/WebDev-Tools" target="_blank" rel="noopener noreferrer" title="Repositório GitHub do WebDev-Tools">https://github.com/RamonKaes/WebDev-Tools</a>.
-            </p>
-            <p>
-              Sim, desculpem. Então, aqui está ela, a 10.000.ª coleção de ferramentas.
-              A 10.000.ª coleção de ferramentas. Mas, afinal, tem uma boa história por
-              trás!
-            </p>
             <p>Divirtam-se com ela!</p>
             <p>Ramon</p>
             <div class="text-center">
-              <img src="../assets/img/Ramon-Kaes-Logo.svg" alt="Ramon Kaes Logo" title="Ramon Kaes" width="36" height="36" class="mb-0 navbar-brand">
-            </div>
+              <a href="https://kaes-websysteme.de/" target="_blank" rel="noopener noreferrer"><img src="../assets/img/Ramon-Kaes-Logo.svg" alt="Ramon Kaes Logo" title="Ramon Kaes" width="36" height="36" class="mb-0 navbar-brand"></a>            </div>
           </div>
         </div>
 

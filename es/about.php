@@ -50,7 +50,7 @@ $currentUrl = getFullUrl('/about.php', $lang);
   <meta name="googlebot" content="index, follow">
   <meta name="theme-color" content="#066fd1">
   <meta name="color-scheme" content="light dark">
-  <meta name="author" content="Ramon Kaes" >
+  <meta name="author" content="Ramon Kaes">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="<?= htmlspecialchars($currentUrl, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>">
@@ -157,10 +157,10 @@ $currentUrl = getFullUrl('/about.php', $lang);
               Al principio estaba el script.
             </h2>
             <p>
-							Como muchos desarrolladores, yo también tenía guardadas varias herramientas de creación propia en mi servidor local. Pequeños scripts para las molestias cotidianas: una conversión de em a píxeles por aquí, una pequeña ayuda por allá. Cosas para las que me daba pereza buscar siempre en las mismas páginas web. Y es que estoy en guerra abierta con los marcadores.
+              Como muchos desarrolladores, yo también tenía guardadas varias herramientas de creación propia en mi servidor local. Pequeños scripts para las molestias cotidianas: una conversión de em a píxeles por aquí, una pequeña ayuda por allá. Cosas para las que me daba pereza buscar siempre en las mismas páginas web. Y es que estoy en guerra abierta con los marcadores.
             </p>
             <p class="mb-3">
-							Estas pequeñas herramientas cumplían fielmente su función. Pero entonces añadí dos más y mi instinto de desarrollador web se impuso sin piedad: empecé a enlazarlas entre sí. Hacía falta un menú. Un poco de diseño. Y, de repente, me vi metido de lleno en todo lo que se te ocurre cuando quieres distraerte con éxito de tu trabajo real. La sencilla colección se convirtió en un proyecto en toda regla. Simplemente tenía que «tunearlo» hasta que tuviera ante mí una auténtica página web en toda regla, con todo lo que ello conlleva.
+              Estas pequeñas herramientas cumplían fielmente su función. Pero entonces añadí dos más y mi instinto de desarrollador web se impuso sin piedad: empecé a enlazarlas entre sí. Hacía falta un menú. Un poco de diseño. Y, de repente, me vi metido de lleno en todo lo que se te ocurre cuando quieres distraerte con éxito de tu trabajo real. La sencilla colección se convirtió en un proyecto en toda regla. Simplemente tenía que «tunearlo» hasta que tuviera ante mí una auténtica página web en toda regla, con todo lo que ello conlleva.
             </p>
 
             <h2 class="h5 card-title mb-3">
@@ -187,7 +187,7 @@ $currentUrl = getFullUrl('/about.php', $lang);
             </p>
 
             <p>¡Que la disfrutéis!</p>
-            <p>Ramón</p>
+            <p>Ramon</p>
             <div class="text-center">
               <a href="https://kaes-websysteme.de/" target="_blank" rel="noopener noreferrer"><img src="../assets/img/Ramon-Kaes-Logo.svg" alt="Ramon Kaes Logo" title="Ramon Kaes" width="36" height="36" class="mb-0 navbar-brand"></a>            </div>
           </div>

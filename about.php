@@ -50,7 +50,7 @@ $currentUrl = getFullUrl('/about.php', $lang);
   <meta name="googlebot" content="index, follow">
   <meta name="theme-color" content="#066fd1">
   <meta name="color-scheme" content="light dark">
-  <meta name="author" content="Ramon Kaes" >
+  <meta name="author" content="Ramon Kaes">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="<?= htmlspecialchars($currentUrl, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>">
@@ -114,7 +114,7 @@ $currentUrl = getFullUrl('/about.php', $lang);
         <div class="text-center mb-5">
           <h1 class="display-5 mb-3">About WebDev Tools</h1>
           <p class="lead text-secondary">
-            ﻿The 10,000th Tool Collection – An Accident Report
+            The 10,000th Tool Collection – An Accident Report
           </p>
           
           <!-- Standards Compliance Badges -->
@@ -191,12 +191,6 @@ $currentUrl = getFullUrl('/about.php', $lang);
             <div class="text-center">
               <a href="https://kaes-websysteme.de/" target="_blank" rel="noopener noreferrer"><img src="assets/img/Ramon-Kaes-Logo.svg" alt="Ramon Kaes Logo" title="Ramon Kaes" width="36" height="36" class="mb-0 navbar-brand"></a>            </div>
           </div>
-        </div>
-
-        <div class="text-end mt-4">
-          <small class="text-muted">
-            <a href="https://www.deepl.com" target="_blank" rel="noopener noreferrer" title="Free online translation service" class="text-decoration-none text-muted">Translated with deepl.com (free version)</a>
-          </small>
         </div>
 
       </div>

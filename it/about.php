@@ -43,6 +43,7 @@ $currentUrl = getFullUrl('/about.php', $lang);
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="<?= htmlspecialchars($pageDescription, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>">
+  <meta name="keywords" content="WebDev-Tools, Informazioni, Ramon Kaes, Strumenti per sviluppatori, Rispettoso della privacy">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="googlebot" content="index, follow">
   <meta name="theme-color" content="#066fd1">
@@ -106,7 +107,7 @@ $currentUrl = getFullUrl('/about.php', $lang);
         <div class="text-center mb-5">
           <h1 class="display-5 mb-3">Informazioni su WebDev Tools</h1>
           <p class="lead text-secondary">
-            La decimilionesima raccolta di strumenti – un resoconto di un incidente
+            La diecimillesima raccolta di strumenti – un resoconto di un incidente
           </p>
           
           <!-- Badge di Conformità agli Standard -->

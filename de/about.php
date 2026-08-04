@@ -50,7 +50,7 @@ $currentUrl = getFullUrl('/about.php', $lang);
   <meta name="googlebot" content="index, follow">
   <meta name="theme-color" content="#066fd1">
   <meta name="color-scheme" content="light dark">
-  <meta name="author" content="Ramon Kaes" >
+  <meta name="author" content="Ramon Kaes">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="<?= htmlspecialchars($currentUrl, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>">

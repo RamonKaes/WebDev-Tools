@@ -45,6 +45,7 @@ $currentUrl = getFullUrl('/about.php', $lang);
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="<?= htmlspecialchars($pageDescription, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>">
+  <meta name="keywords" content="WebDev-Tools, Sobre, Ramon Kaes, Ferramentas para desenvolvedores, Privacidade">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="googlebot" content="index, follow">
   <meta name="theme-color" content="#066fd1">

@@ -152,12 +152,11 @@ if (!isset($assetPrefix)) {
   <meta property="og:image:alt" content="<?= htmlspecialchars($pageTitle, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>">
   <meta property="og:site_name" content="WebDev-Tools">
   <meta property="og:locale" content="<?= $ogLocale ?>">
-  <meta property="og:locale:alternate" content="en_US">
-  <meta property="og:locale:alternate" content="de_DE">
-  <meta property="og:locale:alternate" content="es_ES">
-  <meta property="og:locale:alternate" content="pt_PT">
-  <meta property="og:locale:alternate" content="fr_FR">
-  <meta property="og:locale:alternate" content="it_IT">
+  <?php foreach ($ogLocales as $ogLangCode => $ogLocaleAlt) : ?>
+    <?php if ($ogLangCode !== $lang) : ?>
+  <meta property="og:locale:alternate" content="<?= $ogLocaleAlt ?>">
+    <?php endif; ?>
+  <?php endforeach; ?>
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="<?= $canonicalUrl ?>">

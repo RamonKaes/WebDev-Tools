@@ -15,7 +15,6 @@ $staticPages = [
 ];
 
 $defaultChangefreqTools = 'weekly';
-$defaultLastmod = date('Y-m-d');
 $langs = SUPPORTED_LANGS;
 
 function decodeUrl(string $url): string
@@ -23,26 +22,24 @@ function decodeUrl(string $url): string
     return html_entity_decode($url, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
 }
 
-function buildStaticEntries(array $staticPages, string $lang, string $lastmod): array
+function buildStaticEntries(array $staticPages, string $lang): array
 {
     $entries = [];
     foreach ($staticPages as $path => $changefreq) {
         $entries[] = [
         'loc' => decodeUrl(getFullUrl($path, $lang)),
-        'lastmod' => $lastmod,
         'changefreq' => $changefreq
         ];
     }
     return $entries;
 }
 
-function buildToolEntries(array $toolsConfig, string $lang, string $lastmod, string $changefreq): array
+function buildToolEntries(array $toolsConfig, string $lang, string $changefreq): array
 {
     $entries = [];
     foreach ($toolsConfig as $toolId => $config) {
         $entries[] = [
         'loc' => decodeUrl(getToolUrl($toolId, $lang)),
-        'lastmod' => $lastmod,
         'changefreq' => $changefreq
         ];
     }
@@ -63,11 +60,6 @@ function writeSitemap(string $outputPath, array $entries): void
         $loc->appendChild($dom->createTextNode($entry['loc']));
         $url->appendChild($loc);
 
-        if (!empty($entry['lastmod'])) {
-            $lastmod = $dom->createElement('lastmod', $entry['lastmod']);
-            $url->appendChild($lastmod);
-        }
-
         if (!empty($entry['changefreq'])) {
             $changefreq = $dom->createElement('changefreq', $entry['changefreq']);
             $url->appendChild($changefreq);
@@ -85,7 +77,7 @@ function writeSitemap(string $outputPath, array $entries): void
     file_put_contents($outputPath, $dom->saveXML());
 }
 
-function writeSitemapIndex(string $outputPath, array $sitemaps, string $lastmod): void
+function writeSitemapIndex(string $outputPath, array $sitemaps): void
 {
     $dom = new DOMDocument('1.0', 'UTF-8');
     $dom->formatOutput = true;
@@ -97,11 +89,6 @@ function writeSitemapIndex(string $outputPath, array $sitemaps, string $lastmod)
         $locElement = $dom->createElement('loc');
         $locElement->appendChild($dom->createTextNode($loc));
         $sitemap->appendChild($locElement);
-
-        if (!empty($lastmod)) {
-            $lastmodElement = $dom->createElement('lastmod', $lastmod);
-            $sitemap->appendChild($lastmodElement);
-        }
 
         $index->appendChild($sitemap);
     }
@@ -116,8 +103,8 @@ $sitemapLocations = [];
 
 foreach ($langs as $lang) {
     $entries = array_merge(
-        buildStaticEntries($staticPages, $lang, $defaultLastmod),
-        buildToolEntries($toolsConfig, $lang, $defaultLastmod, $defaultChangefreqTools)
+        buildStaticEntries($staticPages, $lang),
+        buildToolEntries($toolsConfig, $lang, $defaultChangefreqTools)
     );
 
     usort($entries, fn($a, $b) => strcmp($a['loc'], $b['loc']));
@@ -133,6 +120,6 @@ foreach ($langs as $lang) {
     $sitemapLocations[] = $siteBase . $relativePath;
 }
 
-writeSitemapIndex($outputDir . '/sitemap.xml', $sitemapLocations, $defaultLastmod);
+writeSitemapIndex($outputDir . '/sitemap.xml', $sitemapLocations);
 
 echo "Generated " . count($sitemapLocations) . " language sitemaps plus index.\n";

@@ -1089,7 +1089,6 @@
     },
     "base64EncoderDecoder": {
       "keywords": "base64, codificador, decodificador, binário para texto, data uri, codificação segura para url, codificação de ficheiro",
-      "ogImage": "og-default.png",
       "featureList": [
         "Codificação/decodificação de texto e ficheiros",
         "Suporte arrastar e soltar ficheiros",
@@ -1104,7 +1103,6 @@
     },
     "urlEncoderDecoder": {
       "keywords": "codificador url, decodificador url, codificação percentual, componente uri, string de consulta, analisador url",
-      "ogImage": "og-default.png",
       "featureList": [
         "Codificação e decodificação de URL",
         "Modo componente (encodeURIComponent)",
@@ -1119,7 +1117,6 @@
     },
     "jsonFormatterValidator": {
       "keywords": "formatador json, validador json, embelezador json, destaque de sintaxe, minificar json, visualização em árvore",
-      "ogImage": "og-default.png",
       "featureList": [
         "Formatação e validação JSON",
         "Destaque de sintaxe",
@@ -1134,7 +1131,6 @@
     },
     "pxToRemConverter": {
       "keywords": "px para rem, pixel para rem, conversor de unidades css, design responsivo, calculadora rem, tailwind css",
-      "ogImage": "og-default.png",
       "featureList": [
         "Conversão de pixel para REM",
         "Conversão de REM para pixel",
@@ -1149,7 +1145,6 @@
     },
     "uuidGeneratorTool": {
       "keywords": "gerador uuid, gerador guid, identificador único, uuid v4, uuid v1, uuid v7, uuid em massa",
-      "ogImage": "og-default.png",
       "featureList": [
         "Geração UUID v1, v4, v7",
         "Geração em massa (até 1000)",
@@ -1164,7 +1159,6 @@
     },
     "passwordGeneratorTool": {
       "keywords": "gerador de senha, senha segura, senha aleatória, frase-passe, força de senha, criptográfico",
-      "ogImage": "og-default.png",
       "featureList": [
         "Senhas criptograficamente seguras",
         "Conjuntos de caracteres personalizáveis",
@@ -1179,7 +1173,6 @@
     },
     "hashGeneratorTool": {
       "keywords": "gerador de hash, sha256, md5, sha1, hmac, hash criptográfico, checksum, hash sri",
-      "ogImage": "og-default.png",
       "featureList": [
         "Múltiplos algoritmos hash (MD5, SHA-1, SHA-256, SHA-384, SHA-512)",
         "Hashing de texto e ficheiros",
@@ -1194,7 +1187,6 @@
     },
     "loremIpsumTool": {
       "keywords": "lorem ipsum, texto de marcação, texto fictício, texto de preenchimento, gerador lipsum, mockup design",
-      "ogImage": "og-default.png",
       "featureList": [
         "Contagem de parágrafos personalizável",
         "Geração de frases e palavras",
@@ -1209,7 +1201,6 @@
     },
     "qrCodeGeneratorTool": {
       "keywords": "gerador de código qr, criador de código qr, qr vcard, código qr wifi, qr png, qr svg",
-      "ogImage": "og-default.png",
       "featureList": [
         "Códigos QR URL, texto, vCard, WiFi",
         "Cores personalizáveis",
@@ -1224,7 +1215,6 @@
     },
     "stringEscaperTool": {
       "keywords": "escapador de strings, escape html, escape javascript, escape json, escape sql, prevenção xss",
-      "ogImage": "og-default.png",
       "featureList": [
         "Escape HTML, XML, JavaScript, JSON, SQL, CSV",
         "Funções de escapar e desescapar",
@@ -1239,7 +1229,6 @@
     },
     "codeFormatterTool": {
       "keywords": "formatador de código, embelezador, formatador html, formatador css, formatador javascript, minificador de código, pretty print",
-      "ogImage": "og-default.png",
       "featureList": [
         "Formatação HTML, CSS, JavaScript, XML, SQL",
         "Modos embelezar e minificar",
@@ -1254,7 +1243,6 @@
     },
     "dataConverterTool": {
       "keywords": "conversor de dados, json para xml, xml para json, conversor yaml, conversor csv, conversor timestamp, conversor epoch",
-      "ogImage": "og-default.png",
       "featureList": [
         "Conversão JSON, XML, YAML, CSV",
         "Conversão de formato bidirecional",
@@ -1269,7 +1257,6 @@
     },
     "sampleHelloWorld": {
       "keywords": "ferramenta de exemplo, ferramenta demo, hello world, transformação de texto, template programador",
-      "ogImage": "og-default.png",
       "featureList": [
         "Transformação de texto",
         "Contagem de caracteres",
@@ -1284,7 +1271,6 @@
     },
     "regexTesterTool": {
       "keywords": "testador regex, expressão regular, correspondência de padrão, validador regex, depurador regex, regex javascript",
-      "ogImage": "og-default.png",
       "featureList": [
         "Teste de regex ao vivo com feedback instantâneo",
         "Realce visual de correspondências na string de teste",
@@ -1299,7 +1285,6 @@
     },
     "characterReferenceTool": {
       "keywords": "entidades html, caracteres especiais, símbolos unicode, escape html, códigos de caracteres, referência de entidades",
-      "ogImage": "og-default.png",
       "featureList": [
         "Mais de 2.231 entidades HTML",
         "Navegação baseada em categorias",
@@ -1314,7 +1299,6 @@
     },
     "emojiReferenceTool": {
       "keywords": "referência emoji, lista emoji, emoji unicode, pesquisa emoji, códigos emoji, copiar emoji",
-      "ogImage": "og-default.png",
       "featureList": [
         "Centenas de emojis",
         "Filtragem por categoria",
@@ -1328,7 +1312,6 @@
       "meta_description": "Procure e copie emojis com códigos Unicode e HTML instantaneamente. Referência completa de emojis organizados por categorias (caras, animais, comida e muito mais)."
     },
     "htmlEntityTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Entidades HTML nomeadas (&amp;nbsp;, &amp;lt;, &amp;gt;)",
@@ -1345,7 +1328,6 @@
       "meta_description": "Converta texto para entidades HTML e vice-versa instantaneamente. Ferramenta de escape gratuita com entidades nomeadas (&nbsp;), decimal numérico (&#160;) e hexadecimal."
     },
     "jwtDecoderTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [],
       "keywords": "",
@@ -1353,7 +1335,6 @@
       "meta_description": "Decodifique e analise JSON Web Tokens (JWT) instantaneamente. Ferramenta JWT gratuita para ver cabeçalho, payload e assinatura decodificados. Verifique."
     },
     "punycodeConverterTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [],
       "keywords": "",
@@ -1361,7 +1342,6 @@
       "meta_description": "Converta nomes de domínio internacionais (IDN) para Punycode e vice-versa instantaneamente. Ferramenta gratuita para transformar domínios Unicode em formato."
     },
     "sriGeneratorTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "SecurityApplication",
       "featureList": [
         "Geração de hash SRI a partir de URL, ficheiro ou texto",

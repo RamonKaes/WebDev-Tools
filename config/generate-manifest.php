@@ -32,28 +32,6 @@ if ($baseUrl && !str_starts_with($baseUrl, '/')) {
 
 echo "📦 Generating manifest with BASE_PATH: '{$baseUrl}'\n";
 
-// OG Image mapping (uses full slug names to match generated files)
-$ogImageMap = [
-  'base64EncoderDecoder' => 'base64-encoder-decoder.svg',
-  'urlEncoderDecoder' => 'url-encoder-decoder.svg',
-  'jsonFormatterValidator' => 'json-formatter-validator.svg',
-  'codeFormatterTool' => 'code-formatter-html-css-js-xml-sql.svg',
-  'dataConverterTool' => 'data-converter-json-xml-yaml-csv-timestamp.svg',
-  'pxToRemConverter' => 'px-to-rem-converter.svg',
-  'uuidGeneratorTool' => 'uuid-generator.svg',
-  'passwordGeneratorTool' => 'password-generator.svg',
-  'hashGeneratorTool' => 'hash-generator.svg',
-  'loremIpsumTool' => 'lorem-ipsum.svg',
-  'qrCodeGeneratorTool' => 'qr-code-generator.svg',
-  'stringEscaperTool' => 'string-escaper-html-js-json-sql-csv.svg',
-  'characterReference' => 'character-reference.svg',
-  'emojiReference' => 'emoji-reference.svg',
-  'regexTesterTool' => 'regex-tester.svg',
-  'htmlEntityTool' => 'html-entity-encoder-decoder.svg',
-  'jwtDecoderTool' => 'jwt-decoder.svg',
-  'punycodeConverterTool' => 'punycode-converter.svg',
-];
-
 $manifest = [
   'version' => date('Ymd.His'),
   'generatedAt' => date('c'),
@@ -70,7 +48,6 @@ foreach ($toolsConfig as $toolId => $config) {
     'category' => $config['category'] ?? 'utilities',
     'icon' => $config['icon'] ?? 'bi-tools',
     'jsPath' => $baseUrl . '/assets/js/' . ($config['jsModule'] ?? "tools/{$toolId}.js"),
-    'ogImage' => $ogImageMap[$toolId] ?? 'default.svg',
     'externalLibraries' => $config['externalLibraries'] ?? [],
     'jsLibraries' => $config['jsLibraries'] ?? [],
     'features' => $config['features'] ?? [],

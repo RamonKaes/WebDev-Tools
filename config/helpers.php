@@ -376,9 +376,7 @@ function generateToolSchema($toolId, $lang, $seoData)
         $schema['featureList'] = $features;
     }
 
-    if (!empty($seoData['ogImage']) && $seoData['ogImage'] !== 'og-default.png') {
-        $schema['screenshot'] = htmlspecialchars($baseUrl, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') . BASE_PATH . '/assets/img/webdev-tools.png';
-    }
+    $schema['screenshot'] = htmlspecialchars($baseUrl, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') . BASE_PATH . '/assets/img/webdev-tools.png';
 
     $json = json_encode($schema, getJsonEncodeFlags());
 

@@ -23,7 +23,6 @@ if (!isset($pageDescription)) {
 
 $keywordsRaw = $seoData['keywords'] ?? '';
 $keywords = is_array($keywordsRaw) ? implode(', ', $keywordsRaw) : $keywordsRaw;
-$ogImage = $seoData['ogImage'] ?? 'og-default.png';
 $featureList = $seoData['featureList'] ?? [];
 $applicationCategory = $seoData['applicationCategory'] ?? 'UtilityApplication';
 
@@ -45,7 +44,6 @@ if ($manifest && isset($manifest['generatedAt'])) {
 }
 
 $toolUrlMap = [];
-$ogImageMap = [];
 
 if ($manifest && isset($manifest['tools'])) {
     foreach ($manifest['tools'] as $toolId => $toolMeta) {
@@ -59,8 +57,6 @@ if ($manifest && isset($manifest['tools'])) {
             $url = str_replace('/' . $langCode, '', $url);
         }
         $toolUrlMap[$toolId] = $url;
-
-        $ogImageMap[$toolId] = $toolMeta['ogImage'] ?? 'home.svg';
     }
 } else {
     $toolUrlMap = [
@@ -83,31 +79,9 @@ if ($manifest && isset($manifest['tools'])) {
     'jwtDecoderTool' => '/jwt-decoder/',
     'punycodeConverterTool' => '/punycode-converter/',
     ];
-
-    $ogImageMap = [
-    'base64EncoderDecoder' => 'base64-encoder-decoder.svg',
-    'urlEncoderDecoder' => 'url-encoder-decoder.svg',
-    'jsonFormatterValidator' => 'json-formatter-validator.svg',
-    'codeFormatterTool' => 'code-formatter.svg',
-    'dataConverterTool' => 'data-converter.svg',
-    'pxToRemConverter' => 'px-to-rem-converter.svg',
-    'uuidGeneratorTool' => 'uuid-generator.svg',
-    'passwordGeneratorTool' => 'password-generator.svg',
-    'hashGeneratorTool' => 'hash-generator.svg',
-    'loremIpsumTool' => 'lorem-ipsum.svg',
-    'qrCodeGeneratorTool' => 'qr-code-generator.svg',
-    'stringEscaperTool' => 'string-escaper.svg',
-    'characterReference' => 'character-reference.svg',
-    'emojiReference' => 'emoji-reference.svg',
-    'regexTesterTool' => 'regex-tester.svg',
-    'htmlEntityTool' => 'html-entity-encoder-decoder.svg',
-    'jwtDecoderTool' => 'jwt-decoder.svg',
-    'punycodeConverterTool' => 'punycode-converter.svg',
-    ];
 }
 
 $toolUrlPath = $toolUrlMap[$currentTool] ?? '/';
-$ogImageFile = $ogImageMap[$currentTool] ?? 'home.svg';
 
 $baseUrlEscaped = htmlspecialchars($baseUrl, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
 

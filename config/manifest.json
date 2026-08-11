@@ -1,6 +1,6 @@
 {
-    "version": "20260416.095942",
-    "generatedAt": "2026-04-16T09:59:42+00:00",
+    "version": "20260811.071431",
+    "generatedAt": "2026-08-11T07:14:31+00:00",
     "tools": {
         "base64EncoderDecoder": {
             "id": "base64EncoderDecoder",
@@ -9,7 +9,6 @@
             "category": "encoders",
             "icon": "bi-file-binary",
             "jsPath": "/assets/js/tools/base64EncoderDecoderTool.js",
-            "ogImage": "base64-encoder-decoder.svg",
             "externalLibraries": [],
             "jsLibraries": [
                 "clipboard-utils",
@@ -32,7 +31,6 @@
             "category": "encoders",
             "icon": "bi-link-45deg",
             "jsPath": "/assets/js/tools/urlEncoderDecoderTool.js",
-            "ogImage": "url-encoder-decoder.svg",
             "externalLibraries": [],
             "jsLibraries": [
                 "clipboard-utils",
@@ -53,7 +51,6 @@
             "category": "encoders",
             "icon": "bi-code-square",
             "jsPath": "/assets/js/tools/htmlEntityTool.js",
-            "ogImage": "html-entity-encoder-decoder.svg",
             "externalLibraries": [],
             "jsLibraries": [
                 "clipboard-utils",
@@ -74,7 +71,6 @@
             "category": "formatters",
             "icon": "bi-filetype-json",
             "jsPath": "/assets/js/tools/jsonFormatterValidatorTool.js",
-            "ogImage": "json-formatter-validator.svg",
             "externalLibraries": [],
             "jsLibraries": [
                 "clipboard-utils",
@@ -99,7 +95,6 @@
             "category": "formatters",
             "icon": "bi-code-square",
             "jsPath": "/assets/js/tools/codeFormatterTool.js",
-            "ogImage": "code-formatter-html-css-js-xml-sql.svg",
             "externalLibraries": [],
             "jsLibraries": [
                 "clipboard-utils",
@@ -116,7 +111,6 @@
             "category": "converters",
             "icon": "bi-arrows-angle-expand",
             "jsPath": "/assets/js/tools/pxToRemConverterTool.js",
-            "ogImage": "px-to-rem-converter.svg",
             "externalLibraries": [],
             "jsLibraries": [
                 "clipboard-utils"
@@ -136,7 +130,6 @@
             "category": "converters",
             "icon": "bi-arrow-left-right",
             "jsPath": "/assets/js/tools/dataConverterTool.js",
-            "ogImage": "data-converter-json-xml-yaml-csv-timestamp.svg",
             "externalLibraries": [],
             "jsLibraries": [
                 "clipboard-utils",
@@ -159,7 +152,6 @@
             "category": "encoders",
             "icon": "bi-shield-lock",
             "jsPath": "/assets/js/tools/jwtDecoderTool.js",
-            "ogImage": "jwt-decoder.svg",
             "externalLibraries": [],
             "jsLibraries": [],
             "features": [
@@ -177,7 +169,6 @@
             "category": "encoders",
             "icon": "bi-globe",
             "jsPath": "/assets/js/tools/punycodeConverterTool.js",
-            "ogImage": "punycode-converter.svg",
             "externalLibraries": [],
             "jsLibraries": [
                 "clipboard-utils",
@@ -198,7 +189,6 @@
             "category": "generators",
             "icon": "bi-fingerprint",
             "jsPath": "/assets/js/tools/uuidGeneratorTool.js",
-            "ogImage": "uuid-generator.svg",
             "externalLibraries": [],
             "jsLibraries": [
                 "clipboard-utils",
@@ -220,7 +210,6 @@
             "category": "generators",
             "icon": "bi-shield-lock",
             "jsPath": "/assets/js/tools/passwordGeneratorTool.js",
-            "ogImage": "password-generator.svg",
             "externalLibraries": [],
             "jsLibraries": [
                 "clipboard-utils",
@@ -243,7 +232,6 @@
             "category": "generators",
             "icon": "bi-hash",
             "jsPath": "/assets/js/tools/hashGeneratorTool.js",
-            "ogImage": "hash-generator.svg",
             "externalLibraries": [],
             "jsLibraries": [
                 "clipboard-utils",
@@ -263,7 +251,6 @@
             "category": "generators",
             "icon": "bi-file-text",
             "jsPath": "/assets/js/tools/loremIpsumTool.js",
-            "ogImage": "lorem-ipsum.svg",
             "externalLibraries": [],
             "jsLibraries": [
                 "clipboard-utils",
@@ -284,7 +271,6 @@
             "category": "generators",
             "icon": "bi-qr-code",
             "jsPath": "/assets/js/tools/qrCodeGeneratorTool.js",
-            "ogImage": "qr-code-generator.svg",
             "externalLibraries": [
                 {
                     "url": "https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js",
@@ -310,7 +296,6 @@
             "category": "stringtools",
             "icon": "bi-code-slash",
             "jsPath": "/assets/js/tools/stringEscaperTool.js",
-            "ogImage": "string-escaper-html-js-json-sql-csv.svg",
             "externalLibraries": [],
             "jsLibraries": [
                 "clipboard-utils",
@@ -327,7 +312,6 @@
             "category": "references",
             "icon": "bi-table",
             "jsPath": "/assets/js/tools/characterReferenceTool.js",
-            "ogImage": "default.svg",
             "externalLibraries": [],
             "jsLibraries": [
                 "clipboard-utils"
@@ -348,7 +332,6 @@
             "category": "references",
             "icon": "bi-emoji-smile",
             "jsPath": "/assets/js/tools/emojiReferenceTool.js",
-            "ogImage": "default.svg",
             "externalLibraries": [],
             "jsLibraries": [],
             "features": [
@@ -367,7 +350,6 @@
             "category": "utilities",
             "icon": "bi-regex",
             "jsPath": "/assets/js/tools/regexTesterTool.js",
-            "ogImage": "regex-tester.svg",
             "externalLibraries": [],
             "jsLibraries": [
                 "clipboard-utils",
@@ -389,7 +371,6 @@
             "category": "converters",
             "icon": "bi-aspect-ratio",
             "jsPath": "/assets/js/tools/aspectRatioCalculatorTool.js",
-            "ogImage": "default.svg",
             "externalLibraries": [],
             "jsLibraries": [
                 "clipboard-utils"
@@ -410,7 +391,6 @@
             "category": "utilities",
             "icon": "bi-shield-check",
             "jsPath": "/assets/js/tools/sriGeneratorTool.js",
-            "ogImage": "default.svg",
             "externalLibraries": [],
             "jsLibraries": [
                 "clipboard-utils",

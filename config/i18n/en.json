@@ -1088,7 +1088,6 @@
       "meta_description": "Legal information and contact details for WebDev-Tools. Responsible for content, data protection officer contact, and legal notices for our utilities."
     },
     "base64EncoderDecoder": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Encode text and files to Base64",
@@ -1103,7 +1102,6 @@
       "meta_description": "Base64 encoder and decoder for text and files. Encode or decode data. with drag & drop, URL-safe encoding, and live preview for maximum privacy."
     },
     "urlEncoderDecoder": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Encode and decode URL components",
@@ -1118,7 +1116,6 @@
       "meta_description": "URL encoder and decoder for query parameters and components. Parse protocol, host, path. Support for encodeURI and encodeURIComponent methods"
     },
     "jsonFormatterValidator": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Format and beautify JSON",
@@ -1135,7 +1132,6 @@
       "meta_description": "Format, validate and beautify JSON with syntax highlighting. Minify JSON, view tree structure, and detect errors. in your browser with privacy."
     },
     "pxToRemConverter": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Convert pixels to rem units",
@@ -1150,7 +1146,6 @@
       "meta_description": "Convert pixels to rem units for responsive CSS. PX to REM calculator with custom base font size, batch conversion and live preview for web development."
     },
     "uuidGeneratorTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Generate UUID v1, v4, v7",
@@ -1165,7 +1160,6 @@
       "meta_description": "Generate v1, v4, v7 UUIDs. UUID generator creating unique identifiers for databases, APIs with bulk generation and format validation"
     },
     "passwordGeneratorTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Cryptographically secure passwords",
@@ -1181,7 +1175,6 @@
       "meta_description": "Create strong, random passwords with customizable length and character sets. generator with strength meter and multiple password generation."
     },
     "hashGeneratorTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Generate MD5, SHA-1, SHA-256, SHA-384, SHA-512 hashes",
@@ -1196,7 +1189,6 @@
       "meta_description": "Generate MD5, SHA-1, SHA-256, SHA-512 hashes for text and files. cryptographic hash generator with HMAC support and file integrity verification"
     },
     "loremIpsumTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Generate paragraphs, sentences, or words",
@@ -1210,7 +1202,6 @@
       "meta_description": "Generate Lorem Ipsum placeholder text. generator with paragraphs, words, sentences options and HTML formatting for web design mockups."
     },
     "qrCodeGeneratorTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Generate QR codes for URLs, text, vCard, WiFi",
@@ -1225,7 +1216,6 @@
       "meta_description": "Create custom QR codes. QR code generator supporting URLs, text, WiFi, vCard with SVG/PNG download, color customization and error correction."
     },
     "stringEscaperTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Escape for HTML, XML, JavaScript, JSON, SQL, CSV",
@@ -1239,7 +1229,6 @@
       "meta_description": "Escape and unescape strings for HTML, JavaScript, JSON, SQL, CSV, XML. string escaping tool with multiple format support and instant conversion."
     },
     "codeFormatterTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Format HTML, CSS, JavaScript, XML, SQL",
@@ -1254,7 +1243,6 @@
       "meta_description": "Beautify and format HTML, CSS, JavaScript, XML, SQL code. Supports multiple languages with syntax highlighting and customizable indentation options."
     },
     "dataConverterTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Convert JSON, XML, YAML, CSV",
@@ -1269,7 +1257,6 @@
       "meta_description": "Convert between JSON, XML, YAML, CSV, and TOML formats. data format converter with syntax validation and real-time conversion preview."
     },
     "regexTesterTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Test regular expressions",
@@ -1285,7 +1272,6 @@
     },
     "sampleHelloWorld": {
       "keywords": "sample tool, demo tool, hello world, text transformation, developer template",
-      "ogImage": "og-default.png",
       "featureList": [
         "Text transformation",
         "Character counting",
@@ -1299,7 +1285,6 @@
       "meta_description": "Sample tool demonstrating the WebDev-Tools structure with text transformation, character counting, and clipboard functionality."
     },
     "characterReferenceTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Over 2,231 HTML entities",
@@ -1314,7 +1299,6 @@
       "meta_description": "Complete HTML character entity reference with symbols, arrows, math operators. Search and copy HTML entities. for web development projects."
     },
     "emojiReferenceTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Hundreds of emojis",
@@ -1329,7 +1313,6 @@
       "meta_description": "Searchable emoji reference with Unicode codes and categories. Browse, search and copy emojis. with skin tone variations and detailed emoji information."
     },
     "htmlEntityTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Named HTML entities (&amp;nbsp;, &amp;lt;, &amp;gt;)",
@@ -1346,7 +1329,6 @@
       "meta_description": "Encode and decode HTML entities. Convert special characters to HTML entity codes and vice versa with support for named and numeric entity references."
     },
     "jwtDecoderTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [],
       "keywords": "",
@@ -1354,7 +1336,6 @@
       "meta_description": "Decode and analyze JSON Web Tokens (JWT) JWT decoder showing header, payload, signature with Base64 decoding and token validation insights."
     },
     "punycodeConverterTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [],
       "keywords": "",
@@ -1362,7 +1343,6 @@
       "meta_description": "Convert international domain names to Punycode and back. IDN converter supporting Unicode domains for DNS compatibility and email address encoding."
     },
     "sriGeneratorTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "SecurityApplication",
       "featureList": [
         "SRI hash generation from URL, file, or text",

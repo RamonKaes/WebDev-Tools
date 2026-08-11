@@ -1088,7 +1088,6 @@
       "meta_description": "Mentions légales et coordonnées pour WebDev-Tools. Responsable du contenu, contact du délégué à la protection des données et mentions légales pour nos utilitaires."
     },
     "base64EncoderDecoder": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Encodage/décodage de texte et fichiers",
@@ -1103,7 +1102,6 @@
       "meta_description": "Encodez et décodez du texte et des fichiers au format Base64. Outil avec glisser-déposer, aperçu d'image et encodage URL-safe."
     },
     "urlEncoderDecoder": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Encodage et décodage d'URL",
@@ -1118,7 +1116,6 @@
       "meta_description": "Encodez et décodez des URL, paramètres de requête et composants. Outil avec analyseur URL intégré pour extraire protocole, hôte, chemin et paramètres."
     },
     "jsonFormatterValidator": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Formatage et validation JSON",
@@ -1133,7 +1130,6 @@
       "meta_description": "Formatez, validez et embellissez les données JSON avec coloration syntaxique. Outil JSON avec correction automatique des erreurs, minification et vue arborescente."
     },
     "pxToRemConverter": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Conversion Pixel vers REM",
@@ -1148,7 +1144,6 @@
       "meta_description": "Convertissez pixels en unités rem, em et pourcentage. Calculatrice d'unités CSS avec taille de police de base personnalisable et valeurs prédéfinies."
     },
     "uuidGeneratorTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Génération UUID v1, v4 et v7",
@@ -1163,7 +1158,6 @@
       "meta_description": "Générateur UUID pour créer des identifiants uniques. Générez UUID v1, v4, v7 et NIL dans plusieurs formats. Génération en masse."
     },
     "passwordGeneratorTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Mots de passe cryptographiquement sécurisés",
@@ -1178,7 +1172,6 @@
       "meta_description": "Générez des mots de passe aléatoires sécurisés. avec longueur et caractères personnalisables. Générateur avec phrases secrètes, motifs."
     },
     "hashGeneratorTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Algorithmes SHA-1, SHA-256, SHA-384, SHA-512, MD5",
@@ -1193,7 +1186,6 @@
       "meta_description": "Générez des hachages cryptographiques avec SHA-1, SHA-256, SHA-384, SHA-512, MD5 et HMAC. Générateur de hash avec support pour."
     },
     "loremIpsumTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Paragraphes, phrases et mots",
@@ -1208,7 +1200,6 @@
       "meta_description": "Générez du texte de remplissage Lorem Ipsum pour designs et maquettes. Choisissez paragraphes, phrases ou mots personnalisables. Copie."
     },
     "qrCodeGeneratorTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Codes QR URL, texte, vCard et WiFi",
@@ -1223,7 +1214,6 @@
       "meta_description": "Créez des codes QR personnalisés à partir de texte, URLs, contacts vCard ou informations WiFi. Générateur de QR avec couleurs et tailles personnalisables, export PNG et SVG."
     },
     "stringEscaperTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Support HTML, XML, JavaScript, JSON, SQL, CSV",
@@ -1238,7 +1228,6 @@
       "meta_description": "Échappez et désechappez les chaînes pour HTML, XML, JavaScript, JSON, SQL et CSV. Outil d'échappement avec conversion automatique en temps réel."
     },
     "codeFormatterTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Support HTML, CSS, JavaScript, XML, SQL",
@@ -1253,7 +1242,6 @@
       "meta_description": "Formatez et embellissez le code HTML, CSS, JavaScript, XML et SQL. Outil de beautify et minify avec indentation personnalisable."
     },
     "dataConverterTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Conversion JSON, XML, YAML, CSV",
@@ -1268,7 +1256,6 @@
       "meta_description": "Convertissez données entre JSON, CSV, XML, YAML et Unix timestamps. Convertisseur de données avec configuration personnalisable pour."
     },
     "regexTesterTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Test d'expressions régulières en direct",
@@ -1284,7 +1271,6 @@
     },
     "sampleHelloWorld": {
       "keywords": "outil exemple, outil démo, hello world, transformation texte, modèle développeur",
-      "ogImage": "og-default.png",
       "featureList": [
         "Transformation de texte",
         "Comptage de caractères",
@@ -1298,7 +1284,6 @@
       "meta_description": "Outil exemple démontrant la structure WebDev-Tools avec transformation de texte, comptage de caractères et fonctionnalité presse-papiers."
     },
     "characterReferenceTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Plus de 2 231 entités HTML",
@@ -1313,7 +1298,6 @@
       "meta_description": "Parcourez et copiez des entités HTML et caractères spéciaux avec codes Unicode. Référence complète de 2.231+ entités HTML organisées par catégories."
     },
     "emojiReferenceTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Des centaines d'emojis",
@@ -1328,7 +1312,6 @@
       "meta_description": "Parcourez et copiez des emojis avec codes Unicode et HTML. Référence complète d'emojis organisés par catégories (visages, animaux, nourriture et plus)."
     },
     "htmlEntityTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Entités HTML nommées (&amp;nbsp;, &amp;lt;, &amp;gt;)",
@@ -1345,7 +1328,6 @@
       "meta_description": "Convertissez le texte en entités HTML et vice versa. Outil d'échappement avec entités nommées (&nbsp;), décimales numériques (&#160;)."
     },
     "jwtDecoderTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [],
       "keywords": "",
@@ -1353,7 +1335,6 @@
       "meta_description": "Décodez et analysez les JSON Web Tokens (JWT). Outil JWT pour voir en-tête, charge utile et signature décodés. Vérifiez algorithme."
     },
     "punycodeConverterTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [],
       "keywords": "",
@@ -1361,7 +1342,6 @@
       "meta_description": "Convertissez les noms de domaine internationaux (IDN) en Punycode et vice versa. Outil pour transformer domaines Unicode en format."
     },
     "sriGeneratorTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "SecurityApplication",
       "featureList": [
         "Génération de hash SRI depuis URL, fichier ou texte",

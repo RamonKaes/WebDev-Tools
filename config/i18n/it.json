@@ -1088,7 +1088,6 @@
       "meta_description": "Informazioni legali e contatti per WebDev-Tools. Responsabile dei contenuti, contatto del responsabile della protezione dati e note legali per le nostre utility."
     },
     "base64EncoderDecoder": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Codifica/decodifica testo e file",
@@ -1103,7 +1102,6 @@
       "meta_description": "Codifica e decodifica testo e file in Base64. Drag & drop, anteprima live e codifica URL-safe. 100% gratuito e lato client per privacy completa."
     },
     "urlEncoderDecoder": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Codifica e decodifica URL",
@@ -1118,7 +1116,6 @@
       "meta_description": "Codifica e decodifica URL, parametri di query e componenti istantaneamente. Strumento gratuito con parser URL integrato per estrarre protocollo, host e percorso."
     },
     "jsonFormatterValidator": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Formattazione e validazione JSON",
@@ -1135,7 +1132,6 @@
       "meta_description": "Formatta, valida e abbellisci dati JSON con evidenziazione sintassi istantaneamente. Strumento JSON gratuito con correzione automatica errori, minificazione e visualizzazione ad albero."
     },
     "pxToRemConverter": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Conversione Pixel a REM",
@@ -1150,7 +1146,6 @@
       "meta_description": "Converti pixel in unità rem e viceversa. Regola dimensione font base per design responsive. Tabella completa e valori rapidi per Tailwind CSS."
     },
     "uuidGeneratorTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Generazione UUID v1, v4 e v7",
@@ -1165,7 +1160,6 @@
       "meta_description": "Genera UUID v1, v4, v7 istantaneamente. Generatore gratuito per database e API con supporto generazione multipla e validazione formato online."
     },
     "passwordGeneratorTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Password crittograficamente sicure",
@@ -1181,7 +1175,6 @@
       "meta_description": "Genera password casuali sicure istantaneamente con lunghezza e caratteri personalizzabili. Generatore gratuito con passphrase, pattern ed esclusione."
     },
     "hashGeneratorTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Algoritmi SHA-1, SHA-256, SHA-384, SHA-512, MD5",
@@ -1196,7 +1189,6 @@
       "meta_description": "Genera hash crittografici con SHA-1, SHA-256, SHA-384, SHA-512, MD5 e HMAC istantaneamente. Generatore hash gratuito con supporto per file e testo. Crea SRI."
     },
     "loremIpsumTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Paragrafi, frasi e parole",
@@ -1211,7 +1203,6 @@
       "meta_description": "Genera testo segnaposto Lorem Ipsum gratuito per design e mockup istantaneamente. Scegli paragrafi, frasi o parole personalizzabili. Copia con un clic negli appunti."
     },
     "qrCodeGeneratorTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Codici QR URL, testo, vCard e WiFi",
@@ -1226,7 +1217,6 @@
       "meta_description": "Crea codici QR personalizzati gratuiti da testo, URL, contatti vCard o informazioni WiFi istantaneamente. Generatore di QR con colori e dimensioni."
     },
     "stringEscaperTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Supporto HTML, XML, JavaScript, JSON, SQL, CSV",
@@ -1241,7 +1231,6 @@
       "meta_description": "Esegui escape e unescape di stringhe per HTML, XML, JavaScript, JSON, SQL e CSV istantaneamente. Strumento di escape gratuito con conversione automatica in."
     },
     "codeFormatterTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Supporto HTML, CSS, JavaScript, XML, SQL",
@@ -1256,7 +1245,6 @@
       "meta_description": "Formatta e abbellisci codice HTML, CSS, JavaScript, XML e SQL istantaneamente. Strumento gratuito di beautify e minify con indentazione personalizzabile."
     },
     "dataConverterTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Conversione JSON, XML, YAML, CSV",
@@ -1271,7 +1259,6 @@
       "meta_description": "Converti dati tra JSON, CSV, XML, YAML e Unix timestamps istantaneamente. Convertitore dati gratuito con configurazione personalizzabile per delimitatori."
     },
     "regexTesterTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Test espressioni regolari in tempo reale",
@@ -1287,7 +1274,6 @@
     },
     "sampleHelloWorld": {
       "keywords": "strumento esempio, strumento demo, hello world, trasformazione testo, template sviluppatore",
-      "ogImage": "og-default.png",
       "featureList": [
         "Trasformazione testo",
         "Conteggio caratteri",
@@ -1301,7 +1287,6 @@
       "meta_description": "Strumento di esempio che dimostra la struttura WebDev-Tools con trasformazione testo, conteggio caratteri e funzionalità clipboard."
     },
     "characterReferenceTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Oltre 2.231 entità HTML",
@@ -1316,7 +1301,6 @@
       "meta_description": "Sfoglia e copia entità HTML e caratteri speciali con codici Unicode istantaneamente. Riferimento completo di 2.231+ entità HTML organizzate per categorie."
     },
     "emojiReferenceTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Centinaia di emoji",
@@ -1331,7 +1315,6 @@
       "meta_description": "Sfoglia e copia emoji con codici Unicode e HTML istantaneamente. Riferimento completo di emoji organizzati per categorie (visi, animali, cibo, viaggi e altro)."
     },
     "htmlEntityTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Entità HTML nominative (&amp;nbsp;, &amp;lt;, &amp;gt;)",
@@ -1348,7 +1331,6 @@
       "meta_description": "Converti testo in entità HTML e viceversa istantaneamente. Strumento di escape gratuito con entità nominative (&nbsp;), decimali numeriche (&#160;) ed."
     },
     "jwtDecoderTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [],
       "keywords": "",
@@ -1356,7 +1338,6 @@
       "meta_description": "Decodifica e analizza JSON Web Tokens (JWT) istantaneamente. Strumento JWT gratuito per visualizzare header, payload e firma decodificati. Verifica algoritmo."
     },
     "punycodeConverterTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [],
       "keywords": "",
@@ -1364,7 +1345,6 @@
       "meta_description": "Converti nomi di dominio internazionali (IDN) in Punycode e viceversa istantaneamente. Strumento gratuito per trasformare domini Unicode in formato."
     },
     "sriGeneratorTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "SecurityApplication",
       "featureList": [
         "Generazione hash SRI da URL, file o testo",

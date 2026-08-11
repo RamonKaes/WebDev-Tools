@@ -1089,7 +1089,6 @@
     },
     "base64EncoderDecoder": {
       "keywords": "base64, encoder, decoder, binär zu text, data uri, url-sichere kodierung, datei kodierung",
-      "ogImage": "og-default.png",
       "featureList": [
         "Text- und Dateikodierung/-dekodierung",
         "Drag & Drop Dateiunterstützung",
@@ -1104,7 +1103,6 @@
     },
     "urlEncoderDecoder": {
       "keywords": "url encoder, url decoder, prozent kodierung, uri komponente, query string, url parser",
-      "ogImage": "og-default.png",
       "featureList": [
         "URL-Kodierung und -Dekodierung",
         "Komponentenmodus (encodeURIComponent)",
@@ -1119,7 +1117,6 @@
     },
     "jsonFormatterValidator": {
       "keywords": "json formatierer, json validator, json beautifier, syntax hervorhebung, json minify, baumansicht",
-      "ogImage": "og-default.png",
       "featureList": [
         "JSON-Formatierung und -Validierung",
         "Syntax-Hervorhebung",
@@ -1134,7 +1131,6 @@
     },
     "pxToRemConverter": {
       "keywords": "px zu rem, pixel zu rem, css einheiten konverter, responsive design, rem rechner, tailwind css",
-      "ogImage": "og-default.png",
       "featureList": [
         "Pixel-zu-REM-Konvertierung",
         "REM-zu-Pixel-Konvertierung",
@@ -1149,7 +1145,6 @@
     },
     "uuidGeneratorTool": {
       "keywords": "uuid generator, guid generator, eindeutige kennung, uuid v4, uuid v1, uuid v7, massen uuid",
-      "ogImage": "og-default.png",
       "featureList": [
         "UUID v1, v4, v7 Generierung",
         "Massengenerierung (bis zu 1000)",
@@ -1164,7 +1159,6 @@
     },
     "passwordGeneratorTool": {
       "keywords": "passwort generator, sicheres passwort, zufallspasswort, passphrase, passwortstärke, kryptografisch",
-      "ogImage": "og-default.png",
       "featureList": [
         "Kryptografisch sichere Passwörter",
         "Anpassbare Zeichensätze",
@@ -1179,7 +1173,6 @@
     },
     "hashGeneratorTool": {
       "keywords": "hash generator, sha256, md5, sha1, hmac, kryptografischer hash, prüfsumme, sri hash",
-      "ogImage": "og-default.png",
       "featureList": [
         "Mehrere Hash-Algorithmen (MD5, SHA-1, SHA-256, SHA-384, SHA-512)",
         "Text- und Datei-Hashing",
@@ -1194,7 +1187,6 @@
     },
     "loremIpsumTool": {
       "keywords": "lorem ipsum, platzhaltertext, blindtext, fülltext, lipsum generator, design mockup",
-      "ogImage": "og-default.png",
       "featureList": [
         "Anpassbare Absatzanzahl",
         "Satz- und Wortgenerierung",
@@ -1209,7 +1201,6 @@
     },
     "qrCodeGeneratorTool": {
       "keywords": "qr code generator, qr code ersteller, vcard qr, wifi qr code, qr code png, qr code svg",
-      "ogImage": "og-default.png",
       "featureList": [
         "URL-, Text-, vCard-, WiFi-QR-Codes",
         "Anpassbare Farben",
@@ -1224,7 +1215,6 @@
     },
     "stringEscaperTool": {
       "keywords": "string escaper, html escape, javascript escape, json escape, sql escape, xss prävention",
-      "ogImage": "og-default.png",
       "featureList": [
         "HTML, XML, JavaScript, JSON, SQL, CSV Maskierung",
         "Maskieren und Demaskieren",
@@ -1239,7 +1229,6 @@
     },
     "codeFormatterTool": {
       "keywords": "code formatter, beautifier, html formatter, css formatter, javascript formatter, code minifier, pretty print",
-      "ogImage": "og-default.png",
       "featureList": [
         "HTML, CSS, JavaScript, XML, SQL Formatierung",
         "Verschönerungs- und Minifizierungs-Modi",
@@ -1254,7 +1243,6 @@
     },
     "dataConverterTool": {
       "keywords": "daten konverter, json to xml, xml to json, yaml konverter, csv konverter, timestamp konverter, epoch konverter",
-      "ogImage": "og-default.png",
       "featureList": [
         "JSON, XML, YAML, CSV Konvertierung",
         "Bidirektionale Format-Konvertierung",
@@ -1269,7 +1257,6 @@
     },
     "sampleHelloWorld": {
       "keywords": "beispiel tool, demo tool, hello world, text transformation, entwickler vorlage",
-      "ogImage": "og-default.png",
       "featureList": [
         "Text-Transformation",
         "Zeichenzählung",
@@ -1284,7 +1271,6 @@
     },
     "regexTesterTool": {
       "keywords": "regex tester, reguläre ausdrücke, pattern matching, regex validator, regex debugger, javascript regex",
-      "ogImage": "og-default.png",
       "featureList": [
         "Live-Regex-Testing mit sofortigem Feedback",
         "Visuelle Match-Hervorhebung im Test-String",
@@ -1299,7 +1285,6 @@
     },
     "characterReferenceTool": {
       "keywords": "html entities, sonderzeichen, unicode symbole, html escape, zeichencodes, entity referenz",
-      "ogImage": "og-default.png",
       "featureList": [
         "Über 2.231 HTML-Entities",
         "Kategoriebasiertes Durchsuchen",
@@ -1314,7 +1299,6 @@
     },
     "emojiReferenceTool": {
       "keywords": "emoji referenz, emoji liste, unicode emoji, emoji suche, emoji codes, emoji kopieren",
-      "ogImage": "og-default.png",
       "featureList": [
         "Hunderte von Emojis",
         "Kategoriefilterung",
@@ -1328,7 +1312,6 @@
       "meta_description": "Umfassende Emoji-Referenz mit Unicode- und HTML-Codes. Durchsuche Tausende von Emojis nach Kategorie, suche nach Namen und kopiere sie. Perfekt für Entwickler."
     },
     "htmlEntityTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Benannte HTML-Entities (&amp;nbsp;, &amp;lt;, &amp;gt;)",
@@ -1345,7 +1328,6 @@
       "meta_description": "Konvertiere Text in HTML-Entities und zurück. Unterstützt benannte Entities (&nbsp;), numerische Dezimal- (&#160;) und Hex-Entities (&#xA0;)."
     },
     "jwtDecoderTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [],
       "keywords": "",
@@ -1353,7 +1335,6 @@
       "meta_description": "Dekodiere und analysiere JSON Web Tokens (JWT). Zeige Header, Payload und Signatur an. Überprüfe Algorithmus, Ablaufzeit und Claims."
     },
     "punycodeConverterTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "UtilityApplication",
       "featureList": [],
       "keywords": "",
@@ -1361,7 +1342,6 @@
       "meta_description": "Konvertiere internationale Domainnamen (IDN) zu Punycode und zurück. Transformiere Unicode-Domains in ASCII-kompatibles Format. Unterstützt alle."
     },
     "sriGeneratorTool": {
-      "ogImage": "og-default.png",
       "applicationCategory": "SecurityApplication",
       "featureList": [
         "SRI-Hash-Generierung aus URL, Datei oder Text",

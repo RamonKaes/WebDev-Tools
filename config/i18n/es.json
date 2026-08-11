@@ -1007,7 +1007,7 @@
       "categoryArrows": "Flechas y Símbolos",
       "toc_title": "Referencia Emoji",
       "h1_title": "Referencia Emojis — Busca, Explora y Copia Emojis",
-      "card_description": "Navega y copia emojis con códigos Unicode y HTML. Referencia completa de emojis organizados por categorías (caras, animales, comida, viajes,.",
+      "card_description": "Navega y copia emojis con códigos Unicode y HTML. Referencia completa de emojis organizados por categorías (caras, animales, comida, viajes y más).",
       "tool_description": "Herramienta completa de referencia de emojis para desarrolladores y diseñadores. Navega miles de emojis organizados por categorías, busca por nombre y copia emojis o sus códigos HTML con un clic. Perfecto para desarrollo web, documentación, contenido de redes sociales y proyectos de diseño. Incluye códigos decimales Unicode para entidades HTML.",
       "loadingEmojis": "Cargando emojis...",
       "loadError": "No se pudieron cargar los datos de emojis.",
@@ -1100,7 +1100,7 @@
       ],
       "applicationCategory": "UtilityApplication",
       "meta_title": "Codificador Base64 – Convertidor de Texto y Archivos",
-      "meta_description": "Codificador y decodificador Base64 para texto y archivos. Codifica o decodifica datos. con soporte de arrastrar y soltar,."
+      "meta_description": "Codificador y decodificador Base64 para texto y archivos. Codifica o decodifica datos al instante con soporte de arrastrar y soltar y vista previa binaria."
     },
     "urlEncoderDecoder": {
       "keywords": "codificador url, decodificador url, codificación porcentual, componente uri, cadena de consulta, analizador url",
@@ -1145,7 +1145,7 @@
       ],
       "applicationCategory": "UtilityApplication",
       "meta_title": "Convertidor Px a Rem – Calculadora CSS para Diseño Responsivo",
-      "meta_description": "Convierte píxeles a unidades rem, em y porcentaje. Calculadora de unidades CSS gratuita con tamaño de fuente base personalizable y tablas de."
+      "meta_description": "Convierte píxeles a unidades rem, em y porcentaje. Calculadora de unidades CSS gratuita con tamaño de fuente base personalizable y tablas de valores predefinidos."
     },
     "uuidGeneratorTool": {
       "keywords": "generador uuid, generador guid, identificador único, uuid v4, uuid v1, uuid v7, uuid masivo",
@@ -1205,7 +1205,7 @@
       ],
       "applicationCategory": "UtilityApplication",
       "meta_title": "Generador Lorem Ipsum – Texto de Relleno para Diseño Web",
-      "meta_description": "Genera texto de relleno Lorem Ipsum para diseños y maquetas. Elige párrafos, oraciones o palabras personalizables. Copia con un."
+      "meta_description": "Genera texto de relleno Lorem Ipsum para diseños y maquetas. Elige párrafos, oraciones o palabras personalizables. Copia con un solo clic."
     },
     "qrCodeGeneratorTool": {
       "keywords": "generador código qr, creador código qr, qr vcard, código qr wifi, qr png, qr svg",
@@ -1325,7 +1325,7 @@
       ],
       "applicationCategory": "UtilityApplication",
       "meta_title": "Referencia de Emojis – Búsqueda de Unicode y Códigos",
-      "meta_description": "Navega y copia emojis con códigos Unicode y HTML. Referencia completa de emojis organizados por categorías (caras, animales, comida, viajes,."
+      "meta_description": "Navega y copia emojis con códigos Unicode y HTML. Referencia completa de emojis organizados por categorías (caras, animales, comida, viajes y más)."
     },
     "htmlEntityTool": {
       "ogImage": "og-default.png",

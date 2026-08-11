@@ -1115,7 +1115,7 @@
       ],
       "keywords": "encoder url, decoder url, codifica percentuale, componente uri, query string, parser url",
       "meta_title": "Codificatore e Decodificatore URL – Parser Parametri di Query",
-      "meta_description": "Codifica e decodifica URL, parametri di query e componenti istantaneamente. Strumento gratuito con parser URL integrato per estrarre protocollo, host,."
+      "meta_description": "Codifica e decodifica URL, parametri di query e componenti istantaneamente. Strumento gratuito con parser URL integrato per estrarre protocollo, host e percorso."
     },
     "jsonFormatterValidator": {
       "ogImage": "og-default.png",
@@ -1132,7 +1132,7 @@
       ],
       "keywords": "formattatore json, validatore json, beautifier json, evidenziazione sintassi, minifica json, visualizzazione ad albero",
       "meta_title": "Formattatore e Validatore JSON – Beautify & Minify Online",
-      "meta_description": "Formatta, valida e abbellisci dati JSON con evidenziazione sintassi istantaneamente. Strumento JSON gratuito con correzione automatica errori, minificazione,."
+      "meta_description": "Formatta, valida e abbellisci dati JSON con evidenziazione sintassi istantaneamente. Strumento JSON gratuito con correzione automatica errori, minificazione e visualizzazione ad albero."
     },
     "pxToRemConverter": {
       "ogImage": "og-default.png",
@@ -1208,7 +1208,7 @@
       ],
       "keywords": "lorem ipsum, testo segnaposto, testo fittizio, testo di riempimento, generatore lipsum, design mockup",
       "meta_title": "Generatore Lorem Ipsum – Testo Segnaposto per Design Web",
-      "meta_description": "Genera testo segnaposto Lorem Ipsum gratuito per design e mockup istantaneamente. Scegli paragrafi, frasi o parole personalizzabili. Copia con un clic,."
+      "meta_description": "Genera testo segnaposto Lorem Ipsum gratuito per design e mockup istantaneamente. Scegli paragrafi, frasi o parole personalizzabili. Copia con un clic negli appunti."
     },
     "qrCodeGeneratorTool": {
       "ogImage": "og-default.png",
@@ -1253,7 +1253,7 @@
       ],
       "keywords": "formattatore codice, beautifier, formattatore html, formattatore css, formattatore javascript, minificatore codice, pretty print",
       "meta_title": "Formattatore Codice – HTML, CSS, JavaScript, XML & SQL",
-      "meta_description": "Formatta e abbellisci codice HTML, CSS, JavaScript, XML e SQL istantaneamente. Strumento gratuito di beautify e minify con indentazione personalizzabile.."
+      "meta_description": "Formatta e abbellisci codice HTML, CSS, JavaScript, XML e SQL istantaneamente. Strumento gratuito di beautify e minify con indentazione personalizzabile."
     },
     "dataConverterTool": {
       "ogImage": "og-default.png",
@@ -1313,7 +1313,7 @@
       ],
       "keywords": "entità html, caratteri speciali, simboli unicode, escape html, codici carattere, riferimento entità",
       "meta_title": "Riferimento Caratteri – HTML Entities e Codici Unicode",
-      "meta_description": "Sfoglia e copia entità HTML e caratteri speciali con codici Unicode istantaneamente. Riferimento completo di 2.231+ entità HTML organizzate per categorie.."
+      "meta_description": "Sfoglia e copia entità HTML e caratteri speciali con codici Unicode istantaneamente. Riferimento completo di 2.231+ entità HTML organizzate per categorie."
     },
     "emojiReferenceTool": {
       "ogImage": "og-default.png",
@@ -1328,7 +1328,7 @@
       ],
       "keywords": "riferimento emoji, elenco emoji, emoji unicode, ricerca emoji, codici emoji, copia emoji",
       "meta_title": "Riferimento Emoji – Ricerca Unicode e Codici Emoji",
-      "meta_description": "Sfoglia e copia emoji con codici Unicode e HTML istantaneamente. Riferimento completo di emoji organizzati per categorie (visi, animali, cibo, viaggi,."
+      "meta_description": "Sfoglia e copia emoji con codici Unicode e HTML istantaneamente. Riferimento completo di emoji organizzati per categorie (visi, animali, cibo, viaggi e altro)."
     },
     "htmlEntityTool": {
       "ogImage": "og-default.png",

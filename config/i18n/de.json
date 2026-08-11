@@ -933,7 +933,7 @@
       "how_to_use_title": "So funktioniert's",
       "toc_title": "Regex Tester",
       "h1_title": "Regex Tester — Reguläre Ausdrücke mit Live-Match testen",
-      "card_description": "Teste und debugge reguläre Ausdrücke mit Live-Highlighting und Match-Extraktion. Sehe Übereinstimmungen in Echtzeit, extrahiere Erfassungsgruppen und.",
+      "card_description": "Teste und debugge reguläre Ausdrücke mit Live-Highlighting und Match-Extraktion. Sehe Übereinstimmungen in Echtzeit, extrahiere Erfassungsgruppen und exportiere die Ergebnisse.",
       "tool_description": "Teste reguläre Ausdrücke gegen Beispieltext mit sofortigem Feedback. Sehe Übereinstimmungen in Echtzeit hervorgehoben, extrahiere Erfassungsgruppen und validiere deine Regex-Muster, bevor du sie im Code verwendest. Unterstützt Global (g), Groß-/Kleinschreibung ignorieren (i), Mehrzeilig (m) und andere JavaScript Regex-Flags."
     },
     "characterReferenceTool": {
@@ -1007,7 +1007,7 @@
       "categoryArrows": "Pfeile & Symbole",
       "toc_title": "Emoji-Referenz",
       "h1_title": "Emoji-Referenz — Emojis suchen, durchsuchen & kopieren",
-      "card_description": "Umfassende Emoji-Referenz mit Unicode- und HTML-Codes. Durchsuche Tausende von Emojis nach Kategorie, suche nach Namen und kopiere. Perfekt für.",
+      "card_description": "Umfassende Emoji-Referenz mit Unicode- und HTML-Codes. Durchsuche Tausende von Emojis nach Kategorie, suche nach Namen und kopiere sie. Perfekt für Entwickler.",
       "tool_description": "Umfassendes Emoji-Referenz-Tool für Entwickler und Designer. Durchsuche Tausende von Emojis, organisiert nach Kategorien, suche nach Namen und kopiere Emojis oder ihre HTML-Codes mit einem Klick. Perfekt für Webentwicklung, Dokumentation, Social-Media-Inhalte und Design-Projekte. Enthält Unicode-Dezimalcodes für HTML-Entities.",
       "loadingEmojis": "Emojis werden geladen...",
       "loadError": "Emoji-Daten konnten nicht geladen werden.",
@@ -1160,7 +1160,7 @@
       ],
       "applicationCategory": "UtilityApplication",
       "meta_title": "UUID Generator – Eindeutige Kennungen v1, v4, v7 Online erstellen",
-      "meta_description": "UUID Generator zum.igen Erstellen eindeutiger Identifikatoren. Generiere v1, v4, v7 und NIL UUIDs in mehreren Formaten. Massengenerierung."
+      "meta_description": "UUID Generator zum einfachen Erstellen eindeutiger Identifikatoren. Generiere v1, v4, v7 und NIL UUIDs in mehreren Formaten mit Massengenerierung bis zu 1000 Stück."
     },
     "passwordGeneratorTool": {
       "keywords": "passwort generator, sicheres passwort, zufallspasswort, passphrase, passwortstärke, kryptografisch",
@@ -1205,7 +1205,7 @@
       ],
       "applicationCategory": "UtilityApplication",
       "meta_title": "Lorem Ipsum Generator – Professioneller Blindtext Online",
-      "meta_description": "Generiere Lorem Ipsum Platzhaltertext für Designs und Mockups. Wähle Absätze, Sätze oder Wörter mit anpassbarer Anzahl. Perfekt für Webdesign,."
+      "meta_description": "Generiere Lorem Ipsum Platzhaltertext für Designs und Mockups. Wähle Absätze, Sätze oder Wörter mit anpassbarer Anzahl. Perfekt für Webdesign und Prototyping."
     },
     "qrCodeGeneratorTool": {
       "keywords": "qr code generator, qr code ersteller, vcard qr, wifi qr code, qr code png, qr code svg",
@@ -1295,7 +1295,7 @@
       ],
       "applicationCategory": "UtilityApplication",
       "meta_title": "Regex Tester – Reguläre Ausdrücke online testen mit Live-Match",
-      "meta_description": "Teste und debugge reguläre Ausdrücke mit Live-Highlighting und Match-Extraktion. Sehe Übereinstimmungen in Echtzeit, extrahiere Erfassungsgruppen und."
+      "meta_description": "Teste und debugge reguläre Ausdrücke mit Live-Highlighting und Match-Extraktion. Sehe Übereinstimmungen in Echtzeit, extrahiere Erfassungsgruppen und exportiere die Ergebnisse."
     },
     "characterReferenceTool": {
       "keywords": "html entities, sonderzeichen, unicode symbole, html escape, zeichencodes, entity referenz",
@@ -1310,7 +1310,7 @@
       ],
       "applicationCategory": "UtilityApplication",
       "meta_title": "Zeichen-Referenz – HTML-Entities & Sonderzeichen Online",
-      "meta_description": "Durchsuche und kopiere 2.231+ HTML-Entities und Sonderzeichen. Suche nach Name, Dezimal, Hex-Code oder Unicode. Vollständige Referenz für."
+      "meta_description": "Durchsuche und kopiere 2.231+ HTML-Entities und Sonderzeichen. Suche nach Name, Dezimal, Hex-Code oder Unicode. Vollständige Referenz für Webentwickler."
     },
     "emojiReferenceTool": {
       "keywords": "emoji referenz, emoji liste, unicode emoji, emoji suche, emoji codes, emoji kopieren",
@@ -1325,7 +1325,7 @@
       ],
       "applicationCategory": "UtilityApplication",
       "meta_title": "Emoji-Referenz – Emojis suchen, durchsuchen & mit Codes kopieren",
-      "meta_description": "Umfassende Emoji-Referenz mit Unicode- und HTML-Codes. Durchsuche Tausende von Emojis nach Kategorie, suche nach Namen und kopiere. Perfekt für."
+      "meta_description": "Umfassende Emoji-Referenz mit Unicode- und HTML-Codes. Durchsuche Tausende von Emojis nach Kategorie, suche nach Namen und kopiere sie. Perfekt für Entwickler."
     },
     "htmlEntityTool": {
       "ogImage": "og-default.png",

@@ -1007,7 +1007,7 @@
       "categoryArrows": "Flèches et Symboles",
       "toc_title": "Référence Emoji",
       "h1_title": "Référence Emojis — Référence codes Unicode et HTML",
-      "card_description": "Parcourez et copiez des emojis avec codes Unicode et HTML. Référence complète d'emojis organisés par catégories (visages, animaux, nourriture,.",
+      "card_description": "Parcourez et copiez des emojis avec codes Unicode et HTML. Référence complète d'emojis organisés par catégories (visages, animaux, nourriture et plus).",
       "tool_description": "Outil de référence emoji complet pour développeurs et designers. Parcourez des milliers d'emojis organisés par catégories, recherchez par nom et copiez des emojis ou leurs codes HTML en un seul clic. Parfait pour le développement web, la documentation, le contenu des réseaux sociaux et les projets de design. Inclut les codes décimaux Unicode pour les entités HTML.",
       "loadingEmojis": "Chargement des emojis...",
       "loadError": "Impossible de charger les données emoji.",
@@ -1115,7 +1115,7 @@
       ],
       "keywords": "encodeur url, décodeur url, encodage pourcentage, composant uri, chaîne requête, analyseur url",
       "meta_title": "Encodeur et Décodeur URL – Analyseur de Paramètres de Requête",
-      "meta_description": "Encodez et décodez des URL, paramètres de requête et composants. Outil avec analyseur URL intégré pour extraire protocole, hôte,."
+      "meta_description": "Encodez et décodez des URL, paramètres de requête et composants. Outil avec analyseur URL intégré pour extraire protocole, hôte, chemin et paramètres."
     },
     "jsonFormatterValidator": {
       "ogImage": "og-default.png",
@@ -1130,7 +1130,7 @@
       ],
       "keywords": "formateur json, validateur json, beautifier json, coloration syntaxique, minifier json, vue arborescente",
       "meta_title": "Formateur et Validateur JSON – Beautify & Minify en Ligne",
-      "meta_description": "Formatez, validez et embellissez les données JSON avec coloration syntaxique. Outil JSON avec correction automatique des erreurs,."
+      "meta_description": "Formatez, validez et embellissez les données JSON avec coloration syntaxique. Outil JSON avec correction automatique des erreurs, minification et vue arborescente."
     },
     "pxToRemConverter": {
       "ogImage": "og-default.png",
@@ -1145,7 +1145,7 @@
       ],
       "keywords": "px vers rem, pixel vers rem, convertisseur unités css, design responsive, calculateur rem, tailwind css",
       "meta_title": "Convertisseur PX-REM – Calculateur Unités CSS",
-      "meta_description": "Convertissez pixels en unités rem, em et pourcentage. Calculatrice d'unités CSS avec taille de police de base personnalisable et."
+      "meta_description": "Convertissez pixels en unités rem, em et pourcentage. Calculatrice d'unités CSS avec taille de police de base personnalisable et valeurs prédéfinies."
     },
     "uuidGeneratorTool": {
       "ogImage": "og-default.png",
@@ -1220,7 +1220,7 @@
       ],
       "keywords": "générateur code qr, créateur code qr, qr vcard, code qr wifi, qr png, qr svg",
       "meta_title": "Générateur QR Code – Créer QR pour URL, WiFi, vCard en Ligne",
-      "meta_description": "Créez des codes QR personnalisés à partir de texte, URLs, contacts vCard ou informations WiFi. Générateur de QR avec couleurs et."
+      "meta_description": "Créez des codes QR personnalisés à partir de texte, URLs, contacts vCard ou informations WiFi. Générateur de QR avec couleurs et tailles personnalisables, export PNG et SVG."
     },
     "stringEscaperTool": {
       "ogImage": "og-default.png",
@@ -1235,7 +1235,7 @@
       ],
       "keywords": "échappeur chaînes, échappement html, échappement javascript, échappement json, échappement sql, prévention xss",
       "meta_title": "Échappement de Chaînes – HTML, JavaScript, JSON, SQL & CSV",
-      "meta_description": "Échappez et désechappez les chaînes pour HTML, XML, JavaScript, JSON, SQL et CSV. Outil d'échappement avec conversion automatique en."
+      "meta_description": "Échappez et désechappez les chaînes pour HTML, XML, JavaScript, JSON, SQL et CSV. Outil d'échappement avec conversion automatique en temps réel."
     },
     "codeFormatterTool": {
       "ogImage": "og-default.png",
@@ -1280,7 +1280,7 @@
       ],
       "keywords": "testeur regex, expression régulière, correspondance motif, validateur regex, débogueur regex, regex javascript",
       "meta_title": "Testeur Regex – Tester & Déboguer Expressions Régulières en Ligne",
-      "meta_description": "Testez et déboguez les expressions régulières avec surbrillance en direct instantané. Testeur Regex avec extraction de correspondances, capture de."
+      "meta_description": "Testez et déboguez les expressions régulières avec surbrillance en direct instantané. Testeur Regex avec extraction de correspondances, capture de groupes et validation."
     },
     "sampleHelloWorld": {
       "keywords": "outil exemple, outil démo, hello world, transformation texte, modèle développeur",
@@ -1310,7 +1310,7 @@
       ],
       "keywords": "entités html, caractères spéciaux, symboles unicode, échappement html, codes caractères, référence entités",
       "meta_title": "Référence de Caractères – HTML Entities et Codes Unicode",
-      "meta_description": "Parcourez et copiez des entités HTML et caractères spéciaux avec codes Unicode. Référence complète de 2.231+ entités HTML organisées par."
+      "meta_description": "Parcourez et copiez des entités HTML et caractères spéciaux avec codes Unicode. Référence complète de 2.231+ entités HTML organisées par catégories."
     },
     "emojiReferenceTool": {
       "ogImage": "og-default.png",
@@ -1325,7 +1325,7 @@
       ],
       "keywords": "référence emoji, liste emoji, emoji unicode, recherche emoji, codes emoji, copier emoji",
       "meta_title": "Référence Emojis – Recherche Unicode et Codes",
-      "meta_description": "Parcourez et copiez des emojis avec codes Unicode et HTML. Référence complète d'emojis organisés par catégories (visages, animaux, nourriture,."
+      "meta_description": "Parcourez et copiez des emojis avec codes Unicode et HTML. Référence complète d'emojis organisés par catégories (visages, animaux, nourriture et plus)."
     },
     "htmlEntityTool": {
       "ogImage": "og-default.png",

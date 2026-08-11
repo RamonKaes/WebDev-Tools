@@ -311,14 +311,7 @@ if (!isset($assetPrefix)) {
           "priceCurrency": "USD"
         },
         "browserRequirements": "Requires JavaScript enabled",
-        "permissions": "No permissions required - all processing is client-side",
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.8",
-          "ratingCount": "156",
-          "bestRating": "5",
-          "worstRating": "1"
-        }
+        "permissions": "No permissions required - all processing is client-side"
       }
        <?php endif; ?>
     ]

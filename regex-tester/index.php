@@ -21,7 +21,7 @@ $features = [
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
-<div class="h6 fw-semibold alert-heading mb-3"><i class="bi bi-info-circle me-2"></i>Regular Expression Testing</div>
+<h2 class="h6 fw-semibold alert-heading mb-3"><i class="bi bi-info-circle me-2"></i>Regular Expression Testing</h2>
 <ul class="mb-0">
     <li>JavaScript Engine: This tool uses JavaScript's RegExp engine for pattern testing</li>
     <li>Live Testing: Test your patterns against real text with instant visual feedback</li>

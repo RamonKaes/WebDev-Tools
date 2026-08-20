@@ -28,7 +28,7 @@ $features = [
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
-    <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Sobre o Lorem Ipsum</h3>
+    <h2 class="h6 fw-semibold alert-heading mb-3"><i class="bi bi-info-circle me-2"></i>Sobre o Lorem Ipsum</h2>
     <p class="mb-2">
         O texto Lorem Ipsum deriva das seções 1.10.32 e 1.10.33 de "de Finibus Bonorum et Malorum",
         obra de Cícero escrita em 45 a.C. Desde os anos 1500 é o padrão do setor.

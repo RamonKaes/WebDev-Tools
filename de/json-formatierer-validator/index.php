@@ -25,7 +25,7 @@ $features = [
 ];
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
-    <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>JSON-Formatierungsoptionen</h3>
+    <h2 class="h6 fw-semibold alert-heading mb-3"><i class="bi bi-info-circle me-2"></i>JSON-Formatierungsoptionen</h2>
     <ul class="mb-0">
         <li>Verschönern: Fügt Einrückung und Zeilenumbrüche für Lesbarkeit hinzu</li>
         <li>Minimieren: Entfernt alle Leerzeichen, um die Dateigröße zu reduzieren</li>

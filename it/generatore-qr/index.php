@@ -34,7 +34,7 @@ $features = [
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
-    <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Livelli di correzione errori</h3>
+    <h2 class="h6 fw-semibold alert-heading mb-3"><i class="bi bi-info-circle me-2"></i>Livelli di correzione errori</h2>
     <ul class="mb-0">
         <li>L (Low): ~7% di recupero – indicato per ambienti controllati</li>
         <li>M (Medium): ~15% di recupero – raccomandato per la maggior parte dei casi</li>

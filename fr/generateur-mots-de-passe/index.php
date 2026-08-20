@@ -33,7 +33,7 @@ $features = [
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
-    <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Conseils de sécurité</h3>
+    <h2 class="h6 fw-semibold alert-heading mb-3"><i class="bi bi-info-circle me-2"></i>Conseils de sécurité</h2>
     <ul class="mb-0">
         <li>La longueur compte&nbsp;: plus un mot de passe est long, plus il est difficile à casser</li>
         <li>Mélangez les types de caractères&nbsp;: combinez majuscules, minuscules, chiffres et symboles</li>

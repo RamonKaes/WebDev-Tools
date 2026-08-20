@@ -34,7 +34,7 @@ $features = [
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
-    <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Relaciones de Aspecto Comunes</h3>
+    <h2 class="h6 fw-semibold alert-heading mb-3"><i class="bi bi-info-circle me-2"></i>Relaciones de Aspecto Comunes</h2>
     <ul class="mb-0">
         <li><strong>16:9</strong> — Video HD estándar, YouTube, pantallas modernas</li>
         <li><strong>4:3</strong> — TV clásica, monitores antiguos</li>

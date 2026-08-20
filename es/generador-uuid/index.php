@@ -31,7 +31,7 @@ $features = [
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
-    <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Sobre los UUID versión 4</h3>
+    <h2 class="h6 fw-semibold alert-heading mb-3"><i class="bi bi-info-circle me-2"></i>Sobre los UUID versión 4</h2>
     <p class="mb-2">
         Los UUID v4 se basan en números aleatorios. Su formato es:
     </p>

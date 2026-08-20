@@ -33,7 +33,7 @@ $features = [
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
-    <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Dicas de segurança</h3>
+    <h2 class="h6 fw-semibold alert-heading mb-3"><i class="bi bi-info-circle me-2"></i>Dicas de segurança</h2>
     <ul class="mb-0">
         <li>Comprimento importa: senhas mais longas são exponencialmente mais seguras</li>
         <li>Varie os caracteres: combine maiúsculas, minúsculas, números e símbolos</li>

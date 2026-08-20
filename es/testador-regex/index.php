@@ -21,7 +21,7 @@ $features = [
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
-<h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Pruebas de expresiones regulares</h3>
+<h2 class="h6 fw-semibold alert-heading mb-3"><i class="bi bi-info-circle me-2"></i>Pruebas de expresiones regulares</h2>
 <ul class="mb-0">
     <li>Motor JavaScript: la herramienta usa el motor RegExp de JavaScript para evaluar patrones</li>
     <li>Pruebas en vivo: valida tus patrones con texto real y retroalimentación instantánea</li>

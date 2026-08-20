@@ -34,7 +34,7 @@ $features = [
 
 $customNoticeType = 'warning';
 $customNoticeContent = <<<HTML
-    <h3 class="h5 alert-heading"><i class="bi bi-shield-exclamation me-2"></i>Wichtige Sicherheitsinformationen</h3>
+    <h2 class="h6 fw-semibold alert-heading mb-3"><i class="bi bi-shield-exclamation me-2"></i>Wichtige Sicherheitsinformationen</h2>
     <ul class="mb-2">
         <li>Dekodierung ≠ Verifizierung: Dieses Tool dekodiert nur das JWT. Es verifiziert NICHT die Signatur.</li>
         <li>Niemals unverifizierte Token verwenden: Verifizieren Sie Signaturen immer serverseitig, bevor Sie JWT-Daten verwenden.</li>

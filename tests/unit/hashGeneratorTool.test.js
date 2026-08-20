@@ -288,6 +288,12 @@ describe('HashGeneratorTool – Hash Comparison', () => {
   });
   afterEach(() => cleanup(c));
 
+  test('#compareResult is an aria-live region once compare mode is rendered', () => {
+    const el = c.querySelector('#compareResult');
+    expect(el).not.toBeNull();
+    expect(el.getAttribute('aria-live')).toBe('polite');
+  });
+
   test('matching hashes shows success alert', () => {
     c.querySelector('#hash1').value = 'abc123';
     c.querySelector('#hash2').value = 'abc123';

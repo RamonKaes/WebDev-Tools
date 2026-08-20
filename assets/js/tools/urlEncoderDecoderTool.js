@@ -146,7 +146,7 @@
                 <button class="btn btn-primary btn-sm d-inline-flex align-items-center" id="parseBtn"><i class="bi bi-search me-2"></i>${t('tools.urlEncoderDecoder.parse_btn')}</button>
               </div>
 
-              <div id="parseOutput"></div>
+              <div id="parseOutput" aria-live="polite"></div>
             </div>
           </div>
         </div>

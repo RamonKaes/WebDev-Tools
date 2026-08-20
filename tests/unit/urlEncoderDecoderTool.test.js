@@ -204,6 +204,10 @@ describe('urlEncoderDecoderTool – UI Rendering', () => {
     expect(c.querySelector('#parseOutput')).not.toBeNull();
   });
 
+  test('#parseOutput is an aria-live region so parse results are announced', () => {
+    expect(c.querySelector('#parseOutput').getAttribute('aria-live')).toBe('polite');
+  });
+
   test('renders outputInfo element', () => {
     expect(c.querySelector('#outputInfo')).not.toBeNull();
   });

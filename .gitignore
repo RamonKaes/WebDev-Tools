@@ -154,4 +154,7 @@ config/manifest.json.backup
 
 # Google Search Console exports (local analysis only)
 /Search Console/
+
+# Interne Arbeitsnotizen
+/TODO.md
 .claude/

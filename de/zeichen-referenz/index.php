@@ -19,8 +19,6 @@ $features = [
     'Ein-Klick-Kopie'
 ];
 
-require_once __DIR__ . '/../../partials/tool-base.php';
-
 $customAboutContent = <<<HTML
 <p class="mb-2">
     Durchsuchen Sie eine umfassende Sammlung von HTML-Entities, Unicode-Zeichen und 
@@ -57,3 +55,5 @@ $usefulResources = [
         'description' => 'Offizielle Unicode Consortium Zeichenreferenz-Tabellen'
     ]
 ];
+
+require_once __DIR__ . '/../../partials/tool-base.php';

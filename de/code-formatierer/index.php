@@ -20,14 +20,12 @@ $features = [
 ];
 
 $customNoticeContent = <<<HTML
-<div class="alert alert-info" role="alert">
-  <h2 class="h6 fw-semibold alert-heading mb-3"><i class="bi bi-info-circle me-2"></i>Formatierungsoptionen</h2>
-  <ul class="mb-0">
-    <li>Verschönern: Macht Code mit korrekter Einrückung und Zeilenumbrüchen lesbarer</li>
-    <li>Minifizieren: Entfernt unnötige Leerzeichen zur Reduzierung der Dateigröße</li>
-    <li>Einrückung: Wählen Sie zwischen 2 Leerzeichen, 4 Leerzeichen oder Tabs</li>
-  </ul>
-</div>
+<h2 class="h6 fw-semibold alert-heading mb-3"><i class="bi bi-info-circle me-2"></i>Formatierungsoptionen</h2>
+<ul class="mb-0">
+  <li>Verschönern: Macht Code mit korrekter Einrückung und Zeilenumbrüchen lesbarer</li>
+  <li>Minifizieren: Entfernt unnötige Leerzeichen zur Reduzierung der Dateigröße</li>
+  <li>Einrückung: Wählen Sie zwischen 2 Leerzeichen, 4 Leerzeichen oder Tabs</li>
+</ul>
 HTML;
 
 $additionalSections = [

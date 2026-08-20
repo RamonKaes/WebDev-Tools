@@ -484,8 +484,8 @@
       `Match ${i + 1}: "${match.fullMatch}" at position ${match.index}`
     ).join('\n');
 
-    copyToClipboard(matchesText);
-    showToast(t('tools.regexTesterTool.copied'), 'success', 2000);
+    // The message is passed through - copyToClipboard raises the toast itself
+    copyToClipboard(matchesText, t('tools.regexTesterTool.copied'));
   }
 
   /**

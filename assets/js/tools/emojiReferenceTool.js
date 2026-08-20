@@ -285,7 +285,7 @@
       const success = await window.ClipboardUtils.copyToClipboard(value);
       
       if (success) {
-        const icon = btn.querySelector('i');
+        const icon = window.ClipboardUtils?.iconHandle?.(btn);
         if (icon) {
           icon.className = 'bi bi-check';
           setTimeout(() => icon.className = 'bi bi-clipboard', 1500);

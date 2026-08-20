@@ -36,6 +36,16 @@ beforeAll(async () => {
   global.i18n = { t: (key) => key };
 
   global.ClipboardUtils = {
+    iconHandle: (button) => {
+      if (!button || typeof button.querySelector !== 'function') return null;
+      const el = button.querySelector('i, svg');
+      if (!el) return null;
+      if (el.tagName.toLowerCase() === 'i') return el;
+      return {
+        get className() { return el.getAttribute('class') || ''; },
+        set className(v) { el.setAttribute('class', v); }
+      };
+    },
     copyToClipboard: jest.fn().mockResolvedValue(true),
     showToast: jest.fn(),
   };
@@ -230,8 +240,11 @@ describe('CharacterReference – Copy Delegation', () => {
     const entityBtn = document.querySelector('[data-copy-type="entity"]');
     entityBtn.click();
     await new Promise((r) => setTimeout(r, 10));
+    // The toast message is passed alongside the value so the confirmation
+    // names what was copied ("HTML entity copied") instead of a generic label
     expect(global.ClipboardUtils.copyToClipboard).toHaveBeenCalledWith(
-      entityBtn.getAttribute('data-copy-value')
+      entityBtn.getAttribute('data-copy-value'),
+      expect.any(String)
     );
   });
 });

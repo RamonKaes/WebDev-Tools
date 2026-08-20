@@ -26,6 +26,16 @@ beforeAll(() => {
   global.i18n = { t: (key) => key };
 
   global.ClipboardUtils = {
+    iconHandle: (button) => {
+      if (!button || typeof button.querySelector !== 'function') return null;
+      const el = button.querySelector('i, svg');
+      if (!el) return null;
+      if (el.tagName.toLowerCase() === 'i') return el;
+      return {
+        get className() { return el.getAttribute('class') || ''; },
+        set className(v) { el.setAttribute('class', v); }
+      };
+    },
     copyToClipboard: jest.fn().mockResolvedValue(true),
   };
 

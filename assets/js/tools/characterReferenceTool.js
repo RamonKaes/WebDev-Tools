@@ -13,8 +13,8 @@
    * @param {string} text - Text to copy
    * @returns {Promise<boolean>} - True if copy succeeded
    */
-  async function copyToClipboard(text) {
-    return await window.ClipboardUtils.copyToClipboard(text);
+  async function copyToClipboard(text, message) {
+    return await window.ClipboardUtils.copyToClipboard(text, message);
   }
 
   /**
@@ -568,11 +568,10 @@
     };
 
     try {
-      await copyToClipboard(value);
-      showToast(messages[type] || 'Copied!', 'success');
+      // The message is passed through - copyToClipboard raises the toast itself
+      await copyToClipboard(value, messages[type]);
     } catch (error) {
       console.error('[CharacterReference] Copy failed:', error);
-      showToast('Copy failed', 'error');
     }
   }
 

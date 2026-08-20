@@ -14,7 +14,7 @@
    * @param {string} text - Text to copy
    * @returns {Promise<boolean>} - True on success
    */
-  async function copyToClipboard(text) {
+  async function copyRaw(text) {
     if (!text) {
       console.warn('[clipboard-utils] No text to copy');
       return false;
@@ -33,6 +33,41 @@
       // Fallback for browsers without Clipboard API
       return fallbackCopy(text);
     }
+  }
+
+  /**
+   * Copy text and confirm it with a toast.
+   *
+   * Every call site in the tools is click-initiated, so the confirmation is
+   * always wanted here. Use copyRaw() for a silent copy.
+   *
+   * @param {string} text - Text to place on the clipboard
+   * @param {string} [message] - Toast message; defaults to the translated "Copied!"
+   * @returns {Promise<boolean>} - True on success
+   */
+  async function copyToClipboard(text, message) {
+    const success = await copyRaw(text);
+    const label = message || translate('common.copied', 'Copied!');
+
+    showToast(success ? label : translate('common.error', 'Copy failed'),
+      success ? 'success' : 'error');
+
+    return success;
+  }
+
+  /**
+   * Look up a translation with a literal fallback
+   *
+   * @param {string} key - i18n key
+   * @param {string} fallback - Text used when i18n is unavailable
+   * @returns {string} - Translated text
+   */
+  function translate(key, fallback) {
+    if (window.i18n && typeof window.i18n.t === 'function') {
+      const value = window.i18n.t(key);
+      if (value && value !== key) return value;
+    }
+    return fallback;
   }
 
   /**
@@ -78,9 +113,116 @@
     }
   }
 
+  /**
+   * Copy text and confirm it: swap the button icon to a checkmark and show a
+   * toast.
+   *
+   * The icon markup differs at runtime - icon-system.js replaces <i class="bi">
+   * with an <svg><use> sprite reference - so both forms are handled here.
+   * Looking only for <i> silently did nothing on every page where the sprite
+   * replacement had already run.
+   *
+   * @param {HTMLElement} button - The clicked copy button
+   * @param {string} text - Text to place on the clipboard
+   * @param {string} message - Toast message shown on success
+   * @returns {Promise<boolean>} - True if the copy succeeded
+   */
+  async function copyWithFeedback(button, text, message) {
+    const success = await copyRaw(text);
+
+    if (!success) {
+      showToast(translate('common.error', 'Copy failed'), 'error');
+      return false;
+    }
+
+    showToast(message || translate('common.copied', 'Copied!'), 'success');
+
+    if (button) {
+      const restore = swapToCheckIcon(button);
+      if (restore) {
+        setTimeout(restore, 2000);
+      }
+    }
+
+    return true;
+  }
+
+  /**
+   * Swap a button's icon to a checkmark, whatever form it currently has
+   *
+   * @param {HTMLElement} button - Button containing the icon
+   * @returns {Function|null} - Callback restoring the original icon, or null
+   */
+  function swapToCheckIcon(button) {
+    const svgUse = button.querySelector('svg use');
+    if (svgUse) {
+      const attr = svgUse.getAttribute('href') !== null ? 'href' : 'xlink:href';
+      const original = svgUse.getAttribute(attr);
+      if (!original) return null;
+      svgUse.setAttribute(attr, original.replace(/#icon-.*$/, '#icon-check'));
+      return () => svgUse.setAttribute(attr, original);
+    }
+
+    const i = button.querySelector('i');
+    if (i) {
+      const original = i.className;
+      i.className = original.replace(/\bbi-[\w-]+/, 'bi-check');
+      return () => { i.className = original; };
+    }
+
+    return null;
+  }
+
+  // icon-system.js swaps <i class="bi bi-x"> for an <svg><use href="#icon-x">
+  // sprite reference, so the sprite carries its own id namespace.
+  // Names the tools set that the sprite does not define map to a close match.
+  const SPRITE_ALIASES = { check2: 'check' };
+
+  /**
+   * Get a handle for a button's icon that accepts a Bootstrap icon class name,
+   * whether the icon is still an <i> or has been replaced by an SVG sprite.
+   *
+   * Tools assign to `.className` to swap the icon. That works natively on <i>,
+   * but on an <svg> the rendered glyph comes from the <use> reference, so the
+   * returned shim updates both.
+   *
+   * @param {HTMLElement} button - Element containing the icon
+   * @returns {HTMLElement|object|null} - Something exposing a className accessor
+   */
+  function iconHandle(button) {
+    if (!button || typeof button.querySelector !== 'function') return null;
+
+    const el = button.querySelector('i, svg');
+    if (!el) return null;
+    if (el.tagName.toLowerCase() === 'i') return el;
+
+    const use = el.querySelector('use');
+
+    return {
+      get className() {
+        return el.getAttribute('class') || '';
+      },
+      set className(value) {
+        el.setAttribute('class', value);
+        if (!use) return;
+
+        const match = String(value).match(/\bbi-([\w-]+)/);
+        if (!match) return;
+
+        const name = SPRITE_ALIASES[match[1]] || match[1];
+        const attr = use.getAttribute('href') !== null ? 'href' : 'xlink:href';
+        const current = use.getAttribute(attr) || '';
+        use.setAttribute(attr, current.replace(/#icon-.*$/, `#icon-${name}`));
+      }
+    };
+  }
+
   // Expose globally with all utility functions
   window.ClipboardUtils = {
     copyToClipboard: copyToClipboard,
+    copyRaw: copyRaw,
+    iconHandle: iconHandle,
+    copyWithFeedback: copyWithFeedback,
     isClipboardSupported: isClipboardSupported,
     showToast: showToast,
     showCopyFeedback: showCopyFeedback,
@@ -105,45 +247,56 @@
    * @param {number} duration - Duration in ms
    */
   function showToast(message, type = 'success', duration = 3000) {
-  let toastContainer = document.getElementById('clipboard-toast-container');
+    let container = document.getElementById('toast-container');
 
-  if (!toastContainer) {
-    toastContainer = document.createElement('div');
-    toastContainer.id = 'clipboard-toast-container';
-    toastContainer.setAttribute('aria-live', 'polite');
-    toastContainer.setAttribute('aria-atomic', 'true');
-    document.body.appendChild(toastContainer);
+    if (!container) {
+      container = document.createElement('div');
+      container.id = 'toast-container';
+      container.className = 'toast-container position-fixed bottom-0 end-0 p-3';
+      document.body.appendChild(container);
+    }
+
+    const variants = {
+      success: 'text-bg-success',
+      error: 'text-bg-danger',
+      warning: 'text-bg-warning',
+      info: 'text-bg-info'
+    };
+    const icons = {
+      success: 'bi-check-circle',
+      error: 'bi-x-circle',
+      warning: 'bi-exclamation-triangle',
+      info: 'bi-info-circle'
+    };
+
+    const toast = document.createElement('div');
+    toast.className = `toast align-items-center border-0 ${variants[type] || variants.info}`;
+    // role/aria-live make the message reach assistive technology
+    toast.setAttribute('role', type === 'error' ? 'alert' : 'status');
+    toast.setAttribute('aria-live', type === 'error' ? 'assertive' : 'polite');
+    toast.setAttribute('aria-atomic', 'true');
+    toast.innerHTML = `
+      <div class="d-flex">
+        <div class="toast-body">
+          <i class="bi ${icons[type] || icons.info} me-2" aria-hidden="true"></i>${escapeHtml(message)}
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto"
+                data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+    `;
+
+    container.appendChild(toast);
+
+    if (window.bootstrap && window.bootstrap.Toast) {
+      const instance = new window.bootstrap.Toast(toast, { delay: duration });
+      toast.addEventListener('hidden.bs.toast', () => toast.remove());
+      instance.show();
+    } else {
+      // Bootstrap JS unavailable - keep the message visible, then clean up
+      toast.classList.add('show');
+      setTimeout(() => toast.remove(), duration);
+    }
   }
-
-  const toast = document.createElement('div');
-  toast.className = `clipboard-toast clipboard-toast-${type}`;
-  toast.setAttribute('role', 'status');
-
-  const icons = {
-    success: '✓',
-    error: '✗',
-    warning: '⚠',
-    info: 'ℹ'
-  };
-
-  toast.innerHTML = `
-    <span class="clipboard-toast-icon">${icons[type] || icons.info}</span>
-    <span class="clipboard-toast-message">${escapeHtml(message)}</span>
-  `;
-
-  toastContainer.appendChild(toast);
-
-  setTimeout(() => toast.classList.add('clipboard-toast-show'), 10);
-
-  setTimeout(() => {
-    toast.classList.remove('clipboard-toast-show');
-    setTimeout(() => {
-      if (toast.parentNode) {
-        toastContainer.removeChild(toast);
-      }
-    }, 300);
-  }, duration);
-}
 
   /**
    * Escape HTML to prevent XSS

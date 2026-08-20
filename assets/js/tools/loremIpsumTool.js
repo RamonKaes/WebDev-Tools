@@ -233,7 +233,7 @@
         copyToClipboard(text)
           .then(() => {
             // Prefer explicit icon and text elements; gracefully handle absent nodes
-            const originalIcon = copyBtn.querySelector('i');
+            const originalIcon = window.ClipboardUtils?.iconHandle?.(copyBtn);
             const originalTextEl = copyBtn.querySelector('.btn-text') || copyBtn.childNodes[copyBtn.childNodes.length - 1];
             const originalTextContent = originalTextEl ? originalTextEl.textContent : '';
 

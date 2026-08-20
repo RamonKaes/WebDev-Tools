@@ -998,7 +998,7 @@
           const success = await window.ClipboardUtils.copyToClipboard(hash);
           
           if (success) {
-            const icon = btn.querySelector('i');
+            const icon = window.ClipboardUtils?.iconHandle?.(btn);
             if (icon) {
               icon.className = 'bi bi-check';
               setTimeout(() => {

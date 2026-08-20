@@ -195,7 +195,7 @@
           const success = await window.ClipboardUtils.copyToClipboard(outputTextarea.value);
           
           if (success) {
-            const icon = copyBtn.querySelector('i');
+            const icon = window.ClipboardUtils?.iconHandle?.(copyBtn);
             if (icon) {
               const originalClass = icon.className;
               icon.className = 'bi bi-check me-2';

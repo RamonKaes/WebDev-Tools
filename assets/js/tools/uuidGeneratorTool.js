@@ -313,7 +313,7 @@
         const success = await window.ClipboardUtils.copyToClipboard(text);
 
         if (success) {
-          const icon = button.querySelector('i');
+          const icon = window.ClipboardUtils?.iconHandle?.(button);
           if (icon) {
             const originalClass = icon.className;
             icon.className = originalClass.replace('bi-clipboard', 'bi-check');

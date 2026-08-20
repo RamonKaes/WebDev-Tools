@@ -332,3 +332,15 @@ describe('htmlEntityTool – Copy & Download', () => {
     expect(global.DownloadUtils.downloadText).not.toHaveBeenCalled();
   });
 });
+
+describe('accessibility', () => {
+  test('#outputStats is an aria-live region so status updates are announced', () => {
+    const c = openTool();
+    const el = c.querySelector('#outputStats');
+
+    expect(el).not.toBeNull();
+    expect(el.getAttribute('aria-live')).toBe('polite');
+
+    cleanup(c);
+  });
+});

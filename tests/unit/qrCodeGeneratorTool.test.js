@@ -470,6 +470,20 @@ describe('qrCodeGeneratorTool – generateQRCode', () => {
     expect(c.querySelector('#qr-preview canvas')).not.toBeNull();
   });
 
+  test('gives the canvas a text alternative naming the encoded content', () => {
+    tool.switchMode('url');
+    c.querySelector('#url-input').value = 'https://example.com';
+    tool.generateQRCode(t);
+
+    const canvas = c.querySelector('#qr-preview canvas');
+    expect(canvas.getAttribute('role')).toBe('img');
+    expect(canvas.getAttribute('aria-label')).toBeTruthy();
+  });
+
+  test('preview region announces the generated code', () => {
+    expect(c.querySelector('#qr-preview').getAttribute('aria-live')).toBe('polite');
+  });
+
   test('does not generate for empty URL', () => {
     tool.switchMode('url');
     c.querySelector('#url-input').value = '';

@@ -224,3 +224,15 @@ describe('Base64EncoderDecoder – UI State', () => {
     expect(value).toMatch(/^[A-Za-z0-9+/=]+$/);
   });
 });
+
+describe('accessibility', () => {
+  test('#outputInfo is an aria-live region so status updates are announced', () => {
+    const c = openTool();
+    const el = c.querySelector('#outputInfo');
+
+    expect(el).not.toBeNull();
+    expect(el.getAttribute('aria-live')).toBe('polite');
+
+    cleanup(c);
+  });
+});

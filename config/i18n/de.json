@@ -302,9 +302,7 @@
       "how_to_use_title": "So funktioniert's",
       "toc_title": "Seitenverhältnis",
       "h1_title": "Seitenverhältnis Rechner — Responsive Design Dimensionen",
-      "meta_title": "Seitenverhältnis Rechner — Responsive Design Dimensionen CSS",
       "card_description": "Berechne fehlende Dimensionen aus Seitenverhältnissen. Generiere CSS-Code mit moderner aspect-ratio Eigenschaft oder padding-bottom Technik. Mit 16:9, 4:3, 21:9 Presets.",
-      "meta_description": "Berechne Dimensionen aus Seitenverhältnissen für Responsive Design. Generiere CSS mit aspect-ratio Eigenschaft oder padding-bottom Fallback. Gängige Presets und Auflösungstabelle.",
       "tool_description": "Berechne fehlende Dimensionen aus Seitenverhältnissen mit unserem Seitenverhältnis Rechner. Generiere CSS-Code für responsive Medien mit moderner aspect-ratio-Eigenschaft oder klassischer padding-bottom Technik. Perfekt für responsive Bilder, Video-Embeds und Layout-Design mit gängigen Presets wie 16:9, 4:3, 21:9 und mehr."
     },
     "pxToRemConverter": {
@@ -1354,6 +1352,10 @@
       "keywords": "sri generator, subresource integrity, cdn sicherheit, sha384, sha256, sha512, integrity attribut, script tag, link tag",
       "meta_title": "SRI-Hash-Generator — Subresource Integrity für CDN-Sicherheit",
       "meta_description": "Subresource Integrity (SRI) Hashes für CDN-Ressourcen generieren. SHA-256, SHA-384, SHA-512 mit fertigen script- und link-Tags. Clientseitig, datenschutzkonform."
+    },
+    "aspectRatioCalculator": {
+      "meta_title": "Seitenverhältnis Rechner — Responsive Design Dimensionen CSS",
+      "meta_description": "Berechne Dimensionen aus Seitenverhältnissen für Responsive Design. Generiere CSS mit aspect-ratio Eigenschaft oder padding-bottom Fallback. Gängige Presets und Auflösungstabelle."
     }
   },
   "validation": {

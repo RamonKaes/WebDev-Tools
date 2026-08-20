@@ -302,9 +302,7 @@
       "how_to_use_title": "How to Use",
       "toc_title": "Aspect Ratio",
       "h1_title": "Aspect Ratio Calculator — Responsive Design Dimensions",
-      "meta_title": "Aspect Ratio Calculator — Responsive Design Dimensions & CSS",
       "card_description": "Calculate missing dimensions from aspect ratios. Generate CSS code with modern aspect-ratio property or legacy padding-bottom technique. Includes 16:9, 4:3, 21:9 presets.",
-      "meta_description": "Calculate dimensions from aspect ratios for responsive design. Generate CSS with aspect-ratio property or padding-bottom fallback. Common presets and resolution table included.",
       "tool_description": "Calculate missing dimensions from aspect ratios with our Aspect Ratio Calculator. Generate CSS code for responsive media with modern aspect-ratio property or legacy padding-bottom technique. Perfect for responsive images, video embeds, and layout design with common presets like 16:9, 4:3, 21:9, and more."
     },
     "pxToRemConverter": {
@@ -1355,6 +1353,10 @@
       "keywords": "sri generator, subresource integrity, cdn security, sha384, sha256, sha512, integrity attribute, script tag, link tag",
       "meta_title": "SRI Hash Generator — Subresource Integrity for CDN Security",
       "meta_description": "Generate Subresource Integrity (SRI) hashes for CDN resources. SHA-256, SHA-384, SHA-512 with ready-to-use script and link tags. Client-side, privacy-first."
+    },
+    "aspectRatioCalculator": {
+      "meta_title": "Aspect Ratio Calculator — Responsive Design Dimensions & CSS",
+      "meta_description": "Calculate dimensions from aspect ratios for responsive design. Generate CSS with aspect-ratio property or padding-bottom fallback. Common presets and resolution table included."
     }
   },
   "validation": {

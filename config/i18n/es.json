@@ -302,9 +302,7 @@
       "how_to_use_title": "Cómo Usar",
       "toc_title": "Relación de Aspecto",
       "h1_title": "Calculadora de Relación de Aspecto — Dimensiones Responsive",
-      "meta_title": "Calculadora Relación Aspecto — Dimensiones Responsive CSS",
       "card_description": "Calcula dimensiones faltantes desde relaciones de aspecto. Genera código CSS con propiedad aspect-ratio moderna o técnica padding-bottom. Incluye presets 16:9, 4:3, 21:9.",
-      "meta_description": "Calcula dimensiones desde relaciones de aspecto para diseño responsive. Genera CSS con propiedad aspect-ratio o fallback padding-bottom. Presets comunes y tabla de resoluciones.",
       "tool_description": "Calcula dimensiones faltantes desde relaciones de aspecto con nuestra Calculadora de Relación de Aspecto. Genera código CSS para medios responsivos con la propiedad moderna aspect-ratio o técnica legacy padding-bottom. Perfecto para imágenes responsivas, embeds de video y diseño de layouts con presets comunes como 16:9, 4:3, 21:9 y más."
     },
     "pxToRemConverter": {
@@ -1354,6 +1352,10 @@
       "keywords": "generador sri, subresource integrity, seguridad cdn, sha384, sha256, sha512, atributo integrity, etiqueta script, etiqueta link",
       "meta_title": "Generador Hash SRI — Subresource Integrity para Seguridad CDN",
       "meta_description": "Genera hashes Subresource Integrity (SRI) para recursos CDN. SHA-256, SHA-384, SHA-512 con etiquetas script y link listas. Lado del cliente, privacidad primero."
+    },
+    "aspectRatioCalculator": {
+      "meta_title": "Calculadora Relación Aspecto — Dimensiones Responsive CSS",
+      "meta_description": "Calcula dimensiones desde relaciones de aspecto para diseño responsive. Genera CSS con propiedad aspect-ratio o fallback padding-bottom. Presets comunes y tabla de resoluciones."
     }
   },
   "validation": {

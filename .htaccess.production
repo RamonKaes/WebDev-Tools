@@ -173,7 +173,9 @@
   
   # Already set in security-headers.php, but enforce at Apache level
   Header always set X-Content-Type-Options "nosniff"
-  Header always set X-Frame-Options "SAMEORIGIN"
+  # DENY matches the CSP's frame-ancestors 'none' and what
+  # config/security-headers.php sets; SAMEORIGIN here contradicted both.
+  Header always set X-Frame-Options "DENY"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
   
   # HSTS - Enable HTTPS

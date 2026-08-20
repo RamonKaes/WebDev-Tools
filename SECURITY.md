@@ -1,8 +1,14 @@
 # Security Policy — WebDev-Tools
 
-## Architecture
+## Reporting a Vulnerability
 
-WebDev-Tools is a **client-side-only** platform. All sensitive operations (password generation, hashing, encoding, JWT decoding) execute entirely in the user's browser using the Web Crypto API. **No data is transmitted to any server.**
+Please report security issues privately, **not** through a public issue:
+
+- **GitHub Security Advisory** (preferred) — [open a private report](https://github.com/RamonKaes/WebDev-Tools/security/advisories/new)
+- **Email** — contact details are listed in the [imprint](https://webdev-tools.info/imprint.php)
+
+You will normally get a first response within a few days. Please include the
+affected URL or tool, the browser you used, and the steps to reproduce.
 
 ## Supported Versions
 
@@ -11,22 +17,48 @@ WebDev-Tools is a **client-side-only** platform. All sensitive operations (passw
 | 2.x     | ✅        |
 | < 2.0   | ❌        |
 
-## Reporting a Vulnerability
+## Architecture
 
-If you discover a security vulnerability, please report it responsibly:
-
-- **Email**: See [Imprint](https://webdev-tools.info/imprint.php) for contact details
-- **GitHub**: Open a [Security Advisory](https://github.com/RamonKaes/WebDev-Tools/security/advisories/new)
-
-Please do **not** open a public issue for security vulnerabilities.
+WebDev-Tools runs **entirely in the browser**. Password generation, hashing,
+encoding and JWT decoding use the Web Crypto API locally; the input never
+leaves the page. There is no account system, no database and no server-side
+processing of user input — the server only delivers static pages and assets.
 
 ## Security Measures
 
-- **Content Security Policy (CSP)**: Nonce-based script execution, no `unsafe-inline`
-- **Subresource Integrity (SRI)**: All external CDN resources verified
-- **HSTS**: Strict Transport Security enforced
-- **X-Content-Type-Options**: `nosniff`
-- **X-Frame-Options**: `DENY`
-- **Referrer-Policy**: `strict-origin-when-cross-origin`
+These are the headers the production site actually sends. You can verify them
+yourself with `curl -I https://webdev-tools.info/`.
 
-For detailed technical documentation, see [docs/techstack/SECURITY.md](docs/techstack/SECURITY.md).
+| Header | Value |
+|---|---|
+| `Content-Security-Policy` | `default-src 'self'`, nonce-based `script-src`, no `unsafe-inline`, `object-src 'none'`, `base-uri 'self'`, `form-action 'self'` |
+| `Content-Security-Policy` (framing) | `frame-ancestors 'none'` — embedding in a frame is refused |
+| `X-Frame-Options` | `DENY` — the same restriction for browsers predating `frame-ancestors` |
+| `Strict-Transport-Security` | `max-age=31536000; includeSubDomains; preload` |
+| `X-Content-Type-Options` | `nosniff` |
+| `Referrer-Policy` | `strict-origin-when-cross-origin` |
+| `Permissions-Policy` | geolocation, microphone, camera, payment, usb and motion sensors all disabled |
+
+**Subresource Integrity** — the two scripts loaded from a CDN
+(DOMPurify and qrcode-generator) carry SHA-384 `integrity` hashes and
+`crossorigin="anonymous"`, so a modified file is rejected by the browser.
+
+**Dependencies** — no third-party code is bundled into the pages beyond
+Bootstrap and Bootstrap Icons, which are served from the site's own origin.
+
+## Scope
+
+In scope: XSS, CSP bypasses, integrity or transport issues, and anything that
+causes data entered into a tool to leave the browser.
+
+Out of scope: findings that require a compromised browser or extension,
+missing headers with no demonstrable impact, and automated scanner output
+without a working proof of concept.
+
+## Further Reading
+
+The implementation details behind these measures — CSP construction, the
+nonce mechanism, XSS defences in the tool code and the cryptographic choices —
+are documented separately in
+**[docs/techstack/SECURITY.md](docs/techstack/SECURITY.md)**, a technical
+document aimed at contributors rather than at reporters.

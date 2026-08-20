@@ -234,15 +234,16 @@ Security-critical tools utilize the **Web Crypto API** (`crypto.getRandomValues(
 
 2. **Security Headers**
    - HSTS (Strict-Transport-Security)
-   - X-Frame-Options: DENY
+   - `frame-ancestors 'none'` in the CSP, with `X-Frame-Options: DENY` as the
+     equivalent for older browsers
    - X-Content-Type-Options: nosniff
    - Referrer-Policy: strict-origin-when-cross-origin
    - Permissions-Policy: restrictive
 
 3. **Subresource Integrity (SRI)**
-   - All external libraries verified
-   - Cryptographic hash validation
-   - DOMPurify 3.0.9 with SRI
+   - Both CDN-hosted scripts carry SHA-384 integrity hashes
+   - DOMPurify 3.0.9 and qrcode-generator 1.4.4
+   - Everything else is served from the site's own origin
 
 </td>
 </tr>

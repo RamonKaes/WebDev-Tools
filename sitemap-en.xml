@@ -41,10 +41,6 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://webdev-tools.info/imprint.php</loc>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
     <loc>https://webdev-tools.info/json-formatter-validator/</loc>
     <changefreq>weekly</changefreq>
   </url>
@@ -59,10 +55,6 @@
   <url>
     <loc>https://webdev-tools.info/password-generator/</loc>
     <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://webdev-tools.info/privacy.php</loc>
-    <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://webdev-tools.info/punycode-converter/</loc>

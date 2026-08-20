@@ -9,9 +9,7 @@ $toolsConfig = require __DIR__ . '/tools.php';
 
 $staticPages = [
   '/' => 'weekly',
-  '/about.php' => 'monthly',
-  '/imprint.php' => 'monthly',
-  '/privacy.php' => 'monthly'
+  '/about.php' => 'monthly'
 ];
 
 $defaultChangefreqTools = 'weekly';

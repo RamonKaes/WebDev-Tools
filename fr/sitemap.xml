@@ -57,10 +57,6 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://webdev-tools.info/fr/imprint.php</loc>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
     <loc>https://webdev-tools.info/fr/json-formatter-validator/</loc>
     <changefreq>weekly</changefreq>
   </url>
@@ -71,10 +67,6 @@
   <url>
     <loc>https://webdev-tools.info/fr/lorem-ipsum/</loc>
     <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://webdev-tools.info/fr/privacy.php</loc>
-    <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://webdev-tools.info/fr/punycode-converter/</loc>

@@ -12,19 +12,13 @@
 @import "../node_modules/bootstrap/scss/functions";
 
 // ============================================
-// Color Overrides (Tabler palette)
-// Must be defined before variables to override !default values
+// Colours
 // ============================================
-$blue:   #066fd1;
-$indigo: #4263eb;
-$purple: #ae3ec9;
-$pink:   #d6336c;
-$red:    #d63939;
-$orange: #f76707;
-$yellow: #f59f00;
-$green:  #2fb344;
-$teal:   #0ca678;
-$cyan:   #17a2b8;
+// The Tabler palette used to be overridden here. It was dropped because
+// Tabler pairs its light colours with near-white text - its own CSS sets
+// --tblr-success-fg to #f9fafb on #2fb344, a contrast of 2.6:1 - which is
+// below WCAG AA. Bootstrap's stock palette is chosen so that its
+// color-contrast() helper reaches at least 4.5:1 on every variant.
 
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/maps";
@@ -96,55 +90,57 @@ $cyan:   #17a2b8;
 // $font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
 // ============================================
-// Tabler-style Alert Colors
+// Alert Colours (softer backgrounds than Bootstrap's defaults)
+// Borders and dark-mode fills reference Bootstrap's own *-rgb
+// variables so they follow the palette instead of pinning values.
 // ============================================
 .alert-danger {
   --bs-alert-color: #842029;
   --bs-alert-bg: #fbe7e7;
-  --bs-alert-border-color: rgba(214, 57, 57, 0.25);
+  --bs-alert-border-color: rgba(var(--bs-danger-rgb), 0.25);
 }
 
 .alert-warning {
   --bs-alert-color: #664d03;
   --bs-alert-bg: #fff8e1;
-  --bs-alert-border-color: rgba(245, 159, 0, 0.25);
+  --bs-alert-border-color: rgba(var(--bs-warning-rgb), 0.25);
 }
 
 .alert-success {
   --bs-alert-color: #0f5132;
   --bs-alert-bg: #e6f4ea;
-  --bs-alert-border-color: rgba(47, 179, 68, 0.25);
+  --bs-alert-border-color: rgba(var(--bs-success-rgb), 0.25);
 }
 
 .alert-info {
   --bs-alert-color: #055160;
   --bs-alert-bg: #e7f1ff;
-  --bs-alert-border-color: rgba(6, 111, 209, 0.25);
+  --bs-alert-border-color: rgba(var(--bs-primary-rgb), 0.25);
 }
 
 // Dark Mode Alert Styles
 [data-bs-theme="dark"] {
   .alert-danger {
     --bs-alert-color: #f8b4b4;
-    --bs-alert-bg: rgba(214, 57, 57, 0.15);
-    --bs-alert-border-color: rgba(214, 57, 57, 0.4);
+    --bs-alert-bg: rgba(var(--bs-danger-rgb), 0.15);
+    --bs-alert-border-color: rgba(var(--bs-danger-rgb), 0.4);
   }
 
   .alert-warning {
     --bs-alert-color: #ffd966;
-    --bs-alert-bg: rgba(245, 159, 0, 0.15);
-    --bs-alert-border-color: rgba(245, 159, 0, 0.4);
+    --bs-alert-bg: rgba(var(--bs-warning-rgb), 0.15);
+    --bs-alert-border-color: rgba(var(--bs-warning-rgb), 0.4);
   }
 
   .alert-success {
     --bs-alert-color: #8fd19e;
-    --bs-alert-bg: rgba(47, 179, 68, 0.15);
-    --bs-alert-border-color: rgba(47, 179, 68, 0.4);
+    --bs-alert-bg: rgba(var(--bs-success-rgb), 0.15);
+    --bs-alert-border-color: rgba(var(--bs-success-rgb), 0.4);
   }
 
   .alert-info {
     --bs-alert-color: #74c0fc;
-    --bs-alert-bg: rgba(6, 111, 209, 0.15);
-    --bs-alert-border-color: rgba(6, 111, 209, 0.4);
+    --bs-alert-bg: rgba(var(--bs-primary-rgb), 0.15);
+    --bs-alert-border-color: rgba(var(--bs-primary-rgb), 0.4);
   }
 }

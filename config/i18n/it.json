@@ -1111,7 +1111,7 @@
       ],
       "keywords": "encoder url, decoder url, codifica percentuale, componente uri, query string, parser url",
       "meta_title": "Codificatore e Decodificatore URL – Parser Parametri di Query",
-      "meta_description": "Codifica e decodifica URL, parametri di query e componenti istantaneamente. Strumento gratuito con parser URL integrato per estrarre protocollo, host e percorso."
+      "meta_description": "Codifica e decodifica URL, parametri di query e componenti istantaneamente. Strumento gratuito con parser integrato per protocollo, host e percorso."
     },
     "jsonFormatterValidator": {
       "applicationCategory": "UtilityApplication",
@@ -1127,7 +1127,7 @@
       ],
       "keywords": "formattatore json, validatore json, beautifier json, evidenziazione sintassi, minifica json, visualizzazione ad albero",
       "meta_title": "Formattatore e Validatore JSON – Beautify & Minify Online",
-      "meta_description": "Formatta, valida e abbellisci dati JSON con evidenziazione sintassi istantaneamente. Strumento JSON gratuito con correzione automatica errori, minificazione e visualizzazione ad albero."
+      "meta_description": "Formatta, valida e abbellisci dati JSON con evidenziazione sintassi istantaneamente. Correzione automatica errori, minificazione e vista ad albero."
     },
     "pxToRemConverter": {
       "applicationCategory": "UtilityApplication",
@@ -1198,7 +1198,7 @@
       ],
       "keywords": "lorem ipsum, testo segnaposto, testo fittizio, testo di riempimento, generatore lipsum, design mockup",
       "meta_title": "Generatore Lorem Ipsum – Testo Segnaposto per Design Web",
-      "meta_description": "Genera testo segnaposto Lorem Ipsum gratuito per design e mockup istantaneamente. Scegli paragrafi, frasi o parole personalizzabili. Copia con un clic negli appunti."
+      "meta_description": "Genera testo segnaposto Lorem Ipsum gratuito per design e mockup istantaneamente. Scegli paragrafi, frasi o parole personalizzabili, copia con un clic."
     },
     "qrCodeGeneratorTool": {
       "applicationCategory": "UtilityApplication",

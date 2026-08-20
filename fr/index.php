@@ -17,7 +17,7 @@ $toolBaseUrl = BASE_PATH . '/fr';
 $dashboardToolBaseUrl = './';
 $homeUrl = BASE_PATH . '/fr';
 $pageTitle = 'WebDev-Tools – Outils Développeurs Gratuits En Ligne Web';
-$pageDescription = 'Outils professionnels pour développeurs web : JSON Formatter, Base64 Encoder, URL Encoder, UUID Generator, Password Generator et plus. 100% gratuit, côté client et respectueux de la vie privée.';
+$pageDescription = 'Outils professionnels pour développeurs web : JSON Formatter, Base64 Encoder, UUID Generator et plus. 100% gratuit, côté client et respectueux de la vie privée.';
 
 $i18nData = loadI18n($lang) ?: [];
 $t = $i18nData;

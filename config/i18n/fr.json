@@ -1125,7 +1125,7 @@
       ],
       "keywords": "formateur json, validateur json, beautifier json, coloration syntaxique, minifier json, vue arborescente",
       "meta_title": "Formateur et Validateur JSON – Beautify & Minify en Ligne",
-      "meta_description": "Formatez, validez et embellissez les données JSON avec coloration syntaxique. Outil JSON avec correction automatique des erreurs, minification et vue arborescente."
+      "meta_description": "Formatez, validez et embellissez les données JSON avec coloration syntaxique. Outil avec correction automatique des erreurs, minification et vue arborescente."
     },
     "pxToRemConverter": {
       "applicationCategory": "UtilityApplication",
@@ -1209,7 +1209,7 @@
       ],
       "keywords": "générateur code qr, créateur code qr, qr vcard, code qr wifi, qr png, qr svg",
       "meta_title": "Générateur QR Code – Créer QR pour URL, WiFi, vCard en Ligne",
-      "meta_description": "Créez des codes QR personnalisés à partir de texte, URLs, contacts vCard ou informations WiFi. Générateur de QR avec couleurs et tailles personnalisables, export PNG et SVG."
+      "meta_description": "Créez des codes QR personnalisés à partir de texte, URLs, vCard ou WiFi. Générateur avec couleurs et tailles personnalisables, export PNG et SVG."
     },
     "stringEscaperTool": {
       "applicationCategory": "UtilityApplication",
@@ -1265,7 +1265,7 @@
       ],
       "keywords": "testeur regex, expression régulière, correspondance motif, validateur regex, débogueur regex, regex javascript",
       "meta_title": "Testeur Regex – Tester & Déboguer Expressions Régulières en Ligne",
-      "meta_description": "Testez et déboguez les expressions régulières avec surbrillance en direct instantané. Testeur Regex avec extraction de correspondances, capture de groupes et validation."
+      "meta_description": "Testez et déboguez les expressions régulières avec surbrillance en direct. Testeur Regex avec extraction de correspondances et capture de groupes."
     },
     "sampleHelloWorld": {
       "keywords": "outil exemple, outil démo, hello world, transformation texte, modèle développeur",

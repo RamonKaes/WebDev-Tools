@@ -1153,7 +1153,7 @@
       ],
       "applicationCategory": "UtilityApplication",
       "meta_title": "UUID Generator – Eindeutige Kennungen v1, v4, v7 Online erstellen",
-      "meta_description": "UUID Generator zum einfachen Erstellen eindeutiger Identifikatoren. Generiere v1, v4, v7 und NIL UUIDs in mehreren Formaten mit Massengenerierung bis zu 1000 Stück."
+      "meta_description": "UUID Generator zum einfachen Erstellen eindeutiger Identifikatoren. Generiere v1, v4, v7 und NIL UUIDs in mehreren Formaten, Massengenerierung bis 1000 Stück."
     },
     "passwordGeneratorTool": {
       "keywords": "passwort generator, sicheres passwort, zufallspasswort, passphrase, passwortstärke, kryptografisch",
@@ -1279,7 +1279,7 @@
       ],
       "applicationCategory": "UtilityApplication",
       "meta_title": "Regex Tester – Reguläre Ausdrücke online testen mit Live-Match",
-      "meta_description": "Teste und debugge reguläre Ausdrücke mit Live-Highlighting und Match-Extraktion. Sehe Übereinstimmungen in Echtzeit, extrahiere Erfassungsgruppen und exportiere die Ergebnisse."
+      "meta_description": "Teste und debugge reguläre Ausdrücke mit Live-Highlighting und Match-Extraktion. Erfassungsgruppen extrahieren und Ergebnisse exportieren."
     },
     "characterReferenceTool": {
       "keywords": "html entities, sonderzeichen, unicode symbole, html escape, zeichencodes, entity referenz",
@@ -1351,7 +1351,7 @@
       ],
       "keywords": "sri generator, subresource integrity, cdn sicherheit, sha384, sha256, sha512, integrity attribut, script tag, link tag",
       "meta_title": "SRI-Hash-Generator — Subresource Integrity für CDN-Sicherheit",
-      "meta_description": "Subresource Integrity (SRI) Hashes für CDN-Ressourcen generieren. SHA-256, SHA-384, SHA-512 mit fertigen script- und link-Tags. Clientseitig, datenschutzkonform."
+      "meta_description": "Generiere Subresource Integrity (SRI) Hashes für CDN-Ressourcen. SHA-256, SHA-384, SHA-512 mit fertigen script- und link-Tags. Clientseitig, datenschutzkonform."
     },
     "aspectRatioCalculator": {
       "meta_title": "Seitenverhältnis Rechner — Responsive Design Dimensionen CSS",

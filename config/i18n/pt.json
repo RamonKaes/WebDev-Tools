@@ -1097,7 +1097,7 @@
       ],
       "applicationCategory": "UtilityApplication",
       "meta_title": "Codificador Base64 – Conversor de Texto e Ficheiros",
-      "meta_description": "Codifique e descodifique texto e ficheiros para formato Base64 instantaneamente. Ferramenta gratuita com suporte para arrastar e soltar e pré-visualização de ficheiros binários."
+      "meta_description": "Codifique e descodifique texto e ficheiros para formato Base64 instantaneamente. Ferramenta gratuita com suporte para arrastar e soltar."
     },
     "urlEncoderDecoder": {
       "keywords": "codificador url, decodificador url, codificação percentual, componente uri, string de consulta, analisador url",
@@ -1125,7 +1125,7 @@
       ],
       "applicationCategory": "UtilityApplication",
       "meta_title": "Formatador e Validador JSON – Online Beautify & Minify",
-      "meta_description": "Formate, valide e embeleze dados JSON com destaque de sintaxe instantaneamente. Ferramenta JSON gratuita com correção automática de erros, minificação e visualização em árvore."
+      "meta_description": "Formate, valide e embeleze dados JSON com destaque de sintaxe instantaneamente. Ferramenta com correção automática, minificação e visualização em árvore."
     },
     "pxToRemConverter": {
       "keywords": "px para rem, pixel para rem, conversor de unidades css, design responsivo, calculadora rem, tailwind css",
@@ -1167,7 +1167,7 @@
       ],
       "applicationCategory": "UtilityApplication",
       "meta_title": "Gerador de Senhas Seguras – Criar Senhas Aleatórias Fortes",
-      "meta_description": "Gere senhas aleatórias seguras instantaneamente com comprimento e caracteres personalizáveis. Gerador gratuito com frases-passe, padrões e exclusão de caracteres ambíguos."
+      "meta_description": "Gere senhas aleatórias seguras instantaneamente com comprimento e caracteres personalizáveis. Gerador gratuito com frases-passe e padrões."
     },
     "hashGeneratorTool": {
       "keywords": "gerador de hash, sha256, md5, sha1, hmac, hash criptográfico, checksum, hash sri",
@@ -1307,7 +1307,7 @@
       ],
       "applicationCategory": "UtilityApplication",
       "meta_title": "Referência Emojis – Pesquisa Unicode e Códigos",
-      "meta_description": "Procure e copie emojis com códigos Unicode e HTML instantaneamente. Referência completa de emojis organizados por categorias (caras, animais, comida e muito mais)."
+      "meta_description": "Procure e copie emojis com códigos Unicode e HTML instantaneamente. Referência completa organizada por categorias (caras, animais, comida e mais)."
     },
     "htmlEntityTool": {
       "applicationCategory": "UtilityApplication",
@@ -1323,7 +1323,7 @@
       ],
       "keywords": "codificador entidades html, decodificador entidades html, escape html, unescape html, caracteres especiais, entidades nomeadas, entidades numéricas",
       "meta_title": "Codificador e Decodificador HTML Entity – Escapar Caracteres",
-      "meta_description": "Converta texto para entidades HTML e vice-versa instantaneamente. Ferramenta de escape gratuita com entidades nomeadas (&nbsp;), decimal numérico (&#160;) e hexadecimal."
+      "meta_description": "Converta texto para entidades HTML e vice-versa instantaneamente. Ferramenta gratuita com entidades nomeadas, decimal numérico e hexadecimal."
     },
     "jwtDecoderTool": {
       "applicationCategory": "UtilityApplication",

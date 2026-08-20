@@ -32,6 +32,48 @@ function getAssetUrl($path, $baseUrlOverride = null)
     return htmlspecialchars("{$base}" . BASE_PATH . "/assets/{$path}", ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
 }
 
+/**
+ * Cache-busting version for a single asset, derived from its content.
+ *
+ * A build-wide timestamp cannot be used here: .htaccess.production serves
+ * anything carrying ?v= as immutable for a year, so a version that does not
+ * change when the file changes leaves users on the old asset indefinitely,
+ * while a version that changes on every build discards the cache for files
+ * that did not change. A content hash does exactly one of those, correctly.
+ *
+ * @param string $relPath - Path below assets/, e.g. "js/lib/clipboard-utils.js"
+ * @return string - Short hash, or "0" if the file cannot be read
+ */
+function assetVersion(string $relPath): string
+{
+    static $cache = [];
+
+    $relPath = ltrim($relPath, '/');
+    if (isset($cache[$relPath])) {
+        return $cache[$relPath];
+    }
+
+    $file = __DIR__ . '/../assets/' . $relPath;
+    $hash = is_readable($file) ? substr(hash_file('xxh3', $file), 0, 10) : '0';
+
+    $cache[$relPath] = $hash;
+    return $hash;
+}
+
+/**
+ * Versioned URL for an asset, ready to drop into href/src.
+ *
+ * @param string $relPath - Path below assets/, e.g. "css/style.css"
+ * @return string - Escaped URL including the content-based ?v=
+ */
+function assetSrc(string $relPath): string
+{
+    $relPath = ltrim($relPath, '/');
+    $url = BASE_PATH . '/assets/' . $relPath . '?v=' . assetVersion($relPath);
+
+    return htmlspecialchars($url, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
+}
+
 function getCspNonce()
 {
     return $GLOBALS['csp_nonce'] ?? '';
@@ -356,7 +398,7 @@ function generateToolSchema($toolId, $lang, $seoData)
     'operatingSystem' => 'Any',
     'browserRequirements' => 'Requires JavaScript',
     'inLanguage' => array_values(array_unique([$lang, 'en', 'de', 'es', 'pt', 'fr', 'it'])),
-    'softwareVersion' => '2.1.2',
+    'softwareVersion' => '2.2.0',
     'datePublished' => '2025-11-01',
     'author' => [
       '@type' => 'Organization',

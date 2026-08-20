@@ -4,6 +4,60 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
 
 ---
 
+## [2.2.0] – 2026-08-20
+
+### 🎨 Design
+- **Bootstrap palette** – Replaced the Tabler colour overrides with Bootstrap's
+  own values. Tabler pairs its light colours with near-white text
+  (`--tblr-success-fg` is `#f9fafb` on `#2fb344`, a contrast of 2.6:1), which
+  is below WCAG AA. Bootstrap's palette reaches at least 4.5:1 on every
+  variant. Green, red, blue and the remaining accent colours change site-wide.
+- **Alert colours** – Border and dark-mode fill values now reference
+  `--bs-*-rgb` instead of pinned Tabler triplets, so they follow the palette.
+
+### ✨ Features
+- **Copy feedback** – Copy buttons now raise a Bootstrap toast. Previously the
+  only feedback was a checkmark swap that never ran (see Bugfixes).
+- **CSS build** – Added the `toasts`, `spinners`, `progress` and `list-group`
+  components, which the markup already used but the custom build omitted.
+
+### ♿ Accessibility
+- Status and result regions announce themselves (`aria-live`) across 12 tools
+- New `assets/js/lib/a11y-utils.js` for debounced announcements where a region
+  re-renders on every keystroke, with 10 unit tests
+- Generated QR codes carry `role="img"` and a translated `aria-label`
+- The language switcher marks the active entry with `aria-current`
+- Homepage category filters dropped their tab roles - there are no tabpanels
+  behind them - in favour of `aria-pressed`
+
+### 🔍 SEO
+- Removed `SearchAction` structured data; no search endpoint backed it
+- `aspectRatioCalculator` had no `seo` entry and rendered the fallback title on
+  all six languages
+- Shortened 27 meta descriptions exceeding 160 characters
+- Dropped the `noindex`-marked legal pages from the sitemaps
+
+### 🐛 Bugfixes
+- **Password strength bar** rendered at height 0, i.e. was invisible
+- **Copy icon feedback** looked up `<i>` elements that `icon-system.js` had
+  already replaced with SVG sprites, so it silently did nothing in 11 places
+- **Cross-tool buttons** called `Tools.open()` for a module the page never
+  loaded, replacing the running tool with a "Tool not found" box
+- **HTML validity** – 65 errors across all 144 pages and 20 rendered tool DOMs,
+  including unclosed `<main>` on 11 legal pages and mismatched heading tags in
+  13 localised tool pages
+- **X-Frame-Options** – `.htaccess.production` sent `SAMEORIGIN` while the PHP
+  config and the CSP said deny; resolved to `DENY`
+- **Notice cards** in five `code-formatter` pages nested a card inside a card
+- **`de/zeichen-referenz`** loaded its template before defining its variables,
+  so the resources card never rendered
+
+### 📝 Documentation
+- `SECURITY.md` rewritten around reporting, scope and verifiable headers
+- Corrected the claim that all external libraries carry SRI - there are two
+
+---
+
 ## [2.1.2] – 2026-04-17
 
 ### 🖼️ Assets

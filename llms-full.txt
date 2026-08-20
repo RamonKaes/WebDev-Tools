@@ -1,6 +1,6 @@
 # WebDev-Tools — Full Reference for AI Language Models
 
-> Version: 2.1.2
+> Version: 2.2.0
 > Last updated: 2026-04-17
 > Language: English
 > Canonical: https://webdev-tools.info/llms-full.txt

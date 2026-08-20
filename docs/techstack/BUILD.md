@@ -225,7 +225,7 @@ RewriteRule ^es/(.*)$ es/$1 [L]
 
 ```php
 <?php
-$version = '2.1.2'; // From package.json or config.php
+$version = '2.2.0'; // From package.json or config.php
 ?>
 <link rel="stylesheet" href="/assets/css/style.css?v=<?= $version ?>">
 <script src="/assets/js/app.js?v=<?= $version ?>"></script>

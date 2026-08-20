@@ -122,11 +122,11 @@ if ($manifest && isset($manifest['generatedAt'])) {
   <link rel="manifest" href="<?= $assetPrefix ?>assets/img/site.webmanifest" />
 
   <script src="assets/js/theme-init.js"></script>
-  <script src="assets/js/helpers.js?v=<?= $buildHash ?>"></script>
+  <script src="<?= assetSrc('js/helpers.js') ?>"></script>
 
   <link rel="stylesheet" href="<?= $assetPrefix ?>assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?= $assetPrefix ?>assets/bootstrap-icons/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="assets/css/style.css?v=<?= $buildHash ?>">
+  <link rel="stylesheet" href="<?= assetSrc('css/style.css') ?>">
 </head>
 
 <body class="d-flex flex-column bg-body">
@@ -514,7 +514,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
 
 <?php include __DIR__ . '/partials/common-scripts.php'; ?>
 
-  <script src="assets/js/category-filter.js?v=<?= $buildHash ?>"></script>
+  <script src="<?= assetSrc('js/category-filter.js') ?>"></script>
 
 </body>
 </html>

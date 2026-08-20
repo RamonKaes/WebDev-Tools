@@ -21,17 +21,17 @@ if (!isset($buildHash)) {
           crossorigin="anonymous" 
           nonce="<?= $nonce ?>"></script>
 
-  <script src="<?= $assetPrefix ?>assets/js/tool-registry.js?v=<?= $buildHash ?>"></script>
+  <script src="<?= assetSrc('js/tool-registry.js') ?>"></script>
 
-  <script src="<?= $assetPrefix ?>assets/js/lib/clipboard-utils.js?v=<?= $buildHash ?>"></script>
+  <script src="<?= assetSrc('js/lib/clipboard-utils.js') ?>"></script>
 
-  <script src="<?= $assetPrefix ?>assets/js/lib/a11y-utils.js?v=<?= $buildHash ?>"></script>
+  <script src="<?= assetSrc('js/lib/a11y-utils.js') ?>"></script>
 
-  <script src="<?= $assetPrefix ?>assets/js/sidebar-persistence.js?v=<?= $buildHash ?>"></script>
+  <script src="<?= assetSrc('js/sidebar-persistence.js') ?>"></script>
 
-  <script src="<?= $assetPrefix ?>assets/js/sidebar-navigation.js?v=<?= $buildHash ?>"></script>
+  <script src="<?= assetSrc('js/sidebar-navigation.js') ?>"></script>
 
-  <script src="<?= $assetPrefix ?>assets/js/toc-generator.js?v=<?= $buildHash ?>"></script>
+  <script src="<?= assetSrc('js/toc-generator.js') ?>"></script>
 
   <?php if (isset($currentTool)) : ?>
         <?php
@@ -59,5 +59,5 @@ if (!isset($buildHash)) {
       }
     })();
   </script>
-  <script src="<?= $assetPrefix ?>assets/js/tool-loader.js?v=<?= $buildHash ?>"></script>
+  <script src="<?= assetSrc('js/tool-loader.js') ?>"></script>
   <?php endif; ?>

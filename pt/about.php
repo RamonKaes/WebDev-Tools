@@ -94,7 +94,7 @@ $currentUrl = getFullUrl('/about.php', $lang);
 
   <link rel="stylesheet" href="<?= $assetPrefix ?>assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?= $assetPrefix ?>assets/bootstrap-icons/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="<?= $assetPrefix ?>assets/css/style.css?v=<?= $buildHash ?>">
+  <link rel="stylesheet" href="<?= assetSrc('css/style.css') ?>">
   <script src="<?= $assetPrefix ?>assets/js/theme-init.js"></script>
   <title><?= htmlspecialchars($pageTitle, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?></title>
 </head>

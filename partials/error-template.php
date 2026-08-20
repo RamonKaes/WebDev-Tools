@@ -182,7 +182,7 @@ $ogImageUrl = $baseUrlEscaped . BASE_PATH . '/assets/img/webdev-tools.png';
   <link rel="stylesheet" href="<?= $assetPrefix ?>assets/bootstrap-icons/bootstrap-icons.min.css">
   
   <!-- Custom styles -->
-  <link rel="stylesheet" href="<?= $assetPrefix ?>assets/css/style.css?v=<?= $buildHash ?>">
+  <link rel="stylesheet" href="<?= assetSrc('css/style.css') ?>">
   
   <!-- i18n data and globals -->
   <script nonce="<?= getCspNonce() ?>">

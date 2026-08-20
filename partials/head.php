@@ -191,9 +191,9 @@ if (!isset($assetPrefix)) {
 
   <link rel="stylesheet" href="<?= $assetPrefix ?>assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?= $assetPrefix ?>assets/bootstrap-icons/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="<?= $assetPrefix ?>assets/css/style.css?v=<?= $buildHash ?>">
+  <link rel="stylesheet" href="<?= assetSrc('css/style.css') ?>">
   
-  <link rel="preload" href="<?= $assetPrefix ?>assets/js/tool-registry.js?v=<?= $buildHash ?>" as="script">
+  <link rel="preload" href="<?= assetSrc('js/tool-registry.js') ?>" as="script">
   
   <script nonce="<?= getCspNonce() ?>">
     // Set global configuration BEFORE loading other scripts
@@ -206,8 +206,8 @@ if (!isset($assetPrefix)) {
     window.BUILD_HASH = '<?= $buildHash ?>';
   </script>
   
-  <script src="<?= $assetPrefix ?>assets/js/helpers.js?v=<?= $buildHash ?>"></script>
-  <script src="<?= $assetPrefix ?>assets/js/icon-system.js?v=<?= $buildHash ?>"></script>
+  <script src="<?= assetSrc('js/helpers.js') ?>"></script>
+  <script src="<?= assetSrc('js/icon-system.js') ?>"></script>
   
   <script nonce="<?= getCspNonce() ?>">
     // Base path for dynamic resource loading

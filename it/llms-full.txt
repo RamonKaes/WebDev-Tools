@@ -1,6 +1,6 @@
 # WebDev-Tools — Riferimento completo per modelli di linguaggio IA
 
-> Versione: 2.1.2
+> Versione: 2.2.0
 > Ultimo aggiornamento: 2026-04-17
 > Lingua: Italiano
 > Canonico: https://webdev-tools.info/it/llms-full.txt

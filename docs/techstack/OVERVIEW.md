@@ -78,4 +78,4 @@ partials/tool-base.php           # Shared layout
 
 ---
 
-**Status:** April 2026 | **Version:** 2.1.2 | **Tools:** 20 | **Languages:** 6
+**Status:** August 2026 | **Version:** 2.2.0 | **Tools:** 20 | **Languages:** 6

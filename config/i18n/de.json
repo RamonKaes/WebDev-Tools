@@ -1279,7 +1279,7 @@
       ],
       "applicationCategory": "UtilityApplication",
       "meta_title": "Regex Tester – Reguläre Ausdrücke online testen mit Live-Match",
-      "meta_description": "Teste und debugge reguläre Ausdrücke mit Live-Highlighting und Match-Extraktion. Erfassungsgruppen extrahieren und Ergebnisse exportieren."
+      "meta_description": "Teste und debugge reguläre Ausdrücke mit Live-Highlighting und Match-Extraktion. Übereinstimmungen in Echtzeit sehen und Erfassungsgruppen extrahieren."
     },
     "characterReferenceTool": {
       "keywords": "html entities, sonderzeichen, unicode symbole, html escape, zeichencodes, entity referenz",
@@ -1355,7 +1355,7 @@
     },
     "aspectRatioCalculator": {
       "meta_title": "Seitenverhältnis Rechner — Responsive Design Dimensionen CSS",
-      "meta_description": "Berechne Dimensionen aus Seitenverhältnissen für Responsive Design. Generiere CSS mit aspect-ratio Eigenschaft oder padding-bottom Fallback. Gängige Presets und Auflösungstabelle."
+      "meta_description": "Berechne Dimensionen aus Seitenverhältnissen für Responsive Design. Generiere CSS mit aspect-ratio oder padding-bottom Fallback, inkl. gängiger Presets."
     }
   },
   "validation": {

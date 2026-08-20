@@ -1097,7 +1097,7 @@
       ],
       "applicationCategory": "UtilityApplication",
       "meta_title": "Codificador Base64 – Conversor de Texto e Ficheiros",
-      "meta_description": "Codifique e descodifique texto e ficheiros para formato Base64 instantaneamente. Ferramenta gratuita com suporte para arrastar e soltar."
+      "meta_description": "Codifique e descodifique texto e ficheiros para formato Base64 instantaneamente. Ferramenta gratuita com arrastar e soltar e prévia de binários."
     },
     "urlEncoderDecoder": {
       "keywords": "codificador url, decodificador url, codificação percentual, componente uri, string de consulta, analisador url",
@@ -1323,7 +1323,7 @@
       ],
       "keywords": "codificador entidades html, decodificador entidades html, escape html, unescape html, caracteres especiais, entidades nomeadas, entidades numéricas",
       "meta_title": "Codificador e Decodificador HTML Entity – Escapar Caracteres",
-      "meta_description": "Converta texto para entidades HTML e vice-versa instantaneamente. Ferramenta gratuita com entidades nomeadas, decimal numérico e hexadecimal."
+      "meta_description": "Converta texto para entidades HTML e vice-versa instantaneamente. Ferramenta gratuita com entidades nomeadas (&nbsp;), decimal numérico e hexadecimal."
     },
     "jwtDecoderTool": {
       "applicationCategory": "UtilityApplication",
@@ -1355,7 +1355,7 @@
     },
     "aspectRatioCalculator": {
       "meta_title": "Calculadora Proporção Aspecto — Dimensões Responsive CSS",
-      "meta_description": "Calcule dimensões a partir de proporções de aspecto para design responsivo. Gere CSS com propriedade aspect-ratio ou fallback padding-bottom. Presets comuns e tabela de resoluções."
+      "meta_description": "Calcule dimensões a partir de proporções de aspecto para design responsivo. Gere CSS com aspect-ratio ou padding-bottom, com presets comuns."
     }
   },
   "validation": {

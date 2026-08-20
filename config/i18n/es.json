@@ -1355,7 +1355,7 @@
     },
     "aspectRatioCalculator": {
       "meta_title": "Calculadora Relación Aspecto — Dimensiones Responsive CSS",
-      "meta_description": "Calcula dimensiones desde relaciones de aspecto para diseño responsive. Genera CSS con propiedad aspect-ratio o fallback padding-bottom. Presets comunes y tabla de resoluciones."
+      "meta_description": "Calcula dimensiones desde relaciones de aspecto para diseño responsive. Genera CSS con aspect-ratio o fallback padding-bottom, con presets comunes."
     }
   },
   "validation": {

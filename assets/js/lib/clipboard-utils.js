@@ -252,7 +252,12 @@
     if (!container) {
       container = document.createElement('div');
       container.id = 'toast-container';
-      container.className = 'toast-container position-fixed bottom-0 end-0 p-3';
+      // Top right: the bottom right corner is occupied by the floating theme
+      // and language switchers, which would cover the toast.
+      container.className = 'toast-container position-fixed top-0 end-0 p-3';
+      // Those switchers sit at z-index 1500/1499 and Bootstrap gives
+      // .toast-container none, so it has to be lifted above them.
+      container.style.zIndex = '1600';
       document.body.appendChild(container);
     }
 

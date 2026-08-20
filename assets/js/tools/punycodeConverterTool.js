@@ -299,17 +299,17 @@
                         <i class="bi bi-sliders me-2"></i>${t('tools.punycodeConverterTool.modeLabel')}
                       </label>
                       <div class="btn-group btn-group-sm w-100" role="group">
-                        <input type="radio" class="btn-check" name="mode" id="modeEncode" value="encode" checked autocomplete="off">
+                        <input type="radio" class="btn-check" name="mode" id="modeEncode" value="encode" checked>
                         <label class="btn btn-outline-primary" for="modeEncode">
                           <i class="bi bi-arrow-right me-1"></i>${t('tools.punycodeConverterTool.toPunycode')}
                         </label>
 
-                        <input type="radio" class="btn-check" name="mode" id="modeDecode" value="decode" autocomplete="off">
+                        <input type="radio" class="btn-check" name="mode" id="modeDecode" value="decode">
                         <label class="btn btn-outline-primary" for="modeDecode">
                           <i class="bi bi-arrow-left me-1"></i>${t('tools.punycodeConverterTool.toUnicode')}
                         </label>
 
-                        <input type="radio" class="btn-check" name="mode" id="modeAuto" value="auto" autocomplete="off">
+                        <input type="radio" class="btn-check" name="mode" id="modeAuto" value="auto">
                         <label class="btn btn-outline-primary" for="modeAuto">
                           <i class="bi bi-lightning me-1"></i>${t('common.auto')}
                         </label>

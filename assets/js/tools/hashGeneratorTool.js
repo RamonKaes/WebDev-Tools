@@ -246,27 +246,27 @@
                 <div class="col-md-8">
                   <label class="form-label fw-bold"><i class="bi bi-sliders me-2"></i>${t('tools.hashGeneratorTool.modeTitle')}</label>
                   <div class="btn-group btn-group-sm w-100" role="group">
-                    <input type="radio" class="btn-check" name="hashMode" id="modeText" value="text" checked autocomplete="off">
+                    <input type="radio" class="btn-check" name="hashMode" id="modeText" value="text" checked>
                     <label class="btn btn-outline-primary" for="modeText">
                       <i class="bi bi-file-text me-1"></i>${t('tools.hashGeneratorTool.modeText')}
                     </label>
 
-                    <input type="radio" class="btn-check" name="hashMode" id="modeFile" value="file" autocomplete="off">
+                    <input type="radio" class="btn-check" name="hashMode" id="modeFile" value="file">
                     <label class="btn btn-outline-primary" for="modeFile">
                       <i class="bi bi-file-earmark me-1"></i>${t('tools.hashGeneratorTool.modeFile')}
                     </label>
 
-                    <input type="radio" class="btn-check" name="hashMode" id="modeHMAC" value="hmac" autocomplete="off">
+                    <input type="radio" class="btn-check" name="hashMode" id="modeHMAC" value="hmac">
                     <label class="btn btn-outline-primary" for="modeHMAC">
                       <i class="bi bi-key me-1"></i>${t('tools.hashGeneratorTool.modeHMAC')}
                     </label>
 
-                    <input type="radio" class="btn-check" name="hashMode" id="modeSRI" value="sri" autocomplete="off">
+                    <input type="radio" class="btn-check" name="hashMode" id="modeSRI" value="sri">
                     <label class="btn btn-outline-primary" for="modeSRI">
                       <i class="bi bi-shield-check me-1"></i>${t('tools.hashGeneratorTool.modeSRI')}
                     </label>
 
-                    <input type="radio" class="btn-check" name="hashMode" id="modeCompare" value="compare" autocomplete="off">
+                    <input type="radio" class="btn-check" name="hashMode" id="modeCompare" value="compare">
                     <label class="btn btn-outline-primary" for="modeCompare">
                       <i class="bi bi-clipboard-check me-1"></i>${t('tools.hashGeneratorTool.modeCompare')}
                     </label>

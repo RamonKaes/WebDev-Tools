@@ -153,12 +153,12 @@
                         <i class="bi bi-sliders me-2"></i>${t('tools.htmlEntityTool.modeLabel')}
                       </label>
                       <div class="btn-group btn-group-sm w-100" role="group">
-                        <input type="radio" class="btn-check" name="mode" id="modeEncode" value="encode" checked autocomplete="off">
+                        <input type="radio" class="btn-check" name="mode" id="modeEncode" value="encode" checked>
                         <label class="btn btn-outline-primary d-inline-flex align-items-center" for="modeEncode">
                           <i class="bi bi-lock me-1"></i>${t('tools.htmlEntityTool.encode')}
                         </label>
 
-                        <input type="radio" class="btn-check" name="mode" id="modeDecode" value="decode" autocomplete="off">
+                        <input type="radio" class="btn-check" name="mode" id="modeDecode" value="decode">
                         <label class="btn btn-outline-primary d-inline-flex align-items-center" for="modeDecode">
                           <i class="bi bi-unlock me-1"></i>${t('tools.htmlEntityTool.decode')}
                         </label>

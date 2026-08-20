@@ -97,7 +97,7 @@
           <div class="col-12">
             <div class="input-group input-group-sm">
               <span class="input-group-text"><i class="bi bi-search"></i></span>
-              <input type="text" class="form-control" id="emojiSearch" placeholder="${t('common.search')}..." autocomplete="off">
+              <input type="text" class="form-control" id="emojiSearch" placeholder="${t('common.search')}...">
             </div>
           </div>
           <div class="col-12">

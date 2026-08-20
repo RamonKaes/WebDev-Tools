@@ -393,10 +393,10 @@
                     <i class="bi bi-sliders me-2"></i>Modus
                   </label>
                   <div class="btn-group btn-group-sm w-100" role="group">
-                    <input type="radio" class="btn-check" name="mode" id="modeBeautify" autocomplete="off" checked>
+                    <input type="radio" class="btn-check" name="mode" id="modeBeautify" checked>
                     <label class="btn btn-outline-primary d-inline-flex align-items-center" for="modeBeautify"><i class="bi bi-stars me-1"></i>${t('tools.codeFormatterTool.beautifyBtn')}</label>
 
-                    <input type="radio" class="btn-check" name="mode" id="modeMinify" autocomplete="off">
+                    <input type="radio" class="btn-check" name="mode" id="modeMinify">
                     <label class="btn btn-outline-primary d-inline-flex align-items-center" for="modeMinify"><i class="bi bi-file-earmark-zip me-1"></i>${t('tools.codeFormatterTool.minifyBtn')}</label>
                   </div>
                   <div id="minifyInfo" class="alert alert-info mt-2 mb-0 py-1 px-2 small d-none">

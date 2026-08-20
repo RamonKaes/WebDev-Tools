@@ -201,10 +201,10 @@
                   <p class="h6 fw-semibold card-title mb-3"><i class="bi bi-code-square me-2"></i>${t('tools.jsonFormatterValidator.output_title')}</p>
 
                   <div class="btn-group btn-group-sm mb-3 w-100" role="group">
-                    <input type="radio" class="btn-check" name="viewMode" id="viewText" autocomplete="off" checked>
+                    <input type="radio" class="btn-check" name="viewMode" id="viewText" checked>
                     <label class="btn btn-outline-primary btn-sm d-inline-flex align-items-center" for="viewText"><i class="bi bi-file-text me-1"></i>${t('tools.jsonFormatterValidator.view_text')}</label>
 
-                    <input type="radio" class="btn-check" name="viewMode" id="viewTree" autocomplete="off">
+                    <input type="radio" class="btn-check" name="viewMode" id="viewTree">
                     <label class="btn btn-outline-primary btn-sm d-inline-flex align-items-center" for="viewTree"><i class="bi bi-diagram-3 me-1"></i>${t('tools.jsonFormatterValidator.view_tree')}</label>
                   </div>
 

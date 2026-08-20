@@ -132,44 +132,37 @@ if ($manifest && isset($manifest['generatedAt'])) {
         <p class="lead text-secondary">Utilidades para desarrolladores web.</p>
       </div>
 
-      <ul class="nav nav-tabs mb-4 d-none d-lg-flex" id="categoryTabs" role="tablist">
-        <li class="nav-item" role="presentation">
+      <ul class="nav nav-tabs mb-4 d-none d-lg-flex" id="categoryTabs">
+        <li class="nav-item">
           <button class="nav-link active" id="all-tab" data-category="all" type="button"
-            role="tab" aria-selected="true">Todas las Herramientas</button>
+            aria-pressed="true">Todas las Herramientas</button>
         </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="encoders-tab" data-category="encoders" type="button"
-            role="tab" aria-selected="false"
+        <li class="nav-item">
+          <button class="nav-link" id="encoders-tab" data-category="encoders" type="button" aria-pressed="false"
             title="<?= htmlspecialchars($t['navigation']['categories']['filterTitle']['encoders'] ?? 'Mostrar herramientas de codificación y decodificación', ENT_QUOTES, 'UTF-8') ?>">Codificadores</button>
         </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="formatters-tab" data-category="formatters" type="button"
-            role="tab" aria-selected="false"
+        <li class="nav-item">
+          <button class="nav-link" id="formatters-tab" data-category="formatters" type="button" aria-pressed="false"
             title="<?= htmlspecialchars($t['navigation']['categories']['filterTitle']['formatters'] ?? 'Mostrar herramientas de formato y validación', ENT_QUOTES, 'UTF-8') ?>">Formateadores</button>
         </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="converters-tab" data-category="converters" type="button"
-            role="tab" aria-selected="false"
+        <li class="nav-item">
+          <button class="nav-link" id="converters-tab" data-category="converters" type="button" aria-pressed="false"
             title="<?= htmlspecialchars($t['navigation']['categories']['filterTitle']['converters'] ?? 'Mostrar utilidades de conversión', ENT_QUOTES, 'UTF-8') ?>">Convertidores</button>
         </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="generators-tab" data-category="generators" type="button"
-            role="tab" aria-selected="false"
+        <li class="nav-item">
+          <button class="nav-link" id="generators-tab" data-category="generators" type="button" aria-pressed="false"
             title="<?= htmlspecialchars($t['navigation']['categories']['filterTitle']['generators'] ?? 'Mostrar herramientas de generación', ENT_QUOTES, 'UTF-8') ?>">Generadores</button>
         </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="stringtools-tab" data-category="stringtools" type="button"
-            role="tab" aria-selected="false"
+        <li class="nav-item">
+          <button class="nav-link" id="stringtools-tab" data-category="stringtools" type="button" aria-pressed="false"
             title="<?= htmlspecialchars($t['navigation']['categories']['filterTitle']['stringtools'] ?? 'Mostrar herramientas de manipulación de cadenas', ENT_QUOTES, 'UTF-8') ?>">Herramientas de Texto</button>
         </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="references-tab" data-category="references" type="button"
-            role="tab" aria-selected="false"
+        <li class="nav-item">
+          <button class="nav-link" id="references-tab" data-category="references" type="button" aria-pressed="false"
             title="<?= htmlspecialchars($t['navigation']['categories']['filterTitle']['references'] ?? 'Mostrar herramientas de referencia y consulta', ENT_QUOTES, 'UTF-8') ?>">Referencias</button>
         </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="utilities-tab" data-category="utilities" type="button"
-            role="tab" aria-selected="false"
+        <li class="nav-item">
+          <button class="nav-link" id="utilities-tab" data-category="utilities" type="button" aria-pressed="false"
             title="<?= htmlspecialchars($t['navigation']['categories']['filterTitle']['utilities'] ?? 'Mostrar utilidades', ENT_QUOTES, 'UTF-8') ?>">Utilidades</button>
         </li>
       </ul>

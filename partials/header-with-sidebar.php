@@ -375,7 +375,7 @@ $openMenuLabel = $openMenuLabels[$lang] ?? 'Open menu';
   </aside>
 
   <!-- 4. OFF-CANVAS SIDEBAR (Mobile & Tablet) -->
-  <div class="offcanvas offcanvas-start bg-body-tertiary" tabindex="-1" id="mobileSidebar" aria-labelledby="mobileSidebarLabel">
+  <div class="offcanvas offcanvas-start bg-body-tertiary" tabindex="-1" id="mobileSidebar" role="dialog" aria-labelledby="mobileSidebarLabel">
     <div class="offcanvas-header border-bottom py-3">
       <a href="<?= $homeUrl ?>/"
         class="navbar-brand offcanvas-title d-flex align-items-center mb-0" id="mobileSidebarLabel">

@@ -132,44 +132,37 @@ if ($manifest && isset($manifest['generatedAt'])) {
         <p class="lead text-secondary">Utilitaires pour les développeurs web.</p>
       </div>
 
-      <ul class="nav nav-tabs mb-4 d-none d-lg-flex" id="categoryTabs" role="tablist">
-        <li class="nav-item" role="presentation">
+      <ul class="nav nav-tabs mb-4 d-none d-lg-flex" id="categoryTabs">
+        <li class="nav-item">
           <button class="nav-link active" id="all-tab" data-category="all" type="button"
-            role="tab" aria-selected="true">Tous les Outils</button>
+            aria-pressed="true">Tous les Outils</button>
         </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="encoders-tab" data-category="encoders" type="button"
-            role="tab" aria-selected="false"
+        <li class="nav-item">
+          <button class="nav-link" id="encoders-tab" data-category="encoders" type="button" aria-pressed="false"
             title="<?= htmlspecialchars($t['navigation']['categories']['filterTitle']['encoders'] ?? 'Afficher les outils d\'encodage et de décodage', ENT_QUOTES, 'UTF-8') ?>">Encodeurs</button>
         </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="formatters-tab" data-category="formatters" type="button"
-            role="tab" aria-selected="false"
+        <li class="nav-item">
+          <button class="nav-link" id="formatters-tab" data-category="formatters" type="button" aria-pressed="false"
             title="<?= htmlspecialchars($t['navigation']['categories']['filterTitle']['formatters'] ?? 'Afficher les outils de formatage et de validation', ENT_QUOTES, 'UTF-8') ?>">Formateurs</button>
         </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="converters-tab" data-category="converters" type="button"
-            role="tab" aria-selected="false"
+        <li class="nav-item">
+          <button class="nav-link" id="converters-tab" data-category="converters" type="button" aria-pressed="false"
             title="<?= htmlspecialchars($t['navigation']['categories']['filterTitle']['converters'] ?? 'Afficher les utilitaires de conversion', ENT_QUOTES, 'UTF-8') ?>">Convertisseurs</button>
         </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="generators-tab" data-category="generators" type="button"
-            role="tab" aria-selected="false"
+        <li class="nav-item">
+          <button class="nav-link" id="generators-tab" data-category="generators" type="button" aria-pressed="false"
             title="<?= htmlspecialchars($t['navigation']['categories']['filterTitle']['generators'] ?? 'Afficher les outils de génération', ENT_QUOTES, 'UTF-8') ?>">Générateurs</button>
         </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="stringtools-tab" data-category="stringtools" type="button"
-            role="tab" aria-selected="false"
+        <li class="nav-item">
+          <button class="nav-link" id="stringtools-tab" data-category="stringtools" type="button" aria-pressed="false"
             title="<?= htmlspecialchars($t['navigation']['categories']['filterTitle']['stringtools'] ?? 'Afficher les outils de manipulation de chaînes', ENT_QUOTES, 'UTF-8') ?>">Outils de Texte</button>
         </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="references-tab" data-category="references" type="button"
-            role="tab" aria-selected="false"
+        <li class="nav-item">
+          <button class="nav-link" id="references-tab" data-category="references" type="button" aria-pressed="false"
             title="<?= htmlspecialchars($t['navigation']['categories']['filterTitle']['references'] ?? 'Afficher les outils de référence et de consultation', ENT_QUOTES, 'UTF-8') ?>">Références</button>
         </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="utilities-tab" data-category="utilities" type="button"
-            role="tab" aria-selected="false"
+        <li class="nav-item">
+          <button class="nav-link" id="utilities-tab" data-category="utilities" type="button" aria-pressed="false"
             title="<?= htmlspecialchars($t['navigation']['categories']['filterTitle']['utilities'] ?? 'Afficher les utilitaires', ENT_QUOTES, 'UTF-8') ?>">Utilitaires</button>
         </li>
       </ul>

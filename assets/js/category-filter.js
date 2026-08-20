@@ -38,10 +38,10 @@ document.addEventListener('DOMContentLoaded', () => {
   function setActiveTab(activeButton) {
     tabs.forEach((tab) => {
       tab.classList.remove('active');
-      tab.setAttribute('aria-selected', 'false');
+      tab.setAttribute('aria-pressed', 'false');
     });
     activeButton.classList.add('active');
-    activeButton.setAttribute('aria-selected', 'true');
+    activeButton.setAttribute('aria-pressed', 'true');
   }
 
   /**

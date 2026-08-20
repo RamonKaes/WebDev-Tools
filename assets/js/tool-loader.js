@@ -240,9 +240,9 @@
     }
 
     const link = document.createElement('link');
+    // 'as' is only valid on preload/modulepreload, not on prefetch
     link.rel = 'prefetch';
     link.href = modulePath;
-    link.as = 'script';
     link.crossOrigin = 'anonymous';
     document.head.appendChild(link);
 

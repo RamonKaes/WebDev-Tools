@@ -689,14 +689,11 @@ button:active:not(:disabled) {
    IMAGES & MEDIA - CORE WEB VITALS
    ============================================ */
 
-/* Aspect ratio for images to prevent CLS (Cumulative Layout Shift) */
-.tool-card img,
-.og-image,
-.icon-preview {
-  aspect-ratio: attr(width) / attr(height);
-  width: 100%;
-  height: auto;
-}
+/* Removed: aspect-ratio: attr(width) / attr(height)
+   attr() outside of content is not implemented in Firefox or Safari, and the
+   selectors matched nothing - tool cards contain no images, and .og-image /
+   .icon-preview do not exist. Browsers already derive the aspect ratio from
+   an image's own width/height attributes. */
 
 /* Specific aspect ratios for common image types */
 .tool-icon {

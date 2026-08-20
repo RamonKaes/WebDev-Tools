@@ -236,10 +236,10 @@
                   </div>
 
                   <div class="btn-group btn-group-sm mb-3 w-100" role="group">
-                    <input type="radio" class="btn-check" name="mode" id="modeEscape" autocomplete="off" checked>
+                    <input type="radio" class="btn-check" name="mode" id="modeEscape" checked>
                     <label class="btn btn-outline-primary btn-sm d-inline-flex align-items-center" for="modeEscape"><i class="bi bi-lock me-1"></i>${t('tools.stringEscaperTool.escapeBtn')}</label>
 
-                    <input type="radio" class="btn-check" name="mode" id="modeUnescape" autocomplete="off">
+                    <input type="radio" class="btn-check" name="mode" id="modeUnescape">
                     <label class="btn btn-outline-primary btn-sm d-inline-flex align-items-center" for="modeUnescape"><i class="bi bi-unlock me-1"></i>${t('tools.stringEscaperTool.unescapeBtn')}</label>
                   </div>
 

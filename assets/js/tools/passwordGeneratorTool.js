@@ -79,17 +79,17 @@
             <div class="card-body">
               <h2 class="card-title h5 mb-3"><i class="bi bi-sliders me-2"></i>${t('tools.passwordGeneratorTool.modeTitle')}</h2>
               <div class="btn-group w-100" role="group" aria-label="${t('tools.passwordGeneratorTool.modeTitle')}">
-                <input type="radio" class="btn-check" name="generatorMode" id="modePassword" value="password" checked autocomplete="off">
+                <input type="radio" class="btn-check" name="generatorMode" id="modePassword" value="password" checked>
                 <label class="btn btn-outline-primary btn-sm" for="modePassword">
                   <i class="bi bi-key me-2"></i>${t('tools.passwordGeneratorTool.modePassword')}
                 </label>
 
-                <input type="radio" class="btn-check" name="generatorMode" id="modePassphrase" value="passphrase" autocomplete="off">
+                <input type="radio" class="btn-check" name="generatorMode" id="modePassphrase" value="passphrase">
                 <label class="btn btn-outline-primary btn-sm" for="modePassphrase">
                   <i class="bi bi-chat-square-text me-2"></i>${t('tools.passwordGeneratorTool.modePassphrase')}
                 </label>
 
-                <input type="radio" class="btn-check" name="generatorMode" id="modePattern" value="pattern" autocomplete="off">
+                <input type="radio" class="btn-check" name="generatorMode" id="modePattern" value="pattern">
                 <label class="btn btn-outline-primary btn-sm" for="modePattern">
                   <i class="bi bi-bezier me-2"></i>${t('tools.passwordGeneratorTool.modePattern')}
                 </label>

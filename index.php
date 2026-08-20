@@ -143,30 +143,30 @@ if ($manifest && isset($manifest['generatedAt'])) {
           <p class="lead text-secondary">Utilities for web developers.</p>
         </div>
 
-        <ul class="nav nav-tabs mb-4 d-none d-lg-flex" id="categoryTabs" role="tablist">
-          <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="all-tab" data-category="all" type="button" role="tab" aria-selected="true">All Tools</button>
+        <ul class="nav nav-tabs mb-4 d-none d-lg-flex" id="categoryTabs">
+          <li class="nav-item">
+            <button class="nav-link active" id="all-tab" data-category="all" type="button" aria-pressed="true">All Tools</button>
           </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="encoders-tab" data-category="encoders" type="button" role="tab" aria-selected="false" title="<?= htmlspecialchars($t['navigation']['categories']['filterTitle']['encoders'] ?? 'Show encoding and decoding tools', ENT_QUOTES, 'UTF-8') ?>">Encoders</button>
+          <li class="nav-item">
+            <button class="nav-link" id="encoders-tab" data-category="encoders" type="button" aria-pressed="false" title="<?= htmlspecialchars($t['navigation']['categories']['filterTitle']['encoders'] ?? 'Show encoding and decoding tools', ENT_QUOTES, 'UTF-8') ?>">Encoders</button>
           </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="formatters-tab" data-category="formatters" type="button" role="tab" aria-selected="false" title="<?= htmlspecialchars($t['navigation']['categories']['filterTitle']['formatters'] ?? 'Show formatting and validation tools', ENT_QUOTES, 'UTF-8') ?>">Formatters</button>
+          <li class="nav-item">
+            <button class="nav-link" id="formatters-tab" data-category="formatters" type="button" aria-pressed="false" title="<?= htmlspecialchars($t['navigation']['categories']['filterTitle']['formatters'] ?? 'Show formatting and validation tools', ENT_QUOTES, 'UTF-8') ?>">Formatters</button>
           </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="converters-tab" data-category="converters" type="button" role="tab" aria-selected="false" title="<?= htmlspecialchars($t['navigation']['categories']['filterTitle']['converters'] ?? 'Show conversion utilities', ENT_QUOTES, 'UTF-8') ?>">Converters</button>
+          <li class="nav-item">
+            <button class="nav-link" id="converters-tab" data-category="converters" type="button" aria-pressed="false" title="<?= htmlspecialchars($t['navigation']['categories']['filterTitle']['converters'] ?? 'Show conversion utilities', ENT_QUOTES, 'UTF-8') ?>">Converters</button>
           </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="generators-tab" data-category="generators" type="button" role="tab" aria-selected="false" title="<?= htmlspecialchars($t['navigation']['categories']['filterTitle']['generators'] ?? 'Show generator tools', ENT_QUOTES, 'UTF-8') ?>">Generators</button>
+          <li class="nav-item">
+            <button class="nav-link" id="generators-tab" data-category="generators" type="button" aria-pressed="false" title="<?= htmlspecialchars($t['navigation']['categories']['filterTitle']['generators'] ?? 'Show generator tools', ENT_QUOTES, 'UTF-8') ?>">Generators</button>
           </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="stringtools-tab" data-category="stringtools" type="button" role="tab" aria-selected="false" title="<?= htmlspecialchars($t['navigation']['categories']['filterTitle']['stringtools'] ?? 'Show string manipulation tools', ENT_QUOTES, 'UTF-8') ?>">String Tools</button>
+          <li class="nav-item">
+            <button class="nav-link" id="stringtools-tab" data-category="stringtools" type="button" aria-pressed="false" title="<?= htmlspecialchars($t['navigation']['categories']['filterTitle']['stringtools'] ?? 'Show string manipulation tools', ENT_QUOTES, 'UTF-8') ?>">String Tools</button>
           </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="references-tab" data-category="references" type="button" role="tab" aria-selected="false" title="<?= htmlspecialchars($t['navigation']['categories']['filterTitle']['references'] ?? 'Show reference and lookup tools', ENT_QUOTES, 'UTF-8') ?>">References</button>
+          <li class="nav-item">
+            <button class="nav-link" id="references-tab" data-category="references" type="button" aria-pressed="false" title="<?= htmlspecialchars($t['navigation']['categories']['filterTitle']['references'] ?? 'Show reference and lookup tools', ENT_QUOTES, 'UTF-8') ?>">References</button>
           </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="utilities-tab" data-category="utilities" type="button" role="tab" aria-selected="false" title="<?= htmlspecialchars($t['navigation']['categories']['filterTitle']['utilities'] ?? 'Show utility tools', ENT_QUOTES, 'UTF-8') ?>">Utilities</button>
+          <li class="nav-item">
+            <button class="nav-link" id="utilities-tab" data-category="utilities" type="button" aria-pressed="false" title="<?= htmlspecialchars($t['navigation']['categories']['filterTitle']['utilities'] ?? 'Show utility tools', ENT_QUOTES, 'UTF-8') ?>">Utilities</button>
           </li>
         </ul>
 

@@ -341,15 +341,15 @@
                 <div class="mb-3">
                   <label class="form-label fw-semibold">${t('tools.sriGeneratorTool.modeLabel')}</label>
                   <div class="btn-group btn-group-sm w-100" role="group">
-                    <input type="radio" class="btn-check" name="sri-mode" id="sri-mode-url" value="url" checked autocomplete="off">
+                    <input type="radio" class="btn-check" name="sri-mode" id="sri-mode-url" value="url" checked>
                     <label class="btn btn-outline-primary" for="sri-mode-url">
                       <i class="bi bi-link-45deg me-1"></i>${t('tools.sriGeneratorTool.modeUrl')}
                     </label>
-                    <input type="radio" class="btn-check" name="sri-mode" id="sri-mode-file" value="file" autocomplete="off">
+                    <input type="radio" class="btn-check" name="sri-mode" id="sri-mode-file" value="file">
                     <label class="btn btn-outline-primary" for="sri-mode-file">
                       <i class="bi bi-file-earmark-arrow-up me-1"></i>${t('tools.sriGeneratorTool.modeFile')}
                     </label>
-                    <input type="radio" class="btn-check" name="sri-mode" id="sri-mode-text" value="text" autocomplete="off">
+                    <input type="radio" class="btn-check" name="sri-mode" id="sri-mode-text" value="text">
                     <label class="btn btn-outline-primary" for="sri-mode-text">
                       <i class="bi bi-textarea-t me-1"></i>${t('tools.sriGeneratorTool.modeText')}
                     </label>
@@ -362,7 +362,7 @@
                   <div class="input-group input-group-sm mb-2">
                     <input type="url" id="sri-url" class="form-control form-control-sm font-monospace"
                       placeholder="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-                      autocomplete="off" spellcheck="false">
+                      spellcheck="false">
                     <button id="sri-generate-from-url-btn" class="btn btn-primary">
                       <span id="sri-spinner" class="spinner-border spinner-border-sm me-1 d-none" role="status" aria-hidden="true"></span>
                       <i class="bi bi-shield-check me-1"></i>${t('tools.sriGeneratorTool.generateBtn')}

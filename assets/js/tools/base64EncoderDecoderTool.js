@@ -38,10 +38,10 @@
                   <p class="h6 fw-semibold card-title mb-3"><i class="bi bi-pencil me-2"></i>${t('tools.base64EncoderDecoder.input_title')}</p>
 
                   <div class="btn-group btn-group-sm mb-3 w-100" role="group">
-                    <input type="radio" class="btn-check" name="mode" id="modeEncode" autocomplete="off" checked>
+                    <input type="radio" class="btn-check" name="mode" id="modeEncode" checked>
                     <label class="btn btn-outline-primary btn-sm d-inline-flex align-items-center" for="modeEncode"><i class="bi bi-arrow-right me-1"></i>${t('tools.base64EncoderDecoder.encode_title')}</label>
 
-                    <input type="radio" class="btn-check" name="mode" id="modeDecode" autocomplete="off">
+                    <input type="radio" class="btn-check" name="mode" id="modeDecode">
                     <label class="btn btn-outline-primary btn-sm d-inline-flex align-items-center" for="modeDecode"><i class="bi bi-arrow-left me-1"></i>${t('tools.base64EncoderDecoder.decode_title')}</label>
                   </div>
 

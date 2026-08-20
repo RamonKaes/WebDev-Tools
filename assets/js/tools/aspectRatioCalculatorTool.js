@@ -45,49 +45,49 @@
                 <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-8 g-2" id="ratioPresets">
                   <div class="col">
                     <button class="btn btn-sm btn-outline-primary ratio-preset w-100" data-ratio="16:9">
-                      <div>16:9</div>
+                      <span class="d-block">16:9</span>
                       <small class="d-block text-body-secondary">${t('tools.aspectRatioCalculator.preset_hd_video')}</small>
                     </button>
                   </div>
                   <div class="col">
                     <button class="btn btn-sm btn-outline-primary ratio-preset w-100" data-ratio="4:3">
-                      <div>4:3</div>
+                      <span class="d-block">4:3</span>
                       <small class="d-block text-body-secondary">${t('tools.aspectRatioCalculator.preset_classic_tv')}</small>
                     </button>
                   </div>
                   <div class="col">
                     <button class="btn btn-sm btn-outline-primary ratio-preset w-100" data-ratio="21:9">
-                      <div>21:9</div>
+                      <span class="d-block">21:9</span>
                       <small class="d-block text-body-secondary">${t('tools.aspectRatioCalculator.preset_ultrawide')}</small>
                     </button>
                   </div>
                   <div class="col">
                     <button class="btn btn-sm btn-outline-primary ratio-preset w-100" data-ratio="1:1">
-                      <div>1:1</div>
+                      <span class="d-block">1:1</span>
                       <small class="d-block text-body-secondary">${t('tools.aspectRatioCalculator.preset_square')}</small>
                     </button>
                   </div>
                   <div class="col">
                     <button class="btn btn-sm btn-outline-primary ratio-preset w-100" data-ratio="9:16">
-                      <div>9:16</div>
+                      <span class="d-block">9:16</span>
                       <small class="d-block text-body-secondary">${t('tools.aspectRatioCalculator.preset_vertical')}</small>
                     </button>
                   </div>
                   <div class="col">
                     <button class="btn btn-sm btn-outline-primary ratio-preset w-100" data-ratio="3:2">
-                      <div>3:2</div>
+                      <span class="d-block">3:2</span>
                       <small class="d-block text-body-secondary">${t('tools.aspectRatioCalculator.preset_photo')}</small>
                     </button>
                   </div>
                   <div class="col">
                     <button class="btn btn-sm btn-outline-primary ratio-preset w-100" data-ratio="2:1">
-                      <div>2:1</div>
+                      <span class="d-block">2:1</span>
                       <small class="d-block text-body-secondary">${t('tools.aspectRatioCalculator.preset_wide_banner')}</small>
                     </button>
                   </div>
                   <div class="col">
                     <button class="btn btn-sm btn-outline-primary ratio-preset w-100" data-ratio="5:4">
-                      <div>5:4</div>
+                      <span class="d-block">5:4</span>
                       <small class="d-block text-body-secondary">${t('tools.aspectRatioCalculator.preset_large_format')}</small>
                     </button>
                   </div>

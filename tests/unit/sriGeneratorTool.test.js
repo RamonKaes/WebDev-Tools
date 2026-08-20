@@ -154,7 +154,7 @@ describe('SriGeneratorTool – UI Rendering', () => {
     expect(c.querySelector('#sri-generate-from-url-btn')).not.toBeNull();
     expect(c.querySelector('#sri-generate-from-file-btn')).not.toBeNull();
     expect(c.querySelector('#sri-generate-from-text-btn')).not.toBeNull();
-    expect(c.querySelector('#sri-clear-btn')).not.toBeNull();
+    expect(c.querySelector('.sri-clear-btn')).not.toBeNull();
   });
 
   test('renders results section (hidden by default)', () => {
@@ -344,7 +344,7 @@ describe('SriGeneratorTool – Clear Button', () => {
 
   test('clear button resets URL input', async () => {
     c.querySelector('#sri-url').value = 'https://cdn.example.com/file.js';
-    c.querySelector('#sri-clear-btn').click();
+    c.querySelector('.sri-clear-btn').click();
     expect(c.querySelector('#sri-url').value).toBe('');
   });
 
@@ -352,7 +352,7 @@ describe('SriGeneratorTool – Clear Button', () => {
     c.querySelector('#sri-url').value = '';
     clickGenerateBtn(c);
     await Promise.resolve();
-    c.querySelector('#sri-clear-btn').click();
+    c.querySelector('.sri-clear-btn').click();
     expect(c.querySelector('#sri-error').classList.contains('d-none')).toBe(true);
   });
 
@@ -362,7 +362,7 @@ describe('SriGeneratorTool – Clear Button', () => {
     clickGenerateBtn(c);
     await new Promise(r => setTimeout(r, 20));
 
-    c.querySelector('#sri-clear-btn').click();
+    c.querySelector('.sri-clear-btn').click();
 
     expect(c.querySelector('#sri-results-section').classList.contains('d-none')).toBe(true);
   });

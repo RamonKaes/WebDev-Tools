@@ -62,7 +62,7 @@ HTML
         'title' => 'Passwortstärke-Leitfaden',
         'content' => <<<HTML
 <ul>
-    <li><strong>Schwach (< 8 Zeichen):</strong> Leicht zu knacken, wenn möglich vermeiden</li>
+    <li><strong>Schwach (&lt; 8 Zeichen):</strong> Leicht zu knacken, wenn möglich vermeiden</li>
     <li>Ausreichend (8-11 Zeichen): Minimum für die meisten Systeme</li>
     <li>Gut (12-15 Zeichen): Empfohlen für wichtige Konten</li>
     <li>Stark (16+ Zeichen): Ausgezeichnete Sicherheit, schwer zu knacken</li>

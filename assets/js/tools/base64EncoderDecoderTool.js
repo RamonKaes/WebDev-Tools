@@ -91,7 +91,7 @@
 
                 <div id="imagePreviewContainer" class="d-none mb-3">
                   <div class="border rounded p-3 bg-light text-center overflow-auto image-preview-box">
-                    <img id="imagePreview" class="img-fluid" alt="Preview">
+                    <img id="imagePreview" class="img-fluid" alt="Preview" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
                   </div>
                   <small class="text-muted d-block mt-2">${t('tools.base64EncoderDecoder.image_preview')}</small>
                 </div>

@@ -367,7 +367,7 @@
                       <span id="sri-spinner" class="spinner-border spinner-border-sm me-1 d-none" role="status" aria-hidden="true"></span>
                       <i class="bi bi-shield-check me-1"></i>${t('tools.sriGeneratorTool.generateBtn')}
                     </button>
-                    <button id="sri-clear-btn" class="btn btn-outline-secondary">
+                    <button class="sri-clear-btn btn btn-outline-secondary">
                       <i class="bi bi-trash me-1"></i>${t('common.clear')}
                     </button>
                   </div>
@@ -384,7 +384,7 @@
                     <button id="sri-generate-from-file-btn" class="btn btn-primary">
                       <i class="bi bi-shield-check me-1"></i>${t('tools.sriGeneratorTool.generateBtn')}
                     </button>
-                    <button id="sri-clear-btn" class="btn btn-outline-secondary">
+                    <button class="sri-clear-btn btn btn-outline-secondary">
                       <i class="bi bi-trash me-1"></i>${t('common.clear')}
                     </button>
                   </div>
@@ -410,7 +410,7 @@
                     <button id="sri-generate-from-text-btn" class="btn btn-sm btn-primary">
                       <i class="bi bi-shield-check me-1"></i>${t('tools.sriGeneratorTool.generateBtn')}
                     </button>
-                    <button id="sri-clear-btn" class="btn btn-sm btn-outline-secondary">
+                    <button class="sri-clear-btn btn btn-sm btn-outline-secondary">
                       <i class="bi bi-trash me-1"></i>${t('common.clear')}
                     </button>
                   </div>
@@ -460,7 +460,7 @@
       });
 
       // Clear (one button per panel, all share the same id)
-      container.querySelectorAll('#sri-clear-btn').forEach(btn => {
+      container.querySelectorAll('.sri-clear-btn').forEach(btn => {
         btn.addEventListener('click', () => this.clearAll(container));
       });
 

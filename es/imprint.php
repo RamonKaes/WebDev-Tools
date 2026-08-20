@@ -92,9 +92,8 @@ $currentUrl = getFullUrl('/imprint.php', $lang);
         </div>
 
       </div>
-    </div>
+    </main>
   </div>
-</main>
 
 <?php include __DIR__ . '/../partials/footer.php'; ?>
 

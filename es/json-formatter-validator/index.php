@@ -34,7 +34,7 @@ $features = [
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
-<h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Opciones de formateo JSON</h2>
+<h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Opciones de formateo JSON</h3>
 <ul class="mb-0">
     <li>Embellecer (2 espacios): formato estándar con indentación reducida</li>
     <li>Embellecer (4 espacios): formato con mayor legibilidad</li>

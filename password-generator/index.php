@@ -62,7 +62,7 @@ HTML
         'title' => 'Password Strength Guide',
         'content' => <<<HTML
 <ul>
-    <li><strong>Weak (< 8 chars):</strong> Easily cracked, avoid if possible</li>
+    <li><strong>Weak (&lt; 8 chars):</strong> Easily cracked, avoid if possible</li>
     <li>Fair (8-11 chars): Minimum for most systems</li>
     <li>Good (12-15 chars): Recommended for important accounts</li>
     <li>Strong (16+ chars): Excellent security, hard to crack</li>

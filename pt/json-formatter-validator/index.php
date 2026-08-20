@@ -32,7 +32,7 @@ $features = [
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
-<h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Modos de formatação JSON</h2>
+<h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Modos de formatação JSON</h3>
 <ul class="mb-0">
     <li>Beautify (2 espaços): formato compacto e padronizado</li>
     <li>Beautify (4 espaços): foco em leitura e revisão</li>

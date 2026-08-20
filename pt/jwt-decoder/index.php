@@ -32,7 +32,7 @@ $features = [
 
 $customNoticeType = 'warning';
 $customNoticeContent = <<<HTML
-    <h3 class="h5 alert-heading"><i class="bi bi-shield-exclamation me-2"></i>Informações importantes</h2>
+    <h3 class="h5 alert-heading"><i class="bi bi-shield-exclamation me-2"></i>Informações importantes</h3>
     <ul class="mb-2">
         <li>Decodificar ≠ verificar: a ferramenta apenas decodifica o JWT, não valida a assinatura.</li>
         <li>Não confie sem validar: sempre confirme a assinatura no backend antes de usar os dados.</li>

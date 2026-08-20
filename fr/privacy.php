@@ -322,7 +322,7 @@ $currentUrl = getFullUrl('/privacy.php', $lang);
         </div>
 
     </div>
-  </div>
-</main>
+  </main>
+</div>
 
 <?php include __DIR__ . '/../partials/footer.php'; ?>

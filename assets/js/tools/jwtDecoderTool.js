@@ -184,9 +184,9 @@
                 <div class="col-12 col-lg-6">
                   <div class="card h-100">
                     <div class="card-header bg-primary text-white">
-                      <h3 class="h6 mb-0">
+                      <h2 class="h6 mb-0">
                         <i class="bi bi-file-earmark-text me-2"></i>${t('tools.jwtDecoderTool.header')}
-                      </h3>
+                      </h2>
                     </div>
                     <div class="card-body">
                       <pre class="mb-0 p-3 bg-body-secondary rounded pre-scrollable" id="headerContent"></pre>
@@ -198,9 +198,9 @@
                 <div class="col-12 col-lg-6">
                   <div class="card h-100">
                     <div class="card-header bg-success text-white">
-                      <h3 class="h6 mb-0">
+                      <h2 class="h6 mb-0">
                         <i class="bi bi-file-earmark-code me-2"></i>${t('tools.jwtDecoderTool.payload')}
-                      </h3>
+                      </h2>
                     </div>
                     <div class="card-body">
                       <pre class="mb-0 p-3 bg-body-secondary rounded pre-scrollable" id="payloadContent"></pre>
@@ -212,9 +212,9 @@
                 <div class="col-12 col-md-6">
                   <div class="card">
                     <div class="card-body">
-                      <h3 class="h6 mb-3">
+                      <h2 class="h6 mb-3">
                         <i class="bi bi-info-circle me-2"></i>${t('tools.jwtDecoderTool.algorithm')}
-                      </h3>
+                      </h2>
                       <p class="mb-0 font-monospace fs-5" id="algorithmInfo">-</p>
                     </div>
                   </div>
@@ -223,9 +223,9 @@
                 <div class="col-12 col-md-6">
                   <div class="card" id="expiryCard">
                     <div class="card-body">
-                      <h3 class="h6 mb-3">
+                      <h2 class="h6 mb-3">
                         <i class="bi bi-clock me-2"></i>${t('tools.jwtDecoderTool.expiry')}
-                      </h3>
+                      </h2>
                       <p class="mb-0" id="expiryInfo">-</p>
                     </div>
                   </div>
@@ -246,9 +246,9 @@
                 <div class="col-12">
                   <div class="card">
                     <div class="card-header bg-warning text-dark">
-                      <h3 class="h6 mb-0">
+                      <h2 class="h6 mb-0">
                         <i class="bi bi-shield-lock me-2"></i>${t('tools.jwtDecoderTool.signature')}
-                      </h3>
+                      </h2>
                     </div>
                     <div class="card-body">
                       <p class="text-muted small mb-2">${t('tools.jwtDecoderTool.signatureNote')}</p>

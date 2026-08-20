@@ -21,7 +21,7 @@ $features = [
 
 $customNoticeContent = <<<HTML
 <div class="alert alert-info" role="alert">
-  <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Options de formatage</h2>
+  <h3 class="h5 alert-heading"><i class="bi bi-info-circle me-2"></i>Options de formatage</h3>
   <ul class="mb-0">
     <li>Embellir&nbsp;: rend le code plus lisible grâce à une indentation et des retours à la ligne corrects</li>
     <li>Minifier&nbsp;: supprime les espaces inutiles pour réduire la taille des fichiers</li>

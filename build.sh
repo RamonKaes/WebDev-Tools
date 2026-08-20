@@ -93,10 +93,11 @@ mkdir -p "$DIST_DIR/assets/bootstrap/css"
 
 # ⚠️ WICHTIG: Bei neuen Tools prüfen, ob zusätzliche Bootstrap-Komponenten
 # in build-tools/bootstrap-custom.scss importiert werden müssen!
-# Aktuelle Komponenten: buttons, nav, navbar, card, badge, forms, dropdown,
-# button-group, transitions, modal, tooltip, offcanvas
-# NICHT importiert: accordion, alert, breadcrumb, carousel, list-group,
-# pagination, placeholders, popovers, progress, spinners, tables, toasts
+# Aktuelle Komponenten: buttons, nav, navbar, card, badge, alert, close,
+# accordion, tables, forms, input-group, dropdown, button-group, transitions,
+# modal, tooltip, offcanvas, toasts
+# NICHT importiert: breadcrumb, carousel, list-group, pagination,
+# placeholders, popovers, progress, spinners
 
 if command -v npx &> /dev/null && npx sass --version &> /dev/null; then
   npx sass build-tools/bootstrap-custom.scss "$DIST_DIR/assets/bootstrap/css/bootstrap.min.css" \

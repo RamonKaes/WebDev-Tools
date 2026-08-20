@@ -95,15 +95,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
     "name": "WebDev-Tools",
     "description": "<?= htmlspecialchars($pageDescription, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>",
     "url": "<?= htmlspecialchars($currentUrl, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>",
-    "inLanguage": ["it", "en", "de", "es", "pt", "fr"],
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": "<?= htmlspecialchars($currentUrl, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>?q={search_term_string}"
-      },
-      "query-input": "required name=search_term_string"
-    }
+    "inLanguage": ["it", "en", "de", "es", "pt", "fr"]
   }
   </script>
   

@@ -251,12 +251,7 @@ if (!isset($assetPrefix)) {
         "url": "<?= $baseUrl ?>/",
         "name": "WebDev-Tools",
         "description": "Free developer tools and utilities for web development",
-        "inLanguage": ["en", "de", "es", "pt", "fr", "it"],
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "<?= $baseUrl ?>/?search={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
+        "inLanguage": ["en", "de", "es", "pt", "fr", "it"]
       },
       {
         "@type": "Organization",

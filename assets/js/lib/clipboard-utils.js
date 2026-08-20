@@ -246,6 +246,26 @@
    * @param {string} type - Toast type: 'success', 'error', 'warning', 'info'
    * @param {number} duration - Duration in ms
    */
+  /**
+   * Whether a CSS colour is light enough that dark UI glyphs would vanish on it
+   *
+   * @param {string} color - Computed colour, e.g. "rgb(255, 255, 255)"
+   * @returns {boolean} - True when the colour's relative luminance is high
+   */
+  function isLightColor(color) {
+    const m = String(color).match(/(\d+(?:\.\d+)?)/g);
+    if (!m || m.length < 3) return false;
+
+    const [r, g, b] = m.slice(0, 3).map(Number);
+    // WCAG relative luminance
+    const channel = (c) => {
+      const s = c / 255;
+      return s <= 0.03928 ? s / 12.92 : Math.pow((s + 0.055) / 1.055, 2.4);
+    };
+
+    return 0.2126 * channel(r) + 0.7152 * channel(g) + 0.0722 * channel(b) > 0.5;
+  }
+
   function showToast(message, type = 'success', duration = 3000) {
     let container = document.getElementById('toast-container');
 
@@ -285,12 +305,20 @@
         <div class="toast-body">
           <i class="bi ${icons[type] || icons.info} me-2" aria-hidden="true"></i>${escapeHtml(message)}
         </div>
-        <button type="button" class="btn-close btn-close-white me-2 m-auto"
+        <button type="button" class="btn-close me-2 m-auto"
                 data-bs-dismiss="toast" aria-label="Close"></button>
       </div>
     `;
 
     container.appendChild(toast);
+
+    // text-bg-* picks black or white text per variant, whichever contrasts
+    // better. The close button has to follow that choice: btn-close is a dark
+    // glyph, so it only needs inverting when the text went light.
+    const textColor = getComputedStyle(toast.querySelector('.toast-body')).color;
+    if (isLightColor(textColor)) {
+      toast.querySelector('.btn-close').classList.add('btn-close-white');
+    }
 
     if (window.bootstrap && window.bootstrap.Toast) {
       const instance = new window.bootstrap.Toast(toast, { delay: duration });

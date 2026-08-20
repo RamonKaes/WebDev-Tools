@@ -31,9 +31,9 @@ $features = [
 ];
 
 $customNoticeContent = '
-  <h3 class="h6 mb-2">
+  <h2 class="h6 fw-semibold alert-heading mb-3">
     <i class="bi bi-info-circle me-2"></i>Encodage d\'URL vs encodage de composant
-  </h3>
+  </h2>
   <p class="mb-0">
     <strong>encodeURI()</strong> encode l\'URL complète tout en préservant des caractères spéciaux comme <code>:</code>, <code>/</code>, <code>?</code> et <code>&amp;</code>.<br>
     <strong>encodeURIComponent()</strong> encode tous les caractères spéciaux, idéal pour les paramètres de requête.

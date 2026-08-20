@@ -33,9 +33,9 @@ $features = [
 ];
 
 $customNoticeContent = '
-  <h3 class="h6 mb-2">
+  <h2 class="h6 fw-semibold alert-heading mb-3">
     <i class="bi bi-info-circle me-2"></i>URL-Kodierung vs. Komponenten-Kodierung
-  </h3>
+  </h2>
   <p class="mb-0">
     <strong>encodeURI()</strong> kodiert die gesamte URL unter Beibehaltung von Sonderzeichen wie <code>:</code>, <code>/</code>, <code>?</code> und <code>&</code>.<br>
     <strong>encodeURIComponent()</strong> kodiert alle Sonderzeichen und ist für Query-Parameter geeignet.

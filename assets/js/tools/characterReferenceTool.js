@@ -29,6 +29,37 @@
     }
   }
 
+  /**
+   * Build the URL of another tool's page in the current language.
+   *
+   * Tool modules are loaded per page, so a sibling tool cannot be opened in
+   * place - its module is not registered here.
+   *
+   * @param {string} toolId - Registry id of the target tool
+   * @param {string} fallbackSlug - English slug used if the manifest is absent
+   * @returns {string} - Absolute path to the tool page
+   */
+  function toolUrl(toolId, fallbackSlug) {
+    const basePath = window.APP_BASE_PATH || '';
+    const container = document.getElementById('tool-container');
+    const lang = (container && container.dataset.lang) || 'en';
+
+    let slug = fallbackSlug;
+    try {
+      const cached = JSON.parse(localStorage.getItem('toolbox_manifest') || '{}');
+      const slugs = cached.manifest && cached.manifest.tools
+        && cached.manifest.tools[toolId] && cached.manifest.tools[toolId].slugs;
+      if (slugs && slugs[lang]) {
+        slug = slugs[lang];
+      }
+    } catch (e) {
+      // Cache unreadable - the English slug still resolves
+    }
+
+    const prefix = lang === 'en' ? '' : `/${lang}`;
+    return `${basePath}${prefix}/${slug}/`;
+  }
+
   if (typeof window.Tools === 'undefined') {
     console.warn('[characterReference] Tools registry not available.');
     return;
@@ -280,12 +311,9 @@
 
     const openEntityEncoderBtn = document.getElementById('openEntityEncoderBtn');
     if (openEntityEncoderBtn) {
-      openEntityEncoderBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        if (window.Tools && window.Tools.open) {
-          window.Tools.open('htmlEntityTool');
-        }
-      });
+      // Only the current page's tool module is loaded, so the encoder cannot
+      // be opened in place - navigate to its page instead.
+      openEntityEncoderBtn.href = toolUrl('htmlEntityTool', 'html-entity-encoder-decoder');
     }
 
     const loadFullDatasetBtn = document.getElementById('loadFullDatasetBtn');

@@ -44,6 +44,7 @@ foreach ($toolsConfig as $toolId => $config) {
     $manifest['tools'][$toolId] = [
     'id' => $toolId,
     'slug' => $slug,
+    'slugs' => $config['slugs'] ?? [],
     'url' => $baseUrl . '/' . $slug . '/',
     'category' => $config['category'] ?? 'utilities',
     'icon' => $config['icon'] ?? 'bi-tools',

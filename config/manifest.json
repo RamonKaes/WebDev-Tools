@@ -1,10 +1,18 @@
 {
-    "version": "20260820.081648",
-    "generatedAt": "2026-08-20T08:16:48+00:00",
+    "version": "20260820.103523",
+    "generatedAt": "2026-08-20T10:35:23+00:00",
     "tools": {
         "base64EncoderDecoder": {
             "id": "base64EncoderDecoder",
             "slug": "base64-encoder-decoder",
+            "slugs": {
+                "en": "base64-encoder-decoder",
+                "de": "base64-kodierer-dekodierer",
+                "es": "base64-encoder-decoder",
+                "pt": "base64-encoder-decoder",
+                "fr": "base64-encoder-decoder",
+                "it": "base64-encoder-decoder"
+            },
             "url": "/base64-encoder-decoder/",
             "category": "encoders",
             "icon": "bi-file-binary",
@@ -27,6 +35,14 @@
         "urlEncoderDecoder": {
             "id": "urlEncoderDecoder",
             "slug": "url-encoder-decoder",
+            "slugs": {
+                "en": "url-encoder-decoder",
+                "de": "url-kodierer-dekodierer",
+                "es": "url-encoder-decoder",
+                "pt": "url-encoder-decoder",
+                "fr": "url-encoder-decoder",
+                "it": "url-encoder-decoder"
+            },
             "url": "/url-encoder-decoder/",
             "category": "encoders",
             "icon": "bi-link-45deg",
@@ -47,6 +63,14 @@
         "htmlEntityTool": {
             "id": "htmlEntityTool",
             "slug": "html-entity-encoder-decoder",
+            "slugs": {
+                "en": "html-entity-encoder-decoder",
+                "de": "html-entity-kodierer-dekodierer",
+                "es": "html-entity-encoder-decoder",
+                "pt": "html-entity-encoder-decoder",
+                "fr": "html-entity-encoder-decoder",
+                "it": "html-entity-encoder-decoder"
+            },
             "url": "/html-entity-encoder-decoder/",
             "category": "encoders",
             "icon": "bi-code-square",
@@ -67,6 +91,14 @@
         "jsonFormatterValidator": {
             "id": "jsonFormatterValidator",
             "slug": "json-formatter-validator",
+            "slugs": {
+                "en": "json-formatter-validator",
+                "de": "json-formatierer-validator",
+                "es": "json-formatter-validator",
+                "pt": "json-formatter-validator",
+                "fr": "json-formatter-validator",
+                "it": "json-formatter-validator"
+            },
             "url": "/json-formatter-validator/",
             "category": "formatters",
             "icon": "bi-filetype-json",
@@ -91,6 +123,14 @@
         "codeFormatterTool": {
             "id": "codeFormatterTool",
             "slug": "code-formatter",
+            "slugs": {
+                "en": "code-formatter",
+                "de": "code-formatierer",
+                "es": "code-formatter",
+                "pt": "code-formatter",
+                "fr": "code-formatter",
+                "it": "code-formatter"
+            },
             "url": "/code-formatter/",
             "category": "formatters",
             "icon": "bi-code-square",
@@ -107,6 +147,14 @@
         "pxToRemConverter": {
             "id": "pxToRemConverter",
             "slug": "px-to-rem-converter",
+            "slugs": {
+                "en": "px-to-rem-converter",
+                "de": "px-zu-rem-konverter",
+                "es": "conversor-px-a-rem",
+                "pt": "conversor-px-para-rem",
+                "fr": "convertisseur-px-vers-rem",
+                "it": "convertitore-px-rem"
+            },
             "url": "/px-to-rem-converter/",
             "category": "converters",
             "icon": "bi-arrows-angle-expand",
@@ -126,6 +174,14 @@
         "dataConverterTool": {
             "id": "dataConverterTool",
             "slug": "data-converter",
+            "slugs": {
+                "en": "data-converter",
+                "de": "daten-konverter",
+                "es": "conversor-datos",
+                "pt": "conversor-dados",
+                "fr": "convertisseur-donnees",
+                "it": "convertitore-dati"
+            },
             "url": "/data-converter/",
             "category": "converters",
             "icon": "bi-arrow-left-right",
@@ -148,6 +204,14 @@
         "jwtDecoderTool": {
             "id": "jwtDecoderTool",
             "slug": "jwt-decoder",
+            "slugs": {
+                "en": "jwt-decoder",
+                "de": "jwt-dekodierer",
+                "es": "jwt-decoder",
+                "pt": "jwt-decoder",
+                "fr": "jwt-decoder",
+                "it": "jwt-decoder"
+            },
             "url": "/jwt-decoder/",
             "category": "encoders",
             "icon": "bi-shield-lock",
@@ -165,6 +229,14 @@
         "punycodeConverterTool": {
             "id": "punycodeConverterTool",
             "slug": "punycode-converter",
+            "slugs": {
+                "en": "punycode-converter",
+                "de": "punycode-konverter",
+                "es": "punycode-converter",
+                "pt": "punycode-converter",
+                "fr": "punycode-converter",
+                "it": "punycode-converter"
+            },
             "url": "/punycode-converter/",
             "category": "encoders",
             "icon": "bi-globe",
@@ -185,6 +257,14 @@
         "uuidGeneratorTool": {
             "id": "uuidGeneratorTool",
             "slug": "uuid-generator",
+            "slugs": {
+                "en": "uuid-generator",
+                "de": "uuid-generator",
+                "es": "generador-uuid",
+                "pt": "gerador-uuid",
+                "fr": "generateur-uuid",
+                "it": "generatore-uuid"
+            },
             "url": "/uuid-generator/",
             "category": "generators",
             "icon": "bi-fingerprint",
@@ -206,6 +286,14 @@
         "passwordGeneratorTool": {
             "id": "passwordGeneratorTool",
             "slug": "password-generator",
+            "slugs": {
+                "en": "password-generator",
+                "de": "passwort-generator",
+                "es": "generador-contrasenas",
+                "pt": "gerador-senhas",
+                "fr": "generateur-mots-de-passe",
+                "it": "generatore-password"
+            },
             "url": "/password-generator/",
             "category": "generators",
             "icon": "bi-shield-lock",
@@ -228,6 +316,14 @@
         "hashGeneratorTool": {
             "id": "hashGeneratorTool",
             "slug": "hash-generator",
+            "slugs": {
+                "en": "hash-generator",
+                "de": "hash-generator",
+                "es": "generador-hash",
+                "pt": "gerador-hash",
+                "fr": "generateur-hash",
+                "it": "generatore-hash"
+            },
             "url": "/hash-generator/",
             "category": "generators",
             "icon": "bi-hash",
@@ -247,6 +343,14 @@
         "loremIpsumTool": {
             "id": "loremIpsumTool",
             "slug": "lorem-ipsum",
+            "slugs": {
+                "en": "lorem-ipsum",
+                "de": "lorem-ipsum",
+                "es": "lorem-ipsum",
+                "pt": "lorem-ipsum",
+                "fr": "lorem-ipsum",
+                "it": "lorem-ipsum"
+            },
             "url": "/lorem-ipsum/",
             "category": "generators",
             "icon": "bi-file-text",
@@ -267,6 +371,14 @@
         "qrCodeGeneratorTool": {
             "id": "qrCodeGeneratorTool",
             "slug": "qr-code-generator",
+            "slugs": {
+                "en": "qr-code-generator",
+                "de": "qr-code-generator",
+                "es": "generador-qr",
+                "pt": "gerador-qr",
+                "fr": "generateur-qr",
+                "it": "generatore-qr"
+            },
             "url": "/qr-code-generator/",
             "category": "generators",
             "icon": "bi-qr-code",
@@ -292,6 +404,14 @@
         "stringEscaperTool": {
             "id": "stringEscaperTool",
             "slug": "string-escaper",
+            "slugs": {
+                "en": "string-escaper",
+                "de": "string-maskierer",
+                "es": "escapador-cadenas",
+                "pt": "escapador-strings",
+                "fr": "echappeur-chaines",
+                "it": "escapatore-stringhe"
+            },
             "url": "/string-escaper/",
             "category": "stringtools",
             "icon": "bi-code-slash",
@@ -308,6 +428,14 @@
         "characterReferenceTool": {
             "id": "characterReferenceTool",
             "slug": "character-reference",
+            "slugs": {
+                "en": "character-reference",
+                "de": "zeichen-referenz",
+                "es": "referencia-caracteres",
+                "pt": "referencia-caracteres",
+                "fr": "reference-caracteres",
+                "it": "riferimento-caratteri"
+            },
             "url": "/character-reference/",
             "category": "references",
             "icon": "bi-table",
@@ -328,6 +456,14 @@
         "emojiReferenceTool": {
             "id": "emojiReferenceTool",
             "slug": "emoji-reference",
+            "slugs": {
+                "en": "emoji-reference",
+                "de": "emoji-referenz",
+                "es": "referencia-emojis",
+                "pt": "referencia-emojis",
+                "fr": "reference-emoji",
+                "it": "riferimento-emoji"
+            },
             "url": "/emoji-reference/",
             "category": "references",
             "icon": "bi-emoji-smile",
@@ -348,6 +484,14 @@
         "regexTesterTool": {
             "id": "regexTesterTool",
             "slug": "regex-tester",
+            "slugs": {
+                "en": "regex-tester",
+                "de": "regex-tester",
+                "es": "testador-regex",
+                "pt": "testador-regex",
+                "fr": "testeur-regex",
+                "it": "tester-regex"
+            },
             "url": "/regex-tester/",
             "category": "utilities",
             "icon": "bi-regex",
@@ -370,6 +514,14 @@
         "aspectRatioCalculator": {
             "id": "aspectRatioCalculator",
             "slug": "aspect-ratio-calculator",
+            "slugs": {
+                "en": "aspect-ratio-calculator",
+                "de": "seitenverhaeltnis-rechner",
+                "es": "calculadora-relacion-aspecto",
+                "pt": "calculadora-proporcao-aspecto",
+                "fr": "calculateur-ratio-aspect",
+                "it": "calcolatore-rapporto-aspetto"
+            },
             "url": "/aspect-ratio-calculator/",
             "category": "converters",
             "icon": "bi-aspect-ratio",
@@ -390,6 +542,14 @@
         "sriGeneratorTool": {
             "id": "sriGeneratorTool",
             "slug": "sri-generator",
+            "slugs": {
+                "en": "sri-generator",
+                "de": "sri-generator",
+                "es": "generador-sri",
+                "pt": "gerador-sri",
+                "fr": "generateur-sri",
+                "it": "generatore-sri"
+            },
             "url": "/sri-generator/",
             "category": "utilities",
             "icon": "bi-shield-check",

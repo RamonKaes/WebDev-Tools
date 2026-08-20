@@ -178,7 +178,7 @@
             </div>
 
             <!-- Results -->
-            <div class="col-12 d-none" id="resultsSection">
+            <div class="col-12 d-none" id="resultsSection" aria-live="polite">
               <div class="row g-3">
                 <!-- Header -->
                 <div class="col-12 col-lg-6">

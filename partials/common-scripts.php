@@ -25,6 +25,8 @@ if (!isset($buildHash)) {
 
   <script src="<?= $assetPrefix ?>assets/js/lib/clipboard-utils.js?v=<?= $buildHash ?>"></script>
 
+  <script src="<?= $assetPrefix ?>assets/js/lib/a11y-utils.js?v=<?= $buildHash ?>"></script>
+
   <script src="<?= $assetPrefix ?>assets/js/sidebar-persistence.js?v=<?= $buildHash ?>"></script>
 
   <script src="<?= $assetPrefix ?>assets/js/sidebar-navigation.js?v=<?= $buildHash ?>"></script>

@@ -25,6 +25,7 @@
   },
   "common": {
     "search": "Search",
+    "results_count": "{{count}} results",
     "clear": "Clear",
     "copy": "Copy",
     "copied": "Copied!",
@@ -618,6 +619,7 @@
       "sizeXLarge": "Extra Large (1024x1024)",
       "outputTitle": "QR Code Preview",
       "noPreview": "Click 'Generate QR Code' to create your QR code",
+      "qrCodeAltText": "QR code for: {{content}}",
       "generate": "Generate QR Code",
       "downloadPNG": "Download PNG",
       "downloadSVG": "Download SVG",

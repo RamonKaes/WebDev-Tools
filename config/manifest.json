@@ -1,6 +1,6 @@
 {
-    "version": "20260820.064345",
-    "generatedAt": "2026-08-20T06:43:45+00:00",
+    "version": "20260820.071811",
+    "generatedAt": "2026-08-20T07:18:11+00:00",
     "tools": {
         "base64EncoderDecoder": {
             "id": "base64EncoderDecoder",
@@ -333,7 +333,9 @@
             "icon": "bi-emoji-smile",
             "jsPath": "/assets/js/tools/emojiReferenceTool.js",
             "externalLibraries": [],
-            "jsLibraries": [],
+            "jsLibraries": [
+                "a11y-utils"
+            ],
             "features": [
                 "search",
                 "categories",
@@ -353,7 +355,8 @@
             "externalLibraries": [],
             "jsLibraries": [
                 "clipboard-utils",
-                "download-utils"
+                "download-utils",
+                "a11y-utils"
             ],
             "features": [
                 "live-testing",

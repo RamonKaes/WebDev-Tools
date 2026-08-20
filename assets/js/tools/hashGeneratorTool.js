@@ -300,7 +300,7 @@
               <div class="card h-100">
                 <div class="card-body">
                   <h2 class="card-title h5 mb-3"><i class="bi bi-hash me-2"></i>${t('tools.hashGeneratorTool.outputTitle')}</h2>
-                  <div id="hashResults"></div>
+                  <div id="hashResults" aria-live="polite"></div>
                 </div>
               </div>
             </div>
@@ -560,7 +560,7 @@
               <button class="btn btn-primary btn-sm" id="compareHashes">
                 <i class="bi bi-arrows-collapse me-2"></i>${t('tools.hashGeneratorTool.compare')}
               </button>
-              <div id="compareResult" class="mt-3"></div>
+              <div id="compareResult" class="mt-3" aria-live="polite"></div>
             </div>
           </div>
         `;

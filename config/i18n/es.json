@@ -25,6 +25,7 @@
   },
   "common": {
     "search": "Buscar",
+    "results_count": "{{count}} resultados",
     "clear": "Limpiar",
     "copy": "Copiar",
     "copied": "¡Copiado!",
@@ -615,6 +616,7 @@
       "sizeXLarge": "Extra Grande (1024x1024)",
       "outputTitle": "Vista Previa del Código QR",
       "noPreview": "Haz clic en 'Generar Código QR' para crear tu código QR",
+      "qrCodeAltText": "Código QR para: {{content}}",
       "generate": "Generar Código QR",
       "downloadPNG": "Descargar PNG",
       "downloadSVG": "Descargar SVG",

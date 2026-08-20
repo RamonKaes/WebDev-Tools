@@ -244,7 +244,7 @@
                       ></textarea>
 
                       <div class="d-flex align-items-center gap-2 flex-wrap">
-                        <small class="text-muted me-auto" id="outputStats">0 ${t('common.characters')}</small>
+                        <small class="text-muted me-auto" id="outputStats" aria-live="polite">0 ${t('common.characters')}</small>
                         <button class="btn btn-sm btn-outline-secondary d-inline-flex align-items-center" id="copyBtn">
                           <i class="bi bi-clipboard me-2"></i>${t('common.copy')}
                         </button>

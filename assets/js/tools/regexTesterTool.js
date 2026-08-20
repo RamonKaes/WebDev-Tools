@@ -31,6 +31,14 @@
     return key.split('.').pop().replace(/([A-Z])/g, ' $1').trim();
   }
 
+  // Announce a short result summary; the results panel itself is too long to
+  // mark aria-live without flooding screen readers.
+  function announce(message) {
+    if (window.A11yUtils && typeof window.A11yUtils.announce === 'function') {
+      window.A11yUtils.announce(message);
+    }
+  }
+
   let currentMatches = [];
   let currentPattern = '';
   let currentFlags = '';
@@ -312,6 +320,7 @@
         </div>
       `;
       highlightedContainer.classList.add('d-none');
+      announce(t('tools.regexTesterTool.invalid_pattern'));
       return;
     }
 
@@ -323,6 +332,7 @@
         </div>
       `;
       highlightedContainer.classList.add('d-none');
+      announce(t('tools.regexTesterTool.no_matches'));
       return;
     }
 
@@ -331,6 +341,8 @@
     const matchText = matchCount === 1
       ? t('tools.regexTesterTool.matches_found').split('|')[0]
       : t('tools.regexTesterTool.matches_found').split('|')[1].replace('{count}', matchCount);
+
+    announce(matchText);
 
     let html = `
       <div class="alert alert-success mb-3">

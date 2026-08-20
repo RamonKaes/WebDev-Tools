@@ -146,7 +146,7 @@
           <div class="card">
             <div class="card-body">
               <h2 class="card-title h5 mb-3"><i class="bi bi-speedometer me-2"></i>${t('tools.passwordGeneratorTool.strengthTitle')}</h2>
-              <div id="strengthIndicator">
+              <div id="strengthIndicator" aria-live="polite">
                 <p class="text-muted">${t('tools.passwordGeneratorTool.strengthPlaceholder')}</p>
               </div>
             </div>

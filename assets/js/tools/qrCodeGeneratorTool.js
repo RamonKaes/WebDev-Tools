@@ -227,7 +227,7 @@
             <div class="card">
               <div class="card-body">
                 <h2 class="card-title h6 fw-semibold mb-3"><i class="bi bi-eye me-2"></i>${t('tools.qrCodeGeneratorTool.outputTitle')}</h2>
-                <div id="qr-preview" class="mb-3 d-flex justify-content-center align-items-center qr-preview-area">
+                <div id="qr-preview" class="mb-3 d-flex justify-content-center align-items-center qr-preview-area" aria-live="polite">
                   <p class="text-muted mb-0">${t('tools.qrCodeGeneratorTool.noPreview')}</p>
                 </div>
                 <div class="d-grid gap-2">
@@ -541,6 +541,13 @@
             }
           }
         }
+
+        // Canvas has no implicit text alternative - expose the encoded content
+        canvas.setAttribute('role', 'img');
+        canvas.setAttribute(
+          'aria-label',
+          t('tools.qrCodeGeneratorTool.qrCodeAltText', { content: content })
+        );
 
         // Store QR data for downloads
         this.currentQRCode = { qr, canvas, moduleCount };

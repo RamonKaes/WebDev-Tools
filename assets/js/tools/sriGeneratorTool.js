@@ -422,7 +422,7 @@
           </div>
 
           <!-- Results -->
-          <div class="col-12 d-none" id="sri-results-section">
+          <div class="col-12 d-none" id="sri-results-section" aria-live="polite">
             <div class="card">
               <div class="card-body">
                 <p class="h6 fw-semibold card-title mb-3"><i class="bi bi-shield-check me-2"></i>${t('tools.sriGeneratorTool.outputTitle')}</p>

@@ -345,7 +345,7 @@ return [
     'category' => 'references',
     'icon' => 'bi-emoji-smile',
     'jsModule' => 'tools/emojiReferenceTool.js',
-    'jsLibraries' => [],
+    'jsLibraries' => ['a11y-utils'],
     'features' => ['search', 'categories', 'copy-emoji', 'copy-codes'],
     'seoTemplate' => 'default',
     'hasFeaturesSection' => true
@@ -365,7 +365,7 @@ return [
     'category' => 'utilities',
     'icon' => 'bi-regex',
     'jsModule' => 'tools/regexTesterTool.js',
-    'jsLibraries' => ['clipboard-utils', 'download-utils'],
+    'jsLibraries' => ['clipboard-utils', 'download-utils', 'a11y-utils'],
     'features' => ['live-testing', 'match-highlighting', 'group-extraction', 'multiple-flags'],
     'seoTemplate' => 'default',
     'hasFeaturesSection' => true

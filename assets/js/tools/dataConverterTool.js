@@ -176,7 +176,7 @@
                   </div>
 
                   <small class="text-muted" id="inputStats">0 ${t('tools.dataConverterTool.lines')}, 0 ${t('tools.dataConverterTool.characters')}</small>
-                  <div id="conversionStatus" class="alert mt-2 d-none"></div>
+                  <div id="conversionStatus" class="alert mt-2 d-none" aria-live="polite"></div>
                 </div>
               </div>
             </div>

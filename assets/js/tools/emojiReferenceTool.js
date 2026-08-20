@@ -33,6 +33,14 @@
       : key.replace(/([A-Z])/g, ' $1').trim();
   }
 
+  // The grid re-renders on every keystroke, so announce a short debounced
+  // summary instead of marking the whole grid aria-live.
+  function announce(message) {
+    if (window.A11yUtils && typeof window.A11yUtils.announce === 'function') {
+      window.A11yUtils.announce(message);
+    }
+  }
+
   let EMOJI_DATA = [];
   let currentCategory = 'all';
   let currentPage = 0;
@@ -165,8 +173,11 @@
 
     if (filtered.length === 0) {
       grid.innerHTML = `<div class="col-12"><div class="alert alert-info">${t('noResults')}</div></div>`;
+      announce(t('noResults'));
       return;
     }
+
+    announce(t('common.results_count', { count: filtered.length }));
 
     // Virtual loading: render first 50 emojis initially
     currentPage = 0;

@@ -653,7 +653,7 @@ $openMenuLabel = $openMenuLabels[$lang] ?? 'Open menu';
     </button>
     <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-language">
       <li>
-        <a class="dropdown-item d-flex align-items-center<?= $lang === 'en' ? ' active' : '' ?>" href="<?= $enUrl ?>" data-lang="en">
+        <a class="dropdown-item d-flex align-items-center<?= $lang === 'en' ? ' active' : '' ?>" href="<?= $enUrl ?>" data-lang="en"<?= $lang === 'en' ? ' aria-current="true"' : '' ?>>
           <span>English</span>
           <?php if ($lang === 'en') : ?>
           <svg class="bi ms-auto" width="1em" height="1em">
@@ -663,7 +663,7 @@ $openMenuLabel = $openMenuLabels[$lang] ?? 'Open menu';
         </a>
       </li>
       <li>
-        <a class="dropdown-item d-flex align-items-center<?= $lang === 'de' ? ' active' : '' ?>" href="<?= $deUrl ?>" data-lang="de">
+        <a class="dropdown-item d-flex align-items-center<?= $lang === 'de' ? ' active' : '' ?>" href="<?= $deUrl ?>" data-lang="de"<?= $lang === 'de' ? ' aria-current="true"' : '' ?>>
           <span>Deutsch</span>
           <?php if ($lang === 'de') : ?>
           <svg class="bi ms-auto" width="1em" height="1em">
@@ -673,7 +673,7 @@ $openMenuLabel = $openMenuLabels[$lang] ?? 'Open menu';
         </a>
       </li>
       <li>
-        <a class="dropdown-item d-flex align-items-center<?= $lang === 'es' ? ' active' : '' ?>" href="<?= $esUrl ?>" data-lang="es">
+        <a class="dropdown-item d-flex align-items-center<?= $lang === 'es' ? ' active' : '' ?>" href="<?= $esUrl ?>" data-lang="es"<?= $lang === 'es' ? ' aria-current="true"' : '' ?>>
           <span>Español</span>
           <?php if ($lang === 'es') : ?>
           <svg class="bi ms-auto" width="1em" height="1em">
@@ -683,7 +683,7 @@ $openMenuLabel = $openMenuLabels[$lang] ?? 'Open menu';
         </a>
       </li>
       <li>
-        <a class="dropdown-item d-flex align-items-center<?= $lang === 'pt' ? ' active' : '' ?>" href="<?= $ptUrl ?>" data-lang="pt">
+        <a class="dropdown-item d-flex align-items-center<?= $lang === 'pt' ? ' active' : '' ?>" href="<?= $ptUrl ?>" data-lang="pt"<?= $lang === 'pt' ? ' aria-current="true"' : '' ?>>
           <span>Português</span>
           <?php if ($lang === 'pt') : ?>
           <svg class="bi ms-auto" width="1em" height="1em">
@@ -693,7 +693,7 @@ $openMenuLabel = $openMenuLabels[$lang] ?? 'Open menu';
         </a>
       </li>
       <li>
-        <a class="dropdown-item d-flex align-items-center<?= $lang === 'fr' ? ' active' : '' ?>" href="<?= $frUrl ?>" data-lang="fr">
+        <a class="dropdown-item d-flex align-items-center<?= $lang === 'fr' ? ' active' : '' ?>" href="<?= $frUrl ?>" data-lang="fr"<?= $lang === 'fr' ? ' aria-current="true"' : '' ?>>
           <span>Français</span>
           <?php if ($lang === 'fr') : ?>
           <svg class="bi ms-auto" width="1em" height="1em">
@@ -703,7 +703,7 @@ $openMenuLabel = $openMenuLabels[$lang] ?? 'Open menu';
         </a>
       </li>
       <li>
-        <a class="dropdown-item d-flex align-items-center<?= $lang === 'it' ? ' active' : '' ?>" href="<?= $itUrl ?>" data-lang="it">
+        <a class="dropdown-item d-flex align-items-center<?= $lang === 'it' ? ' active' : '' ?>" href="<?= $itUrl ?>" data-lang="it"<?= $lang === 'it' ? ' aria-current="true"' : '' ?>>
           <span>Italiano</span>
           <?php if ($lang === 'it') : ?>
           <svg class="bi ms-auto" width="1em" height="1em">

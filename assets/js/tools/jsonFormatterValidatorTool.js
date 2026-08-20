@@ -238,7 +238,7 @@
           <div class="card">
             <div class="card-body">
               <p class="h6 fw-semibold card-title mb-3"><i class="bi bi-info-circle me-2"></i>${t('tools.jsonFormatterValidator.status_title')}</p>
-              <div id="statusOutput"><p class="text-muted mb-0">${t('tools.jsonFormatterValidator.status_initial')}</p></div>
+              <div id="statusOutput" aria-live="polite"><p class="text-muted mb-0">${t('tools.jsonFormatterValidator.status_initial')}</p></div>
             </div>
           </div>
         </div>
@@ -253,7 +253,7 @@
                     <input type="text" class="form-control font-monospace" id="jsonPath" placeholder="${t('tools.jsonFormatterValidator.path_placeholder')}">
                     <button class="btn btn-outline-primary btn-sm" id="extractPathBtn">${t('tools.jsonFormatterValidator.btn_extract')}</button>
                   </div>
-                  <div id="pathResult" class="mt-2"></div>
+                  <div id="pathResult" class="mt-2" aria-live="polite"></div>
                 </div>
 
                 <div class="col-md-6">

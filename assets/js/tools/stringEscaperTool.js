@@ -267,7 +267,7 @@
                   <textarea class="form-control bg-body-secondary font-monospace mb-3" id="outputText" rows="12" readonly placeholder="${t('tools.stringEscaperTool.outputPlaceholder')}"></textarea>
 
                   <div class="d-flex align-items-center gap-2 flex-wrap">
-                    <small class="text-muted me-auto" id="outputInfo"></small>
+                    <small class="text-muted me-auto" id="outputInfo" aria-live="polite"></small>
                     <button class="btn btn-sm btn-outline-secondary d-inline-flex align-items-center" id="copyBtn"><i class="bi bi-clipboard me-2"></i>${t('common.copy')}</button>
                   </div>
                 </div>

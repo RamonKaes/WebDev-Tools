@@ -11,6 +11,15 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
   dialogs for validation and error messages; they show an inline Bootstrap
   alert with `aria-live` inside the tool, like every other tool.
 
+### 🔧 Tooling
+- **GitHub Actions** (`.github/workflows/ci.yml`) on every push to `main`
+  and every pull request: Jest on Node 18 and 20, i18n key and placeholder
+  parity (`npm run check:i18n`, new `build-tools/check-i18n.js`), `php -l`
+  over every PHP file, sitemap freshness, and a full `build.sh` run.
+- `package-lock.json` is now committed so CI can use `npm ci`.
+- `pt.json` used `{count}` in `showingCount` where the code substitutes
+  `{showing}`; caught by the new check.
+
 ### 🗑️ Removed
 - **Hash generator SRI mode** – it duplicated the SRI Generator tool with a
   smaller feature set (one algorithm, URL only). The mode is gone; the hash

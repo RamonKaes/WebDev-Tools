@@ -1010,7 +1010,7 @@
       "tableHeaderUnicode": "Unicode",
       "tableHeaderDecimal": "Decimal",
       "tableHeaderCopy": "Copiar",
-      "showingCount": "A mostrar {count} de {total} caracteres",
+      "showingCount": "A mostrar {showing} de {total} caracteres",
       "copyChar": "Copiar carácter",
       "copyEntity": "Copiar entidade",
       "toc_title": "Referência de Caracteres",

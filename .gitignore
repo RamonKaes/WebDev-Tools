@@ -23,7 +23,6 @@ build-manifest.json
 
 # Dependencies
 node_modules/
-package-lock.json
 yarn.lock
 
 # NPM Debug Logs

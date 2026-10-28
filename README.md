@@ -7,6 +7,7 @@
 [![Security](https://img.shields.io/badge/security-client--side%20only-brightgreen.svg)](#-security-architecture)
 [![Languages](https://img.shields.io/badge/languages-6-orange.svg)](#internationalization)
 [![Tools](https://img.shields.io/badge/tools-20-success.svg)](#%EF%B8%8F-available-tools)
+[![CI](https://github.com/RamonKaes/WebDev-Tools/actions/workflows/ci.yml/badge.svg)](https://github.com/RamonKaes/WebDev-Tools/actions/workflows/ci.yml)
 
 ### **Privacy-First Developer Utilities for Modern Web Development**
 

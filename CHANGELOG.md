@@ -17,6 +17,9 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
   parity (`npm run check:i18n`, new `build-tools/check-i18n.js`), `php -l`
   over every PHP file, sitemap freshness, and a full `build.sh` run.
 - `package-lock.json` is now committed so CI can use `npm ci`.
+- Dependabot keeps npm dev dependencies and the actions current (weekly,
+  grouped). A weekly lychee run checks the external "Useful Resources"
+  links on all pages, and CodeQL scans the shipped JavaScript.
 - `pt.json` used `{count}` in `showingCount` where the code substitutes
   `{showing}`; caught by the new check.
 

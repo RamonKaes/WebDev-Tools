@@ -1,0 +1,19 @@
+version: 2
+updates:
+  # Jest, Sass, Terser and the other build/test tools
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    groups:
+      dev-dependencies:
+        dependency-type: development
+
+  # actions/checkout, actions/setup-node, lychee, CodeQL
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday

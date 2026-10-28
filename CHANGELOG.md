@@ -50,6 +50,10 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
 - **Hash generator** used an undefined `hidden` class, so an empty info box
   and progress bar (file mode) and the "Fetching resource…" spinner (SRI mode)
   were always visible. Replaced with Bootstrap's `d-none`.
+- **Redirects** – `.htaccess` and `.htaccess.production` now redirect the
+  English slug to the localized directory for all tools; eleven
+  combinations were missing (six German slugs and the aspect ratio
+  calculator in every language) and returned 404.
 - **SRI generator** result blocks carried inline `style` attributes that the
   CSP blocks; they use the `pre-wrap`, `text-break` and `small` classes now.
 

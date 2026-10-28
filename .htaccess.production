@@ -38,6 +38,13 @@
   RewriteRule ^de/jwt-decoder/?$ /de/jwt-dekodierer/ [R=301,L]
   RewriteRule ^de/punycode-converter/?$ /de/punycode-konverter/ [R=301,L]
   RewriteRule ^de/string-escaper/?$ /de/string-maskierer/ [R=301,L]
+  RewriteRule ^de/base64-encoder-decoder/?$ /de/base64-kodierer-dekodierer/ [R=301,L]
+  RewriteRule ^de/px-to-rem-converter/?$ /de/px-zu-rem-konverter/ [R=301,L]
+  RewriteRule ^de/data-converter/?$ /de/daten-konverter/ [R=301,L]
+  RewriteRule ^de/password-generator/?$ /de/passwort-generator/ [R=301,L]
+  RewriteRule ^de/character-reference/?$ /de/zeichen-referenz/ [R=301,L]
+  RewriteRule ^de/emoji-reference/?$ /de/emoji-referenz/ [R=301,L]
+  RewriteRule ^de/aspect-ratio-calculator/?$ /de/seitenverhaeltnis-rechner/ [R=301,L]
   
   # Spanish (ES) - redirect English slugs to Spanish
   RewriteRule ^es/password-generator/?$ /es/generador-contrasenas/ [R=301,L]
@@ -52,6 +59,7 @@
   RewriteRule ^es/qr-code-generator/?$ /es/generador-qr/ [R=301,L]
   RewriteRule ^es/regex-tester/?$ /es/testador-regex/ [R=301,L]
   RewriteRule ^es/sri-generator/?$ /es/generador-sri/ [R=301,L]
+  RewriteRule ^es/aspect-ratio-calculator/?$ /es/calculadora-relacion-aspecto/ [R=301,L]
 
   # French (FR) - redirect English slugs to French
   RewriteRule ^fr/password-generator/?$ /fr/generateur-mots-de-passe/ [R=301,L]
@@ -67,6 +75,7 @@
   RewriteRule ^fr/regex-tester/?$ /fr/testeur-regex/ [R=301,L]
   RewriteRule ^fr/string-escaper/?$ /fr/echappeur-chaines/ [R=301,L]
   RewriteRule ^fr/sri-generator/?$ /fr/generateur-sri/ [R=301,L]
+  RewriteRule ^fr/aspect-ratio-calculator/?$ /fr/calculateur-ratio-aspect/ [R=301,L]
 
   # Italian (IT) - redirect English slugs to Italian
   RewriteRule ^it/password-generator/?$ /it/generatore-password/ [R=301,L]
@@ -83,6 +92,7 @@
   RewriteRule ^it/regex-tester/?$ /it/tester-regex/ [R=301,L]
   RewriteRule ^it/string-escaper/?$ /it/escapatore-stringhe/ [R=301,L]
   RewriteRule ^it/sri-generator/?$ /it/generatore-sri/ [R=301,L]
+  RewriteRule ^it/aspect-ratio-calculator/?$ /it/calcolatore-rapporto-aspetto/ [R=301,L]
 
   # Portuguese (PT) - redirect English slugs to Portuguese
   RewriteRule ^pt/password-generator/?$ /pt/gerador-senhas/ [R=301,L]
@@ -98,6 +108,7 @@
   RewriteRule ^pt/regex-tester/?$ /pt/testador-regex/ [R=301,L]
   RewriteRule ^pt/string-escaper/?$ /pt/escapador-strings/ [R=301,L]
   RewriteRule ^pt/sri-generator/?$ /pt/gerador-sri/ [R=301,L]
+  RewriteRule ^pt/aspect-ratio-calculator/?$ /pt/calculadora-proporcao-aspecto/ [R=301,L]
 
   # ====================================
   # ERROR PAGES

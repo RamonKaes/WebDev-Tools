@@ -118,6 +118,10 @@ else
   echo "  ⚠ sass not available, using original Bootstrap (228KB)"
 fi
 
+# Bootstrap JS is not part of the custom Sass build but is loaded by partials/footer.php
+mkdir -p "$DIST_DIR/assets/bootstrap/js"
+cp assets/bootstrap/js/bootstrap.bundle.min.js "$DIST_DIR/assets/bootstrap/js/"
+
 # Copy Bootstrap Icons
 cp -r assets/bootstrap-icons "$DIST_DIR/assets/" 2>/dev/null || true
 

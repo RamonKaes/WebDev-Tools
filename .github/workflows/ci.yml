@@ -68,6 +68,7 @@ jobs:
           test -f dist/index.php
           test -f dist/.htaccess
           test -f dist/assets/bootstrap/css/bootstrap.min.css
+          test -f dist/assets/bootstrap/js/bootstrap.bundle.min.js
           test -f dist/assets/js/tools/base64EncoderDecoderTool.js
           test -f dist/config/i18n/en.json
           test -d dist/de/base64-kodierer-dekodierer

@@ -50,7 +50,8 @@
     "download": "Herunterladen",
     "output": "Ausgabe",
     "unknown": "Unbekannt",
-    "copy_failed": "Kopieren fehlgeschlagen"
+    "copy_failed": "Kopieren fehlgeschlagen",
+    "related_tools": "Verwandte Tools"
   },
   "theme": {
     "light": "Hell",
@@ -1149,8 +1150,8 @@
         "Clientseitige Verarbeitung"
       ],
       "applicationCategory": "UtilityApplication",
-      "meta_title": "Base64 Encoder & Decoder – Online Text & Datei Konverter",
-      "meta_description": "Base64 Encoder und Decoder für Text und Dateien. Kodiere oder dekodiere Daten. mit Drag & Drop, URL-sicherer Kodierung und Live-Vorschau."
+      "meta_title": "Base64 kodieren & dekodieren – Text und Dateien, ohne Upload",
+      "meta_description": "Kodiere oder dekodiere Base64 für Text und Dateien per Drag & Drop, mit URL-sicherem Modus und Live-Vorschau. Deine Daten verlassen nie den Browser."
     },
     "urlEncoderDecoder": {
       "keywords": "url encoder, url decoder, prozent kodierung, uri komponente, query string, url parser",
@@ -1163,8 +1164,8 @@
         "Mehrzeilige Unterstützung"
       ],
       "applicationCategory": "UtilityApplication",
-      "meta_title": "URL Encoder & Decoder – URLs & Query-Parameter kodieren",
-      "meta_description": "URL Encoder und Decoder für Webentwickler. Kodiere oder dekodiere URLs, Query-Parameter und URI-Komponenten. Enthält URL-Parser zur Analyse."
+      "meta_title": "URL Encoder & Decoder – Query-Parameter sicher kodieren",
+      "meta_description": "Kodiere oder dekodiere URLs und Query-Parameter mit encodeURI oder encodeURIComponent und zerlege URLs in Host, Pfad und Parameter. Direkt im Browser."
     },
     "jsonFormatterValidator": {
       "keywords": "json formatierer, json validator, json beautifier, syntax hervorhebung, json minify, baumansicht",
@@ -1177,8 +1178,8 @@
         "JSON-Pfad-Extraktor"
       ],
       "applicationCategory": "UtilityApplication",
-      "meta_title": "JSON-Formatter & Validator – Validieren & Formatieren",
-      "meta_description": "Professioneller JSON Formatter und Validator. Formatiere, verschönere, minifiziere und validiere JSON-Daten mit Tree-Ansicht und Auto-Korrektur."
+      "meta_title": "JSON Formatter & Validator – kostenlos, ohne Upload",
+      "meta_description": "JSON einfügen und mit einem Klick formatieren, prüfen oder minifizieren. Fehler sofort finden, Baumansicht inklusive. Alles läuft lokal im Browser."
     },
     "pxToRemConverter": {
       "keywords": "px zu rem, pixel zu rem, css einheiten konverter, responsive design, rem rechner, tailwind css",
@@ -1191,8 +1192,8 @@
         "Tailwind CSS Kompatibilität"
       ],
       "applicationCategory": "UtilityApplication",
-      "meta_title": "Px zu Rem Konverter – CSS Einheiten Rechner für Responsive Design",
-      "meta_description": "Konvertiere Pixel in Rem, Em und Prozent-Einheiten. CSS-Einheiten Rechner mit anpassbarer Basis-Schriftgröße und umfassender Tabelle."
+      "meta_title": "PX in REM umrechnen – CSS-Einheiten-Rechner mit Tabelle",
+      "meta_description": "Rechne px sofort in rem, em und % um – mit eigener Basis-Schriftgröße oder per Umrechnungstabelle für gängige Werte. Kostenlos und direkt im Browser."
     },
     "uuidGeneratorTool": {
       "keywords": "uuid generator, guid generator, eindeutige kennung, uuid v4, uuid v1, uuid v7, massen uuid",
@@ -1205,8 +1206,8 @@
         "Automatische Generierung beim Laden"
       ],
       "applicationCategory": "UtilityApplication",
-      "meta_title": "UUID Generator – Eindeutige Kennungen v1, v4, v7 Online erstellen",
-      "meta_description": "UUID Generator zum einfachen Erstellen eindeutiger Identifikatoren. Generiere v1, v4, v7 und NIL UUIDs in mehreren Formaten, Massengenerierung bis 1000 Stück."
+      "meta_title": "UUID Generator – UUIDs v4, v7 & v1 online erstellen",
+      "meta_description": "Erzeuge zufällige v4-, zeitbasierte v7- oder v1-UUIDs – einzeln oder bis zu 1.000 auf einmal, im gewünschten Format. Sicherer Zufall, lokal im Browser."
     },
     "passwordGeneratorTool": {
       "keywords": "passwort generator, sicheres passwort, zufallspasswort, passphrase, passwortstärke, kryptografisch",
@@ -1219,8 +1220,8 @@
         "Export nach TXT, CSV, JSON"
       ],
       "applicationCategory": "UtilityApplication",
-      "meta_title": "Passwort-Generator – Sichere Zufallspasswörter erstellen",
-      "meta_description": "Generiere kryptografisch sichere Passwörter mit anpassbarer Länge und Zeichentypen. Erstelle starke Zufallspasswörter, einprägsame Passphrasen oder."
+      "meta_title": "Passwort-Generator – sichere Passwörter, nur lokal erzeugt",
+      "meta_description": "Erstelle starke Zufallspasswörter oder merkbare Passphrasen mit frei wählbarer Länge und Zeichen. Lokal per Web Crypto erzeugt – nichts wird übertragen."
     },
     "hashGeneratorTool": {
       "keywords": "hash generator, sha256, sha512, sha1, hmac, kryptografischer hash, prüfsumme, sri hash",
@@ -1233,8 +1234,8 @@
         "Hash-Vergleich"
       ],
       "applicationCategory": "UtilityApplication",
-      "meta_title": "Hash-Generator – SHA-256, SHA-512, SHA-1, HMAC Online Tool",
-      "meta_description": "Kryptografischer Hash-Generator mit Unterstützung für SHA-1, SHA-256, SHA-384, SHA-512 und HMAC. Generiere Hashes aus Text oder Dateien und vergleiche sie."
+      "meta_title": "Hash-Generator – SHA-256, SHA-512 & HMAC ohne Upload",
+      "meta_description": "Erzeuge SHA-1-, SHA-256-, SHA-384- oder SHA-512-Hashes und HMACs aus Text oder Dateien und vergleiche Prüfsummen. Alles lokal, nichts wird hochgeladen."
     },
     "loremIpsumTool": {
       "keywords": "lorem ipsum, platzhaltertext, blindtext, fülltext, lipsum generator, design mockup",
@@ -1247,8 +1248,8 @@
         "Klassischer Lorem Ipsum Text"
       ],
       "applicationCategory": "UtilityApplication",
-      "meta_title": "Lorem Ipsum Generator – Professioneller Blindtext Online",
-      "meta_description": "Generiere Lorem Ipsum Platzhaltertext für Designs und Mockups. Wähle Absätze, Sätze oder Wörter mit anpassbarer Anzahl. Perfekt für Webdesign und Prototyping."
+      "meta_title": "Lorem Ipsum Generator – Blindtext mit einem Klick",
+      "meta_description": "Erzeuge Lorem-Ipsum-Blindtext nach Absätzen, Sätzen oder Wörtern und kopiere ihn mit einem Klick. Kostenlos, ohne Anmeldung, direkt im Browser."
     },
     "qrCodeGeneratorTool": {
       "keywords": "qr code generator, qr code ersteller, vcard qr, wifi qr code, qr code png, qr code svg",
@@ -1261,8 +1262,8 @@
         "Druckoptimierte Ausgabe"
       ],
       "applicationCategory": "UtilityApplication",
-      "meta_title": "QR-Code Generator – QR-Codes erstellen kostenlos online",
-      "meta_description": "QR-Code Generator für URLs, Text, vCard-Kontakte und WiFi-Netzwerke. Passe Größe und Farben an. Export als PNG oder SVG."
+      "meta_title": "QR-Code Generator kostenlos – ohne Anmeldung, PNG & SVG",
+      "meta_description": "Erstelle QR-Codes aus Links, Text, WLAN-Daten oder Kontakten, passe die Farben an und lade PNG oder SVG herunter. Kostenlos, ohne Anmeldung, im Browser."
     },
     "stringEscaperTool": {
       "keywords": "string escaper, html escape, javascript escape, json escape, sql escape, xss prävention",
@@ -1275,8 +1276,8 @@
         "Client-seitige Verarbeitung"
       ],
       "applicationCategory": "UtilityApplication",
-      "meta_title": "String Escaper – HTML, JavaScript, JSON, SQL & CSV maskieren",
-      "meta_description": "Maskiere und demaskiere Strings für HTML, XML, JavaScript, JSON, SQL und CSV Kontexte online. Auto-Konvertierung von Sonderzeichen zur Verhinderung."
+      "meta_title": "String Escaper – HTML, JS, JSON, SQL & CSV maskieren",
+      "meta_description": "Maskiere oder demaskiere Strings für HTML, XML, JavaScript, JSON, SQL und CSV, damit Anführungszeichen und Sonderzeichen nichts kaputt machen. Im Browser."
     },
     "codeFormatterTool": {
       "keywords": "code formatter, beautifier, html formatter, css formatter, javascript formatter, code minifier, pretty print",
@@ -1289,8 +1290,8 @@
         "Kopieren und Download-Unterstützung"
       ],
       "applicationCategory": "UtilityApplication",
-      "meta_title": "Code-Formatter – HTML, CSS, JavaScript & XML Online",
-      "meta_description": "Professioneller Code Formatter und Beautifier für HTML, CSS, JavaScript, XML und SQL. Formatiere unordentlichen Code, passe Einrückung an oder minifiziere."
+      "meta_title": "Code-Formatierer – HTML, CSS, JS & SQL sauber formatieren",
+      "meta_description": "Füge unordentliches HTML, CSS, JavaScript, XML oder SQL ein und erhalte sauber eingerückten Code – oder minifiziere ihn. Formatiert live im Browser."
     },
     "dataConverterTool": {
       "keywords": "daten konverter, json to xml, xml to json, yaml konverter, csv konverter, timestamp konverter, epoch konverter",
@@ -1303,8 +1304,8 @@
         "CSV-Trennzeichen-Optionen"
       ],
       "applicationCategory": "UtilityApplication",
-      "meta_title": "Daten-Konverter – JSON, XML, YAML, CSV & Timestamps",
-      "meta_description": "Leistungsstarker Datenformat-Konverter für JSON, XML, YAML und CSV mit einem Klick. Konvertiere Unix-Timestamps in Datum und zurück. Bidirektionale."
+      "meta_title": "JSON in CSV, XML & YAML umwandeln – kostenlos, ohne Upload",
+      "meta_description": "Wandle Daten zwischen JSON, CSV, XML und YAML um oder mache aus Unix-Timestamps lesbare Daten. Klare Fehlermeldungen – alles läuft lokal im Browser."
     },
     "sampleHelloWorld": {
       "keywords": "beispiel tool, demo tool, hello world, text transformation, entwickler vorlage",
@@ -1331,8 +1332,8 @@
         "Ergebnisse kopieren und Testdaten herunterladen"
       ],
       "applicationCategory": "UtilityApplication",
-      "meta_title": "Regex Tester – Reguläre Ausdrücke online testen mit Match-Hervorhebung",
-      "meta_description": "Teste reguläre Ausdrücke mit Match-Hervorhebung. JavaScript-Regex-Tester mit Erfassungsgruppen, allen Flags und exportierbaren Ergebnissen."
+      "meta_title": "Regex Tester – Reguläre Ausdrücke live online testen",
+      "meta_description": "Teste reguläre Ausdrücke in JavaScript live: Treffer werden beim Tippen markiert, inklusive Capture-Gruppen und aller Flags. Kostenlos, direkt im Browser."
     },
     "characterReferenceTool": {
       "keywords": "html entities, sonderzeichen, unicode symbole, html escape, zeichencodes, entity referenz",
@@ -1345,8 +1346,8 @@
         "Ein-Klick-Kopieren"
       ],
       "applicationCategory": "UtilityApplication",
-      "meta_title": "Zeichen-Referenz – HTML-Entities & Sonderzeichen Online",
-      "meta_description": "Durchsuche und kopiere 2.231+ HTML-Entities und Sonderzeichen. Suche nach Name, Dezimal, Hex-Code oder Unicode. Vollständige Referenz für Webentwickler."
+      "meta_title": "HTML-Sonderzeichen & Entities – Codes suchen und kopieren",
+      "meta_description": "Finde über 2.200 HTML-Entities und Sonderzeichen nach Name, Symbol, Dezimal- oder Hex-Code und kopiere sie mit einem Klick. Kostenlos, ohne Anmeldung."
     },
     "emojiReferenceTool": {
       "keywords": "emoji referenz, emoji liste, unicode emoji, emoji suche, emoji codes, emoji kopieren",
@@ -1359,8 +1360,8 @@
         "Entwickler-fokussierte Kategorien"
       ],
       "applicationCategory": "UtilityApplication",
-      "meta_title": "Emoji-Referenz – Emojis suchen, durchsuchen & mit Codes kopieren",
-      "meta_description": "Emoji-Referenz mit Unicode- und HTML-Codes. Durchsuche über 200 kuratierte Emojis nach Entwickler-Kategorien, suche nach Namen und kopiere sie mit einem Klick."
+      "meta_title": "Emoji-Liste mit Unicode- & HTML-Codes – suchen & kopieren",
+      "meta_description": "Finde schnell das passende Emoji: Durchsuche 200+ Emojis nach Name oder Kategorie und kopiere das Emoji oder seinen HTML-Code per Klick. Kostenlos."
     },
     "htmlEntityTool": {
       "applicationCategory": "UtilityApplication",
@@ -1375,22 +1376,36 @@
         "In Zwischenablage kopieren"
       ],
       "keywords": "html entity encoder, html entity decoder, html escape, html unescape, sonderzeichen, benannte entities, numerische entities, html kodierung",
-      "meta_title": "HTML Entity Encoder & Decoder – Sonderzeichen konvertieren",
-      "meta_description": "Konvertiere Text in HTML-Entities und zurück. Unterstützt benannte Entities (&nbsp;), numerische Dezimal- (&#160;) und Hex-Entities (&#xA0;)."
+      "meta_title": "HTML Entity Encoder & Decoder – Sonderzeichen umwandeln",
+      "meta_description": "Wandle Sonderzeichen in HTML-Entities um und zurück – benannt (&nbsp;), dezimal (&#160;) oder hexadezimal (&#xA0;). Kostenlos, sofort, direkt im Browser."
     },
     "jwtDecoderTool": {
       "applicationCategory": "UtilityApplication",
-      "featureList": [],
-      "keywords": "",
-      "meta_title": "JWT Decoder – JSON Web Tokens analysieren und dekodieren",
-      "meta_description": "Dekodiere und analysiere JSON Web Tokens (JWT). Zeige Header, Payload und Signatur an. Überprüfe Algorithmus, Ablaufzeit und Claims."
+      "featureList": [
+        "Header-Dekodierung (alg, typ)",
+        "Payload- und Claims-Extraktion",
+        "Automatische Ablaufprüfung",
+        "Syntax-Hervorhebung für JSON",
+        "Beispiel-Token zum Testen",
+        "100 % clientseitige Verarbeitung"
+      ],
+      "keywords": "jwt decoder, jwt dekodieren, json web token, jwt payload, jwt claims, token ablauf",
+      "meta_title": "JWT Decoder – JSON Web Tokens sicher lokal dekodieren",
+      "meta_description": "Füge ein JSON Web Token ein und sieh Header, Payload und Claims dekodiert, inklusive Ablaufzeit und Algorithmus. Dein Token verlässt nie den Browser."
     },
     "punycodeConverterTool": {
       "applicationCategory": "UtilityApplication",
-      "featureList": [],
-      "keywords": "",
-      "meta_title": "Punycode Converter – Internationale Domainnamen IDN konvertieren",
-      "meta_description": "Konvertiere internationale Domainnamen (IDN) zu Punycode und zurück. Transformiere Unicode-Domains in ASCII-kompatibles Format. Unterstützt alle."
+      "featureList": [
+        "Unicode zu Punycode und zurück",
+        "Automatische Erkennung des Eingabeformats",
+        "RFC-3492-konform",
+        "Batch-Konvertierung, zeilenweise",
+        "Internationale Beispiel-Domains",
+        "Echtzeit-Konvertierung"
+      ],
+      "keywords": "punycode konverter, idn konverter, umlaut domain, punycode dekodieren, xn--, internationale domainnamen",
+      "meta_title": "Punycode-Konverter – Umlaut-Domains in xn-- umwandeln",
+      "meta_description": "Wandle internationale Domainnamen wie müller.de in Punycode (xn--) um und zurück, auch viele auf einmal, Zeile für Zeile. Kostenlos und direkt im Browser."
     },
     "sriGeneratorTool": {
       "applicationCategory": "SecurityApplication",
@@ -1403,12 +1418,22 @@
         "Ressourcentyp wird aus URL oder Dateiname erkannt"
       ],
       "keywords": "sri generator, subresource integrity, cdn sicherheit, sha384, sha256, sha512, integrity attribut, script tag, link tag",
-      "meta_title": "SRI-Hash-Generator — Subresource Integrity für CDN-Sicherheit",
-      "meta_description": "Generiere Subresource Integrity (SRI) Hashes für CDN-Ressourcen. SHA-256, SHA-384, SHA-512 mit fertigen script- und link-Tags. Clientseitig, datenschutzkonform."
+      "meta_title": "SRI-Hash-Generator – integrity-Attribute für CDN-Skripte",
+      "meta_description": "Erzeuge SHA-256-, SHA-384- oder SHA-512-Hashes für Subresource Integrity und kopiere fertige script- und link-Tags für CDN-Dateien. Lokal im Browser."
     },
     "aspectRatioCalculator": {
-      "meta_title": "Seitenverhältnis Rechner — Responsive Design Dimensionen CSS",
-      "meta_description": "Berechne Dimensionen aus Seitenverhältnissen für Responsive Design. Generiere CSS mit aspect-ratio oder padding-bottom Fallback, inkl. gängiger Presets."
+      "applicationCategory": "UtilityApplication",
+      "featureList": [
+        "Fehlende Breite oder Höhe aus jedem Verhältnis",
+        "Vorlagen für 16:9, 4:3, 21:9, 1:1 und mehr",
+        "CSS-Code für aspect-ratio und padding-bottom",
+        "Verhältnis-, Dezimal- und Prozentformat",
+        "Echtzeit-Berechnung",
+        "100 % clientseitige Verarbeitung"
+      ],
+      "keywords": "seitenverhältnis rechner, 16:9 rechner, css aspect-ratio, bildgröße berechnen, videoauflösung, padding-bottom",
+      "meta_title": "Seitenverhältnis-Rechner – Breite, Höhe & CSS sofort",
+      "meta_description": "Gib ein Verhältnis wie 16:9 und eine Seite ein und erhalte die fehlende Breite oder Höhe samt CSS-Code für aspect-ratio. Mit Presets, direkt im Browser."
     }
   },
   "validation": {

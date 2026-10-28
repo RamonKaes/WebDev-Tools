@@ -428,3 +428,24 @@ describe('SriGeneratorTool – Resource Type Auto-Detection', () => {
     delete global.fetch;
   });
 });
+
+// ─── CSP: no inline styles in generated markup ───────────────────────────────
+
+describe('SriGeneratorTool – CSP-safe result markup', () => {
+  let c;
+  beforeEach(() => { c = openTool(); });
+  afterEach(() => cleanup(c));
+
+  test('result blocks use classes instead of style attributes', async () => {
+    switchMode(c, 'text');
+    c.querySelector('#sri-text').value = 'hello';
+    clickGenerateBtn(c);
+    for (let i = 0; i < 5; i++) await Promise.resolve();
+    const pres = c.querySelectorAll('#sri-results pre');
+    expect(pres.length).toBeGreaterThan(0);
+    pres.forEach(pre => {
+      expect(pre.hasAttribute('style')).toBe(false);
+      expect(pre.classList.contains('pre-wrap')).toBe(true);
+    });
+  });
+});

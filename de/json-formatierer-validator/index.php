@@ -18,8 +18,8 @@ $features = [
     'JSON-Syntax validieren mit detaillierten Fehlermeldungen',
     'JSON minimieren/komprimieren',
     'Baumanzeige mit erweiterbaren/zusammenklappbaren Knoten',
-    'Anpassbare Einrückung (2 oder 4 Leerzeichen)',
-    'Datentyp-Hervorhebung',
+    'Anpassbare Einrückung (2 oder 4 Leerzeichen, Tabs)',
+    'Tree-Ansicht für verschachtelte Strukturen',
     'Mit einem Klick in die Zwischenablage kopieren',
     '100% clientseitige Verarbeitung - Ihre Daten bleiben privat'
 ];

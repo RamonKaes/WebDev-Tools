@@ -302,10 +302,21 @@ describe('loremIpsumTool – Generate: Validation', () => {
     cleanup(c);
   });
 
-  test('shows alert when all inputs are 0', () => {
+  test('shows an inline notice instead of an alert when all inputs are 0', () => {
     setInputs(c, { paragraphs: 0, sentences: 0, words: 0 });
     clickGenerate(c);
-    expect(alertSpy).toHaveBeenCalledTimes(1);
+    expect(alertSpy).not.toHaveBeenCalled();
+    const notice = c.querySelector('#loremNotice');
+    expect(notice.classList.contains('d-none')).toBe(false);
+    expect(notice.textContent).toContain('tools.loremIpsumTool.selectAtLeastOne');
+  });
+
+  test('hides the notice again once a valid generation runs', () => {
+    setInputs(c, { paragraphs: 0, sentences: 0, words: 0 });
+    clickGenerate(c);
+    setInputs(c, { paragraphs: 1, sentences: 0, words: 0 });
+    clickGenerate(c);
+    expect(c.querySelector('#loremNotice').classList.contains('d-none')).toBe(true);
   });
 
   test('does not update output when all inputs are 0', () => {

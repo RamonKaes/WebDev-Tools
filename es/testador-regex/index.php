@@ -11,7 +11,7 @@ $featuresSectionTitle = 'Características';
 $resourcesSectionTitle = 'Recursos Útiles';
 
 $features = [
-    'Coincidencia de patrones en tiempo real',
+    'Coincidencia de patrones con resultados resaltados',
     'Todos los flags regex (g, i, m, s, u, y)',
     'Resaltado de coincidencias con grupos de captura',
     'Información detallada de coincidencias y estadísticas',

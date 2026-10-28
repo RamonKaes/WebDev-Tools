@@ -564,3 +564,58 @@ describe('qrCodeGeneratorTool – clearAll', () => {
     expect(c.querySelector('#qr-preview canvas')).toBeNull();
   });
 });
+
+// ─── Inline notices instead of alert() ───────────────────────────────────────
+
+describe('qrCodeGeneratorTool – Inline notices', () => {
+  let c;
+  const t = (key) => key;
+  beforeEach(() => {
+    c = openTool();
+    global.alert = jest.fn();
+  });
+  afterEach(() => cleanup(c));
+
+  test('shows a notice for an empty URL and never calls alert()', () => {
+    tool.switchMode('url');
+    c.querySelector('#url-input').value = '';
+    tool.generateQRCode(t);
+    const notice = c.querySelector('#qr-notice');
+    expect(notice.classList.contains('d-none')).toBe(false);
+    expect(notice.textContent).toBe('tools.qrCodeGeneratorTool.enterContent');
+    expect(global.alert).not.toHaveBeenCalled();
+  });
+
+  test('uses the danger variant for generation errors', () => {
+    const original = global.qrcode;
+    global.qrcode = () => { throw new Error('boom'); };
+    try {
+      tool.switchMode('text');
+      c.querySelector('#text-input').value = 'hello';
+      tool.generateQRCode(t);
+    } finally {
+      global.qrcode = original;
+    }
+    const notice = c.querySelector('#qr-notice');
+    expect(notice.className).toContain('alert-danger');
+    expect(notice.textContent).toBe('tools.qrCodeGeneratorTool.errorGeneration');
+  });
+
+  test('clears the notice after a successful generation and on clearAll', () => {
+    tool.switchMode('url');
+    c.querySelector('#url-input').value = 'example.com';
+    tool.generateQRCode(t);
+    expect(c.querySelector('#qr-notice').classList.contains('d-none')).toBe(false);
+
+    c.querySelector('#url-input').value = 'https://example.com';
+    tool.generateQRCode(t);
+    expect(c.querySelector('#qr-notice').classList.contains('d-none')).toBe(true);
+
+    tool.downloadQRCode('svg');
+    tool.clearAll(t);
+    tool.downloadQRCode('svg');
+    expect(c.querySelector('#qr-notice').textContent).toBe('tools.qrCodeGeneratorTool.noQRCodeToDownload');
+    tool.clearAll(t);
+    expect(c.querySelector('#qr-notice').classList.contains('d-none')).toBe(true);
+  });
+});

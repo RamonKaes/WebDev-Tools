@@ -504,7 +504,10 @@
 
           outputTextarea.value = passwords.join('\n');
           if (passwords.length > 0) {
-            this.updateStrengthIndicator(strengthIndicator, passwords[0]);
+            this.updateStrengthIndicator(strengthIndicator, passwords[0], {
+              entropy: length * Math.log2(charset.length),
+              alphabet: charset.length
+            });
           }
         });
 
@@ -540,7 +543,11 @@
 
           outputTextarea.value = passphrases.join('\n');
           if (passphrases.length > 0) {
-            this.updateStrengthIndicator(strengthIndicator, passphrases[0]);
+            const wordlist = await loadWordlist();
+            this.updateStrengthIndicator(strengthIndicator, passphrases[0], {
+              entropy: this.estimatePassphraseEntropy(wordCount, wordlist.length, includeNumber),
+              alphabet: t('tools.passwordGeneratorTool.alphabetWords', { count: wordlist.length })
+            });
           }
         });
 
@@ -575,7 +582,10 @@
 
           outputTextarea.value = patterns.join('\n');
           if (patterns.length > 0) {
-            this.updateStrengthIndicator(strengthIndicator, patterns[0]);
+            this.updateStrengthIndicator(strengthIndicator, patterns[0], {
+              entropy: this.estimatePatternEntropy(length, patternType),
+              alphabet: t('tools.passwordGeneratorTool.alphabetPattern')
+            });
           }
         });
 
@@ -594,15 +604,77 @@
      * @returns {string} - Generated password
      */
     generatePassword: function(length, charset) {
-      let password = '';
-      const array = new Uint8Array(length);
-      window.crypto.getRandomValues(array);
+      return this.randomIndices(length, charset.length).map(i => charset[i]).join('');
+    },
 
-      for (let i = 0; i < length; i++) {
-        password += charset[array[i] % charset.length];
+    /**
+     * Draw uniformly distributed integers in [0, max)
+     *
+     * Security: Uses rejection sampling on 32-bit values from
+     * crypto.getRandomValues(). A plain `value % max` would favour the first
+     * (2^32 mod max) indices; those draws are discarded instead.
+     *
+     * @param {number} count - How many integers to draw
+     * @param {number} max - Exclusive upper bound (alphabet size)
+     * @returns {number[]} - Uniform random integers
+     */
+    randomIndices: function(count, max) {
+      const result = [];
+      const limit = Math.floor(0x100000000 / max) * max;
+      const buffer = new Uint32Array(Math.max(count, 16));
+
+      while (result.length < count) {
+        window.crypto.getRandomValues(buffer);
+        for (let i = 0; i < buffer.length && result.length < count; i++) {
+          if (buffer[i] < limit) {
+            result.push(buffer[i] % max);
+          }
+        }
       }
 
-      return password;
+      return result;
+    },
+
+    /**
+     * Entropy of a passphrase: every word is one uniform draw from the list
+     *
+     * @param {number} wordCount - Number of words
+     * @param {number} wordlistLength - Size of the wordlist
+     * @param {boolean} includeNumber - Whether a two-digit number (10-99) is appended
+     * @returns {number} - Entropy in bits
+     */
+    estimatePassphraseEntropy: function(wordCount, wordlistLength, includeNumber) {
+      return wordCount * Math.log2(wordlistLength) + (includeNumber ? Math.log2(90) : 0);
+    },
+
+    /**
+     * Entropy of a pattern password: consonant slots draw from 21 letters,
+     * vowel slots from 5. Capitalising the first letter is deterministic and
+     * adds nothing.
+     *
+     * @param {number} length - Password length
+     * @param {string} patternType - 'cvvc' or 'cvc'
+     * @returns {number} - Entropy in bits
+     */
+    estimatePatternEntropy: function(length, patternType) {
+      const pattern = this.buildPattern(length, patternType);
+      let bits = 0;
+      for (const slot of pattern) {
+        bits += slot === 'c' ? Math.log2(21) : Math.log2(5);
+      }
+      return bits;
+    },
+
+    /**
+     * Expand a pattern type to a slot string of the requested length
+     *
+     * @param {number} length - Password length
+     * @param {string} patternType - 'cvvc' or 'cvc'
+     * @returns {string} - Slot string, e.g. 'cvvccvvc'
+     */
+    buildPattern: function(length, patternType) {
+      const unit = patternType === 'cvvc' ? 'cvvc' : 'cvc';
+      return unit.repeat(Math.ceil(length / unit.length)).slice(0, length);
     },
 
     /**
@@ -619,24 +691,15 @@
     generatePassphrase: async function(wordCount, separator, capitalize, includeNumber) {
       const wordlist = await loadWordlist();
 
-      const words = [];
-      const array = new Uint32Array(wordCount);
-      window.crypto.getRandomValues(array);
-
-      for (let i = 0; i < wordCount; i++) {
-        let word = wordlist[array[i] % wordlist.length];
-        if (capitalize) {
-          word = word.charAt(0).toUpperCase() + word.slice(1);
-        }
-        words.push(word);
-      }
+      const words = this.randomIndices(wordCount, wordlist.length).map(index => {
+        const word = wordlist[index];
+        return capitalize ? word.charAt(0).toUpperCase() + word.slice(1) : word;
+      });
 
       let passphrase = words.join(separator);
 
       if (includeNumber) {
-        const numArray = new Uint8Array(1);
-        window.crypto.getRandomValues(numArray);
-        const num = (numArray[0] % 90) + 10; // 10-99
+        const num = this.randomIndices(1, 90)[0] + 10; // 10-99
         passphrase += separator + num;
       }
 
@@ -654,27 +717,15 @@
     generatePattern: function(length, patternType, capitalize) {
       const consonants = 'bcdfghjklmnpqrstvwxyz';
       const vowels = 'aeiou';
+      const pattern = this.buildPattern(length, patternType);
+
+      // Separate uniform draws per alphabet, consumed by slot type
+      const consonantIdx = this.randomIndices(length, consonants.length);
+      const vowelIdx = this.randomIndices(length, vowels.length);
+
       let password = '';
-      let pattern = '';
-
-      // Create pattern
-      if (patternType === 'cvvc') {
-        pattern = 'cvvc'.repeat(Math.ceil(length / 4));
-      } else {
-        pattern = 'cvc'.repeat(Math.ceil(length / 3));
-      }
-
-      pattern = pattern.slice(0, length);
-
-      const array = new Uint8Array(length);
-      window.crypto.getRandomValues(array);
-
       for (let i = 0; i < length; i++) {
-        if (pattern[i] === 'c') {
-          password += consonants[array[i] % consonants.length];
-        } else {
-          password += vowels[array[i] % vowels.length];
-        }
+        password += pattern[i] === 'c' ? consonants[consonantIdx[i]] : vowels[vowelIdx[i]];
       }
 
       if (capitalize) {
@@ -689,8 +740,12 @@
      *
      * @param {HTMLElement} indicator - Indicator element
      * @param {string} password - Password to analyze
+     * @param {{entropy: number, alphabet: (number|string)}} [analysis] - Entropy
+     *   known from the generation process (words × log2(wordlist), pattern
+     *   slots, …). Without it the entropy is estimated from the characters,
+     *   which overstates passphrases and pattern passwords.
      */
-    updateStrengthIndicator: function(indicator, password) {
+    updateStrengthIndicator: function(indicator, password, analysis) {
       if (!indicator) {
         return;
       }
@@ -703,17 +758,25 @@
       }
 
       let charset = 0;
-      if (/[a-z]/.test(normalizedPassword)) charset += 26;
-      if (/[A-Z]/.test(normalizedPassword)) charset += 26;
-      if (/[0-9]/.test(normalizedPassword)) charset += 10;
-      if (/[^a-zA-Z0-9]/.test(normalizedPassword)) charset += 32;
+      let entropyRaw;
 
-      if (!charset) {
-        // Fall back to unique character count for non-Latin character sets
-        charset = Math.max(new Set([...normalizedPassword]).size, 1);
+      if (analysis && Number.isFinite(analysis.entropy)) {
+        entropyRaw = analysis.entropy;
+        charset = analysis.alphabet;
+      } else {
+        if (/[a-z]/.test(normalizedPassword)) charset += 26;
+        if (/[A-Z]/.test(normalizedPassword)) charset += 26;
+        if (/[0-9]/.test(normalizedPassword)) charset += 10;
+        if (/[^a-zA-Z0-9]/.test(normalizedPassword)) charset += 32;
+
+        if (!charset) {
+          // Fall back to unique character count for non-Latin character sets
+          charset = Math.max(new Set([...normalizedPassword]).size, 1);
+        }
+
+        entropyRaw = normalizedPassword.length * Math.log2(charset);
       }
 
-      const entropyRaw = normalizedPassword.length * Math.log2(charset);
       const entropy = Number.isFinite(entropyRaw) && entropyRaw > 0 ? entropyRaw : 0;
 
       const entropyCap = 120; // entropy level that corresponds to a full bar

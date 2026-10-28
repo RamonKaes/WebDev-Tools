@@ -13,7 +13,7 @@ $resourcesSectionTitle = 'Recursos Úteis';
 $customAboutContent = <<<HTML
 <p class="mb-2">
     Gere códigos QR instantaneamente para URLs, textos, contatos e muito mais.
-    Personalize cores, tamanho e nível de correção de erro.
+    Personalize cores e tamanho; a correção de erros usa sempre o nível mais alto.
 </p>
 <p class="mb-0">
     QR (Quick Response) é um código bidimensional capaz de armazenar diferentes tipos de dados
@@ -23,12 +23,12 @@ $customAboutContent = <<<HTML
 HTML;
 
 $features = [
-    'Crie QR codes para URLs, textos, telefones, e-mails e muito mais',
+    'Crie QR codes para URLs, textos, contactos vCard e redes WiFi',
     'Tamanho e qualidade configuráveis',
     'Cores personalizadas de fundo e primeiro plano',
     'Correção de erro máxima (nível H, ~30 % de recuperação)',
     'Download como PNG ou SVG',
-    'Pré-visualização em tempo real',
+    'Pré-visualização instantânea ao gerar',
     'Geração 100% local'
 ];
 

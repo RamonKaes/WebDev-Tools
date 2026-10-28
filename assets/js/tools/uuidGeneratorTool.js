@@ -189,7 +189,9 @@
           // Clock sequence (14 bits) + variant bits
           const clockSeq = ((clockBytes[0] << 8 | clockBytes[1]) & 0x3FFF | 0x8000).toString(16).padStart(4, '0');
 
-          // Node ID (48 bits from random)
+          // Node ID (48 bits from random). RFC 4122 §4.5: a random node ID must
+          // set the multicast bit so it can never collide with a real MAC address.
+          clockBytes[2] |= 0x01;
           const node = Array.from(clockBytes.slice(2, 8), b => b.toString(16).padStart(2, '0')).join('');
 
           return `${timeLow}-${timeMid}-${timeHiVersion}-${clockSeq}-${node}`;

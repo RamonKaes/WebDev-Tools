@@ -246,3 +246,57 @@ describe('accessibility', () => {
     cleanup(c);
   });
 });
+
+// ─── Decoding longer inputs (regression) ─────────────────────────────────────
+
+describe('Base64EncoderDecoder – Decoding longer inputs', () => {
+  let c;
+  beforeEach(() => {
+    c = openTool();
+    setMode(c, 'decode');
+  });
+  afterEach(() => cleanup(c));
+
+  test('decodes Base64 text longer than 20 characters as text, not as a binary file', () => {
+    // The tool's own sample: "Hello World! This is a Base64 encoding example. ..."
+    process(c, 'SGVsbG8gV29ybGQhIFRoaXMgaXMgYSBCYXNlNjQgZW5jb2RpbmcgZXhhbXBsZS4KU3BlY2lhbCBjaGFyYWN0ZXJzOiDDpMO2w7wgw58g4oKsIOS9oOWlvQ==');
+    expect(c.querySelector('#output').value).toBe('Hello World! This is a Base64 encoding example.\nSpecial characters: äöü ß € 你好');
+    expect(c.querySelector('#imagePreviewContainer').classList.contains('d-none')).toBe(true);
+  });
+
+  test('decodes URL-safe Base64 without padding as text', () => {
+    // encodeBase64('Hello World!?', urlSafe) → "SGVsbG8gV29ybGQhPw"
+    process(c, 'SGVsbG8gV29ybGQhPw');
+    expect(c.querySelector('#output').value).toBe('Hello World!?');
+  });
+
+  test('ignores line breaks inside the Base64 input', () => {
+    process(c, 'SGVsbG8g\nV29ybGQh');
+    expect(c.querySelector('#output').value).toBe('Hello World!');
+  });
+
+  test('treats data that is not valid UTF-8 as a binary file', () => {
+    // 0xFF 0xFE … is never valid UTF-8
+    const bytes = new Uint8Array([0xff, 0xfe, 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0a, 0x0b]);
+    const b64 = btoa(String.fromCharCode(...bytes));
+    process(c, b64);
+    expect(c.querySelector('#output').value).toBe('tools.base64EncoderDecoder.binary_file_note');
+  });
+
+  test('recognises a PNG by its magic bytes and shows the image preview', () => {
+    const png = new Uint8Array([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a, 0x00, 0x00, 0x00, 0x0d, 0x49, 0x48, 0x44, 0x52]);
+    process(c, btoa(String.fromCharCode(...png)));
+    expect(c.querySelector('#imagePreviewContainer').classList.contains('d-none')).toBe(false);
+    expect(c.querySelector('#output').value).toBe('tools.base64EncoderDecoder.binary_preview_note');
+  });
+
+  test('honours the MIME type of a data URL', () => {
+    process(c, 'data:text/plain;base64,SGVsbG8gV29ybGQh');
+    expect(c.querySelector('#output').value).toBe('Hello World!');
+  });
+
+  test('invalid Base64 reports an error', () => {
+    process(c, '%%% not base64 %%%');
+    expect(c.querySelector('#output').classList.contains('is-invalid')).toBe(true);
+  });
+});

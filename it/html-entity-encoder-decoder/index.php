@@ -22,7 +22,7 @@ $customAboutContent = <<<HTML
 HTML;
 
 $features = [
-    'Entità nominali: converti in entità standard come &nbsp;, &lt;, &gt;',
+    'Entità nominali: esegui l\'escape dei caratteri speciali HTML (&lt;, &gt;, &amp;, &quot;) o converti tutti i simboli noti come &copy; e &nbsp;',
     'Entità numeriche: formato decimale (&#160;) o esadecimale (&#xA0;)',
     'Bidirezionale: codifica testo o decodifica entità',
     'Conversione automatica: trasformazione in tempo reale durante la digitazione',

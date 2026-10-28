@@ -247,7 +247,10 @@ class I18n {
   }
 
   if (typeof value === 'string' && Object.keys(params).length > 0) {
-    value = value.replace(/\{\{(\w+)\}\}/g, (_, k) => (k in params ? params[k] : `{{${k}}}`));
+    // Translation files use both {{name}} and {name} placeholders - accept either
+    value = value
+      .replace(/\{\{(\w+)\}\}/g, (_, k) => (k in params ? params[k] : `{{${k}}}`))
+      .replace(/\{(\w+)\}/g, (_, k) => (k in params ? params[k] : `{${k}}`));
   }
 
   return value;

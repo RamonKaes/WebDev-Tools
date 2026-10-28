@@ -16,13 +16,13 @@ $customAboutContent = <<<HTML
     Idéal pour vérifier l'intégrité des données, hacher des mots de passe et assurer la sécurité des applications.
 </p>
 <p class="mb-0">
-    Cet outil prend en charge les principaux algorithmes de hachage, notamment MD5, SHA-1, SHA-256, SHA-512 et bien d'autres.
+    Cet outil prend en charge SHA-1, SHA-256, SHA-384 et SHA-512 via l'API Web Crypto (MD5 n'est pas disponible dans les navigateurs).
     Tous les calculs sont réalisés côté client pour une confidentialité et une sécurité maximales.
 </p>
 HTML;
 
 $features = [
-    'Multiples algorithmes : MD5, SHA-1, SHA-256, SHA-384, SHA-512',
+    'Multiples algorithmes : SHA-1, SHA-256, SHA-384, SHA-512',
     'Hachage de texte et de fichiers',
     'Comparaison des empreintes pour vérification',
     'Prise en charge HMAC avec clés personnalisées',
@@ -36,7 +36,7 @@ $customNoticeType = 'warning';
 $customNoticeContent = <<<HTML
     <h2 class="h6 fw-semibold alert-heading mb-3"><i class="bi bi-shield-exclamation me-2"></i>Points de vigilance en sécurité</h2>
     <ul class="mb-0">
-        <li>Privilégiez SHA-256 ou supérieur&nbsp;: MD5 et SHA-1 sont compromis cryptographiquement</li>
+        <li>Privilégiez SHA-256 ou supérieur&nbsp;: SHA-1 est compromis cryptographiquement et MD5 n'est pas proposé</li>
         <li>N'utilisez pas de hachage simple pour les mots de passe&nbsp;: préférez bcrypt, scrypt ou PBKDF2</li>
         <li>Ajoutez un sel pour les mots de passe&nbsp;: empêche les attaques par tables arc-en-ciel</li>
         <li>Vérifiez l'intégrité des empreintes&nbsp;: comparez toujours l'intégralité de la valeur, pas une version tronquée</li>
@@ -50,7 +50,7 @@ $additionalSections = [
         'content' => <<<HTML
 <ul>
     <li>Vérification d'intégrité de fichiers&nbsp;: s'assurer qu'un téléchargement n'a pas été altéré</li>
-    <li>Hachage de mots de passe&nbsp;: stocker des empreintes sécurisées (utilisez SHA-256 ou supérieur)</li>
+    <li>Empreintes de contenu&nbsp;: détecter les changements dans des fichiers, réponses d'API ou artefacts de build</li>
     <li>Déduplication de données&nbsp;: identifier des fichiers ou contenus dupliqués</li>
     <li>Génération de checksums&nbsp;: créer des sommes de contrôle pour valider des données</li>
     <li>Signatures numériques&nbsp;: composant essentiel des systèmes de signature cryptographique</li>
@@ -63,7 +63,6 @@ HTML
         'icon' => 'info-circle',
         'content' => <<<HTML
 <ul>
-    <li>MD5&nbsp;: rapide mais déconseillé (128 bits, collisions connues)</li>
     <li>SHA-1&nbsp;: obsolète pour la sécurité (160 bits, attaques par collision)</li>
     <li>SHA-256&nbsp;: standard industriel pour les usages sécurisés (256 bits, robuste)</li>
     <li>SHA-384&nbsp;: variante à sécurité renforcée (384 bits)</li>

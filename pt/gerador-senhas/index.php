@@ -26,6 +26,7 @@ $features = [
     'Inclua letras maiúsculas, minúsculas, números e símbolos',
     'Exclua caracteres ambíguos (0, O, l, 1, ...)',
     'Gere várias senhas de uma vez',
+    'Três modos: senhas aleatórias, frases-passe EFF e padrões pronunciáveis',
     'Indicador de força da senha',
     'Copie para a área de transferência com um clique',
     '100% no lado do cliente: nenhuma senha é enviada ao servidor'

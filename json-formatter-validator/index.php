@@ -22,13 +22,13 @@ $customAboutContent = <<<HTML
 HTML;
 
 $features = [
-    'Format and beautify JSON with customizable indentation (2 or 4 spaces)',
+    'Format and beautify JSON with customizable indentation (2 or 4 spaces, tabs)',
     'Validate JSON syntax with detailed error messages',
     'Minify JSON to reduce file size',
-    'Real-time syntax validation',
-    'Line-by-line error detection',
+    'Tree view for nested structures',
+    'Auto-fix for common mistakes (comments, trailing commas, single quotes)',
     'Copy formatted result with one click',
-    'Clear error highlighting and messages',
+    'JSON path extractor and string escape helpers',
     'Privacy-focused: all processing happens in your browser'
 ];
 

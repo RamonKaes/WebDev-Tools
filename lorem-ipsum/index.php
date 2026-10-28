@@ -12,7 +12,7 @@ $resourcesSectionTitle = 'Useful Resources';
 $customAboutContent = <<<HTML
 <p class="mb-2">
     Generate placeholder text (Lorem Ipsum) for your design mockups, prototypes, and layouts. 
-    Customize paragraphs, words, or characters to fit your specific needs.
+    Customize paragraphs, sentences, or words to fit your specific needs.
 </p>
 <p class="mb-0">
     Lorem Ipsum is the industry standard dummy text used by designers and developers since the 1500s. 

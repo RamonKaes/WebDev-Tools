@@ -20,7 +20,7 @@ $customAboutContent = <<<HTML
 HTML;
 
 $features = [
-    'Genera UUID v4 (aleatorios) con seguridad criptográfica',
+    'Genera UUID v1 (basados en tiempo), v4 (aleatorios), v7 (ordenables por tiempo) y NIL',
     'Generación masiva: crea múltiples UUID de un golpe',
     'Formatos alternativos: estándar, mayúsculas, sin guiones',
     'Copiar UUID individual o todos a la vez',

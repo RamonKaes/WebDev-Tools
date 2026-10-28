@@ -482,3 +482,132 @@ describe('DataConverterTool – Round-trips', () => {
     expect(parseInt(ts, 10)).toBe(1699272000);
   });
 });
+
+// ─── YAML: structures (regressions) ──────────────────────────────────────────
+
+describe('DataConverterTool – YAML structures', () => {
+  let c;
+  beforeEach(() => { c = openTool(); });
+  afterEach(() => cleanup(c));
+
+  test('JSON → YAML renders a list of objects with aligned keys', () => {
+    setConversionType('jsonToYaml');
+    const output = convert('{"users":[{"name":"John","age":30},{"name":"Jane","age":25}]}');
+    expect(output).toBe('users:\n  - name: John\n    age: 30\n  - name: Jane\n    age: 25');
+  });
+
+  test('JSON → YAML quotes strings a YAML parser would misread', () => {
+    setConversionType('jsonToYaml');
+    const output = convert('{"a":"yes","b":"","c":"123","d":"# x","e":"a: b"}');
+    expect(output).toBe('a: "yes"\nb: ""\nc: "123"\nd: "# x"\ne: "a: b"');
+  });
+
+  test('JSON → YAML renders nested arrays and empty containers', () => {
+    setConversionType('jsonToYaml');
+    const output = convert('{"m":[[1,2],[]],"o":{}}');
+    expect(output).toBe('m:\n  - - 1\n    - 2\n  - []\no: {}');
+  });
+
+  test('YAML → JSON parses a list of objects', () => {
+    setConversionType('yamlToJson');
+    const output = convert('users:\n  - name: John\n    age: 30\n  - name: Jane\n    age: 25');
+    expect(JSON.parse(output)).toEqual({ users: [{ name: 'John', age: 30 }, { name: 'Jane', age: 25 }] });
+  });
+
+  test('YAML → JSON parses nested mappings, lists and a sequence at key level', () => {
+    setConversionType('yamlToJson');
+    const output = convert('address:\n  city: Berlin\n  tags:\n    - a\n    - b\nitems:\n- x\n- y\nempty: []\nnone: {}');
+    expect(JSON.parse(output)).toEqual({
+      address: { city: 'Berlin', tags: ['a', 'b'] },
+      items: ['x', 'y'],
+      empty: [],
+      none: {}
+    });
+  });
+
+  test('YAML → JSON keeps colons and comments inside values', () => {
+    setConversionType('yamlToJson');
+    const output = convert('url: http://example.com/a#b # trailing comment\ntime: "10:30"\nnote: \'it\'\'s\'');
+    expect(JSON.parse(output)).toEqual({ url: 'http://example.com/a#b', time: '10:30', note: "it's" });
+  });
+
+  test('YAML → JSON round-trips the tool sample', () => {
+    setConversionType('jsonToYaml');
+    const yaml = convert('{"name":"John Doe","age":30,"active":true,"address":{"city":"Berlin","country":"Germany"},"hobbies":["coding","reading"]}');
+    setConversionType('yamlToJson');
+    expect(JSON.parse(convert(yaml))).toEqual({
+      name: 'John Doe', age: 30, active: true,
+      address: { city: 'Berlin', country: 'Germany' },
+      hobbies: ['coding', 'reading']
+    });
+  });
+
+  test('YAML → JSON reports lines it cannot interpret', () => {
+    setConversionType('yamlToJson');
+    convert('name: John\njust some text');
+    const status = document.getElementById('conversionStatus');
+    expect(status.classList.contains('alert-danger')).toBe(true);
+  });
+});
+
+// ─── XML: top-level arrays ───────────────────────────────────────────────────
+
+describe('DataConverterTool – XML root for arrays', () => {
+  let c;
+  beforeEach(() => {
+    c = openTool();
+    setConversionType('jsonToXml');
+  });
+  afterEach(() => cleanup(c));
+
+  test('wraps a top-level JSON array in the root element', () => {
+    const output = convert('[{"a":1},{"a":2}]');
+    expect(output).toBe('<root>\n  <item>\n    <a>1</a>\n  </item>\n  <item>\n    <a>2</a>\n  </item>\n</root>');
+  });
+});
+
+// ─── Timestamps: UTC round-trip ──────────────────────────────────────────────
+
+describe('DataConverterTool – Date to timestamp in UTC', () => {
+  let c;
+  beforeEach(() => {
+    c = openTool();
+    setConversionType('dateToTimestamp');
+  });
+  afterEach(() => cleanup(c));
+
+  test('reads a date without zone as UTC, matching the timestamp → date output', () => {
+    expect(convert('2023-11-06 12:00:00')).toBe('1699272000');
+    expect(convert('2023-11-06 12:00:00 UTC')).toBe('1699272000');
+    expect(convert('2023-11-06T12:00:00Z')).toBe('1699272000');
+    expect(convert('2023-11-06')).toBe('1699228800');
+  });
+
+  test('still accepts other date formats', () => {
+    expect(convert('2023-11-06T12:00:00+02:00')).toBe('1699264800');
+  });
+});
+
+// ─── CSV: multi-line quoted fields ───────────────────────────────────────────
+
+describe('DataConverterTool – CSV multi-line fields', () => {
+  let c;
+  beforeEach(() => {
+    c = openTool();
+    setConversionType('csvToJson');
+  });
+  afterEach(() => cleanup(c));
+
+  test('keeps line breaks inside quoted fields', () => {
+    const output = convert('name,note\n"Doe, John","multi\nline"\nJane,ok');
+    expect(JSON.parse(output)).toEqual([
+      { name: 'Doe, John', note: 'multi\nline' },
+      { name: 'Jane', note: 'ok' }
+    ]);
+  });
+
+  test('accepts CRLF line endings', () => {
+    const output = convert('a,b\r\n1,2\r\n');
+    expect(JSON.parse(output)).toEqual([{ a: '1', b: '2' }]);
+  });
+});

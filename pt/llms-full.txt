@@ -54,7 +54,7 @@ Exemplo: münchen.de ↔ xn--mnchen-3ya.de
 ### JSON Formatter & Validator
 URL: https://webdev-tools.info/json-formatter-validator/
 Categoria: Formatadores
-Recursos: Formata JSON com indentação configurável (2 ou 4 espaços). Valida sintaxe JSON com realce de erros. Minifica JSON. Visualização em árvore interativa. Realce de sintaxe.
+Recursos: Formata JSON com indentação configurável (2 ou 4 espaços, tabs). Valida sintaxe JSON com mensagens de erro claras. Minifica JSON. Visualização em árvore interativa. Correção automática de erros comuns, ordenação de chaves e extrator de caminho.
 
 ### Code Formatter
 URL: https://webdev-tools.info/code-formatter/
@@ -80,8 +80,8 @@ Recursos:
 ### Hash Generator
 URL: https://webdev-tools.info/hash-generator/
 Categoria: Geradores
-Algoritmos: MD5, SHA-1, SHA-256, SHA-384, SHA-512
-Recursos: Gera hashes de texto ou arquivos. Usa SubtleCrypto para variantes SHA. MD5 implementado em JavaScript puro. Hash de arquivos usando FileReader.
+Algoritmos: SHA-1, SHA-256, SHA-384, SHA-512
+Recursos: Gera hashes de texto ou arquivos. Usa SubtleCrypto para todos os algoritmos; MD5 não está disponível porque os browsers não o implementam. Hash de arquivos usando FileReader.
 
 ### Lorem Ipsum Generator
 URL: https://webdev-tools.info/lorem-ipsum/
@@ -101,7 +101,7 @@ Recursos: Converte valores de pixels para REM com base em tamanho de fonte confi
 ### Data Converter
 URL: https://webdev-tools.info/data-converter/
 Categoria: Conversores
-Formatos: JSON ↔ CSV, JSON ↔ XML, JSON ↔ YAML, JSON ↔ TOML
+Formatos: JSON ↔ CSV, JSON ↔ XML, JSON ↔ YAML
 Recursos: Conversão bidirecional entre formatos. Conversão de timestamp (Unix ↔ ISO 8601). Suporte múltiplo de formato.
 
 ### Aspect Ratio Calculator
@@ -118,7 +118,7 @@ Recursos: Escapa e desscapa strings para o contexto selecionado. Trata caractere
 ### Character Reference
 URL: https://webdev-tools.info/character-reference/
 Categoria: Referências
-Recursos: Tabela pesquisável de entidades de caracteres HTML. Colunas: caractere, entidade nomeada, entidade decimal, entidade hexadecimal, ponto de código Unicode, escape CSS. Filtro por categoria.
+Recursos: Tabela pesquisável de entidades de caracteres HTML. Colunas: caractere, nome, entidade nomeada, ponto de código Unicode, entidade decimal. Filtro por categoria.
 
 ### Emoji Reference
 URL: https://webdev-tools.info/emoji-reference/
@@ -128,7 +128,7 @@ Recursos: Tabela de emojis pesquisável por categorias. Copie emoji ou ponto de 
 ### Regex Tester
 URL: https://webdev-tools.info/regex-tester/
 Categoria: Utilitários
-Recursos: Testador de expressões regulares em tempo real com destaque de correspondências, extração de grupos e suporte a flags. Contagem de correspondências e posição.
+Recursos: Testador de expressões regulares com destaque de correspondências, extração de grupos e suporte a flags. Contagem de correspondências e posição.
 
 ### SRI Generator
 URL: https://webdev-tools.info/sri-generator/

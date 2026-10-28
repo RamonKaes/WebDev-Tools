@@ -405,3 +405,87 @@ describe('CodeFormatterTool – UI interactions', () => {
     expect(global.DownloadUtils.downloadText).toHaveBeenCalled();
   });
 });
+
+// ─── SQL Beautifier: clause-per-line layout ──────────────────────────────────
+
+describe('CodeFormatterTool – SQL beautify layout', () => {
+  let c;
+  beforeEach(() => { c = openTool(); setLanguage(c, 'sql'); setMode(c, 'beautify'); });
+  afterEach(() => cleanup(c));
+
+  test('formats a join query in the clause-per-line style', async () => {
+    const result = await format(c,
+      "SELECT u.id, COUNT(o.id) AS orders FROM users u LEFT JOIN orders o ON o.user_id=u.id " +
+      "WHERE u.active=1 AND u.name LIKE '%a%' GROUP BY u.id ORDER BY orders DESC LIMIT 10");
+    expect(result).toBe([
+      'SELECT',
+      '    u.id,',
+      '    COUNT(o.id) AS orders',
+      'FROM',
+      '    users u',
+      '    LEFT JOIN orders o ON o.user_id = u.id',
+      'WHERE',
+      '    u.active = 1',
+      "    AND u.name LIKE '%a%'",
+      'GROUP BY',
+      '    u.id',
+      'ORDER BY',
+      '    orders DESC',
+      'LIMIT',
+      '    10'
+    ].join('\n'));
+  });
+
+  test('indents sub-selects one block deeper and keeps IN lists inline', async () => {
+    const result = await format(c, 'select id from t where id in (select id from u where x=1) and y in (1,2)');
+    expect(result).toBe([
+      'SELECT',
+      '    id',
+      'FROM',
+      '    t',
+      'WHERE',
+      '    id IN (',
+      '        SELECT',
+      '            id',
+      '        FROM',
+      '            u',
+      '        WHERE',
+      '            x = 1',
+      '    )',
+      '    AND y IN (1, 2)'
+    ].join('\n'));
+  });
+
+  test('formats INSERT with one VALUES row per line', async () => {
+    const result = await format(c, "insert into t (a,b) values (1,'x'),(2,'y');");
+    expect(result).toBe([
+      'INSERT INTO',
+      '    t (a, b)',
+      'VALUES',
+      "    (1, 'x'),",
+      "    (2, 'y');"
+    ].join('\n'));
+  });
+
+  test('never breaks inside string literals or comments', async () => {
+    const result = await format(c, "select 'from here' as label -- from comment\nfrom t");
+    expect(result).toBe([
+      'SELECT',
+      "    'from here' AS label -- from comment",
+      'FROM',
+      '    t'
+    ].join('\n'));
+  });
+
+  test('keeps function calls on one line and uses the chosen indent', async () => {
+    c.querySelector('#indentType').value = '2';
+    const result = await format(c, 'select max(price), min(price) from items');
+    expect(result).toBe('SELECT\n  MAX(price),\n  MIN(price)\nFROM\n  items');
+  });
+
+  test('SQL minify also strips block comments', async () => {
+    setMode(c, 'minify');
+    const result = await format(c, 'SELECT /* key */ id FROM users');
+    expect(result).toBe('SELECT id FROM users');
+  });
+});

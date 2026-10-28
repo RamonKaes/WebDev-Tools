@@ -24,6 +24,7 @@ $features = [
     'Incluye mayúsculas, minúsculas, números y símbolos',
     'Excluye caracteres ambiguos (0, O, l, 1, etc.)',
     'Genera varias contraseñas a la vez',
+    'Tres modos: contraseñas aleatorias, frases de paso EFF y patrones pronunciables',
     'Indicador de fortaleza de la contraseña',
     'Copiar al portapapeles con un clic',
     'Procesamiento 100 % local: ninguna contraseña abandona tu dispositivo'

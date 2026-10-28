@@ -13,7 +13,7 @@ $resourcesSectionTitle = 'Nützliche Ressourcen';
 $customAboutContent = <<<HTML
 <p class="mb-2">
     Generieren Sie Lorem Ipsum Platzhaltertext für Ihre Design-Mockups, Prototypen 
-    und Layouts. Anpassbare Absätze, Wörter und Zeichen.
+    und Layouts. Anpassbare Absätze, Sätze und Wörter.
 </p>
 <p class="mb-0">
     Lorem Ipsum ist der Standard-Platzhaltertext der Druck- und Satzindustrie seit den 1500er Jahren. 

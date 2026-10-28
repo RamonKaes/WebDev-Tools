@@ -27,6 +27,7 @@ $features = [
     'Großbuchstaben, Kleinbuchstaben, Zahlen und Symbole einschließen',
     'Mehrdeutige Zeichen ausschließen (0,O,l,1, etc.)',
     'Mehrere Passwörter auf einmal generieren',
+    'Drei Modi: Zufallspasswörter, EFF-Passphrasen und aussprechbare Muster',
     'Passwortstärke-Indikator',
     'Mit einem Klick in die Zwischenablage kopieren',
     '100% clientseitig - Passwörter werden nie an Server gesendet'

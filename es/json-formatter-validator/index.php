@@ -22,13 +22,13 @@ $customAboutContent = <<<HTML
 HTML;
 
 $features = [
-    'Formatea y embellece JSON con indentación configurable (2 o 4 espacios)',
+    'Formatea y embellece JSON con indentación configurable (2 o 4 espacios, tabulaciones)',
     'Valida la sintaxis con mensajes de error detallados',
     'Minifica JSON para reducir el tamaño',
-    'Validación en tiempo real',
-    'Detección de errores línea por línea',
+    'Vista de árbol para estructuras anidadas',
+    'Corrección automática de errores comunes (comentarios, comas finales, comillas simples)',
     'Copiar el resultado formateado con un clic',
-    'Resaltado claro de errores y mensajes comprensibles',
+    'Extractor de rutas JSON y ayudas de escape de cadenas',
     'Privacidad: todo sucede en tu navegador'
 ];
 

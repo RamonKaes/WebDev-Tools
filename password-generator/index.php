@@ -27,6 +27,7 @@ $features = [
     'Include uppercase letters, lowercase letters, numbers, and symbols',
     'Exclude ambiguous characters (0,O,l,1, etc.)',
     'Generate multiple passwords at once',
+    'Three modes: random passwords, EFF passphrases and pronounceable patterns',
     'Password strength indicator',
     'Copy to clipboard with one click',
     '100% client-side - passwords never sent to server'

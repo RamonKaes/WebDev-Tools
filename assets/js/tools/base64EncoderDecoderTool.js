@@ -110,8 +110,8 @@
           <!-- Floating Toggle Button -->
           <button class="btn btn-secondary btn-layout-toggle d-none d-lg-flex align-items-center justify-content-center position-absolute top-50 start-50 translate-middle shadow"
                   id="toggleLayoutBtn"
-                  title="${t('common.toggle_layout')}">
-            <i class="bi bi-layout-three-columns"></i>
+                  title="${t('common.layout_stacked')}">
+            <i class="bi bi-view-stacked"></i>
           </button>
         </div>
       </div>
@@ -141,7 +141,7 @@
           } else {
 
             columns.forEach(col => col.classList.add('col-lg-6'));
-            toggleLayoutBtn.innerHTML = `<i class="bi bi-layout-three-columns"></i>`;
+            toggleLayoutBtn.innerHTML = `<i class="bi bi-view-stacked"></i>`;
             toggleLayoutBtn.title = t('common.layout_stacked');
             toggleLayoutBtn.classList.remove('top-0', 'end-0', 'btn-layout-toggle-stacked');
             toggleLayoutBtn.classList.add('top-50', 'start-50', 'translate-middle');
@@ -260,20 +260,20 @@
       }
 
       /**
-       * Decode Base64 string to UTF-8 text
+       * Decode a Base64 string (standard or URL-safe, padded or not) to bytes
+       *
+       * Whitespace is ignored and the URL-safe alphabet is normalised, so the
+       * caller does not need to know which variant it received.
        *
        * @param {string} str - Base64 string to decode
-       * @param {boolean} urlSafe - Whether to decode URL-safe Base64
-       * @returns {string} - Decoded string
+       * @returns {Uint8Array} - Decoded bytes
+       * @throws {Error} - If the input is not valid Base64
        */
-      function decodeBase64(str, urlSafe) {
+      function decodeBase64ToBytes(str) {
         try {
-          let base64 = str.trim();
-          if (urlSafe) {
-            base64 = base64.replace(/-/g, '+').replace(/_/g, '/');
-            while (base64.length % 4) {
-              base64 += '=';
-            }
+          let base64 = str.replace(/\s+/g, '').replace(/-/g, '+').replace(/_/g, '/');
+          while (base64.length % 4) {
+            base64 += '=';
           }
 
           const binary = atob(base64);
@@ -281,12 +281,55 @@
           for (let i = 0; i < binary.length; i++) {
             bytes[i] = binary.charCodeAt(i);
           }
-
-          const decoder = new TextDecoder();
-          return decoder.decode(bytes);
+          return bytes;
         } catch (e) {
           throw new Error(t('tools.base64EncoderDecoder.decode_error'));
         }
+      }
+
+      /**
+       * Decode bytes as UTF-8 text
+       *
+       * @param {Uint8Array} bytes - Bytes to decode
+       * @returns {string|null} - Decoded text, or null if the bytes are not valid UTF-8
+       */
+      function bytesToUtf8(bytes) {
+        try {
+          return new TextDecoder('utf-8', { fatal: true }).decode(bytes);
+        } catch (e) {
+          return null;
+        }
+      }
+
+      /**
+       * Decode Base64 string to UTF-8 text
+       *
+       * @param {string} str - Base64 string to decode
+       * @returns {string} - Decoded string
+       * @throws {Error} - If the input is not valid Base64 or not valid UTF-8
+       */
+      function decodeBase64(str) {
+        const text = bytesToUtf8(decodeBase64ToBytes(str));
+        if (text === null) {
+          throw new Error(t('tools.base64EncoderDecoder.decode_error'));
+        }
+        return text;
+      }
+
+      /**
+       * Guess an image MIME type from the magic bytes of decoded data
+       *
+       * @param {Uint8Array} bytes - Decoded bytes
+       * @returns {string|null} - MIME type or null if no known signature matches
+       */
+      function sniffImageType(bytes) {
+        if (bytes.length < 12) return null;
+        if (bytes[0] === 0x89 && bytes[1] === 0x50 && bytes[2] === 0x4E && bytes[3] === 0x47) return 'image/png';
+        if (bytes[0] === 0xFF && bytes[1] === 0xD8 && bytes[2] === 0xFF) return 'image/jpeg';
+        if (bytes[0] === 0x47 && bytes[1] === 0x49 && bytes[2] === 0x46 && bytes[3] === 0x38) return 'image/gif';
+        if (bytes[0] === 0x52 && bytes[1] === 0x49 && bytes[2] === 0x46 && bytes[3] === 0x46 &&
+            bytes[8] === 0x57 && bytes[9] === 0x45 && bytes[10] === 0x42 && bytes[11] === 0x50) return 'image/webp';
+        return null;
       }
 
       /**
@@ -354,38 +397,16 @@
       }
 
       /**
-       * Decode Base64 string to binary data
+       * Present decoded bytes as a file
        *
        * Supports images (with preview), text files, and binary files.
        *
-       * @param {string} base64Str - Base64 string to decode
-       * @param {object} format - Format information from detectBase64Format()
-       * @returns {Uint8Array} - Decoded binary data
+       * @param {Uint8Array} bytes - Decoded binary data
+       * @param {string} mimeType - MIME type of the data
+       * @returns {Uint8Array} - The same bytes, for convenience
        */
-      function decodeToFile(base64Str, format) {
+      function decodeToFile(bytes, mimeType) {
         try {
-          let mimeType = 'application/octet-stream';
-          let base64Data = base64Str;
-
-          if (format.type === 'data-url') {
-            mimeType = format.mimeType;
-            base64Data = format.data;
-          }
-
-          // Fix #1: URL-safe-Padding ergänzen (wie in decodeBase64), damit atob() nicht wirft
-          let base64ForDecode = urlSafeCheck.checked
-            ? base64Data.replace(/-/g, '+').replace(/_/g, '/')
-            : base64Data;
-          while (base64ForDecode.length % 4) {
-            base64ForDecode += '=';
-          }
-
-          const binary = atob(base64ForDecode);
-          const bytes = new Uint8Array(binary.length);
-          for (let i = 0; i < binary.length; i++) {
-            bytes[i] = binary.charCodeAt(i);
-          }
-
           decodedMimeType = mimeType;
 
           if (mimeType.startsWith('image/')) {
@@ -433,14 +454,21 @@
             outputInfo.textContent = '';
           } else {
             const format = detectFormatCheck.checked ? detectBase64Format(inputValue) : { type: 'standard', data: inputValue };
+            const bytes = decodeBase64ToBytes(format.data);
 
-            // Fix #2: Regex mit $-Anker, damit nicht jeder String mit 20 alphanumerischen Zeichen matcht
-            if (format.type === 'data-url' || /^[A-Za-z0-9+/=_-]{20,}$/.test(inputValue.trim())) {
-              decodeToFile(inputValue, format);
+            if (format.type === 'data-url') {
+              // The data URL names its own type - honour it
+              decodeToFile(bytes, format.mimeType);
             } else {
-              output.value = decodeBase64(format.data, format.type === 'url-safe');
-              revokeImagePreview();
-              outputInfo.textContent = '';
+              // Plain Base64: text if it decodes as UTF-8, otherwise a file
+              const text = bytesToUtf8(bytes);
+              if (text !== null) {
+                output.value = text;
+                revokeImagePreview();
+                outputInfo.textContent = '';
+              } else {
+                decodeToFile(bytes, sniffImageType(bytes) || 'application/octet-stream');
+              }
             }
             output.classList.remove('is-invalid');
           }

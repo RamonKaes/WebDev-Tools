@@ -11,7 +11,7 @@ $featuresSectionTitle = 'Funktionen';
 $resourcesSectionTitle = 'Nützliche Ressourcen';
 
 $features = [
-    'Echtzeit-Musterabgleich',
+    'Musterabgleich mit hervorgehobenen Treffern',
     'Alle Regex-Flags (g, i, m, s, u, y)',
     'Treffer-Hervorhebung mit Erfassungsgruppen',
     'Detaillierte Treffer-Informationen und Statistiken',

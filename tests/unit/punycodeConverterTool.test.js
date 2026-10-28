@@ -354,3 +354,35 @@ describe('punycodeConverterTool – Stats', () => {
     expect(c.querySelector('#outputStats').textContent).toContain('17');
   });
 });
+
+// ─── Astral characters (emoji domains) ───────────────────────────────────────
+
+describe('PunycodeConverterTool – Astral characters', () => {
+  let c;
+  beforeEach(() => { c = openTool(); });
+  afterEach(() => cleanup(c));
+
+  test('encodes an emoji label by code point (RFC 3492 sample: 💩.la → xn--ls8h.la)', () => {
+    switchMode(c, 'encode');
+    setInput(c, '💩.la');
+    expect(getOutput(c)).toBe('xn--ls8h.la');
+  });
+
+  test('decodes xn--ls8h.la back to the emoji', () => {
+    switchMode(c, 'decode');
+    setInput(c, 'xn--ls8h.la');
+    expect(getOutput(c)).toBe('💩.la');
+  });
+
+  test('round-trips a label mixing ASCII, BMP and astral characters', () => {
+    switchMode(c, 'encode');
+    setInput(c, 'i❤️🍕.example');
+    const encoded = getOutput(c);
+    expect(encoded.startsWith('xn--')).toBe(true);
+    expect(/^[\x00-\x7F]+$/.test(encoded)).toBe(true);
+
+    switchMode(c, 'decode');
+    setInput(c, encoded);
+    expect(getOutput(c)).toBe('i❤️🍕.example');
+  });
+});

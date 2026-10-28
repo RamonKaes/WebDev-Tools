@@ -354,3 +354,47 @@ describe('accessibility', () => {
     cleanup(c);
   });
 });
+
+// ─── Regressions: spaces, non-breaking space, astral characters ──────────────
+
+describe('HtmlEntityTool – Space handling and astral characters', () => {
+  let c;
+  beforeEach(() => { c = openTool(); });
+  afterEach(() => cleanup(c));
+
+  test('"all named" mode leaves ordinary spaces alone', () => {
+    setEntityType(c, 'all');
+    convert(c, 'Hello World © 2024');
+    expect(c.querySelector('#outputText').value).toBe('Hello World &copy; 2024');
+  });
+
+  test('"all named" mode encodes a real non-breaking space as &nbsp;', () => {
+    setEntityType(c, 'all');
+    convert(c, 'a\u00A0b');
+    expect(c.querySelector('#outputText').value).toBe('a&nbsp;b');
+  });
+
+  test('numeric mode encodes characters above U+9999', () => {
+    setEntityType(c, 'numeric');
+    convert(c, '한');
+    expect(c.querySelector('#outputText').value).toBe('&#54620;');
+  });
+
+  test('numeric mode encodes an emoji as a single code point entity', () => {
+    setEntityType(c, 'numeric');
+    convert(c, '😀');
+    expect(c.querySelector('#outputText').value).toBe('&#128512;');
+  });
+
+  test('hex mode encodes an emoji as a single code point entity', () => {
+    setEntityType(c, 'hex');
+    convert(c, '😀');
+    expect(c.querySelector('#outputText').value).toBe('&#x1f600;');
+  });
+
+  test('decoding an emoji entity restores the emoji', () => {
+    setMode(c, 'decode');
+    convert(c, '&#128512;');
+    expect(c.querySelector('#outputText').value).toBe('😀');
+  });
+});

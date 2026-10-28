@@ -20,13 +20,13 @@ $customAboutContent = <<<HTML
 HTML;
 
 $features = [
-    'Formattazione e beautify con indentazione a 2 o 4 spazi',
+    'Formattazione e beautify con indentazione a 2 o 4 spazi o tab',
     'Validazione sintattica con messaggi chiari',
     'Minificazione del JSON per ridurre la dimensione',
-    'Validazione in tempo reale',
-    'Rilevamento errori riga per riga',
+    'Vista ad albero per strutture annidate',
+    'Correzione automatica degli errori comuni (commenti, virgole finali, apici singoli)',
     'Copia del risultato con un clic',
-    'Evidenziazione chiara degli errori',
+    'Estrattore di percorsi JSON e aiuti per l\'escape di stringhe',
     'Elaborazione lato client: privacy garantita'
 ];
 

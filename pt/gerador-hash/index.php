@@ -16,13 +16,13 @@ $customAboutContent = <<<HTML
     Útil para verificar integridade de dados, criar resumos e apoiar fluxos de segurança.
 </p>
 <p class="mb-0">
-    Suporta algoritmos populares como MD5, SHA-1, SHA-256, SHA-512 e outros.
+    Suporta SHA-1, SHA-256, SHA-384 e SHA-512 através da Web Crypto API (MD5 não está disponível nos browsers).
     Todo o processamento acontece no seu navegador, preservando a privacidade.
 </p>
 HTML;
 
 $features = [
-    'Algoritmos: MD5, SHA-1, SHA-256, SHA-384, SHA-512',
+    'Algoritmos: SHA-1, SHA-256, SHA-384, SHA-512',
     'Hash para texto e arquivos',
     'Comparação de hashes para verificação',
     'Suporte a HMAC com chave personalizada',
@@ -36,7 +36,7 @@ $customNoticeType = 'warning';
 $customNoticeContent = <<<HTML
     <h2 class="h6 fw-semibold alert-heading mb-3"><i class="bi bi-shield-exclamation me-2"></i>Considerações de segurança</h2>
     <ul class="mb-0">
-        <li>Prefira SHA-256 ou superior: MD5 e SHA-1 estão comprometidos</li>
+        <li>Prefira SHA-256 ou superior: SHA-1 está comprometido e MD5 nem sequer é oferecido</li>
         <li>Não use hashes simples para senhas: utilize bcrypt, scrypt ou PBKDF2</li>
         <li>Adicione salt: previne ataques com tabelas rainbow</li>
         <li>Compare o hash completo: evite validar por trechos truncados</li>
@@ -50,7 +50,7 @@ $additionalSections = [
         'content' => <<<HTML
 <ul>
     <li>Integridade de arquivos: confirmar se downloads não foram alterados</li>
-    <li>Armazenamento de senhas: guardar hashes fortes (SHA-256 ou superior)</li>
+    <li>Impressões digitais de conteúdo: detetar alterações em ficheiros, respostas de API ou artefactos de build</li>
     <li>Deduplicação: identificar arquivos ou conteúdos duplicados</li>
     <li>Checksums: gerar resumos para validação de dados</li>
     <li>Assinaturas digitais: componente essencial de sistemas criptográficos</li>
@@ -63,7 +63,6 @@ HTML
         'icon' => 'info-circle',
         'content' => <<<HTML
 <ul>
-    <li>MD5: rápido, mas inseguro (128 bits, colisões conhecidas)</li>
     <li>SHA-1: desaconselhado (160 bits, ataques de colisão viáveis)</li>
     <li>SHA-256: padrão do mercado para segurança (256 bits)</li>
     <li>SHA-384: variante de alta segurança (384 bits)</li>

@@ -54,7 +54,7 @@ Example: münchen.de ↔ xn--mnchen-3ya.de
 ### JSON Formatter & Validator
 URL: https://webdev-tools.info/json-formatter-validator/
 Category: Formatters
-Features: Pretty-print JSON with configurable indent (2 or 4 spaces). Validate JSON syntax with error highlighting. Minify JSON. Interactive tree view for exploring nested structures. Syntax highlighting.
+Features: Pretty-print JSON with configurable indent (2 or 4 spaces, tabs). Validate JSON syntax with clear error messages. Minify JSON. Interactive tree view for exploring nested structures. Auto-fix for common mistakes, key sorting and a JSON path extractor.
 
 ### Code Formatter
 URL: https://webdev-tools.info/code-formatter/
@@ -80,8 +80,8 @@ Features:
 ### Hash Generator
 URL: https://webdev-tools.info/hash-generator/
 Category: Generators
-Algorithms: MD5, SHA-1, SHA-256, SHA-384, SHA-512
-Features: Hash text input or uploaded files. Uses SubtleCrypto API for SHA variants. MD5 is implemented in pure JavaScript. File hashing reads files locally via FileReader API.
+Algorithms: SHA-1, SHA-256, SHA-384, SHA-512
+Features: Hash text input or uploaded files. Uses the SubtleCrypto API for all algorithms; MD5 is not available because browsers do not implement it. File hashing reads files locally via FileReader API.
 
 ### Lorem Ipsum Generator
 URL: https://webdev-tools.info/lorem-ipsum/
@@ -101,7 +101,7 @@ Features: Convert pixel values to REM based on a configurable base font size (de
 ### Data Converter
 URL: https://webdev-tools.info/data-converter/
 Category: Converters
-Formats: JSON ↔ CSV, JSON ↔ XML, JSON ↔ YAML, JSON ↔ TOML
+Formats: JSON ↔ CSV, JSON ↔ XML, JSON ↔ YAML
 Features: Bidirectional conversion between data formats. Timestamp conversion (Unix ↔ ISO 8601). Multiple format support in a single tool.
 
 ### Aspect Ratio Calculator
@@ -118,7 +118,7 @@ Features: Escape and unescape strings for the selected context. Handles special 
 ### Character Reference
 URL: https://webdev-tools.info/character-reference/
 Category: References
-Features: Searchable table of HTML character entities. Columns: character, named entity, decimal entity, hex entity, Unicode code point, CSS escape. Category filter (Latin, Greek, Math, Arrows, etc.). Copy any code with one click.
+Features: Searchable table of HTML character entities. Columns: character, name, named entity, Unicode code point, decimal entity. Category filter (Math, Symbols, Arrows, Greek, etc.). Copy any code with one click.
 
 ### Emoji Reference
 URL: https://webdev-tools.info/emoji-reference/
@@ -133,7 +133,7 @@ Features: Generate Subresource Integrity hashes for scripts and stylesheets. Cop
 ### Regex Tester
 URL: https://webdev-tools.info/regex-tester/
 Category: Utilities
-Features: Live regular expression testing with real-time match highlighting. Supported flags: g, i, m, s, u, y. Group extraction (named and unnamed capture groups). Match count and position display. Download match results.
+Features: Regular expression testing with match highlighting on demand. Supported flags: g, i, m, s, u, y. Capture group extraction (numbered). Match count and position display. Download match results.
 
 ---
 

@@ -52,7 +52,7 @@
         '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)
       ).join(''));
     } catch (e) {
-      throw new Error('Invalid Base64URL encoding');
+      throw new Error(t('tools.jwtDecoderTool.errorBase64'));
     }
   }
 
@@ -70,7 +70,7 @@
     const parts = token.split('.');
 
     if (parts.length !== 3) {
-      throw new Error('Invalid JWT format. Expected 3 parts (header.payload.signature)');
+      throw new Error(t('tools.jwtDecoderTool.errorFormat'));
     }
 
     const [headerB64, payloadB64, signatureB64] = parts;
@@ -80,13 +80,13 @@
     try {
       header = JSON.parse(base64UrlDecode(headerB64));
     } catch (e) {
-      throw new Error('Failed to decode header: ' + e.message);
+      throw new Error(t('tools.jwtDecoderTool.errorHeader', { message: e.message }));
     }
 
     try {
       payload = JSON.parse(base64UrlDecode(payloadB64));
     } catch (e) {
-      throw new Error('Failed to decode payload: ' + e.message);
+      throw new Error(t('tools.jwtDecoderTool.errorPayload', { message: e.message }));
     }
 
     return {
@@ -342,7 +342,7 @@
         signatureContent.textContent = decoded.signature;
 
         // Algorithm
-        algorithmInfo.textContent = decoded.header.alg || 'Unknown';
+        algorithmInfo.textContent = decoded.header.alg || t('common.unknown');
 
         // Expiry
         const expiry = checkExpiry(decoded.payload);

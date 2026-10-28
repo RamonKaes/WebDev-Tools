@@ -130,7 +130,7 @@
             </button>
           </div>
           <div class="card-body p-0">
-            <pre class="m-0 p-3 rounded-bottom user-select-all" style="word-break:break-all;white-space:pre-wrap;font-size:0.8rem;">${this.escapeHtml(integrity)}</pre>
+            <pre class="m-0 p-3 rounded-bottom user-select-all pre-wrap text-break small">${this.escapeHtml(integrity)}</pre>
           </div>
           ${resourceUrl ? `
           <div class="card-footer py-2">
@@ -140,7 +140,7 @@
                 <i class="bi bi-clipboard me-1"></i>${t('common.copy')}
               </button>
             </div>
-            <pre class="m-0 p-2 bg-body-secondary rounded user-select-all" style="font-size:0.8rem;white-space:pre-wrap;">${this.escapeHtml(tag)}</pre>
+            <pre class="m-0 p-2 bg-body-secondary rounded user-select-all pre-wrap small">${this.escapeHtml(tag)}</pre>
           </div>` : ''}
         `;
         resultsEl.appendChild(block);

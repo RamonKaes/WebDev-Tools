@@ -25,10 +25,10 @@ HTML;
 $features = [
     'Convert px to rem and rem to px',
     'Customizable base font size (default: 16px)',
-    'Batch conversion: convert multiple values at once',
+    'Reverse conversion from rem, em, percent and Tailwind spacing',
     'Real-time conversion as you type',
     'Copy converted values with one click',
-    'Common breakpoint presets',
+    'Base font size presets (12 to 20px)',
     '100% client-side processing'
 ];
 

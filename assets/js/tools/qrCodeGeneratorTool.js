@@ -85,6 +85,7 @@
             <div class="card h-100">
               <div class="card-body">
                 <h2 class="card-title h6 fw-semibold mb-3"><i class="bi bi-pencil me-2"></i>${t('tools.qrCodeGeneratorTool.inputTitle')}</h2>
+                <div id="qr-notice" class="alert alert-warning d-none" role="alert" aria-live="polite"></div>
 
                 <!-- URL Mode -->
                 <div id="input-url" class="qr-input-mode">
@@ -331,6 +332,33 @@
     },
 
     /**
+     * Show a validation or error notice inside the input card
+     *
+     * Replaces the blocking alert() dialogs; the other tools show such
+     * messages inline as well.
+     *
+     * @param {string} message - Text to show
+     * @param {string} type - Bootstrap alert variant ('warning' or 'danger')
+     */
+    notify: function (message, type = 'warning') {
+      const notice = document.getElementById('qr-notice');
+      if (!notice) return;
+      notice.textContent = message;
+      notice.className = `alert alert-${type}`;
+    },
+
+    /**
+     * Hide the notice
+     */
+    clearNotice: function () {
+      const notice = document.getElementById('qr-notice');
+      if (notice) {
+        notice.textContent = '';
+        notice.className = 'alert alert-warning d-none';
+      }
+    },
+
+    /**
      * Switch between QR code input modes (URL, text, vCard, WiFi)
      *
      * @param {string} mode - Mode identifier (url, text, vcard, wifi)
@@ -380,11 +408,11 @@
     getURLContent: function (t) {
       const url = document.getElementById('url-input')?.value.trim();
       if (!url) {
-        alert(t('tools.qrCodeGeneratorTool.enterContent'));
+        this.notify(t('tools.qrCodeGeneratorTool.enterContent'));
         return null;
       }
       if (!url.match(/^https?:\/\/.+/)) {
-        alert(t('tools.qrCodeGeneratorTool.invalidURL'));
+        this.notify(t('tools.qrCodeGeneratorTool.invalidURL'));
         return null;
       }
       return url;
@@ -399,7 +427,7 @@
     getTextContent: function (t) {
       const text = document.getElementById('text-input')?.value.trim();
       if (!text) {
-        alert(t('tools.qrCodeGeneratorTool.enterContent'));
+        this.notify(t('tools.qrCodeGeneratorTool.enterContent'));
         return null;
       }
       return text;
@@ -425,7 +453,7 @@
       const country = document.getElementById('vcard-country')?.value.trim() || '';
 
       if (!firstName && !lastName) {
-        alert(t('tools.qrCodeGeneratorTool.vCardAtLeastName'));
+        this.notify(t('tools.qrCodeGeneratorTool.vCardAtLeastName'));
         return null;
       }
 
@@ -463,7 +491,7 @@
       const hidden = document.getElementById('wifi-hidden')?.checked;
 
       if (!ssid) {
-        alert(t('tools.qrCodeGeneratorTool.wifiSSIDRequired'));
+        this.notify(t('tools.qrCodeGeneratorTool.wifiSSIDRequired'));
         return null;
       }
 
@@ -498,6 +526,7 @@
     generateQRCode: function (t) {
       const content = this.getContent(t);
       if (!content) return;
+      this.clearNotice();
 
       const preview = document.getElementById('qr-preview');
       if (!preview) return;
@@ -564,7 +593,7 @@
         console.debug('[qrCodeGeneratorTool] QR Code generated successfully');
       } catch (error) {
         console.error('Error generating QR code:', error);
-        alert(t('tools.qrCodeGeneratorTool.errorGeneration'));
+        this.notify(t('tools.qrCodeGeneratorTool.errorGeneration'), 'danger');
       }
     },
 
@@ -577,7 +606,7 @@
       const t = this.t || ((key) => key);
 
       if (!this.currentQRCode) {
-        alert(t('tools.qrCodeGeneratorTool.noQRCodeToDownload'));
+        this.notify(t('tools.qrCodeGeneratorTool.noQRCodeToDownload'));
         return;
       }
 
@@ -627,7 +656,7 @@
         }
       } catch (error) {
         console.error('Error downloading QR code:', error);
-        alert(t('tools.qrCodeGeneratorTool.errorDownload'));
+        this.notify(t('tools.qrCodeGeneratorTool.errorDownload'), 'danger');
       }
     },
 
@@ -655,6 +684,8 @@
       if (wifiSsid) wifiSsid.value = '';
       if (wifiPassword) wifiPassword.value = '';
       if (wifiHidden) wifiHidden.checked = false;
+
+      this.clearNotice();
 
       // Clear preview
       const preview = document.getElementById('qr-preview');

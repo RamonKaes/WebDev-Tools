@@ -520,3 +520,54 @@ describe('regexTesterTool – Keyboard Shortcuts', () => {
     expect(alert).not.toBeNull();
   });
 });
+
+// ─── Named capture groups ────────────────────────────────────────────────────
+
+describe('regexTesterTool – Named capture groups', () => {
+  let c;
+  beforeEach(() => {
+    c = openTool();
+    global.DownloadUtils.downloadText.mockClear();
+  });
+  afterEach(() => cleanup(c));
+
+  function runTest(pattern, flags, testString) {
+    c.querySelector('#regexPattern').value = pattern;
+    c.querySelector('#regexFlags').value = flags;
+    c.querySelector('#testString').value = testString;
+    c.querySelector('#testButton').click();
+  }
+
+  test('shows the group name next to the group number', () => {
+    runTest('(?<year>\\d{4})-(?<month>\\d{2})', '', 'on 2024-03');
+    const names = [...c.querySelectorAll('#resultsContainer .regex-group-name')].map(e => e.textContent);
+    expect(names).toEqual(['year', 'month']);
+    const text = c.querySelector('#resultsContainer').textContent;
+    expect(text).toContain('2024');
+    expect(text).toContain('03');
+  });
+
+  test('keeps numbering right when named, unnamed and non-capturing groups mix', () => {
+    runTest('(?:skip)(a)(?<second>b)(?=c)(c)(?<!x)[(]?(?<fourth>d)', '', 'skipabc(d');
+    const rows = [...c.querySelectorAll('#resultsContainer .badge.bg-secondary')].map(b => b.parentElement);
+    const names = rows.map(r => (r.querySelector('.regex-group-name') || {}).textContent || null);
+    expect(names).toEqual([null, 'second', null, 'fourth']);
+  });
+
+  test('includes named groups in the downloaded JSON', () => {
+    runTest('(?<year>\\d{4})', 'g', '2024 and 2025');
+    c.querySelector('#downloadButton').click();
+    const [content] = global.DownloadUtils.downloadText.mock.calls[0];
+    const parsed = JSON.parse(content);
+    expect(parsed.matches[0].namedGroups).toEqual({ year: '2024' });
+    expect(parsed.matches[1].namedGroups).toEqual({ year: '2025' });
+  });
+
+  test('unnamed patterns report null named groups', () => {
+    runTest('(\\d+)', '', 'abc 42');
+    c.querySelector('#downloadButton').click();
+    const [content] = global.DownloadUtils.downloadText.mock.calls[0];
+    expect(JSON.parse(content).matches[0].namedGroups).toBeNull();
+    expect(c.querySelector('#resultsContainer .regex-group-name')).toBeNull();
+  });
+});

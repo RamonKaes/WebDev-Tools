@@ -57,7 +57,8 @@ beforeAll(() => {
     open: jest.fn(),
   };
 
-  global.i18n = { t: (key) => key };
+  // Mirror the real t(): keep the key, append interpolation params so tests can assert on them
+  global.i18n = { t: (key, params) => params ? `${key} ${Object.values(params).join(' ')}` : key };
 
   global.ClipboardUtils = {
     iconHandle: (button) => {
@@ -125,7 +126,7 @@ describe('HashGeneratorTool – UI Rendering', () => {
     expect(c.querySelector('input[name="hashMode"][value="text"]')).not.toBeNull();
     expect(c.querySelector('input[name="hashMode"][value="file"]')).not.toBeNull();
     expect(c.querySelector('input[name="hashMode"][value="hmac"]')).not.toBeNull();
-    expect(c.querySelector('input[name="hashMode"][value="sri"]')).not.toBeNull();
+    expect(c.querySelector('input[name="hashMode"][value="sri"]')).toBeNull();
     expect(c.querySelector('input[name="hashMode"][value="compare"]')).not.toBeNull();
   });
 
@@ -144,9 +145,10 @@ describe('HashGeneratorTool – UI Rendering', () => {
     expect(c.querySelector('#hmacSecret')).not.toBeNull();
   });
 
-  test('switching to sri mode renders #sriURL', () => {
-    switchMode(c, 'sri');
-    expect(c.querySelector('#sriURL')).not.toBeNull();
+  test('links to the SRI generator instead of offering an SRI mode', () => {
+    const link = c.querySelector('a[href*="sri-generator"]');
+    expect(link).not.toBeNull();
+    expect(link.textContent).toBe('tools.sriGeneratorTool.linkTitle.nav');
   });
 
   test('switching to compare mode renders #hash1 and #hash2', () => {
@@ -340,4 +342,19 @@ describe('HashGeneratorTool – Hash Comparison', () => {
     expect(text).toContain('6');
     expect(text).toContain('12');
   });
+});
+
+// ─── Progress / info elements start hidden ───────────────────────────────────
+
+describe('HashGeneratorTool – Hidden helper elements', () => {
+  let c;
+  beforeEach(() => { c = openTool(); });
+  afterEach(() => cleanup(c));
+
+  test('file mode renders file info and progress bar hidden', () => {
+    switchMode(c, 'file');
+    expect(c.querySelector('#fileInfo').classList.contains('d-none')).toBe(true);
+    expect(c.querySelector('#fileProgress').classList.contains('d-none')).toBe(true);
+  });
+
 });

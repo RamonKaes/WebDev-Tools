@@ -1,0 +1,73 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Jest (Node ${{ matrix.node }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [18, 20]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - run: npm ci
+      - run: npm test
+
+  i18n:
+    name: i18n key parity
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node build-tools/check-i18n.js
+
+  php:
+    name: PHP syntax and generated files
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Lint every PHP file
+        run: |
+          status=0
+          while IFS= read -r -d '' file; do
+            php -l "$file" > /dev/null || status=1
+          done < <(find . -name '*.php' -not -path './node_modules/*' -not -path './dist/*' -print0)
+          exit $status
+      - name: Sitemaps are up to date
+        run: |
+          php config/generate-sitemaps.php > /dev/null
+          git diff --exit-code -- sitemap.xml sitemap-en.xml '*/sitemap.xml'
+
+  build:
+    name: Production build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: bash build.sh
+      - name: Build output is complete
+        run: |
+          test -f dist/index.php
+          test -f dist/.htaccess
+          test -f dist/assets/bootstrap/css/bootstrap.min.css
+          test -f dist/assets/js/tools/base64EncoderDecoderTool.js
+          test -f dist/config/i18n/en.json
+          test -d dist/de/base64-kodierer-dekodierer

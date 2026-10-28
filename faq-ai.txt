@@ -21,7 +21,7 @@ A: 20 tools across 6 categories:
    Encoders/Decoders: Base64, URL, HTML Entity, JWT, Punycode
    Formatters: JSON Formatter/Validator, Code Formatter
    Generators: UUID, Password, Hash, Lorem Ipsum, QR Code
-   Converters: PX→REM, Data (JSON/CSV/XML/YAML/TOML), Aspect Ratio
+   Converters: PX→REM, Data (JSON/CSV/XML/YAML), Aspect Ratio
    String Tools: String Escaper
    References: Character Reference, Emoji Reference
    Utilities: Regex Tester, SRI Generator

@@ -91,7 +91,7 @@
     '↑': '&uarr;',
     '↓': '&darr;',
     '↔': '&harr;',
-    ' ': '&nbsp;',
+    ' ': '&nbsp;',
     '–': '&ndash;',
     '—': '&mdash;',
     '…': '&hellip;',
@@ -131,8 +131,10 @@
    * @returns {string} - Text with numeric entities
    */
   function encodeToNumericEntities(text, useHex = false) {
-    return text.replace(/[\u00A0-\u9999<>&"']/g, char => {
-      const code = char.charCodeAt(0);
+    // The u flag makes the class match whole code points, so characters outside
+    // the BMP (emoji, rare CJK) are encoded as one entity instead of two halves.
+    return text.replace(/[\u0080-\u{10FFFF}<>&"']/gu, char => {
+      const code = char.codePointAt(0);
       if (useHex) {
         return `&#x${code.toString(16)};`;
       }
@@ -147,7 +149,7 @@
    * @returns {string} - Text with all characters encoded to named entities
    */
   function encodeToAllNamedEntities(text) {
-    return text.replace(/[\s\S]/g, char => {
+    return text.replace(/[\s\S]/gu, char => {
       return NAMED_ENTITIES[char] || char;
     });
   }
@@ -280,7 +282,7 @@
                           <i class="bi bi-clipboard me-2"></i>${t('common.copy')}
                         </button>
                         <button class="btn btn-sm btn-outline-secondary d-inline-flex align-items-center" id="downloadBtn">
-                          <i class="bi bi-download me-2"></i>Download
+                          <i class="bi bi-download me-2"></i>${t('common.download')}
                         </button>
                       </div>
                     </div>
@@ -291,8 +293,8 @@
               <!-- Floating Toggle Button -->
               <button class="btn btn-secondary btn-layout-toggle d-none d-lg-flex align-items-center justify-content-center position-absolute top-50 start-50 translate-middle shadow"
                       id="toggleLayoutBtn"
-                      title="${t('common.toggle_layout', 'Toggle layout')}">
-                <i class="bi bi-layout-three-columns"></i>
+                      title="${t('common.layout_stacked')}">
+                <i class="bi bi-view-stacked"></i>
               </button>
             </div>
           </div>
@@ -339,11 +341,13 @@
           if (isSideBySide) {
             columns.forEach(col => col.classList.remove('col-lg-6'));
             toggleLayoutBtn.innerHTML = `<i class="bi bi-layout-split"></i>`;
+            toggleLayoutBtn.title = t('common.layout_side_by_side');
             toggleLayoutBtn.classList.remove('top-50', 'start-50', 'translate-middle');
             toggleLayoutBtn.classList.add('top-0', 'end-0', 'btn-layout-toggle-stacked');
           } else {
             columns.forEach(col => col.classList.add('col-lg-6'));
-            toggleLayoutBtn.innerHTML = `<i class="bi bi-layout-three-columns"></i>`;
+            toggleLayoutBtn.innerHTML = `<i class="bi bi-view-stacked"></i>`;
+            toggleLayoutBtn.title = t('common.layout_stacked');
             toggleLayoutBtn.classList.remove('top-0', 'end-0', 'btn-layout-toggle-stacked');
             toggleLayoutBtn.classList.add('top-50', 'start-50', 'translate-middle');
           }

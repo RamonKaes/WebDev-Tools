@@ -25,10 +25,10 @@ HTML;
 $features = [
     'Conversão px → rem e rem → px',
     'Tamanho de fonte base personalizável (padrão: 16 px)',
-    'Conversão em lote: vários valores de uma vez',
+    'Conversão inversa a partir de rem, em, percentagem e espaçamento Tailwind',
     'Resultados em tempo real enquanto digita',
     'Copie os valores convertidos com um clique',
-    'Predefinições de breakpoints mais comuns',
+    'Predefinições de tamanho base da fonte (12 a 20px)',
     'Processamento 100% no navegador'
 ];
 

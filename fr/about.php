@@ -176,6 +176,9 @@ $currentUrl = getFullUrl('/about.php', $lang);
               J’ai ensuite nettoyé le code et mis le site en ligne. Comme tout cela est né d’un « accident » et s’inscrit dans l’esprit de l’open source, le code est entièrement accessible. Ceux qui souhaitent y contribuer, qui ont une idée pour un nouvel outil ou qui trouvent une erreur sont cordialement invités à participer. Vous trouverez le dépôt Git ici : <a href="https://github.com/RamonKaes/WebDev-Tools" target="_blank" rel="noopener noreferrer" title="Dépôt GitHub de WebDev-Tools">https://github.com/RamonKaes/WebDev-Tools</a>.
             </p>
             <p>
+              Vous avez trouvé un bug ? Signalez-le dans les <a href="https://github.com/RamonKaes/WebDev-Tools/issues" target="_blank" rel="noopener noreferrer" title="Signaler un bug sur GitHub">issues GitHub</a>. Les questions, idées et autres retours sont les bienvenus sur <a href="https://easyq.info/projects/ramonkaes-webdev-tools" target="_blank" rel="noopener noreferrer" title="Questions et idées sur easyQ">easyQ</a>.
+            </p>
+            <p>
               Oui, désolé. La 10 000e collection d’outils est donc désormais disponible. Mais bon, elle a au moins une belle histoire derrière elle, et qui sait, peut-être vous épargnera-t-elle autant de recherches au quotidien qu’à moi !
             </p>
 

@@ -476,3 +476,81 @@ describe('passwordGeneratorTool – Custom Charset', () => {
     expect(c.querySelector('#passwordOutput').value).toContain('tools.passwordGeneratorTool.errorNoCharset');
   });
 });
+
+// ─── Uniform sampling and mode-aware entropy ─────────────────────────────────
+
+describe('passwordGeneratorTool – randomIndices', () => {
+  test('maps 32-bit values into [0, max) without bias when below the limit', () => {
+    const idx = tool.randomIndices(5, 90);
+    // The deterministic mock yields i * 31 + 7, all far below the rejection limit
+    expect(idx).toEqual([7 % 90, 38 % 90, 69 % 90, 100 % 90, 131 % 90]);
+    idx.forEach(i => expect(i).toBeGreaterThanOrEqual(0));
+    idx.forEach(i => expect(i).toBeLessThan(90));
+  });
+
+  test('rejects values above the largest multiple of max and draws again', () => {
+    const original = global.crypto.getRandomValues;
+    let call = 0;
+    global.crypto.getRandomValues = (array) => {
+      call++;
+      for (let i = 0; i < array.length; i++) {
+        // First batch: 0xFFFFFFFF is >= floor(2^32 / 90) * 90 and must be discarded
+        array[i] = call === 1 ? 0xFFFFFFFF : 5;
+      }
+      return array;
+    };
+    try {
+      const idx = tool.randomIndices(3, 90);
+      expect(call).toBe(2);
+      expect(idx).toEqual([5, 5, 5]);
+    } finally {
+      global.crypto.getRandomValues = original;
+    }
+  });
+
+  test('accepts every value when max is a power of two', () => {
+    const idx = tool.randomIndices(4, 16);
+    expect(idx).toEqual([7, 38 % 16, 69 % 16, 100 % 16]);
+  });
+});
+
+describe('passwordGeneratorTool – entropy estimates', () => {
+  test('passphrase entropy is words × log2(wordlist), plus the two-digit number', () => {
+    expect(tool.estimatePassphraseEntropy(4, 7776, false)).toBeCloseTo(51.7, 1);
+    expect(tool.estimatePassphraseEntropy(4, 7776, true)).toBeCloseTo(51.7 + Math.log2(90), 1);
+  });
+
+  test('pattern entropy counts consonant and vowel slots separately', () => {
+    // cvvc × 3 = 6 consonants (21) and 6 vowels (5)
+    expect(tool.estimatePatternEntropy(12, 'cvvc')).toBeCloseTo(6 * Math.log2(21) + 6 * Math.log2(5), 5);
+    // cvc × 4 = 8 consonants and 4 vowels
+    expect(tool.estimatePatternEntropy(12, 'cvc')).toBeCloseTo(8 * Math.log2(21) + 4 * Math.log2(5), 5);
+  });
+
+  test('buildPattern truncates to the requested length', () => {
+    expect(tool.buildPattern(5, 'cvvc')).toBe('cvvcc');
+    expect(tool.buildPattern(7, 'cvc')).toBe('cvccvcc');
+  });
+
+  test('updateStrengthIndicator uses the supplied analysis instead of the character heuristic', () => {
+    const indicator = document.createElement('div');
+    document.body.appendChild(indicator);
+    // Looks like a 26-char mixed-case/symbol string (heuristic: ~160 bits) but is a 4-word passphrase
+    tool.updateStrengthIndicator(indicator, 'Caught-Canyon-Clarify-Grid', { entropy: 51.7, alphabet: '7776 words' });
+    expect(indicator.textContent).toContain('52 bits');
+    expect(indicator.textContent).toContain('7776 words');
+    expect(indicator.querySelector('.badge').classList.contains('bg-info')).toBe(true);
+    document.body.removeChild(indicator);
+  });
+
+  test('passphrase mode reports word-based entropy in the UI', async () => {
+    const c = openTool();
+    const radio = c.querySelector('#modePassphrase');
+    radio.checked = true;
+    radio.dispatchEvent(new Event('change'));
+    await new Promise(r => setTimeout(r, 20));
+    // 4 words from the 8-word mock list = 12 bits
+    expect(c.querySelector('#strengthIndicator').textContent).toContain('12 bits');
+    cleanup(c);
+  });
+});

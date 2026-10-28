@@ -145,6 +145,8 @@
                 <i class="bi bi-info-circle me-2"></i>${t('tools.loremIpsumTool.combineHint')}
               </div>
 
+              <div id="loremNotice" class="alert alert-warning d-none mb-3" role="alert" aria-live="polite"></div>
+
               <button class="btn btn-primary btn-sm" id="generateBtn">
                 <i class="bi bi-arrow-repeat me-2"></i>${t('tools.loremIpsumTool.generate')}
               </button>
@@ -262,7 +264,7 @@
           })
           .catch((err) => {
             console.error('[loremIpsumTool] Copy failed:', err);
-            alert(t('tools.loremIpsumTool.copyFailed'));
+            this.notify(t('tools.loremIpsumTool.copyFailed'), 'danger');
           });
       });
 
@@ -270,6 +272,30 @@
         loremOutput.value = '';
         updateCounts();
       });
+    },
+
+    /**
+     * Show a notice inside the generator card instead of a blocking alert()
+     *
+     * @param {string} message - Text to show
+     * @param {string} type - Bootstrap alert variant ('warning' or 'danger')
+     */
+    notify: function(message, type = 'warning') {
+      const notice = document.getElementById('loremNotice');
+      if (!notice) return;
+      notice.textContent = message;
+      notice.className = `alert alert-${type} mb-3`;
+    },
+
+    /**
+     * Hide the notice
+     */
+    clearNotice: function() {
+      const notice = document.getElementById('loremNotice');
+      if (notice) {
+        notice.textContent = '';
+        notice.className = 'alert alert-warning d-none mb-3';
+      }
     },
 
     /**
@@ -287,9 +313,10 @@
       const words = parseInt(wordCountInput.value) || 0;
 
       if (paragraphs === 0 && sentences === 0 && words === 0) {
-        alert(t('tools.loremIpsumTool.selectAtLeastOne'));
+        this.notify(t('tools.loremIpsumTool.selectAtLeastOne'));
         return;
       }
+      this.clearNotice();
 
       const results = [];
 

@@ -54,16 +54,19 @@
      */
     encode: function(input) {
       const output = [];
-      const inputLength = input.length;
+      // RFC 3492 works on Unicode code points, not UTF-16 code units -
+      // otherwise emoji and other astral characters encode as two halves.
+      const codePoints = Array.from(input, ch => ch.codePointAt(0));
+      const inputLength = codePoints.length;
       let n = this.initialN;
       let delta = 0;
       let bias = this.initialBias;
 
       // Handle ASCII characters
       for (let i = 0; i < inputLength; i++) {
-        const c = input.charCodeAt(i);
+        const c = codePoints[i];
         if (c < 0x80) {
-          output.push(input.charAt(i));
+          output.push(String.fromCodePoint(c));
         }
       }
 
@@ -79,7 +82,7 @@
         let m = this.maxInt;
 
         for (let i = 0; i < inputLength; i++) {
-          const c = input.charCodeAt(i);
+          const c = codePoints[i];
           if (c >= n && c < m) {
             m = c;
           }
@@ -89,7 +92,7 @@
         n = m;
 
         for (let i = 0; i < inputLength; i++) {
-          const c = input.charCodeAt(i);
+          const c = codePoints[i];
 
           if (c < n) {
             delta++;
@@ -185,7 +188,7 @@
         bias = this.adapt(i - oldi, outLength, oldi === 0);
         n += Math.floor(i / outLength);
         i %= outLength;
-        output.splice(i++, 0, String.fromCharCode(n));
+        output.splice(i++, 0, String.fromCodePoint(n));
       }
 
       return output.join('');
@@ -385,7 +388,7 @@
                           <i class="bi bi-clipboard me-2"></i>${t('common.copy')}
                         </button>
                         <button class="btn btn-sm btn-outline-secondary" id="downloadBtn">
-                          <i class="bi bi-download me-2"></i>Download
+                          <i class="bi bi-download me-2"></i>${t('common.download')}
                         </button>
                       </div>
                     </div>
@@ -396,8 +399,8 @@
               <!-- Floating Toggle Button -->
               <button class="btn btn-secondary btn-layout-toggle d-none d-lg-flex align-items-center justify-content-center position-absolute top-50 start-50 translate-middle shadow"
                       id="toggleLayoutBtn"
-                      title="${t('common.toggle_layout', 'Toggle layout')}">
-                <i class="bi bi-layout-three-columns"></i>
+                      title="${t('common.layout_stacked')}">
+                <i class="bi bi-view-stacked"></i>
               </button>
             </div>
           </div>
@@ -441,11 +444,13 @@
           if (isSideBySide) {
             columns.forEach(col => col.classList.remove('col-lg-6'));
             toggleLayoutBtn.innerHTML = `<i class="bi bi-layout-split"></i>`;
+            toggleLayoutBtn.title = t('common.layout_side_by_side');
             toggleLayoutBtn.classList.remove('top-50', 'start-50', 'translate-middle');
             toggleLayoutBtn.classList.add('top-0', 'end-0', 'btn-layout-toggle-stacked');
           } else {
             columns.forEach(col => col.classList.add('col-lg-6'));
-            toggleLayoutBtn.innerHTML = `<i class="bi bi-layout-three-columns"></i>`;
+            toggleLayoutBtn.innerHTML = `<i class="bi bi-view-stacked"></i>`;
+            toggleLayoutBtn.title = t('common.layout_stacked');
             toggleLayoutBtn.classList.remove('top-0', 'end-0', 'btn-layout-toggle-stacked');
             toggleLayoutBtn.classList.add('top-50', 'start-50', 'translate-middle');
           }

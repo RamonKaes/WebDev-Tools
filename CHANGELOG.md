@@ -4,6 +4,127 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
 
 ---
 
+## [Unreleased]
+
+### ♿ Accessibility
+- **Lorem Ipsum and QR code generator** no longer use blocking `alert()`
+  dialogs for validation and error messages; they show an inline Bootstrap
+  alert with `aria-live` inside the tool, like every other tool.
+
+### 🔧 Tooling
+- **GitHub Actions** (`.github/workflows/ci.yml`) on every push to `main`
+  and every pull request: Jest on Node 18 and 20, i18n key and placeholder
+  parity (`npm run check:i18n`, new `build-tools/check-i18n.js`), `php -l`
+  over every PHP file, sitemap freshness, and a full `build.sh` run.
+- `package-lock.json` is now committed so CI can use `npm ci`.
+- Dependabot keeps npm dev dependencies and the actions current (weekly,
+  grouped). A weekly lychee run checks the external "Useful Resources"
+  links on all pages, and CodeQL scans the shipped JavaScript.
+- `pt.json` used `{count}` in `showingCount` where the code substitutes
+  `{showing}`; caught by the new check.
+
+### 🗑️ Removed
+- **Hash generator SRI mode** – it duplicated the SRI Generator tool with a
+  smaller feature set (one algorithm, URL only). The mode is gone; the hash
+  generator links to the SRI Generator instead. Related i18n keys were
+  dropped in all six languages.
+
+### ✨ Features
+- **Layout toggle** between the input and output cards shows a stacked-rows
+  icon while the cards sit side by side and a split icon while they are
+  stacked, so the symbol names the layout you get. The tooltip does the
+  same ("Stacked" / "Side by side") instead of a generic "Toggle layout".
+### ✨ Features
+- **SQL beautifier** rewritten as a tokenizer. It breaks only before
+  clauses (SELECT, FROM, WHERE, GROUP BY, …), indents JOINs and AND/OR under
+  their clause, keeps function calls and IN lists on one line, indents
+  sub-selects one block deeper and never touches string literals or
+  comments. Previously every keyword, including AS and ON, started a new
+  line and function parentheses were torn apart.
+- **Regex tester** shows the name of named capture groups next to the
+  group number and includes them in the JSON download; previously
+  `(?<year>…)` was listed only as "Group 1".
+
+### 🐛 Bugfixes
+- **Base64 decoder** treated every input of 20+ characters as a binary file,
+  so even the built-in sample decoded to "Binary file decoded". Plain Base64
+  is now decoded as UTF-8 text first and only falls back to a file (with
+  image preview for PNG/JPEG/GIF/WebP by magic bytes) when it is not valid UTF-8.
+- **i18n placeholders** – `i18n.t()` only substituted `{{name}}`, while the
+  translation files mostly use `{name}`. Strings such as "Detected type:
+  {type}", "Match {number}" and "HTTP error {status}" rendered verbatim.
+  Both syntaxes are now accepted.
+- **HTML entity encoder** – the "all named entities" mode turned every
+  ordinary space into `&nbsp;` (the map keyed a plain space instead of
+  U+00A0). Numeric and hex modes skipped characters above U+9999 and split
+  emoji into surrogate halves; they now encode by code point.
+- **Punycode converter** worked on UTF-16 code units instead of code points,
+  so emoji domains encoded wrongly (💩.la → `xn--8c9by4f.la` instead of
+  `xn--ls8h.la`) and could not be decoded.
+- **Data converter** – JSON → YAML misaligned lists of objects and left
+  values like `yes`, `123` or empty strings unquoted; YAML → JSON could not
+  read lists of objects. Both directions were rewritten. A top-level JSON
+  array now gets a root element in XML, dates without a zone are read as UTC
+  (matching the UTC output of the reverse direction), and quoted CSV fields
+  may contain line breaks.
+- **JSON formatter auto-fix** quoted everything before a colon, breaking
+  valid JSON containing URLs or times inside strings. Fixes now only apply
+  outside string literals and unquoted keys are only quoted in key position.
+- **String escaper** – JavaScript unescape replaced sequences one after
+  another, so the escaped backslash in `C:\\new` became a newline. It now
+  parses every escape in a single pass and also understands `\xHH`, `\uHHHH`
+  and `\u{…}`. HTML unescape parses through a textarea instead of a div, so
+  markup in the input can no longer trigger resource loads.
+- **Hash generator** used an undefined `hidden` class, so an empty info box
+  and progress bar (file mode) and the "Fetching resource…" spinner (SRI mode)
+  were always visible. Replaced with Bootstrap's `d-none`.
+- **UUID v1** now sets the multicast bit of its random node ID as
+  RFC 4122 §4.5 requires, so generated IDs can never collide with a real
+  MAC address.
+- **Redirects** – `.htaccess` and `.htaccess.production` now redirect the
+  English slug to the localized directory for all tools; eleven
+  combinations were missing (six German slugs and the aspect ratio
+  calculator in every language) and returned 404.
+- **SRI generator** result blocks carried inline `style` attributes that the
+  CSP blocks; they use the `pre-wrap`, `text-break` and `small` classes now.
+
+### 🔐 Security
+- **Password generator** picked characters with `byte % charset.length`,
+  which favoured the first 76 of the 90 standard characters by 50 %. All
+  random draws (characters, words, the appended number, pattern letters)
+  now use rejection sampling on 32-bit values.
+- **Password strength** was always computed from the characters, so a
+  four-word passphrase showed 166 bits and "Very strong". The meter now
+  receives the entropy of the generation process: words × log2(wordlist)
+  for passphrases, consonant/vowel slots for pattern passwords, and
+  length × log2(charset) for random passwords.
+- **Wordlist** – `assets/js/lib/wordlist.js` claimed to be the EFF long
+  wordlist but held 2,055 words. It is now the real list with 7,776 words
+  (12.9 bits per word, CC BY 3.0).
+
+### 🌍 i18n
+- Moved the remaining hardcoded UI strings of seven tool modules into the
+  translation files: the German "Modus" label that showed on every language
+  of the code formatter, "Download"/"Auto"/"Output"/"Algorithms" labels, all
+  hints, spinners and result boxes of the hash generator, and the error
+  messages of the data converter, JWT decoder, JSON formatter and code
+  formatter (about 45 new keys in all six languages).
+
+### 📝 Documentation
+- README, `llms.txt`, `llms-full.txt` and `faq-ai.txt` (all six languages)
+  no longer advertise MD5, TOML, syntax highlighting, live regex matching,
+  JWT signature validation or a CSS-escape column in the character
+  reference; `llms-full.txt` claimed MD5 was "implemented in pure
+  JavaScript". Tool descriptions, SEO metadata and feature lists were
+  aligned with the actual behaviour, and the About pages now point to
+  GitHub Issues and the easyQ project page for feedback.
+
+### ✅ Tests
+- 41 new regression tests (898 total, 22 suites), including a first suite for
+  `assets/js/i18n.js`.
+
+---
+
 ## [2.2.0] – 2026-08-20
 
 ### 🎨 Design

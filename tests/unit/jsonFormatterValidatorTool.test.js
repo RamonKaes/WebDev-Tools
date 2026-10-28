@@ -483,3 +483,44 @@ describe('JsonFormatterValidatorTool – Escape / Unescape', () => {
     expect(text).toContain('jsonFormatterValidator.no_input');
   });
 });
+
+// ─── Auto-fix must not touch string contents ─────────────────────────────────
+
+describe('JsonFormatterValidatorTool – Auto-fix preserves strings', () => {
+  let c;
+  beforeEach(() => { c = openTool(); });
+  afterEach(() => cleanup(c));
+
+  function formatWithAutoFix(input) {
+    c.querySelector('#autoFixCheck').checked = true;
+    c.querySelector('#jsonInput').value = input;
+    c.querySelector('#formatBtn').click();
+    return c.querySelector('#jsonOutput').value;
+  }
+
+  test('leaves valid JSON with colons, URLs and apostrophes in strings unchanged', () => {
+    const input = '{"url":"http://example.com","time":"10:30","text":"it\'s // not a comment","key:like":1}';
+    const output = formatWithAutoFix(input);
+    expect(c.querySelector('#statusOutput .alert-success')).not.toBeNull();
+    expect(JSON.parse(output)).toEqual(JSON.parse(input));
+  });
+
+  test('quotes unquoted keys and converts single-quoted strings', () => {
+    const output = formatWithAutoFix("{name: 'Jo\"hn', nested: {a: 'x'}, list: ['a', 'b']}");
+    expect(JSON.parse(output)).toEqual({ name: 'Jo"hn', nested: { a: 'x' }, list: ['a', 'b'] });
+  });
+
+  test('keeps backslashes and already escaped quotes intact when converting single quotes', () => {
+    const output = formatWithAutoFix("{path: 'C:\\\\temp', quoted: 'say \\\"hi\\\" and \\'bye\\'', bare: 'a\"b'}");
+    expect(JSON.parse(output)).toEqual({ path: 'C:\\temp', quoted: 'say "hi" and \'bye\'', bare: 'a"b' });
+  });
+
+  test('strips comments outside strings and trailing commas', () => {
+    const output = formatWithAutoFix('{\n  // comment\n  "a": 1, /* block */\n  "b": [1, 2,],\n}');
+    expect(JSON.parse(output)).toEqual({ a: 1, b: [1, 2] });
+  });
+
+  test('tree container starts hidden via d-none', () => {
+    expect(c.querySelector('#jsonTree').classList.contains('d-none')).toBe(true);
+  });
+});

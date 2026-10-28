@@ -663,3 +663,23 @@ describe('uuidGeneratorTool – Crypto error handling', () => {
     expect(c.querySelector('#bulkOutput').value).toContain('tools.uuidGeneratorTool.crypto_error');
   });
 });
+
+// ─── UUID v1 node ID (RFC 4122 §4.5) ─────────────────────────────────────────
+
+describe('uuidGeneratorTool – UUID v1 random node ID', () => {
+  let c;
+  beforeEach(() => { c = openTool(); });
+  afterEach(() => cleanup(c));
+
+  test('sets the multicast bit of the random node ID', () => {
+    const versionSelect = c.querySelector('#uuidVersion');
+    versionSelect.value = 'v1';
+    versionSelect.dispatchEvent(new Event('change'));
+    for (let i = 0; i < 5; i++) {
+      c.querySelector('#generateSingle').click();
+      const node = c.querySelector('#singleUuid').value.split('-')[4];
+      expect(node).toHaveLength(12);
+      expect(parseInt(node.slice(0, 2), 16) & 0x01).toBe(1);
+    }
+  });
+});

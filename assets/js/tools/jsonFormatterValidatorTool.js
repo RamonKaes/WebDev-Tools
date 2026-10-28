@@ -9,6 +9,20 @@
   'use strict';
 
   /**
+   * Helper function for internationalization
+   *
+   * @param {string} key - Translation key
+   * @param {object} params - Parameters for interpolation
+   * @returns {string} - Translated string
+   */
+  function t(key, params) {
+    if (window.i18n && typeof window.i18n.t === 'function') {
+      return window.i18n.t(key, params);
+    }
+    return key.split('.').pop();
+  }
+
+  /**
    * JSON processing limits
    */
   const JSON_LIMITS = {
@@ -51,7 +65,7 @@
         allowed: false,
         size,
         warning: true,
-        message: `File too large (${(size / 1024 / 1024).toFixed(2)} MB). Maximum size is ${JSON_LIMITS.MAX_SIZE / 1024 / 1024} MB.`
+        message: t('tools.jsonFormatterValidator.file_too_large', { size: (size / 1024 / 1024).toFixed(2), max: JSON_LIMITS.MAX_SIZE / 1024 / 1024 })
       };
     }
     if (size > JSON_LIMITS.WARNING_SIZE) {
@@ -59,7 +73,7 @@
         allowed: true,
         size,
         warning: true,
-        message: `Large file (${(size / 1024 / 1024).toFixed(2)} MB). Processing may be slow.`
+        message: t('tools.jsonFormatterValidator.large_file', { size: (size / 1024 / 1024).toFixed(2) })
       };
     }
     return { allowed: true, size, warning: false, message: null };
@@ -118,14 +132,14 @@
     if (depth > JSON_LIMITS.MAX_TREE_DEPTH) {
       return {
         allowed: false,
-        reason: `JSON too deeply nested (${depth} levels). Maximum depth is ${JSON_LIMITS.MAX_TREE_DEPTH}.`
+        reason: t('tools.jsonFormatterValidator.too_deep', { depth: depth, max: JSON_LIMITS.MAX_TREE_DEPTH })
       };
     }
     const nodeCount = countJSONNodes(parsedJSON);
     if (nodeCount > JSON_LIMITS.MAX_TREE_NODES) {
       return {
         allowed: false,
-        reason: `JSON too complex (${nodeCount} nodes). Maximum is ${JSON_LIMITS.MAX_TREE_NODES} nodes.`
+        reason: t('tools.jsonFormatterValidator.too_complex', { count: nodeCount, max: JSON_LIMITS.MAX_TREE_NODES })
       };
     }
     return { allowed: true, reason: null };
@@ -209,7 +223,7 @@
                   </div>
 
                   <textarea id="jsonOutput" rows="12" class="form-control bg-body-secondary font-monospace mb-3" placeholder="${t('tools.jsonFormatterValidator.output_placeholder')}"></textarea>
-                  <div id="jsonTree" class="json-tree-container hidden mb-3"></div>
+                  <div id="jsonTree" class="json-tree-container d-none mb-3"></div>
 
                   <div class="d-flex align-items-center gap-2 flex-wrap">
                     <label class="form-label me-2 mb-0">${t('tools.jsonFormatterValidator.indentation_label')}:</label>
@@ -229,8 +243,8 @@
           <!-- Floating Toggle Button -->
           <button class="btn btn-secondary btn-layout-toggle d-none d-lg-flex align-items-center justify-content-center position-absolute top-50 start-50 translate-middle shadow"
                   id="toggleLayoutBtn"
-                  title="${t('common.toggle_layout', 'Toggle layout')}">
-            <i class="bi bi-layout-three-columns"></i>
+                  title="${t('common.layout_stacked')}">
+            <i class="bi bi-view-stacked"></i>
           </button>
         </div>
 
@@ -303,12 +317,14 @@
             // Switch to stacked
             columns.forEach(col => col.classList.remove('col-lg-6'));
             toggleLayoutBtn.innerHTML = `<i class="bi bi-layout-split"></i>`;
+            toggleLayoutBtn.title = t('common.layout_side_by_side');
             toggleLayoutBtn.classList.remove('top-50', 'start-50', 'translate-middle');
             toggleLayoutBtn.classList.add('top-0', 'end-0', 'btn-layout-toggle-stacked');
           } else {
             // Switch to side by side
             columns.forEach(col => col.classList.add('col-lg-6'));
-            toggleLayoutBtn.innerHTML = `<i class="bi bi-layout-three-columns"></i>`;
+            toggleLayoutBtn.innerHTML = `<i class="bi bi-view-stacked"></i>`;
+            toggleLayoutBtn.title = t('common.layout_stacked');
             toggleLayoutBtn.classList.remove('top-0', 'end-0', 'btn-layout-toggle-stacked');
             toggleLayoutBtn.classList.add('top-50', 'start-50', 'translate-middle');
           }
@@ -512,31 +528,116 @@
        * @returns {string} - Auto-fixed JSON string
        */
       function autoFixJSON(str) {
-        let fixed = str;
+        // Pass 1: convert single-quoted strings to double-quoted ones, leaving
+        // apostrophes inside double-quoted strings alone.
+        let fixed = convertSingleQuotedStrings(str);
 
-        // Remove comments (single-line and multi-line)
-        fixed = fixed.replace(/\/\*[\s\S]*?\*\//g, '');
-        fixed = fixed.replace(/\/\/.*/g, '');
-
-        // Fix single quotes to double quotes for strings
-        fixed = fixed.replace(/'([^']*)'/g, '"$1"');
-
-        // Add quotes to unquoted keys
-        fixed = fixed.replace(/(\w+)(\s*:\s*)/g, '"$1"$2');
-
-        // Remove trailing commas
-        fixed = fixed.replace(/,(\s*[}\]])/g, '$1');
-
-        // Fix NaN, Infinity to null
-        fixed = fixed.replace(/\bNaN\b/g, 'null');
-        fixed = fixed.replace(/\bInfinity\b/g, 'null');
-
-        // Lowercase true, false, null
-        fixed = fixed.replace(/\bTrue\b/g, 'true');
-        fixed = fixed.replace(/\bFalse\b/g, 'false');
-        fixed = fixed.replace(/\bNull\b/g, 'null');
+        // Pass 2: structural fixes, applied only outside string literals so that
+        // URLs, times and apostrophes inside values are left untouched.
+        fixed = mapOutsideStrings(fixed, segment => segment
+          // Remove comments (single-line and multi-line)
+          .replace(/\/\*[\s\S]*?\*\//g, '')
+          .replace(/\/\/.*/g, '')
+          // Add quotes to unquoted keys (only in key position: after { or ,)
+          .replace(/([{,]\s*)([A-Za-z_$][\w$]*)(\s*:)/g, '$1"$2"$3')
+          // Remove trailing commas
+          .replace(/,(\s*[}\]])/g, '$1')
+          // Fix NaN, Infinity to null
+          .replace(/\bNaN\b/g, 'null')
+          .replace(/\b-?Infinity\b/g, 'null')
+          // Lowercase true, false, null
+          .replace(/\bTrue\b/g, 'true')
+          .replace(/\bFalse\b/g, 'false')
+          .replace(/\bNull\b/g, 'null')
+        );
 
         return fixed;
+      }
+
+      /**
+       * Rewrite single-quoted string literals as double-quoted ones
+       *
+       * Double-quoted literals are copied verbatim, so an apostrophe inside
+       * them never opens a string.
+       *
+       * @param {string} str - Input text
+       * @returns {string} - Text with only double-quoted strings
+       */
+      function convertSingleQuotedStrings(str) {
+        let out = '';
+        let i = 0;
+
+        while (i < str.length) {
+          const ch = str[i];
+          if (ch === '"') {
+            let j = i + 1;
+            while (j < str.length && str[j] !== '"') {
+              if (str[j] === '\\') j++;
+              j++;
+            }
+            out += str.slice(i, j + 1);
+            i = j + 1;
+          } else if (ch === "'") {
+            // Escape sequences (\\, \n, \") are copied verbatim, \' loses its
+            // backslash, and a bare " gains one. Done in one scan so an
+            // already escaped quote is never escaped twice.
+            let j = i + 1;
+            let body = '';
+            while (j < str.length && str[j] !== "'") {
+              if (str[j] === '\\' && j + 1 < str.length) {
+                body += str[j + 1] === "'" ? "'" : str[j] + str[j + 1];
+                j += 2;
+              } else if (str[j] === '"') {
+                body += '\\"';
+                j++;
+              } else {
+                body += str[j];
+                j++;
+              }
+            }
+            out += '"' + body + '"';
+            i = j + 1;
+          } else {
+            out += ch;
+            i++;
+          }
+        }
+
+        return out;
+      }
+
+      /**
+       * Apply a transformation to every part of the text that is not inside a
+       * double-quoted string literal
+       *
+       * @param {string} str - Input text
+       * @param {Function} fn - Transformation for the non-string segments
+       * @returns {string} - Text with segments transformed, strings untouched
+       */
+      function mapOutsideStrings(str, fn) {
+        let result = '';
+        let segment = '';
+        let i = 0;
+
+        while (i < str.length) {
+          if (str[i] === '"') {
+            result += fn(segment);
+            segment = '';
+            // Copy the string literal verbatim, honouring escapes
+            let j = i + 1;
+            while (j < str.length && str[j] !== '"') {
+              if (str[j] === '\\') j++;
+              j++;
+            }
+            result += str.slice(i, j + 1);
+            i = j + 1;
+          } else {
+            segment += str[i];
+            i++;
+          }
+        }
+
+        return result + fn(segment);
       }
 
       /**
@@ -726,7 +827,7 @@
           var size = new Blob([formatted]).size;
           var keys = countKeys(parsed);
           var sizeWarning = sizeCheck.warning ? `<br><small class="text-warning">⚠️ ${sizeCheck.message}</small>` : '';
-          var treeWarning = !treeCheck.allowed ? `<br><small class="text-warning">⚠️ Tree view disabled: ${treeCheck.reason}</small>` : '';
+          var treeWarning = !treeCheck.allowed ? `<br><small class="text-warning">⚠️ ${t('tools.jsonFormatterValidator.tree_disabled', { reason: treeCheck.reason })}</small>` : '';
           statusOutput.innerHTML = `<div class="alert alert-success mb-0"><i class="bi bi-check-circle me-2"></i><strong>✅ ${t('tools.jsonFormatterValidator.valid_json')}</strong><br><small>${t('tools.jsonFormatterValidator.size')}: ${formatBytes(size)} | ${t('tools.jsonFormatterValidator.objects')}: ${keys.objects} | ${t('tools.jsonFormatterValidator.arrays')}: ${keys.arrays} | ${t('tools.jsonFormatterValidator.total_keys')}: ${keys.total}</small>${sizeWarning}${treeWarning}</div>`;
 
           // Update tree view if it's active and feasible

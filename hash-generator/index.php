@@ -16,13 +16,13 @@ $customAboutContent = <<<HTML
     Perfect for data integrity verification, password hashing, and security applications.
 </p>
 <p class="mb-0">
-    This tool supports popular hashing algorithms including MD5, SHA-1, SHA-256, SHA-512, 
-    and more. All hashing is performed client-side for maximum privacy and security.
+    This tool supports SHA-1, SHA-256, SHA-384 and SHA-512 via the Web Crypto API 
+    (MD5 is not available in browsers). All hashing is performed client-side for maximum privacy and security.
 </p>
 HTML;
 
 $features = [
-    'Multiple hash algorithms: MD5, SHA-1, SHA-256, SHA-384, SHA-512',
+    'Multiple hash algorithms: SHA-1, SHA-256, SHA-384, SHA-512',
     'Hash text and files',
     'Compare hashes for verification',
     'HMAC support with custom keys',
@@ -36,7 +36,7 @@ $customNoticeType = 'warning';
 $customNoticeContent = <<<HTML
     <h2 class="h6 fw-semibold alert-heading mb-3"><i class="bi bi-shield-exclamation me-2"></i>Security Considerations</h2>
     <ul class="mb-0">
-        <li>Use SHA-256 or higher: MD5 and SHA-1 are cryptographically broken</li>
+        <li>Use SHA-256 or higher: SHA-1 is cryptographically broken and MD5 is not offered at all</li>
         <li>Don't use plain hashes for passwords: Use bcrypt, scrypt, or PBKDF2 instead</li>
         <li>Add salts for password hashing: Prevent rainbow table attacks</li>
         <li>Verify hash integrity: Always compare full hash values, not truncated versions</li>
@@ -50,7 +50,7 @@ $additionalSections = [
         'content' => <<<HTML
 <ul>
     <li>File Integrity Verification: Verify downloads haven't been tampered with</li>
-    <li>Password Hashing: Store secure password hashes (use SHA-256 or higher)</li>
+    <li>Content Fingerprinting: Detect changes in files, API responses or build artifacts</li>
     <li>Data Deduplication: Identify duplicate files or content</li>
     <li>Checksum Generation: Create checksums for data validation</li>
     <li>Digital Signatures: Component of cryptographic signature systems</li>
@@ -63,7 +63,6 @@ HTML
         'icon' => 'info-circle',
         'content' => <<<HTML
 <ul>
-    <li>MD5: Fast but not recommended for security (128-bit, vulnerable to collisions)</li>
     <li>SHA-1: Deprecated for security use (160-bit, collision attacks exist)</li>
     <li>SHA-256: Industry standard for security applications (256-bit, secure)</li>
     <li>SHA-384: High security variant (384-bit, very secure)</li>

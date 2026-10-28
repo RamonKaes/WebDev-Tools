@@ -9,6 +9,20 @@
   'use strict';
 
   /**
+   * Helper function for internationalization
+   *
+   * @param {string} key - Translation key
+   * @param {object} params - Parameters for interpolation
+   * @returns {string} - Translated string
+   */
+  function t(key, params) {
+    if (window.i18n && typeof window.i18n.t === 'function') {
+      return window.i18n.t(key, params);
+    }
+    return key.split('.').pop();
+  }
+
+  /**
    * JSON processing limits
    */
   const JSON_LIMITS = {
@@ -51,7 +65,7 @@
         allowed: false,
         size,
         warning: true,
-        message: `File too large (${(size / 1024 / 1024).toFixed(2)} MB). Maximum size is ${JSON_LIMITS.MAX_SIZE / 1024 / 1024} MB.`
+        message: t('tools.jsonFormatterValidator.file_too_large', { size: (size / 1024 / 1024).toFixed(2), max: JSON_LIMITS.MAX_SIZE / 1024 / 1024 })
       };
     }
     if (size > JSON_LIMITS.WARNING_SIZE) {
@@ -59,7 +73,7 @@
         allowed: true,
         size,
         warning: true,
-        message: `Large file (${(size / 1024 / 1024).toFixed(2)} MB). Processing may be slow.`
+        message: t('tools.jsonFormatterValidator.large_file', { size: (size / 1024 / 1024).toFixed(2) })
       };
     }
     return { allowed: true, size, warning: false, message: null };
@@ -118,14 +132,14 @@
     if (depth > JSON_LIMITS.MAX_TREE_DEPTH) {
       return {
         allowed: false,
-        reason: `JSON too deeply nested (${depth} levels). Maximum depth is ${JSON_LIMITS.MAX_TREE_DEPTH}.`
+        reason: t('tools.jsonFormatterValidator.too_deep', { depth: depth, max: JSON_LIMITS.MAX_TREE_DEPTH })
       };
     }
     const nodeCount = countJSONNodes(parsedJSON);
     if (nodeCount > JSON_LIMITS.MAX_TREE_NODES) {
       return {
         allowed: false,
-        reason: `JSON too complex (${nodeCount} nodes). Maximum is ${JSON_LIMITS.MAX_TREE_NODES} nodes.`
+        reason: t('tools.jsonFormatterValidator.too_complex', { count: nodeCount, max: JSON_LIMITS.MAX_TREE_NODES })
       };
     }
     return { allowed: true, reason: null };
@@ -805,7 +819,7 @@
           var size = new Blob([formatted]).size;
           var keys = countKeys(parsed);
           var sizeWarning = sizeCheck.warning ? `<br><small class="text-warning">⚠️ ${sizeCheck.message}</small>` : '';
-          var treeWarning = !treeCheck.allowed ? `<br><small class="text-warning">⚠️ Tree view disabled: ${treeCheck.reason}</small>` : '';
+          var treeWarning = !treeCheck.allowed ? `<br><small class="text-warning">⚠️ ${t('tools.jsonFormatterValidator.tree_disabled', { reason: treeCheck.reason })}</small>` : '';
           statusOutput.innerHTML = `<div class="alert alert-success mb-0"><i class="bi bi-check-circle me-2"></i><strong>✅ ${t('tools.jsonFormatterValidator.valid_json')}</strong><br><small>${t('tools.jsonFormatterValidator.size')}: ${formatBytes(size)} | ${t('tools.jsonFormatterValidator.objects')}: ${keys.objects} | ${t('tools.jsonFormatterValidator.arrays')}: ${keys.arrays} | ${t('tools.jsonFormatterValidator.total_keys')}: ${keys.total}</small>${sizeWarning}${treeWarning}</div>`;
 
           // Update tree view if it's active and feasible

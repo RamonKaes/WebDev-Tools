@@ -13,6 +13,20 @@
     return;
   }
 
+  /**
+   * Helper function for internationalization
+   *
+   * @param {string} key - Translation key
+   * @param {object} params - Parameters for interpolation
+   * @returns {string} - Translated string
+   */
+  function t(key, params) {
+    if (window.i18n && typeof window.i18n.t === 'function') {
+      return window.i18n.t(key, params);
+    }
+    return key.split('.').pop();
+  }
+
   // Terser minifier lazy-loading
   let terserLoaded = false;
   let terserLoadPromise = null;
@@ -250,7 +264,7 @@
         // Load Terser library on first use
         const loaded = await loadTerser();
         if (!loaded || typeof Terser === 'undefined') {
-          throw new Error('Terser library failed to load. Please check your internet connection.');
+          throw new Error(t('tools.codeFormatterTool.errorTerserLoad'));
         }
 
         try {
@@ -275,7 +289,7 @@
           return result.code;
         } catch (error) {
           console.error('[codeFormatterTool] Terser minify error:', error);
-          throw new Error(`Minification failed: ${error.message}`);
+          throw new Error(t('tools.codeFormatterTool.errorMinifyDetail', { message: error.message }));
         }
       }
     },
@@ -390,7 +404,7 @@
                 </div>
                 <div class="col-md-4 col-lg-4">
                   <label class="form-label fw-bold">
-                    <i class="bi bi-sliders me-2"></i>Modus
+                    <i class="bi bi-sliders me-2"></i>${t('common.mode')}
                   </label>
                   <div class="btn-group btn-group-sm w-100" role="group">
                     <input type="radio" class="btn-check" name="mode" id="modeBeautify" checked>
@@ -406,7 +420,7 @@
                 </div>
                 <div class="col-md-2 col-lg-4">
                   <label class="form-label fw-bold d-block">
-                    <i class="bi bi-gear me-2"></i>Auto
+                    <i class="bi bi-gear me-2"></i>${t('common.auto')}
                   </label>
                   <div class="form-check form-switch">
                     <input class="form-check-input" type="checkbox" id="autoFormat">
@@ -449,7 +463,7 @@
                   <div class="d-flex align-items-center gap-2 flex-wrap">
                     <small class="text-muted me-auto" id="outputInfo"></small>
                     <button class="btn btn-sm btn-outline-secondary d-inline-flex align-items-center" id="copyBtn"><i class="bi bi-clipboard me-2"></i>${t('common.copy')}</button>
-                    <button class="btn btn-sm btn-outline-secondary d-inline-flex align-items-center" id="downloadBtn"><i class="bi bi-download me-2"></i>Download</button>
+                    <button class="btn btn-sm btn-outline-secondary d-inline-flex align-items-center" id="downloadBtn"><i class="bi bi-download me-2"></i>${t('common.download')}</button>
                   </div>
                 </div>
               </div>

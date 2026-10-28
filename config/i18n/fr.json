@@ -38,7 +38,12 @@
     "toggle_theme": "Changer de thème",
     "error": "Erreur",
     "usefulResources": "Ressources Utiles",
-    "code": "Code"
+    "code": "Code",
+    "mode": "Mode",
+    "download": "Télécharger",
+    "output": "Sortie",
+    "unknown": "Inconnu",
+    "copy_failed": "Échec de la copie"
   },
   "theme": {
     "light": "Clair",
@@ -241,7 +246,12 @@
       "toc_title": "Formateur JSON",
       "h1_title": "Formateur et Validateur JSON — Formatage et validation",
       "card_description": "Formatez, validez et embellissez JSON. Correction automatique, tri des clés, extracteur de chemin et vue arborescente pour structures complexes.",
-      "tool_description": "Formatez, validez et embellissez vos données JSON avec notre puissant formateur et validateur JSON. L'outil offre une correction automatique des erreurs, un tri alphabétique des clés, diverses options d'indentation et une vue arborescente intuitive. De plus, vous pouvez minifier, échapper le JSON et extraire des valeurs ciblées avec l'extracteur de chemin intégré. Toutes les opérations se font côté client pour une sécurité maximale."
+      "tool_description": "Formatez, validez et embellissez vos données JSON avec notre puissant formateur et validateur JSON. L'outil offre une correction automatique des erreurs, un tri alphabétique des clés, diverses options d'indentation et une vue arborescente intuitive. De plus, vous pouvez minifier, échapper le JSON et extraire des valeurs ciblées avec l'extracteur de chemin intégré. Toutes les opérations se font côté client pour une sécurité maximale.",
+      "file_too_large": "Fichier trop volumineux ({size} Mo). La taille maximale est de {max} Mo.",
+      "large_file": "Fichier volumineux ({size} Mo). Le traitement peut être lent.",
+      "too_deep": "JSON trop imbriqué ({depth} niveaux). Le maximum est de {max}.",
+      "too_complex": "JSON trop complexe ({count} nœuds). Le maximum est de {max} nœuds.",
+      "tree_disabled": "Vue arborescente désactivée : {reason}"
     },
     "aspectRatioCalculator": {
       "linkTitle": {
@@ -532,7 +542,34 @@
       "toc_title": "Générateur Hash",
       "h1_title": "Générateur Hash — Fonctions cryptographiques SHA et HMAC",
       "card_description": "Générez des hachages cryptographiques avec SHA-1, SHA-256, SHA-384, SHA-512 et HMAC. Générateur de hash avec support pour traitement de fichiers et texte.",
-      "tool_description": "Créez des valeurs de hachage cryptographiques avec notre générateur de hachage polyvalent. L'outil prend en charge la famille SHA de l'API Web Crypto : SHA-1, SHA-256, SHA-384 et SHA-512 (MD5 n'est pas proposé, car les navigateurs ne l'implémentent pas). Générez des hachages à partir de texte ou de fichiers, créez des signatures HMAC avec des clés personnalisées et générez des hachages Subresource Integrity (SRI) pour des intégrations CDN sécurisées. Le mode direct permet le hachage en temps réel pendant la saisie, et la fonction de comparaison de hachage aide à vérifier l'intégrité des fichiers."
+      "tool_description": "Créez des valeurs de hachage cryptographiques avec notre générateur de hachage polyvalent. L'outil prend en charge la famille SHA de l'API Web Crypto : SHA-1, SHA-256, SHA-384 et SHA-512 (MD5 n'est pas proposé, car les navigateurs ne l'implémentent pas). Générez des hachages à partir de texte ou de fichiers, créez des signatures HMAC avec des clés personnalisées et générez des hachages Subresource Integrity (SRI) pour des intégrations CDN sécurisées. Le mode direct permet le hachage en temps réel pendant la saisie, et la fonction de comparaison de hachage aide à vérifier l'intégrité des fichiers.",
+      "cryptoUnsupportedTitle": "API Web Crypto non prise en charge",
+      "cryptoUnsupportedText": "Votre navigateur ne prend pas en charge l'API Web Crypto. Utilisez un navigateur récent.",
+      "algorithms": "Algorithmes",
+      "legacy": "obsolète",
+      "sriInfo": "SRI (Subresource Integrity) vérifie que les ressources chargées n'ont pas été altérées.",
+      "fetching": "Chargement de la ressource...",
+      "generating": "Calcul des hachages...",
+      "hashingFile": "Hachage du fichier...",
+      "errorNoText": "Veuillez saisir un texte à hacher.",
+      "errorNoAlgorithm": "Veuillez sélectionner au moins un algorithme.",
+      "errorNoTextSecret": "Veuillez saisir le texte et la clé secrète.",
+      "errorNoUrl": "Veuillez saisir une URL.",
+      "errorNoHashes": "Veuillez saisir les deux hachages.",
+      "errorFetch": "Impossible de charger la ressource : {message}",
+      "errorFileTooLarge": "Fichier trop volumineux : {size} Mo",
+      "fileMaxSize": "La taille maximale est de {max} Mo pour ne pas surcharger le navigateur.",
+      "fileName": "Fichier",
+      "fileSize": "Taille",
+      "fileType": "Type",
+      "sriSuccess": "SRI généré avec succès",
+      "sriIntegrity": "Hash integrity",
+      "sriHex": "Hash hexadécimal",
+      "sriHtmlExample": "Exemple HTML",
+      "hashesMatch": "Les hachages correspondent !",
+      "hashesNoMatch": "Les hachages ne correspondent pas",
+      "hashLength": "Longueur du hachage {n} : {length} caractères",
+      "bytes": "octets"
     },
     "loremIpsumTool": {
       "linkTitle": {
@@ -731,7 +768,11 @@
       "toc_title": "Décodeur JWT",
       "h1_title": "Décodeur JWT — Décodage JSON Web Tokens et vérification",
       "card_description": "Décodez et analysez JSON Web Tokens avec inspection détaillée. Visualisez en-tête, charge utile et signature. Validez structure et algorithmes de signature.",
-      "tool_description": "Décodez et analysez les JSON Web Tokens (JWT) avec notre Décodeur JWT. L'outil sépare automatiquement le token en ses trois parties (en-tête, charge utile, signature) et affiche le contenu décodé en JSON formaté. Affiche l'algorithme de signature de l'en-tête et vérifie le claim d'expiration (exp) par rapport à l'heure actuelle. Remarque : cet outil ne fait que décoder les tokens ; la vérification de la signature nécessite la clé secrète. Toutes les opérations sont effectuées localement dans votre navigateur."
+      "tool_description": "Décodez et analysez les JSON Web Tokens (JWT) avec notre Décodeur JWT. L'outil sépare automatiquement le token en ses trois parties (en-tête, charge utile, signature) et affiche le contenu décodé en JSON formaté. Affiche l'algorithme de signature de l'en-tête et vérifie le claim d'expiration (exp) par rapport à l'heure actuelle. Remarque : cet outil ne fait que décoder les tokens ; la vérification de la signature nécessite la clé secrète. Toutes les opérations sont effectuées localement dans votre navigateur.",
+      "errorFormat": "Format JWT invalide. 3 parties attendues (header.payload.signature)",
+      "errorBase64": "Encodage Base64URL invalide",
+      "errorHeader": "Impossible de décoder l'en-tête : {message}",
+      "errorPayload": "Impossible de décoder la charge utile : {message}"
     },
     "punycodeConverterTool": {
       "linkTitle": {
@@ -828,7 +869,9 @@
       "toc_title": "Formateur de Code",
       "h1_title": "Formateur de Code — Formatage syntaxique pour multi-langages",
       "card_description": "Formatez et embellissez code HTML, CSS, JavaScript, XML et SQL. Outil de beautify et minify avec indentation personnalisable et formatage automatique à la saisie.",
-      "tool_description": "Formateur de code professionnel et embellisseur pour les développeurs web. Formatez, embellissez et minifiez le code HTML, CSS, JavaScript, XML et SQL avec une indentation personnalisable. L'outil formate automatiquement pendant la saisie et prend en charge à la fois l'embellissement pour le développement et la minification pour la production (la minification JavaScript utilise Terser). Parfait pour nettoyer le code désordonné, standardiser le formatage ou préparer le code pour le déploiement."
+      "tool_description": "Formateur de code professionnel et embellisseur pour les développeurs web. Formatez, embellissez et minifiez le code HTML, CSS, JavaScript, XML et SQL avec une indentation personnalisable. L'outil formate automatiquement pendant la saisie et prend en charge à la fois l'embellissement pour le développement et la minification pour la production (la minification JavaScript utilise Terser). Parfait pour nettoyer le code désordonné, standardiser le formatage ou préparer le code pour le déploiement.",
+      "errorTerserLoad": "La bibliothèque Terser n'a pas pu être chargée. Vérifiez votre connexion internet.",
+      "errorMinifyDetail": "Échec de la minification : {message}"
     },
     "dataConverterTool": {
       "linkTitle": {
@@ -881,7 +924,17 @@
       "toc_title": "Convertisseur de Données",
       "h1_title": "Convertisseur Données — Conversion formats de données",
       "card_description": "Convertissez données entre JSON, CSV, XML, YAML et timestamps. Convertisseur avec messages d'erreur clairs et configuration personnalisable.",
-      "tool_description": "Convertisseur de format de données puissant pour les développeurs web. Convertissez en un clic entre les formats JSON, XML, YAML et CSV. De plus, vous pouvez convertir les timestamps Unix/Epoch en dates lisibles et vice versa. L'outil prend en charge la conversion bidirectionnelle et le formatage de sortie personnalisable. Parfait pour le développement d'API, la migration de données et le travail avec différents formats de données."
+      "tool_description": "Convertisseur de format de données puissant pour les développeurs web. Convertissez en un clic entre les formats JSON, XML, YAML et CSV. De plus, vous pouvez convertir les timestamps Unix/Epoch en dates lisibles et vice versa. L'outil prend en charge la conversion bidirectionnelle et le formatage de sortie personnalisable. Parfait pour le développement d'API, la migration de données et le travail avec différents formats de données.",
+      "errors": {
+        "invalidXml": "Format XML invalide",
+        "jsonArray": "Le JSON doit être un tableau d'objets",
+        "invalidTimestamp": "Timestamp invalide",
+        "invalidDate": "Format de date invalide",
+        "invalidYaml": "YAML invalide près de « {near} »",
+        "yamlIndent": "Indentation YAML invalide près de « {near} »",
+        "csvArray": "La conversion CSV nécessite un tableau d'objets",
+        "unknownType": "Type de conversion inconnu"
+      }
     },
     "regexTesterTool": {
       "linkTitle": {

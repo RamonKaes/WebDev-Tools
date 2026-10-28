@@ -37,6 +37,14 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
 - **SRI generator** result blocks carried inline `style` attributes that the
   CSP blocks; they use the `pre-wrap`, `text-break` and `small` classes now.
 
+### 🌍 i18n
+- Moved the remaining hardcoded UI strings of seven tool modules into the
+  translation files: the German "Modus" label that showed on every language
+  of the code formatter, "Download"/"Auto"/"Output"/"Algorithms" labels, all
+  hints, spinners and result boxes of the hash generator, and the error
+  messages of the data converter, JWT decoder, JSON formatter and code
+  formatter (about 45 new keys in all six languages).
+
 ### ✅ Tests
 - 41 new regression tests (898 total, 22 suites), including a first suite for
   `assets/js/i18n.js`.

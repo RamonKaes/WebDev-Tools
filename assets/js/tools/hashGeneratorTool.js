@@ -98,7 +98,7 @@
      */
     async hashText(text, algorithm = 'SHA-256') {
       if (!this.isSupported()) {
-        throw new Error('Web Crypto API not supported in this browser');
+        throw new Error(t('tools.hashGeneratorTool.cryptoUnsupportedTitle'));
       }
 
       const buffer = this.stringToBuffer(text);
@@ -117,7 +117,7 @@
      */
     async hashFile(file, algorithm = 'SHA-256', progressCallback = null) {
       if (!this.isSupported()) {
-        throw new Error('Web Crypto API not supported in this browser');
+        throw new Error(t('tools.hashGeneratorTool.cryptoUnsupportedTitle'));
       }
 
       const arrayBuffer = await file.arrayBuffer();
@@ -143,7 +143,7 @@
      */
     async hmac(text, secret, algorithm = 'SHA-256') {
       if (!this.isSupported()) {
-        throw new Error('Web Crypto API not supported in this browser');
+        throw new Error(t('tools.hashGeneratorTool.cryptoUnsupportedTitle'));
       }
 
       const key = await window.crypto.subtle.importKey(
@@ -173,7 +173,7 @@
      */
     async generateSRI(url, algorithm = 'SHA-384') {
       if (!this.isSupported()) {
-        throw new Error('Web Crypto API not supported in this browser');
+        throw new Error(t('tools.hashGeneratorTool.cryptoUnsupportedTitle'));
       }
 
       try {
@@ -196,7 +196,7 @@
           algorithm: algorithm
         };
       } catch (error) {
-        throw new Error(`Failed to fetch resource: ${error.message}`);
+        throw new Error(t('tools.hashGeneratorTool.errorFetch', { message: error.message }));
       }
     }
   };
@@ -224,8 +224,8 @@
           container.innerHTML = `
             <div class="alert alert-danger" role="alert">
               <i class="bi bi-exclamation-triangle me-2"></i>
-              <strong>Web Crypto API Not Supported</strong><br>
-              Your browser doesn't support the Web Crypto API. Please use a modern browser.
+              <strong>${t('tools.hashGeneratorTool.cryptoUnsupportedTitle')}</strong><br>
+              ${t('tools.hashGeneratorTool.cryptoUnsupportedText')}
             </div>
           `;
           return;
@@ -273,7 +273,7 @@
                   </div>
                 </div>
                 <div class="col-md-4">
-                  <label class="form-label fw-bold"><i class="bi bi-gear me-2"></i>Output</label>
+                  <label class="form-label fw-bold"><i class="bi bi-gear me-2"></i>${t('common.output')}</label>
                   <div class="form-check form-switch">
                     <input class="form-check-input" type="checkbox" id="uppercaseToggle">
                     <label class="form-check-label" for="uppercaseToggle">
@@ -404,10 +404,10 @@
                   placeholder="${t('tools.hashGeneratorTool.textPlaceholder')}"></textarea>
               </div>
               <div class="mb-3">
-                <label class="form-label">Algorithms</label>
+                <label class="form-label">${t('tools.hashGeneratorTool.algorithms')}</label>
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" id="algoSHA1" value="SHA-1">
-                  <label class="form-check-label" for="algoSHA1">SHA-1 <small class="text-muted">(legacy)</small></label>
+                  <label class="form-check-label" for="algoSHA1">SHA-1 <small class="text-muted">(${t('tools.hashGeneratorTool.legacy')})</small></label>
                 </div>
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" id="algoSHA256" value="SHA-256" checked>
@@ -450,7 +450,7 @@
                 <small class="text-muted">${t('tools.hashGeneratorTool.fileHint')}</small>
               </div>
               <div class="mb-3">
-                <label class="form-label">Algorithms</label>
+                <label class="form-label">${t('tools.hashGeneratorTool.algorithms')}</label>
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" id="fileAlgoSHA256" value="SHA-256" checked>
                   <label class="form-check-label" for="fileAlgoSHA256">SHA-256</label>
@@ -512,7 +512,7 @@
               <h2 class="card-title h5 mb-3"><i class="bi bi-shield-check me-2"></i>${t('tools.hashGeneratorTool.sriTitle')}</h2>
               <div class="alert alert-info">
                 <i class="bi bi-info-circle me-2"></i>
-                <small>SRI (Subresource Integrity) verifies that fetched resources haven't been tampered with.</small>
+                <small>${t('tools.hashGeneratorTool.sriInfo')}</small>
               </div>
               <div class="mb-3">
                 <label for="sriURL" class="form-label">${t('tools.hashGeneratorTool.sriURL')}</label>
@@ -533,7 +533,7 @@
               </button>
               <div id="sriProgress" class="mt-3 d-none">
                 <div class="spinner-border spinner-border-sm me-2" role="status"></div>
-                <span>Fetching resource...</span>
+                <span>${t('tools.hashGeneratorTool.fetching')}</span>
               </div>
             </div>
 
@@ -646,7 +646,7 @@
       const text = textInput.value;
 
       if (!text) {
-        hashResults.innerHTML = '<div class="alert alert-warning">Please enter text to hash.</div>';
+        hashResults.innerHTML = `<div class="alert alert-warning">${t('tools.hashGeneratorTool.errorNoText')}</div>`;
         return;
       }
 
@@ -656,11 +656,11 @@
       });
 
       if (algorithms.length === 0) {
-        hashResults.innerHTML = '<div class="alert alert-warning">Please select at least one algorithm.</div>';
+        hashResults.innerHTML = `<div class="alert alert-warning">${t('tools.hashGeneratorTool.errorNoAlgorithm')}</div>`;
         return;
       }
 
-      hashResults.innerHTML = '<div class="spinner-border spinner-border-sm" role="status"></div> Generating hashes...';
+      hashResults.innerHTML = `<div class="spinner-border spinner-border-sm" role="status"></div> ${t('tools.hashGeneratorTool.generating')}`;
 
       try {
         const results = await Promise.all(
@@ -675,7 +675,7 @@
         hashResults.textContent = '';
         const errorAlert = document.createElement('div');
         errorAlert.className = 'alert alert-danger';
-        errorAlert.textContent = `Error: ${error.message}`;
+        errorAlert.textContent = `${t('common.error')}: ${error.message}`;
         hashResults.appendChild(errorAlert);
       }
     },
@@ -732,8 +732,8 @@
         hashResults.innerHTML = `
           <div class="alert alert-danger">
             <i class="bi bi-exclamation-triangle me-2"></i>
-            <strong>File too large:</strong> ${(file.size / 1024 / 1024).toFixed(2)} MB<br>
-            <small>Maximum file size is ${MAX_FILE_SIZE / 1024 / 1024} MB to prevent browser performance issues.</small>
+            <strong>${t('tools.hashGeneratorTool.errorFileTooLarge', { size: (file.size / 1024 / 1024).toFixed(2) })}</strong><br>
+            <small>${t('tools.hashGeneratorTool.fileMaxSize', { max: MAX_FILE_SIZE / 1024 / 1024 })}</small>
           </div>
         `;
         return;
@@ -744,9 +744,9 @@
 
       show(fileInfo);
       fileInfo.innerHTML = `
-        <strong>File:</strong> ${safeName}<br>
-        <strong>Size:</strong> ${(file.size / 1024).toFixed(2)} KB<br>
-        <strong>Type:</strong> ${safeType}
+        <strong>${t('tools.hashGeneratorTool.fileName')}:</strong> ${safeName}<br>
+        <strong>${t('tools.hashGeneratorTool.fileSize')}:</strong> ${(file.size / 1024).toFixed(2)} KB<br>
+        <strong>${t('tools.hashGeneratorTool.fileType')}:</strong> ${safeType}
       `;
 
       const algorithms = [];
@@ -755,14 +755,14 @@
       });
 
       if (algorithms.length === 0) {
-        hashResults.innerHTML = '<div class="alert alert-warning">Please select at least one algorithm.</div>';
+        hashResults.innerHTML = `<div class="alert alert-warning">${t('tools.hashGeneratorTool.errorNoAlgorithm')}</div>`;
         return;
       }
 
       show(fileProgress);
       setProgressWidth(progressBar, 0);
 
-      hashResults.innerHTML = '<div class="spinner-border spinner-border-sm" role="status"></div> Hashing file...';
+      hashResults.innerHTML = `<div class="spinner-border spinner-border-sm" role="status"></div> ${t('tools.hashGeneratorTool.hashingFile')}`;
 
       try {
         const results = [];
@@ -782,7 +782,7 @@
         hashResults.textContent = '';
         const errorAlert = document.createElement('div');
         errorAlert.className = 'alert alert-danger';
-        errorAlert.textContent = `Error: ${error.message}`;
+        errorAlert.textContent = `${t('common.error')}: ${error.message}`;
         hashResults.appendChild(errorAlert);
       }
     },
@@ -804,7 +804,7 @@
       const algorithm = hmacAlgorithm.value;
 
       if (!text || !secret) {
-        hashResults.innerHTML = '<div class="alert alert-warning">Please enter both text and secret key.</div>';
+        hashResults.innerHTML = `<div class="alert alert-warning">${t('tools.hashGeneratorTool.errorNoTextSecret')}</div>`;
         return;
       }
 
@@ -817,7 +817,7 @@
         hashResults.textContent = '';
         const errorAlert = document.createElement('div');
         errorAlert.className = 'alert alert-danger';
-        errorAlert.textContent = `Error: ${error.message}`;
+        errorAlert.textContent = `${t('common.error')}: ${error.message}`;
         hashResults.appendChild(errorAlert);
       }
     },
@@ -873,7 +873,7 @@
       const algorithm = sriAlgorithm.value;
 
       if (!url) {
-        hashResults.innerHTML = '<div class="alert alert-warning">Please enter a URL.</div>';
+        hashResults.innerHTML = `<div class="alert alert-warning">${t('tools.hashGeneratorTool.errorNoUrl')}</div>`;
         return;
       }
 
@@ -883,16 +883,17 @@
       try {
         const result = await CryptoUtils.generateSRI(url, algorithm);
         hide(sriProgress);
+        const safeUrl = window.AppHelpers ? window.AppHelpers.escapeHtml(url) : url;
 
         hashResults.innerHTML = `
           <div class="alert alert-success">
-            <h6><i class="bi bi-check-circle me-2"></i>SRI Generated Successfully</h6>
+            <h6><i class="bi bi-check-circle me-2"></i>${t('tools.hashGeneratorTool.sriSuccess')}</h6>
             <hr>
             <div class="mb-2">
-              <strong>Algorithm:</strong> ${result.algorithm}
+              <strong>${t('tools.hashGeneratorTool.algorithm')}:</strong> ${result.algorithm}
             </div>
             <div class="mb-2">
-              <strong>Integrity Hash:</strong>
+              <strong>${t('tools.hashGeneratorTool.sriIntegrity')}:</strong>
               <div class="input-group input-group-sm mt-1">
                 <input type="text" class="form-control font-monospace sri-integrity-value" value="${result.integrity}" readonly>
                 <button class="btn btn-outline-secondary sri-copy-btn" data-copy-value="${result.integrity}">
@@ -901,7 +902,7 @@
               </div>
             </div>
             <div class="mb-2">
-              <strong>Hex Hash:</strong>
+              <strong>${t('tools.hashGeneratorTool.sriHex')}:</strong>
               <div class="input-group input-group-sm mt-1">
                 <input type="text" class="form-control font-monospace sri-hash-value" value="${result.hash}" readonly>
                 <button class="btn btn-outline-secondary sri-copy-btn" data-copy-value="${result.hash}">
@@ -910,8 +911,8 @@
               </div>
             </div>
             <hr>
-            <strong>HTML Example:</strong>
-            <pre class="bg-light p-2 mt-2"><code>&lt;script src="${url}"
+            <strong>${t('tools.hashGeneratorTool.sriHtmlExample')}:</strong>
+            <pre class="bg-light p-2 mt-2"><code>&lt;script src="${safeUrl}"
         integrity="${result.integrity}"
         crossorigin="anonymous"&gt;&lt;/script&gt;</code></pre>
           </div>
@@ -924,7 +925,7 @@
         const icon = document.createElement('i');
         icon.className = 'bi bi-exclamation-triangle me-2';
         errorAlert.appendChild(icon);
-        errorAlert.appendChild(document.createTextNode(`Error: ${error.message}`));
+        errorAlert.appendChild(document.createTextNode(`${t('common.error')}: ${error.message}`));
         hashResults.appendChild(errorAlert);
       }
     },
@@ -940,7 +941,7 @@
       const compareResult = container.querySelector('#compareResult');
 
       if (!hash1 || !hash2) {
-        compareResult.innerHTML = '<div class="alert alert-warning">Please enter both hashes.</div>';
+        compareResult.innerHTML = `<div class="alert alert-warning">${t('tools.hashGeneratorTool.errorNoHashes')}</div>`;
         return;
       }
 
@@ -948,12 +949,12 @@
 
       compareResult.innerHTML = `
         <div class="alert alert-${match ? 'success' : 'danger'}">
-          <h6><i class="bi bi-${match ? 'check-circle' : 'x-circle'} me-2"></i>${match ? 'Hashes Match!' : 'Hashes Do Not Match'}</h6>
+          <h6><i class="bi bi-${match ? 'check-circle' : 'x-circle'} me-2"></i>${match ? t('tools.hashGeneratorTool.hashesMatch') : t('tools.hashGeneratorTool.hashesNoMatch')}</h6>
           ${!match ? `
             <hr>
             <small>
-              <strong>Hash 1 length:</strong> ${hash1.length} chars<br>
-              <strong>Hash 2 length:</strong> ${hash2.length} chars
+              ${t('tools.hashGeneratorTool.hashLength', { n: 1, length: hash1.length })}<br>
+              ${t('tools.hashGeneratorTool.hashLength', { n: 2, length: hash2.length })}
             </small>
           ` : ''}
         </div>
@@ -976,7 +977,7 @@
           <div class="list-group-item">
             <div class="d-flex justify-content-between align-items-center mb-2">
               <strong>${result.algorithm}</strong>
-              <span class="badge bg-secondary">${result.hash.length / 2} bytes</span>
+              <span class="badge bg-secondary">${result.hash.length / 2} ${t('tools.hashGeneratorTool.bytes')}</span>
             </div>
             <div class="input-group input-group-sm">
               <input type="text" class="form-control font-monospace hash-output" value="${hash}" readonly>

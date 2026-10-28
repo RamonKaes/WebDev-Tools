@@ -57,7 +57,8 @@ beforeAll(() => {
     open: jest.fn(),
   };
 
-  global.i18n = { t: (key) => key };
+  // Mirror the real t(): keep the key, append interpolation params so tests can assert on them
+  global.i18n = { t: (key, params) => params ? `${key} ${Object.values(params).join(' ')}` : key };
 
   global.ClipboardUtils = {
     iconHandle: (button) => {

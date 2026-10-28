@@ -38,7 +38,12 @@
     "toggle_theme": "Toggle theme",
     "error": "Error",
     "usefulResources": "Useful Resources",
-    "code": "Code"
+    "code": "Code",
+    "mode": "Mode",
+    "download": "Download",
+    "output": "Output",
+    "unknown": "Unknown",
+    "copy_failed": "Copy failed"
   },
   "theme": {
     "light": "Light",
@@ -241,7 +246,12 @@
       "toc_title": "JSON Formatter",
       "h1_title": "JSON Formatter & Validator — Beautify, Minify & Fix",
       "card_description": "Format, validate and beautify JSON. Minify JSON, view the tree structure, auto-fix common errors and extract values by path, all in your browser.",
-      "tool_description": "Format, validate, and beautify your JSON data with our powerful JSON Formatter & Validator. The tool offers automatic error correction, alphabetical key sorting, various indentation options, and an intuitive tree view. Additionally, you can minify JSON, escape strings, and use the integrated path extractor to retrieve specific values. All operations are performed client-side for maximum security."
+      "tool_description": "Format, validate, and beautify your JSON data with our powerful JSON Formatter & Validator. The tool offers automatic error correction, alphabetical key sorting, various indentation options, and an intuitive tree view. Additionally, you can minify JSON, escape strings, and use the integrated path extractor to retrieve specific values. All operations are performed client-side for maximum security.",
+      "file_too_large": "File too large ({size} MB). Maximum size is {max} MB.",
+      "large_file": "Large file ({size} MB). Processing may be slow.",
+      "too_deep": "JSON too deeply nested ({depth} levels). Maximum depth is {max}.",
+      "too_complex": "JSON too complex ({count} nodes). Maximum is {max} nodes.",
+      "tree_disabled": "Tree view disabled: {reason}"
     },
     "aspectRatioCalculator": {
       "linkTitle": {
@@ -532,7 +542,34 @@
       "toc_title": "Hash Generator",
       "h1_title": "Hash Generator — SHA-256, SHA-512, SHA-1 & HMAC Online",
       "card_description": "Generate SHA-1, SHA-256, SHA-384 and SHA-512 hashes for text and files. Cryptographic hash generator with HMAC support and file integrity verification.",
-      "tool_description": "Create cryptographic hash values with our versatile Hash Generator. The tool supports the SHA family provided by the Web Crypto API: SHA-1, SHA-256, SHA-384 and SHA-512 (MD5 is not offered because browsers do not implement it). Generate hashes from text or files, create HMAC signatures with custom keys, and generate Subresource Integrity (SRI) hashes for secure CDN integration. Live mode enables real-time hashing during input, and the hash comparison feature helps verify file integrity."
+      "tool_description": "Create cryptographic hash values with our versatile Hash Generator. The tool supports the SHA family provided by the Web Crypto API: SHA-1, SHA-256, SHA-384 and SHA-512 (MD5 is not offered because browsers do not implement it). Generate hashes from text or files, create HMAC signatures with custom keys, and generate Subresource Integrity (SRI) hashes for secure CDN integration. Live mode enables real-time hashing during input, and the hash comparison feature helps verify file integrity.",
+      "cryptoUnsupportedTitle": "Web Crypto API not supported",
+      "cryptoUnsupportedText": "Your browser doesn't support the Web Crypto API. Please use a modern browser.",
+      "algorithms": "Algorithms",
+      "legacy": "legacy",
+      "sriInfo": "SRI (Subresource Integrity) verifies that fetched resources haven't been tampered with.",
+      "fetching": "Fetching resource...",
+      "generating": "Generating hashes...",
+      "hashingFile": "Hashing file...",
+      "errorNoText": "Please enter text to hash.",
+      "errorNoAlgorithm": "Please select at least one algorithm.",
+      "errorNoTextSecret": "Please enter both text and secret key.",
+      "errorNoUrl": "Please enter a URL.",
+      "errorNoHashes": "Please enter both hashes.",
+      "errorFetch": "Failed to fetch resource: {message}",
+      "errorFileTooLarge": "File too large: {size} MB",
+      "fileMaxSize": "Maximum file size is {max} MB to prevent browser performance issues.",
+      "fileName": "File",
+      "fileSize": "Size",
+      "fileType": "Type",
+      "sriSuccess": "SRI generated successfully",
+      "sriIntegrity": "Integrity hash",
+      "sriHex": "Hex hash",
+      "sriHtmlExample": "HTML example",
+      "hashesMatch": "Hashes match!",
+      "hashesNoMatch": "Hashes do not match",
+      "hashLength": "Hash {n} length: {length} chars",
+      "bytes": "bytes"
     },
     "loremIpsumTool": {
       "linkTitle": {
@@ -731,7 +768,11 @@
       "toc_title": "JWT Decoder",
       "h1_title": "JWT Decoder — Analyze & Decode JSON Web Tokens Online",
       "card_description": "Decode and analyze JSON Web Tokens (JWT) with detailed header, payload, and signature inspection. Validates JWT structure and provides Base64 decoding insights.",
-      "tool_description": "Decode and analyze JSON Web Tokens (JWT) with our JWT Decoder. The tool automatically separates the token into its three parts (header, payload, signature) and displays the decoded content in formatted JSON. Shows the signing algorithm from the header and checks the expiration claim (exp) against the current time. Note: this tool only decodes tokens; signature verification requires the secret key. All operations are performed locally in your browser."
+      "tool_description": "Decode and analyze JSON Web Tokens (JWT) with our JWT Decoder. The tool automatically separates the token into its three parts (header, payload, signature) and displays the decoded content in formatted JSON. Shows the signing algorithm from the header and checks the expiration claim (exp) against the current time. Note: this tool only decodes tokens; signature verification requires the secret key. All operations are performed locally in your browser.",
+      "errorFormat": "Invalid JWT format. Expected 3 parts (header.payload.signature)",
+      "errorBase64": "Invalid Base64URL encoding",
+      "errorHeader": "Failed to decode header: {message}",
+      "errorPayload": "Failed to decode payload: {message}"
     },
     "punycodeConverterTool": {
       "linkTitle": {
@@ -828,7 +869,9 @@
       "toc_title": "Code Formatter",
       "h1_title": "Code Formatter — Beautify HTML, CSS, JS, XML & SQL Code",
       "card_description": "Beautify and format HTML, CSS, JavaScript, XML, SQL code. Beautify or minify with customizable indentation and auto-format as you type.",
-      "tool_description": "Professional code formatter and beautifier for web developers. Format, beautify, and minify HTML, CSS, JavaScript, XML, and SQL code with customizable indentation. The tool can auto-format as you type and supports both beautification for development and minification for production (JavaScript minification uses Terser). Perfect for cleaning up messy code, standardizing formatting, or preparing code for deployment."
+      "tool_description": "Professional code formatter and beautifier for web developers. Format, beautify, and minify HTML, CSS, JavaScript, XML, and SQL code with customizable indentation. The tool can auto-format as you type and supports both beautification for development and minification for production (JavaScript minification uses Terser). Perfect for cleaning up messy code, standardizing formatting, or preparing code for deployment.",
+      "errorTerserLoad": "Terser library failed to load. Please check your internet connection.",
+      "errorMinifyDetail": "Minification failed: {message}"
     },
     "dataConverterTool": {
       "linkTitle": {
@@ -881,7 +924,17 @@
       "toc_title": "Data Converter",
       "h1_title": "Data Converter — Convert JSON, XML, YAML, CSV & Timestamps",
       "card_description": "Convert between JSON, XML, YAML and CSV formats and Unix timestamps. Format conversion with clear error messages and customizable output formatting.",
-      "tool_description": "Powerful data format converter for web developers. Convert between JSON, XML, YAML, and CSV formats with a single click. Additionally, convert Unix/Epoch timestamps to human-readable dates and vice versa. The tool supports bidirectional conversion and customizable output formatting. Perfect for API development, data migration, and working with different data formats."
+      "tool_description": "Powerful data format converter for web developers. Convert between JSON, XML, YAML, and CSV formats with a single click. Additionally, convert Unix/Epoch timestamps to human-readable dates and vice versa. The tool supports bidirectional conversion and customizable output formatting. Perfect for API development, data migration, and working with different data formats.",
+      "errors": {
+        "invalidXml": "Invalid XML format",
+        "jsonArray": "JSON must be an array of objects",
+        "invalidTimestamp": "Invalid timestamp",
+        "invalidDate": "Invalid date format",
+        "invalidYaml": "Invalid YAML near \"{near}\"",
+        "yamlIndent": "Invalid YAML indentation near \"{near}\"",
+        "csvArray": "CSV conversion requires an array of objects",
+        "unknownType": "Unknown conversion type"
+      }
     },
     "regexTesterTool": {
       "linkTitle": {

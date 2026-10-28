@@ -388,7 +388,7 @@
                           <i class="bi bi-clipboard me-2"></i>${t('common.copy')}
                         </button>
                         <button class="btn btn-sm btn-outline-secondary" id="downloadBtn">
-                          <i class="bi bi-download me-2"></i>Download
+                          <i class="bi bi-download me-2"></i>${t('common.download')}
                         </button>
                       </div>
                     </div>

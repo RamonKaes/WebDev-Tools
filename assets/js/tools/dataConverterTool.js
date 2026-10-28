@@ -197,7 +197,7 @@
                   <div class="d-flex align-items-center gap-2 flex-wrap">
                     <small class="text-muted me-auto" id="outputStats">0 ${t('tools.dataConverterTool.lines')}, 0 ${t('tools.dataConverterTool.characters')}</small>
                     <button class="btn btn-sm btn-outline-secondary d-inline-flex align-items-center" id="copyOutput"><i class="bi bi-clipboard me-2"></i>${t('common.copy')}</button>
-                    <button class="btn btn-sm btn-outline-secondary d-inline-flex align-items-center" id="downloadOutput"><i class="bi bi-download me-2"></i>Download</button>
+                    <button class="btn btn-sm btn-outline-secondary d-inline-flex align-items-center" id="downloadOutput"><i class="bi bi-download me-2"></i>${t('common.download')}</button>
                   </div>
                 </div>
               </div>
@@ -332,7 +332,7 @@
         const xmlDoc = parser.parseFromString(input, 'text/xml');
 
         if (xmlDoc.getElementsByTagName('parsererror').length > 0) {
-          throw new Error('Invalid XML format');
+          throw new Error(t('tools.dataConverterTool.errors.invalidXml'));
         }
 
         const obj = xmlToJson(xmlDoc.documentElement);
@@ -375,7 +375,7 @@
       jsonToCsv: (input) => {
         const data = JSON.parse(input);
         if (!Array.isArray(data) || data.length === 0) {
-          throw new Error('JSON must be an array of objects');
+          throw new Error(t('tools.dataConverterTool.errors.jsonArray'));
         }
         return jsonToCsv(data);
       },
@@ -405,7 +405,7 @@
       timestampToDate: (input) => {
         const timestamp = parseInt(input.trim(), 10);
         if (isNaN(timestamp)) {
-          throw new Error('Invalid timestamp');
+          throw new Error(t('tools.dataConverterTool.errors.invalidTimestamp'));
         }
 
         const unit = document.querySelector('input[name="timestampUnit"]:checked')?.value || 'seconds';
@@ -434,7 +434,7 @@
           timestamp = new Date(input.trim()).getTime();
         }
         if (isNaN(timestamp)) {
-          throw new Error('Invalid date format');
+          throw new Error(t('tools.dataConverterTool.errors.invalidDate'));
         }
 
         const unit = document.querySelector('input[name="timestampUnit"]:checked')?.value || 'seconds';
@@ -727,7 +727,7 @@
           const item = items[pos];
           const entry = splitYamlEntry(item.text);
           if (!entry) {
-            throw new Error(`Invalid YAML near "${item.text}"`);
+            throw new Error(t('tools.dataConverterTool.errors.invalidYaml', { near: item.text }));
           }
           pos++;
 
@@ -749,7 +749,7 @@
 
       const root = parseBlock();
       if (pos < items.length) {
-        throw new Error(`Invalid YAML indentation near "${items[pos].text}"`);
+        throw new Error(t('tools.dataConverterTool.errors.yamlIndent', { near: items[pos].text }));
       }
       return root;
     }
@@ -794,7 +794,7 @@
     function jsonToCsv(data) {
       // Validate input
       if (!Array.isArray(data)) {
-        throw new Error('CSV conversion requires an array of objects');
+        throw new Error(t('tools.dataConverterTool.errors.csvArray'));
       }
       
       if (data.length === 0) {
@@ -802,7 +802,7 @@
       }
       
       if (typeof data[0] !== 'object' || data[0] === null) {
-        throw new Error('CSV conversion requires an array of objects (got: ' + typeof data[0] + ')');
+        throw new Error(t('tools.dataConverterTool.errors.csvArray'));
       }
       
       const delimiter = document.getElementById('csvDelimiter')?.value || ',';
@@ -944,7 +944,7 @@
       try {
         const converter = converters[type];
         if (!converter) {
-          throw new Error('Unknown conversion type');
+          throw new Error(t('tools.dataConverterTool.errors.unknownType'));
         }
 
         const output = converter(input);
@@ -1076,9 +1076,9 @@
         } else {
           await navigator.clipboard.writeText(text);
         }
-        showStatus('Copied to clipboard!', 'success');
+        showStatus(t('common.copied'), 'success');
       } catch (error) {
-        showStatus('Failed to copy', 'error');
+        showStatus(t('common.copy_failed'), 'error');
       }
     });
 

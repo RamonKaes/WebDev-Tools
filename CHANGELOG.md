@@ -7,6 +7,12 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
 ## [Unreleased]
 
 ### ✨ Features
+- **SQL beautifier** rewritten as a tokenizer. It breaks only before
+  clauses (SELECT, FROM, WHERE, GROUP BY, …), indents JOINs and AND/OR under
+  their clause, keeps function calls and IN lists on one line, indents
+  sub-selects one block deeper and never touches string literals or
+  comments. Previously every keyword, including AS and ON, started a new
+  line and function parentheses were torn apart.
 - **Regex tester** shows the name of named capture groups next to the
   group number and includes them in the JSON download; previously
   `(?<year>…)` was listed only as "Group 1".

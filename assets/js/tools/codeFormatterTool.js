@@ -325,25 +325,7 @@
        * @returns {string} - Formatted SQL
        */
       beautify: (code, indent = '  ') => {
-        const keywords = /\b(SELECT|FROM|WHERE|JOIN|INNER|LEFT|RIGHT|OUTER|ON|GROUP BY|ORDER BY|HAVING|LIMIT|OFFSET|INSERT INTO|VALUES|UPDATE|SET|DELETE|CREATE|ALTER|DROP|TABLE|DATABASE|INDEX|AS|AND|OR|NOT|IN|EXISTS|LIKE|BETWEEN|DISTINCT|COUNT|SUM|AVG|MAX|MIN)\b/gi;
-
-        let formatted = code
-          .replace(/\s+/g, ' ')
-          .replace(/,\s*/g, ',\n' + indent)
-          .replace(/\(\s*/g, '(\n' + indent.repeat(2))
-          .replace(/\s*\)/g, '\n)');
-
-        formatted = formatted.replace(keywords, (match) => {
-          return '\n' + match.toUpperCase();
-        });
-
-        formatted = formatted
-          .split('\n')
-          .map(line => line.trim())
-          .filter(line => line)
-          .join('\n');
-
-        return formatted.trim();
+        return formatSql(code, indent);
       },
       /**
        * Minify SQL code by removing comments and whitespace
@@ -353,12 +335,252 @@
        */
       minify: (code) => {
         return code
+          .replace(/\/\*[\s\S]*?\*\//g, '')
           .replace(/--.*$/gm, '')
           .replace(/\s+/g, ' ')
           .trim();
       }
     }
   };
+
+  // ─── SQL beautifier ────────────────────────────────────────────────────────
+
+  /** Clauses that start a new line at block level with their content indented below */
+  const SQL_CLAUSES = [
+    'SELECT DISTINCT', 'SELECT', 'FROM', 'WHERE', 'GROUP BY', 'ORDER BY', 'HAVING',
+    'LIMIT', 'OFFSET', 'INSERT INTO', 'VALUES', 'UPDATE', 'SET', 'DELETE FROM', 'DELETE',
+    'UNION ALL', 'UNION', 'EXCEPT', 'INTERSECT', 'RETURNING', 'WITH',
+    'CREATE TABLE', 'ALTER TABLE', 'DROP TABLE', 'CREATE INDEX', 'DROP INDEX'
+  ];
+
+  /** Joins start a new line inside the FROM block */
+  const SQL_JOINS = [
+    'LEFT OUTER JOIN', 'RIGHT OUTER JOIN', 'FULL OUTER JOIN', 'LEFT JOIN', 'RIGHT JOIN',
+    'INNER JOIN', 'FULL JOIN', 'CROSS JOIN', 'NATURAL JOIN', 'JOIN'
+  ];
+
+  /** Conditions continue on their own line inside WHERE / ON / HAVING */
+  const SQL_CONJUNCTIONS = ['AND', 'OR'];
+
+  /** Everything else that is only upper-cased */
+  const SQL_KEYWORDS = new Set([
+    'AS', 'ON', 'IN', 'NOT', 'NULL', 'IS', 'LIKE', 'ILIKE', 'BETWEEN', 'EXISTS', 'DISTINCT',
+    'CASE', 'WHEN', 'THEN', 'ELSE', 'END', 'ASC', 'DESC', 'USING', 'INTO', 'TABLE', 'INDEX',
+    'DATABASE', 'PRIMARY', 'KEY', 'DEFAULT', 'UNIQUE', 'REFERENCES', 'ALL', 'ANY', 'SOME',
+    'TRUE', 'FALSE', 'IF', 'COALESCE', 'CAST', 'COUNT', 'SUM', 'AVG', 'MAX', 'MIN', 'NULLS',
+    'FIRST', 'LAST', 'CONSTRAINT', 'FOREIGN', 'CHECK', 'VARCHAR', 'INT', 'INTEGER', 'TEXT',
+    'BOOLEAN', 'DATE', 'TIMESTAMP', 'DECIMAL', 'FLOAT', 'BIGINT', 'SERIAL', 'TOP', 'FETCH', 'ONLY', 'ROWS'
+  ]);
+
+  const SQL_PHRASES = [...SQL_CLAUSES, ...SQL_JOINS].map(p => p.split(' '));
+
+  /**
+   * Split SQL into tokens, keeping strings and comments intact
+   *
+   * @param {string} code - SQL source
+   * @returns {Array<{type: string, value: string}>} - Tokens
+   */
+  function tokenizeSql(code) {
+    const tokens = [];
+    const pattern = /\s+|--[^\n]*|\/\*[\s\S]*?\*\/|'(?:[^'\\]|\\.|'')*'|"(?:[^"\\]|\\.)*"|`[^`]*`|[A-Za-z_][\w$.]*|\d+(?:\.\d+)?|<>|!=|<=|>=|::|\|\||[(),;]|[^\s\w]/g;
+    let m;
+    let spaceBefore = false;
+    while ((m = pattern.exec(code)) !== null) {
+      const value = m[0];
+      if (/^\s+$/.test(value)) {
+        spaceBefore = true;
+        continue;
+      }
+      let type = 'op';
+      if (value.startsWith('--')) type = 'lineComment';
+      else if (value.startsWith('/*')) type = 'blockComment';
+      else if (/^['"`]/.test(value)) type = 'string';
+      else if (/^[A-Za-z_]/.test(value)) type = 'word';
+      else if (/^\d/.test(value)) type = 'number';
+      else if ('(),;'.includes(value)) type = value;
+      tokens.push({ type, value, spaceBefore });
+      spaceBefore = false;
+    }
+    return tokens;
+  }
+
+  /**
+   * Format SQL in the common "clause per line" style
+   *
+   * SELECT
+   *     u.id,
+   *     COUNT(o.id) AS orders
+   * FROM
+   *     users u
+   *     LEFT JOIN orders o ON o.user_id = u.id
+   * WHERE
+   *     u.active = 1
+   *     AND u.name LIKE '%a%'
+   *
+   * Sub-selects are indented one block deeper; function calls, IN lists and
+   * arithmetic stay on one line.
+   *
+   * @param {string} code - SQL source
+   * @param {string} indent - Indentation unit
+   * @returns {string} - Formatted SQL
+   */
+  function formatSql(code, indent) {
+    const tokens = tokenizeSql(code);
+    const lines = [];
+    let line = '';
+    let block = 0;          // sub-select nesting
+    let parens = 0;         // open parentheses inside the current block (function calls, IN lists)
+    const blockParens = []; // paren depth at which each sub-select was opened
+    let inClause = false;   // true once a clause keyword has been written for this block
+    let prev = null;
+
+    // Each nesting level uses two indents: one for the clause keyword, one for its content
+    const clauseLevel = () => block * 2;
+    const contentLevel = () => block * 2 + 1;
+    const pad = (n) => indent.repeat(n);
+    const flush = () => {
+      if (line.trim()) lines.push(line.replace(/\s+$/, ''));
+      line = '';
+    };
+    const newLine = (level) => {
+      flush();
+      line = pad(level);
+    };
+    const append = (text) => {
+      if (line === '' || /[\s(]$/.test(line) || line.trim() === '') {
+        line += text;
+      } else {
+        line += ' ' + text;
+      }
+    };
+
+    /** Try to match a multi-word keyword phrase at position i */
+    const matchPhrase = (i) => {
+      for (const phrase of SQL_PHRASES) {
+        let ok = true;
+        for (let k = 0; k < phrase.length; k++) {
+          const tok = tokens[i + k];
+          if (!tok || tok.type !== 'word' || tok.value.toUpperCase() !== phrase[k]) { ok = false; break; }
+        }
+        if (ok) return phrase;
+      }
+      return null;
+    };
+
+    for (let i = 0; i < tokens.length; i++) {
+      const tok = tokens[i];
+      const upper = tok.type === 'word' ? tok.value.toUpperCase() : null;
+
+      if (tok.type === 'lineComment') {
+        append(tok.value);
+        newLine(inClause ? contentLevel() : clauseLevel());
+        prev = tok;
+        continue;
+      }
+
+      if (tok.type === 'blockComment' || tok.type === 'string' || tok.type === 'number') {
+        append(tok.value);
+        prev = tok;
+        continue;
+      }
+
+      if (tok.type === 'word') {
+        const phrase = parens === 0 ? matchPhrase(i) : null;
+        if (phrase) {
+          const text = phrase.join(' ');
+          if (SQL_JOINS.includes(text)) {
+            newLine(contentLevel());
+            append(text);
+          } else {
+            newLine(clauseLevel());
+            append(text);
+            newLine(contentLevel());
+            inClause = true;
+          }
+          i += phrase.length - 1;
+          prev = { type: 'keyword', value: text };
+          continue;
+        }
+
+        if (parens === 0 && SQL_CONJUNCTIONS.includes(upper)) {
+          newLine(contentLevel());
+          append(upper);
+          prev = { type: 'keyword', value: upper };
+          continue;
+        }
+
+        // Inside parentheses keywords are still upper-cased but never break lines
+        append(SQL_KEYWORDS.has(upper) || SQL_CONJUNCTIONS.includes(upper) || matchPhrase(i) ? upper : tok.value);
+        prev = tok;
+        continue;
+      }
+
+      if (tok.type === '(') {
+        const next = tokens[i + 1];
+        const isSubquery = next && next.type === 'word' && (next.value.toUpperCase() === 'SELECT' || next.value.toUpperCase() === 'WITH');
+        // Keep "COUNT(" and "t (" as written: a parenthesis glued to a word in
+        // the source stays glued (function call), one after a space keeps it.
+        if (prev && prev.type === 'word' && !tok.spaceBefore) {
+          line += '(';
+        } else {
+          append('(');
+        }
+        if (isSubquery) {
+          blockParens.push(parens);
+          parens = 0;
+          block++;
+          inClause = false;
+        } else {
+          parens++;
+        }
+        prev = tok;
+        continue;
+      }
+
+      if (tok.type === ')') {
+        if (parens === 0 && block > 0) {
+          block--;
+          parens = blockParens.pop() || 0;
+          inClause = true;
+          newLine(contentLevel());
+          line += ')';
+        } else {
+          parens = Math.max(0, parens - 1);
+          line += ')';
+        }
+        prev = tok;
+        continue;
+      }
+
+      if (tok.type === ',') {
+        line += ',';
+        if (parens === 0) {
+          newLine(contentLevel());
+        }
+        prev = tok;
+        continue;
+      }
+
+      if (tok.type === ';') {
+        line += ';';
+        flush();
+        lines.push('');
+        block = 0;
+        parens = 0;
+        blockParens.length = 0;
+        inClause = false;
+        prev = tok;
+        continue;
+      }
+
+      // Operators and anything else
+      append(tok.value);
+      prev = tok;
+    }
+
+    flush();
+    return lines.join('\n').replace(/\n{3,}/g, '\n\n').trim();
+  }
 
   window.Tools.register('codeFormatterTool', {
     init: function () {

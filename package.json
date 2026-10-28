@@ -6,7 +6,8 @@
   "scripts": {
     "build": "bash build.sh",
     "build:css": "csso assets/css/style.css -o dist/assets/css/style.min.css",
-    "deploy": "rsync -avz --delete dist/ user@webdev-tools.info:/var/www/html/",
+    "deploy": "bash build-tools/deploy-ftp.sh",
+    "deploy:dry": "bash build-tools/deploy-ftp.sh --dry-run",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",

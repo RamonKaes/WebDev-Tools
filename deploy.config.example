@@ -1,0 +1,10 @@
+# FTP deployment settings – copy to deploy.config (ignored by git) and fill in.
+# The password is NOT stored here but in the system keyring:
+#   secret-tool store --label="WebDev-Tools FTP" service webdev-tools-ftp
+
+FTP_HOST="ftp.example.com"
+FTP_USER="your-ftp-user"
+# Web root on the server, e.g. "/" or "/htdocs"
+FTP_REMOTE_DIR="/"
+# "yes" = FTPS (FTP over TLS, recommended), "no" = plain FTP
+FTP_TLS="yes"

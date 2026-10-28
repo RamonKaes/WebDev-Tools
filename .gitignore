@@ -145,6 +145,9 @@ config/manifest.json.backup
 # DEPLOYMENT
 # ============================================
 
+# FTP deployment settings (template: deploy.config.example)
+deploy.config
+
 # Deployment Scripts (if sensitive)
 # deploy-private.sh
 

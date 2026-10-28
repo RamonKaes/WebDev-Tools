@@ -1028,7 +1028,7 @@ SOFTWARE.
 
 - **Website**: [https://webdev-tools.info/](https://webdev-tools.info/)
 - **Issues**: [GitHub Issues](https://github.com/RamonKaes/WebDev-Tools/issues)
-- **Questions & Ideas**: [easyq project page](https://easyq.info/projects/ramonkaes-webdev-tools)
+- **Questions & Ideas**: [easyQ project page](https://easyq.info/projects/ramonkaes-webdev-tools)
 - **Email**: [Contact Form](https://webdev-tools.info/imprint.php)
 - **Documentation**: 
   - [Developer Docs](docs/README.md)

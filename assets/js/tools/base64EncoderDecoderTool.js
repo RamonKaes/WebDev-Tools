@@ -110,8 +110,8 @@
           <!-- Floating Toggle Button -->
           <button class="btn btn-secondary btn-layout-toggle d-none d-lg-flex align-items-center justify-content-center position-absolute top-50 start-50 translate-middle shadow"
                   id="toggleLayoutBtn"
-                  title="${t('common.toggle_layout')}">
-            <i class="bi bi-layout-three-columns"></i>
+                  title="${t('common.layout_stacked')}">
+            <i class="bi bi-view-stacked"></i>
           </button>
         </div>
       </div>
@@ -141,7 +141,7 @@
           } else {
 
             columns.forEach(col => col.classList.add('col-lg-6'));
-            toggleLayoutBtn.innerHTML = `<i class="bi bi-layout-three-columns"></i>`;
+            toggleLayoutBtn.innerHTML = `<i class="bi bi-view-stacked"></i>`;
             toggleLayoutBtn.title = t('common.layout_stacked');
             toggleLayoutBtn.classList.remove('top-0', 'end-0', 'btn-layout-toggle-stacked');
             toggleLayoutBtn.classList.add('top-50', 'start-50', 'translate-middle');

@@ -30,6 +30,11 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
   dropped in all six languages.
 
 ### ✨ Features
+- **Layout toggle** between the input and output cards shows a stacked-rows
+  icon while the cards sit side by side and a split icon while they are
+  stacked, so the symbol names the layout you get. The tooltip does the
+  same ("Stacked" / "Side by side") instead of a generic "Toggle layout".
+### ✨ Features
 - **SQL beautifier** rewritten as a tokenizer. It breaks only before
   clauses (SELECT, FROM, WHERE, GROUP BY, …), indents JOINs and AND/OR under
   their clause, keeps function calls and IN lists on one line, indents
@@ -112,7 +117,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
   reference; `llms-full.txt` claimed MD5 was "implemented in pure
   JavaScript". Tool descriptions, SEO metadata and feature lists were
   aligned with the actual behaviour, and the About pages now point to
-  GitHub Issues and the easyq project page for feedback.
+  GitHub Issues and the easyQ project page for feedback.
 
 ### ✅ Tests
 - 41 new regression tests (898 total, 22 suites), including a first suite for

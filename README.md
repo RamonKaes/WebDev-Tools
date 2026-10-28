@@ -687,8 +687,8 @@ The platform provides complete localization across all tools and documentation:
 
 ### Translation Methodology
 
-- **Static Content**: Translated using Claude Sonnet 4.6 for technical accuracy
-- **Cultural Content**: Translated using Claude Sonnet 4.6 for nuanced, contextually appropriate language
+- **Static Content**: Translated using Claude Opus 5.5 for technical accuracy
+- **Cultural Content**: Translated using Claude Opus 5.5 for nuanced, contextually appropriate language
 - **Consistency**: Centralized translation files ensure terminology consistency
 - **Quality Assurance**: Manual review by native speakers for critical pages
 
@@ -768,7 +768,7 @@ WebDev-Tools was developed using a **hybrid human-AI approach** that combines th
 
 #### AI Models Utilized
 
-- **Claude Sonnet 4.6** (Anthropic) — Primary coding assistant
+- **Claude Opus 5.5** (Anthropic) — Primary coding assistant
 - **Claude Code** (Anthropic) — Automated code review and quality assurance
 
 #### Quality Assurance Process
@@ -1013,7 +1013,7 @@ SOFTWARE.
 
 ### AI Development Partners
 
-- **Anthropic (Claude Sonnet 4.6)** — Primary development assistant
+- **Anthropic (Claude Opus 5.5)** — Primary development assistant
 - **Anthropic (Claude Code)** — Automated code review and quality assurance
 
 ### Community

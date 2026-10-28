@@ -510,6 +510,11 @@ describe('JsonFormatterValidatorTool – Auto-fix preserves strings', () => {
     expect(JSON.parse(output)).toEqual({ name: 'Jo"hn', nested: { a: 'x' }, list: ['a', 'b'] });
   });
 
+  test('keeps backslashes and already escaped quotes intact when converting single quotes', () => {
+    const output = formatWithAutoFix("{path: 'C:\\\\temp', quoted: 'say \\\"hi\\\" and \\'bye\\'', bare: 'a\"b'}");
+    expect(JSON.parse(output)).toEqual({ path: 'C:\\temp', quoted: 'say "hi" and \'bye\'', bare: 'a"b' });
+  });
+
   test('strips comments outside strings and trailing commas', () => {
     const output = formatWithAutoFix('{\n  // comment\n  "a": 1, /* block */\n  "b": [1, 2,],\n}');
     expect(JSON.parse(output)).toEqual({ a: 1, b: [1, 2] });

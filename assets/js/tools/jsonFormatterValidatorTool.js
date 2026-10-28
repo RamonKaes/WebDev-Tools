@@ -576,18 +576,24 @@
             out += str.slice(i, j + 1);
             i = j + 1;
           } else if (ch === "'") {
+            // Escape sequences (\\, \n, \") are copied verbatim, \' loses its
+            // backslash, and a bare " gains one. Done in one scan so an
+            // already escaped quote is never escaped twice.
             let j = i + 1;
             let body = '';
             while (j < str.length && str[j] !== "'") {
               if (str[j] === '\\' && j + 1 < str.length) {
                 body += str[j + 1] === "'" ? "'" : str[j] + str[j + 1];
                 j += 2;
+              } else if (str[j] === '"') {
+                body += '\\"';
+                j++;
               } else {
                 body += str[j];
                 j++;
               }
             }
-            out += '"' + body.replace(/"/g, '\\"') + '"';
+            out += '"' + body + '"';
             i = j + 1;
           } else {
             out += ch;

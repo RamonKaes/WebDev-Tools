@@ -11,6 +11,12 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
   dialogs for validation and error messages; they show an inline Bootstrap
   alert with `aria-live` inside the tool, like every other tool.
 
+### 🗑️ Removed
+- **Hash generator SRI mode** – it duplicated the SRI Generator tool with a
+  smaller feature set (one algorithm, URL only). The mode is gone; the hash
+  generator links to the SRI Generator instead. Related i18n keys were
+  dropped in all six languages.
+
 ### ✨ Features
 - **SQL beautifier** rewritten as a tokenizer. It breaks only before
   clauses (SELECT, FROM, WHERE, GROUP BY, …), indents JOINs and AND/OR under

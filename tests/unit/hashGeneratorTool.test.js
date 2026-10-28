@@ -126,7 +126,7 @@ describe('HashGeneratorTool – UI Rendering', () => {
     expect(c.querySelector('input[name="hashMode"][value="text"]')).not.toBeNull();
     expect(c.querySelector('input[name="hashMode"][value="file"]')).not.toBeNull();
     expect(c.querySelector('input[name="hashMode"][value="hmac"]')).not.toBeNull();
-    expect(c.querySelector('input[name="hashMode"][value="sri"]')).not.toBeNull();
+    expect(c.querySelector('input[name="hashMode"][value="sri"]')).toBeNull();
     expect(c.querySelector('input[name="hashMode"][value="compare"]')).not.toBeNull();
   });
 
@@ -145,9 +145,10 @@ describe('HashGeneratorTool – UI Rendering', () => {
     expect(c.querySelector('#hmacSecret')).not.toBeNull();
   });
 
-  test('switching to sri mode renders #sriURL', () => {
-    switchMode(c, 'sri');
-    expect(c.querySelector('#sriURL')).not.toBeNull();
+  test('links to the SRI generator instead of offering an SRI mode', () => {
+    const link = c.querySelector('a[href*="sri-generator"]');
+    expect(link).not.toBeNull();
+    expect(link.textContent).toBe('tools.sriGeneratorTool.linkTitle.nav');
   });
 
   test('switching to compare mode renders #hash1 and #hash2', () => {
@@ -356,8 +357,4 @@ describe('HashGeneratorTool – Hidden helper elements', () => {
     expect(c.querySelector('#fileProgress').classList.contains('d-none')).toBe(true);
   });
 
-  test('SRI mode renders the fetch spinner hidden', () => {
-    switchMode(c, 'sri');
-    expect(c.querySelector('#sriProgress').classList.contains('d-none')).toBe(true);
-  });
 });

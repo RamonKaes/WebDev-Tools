@@ -2,7 +2,7 @@
  * Hash Generator Tool
  *
  * Generate cryptographic hashes using Web Crypto API.
- * Supports SHA-1, SHA-256, SHA-384, SHA-512, HMAC, and SRI hash generation.
+ * Supports SHA-1, SHA-256, SHA-384, SHA-512, HMAC and hash comparison.
  * Security: Uses native browser crypto for secure hash computation.
  */
 
@@ -34,6 +34,37 @@
       return window.i18n.t(key, params);
     }
     return key.split('.').pop().replace(/([A-Z])/g, ' $1').trim();
+  }
+
+  /**
+   * Build the URL of another tool's page in the current language.
+   *
+   * Tool modules are loaded per page, so a sibling tool cannot be opened in
+   * place - its module is not registered here.
+   *
+   * @param {string} toolId - Registry id of the target tool
+   * @param {string} fallbackSlug - English slug used if the manifest is absent
+   * @returns {string} - Absolute path to the tool page
+   */
+  function toolUrl(toolId, fallbackSlug) {
+    const basePath = window.APP_BASE_PATH || '';
+    const container = document.getElementById('tool-container');
+    const lang = (container && container.dataset.lang) || 'en';
+
+    let slug = fallbackSlug;
+    try {
+      const cached = JSON.parse(localStorage.getItem('toolbox_manifest') || '{}');
+      const slugs = cached.manifest && cached.manifest.tools
+        && cached.manifest.tools[toolId] && cached.manifest.tools[toolId].slugs;
+      if (slugs && slugs[lang]) {
+        slug = slugs[lang];
+      }
+    } catch (e) {
+      // Cache unreadable - the English slug still resolves
+    }
+
+    const prefix = lang === 'en' ? '' : `/${lang}`;
+    return `${basePath}${prefix}/${slug}/`;
   }
 
   /**
@@ -161,43 +192,6 @@
       );
 
       return this.bufferToHex(signature);
-    },
-
-    /**
-     * Generate SRI hash from URL
-     *
-     * @param {string} url - Resource URL
-     * @param {string} algorithm - Algorithm (SHA-256, SHA-384, SHA-512)
-     * @returns {Promise<object>} - Object with hash and integrity string
-     * @throws {Error} - If resource fetch fails or Web Crypto API is not supported
-     */
-    async generateSRI(url, algorithm = 'SHA-384') {
-      if (!this.isSupported()) {
-        throw new Error(t('tools.hashGeneratorTool.cryptoUnsupportedTitle'));
-      }
-
-      try {
-        const response = await fetch(url);
-        if (!response.ok) {
-          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-        }
-
-        const arrayBuffer = await response.arrayBuffer();
-        const hashBuffer = await window.crypto.subtle.digest(algorithm, arrayBuffer);
-        const base64Hash = this.bufferToBase64(hashBuffer);
-
-        const algoPrefix = algorithm.toLowerCase().replace('-', '');
-        const integrity = `${algoPrefix}-${base64Hash}`;
-
-        return {
-          hash: this.bufferToHex(hashBuffer),
-          base64: base64Hash,
-          integrity: integrity,
-          algorithm: algorithm
-        };
-      } catch (error) {
-        throw new Error(t('tools.hashGeneratorTool.errorFetch', { message: error.message }));
-      }
     }
   };
 
@@ -261,16 +255,12 @@
                       <i class="bi bi-key me-1"></i>${t('tools.hashGeneratorTool.modeHMAC')}
                     </label>
 
-                    <input type="radio" class="btn-check" name="hashMode" id="modeSRI" value="sri">
-                    <label class="btn btn-outline-primary" for="modeSRI">
-                      <i class="bi bi-shield-check me-1"></i>${t('tools.hashGeneratorTool.modeSRI')}
-                    </label>
-
                     <input type="radio" class="btn-check" name="hashMode" id="modeCompare" value="compare">
                     <label class="btn btn-outline-primary" for="modeCompare">
                       <i class="bi bi-clipboard-check me-1"></i>${t('tools.hashGeneratorTool.modeCompare')}
                     </label>
                   </div>
+                  <small class="text-muted d-block mt-2">${t('tools.hashGeneratorTool.sriLinkHint')} <a href="${toolUrl('sriGeneratorTool', 'sri-generator')}">${t('tools.sriGeneratorTool.linkTitle.nav')}</a></small>
                 </div>
                 <div class="col-md-4">
                   <label class="form-label fw-bold"><i class="bi bi-gear me-2"></i>${t('common.output')}</label>
@@ -390,7 +380,7 @@
      * Render input UI based on selected mode
      *
      * @param {HTMLElement} container - Container element
-     * @param {string} mode - Mode ('text', 'file', 'hmac', 'sri', 'compare')
+     * @param {string} mode - Mode ('text', 'file', 'hmac', 'compare')
      */
     renderInput: function(container, mode) {
       if (mode === 'text') {
@@ -505,41 +495,6 @@
             </div>
           </div>
         `;
-      } else if (mode === 'sri') {
-        container.innerHTML = `
-          <div class="card">
-            <div class="card-body">
-              <h2 class="card-title h5 mb-3"><i class="bi bi-shield-check me-2"></i>${t('tools.hashGeneratorTool.sriTitle')}</h2>
-              <div class="alert alert-info">
-                <i class="bi bi-info-circle me-2"></i>
-                <small>${t('tools.hashGeneratorTool.sriInfo')}</small>
-              </div>
-              <div class="mb-3">
-                <label for="sriURL" class="form-label">${t('tools.hashGeneratorTool.sriURL')}</label>
-                <input type="url" class="form-control form-control-sm" id="sriURL"
-                  placeholder="https://cdn.example.com/library.js">
-                <small class="text-muted">${t('tools.hashGeneratorTool.sriHint')}</small>
-              </div>
-              <div class="mb-3">
-                <label for="sriAlgorithm" class="form-label">${t('tools.hashGeneratorTool.algorithm')}</label>
-                <select class="form-select form-select-sm" id="sriAlgorithm">
-                  <option value="SHA-256">SHA-256</option>
-                  <option value="SHA-384" selected>SHA-384</option>
-                  <option value="SHA-512">SHA-512</option>
-                </select>
-              </div>
-              <button class="btn btn-primary" id="generateSRI">
-                <i class="bi bi-download me-2"></i>${t('tools.hashGeneratorTool.generate')}
-              </button>
-              <div id="sriProgress" class="mt-3 d-none">
-                <div class="spinner-border spinner-border-sm me-2" role="status"></div>
-                <span>${t('tools.hashGeneratorTool.fetching')}</span>
-              </div>
-            </div>
-
-            </div>
-          </div>
-        `;
       } else if (mode === 'compare') {
         container.innerHTML = `
           <div class="card">
@@ -623,10 +578,6 @@
           container.querySelector('#hmacSecret').value = 'secret-key';
           this.generateHMAC(container);
         });
-
-      } else if (mode === 'sri') {
-        const generateBtn = container.querySelector('#generateSRI');
-        generateBtn.addEventListener('click', () => this.generateSRI(container));
 
       } else if (mode === 'compare') {
         const compareBtn = container.querySelector('#compareHashes');
@@ -818,114 +769,6 @@
         const errorAlert = document.createElement('div');
         errorAlert.className = 'alert alert-danger';
         errorAlert.textContent = `${t('common.error')}: ${error.message}`;
-        hashResults.appendChild(errorAlert);
-      }
-    },
-
-    /**
-     * Generate SRI hash from URL
-     *
-     * @param {HTMLElement} container - Container element
-     * @returns {Promise<void>} - Async operation
-     */
-    async generateSRI(container) {
-      const sriURL = container.querySelector('#sriURL');
-      const sriAlgorithm = container.querySelector('#sriAlgorithm');
-      const sriProgress = container.querySelector('#sriProgress');
-      const hashResults = container.querySelector('#hashResults');
-
-      /**
-       * Show element by removing d-none class
-       *
-       * @param {HTMLElement} el - Element to show
-       */
-      const show = (el) => el?.classList.remove('d-none');
-
-      /**
-       * Hide element by adding d-none class
-       *
-       * @param {HTMLElement} el - Element to hide
-       */
-      const hide = (el) => el?.classList.add('d-none');
-
-      if (!hashResults._sriCopyListenerAttached) {
-        hashResults._sriCopyListenerAttached = true;
-        hashResults.addEventListener('click', async function(e) {
-          const btn = e.target.closest('.sri-copy-btn');
-          if (!btn) return;
-
-          const value = btn.getAttribute('data-copy-value');
-          if (value) {
-            const success = await window.ClipboardUtils.copyToClipboard(value);
-
-            if (success) {
-              const originalHtml = btn.innerHTML;
-              btn.innerHTML = '<i class="bi bi-check"></i>';
-              setTimeout(() => {
-                btn.innerHTML = originalHtml;
-              }, 1500);
-            }
-          }
-        });
-      }
-
-      const url = sriURL.value.trim();
-      const algorithm = sriAlgorithm.value;
-
-      if (!url) {
-        hashResults.innerHTML = `<div class="alert alert-warning">${t('tools.hashGeneratorTool.errorNoUrl')}</div>`;
-        return;
-      }
-
-      show(sriProgress);
-      hashResults.innerHTML = '';
-
-      try {
-        const result = await CryptoUtils.generateSRI(url, algorithm);
-        hide(sriProgress);
-        const safeUrl = window.AppHelpers ? window.AppHelpers.escapeHtml(url) : url;
-
-        hashResults.innerHTML = `
-          <div class="alert alert-success">
-            <h6><i class="bi bi-check-circle me-2"></i>${t('tools.hashGeneratorTool.sriSuccess')}</h6>
-            <hr>
-            <div class="mb-2">
-              <strong>${t('tools.hashGeneratorTool.algorithm')}:</strong> ${result.algorithm}
-            </div>
-            <div class="mb-2">
-              <strong>${t('tools.hashGeneratorTool.sriIntegrity')}:</strong>
-              <div class="input-group input-group-sm mt-1">
-                <input type="text" class="form-control font-monospace sri-integrity-value" value="${result.integrity}" readonly>
-                <button class="btn btn-outline-secondary sri-copy-btn" data-copy-value="${result.integrity}">
-                  <i class="bi bi-clipboard"></i>
-                </button>
-              </div>
-            </div>
-            <div class="mb-2">
-              <strong>${t('tools.hashGeneratorTool.sriHex')}:</strong>
-              <div class="input-group input-group-sm mt-1">
-                <input type="text" class="form-control font-monospace sri-hash-value" value="${result.hash}" readonly>
-                <button class="btn btn-outline-secondary sri-copy-btn" data-copy-value="${result.hash}">
-                  <i class="bi bi-clipboard"></i>
-                </button>
-              </div>
-            </div>
-            <hr>
-            <strong>${t('tools.hashGeneratorTool.sriHtmlExample')}:</strong>
-            <pre class="bg-light p-2 mt-2"><code>&lt;script src="${safeUrl}"
-        integrity="${result.integrity}"
-        crossorigin="anonymous"&gt;&lt;/script&gt;</code></pre>
-          </div>
-        `;
-      } catch (error) {
-        hide(sriProgress);
-        hashResults.textContent = '';
-        const errorAlert = document.createElement('div');
-        errorAlert.className = 'alert alert-danger';
-        const icon = document.createElement('i');
-        icon.className = 'bi bi-exclamation-triangle me-2';
-        errorAlert.appendChild(icon);
-        errorAlert.appendChild(document.createTextNode(`${t('common.error')}: ${error.message}`));
         hashResults.appendChild(errorAlert);
       }
     },

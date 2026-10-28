@@ -264,21 +264,62 @@
    * @param {string} testString - Test string to match against
    * @returns {object} - Result object with success status, matches array, or error message
    */
+  /**
+   * Map capture group numbers to the names declared in the pattern
+   *
+   * JavaScript exposes named groups only as an object, so the pattern is
+   * scanned for capturing parentheses: `(?<name>` is a named group, `(?:`
+   * and lookarounds do not count, and parentheses inside character classes
+   * or after a backslash are ignored.
+   *
+   * @param {string} pattern - Regular expression source
+   * @returns {Array<string|null>} - Name per group, index 0 = group 1
+   */
+  function getGroupNames(pattern) {
+    const names = [];
+    let inClass = false;
+
+    for (let i = 0; i < pattern.length; i++) {
+      const ch = pattern[i];
+      if (ch === '\\') {
+        i++;
+      } else if (inClass) {
+        if (ch === ']') inClass = false;
+      } else if (ch === '[') {
+        inClass = true;
+      } else if (ch === '(') {
+        if (pattern[i + 1] !== '?') {
+          names.push(null);
+        } else if (pattern[i + 2] === '<' && pattern[i + 3] !== '=' && pattern[i + 3] !== '!') {
+          const end = pattern.indexOf('>', i + 3);
+          names.push(end > -1 ? pattern.slice(i + 3, end) : null);
+        }
+      }
+    }
+
+    return names;
+  }
+
   function testRegex(pattern, flags, testString) {
     try {
       const regex = new RegExp(pattern, flags);
+      const groupNames = getGroupNames(pattern);
       const matches = [];
       let match;
+
+      const record = (m) => ({
+        fullMatch: m[0],
+        index: m.index,
+        groups: m.slice(1),
+        groupNames,
+        namedGroups: m.groups ? Object.assign({}, m.groups) : null,
+        input: m.input
+      });
 
       if (flags.includes('g')) {
         // Global: find all matches
         while ((match = regex.exec(testString)) !== null) {
-          matches.push({
-            fullMatch: match[0],
-            index: match.index,
-            groups: match.slice(1),
-            input: match.input
-          });
+          matches.push(record(match));
           // Prevent infinite loop with zero-length matches
           if (match.index === regex.lastIndex) {
             regex.lastIndex++;
@@ -288,12 +329,7 @@
         // Non-global: find first match only
         match = regex.exec(testString);
         if (match) {
-          matches.push({
-            fullMatch: match[0],
-            index: match.index,
-            groups: match.slice(1),
-            input: match.input
-          });
+          matches.push(record(match));
         }
       }
 
@@ -376,6 +412,7 @@
                       ${match.groups.map((group, i) => `
                         <div class="mb-1">
                           <span class="badge bg-secondary">${t('tools.regexTesterTool.group_number', {number: i + 1})}</span>
+                          ${match.groupNames && match.groupNames[i] ? `<code class="text-primary regex-group-name">${escapeHtml(match.groupNames[i])}</code>` : ''}
                           <code>${group !== undefined ? escapeHtml(group) : '<em>undefined</em>'}</code>
                         </div>
                       `).join('')}
@@ -504,7 +541,8 @@
         text: match.fullMatch,
         position: match.index,
         endPosition: match.index + match.fullMatch.length,
-        captureGroups: match.groups
+        captureGroups: match.groups,
+        namedGroups: match.namedGroups
       }))
     };
 

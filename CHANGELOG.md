@@ -6,6 +6,11 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
 
 ## [Unreleased]
 
+### ✨ Features
+- **Regex tester** shows the name of named capture groups next to the
+  group number and includes them in the JSON download; previously
+  `(?<year>…)` was listed only as "Group 1".
+
 ### 🐛 Bugfixes
 - **Base64 decoder** treated every input of 20+ characters as a binary file,
   so even the built-in sample decoded to "Binary file decoded". Plain Base64

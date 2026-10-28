@@ -11,7 +11,7 @@ $featuresSectionTitle = 'Fonctionnalités';
 $resourcesSectionTitle = 'Ressources Utiles';
 
 $features = [
-    'Correspondance de motifs en temps réel',
+    'Correspondance de motifs avec résultats surlignés',
     'Tous les indicateurs regex (g, i, m, s, u, y)',
     'Mise en surbrillance des correspondances avec groupes de capture',
     'Informations détaillées et statistiques',

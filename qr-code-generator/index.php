@@ -13,7 +13,7 @@ $resourcesSectionTitle = 'Useful Resources';
 $customAboutContent = <<<HTML
 <p class="mb-2">
     Generate QR codes instantly for URLs, text, contact information, and more. 
-    Customize colors, size, and error correction level.
+    Customize colors and size; error correction is always set to the highest level.
 </p>
 <p class="mb-0">
     QR (Quick Response) codes are two-dimensional barcodes that can store various types 
@@ -23,12 +23,12 @@ $customAboutContent = <<<HTML
 HTML;
 
 $features = [
-    'Generate QR codes for URLs, text, phone numbers, emails, and more',
-    'Customizable size and quality',
+    'Generate QR codes for URLs, text, vCard contacts and WiFi networks',
+    'Four sizes from 128x128 to 1024x1024 pixels',
     'Custom foreground and background colors',
     'Maximum error correction (level H, ~30% damage recovery)',
     'Download as PNG or SVG',
-    'Real-time preview',
+    'Instant preview on generation',
     '100% client-side generation'
 ];
 

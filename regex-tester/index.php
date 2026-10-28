@@ -11,7 +11,7 @@ $featuresSectionTitle = 'Features';
 $resourcesSectionTitle = 'Useful Resources';
 
 $features = [
-    'Real-time pattern matching',
+    'Pattern matching with highlighted results',
     'Support for all regex flags (g, i, m, s, u, y)',
     'Match highlighting with capture groups',
     'Detailed match information and statistics',

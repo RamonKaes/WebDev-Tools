@@ -23,7 +23,7 @@ $customAboutContent = <<<HTML
 HTML;
 
 $features = [
-    'Entidades nomeadas: converta para &nbsp;, &lt;, &gt; e outras',
+    'Entidades nomeadas: escape os caracteres especiais de HTML (&lt;, &gt;, &amp;, &quot;) ou converta todos os símbolos conhecidos como &copy; e &nbsp;',
     'Entidades numéricas: formato decimal (&#160;) ou hexadecimal (&#xA0;)',
     'Bidirecional: codifique texto ou decodifique entidades',
     'Auto conversão: atualização em tempo real enquanto digita',

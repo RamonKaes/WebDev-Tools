@@ -16,13 +16,13 @@ $customAboutContent = <<<HTML
     Ideale per verificare l'integrità dei dati, gestire password e applicazioni di sicurezza.
 </p>
 <p class="mb-0">
-    Lo strumento supporta algoritmi popolari come MD5, SHA-1, SHA-256, SHA-512 e altri.
+    Lo strumento supporta SHA-1, SHA-256, SHA-384 e SHA-512 tramite la Web Crypto API (MD5 non è disponibile nei browser).
     Tutti i calcoli vengono eseguiti localmente per garantire la massima privacy.
 </p>
 HTML;
 
 $features = [
-    'Più algoritmi: MD5, SHA-1, SHA-256, SHA-384, SHA-512',
+    'Più algoritmi: SHA-1, SHA-256, SHA-384, SHA-512',
     'Hash di testo e file',
     'Confronto di hash per la verifica',
     'Supporto HMAC con chiavi personalizzate',
@@ -36,7 +36,7 @@ $customNoticeType = 'warning';
 $customNoticeContent = <<<HTML
     <h2 class="h6 fw-semibold alert-heading mb-3"><i class="bi bi-shield-exclamation me-2"></i>Considerazioni sulla sicurezza</h2>
     <ul class="mb-0">
-        <li>Preferisci SHA-256 o superiori: MD5 e SHA-1 non sono più sicuri</li>
+        <li>Preferisci SHA-256 o superiori: SHA-1 non è più sicuro e MD5 non viene nemmeno offerto</li>
         <li>Non usare hash semplici per le password: adotta bcrypt, scrypt o PBKDF2</li>
         <li>Aggiungi un salt: evita attacchi tramite rainbow table</li>
         <li>Confronta l'hash completo: non limitarti a porzioni della stringa</li>
@@ -50,7 +50,7 @@ $additionalSections = [
         'content' => <<<HTML
 <ul>
     <li>Verifica integrità file: controllare che i download non siano stati alterati</li>
-    <li>Gestione password: archiviare hash sicuri (usa almeno SHA-256)</li>
+    <li>Impronte dei contenuti: rilevare modifiche a file, risposte API o artefatti di build</li>
     <li>Deduplicazione dati: individuare file o contenuti duplicati</li>
     <li>Generazione checksum: creare somme di controllo per i dati</li>
     <li>Firme digitali: componente essenziale nei sistemi di firma</li>
@@ -63,7 +63,6 @@ HTML
         'icon' => 'info-circle',
         'content' => <<<HTML
 <ul>
-    <li>MD5: veloce ma vulnerabile (128 bit, collisioni note)</li>
     <li>SHA-1: deprecato per uso crittografico (160 bit)</li>
     <li>SHA-256: standard di settore per applicazioni sicure</li>
     <li>SHA-384: variante ad alta sicurezza</li>

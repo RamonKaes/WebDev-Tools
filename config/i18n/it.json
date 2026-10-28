@@ -240,7 +240,7 @@
       "not_escaped_string": "Non è una stringa escaped",
       "toc_title": "Formattatore JSON",
       "h1_title": "Formattatore e Validatore JSON — Formattazione dati",
-      "card_description": "Formatta, valida e abbellisce JSON con evidenziazione sintassi. Correzione automatica, ordinamento chiavi e visualizzazione ad albero per strutture complesse.",
+      "card_description": "Formatta, valida e abbellisce JSON. Correzione automatica, ordinamento chiavi, estrattore di percorsi e visualizzazione ad albero per strutture complesse.",
       "tool_description": "Formatta, valida e abbellisci i tuoi dati JSON con il nostro potente Formattatore e Validatore JSON. Lo strumento offre correzione automatica errori, ordinamento alfabetico chiavi, varie opzioni di indentazione e una vista ad albero intuitiva. Inoltre puoi minificare JSON, escape stringhe e usare l'estrattore di percorsi integrato per recuperare valori specifici. Tutte le operazioni vengono eseguite lato client per la massima sicurezza."
     },
     "aspectRatioCalculator": {
@@ -393,7 +393,7 @@
       "crypto_error": "Errore: La generazione di numeri casuali crittograficamente sicuri non è disponibile in questo browser. La generazione di UUID richiede il supporto dell'API Web Crypto.",
       "toc_title": "Generatore UUID",
       "h1_title": "Generatore UUID — Identificatori univoci v1, v4 e v7",
-      "card_description": "Genera identificatori univoci UUID v1, v4, v7 e NIL. Generazione massiva con validazione formato e numeri casuali crittograficamente sicuri per database e API.",
+      "card_description": "Genera identificatori univoci UUID v1, v4, v7 e NIL. Generazione massiva con più formati di output e numeri casuali crittograficamente sicuri per database e API.",
       "tool_description": "Genera identificatori univoci universali (UUID) in varie versioni con il nostro Generatore UUID. Lo strumento supporta versione 4 (casuale), versione 1 (basata su timestamp), versione 7 (timestamp + casuale) e UUID NIL. Scegli tra diversi formati di output come standard con trattini, senza trattini, con parentesi graffe o in vari formati di linguaggi di programmazione (array JavaScript, JSON, CSV, SQL). La generazione in blocco permette di creare fino a 1000 UUID contemporaneamente."
     },
     "passwordGeneratorTool": {
@@ -530,9 +530,9 @@
       "compare": "Confronta",
       "loadExample": "Carica esempio",
       "toc_title": "Generatore Hash",
-      "h1_title": "Generatore Hash — Funzioni crittografiche MD5, SHA, HMAC",
-      "card_description": "Genera hash crittografici con SHA-1, SHA-256, SHA-384, SHA-512, MD5 e HMAC. Generatore con supporto elaborazione file e testo per verifica integrità.",
-      "tool_description": "Crea valori hash crittografici con il nostro versatile Generatore Hash. Lo strumento supporta tutti gli algoritmi hash comuni: MD5, SHA-1, SHA-256, SHA-384 e SHA-512. Genera hash da testo o file, crea firme HMAC con chiavi personalizzate e genera hash Subresource Integrity (SRI) per integrazione sicura CDN. La modalità live abilita l'hashing in tempo reale durante l'input e la funzione di confronto hash aiuta a verificare l'integrità dei file."
+      "h1_title": "Generatore Hash — Funzioni crittografiche SHA e HMAC",
+      "card_description": "Genera hash crittografici con SHA-1, SHA-256, SHA-384, SHA-512 e HMAC. Generatore con supporto elaborazione file e testo per verifica integrità.",
+      "tool_description": "Crea valori hash crittografici con il nostro versatile Generatore Hash. Lo strumento supporta la famiglia SHA della Web Crypto API: SHA-1, SHA-256, SHA-384 e SHA-512 (MD5 non è offerto perché i browser non lo implementano). Genera hash da testo o file, crea firme HMAC con chiavi personalizzate e genera hash Subresource Integrity (SRI) per integrazione sicura CDN. La modalità live abilita l'hashing in tempo reale durante l'input e la funzione di confronto hash aiuta a verificare l'integrità dei file."
     },
     "loremIpsumTool": {
       "linkTitle": {
@@ -569,7 +569,7 @@
       "selectAtLeastOne": "Seleziona almeno un tipo di contenuto",
       "toc_title": "Generatore Lorem Ipsum",
       "h1_title": "Generatore Lorem Ipsum — Testo segnaposto per layout",
-      "card_description": "Genera testo segnaposto Lorem Ipsum con paragrafi, parole e frasi personalizzabili. Formattazione HTML e strutture di elenchi per mockup e layout di design web.",
+      "card_description": "Genera testo segnaposto Lorem Ipsum con paragrafi, frasi e parole personalizzabili. Combina i tipi liberamente e copia con un clic per mockup e layout di design web.",
       "tool_description": "Genera il classico testo segnaposto Lorem Ipsum per i tuoi mockup e prototipi di design con il nostro Generatore Lorem Ipsum flessibile. Scegli qualsiasi numero di paragrafi, frasi o parole e combinali come necessario. Lo strumento mostra il conteggio di caratteri e parole generati e permette una rapida copia negli appunti. Ideale per web designer, grafici e sviluppatori frontend che necessitano di volumi di testo realistici per i loro layout."
     },
     "qrCodeGeneratorTool": {
@@ -643,7 +643,7 @@
       "toc_title": "Generatore QR Code",
       "h1_title": "Generatore QR Code — Codici bidimensionali per dati",
       "card_description": "Crea codici QR personalizzati da testo, URL, vCard o WiFi. Generatore con opzioni colori, dimensioni e download nei formati PNG e SVG per uso versatile.",
-      "tool_description": "Crea codici QR professionali con il nostro versatile Generatore QR Code. Lo strumento supporta vari tipi di codici QR: URL/link, testo semplice, contatti (vCard) e configurazioni di rete WiFi. Personalizza i colori di primo piano e sfondo individualmente e scegli tra quattro dimensioni (200x200 a 512x512 pixel). I codici QR generati possono essere scaricati come PNG o SVG e sono ottimizzati sia per media digitali che per stampa."
+      "tool_description": "Crea codici QR professionali con il nostro versatile Generatore QR Code. Lo strumento supporta vari tipi di codici QR: URL/link, testo semplice, contatti (vCard) e configurazioni di rete WiFi. Personalizza i colori di primo piano e sfondo individualmente e scegli tra quattro dimensioni (128x128 a 1024x1024 pixel). La correzione degli errori è fissata al livello più alto (H), così i codici restano leggibili anche se parzialmente danneggiati. I codici QR generati possono essere scaricati come PNG o SVG e sono ottimizzati sia per media digitali che per stampa."
     },
     "htmlEntityTool": {
       "linkTitle": {
@@ -687,7 +687,7 @@
       "toc_title": "Codificatore HTML Entity",
       "h1_title": "Codificatore e Decodificatore HTML Entity — Entità HTML",
       "card_description": "Converti testo in entità HTML e viceversa. Strumento di escape con entità nominate (&nbsp;), decimali (&#160;) ed esadecimali (&#xA0;) per sviluppo web sicuro.",
-      "tool_description": "Converti caratteri speciali in entità HTML e viceversa con il nostro Codificatore HTML Entity. Lo strumento supporta tre formati di entità: entità nominate come &nbsp;, entità decimali numeriche come &#160; e entità esadecimali come &#xA0;. Scegli se convertire solo caratteri speciali o tutti i caratteri in entità nominate. La modalità automatica converte istantaneamente durante la digitazione. Perfetto per sviluppatori web che devono incorporare caratteri speciali in modo sicuro nel codice HTML."
+      "tool_description": "Converti caratteri speciali in entità HTML e viceversa con il nostro Codificatore HTML Entity. Lo strumento supporta entità nominate (&lt;, &amp;, &copy;, &nbsp;), entità decimali numeriche (&#160;) ed entità esadecimali (&#xA0;). In modalità nominata viene eseguito l'escape solo dei cinque caratteri speciali HTML; la modalità «tutte le entità nominate» converte anche simboli come ©, € o spazi unificatori. La modalità automatica converte istantaneamente durante la digitazione. Perfetto per sviluppatori web che devono incorporare caratteri speciali in modo sicuro nel codice HTML."
     },
     "jwtDecoderTool": {
       "linkTitle": {
@@ -731,7 +731,7 @@
       "toc_title": "Decodificatore JWT",
       "h1_title": "Decodificatore JWT — Decodifica JSON Web Tokens",
       "card_description": "Decodifica e analizza JSON Web Tokens (JWT) con ispezione dettagliata di header, payload e firma. Valida struttura JWT e fornisce informazioni di decodifica.",
-      "tool_description": "Decodifica e analizza JSON Web Tokens (JWT) con il nostro Decodificatore JWT. Lo strumento separa automaticamente il token nelle sue tre parti (header, payload, firma) e visualizza il contenuto decodificato in formato JSON formattato. Riconosce algoritmi comuni come HS256, RS256, ES256 e mostra informazioni di scadenza (exp, iat, nbf). Nota: questo strumento decodifica solo i token; la verifica della firma richiede la chiave segreta. Tutte le operazioni vengono eseguite localmente nel tuo browser."
+      "tool_description": "Decodifica e analizza JSON Web Tokens (JWT) con il nostro Decodificatore JWT. Lo strumento separa automaticamente il token nelle sue tre parti (header, payload, firma) e visualizza il contenuto decodificato in formato JSON formattato. Mostra l'algoritmo di firma dall'header e verifica il claim di scadenza (exp) rispetto all'ora attuale. Nota: questo strumento decodifica solo i token; la verifica della firma richiede la chiave segreta. Tutte le operazioni vengono eseguite localmente nel tuo browser."
     },
     "punycodeConverterTool": {
       "linkTitle": {
@@ -827,8 +827,8 @@
       "minifiedWithTerser": "Minificato con Terser",
       "toc_title": "Formattatore Codice",
       "h1_title": "Formattatore Codice — Formattazione sintattica multi-linguaggio",
-      "card_description": "Formatta e abbellisce codice HTML, CSS, JavaScript, XML e SQL. Strumento beautify e minify con indentazione personalizzabile e evidenziazione sintassi.",
-      "tool_description": "Formattatore di codice professionale e abbellitore per sviluppatori web. Formatta, abbellisci e minifica codice HTML, CSS, JavaScript, XML e SQL con indentazione personalizzabile. Lo strumento fornisce formattazione in tempo reale, validazione della sintassi e supporta sia l'abbellimento per lo sviluppo che la minificazione per la produzione. Perfetto per pulire codice disordinato, standardizzare la formattazione o preparare il codice per il deployment."
+      "card_description": "Formatta e abbellisce codice HTML, CSS, JavaScript, XML e SQL. Strumento beautify e minify con indentazione personalizzabile e formattazione automatica durante la digitazione.",
+      "tool_description": "Formattatore di codice professionale e abbellitore per sviluppatori web. Formatta, abbellisci e minifica codice HTML, CSS, JavaScript, XML e SQL con indentazione personalizzabile. Lo strumento formatta automaticamente durante la digitazione e supporta sia l'abbellimento per lo sviluppo che la minificazione per la produzione (la minificazione JavaScript usa Terser). Perfetto per pulire codice disordinato, standardizzare la formattazione o preparare il codice per il deployment."
     },
     "dataConverterTool": {
       "linkTitle": {
@@ -880,8 +880,8 @@
       "errorConvert": "Errore durante la conversione dei dati",
       "toc_title": "Convertitore Dati",
       "h1_title": "Convertitore Dati — Conversione tra formati dati",
-      "card_description": "Converti tra JSON, XML, YAML, CSV e TOML con validazione sintassi. Conversione in tempo reale con rilevamento errori e preservazione della struttura.",
-      "tool_description": "Potente convertitore di formati di dati per sviluppatori web. Converti tra formati JSON, XML, YAML e CSV con un solo clic. Inoltre, converti timestamp Unix/Epoch in date leggibili e viceversa. Lo strumento supporta conversione bidirezionale, rilevamento automatico del formato e formattazione dell'output personalizzabile. Perfetto per sviluppo API, migrazione dati e lavoro con diversi formati di dati."
+      "card_description": "Converti tra JSON, XML, YAML, CSV e timestamp Unix. Conversione con messaggi di errore chiari e formattazione dell'output personalizzabile.",
+      "tool_description": "Potente convertitore di formati di dati per sviluppatori web. Converti tra formati JSON, XML, YAML e CSV con un solo clic. Inoltre, converti timestamp Unix/Epoch in date leggibili e viceversa. Lo strumento supporta conversione bidirezionale e formattazione dell'output personalizzabile. Perfetto per sviluppo API, migrazione dati e lavoro con diversi formati di dati."
     },
     "regexTesterTool": {
       "linkTitle": {
@@ -933,8 +933,8 @@
       "match_label": "Corrispondenza {number}",
       "toc_title": "Tester Regex",
       "h1_title": "Tester Regex — Test espressioni regolari e pattern",
-      "card_description": "Testa e debug espressioni regolari con evidenziazione in tempo reale. Tester regex con JavaScript, Python, PHP e analisi gruppi di cattura per sviluppatori.",
-      "tool_description": "Testa espressioni regolari contro testo di esempio con feedback istantaneo. Vedi le corrispondenze evidenziate in tempo reale, estrai gruppi di cattura e valida i tuoi pattern regex prima di usarli nel codice. Supporta globale (g), insensibile al caso (i), multilinea (m) e altri flag regex JavaScript."
+      "card_description": "Testa espressioni regolari con evidenziazione delle corrispondenze e gruppi di cattura. Tester regex JavaScript con tutti i flag (g, i, m, s, u, y) e risultati esportabili.",
+      "tool_description": "Testa espressioni regolari contro testo di esempio e vedi ogni corrispondenza evidenziata con posizione e gruppi di cattura. Valida i tuoi pattern prima di usarli nel codice. Usa il motore regex di JavaScript e supporta tutti i suoi flag: globale (g), insensibile al caso (i), multilinea (m), dotAll (s), unicode (u) e sticky (y)."
     },
     "characterReferenceTool": {
       "linkTitle": {
@@ -1007,8 +1007,8 @@
       "categoryArrows": "Frecce e Simboli",
       "toc_title": "Riferimento Emoji",
       "h1_title": "Riferimento Emoji — Riferimento codici Unicode e HTML",
-      "card_description": "Riferimento emoji completo con 1.800+ emoji organizzati per categorie. Copia emoji con codici Unicode e nomi descrittivi per uso in applicazioni.",
-      "tool_description": "Strumento completo di riferimento emoji per sviluppatori e designer. Sfoglia migliaia di emoji organizzati per categorie, cerca per nome e copia emoji o i loro codici HTML con un solo clic. Perfetto per sviluppo web, documentazione, contenuti social media e progetti di design. Include codici decimali Unicode per entità HTML.",
+      "card_description": "Riferimento emoji con oltre 200 emoji selezionati e organizzati per categorie per sviluppatori. Copia emoji con codici Unicode e HTML con un clic.",
+      "tool_description": "Strumento completo di riferimento emoji per sviluppatori e designer. Sfoglia oltre 200 emoji selezionati, organizzati per categorie per sviluppatori come UI, tech, business e dev, cerca per nome e copia emoji o i loro codici HTML con un solo clic. Perfetto per sviluppo web, documentazione, contenuti social media e progetti di design. Include codici decimali Unicode per entità HTML.",
       "loadingEmojis": "Caricamento emoji...",
       "loadError": "Impossibile caricare i dati emoji.",
       "noResults": "Nessun emoji trovato.",
@@ -1119,7 +1119,7 @@
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Formattazione e validazione JSON",
-        "Evidenziazione sintassi",
+        "Ordinamento alfabetico delle chiavi",
         "Correzione automatica errori",
         "Supporto minificazione",
         "Visualizzazione ad albero",
@@ -1129,7 +1129,7 @@
       ],
       "keywords": "formattatore json, validatore json, beautifier json, evidenziazione sintassi, minifica json, visualizzazione ad albero",
       "meta_title": "Formattatore e Validatore JSON – Beautify & Minify Online",
-      "meta_description": "Formatta, valida e abbellisci dati JSON con evidenziazione sintassi istantaneamente. Correzione automatica errori, minificazione e vista ad albero."
+      "meta_description": "Formatta, valida e abbellisci dati JSON istantaneamente. Correzione automatica errori, minificazione e vista ad albero."
     },
     "pxToRemConverter": {
       "applicationCategory": "UtilityApplication",
@@ -1157,7 +1157,7 @@
       ],
       "keywords": "generatore uuid, generatore guid, identificatore unico, uuid v4, uuid v1, uuid v7, uuid bulk",
       "meta_title": "Generatore UUID – Crea ID v1, v4, v7 Univoci Online",
-      "meta_description": "Genera UUID v1, v4, v7 istantaneamente. Generatore gratuito per database e API con supporto generazione multipla e validazione formato online."
+      "meta_description": "Genera UUID v1, v4, v7 istantaneamente. Generatore gratuito per database e API con generazione multipla e più formati di output."
     },
     "passwordGeneratorTool": {
       "applicationCategory": "UtilityApplication",
@@ -1167,7 +1167,6 @@
         "Generazione basata su pattern",
         "Analisi forza password",
         "Generazione bulk",
-        "Export TXT, CSV, JSON",
         "Esporta in TXT, CSV, JSON"
       ],
       "keywords": "generatore password, password sicura, password casuale, passphrase, forza password, crittografico",
@@ -1177,16 +1176,16 @@
     "hashGeneratorTool": {
       "applicationCategory": "UtilityApplication",
       "featureList": [
-        "Algoritmi SHA-1, SHA-256, SHA-384, SHA-512, MD5",
+        "Algoritmi SHA-1, SHA-256, SHA-384, SHA-512",
         "Hashing testo e file",
         "Firme HMAC",
         "Generazione SRI per CDN",
         "Confronto hash",
         "Modalità live"
       ],
-      "keywords": "generatore hash, sha256, md5, sha1, hmac, hash crittografico, checksum, hash sri",
-      "meta_title": "Generatore Hash – Creare Hash SHA-256, MD5, HMAC e SRI",
-      "meta_description": "Genera hash crittografici con SHA-1, SHA-256, SHA-384, SHA-512, MD5 e HMAC istantaneamente. Generatore hash gratuito con supporto per file e testo. Crea SRI."
+      "keywords": "generatore hash, sha256, sha512, sha1, hmac, hash crittografico, checksum, hash sri",
+      "meta_title": "Generatore Hash – Creare Hash SHA-256, SHA-512, HMAC e SRI",
+      "meta_description": "Genera hash crittografici con SHA-1, SHA-256, SHA-384, SHA-512 e HMAC istantaneamente. Generatore hash gratuito con supporto per file e testo. Crea SRI."
     },
     "loremIpsumTool": {
       "applicationCategory": "UtilityApplication",
@@ -1207,7 +1206,7 @@
       "featureList": [
         "Codici QR URL, testo, vCard e WiFi",
         "Personalizzazione colori",
-        "Dimensioni multiple (200-512px)",
+        "Dimensioni multiple (128-1024px)",
         "Export PNG e SVG",
         "Ottimizzato per stampa",
         "Generazione istantanea"
@@ -1236,8 +1235,8 @@
         "Supporto HTML, CSS, JavaScript, XML, SQL",
         "Abbellimento e minificazione",
         "Indentazione personalizzabile",
-        "Formattazione in tempo reale",
-        "Validazione sintassi",
+        "Formattazione automatica durante la digitazione",
+        "Minificazione JavaScript con Terser",
         "Ottimizzazione per produzione"
       ],
       "keywords": "formattatore codice, beautifier, formattatore html, formattatore css, formattatore javascript, minificatore codice, pretty print",
@@ -1250,7 +1249,7 @@
         "Conversione JSON, XML, YAML, CSV",
         "Conversione timestamp Unix/Epoch",
         "Conversione bidirezionale",
-        "Rilevamento automatico formato",
+        "Conversione automatica live",
         "Formattazione personalizzabile",
         "Delimitatori CSV configurabili"
       ],
@@ -1261,7 +1260,7 @@
     "regexTesterTool": {
       "applicationCategory": "UtilityApplication",
       "featureList": [
-        "Test espressioni regolari in tempo reale",
+        "Test espressioni regolari con un clic",
         "Evidenziazione match",
         "Estrazione gruppi di cattura",
         "Supporto tutti i flag JavaScript",
@@ -1270,7 +1269,7 @@
       ],
       "keywords": "tester regex, espressione regolare, corrispondenza pattern, validatore regex, debugger regex, regex javascript",
       "meta_title": "Tester Regex – Testare & Debuggare Espressioni Regolari Online",
-      "meta_description": "Testa e debugga espressioni regolari con evidenziazione live istantanea. Tester Regex gratuito con estrazione corrispondenze, cattura gruppi e tutti i flag."
+      "meta_description": "Testa e debugga espressioni regolari con evidenziazione delle corrispondenze. Tester Regex JavaScript con gruppi di cattura, tutti i flag ed esportazione."
     },
     "sampleHelloWorld": {
       "keywords": "strumento esempio, strumento demo, hello world, trasformazione testo, template sviluppatore",
@@ -1303,7 +1302,7 @@
     "emojiReferenceTool": {
       "applicationCategory": "UtilityApplication",
       "featureList": [
-        "Centinaia di emoji",
+        "Oltre 200 emoji selezionati",
         "Filtro per categoria",
         "Ricerca per parola chiave",
         "Informazioni Unicode",
@@ -1312,7 +1311,7 @@
       ],
       "keywords": "riferimento emoji, elenco emoji, emoji unicode, ricerca emoji, codici emoji, copia emoji",
       "meta_title": "Riferimento Emoji – Ricerca Unicode e Codici Emoji",
-      "meta_description": "Sfoglia e copia emoji con codici Unicode e HTML istantaneamente. Riferimento completo di emoji organizzati per categorie (visi, animali, cibo, viaggi e altro)."
+      "meta_description": "Sfoglia e copia emoji con codici Unicode e HTML. Riferimento con oltre 200 emoji selezionati, organizzati per categorie per sviluppatori (UI, tech, business e altro)."
     },
     "htmlEntityTool": {
       "applicationCategory": "UtilityApplication",
@@ -1352,7 +1351,7 @@
         "Tag HTML script e link pronti all'uso",
         "Copia in un clic dell'attributo integrity",
         "Elaborazione lato client via Web Crypto API",
-        "Esempi rapidi per Bootstrap, jQuery, Alpine.js"
+        "Tipo di risorsa rilevato da URL o nome file"
       ],
       "keywords": "generatore sri, subresource integrity, sicurezza cdn, sha384, sha256, sha512, attributo integrity, tag script, tag link",
       "meta_title": "Generatore Hash SRI — Subresource Integrity per Sicurezza CDN",

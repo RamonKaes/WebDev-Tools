@@ -14,7 +14,7 @@ $customAboutContent = <<<HTML
 <p>UUIDs (Universally Unique Identifiers) sind 128-Bit-Werte, die zur eindeutigen Identifizierung von Informationen in Computersystemen verwendet werden. Dieses Tool generiert standardkonforme UUIDs, die garantiert über Raum und Zeit einzigartig sind.</p>
 HTML;
 $features = [
-    'UUID v4 (zufällig) mit kryptografischer Sicherheit generieren',
+    'UUID v1 (zeitbasiert), v4 (zufällig), v7 (zeitlich sortierbar) und NIL generieren',
     'Massengenerierung: mehrere UUIDs auf einmal erstellen',
     'Mehrere Ausgabeformate: Standard, Großbuchstaben, ohne Bindestriche',
     'Einzelne UUIDs oder alle auf einmal kopieren',

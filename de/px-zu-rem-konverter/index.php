@@ -16,10 +16,10 @@ HTML;
 $features = [
     'px zu rem und rem zu px konvertieren',
     'Anpassbare Basis-Schriftgröße (Standard: 16px)',
-    'Batch-Konvertierung: mehrere Werte auf einmal konvertieren',
+    'Rückrechnung aus rem, em, Prozent und Tailwind-Spacing',
     'Echtzeit-Konvertierung während der Eingabe',
     'Konvertierte Werte mit einem Klick kopieren',
-    'Gängige Breakpoint-Vorlagen',
+    'Voreinstellungen für die Basis-Schriftgröße (12 bis 20px)',
     '100% clientseitige Verarbeitung'
 ];
 $customNoticeType = 'info';

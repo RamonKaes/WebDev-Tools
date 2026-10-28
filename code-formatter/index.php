@@ -15,7 +15,7 @@ $features = [
     'Beautify and minify modes',
     'Customizable indentation (2/4 spaces, tabs)',
     'Real-time auto-formatting',
-    'Syntax validation',
+    'JavaScript minification powered by Terser',
     'Copy and download support'
 ];
 

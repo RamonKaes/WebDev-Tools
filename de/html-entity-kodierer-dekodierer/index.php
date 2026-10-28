@@ -24,7 +24,7 @@ $customAboutContent = <<<HTML
 HTML;
 
 $features = [
-    'Benannte Entities: Konvertierung zu Standard-HTML-Entities wie &nbsp;, &lt;, &gt;',
+    'Benannte Entities: HTML-Sonderzeichen maskieren (&lt;, &gt;, &amp;, &quot;) oder alle bekannten Symbole wie &copy; und &nbsp; umwandeln',
     'Numerische Entities: Dezimal (&#160;) oder Hexadezimal (&#xA0;) Format',
     'Bidirektional: Text zu Entities encodieren oder Entities zu Text decodieren',
     'Auto-Konvertierung: Echtzeit-Konvertierung während der Eingabe',

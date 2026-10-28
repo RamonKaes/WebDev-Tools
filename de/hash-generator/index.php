@@ -16,13 +16,13 @@ $customAboutContent = <<<HTML
     Perfekt für Datenintegritätsprüfung, Passwort-Hashing und Sicherheitsanwendungen.
 </p>
 <p class="mb-0">
-    Dieses Tool unterstützt gängige Hashing-Algorithmen wie MD5, SHA-1, SHA-256, SHA-512 
-    und mehr. Alle Hashing-Vorgänge werden clientseitig für maximale Privatsphäre und Sicherheit durchgeführt.
+    Dieses Tool unterstützt SHA-1, SHA-256, SHA-384 und SHA-512 über die Web Crypto API 
+    (MD5 steht in Browsern nicht zur Verfügung). Alle Hashing-Vorgänge werden clientseitig für maximale Privatsphäre und Sicherheit durchgeführt.
 </p>
 HTML;
 
 $features = [
-    'Mehrere Hash-Algorithmen: MD5, SHA-1, SHA-256, SHA-384, SHA-512',
+    'Mehrere Hash-Algorithmen: SHA-1, SHA-256, SHA-384, SHA-512',
     'Text und Dateien hashen',
     'Hashes zur Verifikation vergleichen',
     'HMAC-Unterstützung mit benutzerdefinierten Schlüsseln',
@@ -36,7 +36,7 @@ $customNoticeType = 'warning';
 $customNoticeContent = <<<HTML
     <h2 class="h6 fw-semibold alert-heading mb-3"><i class="bi bi-shield-exclamation me-2"></i>Sicherheitsüberlegungen</h2>
     <ul class="mb-0">
-        <li>SHA-256 oder höher verwenden: MD5 und SHA-1 sind kryptografisch gebrochen</li>
+        <li>SHA-256 oder höher verwenden: SHA-1 ist kryptografisch gebrochen, MD5 wird gar nicht angeboten</li>
         <li>Keine einfachen Hashes für Passwörter: Verwenden Sie stattdessen bcrypt, scrypt oder PBKDF2</li>
         <li>Salts für Passwort-Hashing hinzufügen: Verhindert Rainbow-Table-Angriffe</li>
         <li>Hash-Integrität überprüfen: Vergleichen Sie immer vollständige Hash-Werte, nicht gekürzte Versionen</li>
@@ -50,7 +50,7 @@ $additionalSections = [
         'content' => <<<HTML
 <ul>
     <li>Dateiintegritätsprüfung: Überprüfen Sie, ob Downloads nicht manipuliert wurden</li>
-    <li>Passwort-Hashing: Speichern Sie sichere Passwort-Hashes (SHA-256 oder höher verwenden)</li>
+    <li>Inhalts-Fingerabdrücke: Änderungen an Dateien, API-Antworten oder Build-Artefakten erkennen</li>
     <li>Datendeduplizierung: Identifizieren Sie doppelte Dateien oder Inhalte</li>
     <li>Prüfsummengenerierung: Erstellen Sie Prüfsummen zur Datenvalidierung</li>
     <li>Digitale Signaturen: Komponente kryptografischer Signatursysteme</li>
@@ -63,7 +63,6 @@ HTML
         'icon' => 'info-circle',
         'content' => <<<HTML
 <ul>
-    <li>MD5: Schnell, aber nicht für Sicherheit empfohlen (128-Bit, anfällig für Kollisionen)</li>
     <li>SHA-1: Veraltet für Sicherheitsanwendungen (160-Bit, Kollisionsangriffe existieren)</li>
     <li>SHA-256: Industriestandard für Sicherheitsanwendungen (256-Bit, sicher)</li>
     <li>SHA-384: Hochsicherheitsvariante (384-Bit, sehr sicher)</li>

@@ -15,7 +15,7 @@ $features = [
     'Verschönerungs- und Minifizierungs-Modi',
     'Anpassbare Einrückung (2/4 Leerzeichen, Tabs)',
     'Echtzeit-Automatische Formatierung',
-    'Syntax-Validierung',
+    'JavaScript-Minifizierung mit Terser',
     'Kopier- und Download-Unterstützung'
 ];
 

@@ -240,7 +240,7 @@
       "how_to_use_title": "How to Use",
       "toc_title": "JSON Formatter",
       "h1_title": "JSON Formatter & Validator — Beautify, Minify & Fix",
-      "card_description": "Format, validate and beautify JSON with syntax highlighting. Minify JSON, view tree structure, and detect errors in your browser with privacy.",
+      "card_description": "Format, validate and beautify JSON. Minify JSON, view the tree structure, auto-fix common errors and extract values by path, all in your browser.",
       "tool_description": "Format, validate, and beautify your JSON data with our powerful JSON Formatter & Validator. The tool offers automatic error correction, alphabetical key sorting, various indentation options, and an intuitive tree view. Additionally, you can minify JSON, escape strings, and use the integrated path extractor to retrieve specific values. All operations are performed client-side for maximum security."
     },
     "aspectRatioCalculator": {
@@ -342,7 +342,7 @@
       "how_to_use_title": "How to Use",
       "toc_title": "Px to Rem Converter",
       "h1_title": "Px to Rem Converter — CSS Unit Calculator for Responsive",
-      "card_description": "Convert pixels to rem units for responsive CSS. PX to REM calculator with custom base font size, batch conversion and live preview for web development.",
+      "card_description": "Convert pixels to rem, em and percent units for responsive CSS. PX to REM calculator with custom base font size, quick values and a conversion table.",
       "tool_description": "Effortlessly convert between pixel (px), rem, em, and percentage units with our Px to Rem Converter. The tool allows customization of base font size and parent font size for precise calculations and offers quick values as well as a comprehensive conversion table. Ideal for responsive design and especially useful for Tailwind CSS developers working with rem-based spacing systems."
     },
     "uuidGeneratorTool": {
@@ -393,7 +393,7 @@
       "how_to_use_title": "How to Use",
       "toc_title": "UUID Generator",
       "h1_title": "UUID Generator — Create v1, v4, v7 Unique Identifiers",
-      "card_description": "Generate v1, v4, v7 UUIDs using cryptographically secure random numbers. Bulk generation with format validation and NIL UUID support for databases and APIs.",
+      "card_description": "Generate v1, v4, v7 and NIL UUIDs using cryptographically secure random numbers. Bulk generation with multiple output formats for databases and APIs.",
       "tool_description": "Generate universally unique identifiers (UUIDs) in various versions with our UUID Generator. The tool supports version 4 (random), version 1 (time-based), version 7 (time-based + random), and NIL UUIDs. Choose between different output formats such as standard with hyphens, without hyphens, with braces, or in various programming language formats (JavaScript array, JSON, CSV, SQL). Bulk generation allows creating up to 1000 UUIDs at once."
     },
     "passwordGeneratorTool": {
@@ -487,7 +487,7 @@
     },
     "hashGeneratorTool": {
       "linkTitle": {
-        "card": "Generate cryptographic hashes and checksums with MD5, SHA-256, SHA-512",
+        "card": "Generate cryptographic hashes and checksums with SHA-256, SHA-512 and HMAC",
         "nav": "Hash Generator"
       },
       "features_title": "Features",
@@ -525,14 +525,14 @@
       "how_to_use_steps": [
         "Choose hash mode: Text, File, HMAC, or SRI",
         "Enter text or upload a file",
-        "Select hash algorithm (MD5, SHA-1, SHA-256, SHA-384, SHA-512)",
+        "Select hash algorithm (SHA-1, SHA-256, SHA-384, SHA-512)",
         "Optionally enable live mode for real-time hashing"
       ],
       "how_to_use_title": "How to Use",
       "toc_title": "Hash Generator",
-      "h1_title": "Hash Generator — MD5, SHA-256, SHA-512 & HMAC Online",
-      "card_description": "Generate MD5, SHA-1, SHA-256, SHA-512 hashes for text and files. cryptographic hash generator with HMAC support and file integrity verification",
-      "tool_description": "Create cryptographic hash values with our versatile Hash Generator. The tool supports all common hash algorithms: MD5, SHA-1, SHA-256, SHA-384, and SHA-512. Generate hashes from text or files, create HMAC signatures with custom keys, and generate Subresource Integrity (SRI) hashes for secure CDN integration. Live mode enables real-time hashing during input, and the hash comparison feature helps verify file integrity."
+      "h1_title": "Hash Generator — SHA-256, SHA-512, SHA-1 & HMAC Online",
+      "card_description": "Generate SHA-1, SHA-256, SHA-384 and SHA-512 hashes for text and files. Cryptographic hash generator with HMAC support and file integrity verification.",
+      "tool_description": "Create cryptographic hash values with our versatile Hash Generator. The tool supports the SHA family provided by the Web Crypto API: SHA-1, SHA-256, SHA-384 and SHA-512 (MD5 is not offered because browsers do not implement it). Generate hashes from text or files, create HMAC signatures with custom keys, and generate Subresource Integrity (SRI) hashes for secure CDN integration. Live mode enables real-time hashing during input, and the hash comparison feature helps verify file integrity."
     },
     "loremIpsumTool": {
       "linkTitle": {
@@ -569,7 +569,7 @@
       "how_to_use_title": "How to Use",
       "toc_title": "Lorem Ipsum Generator",
       "h1_title": "Lorem Ipsum Generator — Create Placeholder Text Online",
-      "card_description": "Generate Lorem Ipsum placeholder text with customizable paragraphs, words, sentences. HTML formatting and list structures for web design mockups and layouts.",
+      "card_description": "Generate Lorem Ipsum placeholder text with customizable paragraphs, sentences and words. Combine types freely and copy with one click for mockups and layouts.",
       "tool_description": "Generate classic Lorem Ipsum placeholder text for your design mockups and prototypes with our flexible Lorem Ipsum Generator. Choose any number of paragraphs, sentences, or words and combine them as needed. The tool displays the count of generated characters and words and allows quick copying to clipboard. Ideal for web designers, graphic designers, and frontend developers who need realistic text volumes for their layouts."
     },
     "qrCodeGeneratorTool": {
@@ -643,7 +643,7 @@
       "toc_title": "QR Code Generator",
       "h1_title": "QR Code Generator — Create Custom QR Codes Instantly",
       "card_description": "Create custom QR codes. QR code generator supporting URLs, text, WiFi, vCard with SVG/PNG download, color customization and error correction.",
-      "tool_description": "Create professional QR codes with our versatile QR Code Generator. The tool supports various QR code types: URLs/links, plain text, contacts (vCard), and WiFi network configurations. Customize foreground and background colors individually and choose between four sizes (200x200 to 512x512 pixels). Generated QR codes can be downloaded as PNG or SVG and are optimized for both digital media and print."
+      "tool_description": "Create professional QR codes with our versatile QR Code Generator. The tool supports various QR code types: URLs/links, plain text, contacts (vCard), and WiFi network configurations. Customize foreground and background colors individually and choose between four sizes (128x128 to 1024x1024 pixels). Error correction is fixed at the highest level (H), so codes stay readable even when partly damaged. Generated QR codes can be downloaded as PNG or SVG and are optimized for both digital media and print."
     },
     "htmlEntityTool": {
       "linkTitle": {
@@ -687,7 +687,7 @@
       "toc_title": "HTML Entity Encoder",
       "h1_title": "HTML Entity Encoder & Decoder — Convert Special Chars",
       "card_description": "Encode and decode HTML entities. Convert special characters to HTML entity codes and vice versa with support for named and numeric entity references.",
-      "tool_description": "Convert special characters to HTML entities and vice versa with our HTML Entity Encoder. The tool supports three entity formats: named entities like &nbsp;, decimal numeric entities like &#160;, and hexadecimal entities like &#xA0;. Choose whether to convert only special characters or all characters to named entities. Auto mode converts instantly as you type. Perfect for web developers who need to safely embed special characters in HTML code."
+      "tool_description": "Convert special characters to HTML entities and vice versa with our HTML Entity Encoder. The tool supports named entities (&lt;, &amp;, &copy;, &nbsp;), decimal numeric entities (&#160;) and hexadecimal entities (&#xA0;). In named mode only the five HTML special characters are escaped; the \"all named entities\" mode also converts symbols such as ©, € or non-breaking spaces. Auto mode converts instantly as you type. Perfect for web developers who need to safely embed special characters in HTML code."
     },
     "jwtDecoderTool": {
       "linkTitle": {
@@ -731,7 +731,7 @@
       "toc_title": "JWT Decoder",
       "h1_title": "JWT Decoder — Analyze & Decode JSON Web Tokens Online",
       "card_description": "Decode and analyze JSON Web Tokens (JWT) with detailed header, payload, and signature inspection. Validates JWT structure and provides Base64 decoding insights.",
-      "tool_description": "Decode and analyze JSON Web Tokens (JWT) with our JWT Decoder. The tool automatically separates the token into its three parts (header, payload, signature) and displays the decoded content in formatted JSON. Recognizes common algorithms like HS256, RS256, ES256 and shows expiration information (exp, iat, nbf). Note: this tool only decodes tokens; signature verification requires the secret key. All operations are performed locally in your browser."
+      "tool_description": "Decode and analyze JSON Web Tokens (JWT) with our JWT Decoder. The tool automatically separates the token into its three parts (header, payload, signature) and displays the decoded content in formatted JSON. Shows the signing algorithm from the header and checks the expiration claim (exp) against the current time. Note: this tool only decodes tokens; signature verification requires the secret key. All operations are performed locally in your browser."
     },
     "punycodeConverterTool": {
       "linkTitle": {
@@ -792,7 +792,7 @@
       "errorUnescape": "Error during unescaping",
       "toc_title": "String Escaper",
       "h1_title": "String Escaper — Escape HTML, JavaScript, JSON & SQL",
-      "card_description": "Escape and unescape strings for HTML, JavaScript, JSON, SQL, CSV, XML. String escaping tool with syntax highlighting and multi-format conversion for developers.",
+      "card_description": "Escape and unescape strings for HTML, JavaScript, JSON, SQL, CSV, XML. String escaping tool with auto-processing and character and byte counting for developers.",
       "tool_description": "Escape and unescape strings safely for various formats with our String Escaper Tool. The tool supports HTML, XML, JavaScript, JSON, SQL, and CSV and automatically converts special characters into the correct escape sequence for each context. With the auto-processing feature, conversion happens in real-time during input. Character and byte counting helps monitor string length. Ideal for developers working with dynamic data who want to avoid SQL injection, XSS, or other security issues."
     },
     "codeFormatterTool": {
@@ -827,8 +827,8 @@
       "minifiedWithTerser": "Minified with Terser",
       "toc_title": "Code Formatter",
       "h1_title": "Code Formatter — Beautify HTML, CSS, JS, XML & SQL Code",
-      "card_description": "Beautify and format HTML, CSS, JavaScript, XML, SQL code. Supports multiple languages with syntax highlighting and customizable indentation options.",
-      "tool_description": "Professional code formatter and beautifier for web developers. Format, beautify, and minify HTML, CSS, JavaScript, XML, and SQL code with customizable indentation. The tool provides real-time formatting, syntax validation, and supports both beautification for development and minification for production. Perfect for cleaning up messy code, standardizing formatting, or preparing code for deployment."
+      "card_description": "Beautify and format HTML, CSS, JavaScript, XML, SQL code. Beautify or minify with customizable indentation and auto-format as you type.",
+      "tool_description": "Professional code formatter and beautifier for web developers. Format, beautify, and minify HTML, CSS, JavaScript, XML, and SQL code with customizable indentation. The tool can auto-format as you type and supports both beautification for development and minification for production (JavaScript minification uses Terser). Perfect for cleaning up messy code, standardizing formatting, or preparing code for deployment."
     },
     "dataConverterTool": {
       "linkTitle": {
@@ -880,8 +880,8 @@
       "timestampUnit": "Timestamp Unit",
       "toc_title": "Data Converter",
       "h1_title": "Data Converter — Convert JSON, XML, YAML, CSV & Timestamps",
-      "card_description": "Convert between JSON, XML, YAML, CSV, and TOML formats with syntax validation. Real-time format conversion with error detection and structure preservation.",
-      "tool_description": "Powerful data format converter for web developers. Convert between JSON, XML, YAML, and CSV formats with a single click. Additionally, convert Unix/Epoch timestamps to human-readable dates and vice versa. The tool supports bidirectional conversion, automatic format detection, and customizable output formatting. Perfect for API development, data migration, and working with different data formats."
+      "card_description": "Convert between JSON, XML, YAML and CSV formats and Unix timestamps. Format conversion with clear error messages and customizable output formatting.",
+      "tool_description": "Powerful data format converter for web developers. Convert between JSON, XML, YAML, and CSV formats with a single click. Additionally, convert Unix/Epoch timestamps to human-readable dates and vice versa. The tool supports bidirectional conversion and customizable output formatting. Perfect for API development, data migration, and working with different data formats."
     },
     "regexTesterTool": {
       "linkTitle": {
@@ -932,9 +932,9 @@
       "highlighted_matches_title": "Highlighted Matches",
       "match_label": "Match {number}",
       "toc_title": "Regex Tester",
-      "h1_title": "Regex Tester — Test Regular Expressions with Live Match",
-      "card_description": "Test regular expressions with real-time pattern matching and highlighting. Supports JavaScript, Python, PHP flavors with capture groups and flags analysis.",
-      "tool_description": "Test regular expressions against sample text with instant feedback. See matches highlighted in real-time, extract capture groups, and validate your regex patterns before using them in code. Supports global (g), case-insensitive (i), multiline (m), and other JavaScript regex flags."
+      "h1_title": "Regex Tester — Test Regular Expressions with Match Highlighting",
+      "card_description": "Test regular expressions with match highlighting and capture groups. JavaScript regex tester with all flags (g, i, m, s, u, y) and exportable results.",
+      "tool_description": "Test regular expressions against sample text and see every match highlighted with its position and capture groups. Validate your patterns before using them in code. Uses the JavaScript regex engine and supports all of its flags: global (g), case-insensitive (i), multiline (m), dotAll (s), unicode (u) and sticky (y)."
     },
     "characterReferenceTool": {
       "linkTitle": {
@@ -1007,8 +1007,8 @@
       "categoryArrows": "Arrows & Symbols",
       "toc_title": "Emoji Reference",
       "h1_title": "Emoji Reference — Search, Browse & Copy Emojis Online",
-      "card_description": "Searchable emoji reference with Unicode codes and categories. Browse, search and copy emojis with skin tone variations and detailed emoji information.",
-      "tool_description": "Comprehensive emoji reference tool for developers and designers. Browse thousands of emojis organized by categories, search by name, and copy emojis or their HTML codes with a single click. Perfect for web development, documentation, social media content, and design projects. Includes Unicode decimal codes for HTML entities.",
+      "card_description": "Searchable emoji reference with Unicode codes and developer-focused categories. Browse, search and copy over 200 curated emojis or their HTML codes.",
+      "tool_description": "Curated emoji reference for developers and designers. Browse over 200 emojis organized by developer-focused categories such as UI, tech, business and dev, search by name, and copy emojis or their HTML codes with a single click. Perfect for web development, documentation, commit messages and design projects. Includes Unicode decimal codes for HTML entities.",
       "loadingEmojis": "Loading emojis...",
       "loadError": "Failed to load emoji data.",
       "noResults": "No emojis found.",
@@ -1129,7 +1129,7 @@
       ],
       "keywords": "json formatter, json validator, json beautifier, syntax highlighting, minify json, tree view",
       "meta_title": "JSON Formatter & Validator – Beautify, Minify & Validate",
-      "meta_description": "Format, validate and beautify JSON with syntax highlighting. Minify JSON, view tree structure, and detect errors. in your browser with privacy."
+      "meta_description": "Format, validate and beautify JSON. Minify JSON, view the tree structure and detect errors in your browser with privacy."
     },
     "pxToRemConverter": {
       "applicationCategory": "UtilityApplication",
@@ -1143,7 +1143,7 @@
       ],
       "keywords": "px to rem, pixel to rem, css unit converter, responsive design, rem calculator, tailwind css",
       "meta_title": "Px to Rem Converter – CSS Unit Calculator for Responsive Web",
-      "meta_description": "Convert pixels to rem units for responsive CSS. PX to REM calculator with custom base font size, batch conversion and live preview for web development."
+      "meta_description": "Convert pixels to rem, em and percent units for responsive CSS. PX to REM calculator with custom base font size, quick values and a conversion table."
     },
     "uuidGeneratorTool": {
       "applicationCategory": "UtilityApplication",
@@ -1157,7 +1157,7 @@
       ],
       "keywords": "uuid generator, guid generator, unique identifier, uuid v4, uuid v1, uuid v7, bulk uuid",
       "meta_title": "UUID Generator – Create v1, v4, v7 Unique Identifiers Online",
-      "meta_description": "Generate v1, v4, v7 UUIDs. UUID generator creating unique identifiers for databases, APIs with bulk generation and format validation"
+      "meta_description": "Generate v1, v4, v7 UUIDs. UUID generator creating unique identifiers for databases and APIs with bulk generation and multiple output formats."
     },
     "passwordGeneratorTool": {
       "applicationCategory": "UtilityApplication",
@@ -1177,16 +1177,16 @@
     "hashGeneratorTool": {
       "applicationCategory": "UtilityApplication",
       "featureList": [
-        "Generate MD5, SHA-1, SHA-256, SHA-384, SHA-512 hashes",
+        "Generate SHA-1, SHA-256, SHA-384, SHA-512 hashes",
         "HMAC with custom secret keys",
         "File and text hashing",
         "SRI hash generation for CDN",
         "Hash comparison tool",
         "Real-time live mode"
       ],
-      "keywords": "hash generator, sha256, md5, sha1, hmac, cryptographic hash, checksum, sri hash",
-      "meta_title": "Hash Generator – MD5, SHA-256, SHA-512, HMAC Online Tool",
-      "meta_description": "Generate MD5, SHA-1, SHA-256, SHA-512 hashes for text and files. cryptographic hash generator with HMAC support and file integrity verification"
+      "keywords": "hash generator, sha256, sha512, sha1, hmac, cryptographic hash, checksum, sri hash",
+      "meta_title": "Hash Generator – SHA-256, SHA-512, SHA-1, HMAC Online Tool",
+      "meta_description": "Generate SHA-1, SHA-256, SHA-384 and SHA-512 hashes for text and files. Cryptographic hash generator with HMAC support and file integrity verification."
     },
     "loremIpsumTool": {
       "applicationCategory": "UtilityApplication",
@@ -1199,14 +1199,14 @@
       ],
       "keywords": "lorem ipsum, placeholder text, dummy text, filler text, lipsum generator, mockup design",
       "meta_title": "Lorem Ipsum Generator – Create Placeholder Text Online Free",
-      "meta_description": "Generate Lorem Ipsum placeholder text. generator with paragraphs, words, sentences options and HTML formatting for web design mockups."
+      "meta_description": "Generate Lorem Ipsum placeholder text. Generator with paragraphs, sentences and words options and live character count for web design mockups."
     },
     "qrCodeGeneratorTool": {
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Generate QR codes for URLs, text, vCard, WiFi",
         "Customizable colors",
-        "Multiple sizes (200x200 to 512x512)",
+        "Multiple sizes (128x128 to 1024x1024)",
         "PNG and SVG export",
         "vCard contact information",
         "WiFi network configuration"
@@ -1235,12 +1235,12 @@
         "Beautify or minify code",
         "Customizable indentation",
         "Auto-format on input",
-        "Syntax validation",
+        "JavaScript minification with Terser",
         "Line and character counting"
       ],
       "keywords": "code formatter, beautifier, html formatter, css formatter, javascript formatter, code minifier, pretty print",
       "meta_title": "Code Formatter – Beautify HTML, CSS, JavaScript, XML & SQL",
-      "meta_description": "Beautify and format HTML, CSS, JavaScript, XML, SQL code. Supports multiple languages with syntax highlighting and customizable indentation options."
+      "meta_description": "Beautify and format HTML, CSS, JavaScript, XML, SQL code. Beautify or minify with customizable indentation and auto-format as you type."
     },
     "dataConverterTool": {
       "applicationCategory": "UtilityApplication",
@@ -1248,27 +1248,27 @@
         "Convert JSON, XML, YAML, CSV",
         "Unix timestamp converter",
         "Bidirectional conversion",
-        "Auto-format detection",
+        "Auto-convert live mode",
         "Customizable output formatting",
         "CSV delimiter options"
       ],
       "keywords": "data converter, json to xml, xml to json, yaml converter, csv converter, timestamp converter, epoch converter",
       "meta_title": "Data Converter – Convert JSON, XML, YAML, CSV & Timestamps",
-      "meta_description": "Convert between JSON, XML, YAML, CSV, and TOML formats. data format converter with syntax validation and real-time conversion preview."
+      "meta_description": "Convert between JSON, XML, YAML and CSV formats and Unix timestamps. Data format converter with clear error messages and customizable output."
     },
     "regexTesterTool": {
       "applicationCategory": "UtilityApplication",
       "featureList": [
         "Test regular expressions",
-        "Live match highlighting",
+        "Match highlighting in the test string",
         "Capture group extraction",
         "All JavaScript regex flags",
         "Match position display",
         "Export match results"
       ],
       "keywords": "regex tester, regular expression, pattern matching, regex validator, regex debugger, javascript regex",
-      "meta_title": "Regex Tester – Test Regular Expressions with Live Results",
-      "meta_description": "Test regular expressions with real-time matching. regex tester supporting JavaScript, Python, PHP patterns with syntax highlighting."
+      "meta_title": "Regex Tester – Test Regular Expressions with Match Highlighting",
+      "meta_description": "Test regular expressions with match highlighting. JavaScript regex tester with capture groups, all flags and exportable results."
     },
     "sampleHelloWorld": {
       "keywords": "sample tool, demo tool, hello world, text transformation, developer template",
@@ -1301,7 +1301,7 @@
     "emojiReferenceTool": {
       "applicationCategory": "UtilityApplication",
       "featureList": [
-        "Hundreds of emojis",
+        "Over 200 curated emojis",
         "Category filtering",
         "Keyword search",
         "Unicode information",
@@ -1310,7 +1310,7 @@
       ],
       "keywords": "emoji reference, emoji list, unicode emoji, emoji search, emoji codes, copy emoji",
       "meta_title": "Emoji Reference – Search, Browse & Copy Emojis with Codes",
-      "meta_description": "Searchable emoji reference with Unicode codes and categories. Browse, search and copy emojis. with skin tone variations and detailed emoji information."
+      "meta_description": "Searchable emoji reference with Unicode codes and categories. Browse, search and copy over 200 curated emojis with their HTML codes."
     },
     "htmlEntityTool": {
       "applicationCategory": "UtilityApplication",
@@ -1350,7 +1350,7 @@
         "Ready-to-use script and link HTML tags",
         "One-click copy of integrity attribute",
         "Client-side processing via Web Crypto API",
-        "Quick examples for Bootstrap, jQuery, Alpine.js"
+        "Resource type auto-detected from URL or file name"
       ],
       "keywords": "sri generator, subresource integrity, cdn security, sha384, sha256, sha512, integrity attribute, script tag, link tag",
       "meta_title": "SRI Hash Generator — Subresource Integrity for CDN Security",

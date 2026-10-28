@@ -11,7 +11,7 @@ $featuresSectionTitle = 'Recursos';
 $resourcesSectionTitle = 'Recursos Úteis';
 
 $features = [
-    'Correspondência de padrões em tempo real',
+    'Correspondência de padrões com resultados destacados',
     'Todas as flags regex (g, i, m, s, u, y)',
     'Destaque de correspondências com grupos de captura',
     'Informações detalhadas e estatísticas',
@@ -24,7 +24,7 @@ $customNoticeContent = <<<HTML
 <h2 class="h6 fw-semibold alert-heading mb-3"><i class="bi bi-info-circle me-2"></i>Teste de expressões regulares</h2>
 <ul class="mb-0">
     <li>Engine JavaScript: o teste utiliza o motor RegExp do navegador</li>
-    <li>Feedback em tempo real: valide padrões contra textos e veja o resultado imediatamente</li>
+    <li>Feedback imediato: valide padrões contra textos e veja o resultado com um clique</li>
     <li>Privacidade: todo o processamento acontece localmente, sem envio a servidores</li>
 </ul>
 HTML;

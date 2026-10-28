@@ -1,7 +1,7 @@
 {
   "name": "webdev-tools",
   "version": "2.2.0",
-  "description": "Privacy-first developer utilities - 19 tools, 6 languages, 100% client-side execution",
+  "description": "Privacy-first developer utilities - 20 tools, 6 languages, 100% client-side execution",
   "main": "index.php",
   "scripts": {
     "build": "bash build.sh",

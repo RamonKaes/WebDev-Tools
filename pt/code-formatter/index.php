@@ -15,7 +15,7 @@ $features = [
     'Modos beautify e minify',
     'Indentação personalizável (2/4 espaços ou tabulações)',
     'Formatação automática em tempo real',
-    'Validação de sintaxe',
+    'Minificação de JavaScript com Terser',
     'Suporte para copiar e baixar'
 ];
 

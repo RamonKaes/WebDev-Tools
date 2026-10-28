@@ -1,0 +1,44 @@
+{
+  "id": "/it/",
+  "name": "WebDev-Tools",
+  "short_name": "WebDev-Tools",
+  "description": "Strumenti professionali per sviluppatori web: JSON Formatter, Base64 Encoder, UUID Generator e altro. 100% gratuito, lato client e privacy-friendly.",
+  "lang": "it",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "../",
+  "display": "standalone",
+  "theme_color": "#066fd1",
+  "background_color": "#ffffff",
+  "categories": [
+    "developer tools",
+    "utilities"
+  ],
+  "icons": [
+    {
+      "src": "../assets/img/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "../assets/img/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "../assets/img/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "../assets/img/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "prefer_related_applications": false
+}

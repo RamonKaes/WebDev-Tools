@@ -26,7 +26,9 @@
     "report_bug_title": "Reportar um erro no GitHub",
     "help": "Ajuda",
     "help_title": "Perguntas e ideias no easyQ",
-    "footer_label": "Feedback e avisos legais"
+    "footer_label": "Feedback e avisos legais",
+    "install_app": "Instalar como app",
+    "install_app_title": "Instalar WebDev-Tools como app neste dispositivo"
   },
   "common": {
     "search": "Pesquisar",

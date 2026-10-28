@@ -299,7 +299,7 @@ header("Referrer-Policy: strict-origin-when-cross-origin");
 ### Execute after new tool:
 
 ```bash
-php config/generate-manifest.php    # PWA Manifest
+php config/generate-manifest.php    # Tool manifest (config/manifest.json)
 php config/generate-sitemaps.php    # XML sitemaps
 ```
 

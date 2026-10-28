@@ -108,3 +108,7 @@
   Header set Pragma "no-cache"
   Header set Expires "0"
 </IfModule>
+<IfModule mod_mime.c>
+  # Web app manifests must be served as application/manifest+json
+  AddType application/manifest+json .webmanifest
+</IfModule>

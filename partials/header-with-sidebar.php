@@ -537,6 +537,10 @@ $openMenuLabel = $openMenuLabels[$lang] ?? 'Open menu';
       <path
         d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
     </symbol>
+    <symbol id="bookmark-plus" viewBox="0 0 16 16">
+      <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z" />
+      <path d="M8 4a.5.5 0 0 1 .5.5V6H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V7H6a.5.5 0 0 1 0-1h1.5V4.5A.5.5 0 0 1 8 4" />
+    </symbol>
     <symbol id="sun-fill" viewBox="0 0 16 16">
       <path
         d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
@@ -544,7 +548,7 @@ $openMenuLabel = $openMenuLabels[$lang] ?? 'Open menu';
   </svg>
 
   <!-- Floating Theme Switcher Button (Bottom Right) -->
-  <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+  <div class="dropdown position-fixed end-0 me-3 bd-mode-toggle">
     <button class="btn btn-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button"
       aria-expanded="false" data-bs-toggle="dropdown" data-i18n-aria="common.toggle_theme" aria-label="<?= $lang === 'de' ? 'Design-Modus wählen' : 'Toggle theme' ?>">
       <svg class="bi my-1 theme-icon-active" width="1em" height="1em" aria-hidden="true">
@@ -664,4 +668,17 @@ $openMenuLabel = $openMenuLabels[$lang] ?? 'Open menu';
         </a>
       </li>
     </ul>
+  </div>
+
+  <!-- Floating install button (above the language switcher). Hidden until the
+       browser offers to install the site (Chromium's beforeinstallprompt) and
+       never shown inside the installed app; see assets/js/install-prompt.js -->
+  <div class="position-fixed end-0 me-3 bd-install-toggle d-none">
+    <button class="btn btn-primary py-2 d-flex align-items-center" id="bd-install" type="button"
+      title="<?= htmlspecialchars($nav['install_app_title'] ?? 'Install WebDev-Tools as an app on this device', ENT_QUOTES, 'UTF-8') ?>"
+      aria-label="<?= htmlspecialchars($nav['install_app'] ?? 'Install as app', ENT_QUOTES, 'UTF-8') ?>">
+      <svg class="bi my-1" width="1em" height="1em" aria-hidden="true">
+        <use href="#bookmark-plus"></use>
+      </svg>
+    </button>
   </div>

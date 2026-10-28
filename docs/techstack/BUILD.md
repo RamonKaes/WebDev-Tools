@@ -13,8 +13,9 @@ bash build.sh
 # Only minify CSS (manual)
 npm run build:css
 
-# Deploy to server (rsync)
+# Deploy to server (FTP/FTPS)
 npm run deploy
+npm run deploy:dry   # only show what would be uploaded
 ```
 
 ---
@@ -129,23 +130,25 @@ sass --style=compressed build-tools/bootstrap-custom.scss dist/assets/css/bootst
 
 ## Deployment
 
-### Rsync Deploy (`npm run deploy`)
+### FTP Deploy (`npm run deploy`)
 
+`build-tools/deploy-ftp.sh` mirrors `dist/` to the web host with `lftp`.
+
+**One-time setup:**
 ```bash
-rsync -avz --delete \
-  dist/ \
-  user@webdev-tools.info:/var/www/html/
+sudo apt install lftp
+cp deploy.config.example deploy.config   # fill in host, user, remote dir (ignored by git)
+secret-tool store --label="WebDev-Tools FTP" service webdev-tools-ftp
 ```
 
-**Flags:**
-- `-a`: Archive mode (preserves permissions, timestamps)
-- `-v`: Verbose
-- `-z`: Compression during transfer
-- `--delete`: Removes files on server that don't exist locally
+The password lives in the system keyring (GNOME Keyring via `secret-tool`), never in the repo.
+The script hands it to lftp through `LFTP_PASSWORD` (`--env-password`), so it never shows up
+on the command line.
 
-**Security:**
-- SSH key-based authentication
-- `--dry-run` to test before actual deploy
+**Options:**
+- `--dry-run` (`npm run deploy:dry`): only list what would be uploaded
+- `--delete`: also remove remote files that no longer exist in `dist/`
+- `FTP_TLS="yes"` in `deploy.config` (default) enforces FTPS with certificate check
 
 ---
 

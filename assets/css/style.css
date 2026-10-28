@@ -26,12 +26,16 @@ html, body {
 .app-wrapper {
   display: flex;
   flex-grow: 1;
-  height: calc(100% - 57px); /* Minus mobile header height */
+  /* The body is a column flexbox of viewport height: without flex-shrink: 0
+     the wrapper would be squeezed to its min-height and the footer below it
+     (tablet and phone) would overlap the content. */
+  flex-shrink: 0;
+  min-height: calc(100% - 57px); /* Minus mobile header height */
 }
 
 @media (min-width: 992px) {
   .app-wrapper {
-    height: 100%;
+    min-height: 100%;
   }
   
   .tool-container-inner {
@@ -164,6 +168,12 @@ html, body {
 .tool-link[data-tool="privacy"],
 .tool-link[title="GitHub Repository"] {
   font-size: 0.75rem;
+}
+
+/* Feedback buttons (bug report, help) next to the legal links */
+.feedback-btn {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
 }
 
 /* Brand styling */

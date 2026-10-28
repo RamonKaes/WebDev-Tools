@@ -340,36 +340,8 @@ $openMenuLabel = $openMenuLabels[$lang] ?? 'Open menu';
       </ul>
     </nav>
 
-    <!-- Legal Links (Desktop) -->
-    <div class="p-3 border-top">
-      <ul class="list-unstyled ps-0 mb-0">
-        <li class="mb-2 d-flex gap-2">
-          <a href="<?= $toolBaseUrl ?>/about.php" 
-             class="flex-fill d-flex align-items-center justify-content-center text-secondary text-decoration-none rounded tool-link <?php echo $currentTool === 'about' ? 'active' : ''; ?>" 
-             data-tool="about"
-             title="<?php echo htmlspecialchars($aboutTitleLabels[$lang] ?? 'About WebDev-Tools', ENT_QUOTES, 'UTF-8'); ?>">
-            <i class="bi bi-info-circle me-1"></i><span><?php echo htmlspecialchars($nav['about'] ?? 'About', ENT_QUOTES, 'UTF-8'); ?></span>
-          </a>
-          <a href="https://github.com/RamonKaes/WebDev-Tools" target="_blank" rel="noopener noreferrer" class="flex-fill d-flex align-items-center justify-content-center text-secondary text-decoration-none rounded tool-link" title="GitHub Repository">
-            <i class="bi bi-github me-1"></i><span>GitHub</span>
-          </a>
-        </li>
-        <li class="d-flex gap-2">
-          <a href="<?= $toolBaseUrl ?>/imprint.php" 
-             class="flex-fill d-flex align-items-center justify-content-center text-secondary text-decoration-none rounded tool-link <?php echo $currentTool === 'imprint' ? 'active' : ''; ?>" 
-             data-tool="imprint"
-             title="<?php echo htmlspecialchars($imprintTitleLabels[$lang] ?? 'Legal Information', ENT_QUOTES, 'UTF-8'); ?>">
-            <i class="bi bi-file-text me-1"></i><span><?php echo htmlspecialchars($nav['imprint'] ?? 'Imprint', ENT_QUOTES, 'UTF-8'); ?></span>
-          </a>
-          <a href="<?= $toolBaseUrl ?>/privacy.php" 
-             class="flex-fill d-flex align-items-center justify-content-center text-secondary text-decoration-none rounded tool-link <?php echo $currentTool === 'privacy' ? 'active' : ''; ?>" 
-             data-tool="privacy"
-             title="<?php echo htmlspecialchars($privacyTitleLabels[$lang] ?? 'Privacy Policy', ENT_QUOTES, 'UTF-8'); ?>">
-            <i class="bi bi-shield-check me-1"></i><span><?php echo htmlspecialchars($nav['privacy'] ?? 'Privacy', ENT_QUOTES, 'UTF-8'); ?></span>
-          </a>
-        </li>
-      </ul>
-    </div>
+    <!-- Feedback buttons + legal links (desktop) -->
+    <?php $legalVariant = 'sidebar'; include __DIR__ . '/legal-links.php'; ?>
 
 
   </aside>
@@ -539,27 +511,6 @@ $openMenuLabel = $openMenuLabels[$lang] ?? 'Open menu';
       </ul>
       </nav>
 
-      <!-- Legal Links (Mobile) -->
-      <div class="p-3 border-top mt-auto">
-        <ul class="list-unstyled ps-0 mb-0">
-          <li class="mb-2 d-flex gap-2">
-            <a href="<?= $toolBaseUrl ?>/about.php" class="flex-fill d-flex align-items-center justify-content-center text-secondary text-decoration-none rounded tool-link mobile-nav-link <?php echo $currentTool === 'about' ? 'active' : ''; ?>" data-tool="about" aria-label="<?php echo htmlspecialchars(($nav['about'] ?? 'About') . ' - Mobile Navigation', ENT_QUOTES, 'UTF-8'); ?>">
-              <i class="bi bi-info-circle me-1"></i><span><?php echo htmlspecialchars($nav['about'] ?? 'About', ENT_QUOTES, 'UTF-8'); ?></span>
-            </a>
-            <a href="https://github.com/RamonKaes/WebDev-Tools" target="_blank" rel="noopener noreferrer" class="flex-fill d-flex align-items-center justify-content-center text-secondary text-decoration-none rounded tool-link mobile-nav-link" title="GitHub Repository" aria-label="GitHub Repository - Mobile Navigation">
-              <i class="bi bi-github me-1"></i><span>GitHub</span>
-            </a>
-          </li>
-          <li class="d-flex gap-2">
-            <a href="<?= $toolBaseUrl ?>/imprint.php" class="flex-fill d-flex align-items-center justify-content-center text-secondary text-decoration-none rounded tool-link mobile-nav-link <?php echo $currentTool === 'imprint' ? 'active' : ''; ?>" data-tool="imprint" aria-label="<?php echo htmlspecialchars(($nav['imprint'] ?? 'Imprint') . ' - Mobile Navigation', ENT_QUOTES, 'UTF-8'); ?>">
-              <i class="bi bi-file-text me-1"></i><span><?php echo htmlspecialchars($nav['imprint'] ?? 'Imprint', ENT_QUOTES, 'UTF-8'); ?></span>
-            </a>
-            <a href="<?= $toolBaseUrl ?>/privacy.php" class="flex-fill d-flex align-items-center justify-content-center text-secondary text-decoration-none rounded tool-link mobile-nav-link <?php echo $currentTool === 'privacy' ? 'active' : ''; ?>" data-tool="privacy" aria-label="<?php echo htmlspecialchars(($nav['privacy'] ?? 'Privacy') . ' - Mobile Navigation', ENT_QUOTES, 'UTF-8'); ?>">
-              <i class="bi bi-shield-check me-1"></i><span><?php echo htmlspecialchars($nav['privacy'] ?? 'Privacy', ENT_QUOTES, 'UTF-8'); ?></span>
-            </a>
-          </li>
-        </ul>
-      </div>
 
 
     </div>

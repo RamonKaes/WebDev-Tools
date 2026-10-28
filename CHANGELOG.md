@@ -30,6 +30,12 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
   dropped in all six languages.
 
 ### ✨ Features
+- **Feedback buttons** – "Report a bug" (GitHub Issues) and "Help" (easyQ
+  project page) sit above the legal links in the sidebar. On tablet and
+  phone the legal links and the two buttons moved out of the off-canvas
+  menu into a footer below the page content, rendered from the new
+  `partials/legal-links.php` so both places share one source.
+### ✨ Features
 - **Layout toggle** between the input and output cards shows a stacked-rows
   icon while the cards sit side by side and a split icon while they are
   stacked, so the symbol names the layout you get. The tooltip does the

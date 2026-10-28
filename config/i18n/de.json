@@ -21,7 +21,12 @@
         "references": "Referenz- und Nachschlagewerkzeuge anzeigen",
         "utilities": "Dienstprogramme anzeigen"
       }
-    }
+    },
+    "report_bug": "Fehler melden",
+    "report_bug_title": "Fehler auf GitHub melden",
+    "help": "Hilfe",
+    "help_title": "Fragen und Ideen auf easyQ",
+    "footer_label": "Feedback und Rechtliches"
   },
   "common": {
     "search": "Suchen",

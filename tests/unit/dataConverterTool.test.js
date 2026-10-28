@@ -143,6 +143,13 @@ describe('DataConverterTool – XML to JSON', () => {
     expect(parsed).toEqual({ name: 'John', age: '30' });
   });
 
+  test('markup in XML text stays inert text in the output', () => {
+    const output = convert('<root><v>&lt;img src=x onerror="window.__xss=1"&gt;</v></root>');
+    expect(JSON.parse(output).v).toBe('<img src=x onerror="window.__xss=1">');
+    expect(c.querySelector('img')).toBeNull();
+    expect(window.__xss).toBeUndefined();
+  });
+
   test('invalid XML shows error status', () => {
     convert('<root><unclosed>');
     const status = document.getElementById('conversionStatus');

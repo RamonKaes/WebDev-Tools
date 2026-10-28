@@ -358,3 +358,48 @@ describe('HashGeneratorTool – Hidden helper elements', () => {
   });
 
 });
+
+// ─── XSS: file metadata and result rendering ──────────────────────────────────
+
+describe('HashGeneratorTool – XSS hardening', () => {
+  const payload = '<img src=x onerror="window.__xss=1">.txt';
+  let c;
+  let savedHelpers;
+  beforeEach(() => {
+    savedHelpers = global.AppHelpers;
+    // The fallback path without AppHelpers must be safe as well
+    delete global.AppHelpers;
+    c = openTool();
+    switchMode(c, 'file');
+  });
+  afterEach(() => {
+    global.AppHelpers = savedHelpers;
+    delete window.__xss;
+    cleanup(c);
+  });
+
+  test('renders a malicious file name and type as text, not HTML', async () => {
+    const file = new File(['abc'], payload, { type: 'text/<b>evil</b>' });
+    if (!file.arrayBuffer) file.arrayBuffer = () => Promise.resolve(new TextEncoder().encode('abc').buffer);
+    const input = c.querySelector('#fileInput');
+    Object.defineProperty(input, 'files', { value: [file], configurable: true });
+    input.dispatchEvent(new Event('change'));
+    await new Promise(r => setTimeout(r, 0));
+
+    const info = c.querySelector('#fileInfo');
+    expect(info.querySelector('img')).toBeNull();
+    expect(info.querySelector('b')).toBeNull();
+    expect(info.textContent).toContain(payload);
+    expect(info.textContent).toContain('text/<b>evil</b>');
+  });
+
+  test('renders algorithm labels as text in the result list', () => {
+    const results = c.querySelector('#hashResults') || c;
+    tool.displayHashResults(results, [{ algorithm: '<img src=x onerror="window.__xss=1">', hash: 'ab"><b>x</b>' }]);
+    expect(results.querySelector('img')).toBeNull();
+    expect(results.querySelector('b')).toBeNull();
+    expect(results.querySelector('strong').textContent).toBe('<img src=x onerror="window.__xss=1">');
+    expect(results.querySelector('.hash-output').value).toBe('ab"><b>x</b>');
+    expect(results.querySelector('.copy-hash').dataset.hash).toBe('ab"><b>x</b>');
+  });
+});

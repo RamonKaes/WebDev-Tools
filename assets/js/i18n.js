@@ -445,21 +445,21 @@ class I18n {
   }
 
   /**
-   * Update URL to navigate to correct language version
+   * Build the URL of the current page in another language
    * English: /lorem-ipsum/
    * German: /de/lorem-ipsum/
    *
    * @param {string} lang - Language code
+   * @returns {string|null} - Same-origin target URL, or null if already on that language
    */
-  updateURL(lang) {
+  buildLanguageURL(lang) {
     const currentPath = window.location.pathname;
     const currentSearch = window.location.search;
     const basePath = window.__BASE_PATH__ || '';
 
-    console.log('[i18n] Current path:', currentPath);
-
     let newPath = currentPath;
-    const basePathPattern = basePath ? basePath.replace(/\//g, '\\/') : '';
+    // Escape every RegExp metacharacter so the base path is matched literally
+    const basePathPattern = basePath.replace(/[.*+?^${}()|[\]\\/]/g, '\\$&');
 
     if (lang === 'en') {
       // Switch to English: Remove any language prefix
@@ -478,9 +478,28 @@ class I18n {
       }
     }
 
-    if (newPath !== currentPath) {
-      console.log('[i18n] Navigating to:', newPath);
-      window.location.href = newPath + currentSearch;
+    if (newPath === currentPath) {
+      return null;
+    }
+
+    // Collapse leading slashes so a path like "//host/" can never become a protocol-relative URL
+    const target = new URL(newPath.replace(/^\/+/, '/') + currentSearch, window.location.origin);
+    if (target.origin !== window.location.origin) {
+      return null;
+    }
+    return target.href;
+  }
+
+  /**
+   * Navigate to the current page in another language
+   *
+   * @param {string} lang - Language code
+   */
+  updateURL(lang) {
+    const target = this.buildLanguageURL(lang);
+    if (target) {
+      console.log('[i18n] Navigating to:', target);
+      window.location.assign(target);
     } else {
       console.log('[i18n] Already on correct language path');
     }

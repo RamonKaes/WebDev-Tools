@@ -75,10 +75,14 @@ cp -r assets/js "$DIST_DIR/assets/"
 echo "🎨 Processing CSS..."
 mkdir -p "$DIST_DIR/assets/css"
 
-if command -v csso &> /dev/null; then
+# Prefer the project's csso (devDependency) over a global install
+CSSO_BIN="./node_modules/.bin/csso"
+[ -x "$CSSO_BIN" ] || CSSO_BIN=$(command -v csso || true)
+
+if [ -n "$CSSO_BIN" ]; then
   for css_file in assets/css/*.css; do
     filename=$(basename "$css_file")
-    csso "$css_file" -o "$DIST_DIR/assets/css/$filename"
+    "$CSSO_BIN" "$css_file" -o "$DIST_DIR/assets/css/$filename"
   done
   echo "  ✓ CSS minified with csso"
 else

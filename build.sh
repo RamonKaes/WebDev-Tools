@@ -36,6 +36,7 @@ cp *.php "$DIST_DIR/" 2>/dev/null || true
 cp *.htm "$DIST_DIR/" 2>/dev/null || true
 cp *.txt "$DIST_DIR/" 2>/dev/null || true
 cp *.webmanifest "$DIST_DIR/" 2>/dev/null || true
+cp favicon.ico "$DIST_DIR/" 2>/dev/null || true
 [ -d ".well-known" ] && cp -r .well-known "$DIST_DIR/"
 
 # Copy production htaccess (not dev version!)

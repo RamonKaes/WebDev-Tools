@@ -198,7 +198,7 @@ $ogImageUrl = $baseUrlEscaped . BASE_PATH . '/assets/img/webdev-tools.png';
 
   <?php include __DIR__ . '/header-with-sidebar.php'; ?>
 
-  <main class="flex-grow-1 min-vh-75">
+  <main id="main-content" class="flex-grow-1 min-vh-75">
     <div class="container-fluid">
 
       <div class="d-flex justify-content-center align-items-center error-container-min-height">

@@ -24,19 +24,19 @@ WebDev-Tools (https://webdev-tools.info) é uma coleção gratuita de utilitári
 - [Punycode Converter](https://webdev-tools.info/punycode-converter/): Converte domínios internacionalizados (IDN) entre Unicode e Punycode (ACE).
 
 ### Formatadores
-- [JSON Formatter & Validator](https://webdev-tools.info/json-formatter-validator/): Formata, valida, minimiza e explora JSON com realce de sintaxe e visualização em árvore.
+- [JSON Formatter & Validator](https://webdev-tools.info/json-formatter-validator/): Formata, valida, minimiza e explora JSON com correção automática, extrator de caminho e visualização em árvore.
 - [Code Formatter](https://webdev-tools.info/code-formatter/): Formata HTML, CSS, JavaScript e outras linguagens.
 
 ### Geradores
 - [UUID Generator](https://webdev-tools.info/uuid-generator/): Gera UUID v4 compatíveis com RFC 4122, individuais ou em lote.
 - [Password Generator](https://webdev-tools.info/password-generator/): Cria senhas aleatórias ou frases de senha com regras configuráveis e medidor de força.
-- [Hash Generator](https://webdev-tools.info/hash-generator/): Gera hashes MD5, SHA-1, SHA-256 e SHA-512 a partir de texto ou arquivos.
+- [Hash Generator](https://webdev-tools.info/hash-generator/): Gera hashes SHA-1, SHA-256, SHA-384 e SHA-512 a partir de texto ou arquivos.
 - [Lorem Ipsum Generator](https://webdev-tools.info/lorem-ipsum/): Gera texto de espaço reservado por parágrafos, frases ou palavras.
 - [QR Code Generator](https://webdev-tools.info/qr-code-generator/): Cria códigos QR a partir de qualquer texto ou URL. Faz download como SVG ou PNG.
 
 ### Conversores
 - [PX to REM Converter](https://webdev-tools.info/px-to-rem-converter/): Converte valores em pixels para REM com cálculo ao vivo, tabelas de conversão e suporte Tailwind.
-- [Data Converter](https://webdev-tools.info/data-converter/): Converte entre JSON, CSV, XML, YAML e TOML. Suporta conversão de timestamp.
+- [Data Converter](https://webdev-tools.info/data-converter/): Converte entre JSON, CSV, XML e YAML. Suporta conversão de timestamp.
 - [Aspect Ratio Calculator](https://webdev-tools.info/aspect-ratio-calculator/): Calcula dimensões de imagem/vídeo para qualquer proporção. Inclui presets comuns e truque de padding CSS.
 
 ### Ferramentas de Strings
@@ -48,7 +48,7 @@ WebDev-Tools (https://webdev-tools.info) é uma coleção gratuita de utilitári
 
 ### Utilitários
 - [SRI Generator](https://webdev-tools.info/sri-generator/): Gera hashes de integridade de subrecursos para scripts e folhas de estilo.
-- [Regex Tester](https://webdev-tools.info/regex-tester/): Testador de expressões regulares em tempo real com realce de correspondências, extração de grupos e suporte a flags.
+- [Regex Tester](https://webdev-tools.info/regex-tester/): Testador de expressões regulares com realce de correspondências, extração de grupos e suporte a flags.
 
 ## Idiomas
 

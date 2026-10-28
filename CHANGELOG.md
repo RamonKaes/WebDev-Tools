@@ -59,6 +59,15 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
   messages of the data converter, JWT decoder, JSON formatter and code
   formatter (about 45 new keys in all six languages).
 
+### 📝 Documentation
+- README, `llms.txt`, `llms-full.txt` and `faq-ai.txt` (all six languages)
+  no longer advertise MD5, TOML, syntax highlighting, live regex matching,
+  JWT signature validation or a CSS-escape column in the character
+  reference; `llms-full.txt` claimed MD5 was "implemented in pure
+  JavaScript". Tool descriptions, SEO metadata and feature lists were
+  aligned with the actual behaviour, and the About pages now point to
+  GitHub Issues and the easyq project page for feedback.
+
 ### ✅ Tests
 - 41 new regression tests (898 total, 22 suites), including a first suite for
   `assets/js/i18n.js`.

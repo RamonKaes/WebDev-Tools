@@ -21,7 +21,7 @@ R: 20 herramientas en 6 categorías:
    Codificadores/Decodificadores: Base64, URL, HTML Entity, JWT, Punycode
    Formateadores: JSON Formatter/Validator, Code Formatter
    Generadores: UUID, Contraseña, Hash, Lorem Ipsum, QR Code
-   Convertidores: PX→REM, Datos (JSON/CSV/XML/YAML/TOML), Relación de aspecto
+   Convertidores: PX→REM, Datos (JSON/CSV/XML/YAML), Relación de aspecto
    Herramientas de cadenas: String Escaper
    Referencias: Character Reference, Emoji Reference
    Utilidades: Regex Tester, SRI Generator

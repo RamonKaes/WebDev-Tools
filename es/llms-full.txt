@@ -54,7 +54,7 @@ Ejemplo: münchen.de ↔ xn--mnchen-3ya.de
 ### JSON Formatter & Validator
 URL: https://webdev-tools.info/json-formatter-validator/
 Categoría: Formateadores
-Funciones: Formatea JSON con indentación configurable (2 o 4 espacios). Valida sintaxis JSON con resaltado de errores. Minifica JSON. Vista de árbol interactiva. Resaltado de sintaxis.
+Funciones: Formatea JSON con indentación configurable (2 o 4 espacios, tabulaciones). Valida sintaxis JSON con mensajes de error claros. Minifica JSON. Vista de árbol interactiva. Corrección automática de errores comunes, ordenación de claves y extractor de rutas.
 
 ### Code Formatter
 URL: https://webdev-tools.info/code-formatter/
@@ -80,8 +80,8 @@ Funciones:
 ### Hash Generator
 URL: https://webdev-tools.info/hash-generator/
 Categoría: Generadores
-Algoritmos: MD5, SHA-1, SHA-256, SHA-384, SHA-512
-Funciones: Genera hashes de texto o archivos. Usa SubtleCrypto para variantes SHA. MD5 implementado en JavaScript puro. Hash de archivos con FileReader.
+Algoritmos: SHA-1, SHA-256, SHA-384, SHA-512
+Funciones: Genera hashes de texto o archivos. Usa SubtleCrypto para todos los algoritmos; MD5 no está disponible porque los navegadores no lo implementan. Hash de archivos con FileReader.
 
 ### Lorem Ipsum Generator
 URL: https://webdev-tools.info/lorem-ipsum/
@@ -101,7 +101,7 @@ Funciones: Convierte valores de píxeles a REM según tamaño de fuente base con
 ### Data Converter
 URL: https://webdev-tools.info/data-converter/
 Categoría: Convertidores
-Formatos: JSON ↔ CSV, JSON ↔ XML, JSON ↔ YAML, JSON ↔ TOML
+Formatos: JSON ↔ CSV, JSON ↔ XML, JSON ↔ YAML
 Funciones: Conversión bidireccional de formatos. Conversión de marcas de tiempo (Unix ↔ ISO 8601). Soporte múltiple de formatos.
 
 ### Aspect Ratio Calculator
@@ -118,7 +118,7 @@ Funciones: Escapa y desescapa cadenas para el contexto seleccionado. Maneja cara
 ### Character Reference
 URL: https://webdev-tools.info/character-reference/
 Categoría: Referencias
-Funciones: Tabla buscable de entidades de caracteres HTML. Columnas: carácter, entidad nombrada, entidad decimal, entidad hexadecimal, punto de código Unicode, escape CSS. Filtro por categoría.
+Funciones: Tabla buscable de entidades de caracteres HTML. Columnas: carácter, nombre, entidad nombrada, punto de código Unicode, entidad decimal. Filtro por categoría.
 
 ### Emoji Reference
 URL: https://webdev-tools.info/emoji-reference/
@@ -128,7 +128,7 @@ Funciones: Tabla de emojis buscable por categorías. Copia emoji o punto de cód
 ### Regex Tester
 URL: https://webdev-tools.info/regex-tester/
 Categoría: Utilidades
-Funciones: Probador de expresiones regulares en vivo con resalte de coincidencias, extracción de grupos y soporte de banderas. Conteo de coincidencias y posición.
+Funciones: Probador de expresiones regulares con resalte de coincidencias, extracción de grupos y soporte de banderas. Conteo de coincidencias y posición.
 
 ### SRI Generator
 URL: https://webdev-tools.info/sri-generator/

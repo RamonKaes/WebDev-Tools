@@ -345,7 +345,7 @@ Security-critical tools utilize the **Web Crypto API** (`crypto.getRandomValues(
 <td>NIST SP 800-63B</td>
 <td>
 • Customizable complexity<br>
-• Real-time strength meter<br>
+• Entropy-based strength meter<br>
 • Special character sets<br>
 • CSPRNG randomness
 </td>
@@ -354,10 +354,10 @@ Security-critical tools utilize the **Web Crypto API** (`crypto.getRandomValues(
 <td><strong><a href="./hash-generator/">Hash Generator</a></strong></td>
 <td>FIPS 180-4</td>
 <td>
-• MD5, SHA-1/256/512<br>
+• SHA-1/256/384/512<br>
 • HMAC support<br>
 • File integrity verification<br>
-• Bulk hashing
+• Hash comparison
 </td>
 </tr>
 <tr>
@@ -365,7 +365,7 @@ Security-critical tools utilize the **Web Crypto API** (`crypto.getRandomValues(
 <td>RFC 7519</td>
 <td>
 • Header/payload parsing<br>
-• Signature validation<br>
+• Expiry check (exp claim)<br>
 • Expiry checking<br>
 • Claims extraction
 </td>
@@ -408,8 +408,8 @@ Security-critical tools utilize the **Web Crypto API** (`crypto.getRandomValues(
 <td>
 • HTML, CSS, JS, XML, SQL<br>
 • Customizable indentation<br>
-• Syntax highlighting<br>
-• Error detection
+• Beautify and minify<br>
+• Terser-based JS minification
 </td>
 </tr>
 <tr>
@@ -418,7 +418,7 @@ Security-critical tools utilize the **Web Crypto API** (`crypto.getRandomValues(
 <td>
 • JSON ↔ XML ↔ YAML ↔ CSV<br>
 • Bidirectional conversion<br>
-• Syntax pre-validation<br>
+• Clear error messages<br>
 • Preserves data types
 </td>
 </tr>
@@ -441,7 +441,7 @@ Security-critical tools utilize the **Web Crypto API** (`crypto.getRandomValues(
 • Standard & URL-safe variants<br>
 • Binary file support<br>
 • Data URIs for images<br>
-• Batch processing
+• Image preview for decoded data
 </td>
 </tr>
 <tr>
@@ -460,7 +460,7 @@ Security-critical tools utilize the **Web Crypto API** (`crypto.getRandomValues(
 <td>
 • Internationalized domain names<br>
 • Bidirectional conversion<br>
-• IDN validation<br>
+• Batch conversion (line by line)<br>
 • Unicode character support
 </td>
 </tr>
@@ -493,7 +493,7 @@ Security-critical tools utilize the **Web Crypto API** (`crypto.getRandomValues(
 • HTML, SQL, JSON, CSV, JavaScript<br>
 • Injection prevention<br>
 • Context-aware escaping<br>
-• Batch processing
+• Auto-process mode
 </td>
 </tr>
 <tr>

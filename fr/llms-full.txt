@@ -54,7 +54,7 @@ Exemple : münchen.de ↔ xn--mnchen-3ya.de
 ### JSON Formatter & Validator
 URL : https://webdev-tools.info/json-formatter-validator/
 Catégorie : Formateurs
-Fonctions : Formate JSON avec indentation configurable (2 ou 4 caractères). Valide la syntaxe JSON avec mise en évidence des erreurs. Minifie JSON. Vue arborescente interactive. Mise en évidence syntaxique.
+Fonctions : Formate JSON avec indentation configurable (2 ou 4 espaces, tabulations). Valide la syntaxe JSON avec des messages d'erreur clairs. Minifie JSON. Vue arborescente interactive. Correction automatique des erreurs courantes, tri des clés et extracteur de chemin.
 
 ### Code Formatter
 URL : https://webdev-tools.info/code-formatter/
@@ -80,8 +80,8 @@ Fonctions :
 ### Hash Generator
 URL : https://webdev-tools.info/hash-generator/
 Catégorie : Générateurs
-Algorithmes : MD5, SHA-1, SHA-256, SHA-384, SHA-512
-Fonctions : Génère des hachages à partir de texte ou de fichiers. Utilise SubtleCrypto pour les variantes SHA. MD5 implémenté en JS natif. Le hachage de fichiers utilise FileReader.
+Algorithmes : SHA-1, SHA-256, SHA-384, SHA-512
+Fonctions : Génère des hachages à partir de texte ou de fichiers. Utilise SubtleCrypto pour tous les algorithmes ; MD5 n'est pas disponible car les navigateurs ne l'implémentent pas. Le hachage de fichiers utilise FileReader.
 
 ### Lorem Ipsum Generator
 URL : https://webdev-tools.info/lorem-ipsum/
@@ -101,7 +101,7 @@ Fonctions : Convertit les valeurs pixels en REM selon une taille de police de ba
 ### Data Converter
 URL : https://webdev-tools.info/data-converter/
 Catégorie : Convertisseurs
-Formats : JSON ↔ CSV, JSON ↔ XML, JSON ↔ YAML, JSON ↔ TOML
+Formats : JSON ↔ CSV, JSON ↔ XML, JSON ↔ YAML
 Fonctions : Conversion bidirectionnelle entre formats. Conversion de timestamp (Unix ↔ ISO 8601). Prise en charge multi-format.
 
 ### Aspect Ratio Calculator
@@ -118,7 +118,7 @@ Fonctions : Échappe et déséchappe les chaînes pour le contexte sélectionné
 ### Character Reference
 URL : https://webdev-tools.info/character-reference/
 Catégorie : Références
-Fonctions : Tableau consultable d'entités de caractères HTML. Colonnes : caractère, entité nommée, entité décimale, entité hexadécimale, point de code Unicode, escape CSS. Filtre par catégorie.
+Fonctions : Tableau consultable d'entités de caractères HTML. Colonnes : caractère, nom, entité nommée, point de code Unicode, entité décimale. Filtre par catégorie.
 
 ### Emoji Reference
 URL : https://webdev-tools.info/emoji-reference/
@@ -128,7 +128,7 @@ Fonctions : Tableau d'émojis consultable par catégories. Copie emoji ou point 
 ### Regex Tester
 URL : https://webdev-tools.info/regex-tester/
 Catégorie : Utilitaires
-Fonctions : Testeur d'expressions régulières en direct avec mise en évidence des correspondances, extraction de groupes et prise en charge des flags. Compte des correspondances et position.
+Fonctions : Testeur d'expressions régulières avec mise en évidence des correspondances, extraction de groupes et prise en charge des flags. Compte des correspondances et position.
 
 ### SRI Generator
 URL : https://webdev-tools.info/sri-generator/

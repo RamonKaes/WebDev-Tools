@@ -111,6 +111,6 @@ if ($isHttps) {
  * Cache-Control
  * Prevents caching of HTML pages
  */
-header("Cache-Control: no-cache, no-store, must-revalidate, private");
+header("Cache-Control: no-cache, must-revalidate, private");
 header("Pragma: no-cache");
 header("Expires: 0");

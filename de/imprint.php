@@ -65,7 +65,7 @@ $currentUrl = getFullUrl('/imprint.php', $lang);
   <div class="d-flex flex-grow-1 position-relative">
     <div class="left-sidebar-spacer"></div>
 
-  <main class="flex-grow-1 p-4 p-md-5 bg-body shadow-sm overflow-auto">
+  <main id="main-content" class="flex-grow-1 p-4 p-md-5 bg-body shadow-sm overflow-auto">
     <div class="tool-container-inner mx-auto">
 
         <div class="text-center mb-5">

@@ -44,6 +44,11 @@ html, body {
   }
 }
 
+/* Reserve space until the tool UI is rendered by JS to avoid layout shift (CLS) */
+#tool-container:empty {
+  min-height: 320px;
+}
+
 /* ============================================
    SIDEBAR & NAVIGATION
    ============================================ */
@@ -174,6 +179,8 @@ html, body {
 .feedback-btn {
   font-size: 0.75rem;
   padding: 0.25rem 0.5rem;
+  /* Darker than btn-outline-secondary so 12px text meets WCAG AA contrast */
+  --bs-btn-color: var(--bs-secondary-color);
 }
 
 /* Brand styling */

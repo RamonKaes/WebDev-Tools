@@ -55,7 +55,7 @@ $legalLinks = [
 
 $buttonClass = 'btn btn-sm btn-outline-secondary feedback-btn d-inline-flex align-items-center justify-content-center'
     . ($isFooter ? '' : ' flex-fill');
-$linkClass = 'd-flex align-items-center justify-content-center text-secondary text-decoration-none rounded tool-link'
+$linkClass = 'd-flex align-items-center justify-content-center text-body-secondary text-decoration-none rounded tool-link'
     . ($isFooter ? '' : ' flex-fill');
 ?>
 <?php if ($isFooter) : ?>

@@ -493,7 +493,9 @@
       "toc_title": "Passwort Generator",
       "h1_title": "Passwort Generator — Sichere Zufallspasswörter generieren",
       "card_description": "Generiere kryptografisch sichere Passwörter mit anpassbarer Länge und Zeichentypen. Erstelle starke Zufallspasswörter, einprägsame Passphrasen oder.",
-      "tool_description": "Erstelle kryptografisch sichere Passwörter mit unserem Passwort Generator. Das Tool bietet drei Generierungsmodi: Zufällige Passwörter, einprägsame Passphrasen und musterbasierte Generierung. Wähle aus verschiedenen Zeichensätzen (Standard, alphanumerisch, hexadezimal oder benutzerdefiniert), schließe mehrdeutige Zeichen aus und generiere bis zu 100 Passwörter gleichzeitig. Die integrierte Passwortstärke-Analyse zeigt Entropie, Zeichensatz-Größe und geschätzte Knackzeit an. Exportiere deine Passwörter als TXT, CSV oder JSON."
+      "tool_description": "Erstelle kryptografisch sichere Passwörter mit unserem Passwort Generator. Das Tool bietet drei Generierungsmodi: Zufällige Passwörter, einprägsame Passphrasen und musterbasierte Generierung. Wähle aus verschiedenen Zeichensätzen (Standard, alphanumerisch, hexadezimal oder benutzerdefiniert), schließe mehrdeutige Zeichen aus und generiere bis zu 100 Passwörter gleichzeitig. Die integrierte Passwortstärke-Analyse zeigt Entropie, Zeichensatz-Größe und geschätzte Knackzeit an. Exportiere deine Passwörter als TXT, CSV oder JSON.",
+      "alphabetWords": "{count} Wörter",
+      "alphabetPattern": "21 Konsonanten / 5 Vokale"
     },
     "hashGeneratorTool": {
       "how_to_use_title": "So funktioniert's",

@@ -37,6 +37,20 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
 - **SRI generator** result blocks carried inline `style` attributes that the
   CSP blocks; they use the `pre-wrap`, `text-break` and `small` classes now.
 
+### 🔐 Security
+- **Password generator** picked characters with `byte % charset.length`,
+  which favoured the first 76 of the 90 standard characters by 50 %. All
+  random draws (characters, words, the appended number, pattern letters)
+  now use rejection sampling on 32-bit values.
+- **Password strength** was always computed from the characters, so a
+  four-word passphrase showed 166 bits and "Very strong". The meter now
+  receives the entropy of the generation process: words × log2(wordlist)
+  for passphrases, consonant/vowel slots for pattern passwords, and
+  length × log2(charset) for random passwords.
+- **Wordlist** – `assets/js/lib/wordlist.js` claimed to be the EFF long
+  wordlist but held 2,055 words. It is now the real list with 7,776 words
+  (12.9 bits per word, CC BY 3.0).
+
 ### 🌍 i18n
 - Moved the remaining hardcoded UI strings of seven tool modules into the
   translation files: the German "Modus" label that showed on every language

@@ -493,7 +493,9 @@
       "toc_title": "Password Generator",
       "h1_title": "Secure Password Generator — Create Strong Passwords Fast",
       "card_description": "Create strong, random passwords with customizable length and character sets. generator with strength meter and multiple password generation.",
-      "tool_description": "Create cryptographically secure passwords with our Password Generator. The tool offers three generation modes: random passwords, memorable passphrases, and pattern-based generation. Choose from various character sets (standard, alphanumeric, hexadecimal, or custom), exclude ambiguous characters, and generate up to 100 passwords simultaneously. The integrated password strength analyzer displays entropy, character set size, and estimated crack time. Export your passwords as TXT, CSV, or JSON."
+      "tool_description": "Create cryptographically secure passwords with our Password Generator. The tool offers three generation modes: random passwords, memorable passphrases, and pattern-based generation. Choose from various character sets (standard, alphanumeric, hexadecimal, or custom), exclude ambiguous characters, and generate up to 100 passwords simultaneously. The integrated password strength analyzer displays entropy, character set size, and estimated crack time. Export your passwords as TXT, CSV, or JSON.",
+      "alphabetWords": "{count} words",
+      "alphabetPattern": "21 consonants / 5 vowels"
     },
     "hashGeneratorTool": {
       "linkTitle": {

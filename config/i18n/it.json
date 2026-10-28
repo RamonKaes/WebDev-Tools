@@ -493,7 +493,9 @@
       "toc_title": "Generatore Password",
       "h1_title": "Generatore Password Sicure — Sicurezza crittografica",
       "card_description": "Genera password sicure con lunghezza e caratteri personalizzabili. Generatore con passphrase, pattern e indicatore di robustezza per sicurezza massima.",
-      "tool_description": "Crea password crittograficamente sicure con il nostro Generatore di Password. Lo strumento offre tre modalità di generazione: password casuali, passphrase memorabili e generazione basata su pattern. Scegli tra vari set di caratteri (standard, alfanumerico, esadecimale o personalizzato), escludi caratteri ambigui e genera fino a 100 password contemporaneamente. L'analizzatore integrato della robustezza delle password mostra entropia, dimensione del set di caratteri e tempo di crack stimato. Esporta le tue password come TXT, CSV o JSON."
+      "tool_description": "Crea password crittograficamente sicure con il nostro Generatore di Password. Lo strumento offre tre modalità di generazione: password casuali, passphrase memorabili e generazione basata su pattern. Scegli tra vari set di caratteri (standard, alfanumerico, esadecimale o personalizzato), escludi caratteri ambigui e genera fino a 100 password contemporaneamente. L'analizzatore integrato della robustezza delle password mostra entropia, dimensione del set di caratteri e tempo di crack stimato. Esporta le tue password come TXT, CSV o JSON.",
+      "alphabetWords": "{count} parole",
+      "alphabetPattern": "21 consonanti / 5 vocali"
     },
     "hashGeneratorTool": {
       "linkTitle": {

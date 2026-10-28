@@ -493,7 +493,9 @@
       "toc_title": "Générateur Mot de Passe",
       "h1_title": "Générateur de Mots de Passe — Sécurité cryptographique",
       "card_description": "Générez des mots de passe sécurisés avec longueur et caractères personnalisables. Générateur avec phrases secrètes, motifs et indicateur de force intégré.",
-      "tool_description": "Créez des mots de passe cryptographiquement sécurisés avec notre générateur de mots de passe. L'outil offre trois modes de génération : mots de passe aléatoires, phrases secrètes mémorables et génération basée sur des motifs. Choisissez parmi différents jeux de caractères (standard, alphanumérique, hexadécimal ou personnalisé), excluez les caractères ambigus et générez jusqu'à 100 mots de passe simultanément. L'analyse intégrée de la force du mot de passe affiche l'entropie, la taille du jeu de caractères et le temps de craquage estimé. Exportez vos mots de passe au format TXT, CSV ou JSON."
+      "tool_description": "Créez des mots de passe cryptographiquement sécurisés avec notre générateur de mots de passe. L'outil offre trois modes de génération : mots de passe aléatoires, phrases secrètes mémorables et génération basée sur des motifs. Choisissez parmi différents jeux de caractères (standard, alphanumérique, hexadécimal ou personnalisé), excluez les caractères ambigus et générez jusqu'à 100 mots de passe simultanément. L'analyse intégrée de la force du mot de passe affiche l'entropie, la taille du jeu de caractères et le temps de craquage estimé. Exportez vos mots de passe au format TXT, CSV ou JSON.",
+      "alphabetWords": "{count} mots",
+      "alphabetPattern": "21 consonnes / 5 voyelles"
     },
     "hashGeneratorTool": {
       "linkTitle": {

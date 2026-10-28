@@ -493,7 +493,9 @@
       "toc_title": "Gerador de Senhas",
       "h1_title": "Gerador de Senhas Seguras — Segurança criptográfica",
       "card_description": "Gere senhas seguras com comprimento e caracteres personalizáveis. Gerador com frases-senha, padrões e indicador de força integrado para segurança máxima.",
-      "tool_description": "Crie senhas criptograficamente seguras com o nosso Gerador de Senhas. A ferramenta oferece três modos de geração: senhas aleatórias, frases-passe memoráveis e geração baseada em padrões. Escolha entre vários conjuntos de caracteres (padrão, alfanumérico, hexadecimal ou personalizado), exclua caracteres ambíguos e gere até 100 senhas simultaneamente. O analisador de força de senha integrado exibe entropia, tamanho do conjunto de caracteres e tempo estimado de quebra. Exporte suas senhas como TXT, CSV ou JSON."
+      "tool_description": "Crie senhas criptograficamente seguras com o nosso Gerador de Senhas. A ferramenta oferece três modos de geração: senhas aleatórias, frases-passe memoráveis e geração baseada em padrões. Escolha entre vários conjuntos de caracteres (padrão, alfanumérico, hexadecimal ou personalizado), exclua caracteres ambíguos e gere até 100 senhas simultaneamente. O analisador de força de senha integrado exibe entropia, tamanho do conjunto de caracteres e tempo estimado de quebra. Exporte suas senhas como TXT, CSV ou JSON.",
+      "alphabetWords": "{count} palavras",
+      "alphabetPattern": "21 consoantes / 5 vogais"
     },
     "hashGeneratorTool": {
       "about_title": "Sobre",

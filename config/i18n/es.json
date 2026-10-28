@@ -493,7 +493,9 @@
       "toc_title": "Generador de Contraseñas",
       "h1_title": "Generador de Contraseñas — Crea Claves Seguras y Fuertes",
       "card_description": "Genera contraseñas criptográficamente seguras con longitud y tipos de caracteres personalizables. Crea contraseñas aleatorias fuertes, frases de contraseña.",
-      "tool_description": "Crea contraseñas criptográficamente seguras con nuestro Generador de Contraseñas. La herramienta ofrece tres modos de generación: contraseñas aleatorias, frases de paso memorables y generación basada en patrones. Elige entre varios conjuntos de caracteres (estándar, alfanumérico, hexadecimal o personalizado), excluye caracteres ambiguos y genera hasta 100 contraseñas simultáneamente. El analizador de fortaleza de contraseñas integrado muestra entropía, tamaño del conjunto de caracteres y tiempo estimado de descifrado. Exporta tus contraseñas como TXT, CSV o JSON."
+      "tool_description": "Crea contraseñas criptográficamente seguras con nuestro Generador de Contraseñas. La herramienta ofrece tres modos de generación: contraseñas aleatorias, frases de paso memorables y generación basada en patrones. Elige entre varios conjuntos de caracteres (estándar, alfanumérico, hexadecimal o personalizado), excluye caracteres ambiguos y genera hasta 100 contraseñas simultáneamente. El analizador de fortaleza de contraseñas integrado muestra entropía, tamaño del conjunto de caracteres y tiempo estimado de descifrado. Exporta tus contraseñas como TXT, CSV o JSON.",
+      "alphabetWords": "{count} palabras",
+      "alphabetPattern": "21 consonantes / 5 vocales"
     },
     "hashGeneratorTool": {
       "about_title": "Acerca de",

@@ -21,7 +21,12 @@
         "references": "Show reference and lookup tools",
         "utilities": "Show utility tools"
       }
-    }
+    },
+    "report_bug": "Report a bug",
+    "report_bug_title": "Report a bug on GitHub",
+    "help": "Help",
+    "help_title": "Questions and ideas on easyQ",
+    "footer_label": "Feedback and legal"
   },
   "common": {
     "search": "Search",

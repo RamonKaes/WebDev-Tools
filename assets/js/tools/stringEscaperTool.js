@@ -46,9 +46,11 @@
        * @returns {string} - Unescaped plain text
        */
       unescape: (str) => {
-        const div = document.createElement('div');
-        div.innerHTML = str;
-        return div.textContent;
+        // A textarea parses entities but never interprets tags, so markup in
+        // the input cannot trigger resource loads or scripts.
+        const textarea = document.createElement('textarea');
+        textarea.innerHTML = str;
+        return textarea.value;
       }
     },
     xml: {
@@ -106,15 +108,15 @@
        * @returns {string} - Unescaped plain text
        */
       unescape: (str) => {
-        return str
-          .replace(/\\v/g, '\v')
-          .replace(/\\f/g, '\f')
-          .replace(/\\t/g, '\t')
-          .replace(/\\r/g, '\r')
-          .replace(/\\n/g, '\n')
-          .replace(/\\"/g, '"')
-          .replace(/\\'/g, "'")
-          .replace(/\\\\/g, '\\');
+        // One pass over every escape sequence. Sequential replaces would turn
+        // the escaped backslash in "C:\\new" into a real newline.
+        const simple = { n: '\n', r: '\r', t: '\t', f: '\f', v: '\v', b: '\b', 0: '\0', '\\': '\\', "'": "'", '"': '"', '`': '`' };
+        return str.replace(/\\(x[0-9a-fA-F]{2}|u\{[0-9a-fA-F]{1,6}\}|u[0-9a-fA-F]{4}|[\s\S])/g, (match, seq) => {
+          if (seq in simple) return simple[seq];
+          if (seq[0] === 'x') return String.fromCharCode(parseInt(seq.slice(1), 16));
+          if (seq[0] === 'u') return String.fromCodePoint(parseInt(seq.replace(/^u\{?|\}$/g, ''), 16));
+          return seq; // unknown escape: keep the character, drop the backslash
+        });
       }
     },
     json: {

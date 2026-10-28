@@ -31,6 +31,11 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
 - **JSON formatter auto-fix** quoted everything before a colon, breaking
   valid JSON containing URLs or times inside strings. Fixes now only apply
   outside string literals and unquoted keys are only quoted in key position.
+- **String escaper** – JavaScript unescape replaced sequences one after
+  another, so the escaped backslash in `C:\\new` became a newline. It now
+  parses every escape in a single pass and also understands `\xHH`, `\uHHHH`
+  and `\u{…}`. HTML unescape parses through a textarea instead of a div, so
+  markup in the input can no longer trigger resource loads.
 - **Hash generator** used an undefined `hidden` class, so an empty info box
   and progress bar (file mode) and the "Fetching resource…" spinner (SRI mode)
   were always visible. Replaced with Bootstrap's `d-none`.

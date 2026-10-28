@@ -656,3 +656,40 @@ describe('stringEscaperTool – Layout Toggle', () => {
     expect(cols[0].classList.contains('col-lg-6')).toBe(true);
   });
 });
+
+// ─── Regressions: escape order and markup in HTML unescape ───────────────────
+
+describe('stringEscaperTool – JavaScript unescape handles escaped backslashes before letters', () => {
+  let c;
+  beforeEach(() => { c = openTool(); });
+  afterEach(() => cleanup(c));
+
+  test('an escaped backslash followed by n or t stays a backslash', () => {
+    expect(setInputAndProcess(c, 'C:\\\\new\\\\table', 'javascript', 'unescape')).toBe('C:\\new\\table');
+  });
+
+  test('round-trips text containing backslashes and control characters', () => {
+    const original = 'path\\to\\file\nwith "quotes"\tand \'ticks\'';
+    const escaped = setInputAndProcess(c, original, 'javascript', 'escape');
+    expect(setInputAndProcess(c, escaped, 'javascript', 'unescape')).toBe(original);
+  });
+
+  test('decodes hex and unicode escapes', () => {
+    expect(setInputAndProcess(c, '\\x41\\u00e9\\u{1F600}', 'javascript', 'unescape')).toBe('Aé😀');
+  });
+
+  test('drops the backslash of an unknown escape', () => {
+    expect(setInputAndProcess(c, '\\q', 'javascript', 'unescape')).toBe('q');
+  });
+});
+
+describe('stringEscaperTool – HTML unescape does not interpret markup', () => {
+  let c;
+  beforeEach(() => { c = openTool(); });
+  afterEach(() => cleanup(c));
+
+  test('keeps tags as text and still decodes entities', () => {
+    expect(setInputAndProcess(c, '<img src=x onerror=alert(1)>&amp;&lt;b&gt;', 'html', 'unescape'))
+      .toBe('<img src=x onerror=alert(1)>&<b>');
+  });
+});

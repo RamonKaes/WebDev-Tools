@@ -50,6 +50,9 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
 - **Hash generator** used an undefined `hidden` class, so an empty info box
   and progress bar (file mode) and the "Fetching resource…" spinner (SRI mode)
   were always visible. Replaced with Bootstrap's `d-none`.
+- **UUID v1** now sets the multicast bit of its random node ID as
+  RFC 4122 §4.5 requires, so generated IDs can never collide with a real
+  MAC address.
 - **Redirects** – `.htaccess` and `.htaccess.production` now redirect the
   English slug to the localized directory for all tools; eleven
   combinations were missing (six German slugs and the aspect ratio

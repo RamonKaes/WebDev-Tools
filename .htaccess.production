@@ -177,6 +177,12 @@
   <FilesMatch "^(en|de)\.json$">
     Header set Cache-Control "public, max-age=86400, must-revalidate"
   </FilesMatch>
+
+  # Web app manifests (site.webmanifest per language) - 1 day cache; the
+  # browser re-reads them on its own to pick up changed icons or colours
+  <FilesMatch "\.webmanifest$">
+    Header set Cache-Control "public, max-age=86400, must-revalidate"
+  </FilesMatch>
   
   # ===========================
   # SECURITY HEADERS
@@ -205,6 +211,15 @@
 </IfModule>
 
 # ===========================
+# MIME TYPES
+# ===========================
+
+<IfModule mod_mime.c>
+  # Web app manifests must be served as application/manifest+json
+  AddType application/manifest+json .webmanifest
+</IfModule>
+
+# ===========================
 # COMPRESSION
 # ===========================
 
@@ -213,6 +228,7 @@
   AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript
   AddOutputFilterByType DEFLATE application/javascript application/x-javascript
   AddOutputFilterByType DEFLATE application/json application/xml text/xml
+  AddOutputFilterByType DEFLATE application/manifest+json
   AddOutputFilterByType DEFLATE application/xhtml+xml application/rss+xml
   AddOutputFilterByType DEFLATE image/svg+xml
   AddOutputFilterByType DEFLATE application/font-woff application/font-woff2

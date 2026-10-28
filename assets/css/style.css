@@ -315,65 +315,69 @@ button:active:not(:disabled) {
    ============================================ */
 
 /* ============================================
-   THEME SWITCHER
-   ============================================ */
+   FLOATING BUTTONS (bottom right)
+   ============================================
+   Three buttons stacked above each other: theme (lowest), language, and
+   the install button on top, which only shows while the browser offers to
+   install the site. Each step is 6rem: a 2.625rem button plus a 3.375rem
+   gap, wide enough for a thumb. Below the desktop breakpoint the whole
+   stack moves up 3rem so the lowest button clears the page footer. */
+
+.bd-mode-toggle,
+.bd-language-toggle,
+.bd-install-toggle {
+  bottom: var(--fab-offset);
+}
 
 .bd-mode-toggle {
+  --fab-offset: 1rem;
   z-index: 1500;
 }
 
-.bd-mode-toggle .btn-primary svg {
-  fill: currentColor;
-  color: white;
-}
-
-.bd-mode-toggle .dropdown-item svg {
-  fill: currentColor;
-}
-
-.bd-mode-toggle .dropdown-item.active svg,
-.bd-mode-toggle .dropdown-item:active svg {
-  fill: currentColor;
-  color: white;
-}
-
-/* Below the desktop breakpoint the legal links sit in a footer at the very
-   bottom of the page. Lift both floating buttons so they clear it: the theme
-   button by three rem, the language button just enough to keep its distance. */
-@media (max-width: 991px) {
-  .bd-mode-toggle.mb-3 {
-    margin-bottom: 4rem !important;
-  }
-
-  .bd-language-toggle {
-    margin-bottom: 7.5rem;
-  }
-}
-
-/* ============================================
-   LANGUAGE SWITCHER
-   ============================================ */
-
 .bd-language-toggle {
+  --fab-offset: 7rem;
   z-index: 1499;
-  bottom: 0;
-  margin-bottom: 7rem;
 }
 
-.bd-language-toggle .btn-primary svg {
+.bd-install-toggle {
+  --fab-offset: 13rem;
+  z-index: 1498;
+}
+
+/* The install button has no dropdown caret; give it the width of the two
+   dropdown toggles below it so the stack lines up. */
+.bd-install-toggle .btn {
+  min-width: 3.375rem;
+  justify-content: center;
+}
+
+@media (max-width: 991px) {
+  .bd-mode-toggle,
+  .bd-language-toggle,
+  .bd-install-toggle {
+    bottom: calc(var(--fab-offset) + 3rem);
+  }
+}
+
+.bd-mode-toggle .btn-primary svg,
+.bd-language-toggle .btn-primary svg,
+.bd-install-toggle .btn-primary svg {
   fill: currentColor;
   color: white;
 }
 
+.bd-mode-toggle .dropdown-item svg,
 .bd-language-toggle .dropdown-item svg {
   fill: currentColor;
 }
 
-  .bd-language-toggle .dropdown-item.active svg,
-  .bd-language-toggle .dropdown-item:active svg {
-    fill: currentColor;
-    color: white;
-  }
+.bd-mode-toggle .dropdown-item.active svg,
+.bd-mode-toggle .dropdown-item:active svg,
+.bd-language-toggle .dropdown-item.active svg,
+.bd-language-toggle .dropdown-item:active svg {
+  fill: currentColor;
+  color: white;
+}
 
   /* ============================================
      TOOL-SPECIFIC MINIMAL STYLES

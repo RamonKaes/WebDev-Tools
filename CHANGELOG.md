@@ -30,17 +30,24 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
   dropped in all six languages.
 
 ### ✨ Features
+- **Install as app** – one web app manifest per language
+  (`site.webmanifest`, `de/site.webmanifest`, …) with start page, scope,
+  id, description, the site's theme colour and icons for both the `any`
+  and `maskable` purpose, replacing the bare manifest under `assets/img/`
+  that had no start page and so was installed per tool page. A floating
+  bookmark button above the language button opens the browser's install
+  dialog while the browser offers one (Chromium); it is hidden otherwise
+  and inside the installed app (`assets/js/install-prompt.js`). No service
+  worker by design: nothing is cached on the device.
 - **Feedback buttons** – "Report a bug" (GitHub Issues) and "Help" (easyQ
   project page) sit above the legal links in the sidebar. On tablet and
   phone the legal links and the two buttons moved out of the off-canvas
   menu into a footer below the page content, rendered from the new
   `partials/legal-links.php` so both places share one source.
-### ✨ Features
 - **Layout toggle** between the input and output cards shows a stacked-rows
   icon while the cards sit side by side and a split icon while they are
   stacked, so the symbol names the layout you get. The tooltip does the
   same ("Stacked" / "Side by side") instead of a generic "Toggle layout".
-### ✨ Features
 - **SQL beautifier** rewritten as a tokenizer. It breaks only before
   clauses (SELECT, FROM, WHERE, GROUP BY, …), indents JOINs and AND/OR under
   their clause, keeps function calls and IN lists on one line, indents
@@ -52,6 +59,10 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
   `(?<year>…)` was listed only as "Group 1".
 
 ### 🐛 Bugfixes
+- **Floating buttons** on tablet and phone: the lift of the language button
+  above the footer never applied (a later rule overrode it), leaving 6 px
+  between it and the theme button. All three floating buttons now share one
+  spacing scale with 54 px between them, on every screen size.
 - **Base64 decoder** treated every input of 20+ characters as a binary file,
   so even the built-in sample decoded to "Binary file decoded". Plain Base64
   is now decoded as UTF-8 text first and only falls back to a file (with

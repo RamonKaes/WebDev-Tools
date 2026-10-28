@@ -118,7 +118,8 @@
 **Blazing Fast, Always Available**
 
 - ✅ **Client-Side Execution**: No network latency — performance limited only by your CPU
-- ✅ **Offline Capable**: Works without internet connection (after initial load)
+- ✅ **Installable**: Add it to your home screen or desktop as an app (web app manifest, no service worker — nothing is cached on your device)
+- ✅ **No Network Needed While You Work**: Once a tool page is open, every operation runs locally
 - ✅ **Bulk Operations**: Handle thousands of items efficiently (UUID generation, data conversion)
 - ✅ **Large File Support**: Process substantial datasets without server upload limits
 - ✅ **Instant Results**: Real-time processing without API rate limits
@@ -961,8 +962,6 @@ See [docs/README.md](docs/README.md) for the complete documentation index.
 
 ### Planned Features
 
-- [ ] **Dark Mode** (Theme switching)
-- [ ] **PWA Support** (Offline-first Progressive Web App)
 - [ ] **More Tools**: XML Formatter, Markdown Previewer, Diff Checker
 - [ ] **API Mode**: Command-line interface for CI/CD integration
 - [ ] **Export/Import**: Save tool configurations

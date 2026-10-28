@@ -167,8 +167,8 @@ $ogImageUrl = $baseUrlEscaped . BASE_PATH . '/assets/img/webdev-tools.png';
   <link rel="shortcut icon" href="<?= $assetPrefix ?>favicon.ico" />
   <link rel="icon" type="image/x-icon" href="<?= $assetPrefix ?>favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="<?= $assetPrefix ?>assets/img/apple-touch-icon.png" />
-  <meta name="apple-mobile-web-app-title" content="WebDev Tools" />
-  <link rel="manifest" href="<?= $assetPrefix ?>assets/img/site.webmanifest" />
+  <meta name="apple-mobile-web-app-title" content="WebDev-Tools" />
+  <link rel="manifest" href="<?= BASE_PATH . getLangPrefix($lang) ?>/site.webmanifest" />
 
   <!-- Preconnect -->
   <link rel="preconnect" href="https://cdn.jsdelivr.net">

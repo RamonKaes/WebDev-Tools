@@ -33,6 +33,8 @@ if (!isset($buildHash)) {
 
   <script src="<?= assetSrc('js/toc-generator.js') ?>"></script>
 
+  <script src="<?= assetSrc('js/install-prompt.js') ?>"></script>
+
   <?php if (isset($currentTool)) : ?>
         <?php
         $toolConfig = getToolConfig($currentTool);

@@ -139,6 +139,14 @@ describe('CodeFormatterTool – HTML minify', () => {
     expect(result).toContain('<div>Hello</div>');
   });
 
+  test('nested comment markers only reach the read-only text output', async () => {
+    const result = await format(c, '<!<!-- a -->-- <img src=x onerror="window.__xss=1"> -->');
+    expect(c.querySelector('#outputCode').tagName).toBe('TEXTAREA');
+    expect(result).toContain('<img');
+    expect(c.querySelector('img')).toBeNull();
+    expect(window.__xss).toBeUndefined();
+  });
+
   test('collapses whitespace between tags', async () => {
     const result = await format(c, '<div>  <span>  hi  </span>  </div>');
     expect(result).not.toMatch(/>\s{2,}</);

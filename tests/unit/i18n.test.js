@@ -49,3 +49,38 @@ describe('i18n – interpolation', () => {
     expect(i18n.t('tools.regexTesterTool.match_label')).toBe('Match {number}');
   });
 });
+
+describe('i18n – language URL building', () => {
+  afterEach(() => {
+    delete window.__BASE_PATH__;
+    window.history.replaceState(null, '', '/');
+  });
+
+  test('adds and replaces the language prefix', () => {
+    window.history.replaceState(null, '', '/lorem-ipsum/?x=1');
+    expect(i18n.buildLanguageURL('de')).toBe(`${window.location.origin}/de/lorem-ipsum/?x=1`);
+    window.history.replaceState(null, '', '/de/lorem-ipsum/');
+    expect(i18n.buildLanguageURL('fr')).toBe(`${window.location.origin}/fr/lorem-ipsum/`);
+    expect(i18n.buildLanguageURL('en')).toBe(`${window.location.origin}/lorem-ipsum/`);
+  });
+
+  test('returns null when already on the requested language', () => {
+    window.history.replaceState(null, '', '/de/lorem-ipsum/');
+    expect(i18n.buildLanguageURL('de')).toBeNull();
+  });
+
+  test('never navigates to another origin (protocol-relative path)', () => {
+    // Stripping "/de" from "/de//evil.example/" would yield "//evil.example/"
+    window.history.replaceState(null, '', '/de//evil.example/');
+    const url = i18n.buildLanguageURL('en');
+    expect(new URL(url).origin).toBe(window.location.origin);
+  });
+
+  test('treats regex characters in the base path literally', () => {
+    window.__BASE_PATH__ = '/Web.Tools';
+    window.history.replaceState(null, '', '/WebXTools/de/foo/');
+    expect(i18n.buildLanguageURL('en')).toBeNull();
+    window.history.replaceState(null, '', '/Web.Tools/de/foo/');
+    expect(i18n.buildLanguageURL('en')).toBe(`${window.location.origin}/Web.Tools/foo/`);
+  });
+});

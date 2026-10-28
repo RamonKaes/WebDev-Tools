@@ -37,6 +37,21 @@
   }
 
   /**
+   * Escape text for safe interpolation into HTML (content and quoted attributes)
+   *
+   * @param {*} value - Value to escape
+   * @returns {string} - Escaped HTML
+   */
+  function escapeHtml(value) {
+    return String(value)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
+  /**
    * Build the URL of another tool's page in the current language.
    *
    * Tool modules are loaded per page, so a sibling tool cannot be opened in
@@ -692,15 +707,19 @@
         return;
       }
 
-      const safeName = window.AppHelpers ? window.AppHelpers.escapeHtml(file.name) : file.name;
-      const safeType = window.AppHelpers ? window.AppHelpers.escapeHtml(file.type || 'unknown') : (file.type || 'unknown');
-
+      // File name and type come from the user's file system: build the DOM with textContent
       show(fileInfo);
-      fileInfo.innerHTML = `
-        <strong>${t('tools.hashGeneratorTool.fileName')}:</strong> ${safeName}<br>
-        <strong>${t('tools.hashGeneratorTool.fileSize')}:</strong> ${(file.size / 1024).toFixed(2)} KB<br>
-        <strong>${t('tools.hashGeneratorTool.fileType')}:</strong> ${safeType}
-      `;
+      fileInfo.replaceChildren();
+      [
+        [t('tools.hashGeneratorTool.fileName'), file.name],
+        [t('tools.hashGeneratorTool.fileSize'), `${(file.size / 1024).toFixed(2)} KB`],
+        [t('tools.hashGeneratorTool.fileType'), file.type || 'unknown']
+      ].forEach(([label, value], i) => {
+        if (i > 0) fileInfo.appendChild(document.createElement('br'));
+        const strong = document.createElement('strong');
+        strong.textContent = `${label}:`;
+        fileInfo.append(strong, ` ${value}`);
+      });
 
       const algorithms = [];
       container.querySelectorAll('input[type="checkbox"][id^="fileAlgo"]:checked').forEach(cb => {
@@ -817,11 +836,11 @@
 
       let html = '<div class="list-group">';
       results.forEach(result => {
-        const hash = uppercase ? result.hash.toUpperCase() : result.hash;
+        const hash = escapeHtml(uppercase ? result.hash.toUpperCase() : result.hash);
         html += `
           <div class="list-group-item">
             <div class="d-flex justify-content-between align-items-center mb-2">
-              <strong>${result.algorithm}</strong>
+              <strong>${escapeHtml(result.algorithm)}</strong>
               <span class="badge bg-secondary">${result.hash.length / 2} ${t('tools.hashGeneratorTool.bytes')}</span>
             </div>
             <div class="input-group input-group-sm">

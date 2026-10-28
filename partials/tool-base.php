@@ -179,6 +179,8 @@ include __DIR__ . '/head.php';
     
     <div id="tool-container" class="tool-container-inner mx-auto"></div>
 
+    <?php include __DIR__ . '/related-tools.php'; ?>
+
     <?php
     if ($toolConfig['hasFeaturesSection'] ?? false) :
         $featuresTitle = $featuresSectionTitle ?? 'Features';

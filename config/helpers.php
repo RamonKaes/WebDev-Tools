@@ -383,7 +383,10 @@ function generateToolSchema($toolId, $lang, $seoData)
     }
 
     $toolUrl = htmlspecialchars_decode(getToolUrl($config['slug'], $lang), ENT_QUOTES);
-    $toolName = $seoData['meta_title'] ?? 'WebDev-Tools';
+    // The app's name is the tool name (h1 up to its dash); meta_title carries search-snippet copy
+    $toolTexts = loadI18n($lang)['tools'][$toolId] ?? [];
+    $h1Name = trim(preg_split('/ [—–-] /u', $toolTexts['h1_title'] ?? '')[0]);
+    $toolName = $h1Name !== '' ? $h1Name : ($toolTexts['toc_title'] ?? $seoData['meta_title'] ?? 'WebDev-Tools');
     $description = $seoData['meta_description'] ?? '';
     $category = $seoData['applicationCategory'] ?? 'UtilityApplication';
     $features = $seoData['featureList'] ?? [];
@@ -391,6 +394,7 @@ function generateToolSchema($toolId, $lang, $seoData)
     $schema = [
     '@context' => 'https://schema.org',
     '@type' => 'WebApplication',
+    '@id' => $toolUrl . '#webapp',
     'name' => $toolName,
     'description' => $description,
     'url' => $toolUrl,

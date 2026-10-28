@@ -46,7 +46,8 @@ if ($manifest && isset($manifest['generatedAt'])) {
 $toolUrlMap = [];
 
 if ($manifest && isset($manifest['tools'])) {
-    foreach ($manifest['tools'] as $toolId => $toolMeta) {
+    // Not $toolId: head.php is included by tool-base.php, which still needs its own $toolId afterwards
+    foreach ($manifest['tools'] as $manifestToolId => $toolMeta) {
         $url = $toolMeta['url'] ?? '';
       // Remove BASE_PATH and language prefixes to get relative URL
         if (BASE_PATH !== '') {
@@ -56,7 +57,7 @@ if ($manifest && isset($manifest['tools'])) {
         foreach (['de', 'es', 'pt', 'fr', 'it'] as $langCode) {
             $url = str_replace('/' . $langCode, '', $url);
         }
-        $toolUrlMap[$toolId] = $url;
+        $toolUrlMap[$manifestToolId] = $url;
     }
 } else {
     $toolUrlMap = [
@@ -262,25 +263,7 @@ if (!isset($assetPrefix)) {
           "url": "<?= $baseUrl ?>/assets/img/logo.png"
         },
         "sameAs": []
-      }<?php if (isset($currentTool) && $currentTool !== 'home') :
-            ?>,
-      {
-        "@type": "WebApplication",
-        "@id": "<?= $canonicalUrl ?>#webapp",
-        "name": "<?= htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8') ?>",
-        "description": "<?= htmlspecialchars($pageDescription, ENT_QUOTES, 'UTF-8') ?>",
-        "url": "<?= $canonicalUrl ?>",
-        "applicationCategory": "DeveloperApplication",
-        "operatingSystem": "Any",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "browserRequirements": "Requires JavaScript enabled",
-        "permissions": "No permissions required - all processing is client-side"
       }
-       <?php endif; ?>
     ]
   }
   </script>

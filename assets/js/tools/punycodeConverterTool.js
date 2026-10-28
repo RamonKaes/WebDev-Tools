@@ -54,16 +54,19 @@
      */
     encode: function(input) {
       const output = [];
-      const inputLength = input.length;
+      // RFC 3492 works on Unicode code points, not UTF-16 code units -
+      // otherwise emoji and other astral characters encode as two halves.
+      const codePoints = Array.from(input, ch => ch.codePointAt(0));
+      const inputLength = codePoints.length;
       let n = this.initialN;
       let delta = 0;
       let bias = this.initialBias;
 
       // Handle ASCII characters
       for (let i = 0; i < inputLength; i++) {
-        const c = input.charCodeAt(i);
+        const c = codePoints[i];
         if (c < 0x80) {
-          output.push(input.charAt(i));
+          output.push(String.fromCodePoint(c));
         }
       }
 
@@ -79,7 +82,7 @@
         let m = this.maxInt;
 
         for (let i = 0; i < inputLength; i++) {
-          const c = input.charCodeAt(i);
+          const c = codePoints[i];
           if (c >= n && c < m) {
             m = c;
           }
@@ -89,7 +92,7 @@
         n = m;
 
         for (let i = 0; i < inputLength; i++) {
-          const c = input.charCodeAt(i);
+          const c = codePoints[i];
 
           if (c < n) {
             delta++;
@@ -185,7 +188,7 @@
         bias = this.adapt(i - oldi, outLength, oldi === 0);
         n += Math.floor(i / outLength);
         i %= outLength;
-        output.splice(i++, 0, String.fromCharCode(n));
+        output.splice(i++, 0, String.fromCodePoint(n));
       }
 
       return output.join('');

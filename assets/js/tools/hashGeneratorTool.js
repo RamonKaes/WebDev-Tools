@@ -464,8 +464,8 @@
                   <label class="form-check-label" for="fileAlgoSHA512">SHA-512</label>
                 </div>
               </div>
-              <div id="fileInfo" class="alert alert-info hidden"></div>
-              <div class="progress mb-3 hidden" id="fileProgress">
+              <div id="fileInfo" class="alert alert-info d-none"></div>
+              <div class="progress mb-3 d-none" id="fileProgress">
                 <div class="progress-bar progress-bar-width-0" role="progressbar"></div>
               </div>
             </div>
@@ -531,7 +531,7 @@
               <button class="btn btn-primary" id="generateSRI">
                 <i class="bi bi-download me-2"></i>${t('tools.hashGeneratorTool.generate')}
               </button>
-              <div id="sriProgress" class="mt-3 hidden">
+              <div id="sriProgress" class="mt-3 d-none">
                 <div class="spinner-border spinner-border-sm me-2" role="status"></div>
                 <span>Fetching resource...</span>
               </div>

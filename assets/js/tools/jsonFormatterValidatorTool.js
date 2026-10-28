@@ -209,7 +209,7 @@
                   </div>
 
                   <textarea id="jsonOutput" rows="12" class="form-control bg-body-secondary font-monospace mb-3" placeholder="${t('tools.jsonFormatterValidator.output_placeholder')}"></textarea>
-                  <div id="jsonTree" class="json-tree-container hidden mb-3"></div>
+                  <div id="jsonTree" class="json-tree-container d-none mb-3"></div>
 
                   <div class="d-flex align-items-center gap-2 flex-wrap">
                     <label class="form-label me-2 mb-0">${t('tools.jsonFormatterValidator.indentation_label')}:</label>
@@ -512,31 +512,110 @@
        * @returns {string} - Auto-fixed JSON string
        */
       function autoFixJSON(str) {
-        let fixed = str;
+        // Pass 1: convert single-quoted strings to double-quoted ones, leaving
+        // apostrophes inside double-quoted strings alone.
+        let fixed = convertSingleQuotedStrings(str);
 
-        // Remove comments (single-line and multi-line)
-        fixed = fixed.replace(/\/\*[\s\S]*?\*\//g, '');
-        fixed = fixed.replace(/\/\/.*/g, '');
-
-        // Fix single quotes to double quotes for strings
-        fixed = fixed.replace(/'([^']*)'/g, '"$1"');
-
-        // Add quotes to unquoted keys
-        fixed = fixed.replace(/(\w+)(\s*:\s*)/g, '"$1"$2');
-
-        // Remove trailing commas
-        fixed = fixed.replace(/,(\s*[}\]])/g, '$1');
-
-        // Fix NaN, Infinity to null
-        fixed = fixed.replace(/\bNaN\b/g, 'null');
-        fixed = fixed.replace(/\bInfinity\b/g, 'null');
-
-        // Lowercase true, false, null
-        fixed = fixed.replace(/\bTrue\b/g, 'true');
-        fixed = fixed.replace(/\bFalse\b/g, 'false');
-        fixed = fixed.replace(/\bNull\b/g, 'null');
+        // Pass 2: structural fixes, applied only outside string literals so that
+        // URLs, times and apostrophes inside values are left untouched.
+        fixed = mapOutsideStrings(fixed, segment => segment
+          // Remove comments (single-line and multi-line)
+          .replace(/\/\*[\s\S]*?\*\//g, '')
+          .replace(/\/\/.*/g, '')
+          // Add quotes to unquoted keys (only in key position: after { or ,)
+          .replace(/([{,]\s*)([A-Za-z_$][\w$]*)(\s*:)/g, '$1"$2"$3')
+          // Remove trailing commas
+          .replace(/,(\s*[}\]])/g, '$1')
+          // Fix NaN, Infinity to null
+          .replace(/\bNaN\b/g, 'null')
+          .replace(/\b-?Infinity\b/g, 'null')
+          // Lowercase true, false, null
+          .replace(/\bTrue\b/g, 'true')
+          .replace(/\bFalse\b/g, 'false')
+          .replace(/\bNull\b/g, 'null')
+        );
 
         return fixed;
+      }
+
+      /**
+       * Rewrite single-quoted string literals as double-quoted ones
+       *
+       * Double-quoted literals are copied verbatim, so an apostrophe inside
+       * them never opens a string.
+       *
+       * @param {string} str - Input text
+       * @returns {string} - Text with only double-quoted strings
+       */
+      function convertSingleQuotedStrings(str) {
+        let out = '';
+        let i = 0;
+
+        while (i < str.length) {
+          const ch = str[i];
+          if (ch === '"') {
+            let j = i + 1;
+            while (j < str.length && str[j] !== '"') {
+              if (str[j] === '\\') j++;
+              j++;
+            }
+            out += str.slice(i, j + 1);
+            i = j + 1;
+          } else if (ch === "'") {
+            let j = i + 1;
+            let body = '';
+            while (j < str.length && str[j] !== "'") {
+              if (str[j] === '\\' && j + 1 < str.length) {
+                body += str[j + 1] === "'" ? "'" : str[j] + str[j + 1];
+                j += 2;
+              } else {
+                body += str[j];
+                j++;
+              }
+            }
+            out += '"' + body.replace(/"/g, '\\"') + '"';
+            i = j + 1;
+          } else {
+            out += ch;
+            i++;
+          }
+        }
+
+        return out;
+      }
+
+      /**
+       * Apply a transformation to every part of the text that is not inside a
+       * double-quoted string literal
+       *
+       * @param {string} str - Input text
+       * @param {Function} fn - Transformation for the non-string segments
+       * @returns {string} - Text with segments transformed, strings untouched
+       */
+      function mapOutsideStrings(str, fn) {
+        let result = '';
+        let segment = '';
+        let i = 0;
+
+        while (i < str.length) {
+          if (str[i] === '"') {
+            result += fn(segment);
+            segment = '';
+            // Copy the string literal verbatim, honouring escapes
+            let j = i + 1;
+            while (j < str.length && str[j] !== '"') {
+              if (str[j] === '\\') j++;
+              j++;
+            }
+            result += str.slice(i, j + 1);
+            i = j + 1;
+          } else {
+            segment += str[i];
+            i++;
+          }
+        }
+
+        return result + fn(segment);
       }
 
       /**

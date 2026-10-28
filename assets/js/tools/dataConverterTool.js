@@ -315,7 +315,9 @@
         const obj = JSON.parse(input);
         const rootName = document.getElementById('xmlRootElement')?.value || 'root';
         const itemName = document.getElementById('xmlItemElement')?.value || 'item';
-        return jsonToXml(obj, rootName, itemName);
+        // A top-level array has no natural root; wrap it so the XML is well-formed
+        const wrapped = Array.isArray(obj) ? { [itemName]: obj } : obj;
+        return jsonToXml(wrapped, rootName, itemName);
       },
 
       /**
@@ -421,13 +423,21 @@
        * @throws {Error} - If date format is invalid
        */
       dateToTimestamp: (input) => {
-        const date = new Date(input.trim());
-        if (isNaN(date.getTime())) {
+        // Dates without a zone are read as UTC, matching the UTC output of
+        // timestampToDate so that both directions round-trip.
+        const raw = input.trim().replace(/\s*(UTC|GMT|Z)$/i, '');
+        const plain = raw.match(/^(\d{4})-(\d{2})-(\d{2})(?:[ T](\d{2}):(\d{2})(?::(\d{2}))?)?$/);
+        let timestamp;
+        if (plain) {
+          timestamp = Date.UTC(+plain[1], +plain[2] - 1, +plain[3], +(plain[4] || 0), +(plain[5] || 0), +(plain[6] || 0));
+        } else {
+          timestamp = new Date(input.trim()).getTime();
+        }
+        if (isNaN(timestamp)) {
           throw new Error('Invalid date format');
         }
 
         const unit = document.querySelector('input[name="timestampUnit"]:checked')?.value || 'seconds';
-        const timestamp = date.getTime();
 
         return unit === 'milliseconds' ? timestamp.toString() : Math.floor(timestamp / 1000).toString();
       }
@@ -547,138 +557,200 @@
      * @param {number} indent - Indentation level
      * @returns {string} - YAML string
      */
+    /**
+     * Render a scalar as a YAML value, quoting it where a YAML parser would
+     * otherwise read it as a number, boolean, null or structure
+     *
+     * @param {*} value - Scalar value
+     * @returns {string} - YAML scalar
+     */
+    function yamlScalar(value) {
+      if (value === null || value === undefined) return 'null';
+      if (typeof value === 'number' || typeof value === 'boolean') return String(value);
+
+      const str = String(value);
+      const needsQuotes =
+        str === '' ||
+        /^\s|\s$/.test(str) ||
+        /[:#\n"'\\]/.test(str) ||
+        /^[-?!&*@`|>%{}[\],]/.test(str) ||
+        /^[\d.+-]/.test(str) ||
+        /^(true|false|null|yes|no|on|off|y|n|~)$/i.test(str);
+
+      return needsQuotes ? JSON.stringify(str) : str;
+    }
+
+    /**
+     * Check whether a value is an object or array with no entries
+     *
+     * @param {*} value - Value to check
+     * @returns {boolean} - True for {} and []
+     */
+    function isEmptyContainer(value) {
+      return Array.isArray(value) ? value.length === 0 : Object.keys(value).length === 0;
+    }
+
+    /**
+     * Convert a JSON value to a block-style YAML document
+     *
+     * Every line is returned already indented for its level, so nested
+     * structures line up without post-processing.
+     *
+     * @param {*} obj - Value to convert
+     * @param {number} indent - Indentation level (two spaces per level)
+     * @returns {string} - YAML text
+     */
     function jsonToYaml(obj, indent = 0) {
-      const spaces = '  '.repeat(indent);
+      const pad = '  '.repeat(indent);
 
-      if (obj === null) return 'null';
-      if (obj === undefined) return 'undefined';
+      if (Array.isArray(obj)) {
+        if (obj.length === 0) return pad + '[]';
+        return obj.map(item => {
+          if (item !== null && typeof item === 'object' && !isEmptyContainer(item)) {
+            // Render the item one level deeper, then hoist its first line onto the dash
+            const nested = jsonToYaml(item, indent + 1);
+            return pad + '- ' + nested.slice(pad.length + 2);
+          }
+          const scalar = item !== null && typeof item === 'object'
+            ? (Array.isArray(item) ? '[]' : '{}')
+            : yamlScalar(item);
+          return pad + '- ' + scalar;
+        }).join('\n');
+      }
 
-      if (typeof obj === 'string') {
-        // Check if string needs quotes
-        if (obj.includes(':') || obj.includes('#') || obj.includes('\n') || /^[\d-]/.test(obj)) {
-          return `"${obj.replace(/"/g, '\\"')}"`;
+      if (obj !== null && typeof obj === 'object') {
+        const keys = Object.keys(obj);
+        if (keys.length === 0) return pad + '{}';
+        return keys.map(key => {
+          const value = obj[key];
+          const k = yamlScalar(key);
+          if (value !== null && typeof value === 'object') {
+            if (isEmptyContainer(value)) {
+              return `${pad}${k}: ${Array.isArray(value) ? '[]' : '{}'}`;
+            }
+            return `${pad}${k}:\n${jsonToYaml(value, indent + 1)}`;
+          }
+          return `${pad}${k}: ${yamlScalar(value)}`;
+        }).join('\n');
+      }
+
+      return pad + yamlScalar(obj);
+    }
+
+    /**
+     * Remove a trailing " # comment" from a YAML line, ignoring '#' inside quotes
+     *
+     * @param {string} text - Trimmed line
+     * @returns {string} - Line without comment
+     */
+    function stripYamlComment(text) {
+      let quote = null;
+      for (let i = 0; i < text.length; i++) {
+        const ch = text[i];
+        if (quote) {
+          if (ch === quote) quote = null;
+        } else if (ch === '"' || ch === "'") {
+          quote = ch;
+        } else if (ch === '#' && (i === 0 || /\s/.test(text[i - 1]))) {
+          return text.slice(0, i).trimEnd();
+        }
+      }
+      return text;
+    }
+
+    /**
+     * Split a "key: value" line, honouring quoted keys and colons inside values
+     *
+     * @param {string} text - Trimmed line
+     * @returns {{key: string, value: string}|null} - Parts, or null if not a mapping entry
+     */
+    function splitYamlEntry(text) {
+      const m = text.match(/^("(?:[^"\\]|\\.)*"|'(?:[^']|'')*'|[^:#]+?)\s*:(?:\s+(.*))?$/);
+      if (!m) return null;
+      return { key: parseYamlValue(m[1].trim()), value: (m[2] || '').trim() };
+    }
+
+    /**
+     * Convert YAML text to a JSON value
+     *
+     * Supports block mappings, block sequences (scalars, mappings, nested
+     * sequences), empty flow collections, simple flow lists, quoted strings
+     * and comments. Anchors, multi-line scalars and multi-document files are
+     * out of scope.
+     *
+     * @param {string} yaml - YAML text
+     * @returns {*} - Parsed value
+     * @throws {Error} - On lines that cannot be interpreted
+     */
+    function yamlToJson(yaml) {
+      const items = yaml.split('\n')
+        .map(line => line.replace(/\r$/, '').replace(/\t/g, '  '))
+        .filter(line => line.trim() && !line.trim().startsWith('#') && line.trim() !== '---' && line.trim() !== '...')
+        .map(line => ({ indent: line.search(/\S/), text: stripYamlComment(line.trim()) }));
+
+      if (items.length === 0) return {};
+
+      let pos = 0;
+
+      const isSeqItem = (item) => item.text === '-' || item.text.startsWith('- ');
+
+      function parseBlock() {
+        return isSeqItem(items[pos]) ? parseSequence(items[pos].indent) : parseMapping(items[pos].indent);
+      }
+
+      function parseSequence(indent) {
+        const arr = [];
+        while (pos < items.length && items[pos].indent === indent && isSeqItem(items[pos])) {
+          const item = items[pos];
+          const rest = item.text === '-' ? '' : item.text.slice(2).trim();
+
+          if (rest === '') {
+            pos++;
+            arr.push(pos < items.length && items[pos].indent > indent ? parseBlock() : null);
+          } else if (isSeqItem({ text: rest }) || splitYamlEntry(rest)) {
+            // "- key: value" or "- - x": re-read the remainder as its own line
+            // positioned where it starts, so following lines attach to it.
+            const childIndent = indent + item.text.length - rest.length;
+            items[pos] = { indent: childIndent, text: rest };
+            arr.push(parseBlock());
+          } else {
+            pos++;
+            arr.push(parseYamlValue(rest));
+          }
+        }
+        return arr;
+      }
+
+      function parseMapping(indent) {
+        const obj = {};
+        while (pos < items.length && items[pos].indent === indent && !isSeqItem(items[pos])) {
+          const item = items[pos];
+          const entry = splitYamlEntry(item.text);
+          if (!entry) {
+            throw new Error(`Invalid YAML near "${item.text}"`);
+          }
+          pos++;
+
+          if (entry.value === '') {
+            if (pos < items.length && items[pos].indent > indent) {
+              obj[entry.key] = parseBlock();
+            } else if (pos < items.length && items[pos].indent === indent && isSeqItem(items[pos])) {
+              // Sequences may sit at the same indentation as their key
+              obj[entry.key] = parseSequence(indent);
+            } else {
+              obj[entry.key] = null;
+            }
+          } else {
+            obj[entry.key] = parseYamlValue(entry.value);
+          }
         }
         return obj;
       }
 
-      if (typeof obj === 'number' || typeof obj === 'boolean') {
-        return String(obj);
+      const root = parseBlock();
+      if (pos < items.length) {
+        throw new Error(`Invalid YAML indentation near "${items[pos].text}"`);
       }
-
-      if (Array.isArray(obj)) {
-        if (obj.length === 0) return '[]';
-        let yaml = '\n';
-        obj.forEach(item => {
-          yaml += `${spaces}- `;
-          if (typeof item === 'object' && !Array.isArray(item)) {
-            const itemYaml = jsonToYaml(item, indent + 1);
-            yaml += itemYaml.substring(spaces.length + 2) + '\n';
-          } else {
-            yaml += jsonToYaml(item, indent + 1) + '\n';
-          }
-        });
-        return yaml.trimEnd();
-      }
-
-      if (typeof obj === 'object') {
-        const keys = Object.keys(obj);
-        if (keys.length === 0) return '{}';
-
-        let yaml = '';
-        keys.forEach((key, i) => {
-          if (i > 0 || indent > 0) yaml += '\n' + spaces;
-          yaml += `${key}: `;
-
-          const value = obj[key];
-          if (typeof value === 'object' && value !== null) {
-            yaml += jsonToYaml(value, indent + 1);
-          } else {
-            yaml += jsonToYaml(value, indent);
-          }
-        });
-        return yaml;
-      }
-
-      return String(obj);
-    }
-
-    /**
-     * Convert YAML string to JSON object
-     *
-     * @param {string} yaml - YAML string
-     * @returns {object} - JSON object
-     */
-    function yamlToJson(yaml) {
-      const lines = yaml.split('\n').filter(line => line.trim() && !line.trim().startsWith('#'));
-      
-      // Check if YAML starts with a list (top-level array)
-      const firstLine = lines.find(l => l.trim());
-      const isTopLevelList = firstLine && firstLine.trim().startsWith('- ');
-      
-      const root = isTopLevelList ? [] : {};
-      let currentObj = root;
-      const stack = [{ obj: root, indent: -1, key: null }];
-
-      lines.forEach(line => {
-        const indent = line.search(/\S/);
-        const trimmed = line.trim();
-
-        // Handle list items
-        if (trimmed.startsWith('- ')) {
-          const value = trimmed.substring(2).trim();
-          
-          // Pop stack based on indentation
-          while (stack.length > 1 && indent < stack[stack.length - 1].indent) {
-            stack.pop();
-          }
-          
-          const parent = stack[stack.length - 1];
-          
-          // If parent is an object, create array for last key
-          if (!Array.isArray(parent.obj)) {
-            const lastKey = parent.key;
-            if (lastKey && parent.obj[lastKey] === undefined) {
-              parent.obj[lastKey] = [];
-              stack.push({ obj: parent.obj[lastKey], indent, key: null });
-            }
-          }
-          
-          const targetArray = Array.isArray(parent.obj) ? parent.obj : 
-                              (parent.key && Array.isArray(parent.obj[parent.key]) ? parent.obj[parent.key] : null);
-          
-          if (targetArray) {
-            targetArray.push(parseYamlValue(value));
-          }
-          return;
-        }
-
-        // Handle key-value pairs
-        const colonIndex = trimmed.indexOf(':');
-        if (colonIndex === -1) return;
-
-        const key = trimmed.substring(0, colonIndex).trim();
-        const value = trimmed.substring(colonIndex + 1).trim();
-
-        // Adjust stack based on indentation
-        while (stack.length > 1 && indent <= stack[stack.length - 1].indent) {
-          stack.pop();
-        }
-
-        currentObj = stack[stack.length - 1].obj;
-
-        if (!value || value === '{}' || value === '[]') {
-          currentObj[key] = value === '[]' ? [] : (value === '{}' ? {} : undefined);
-          if (!value) {
-            const newObj = {};
-            currentObj[key] = newObj;
-            stack.push({ obj: newObj, indent, key });
-          }
-        } else {
-          currentObj[key] = parseYamlValue(value);
-          stack[stack.length - 1].key = key;
-        }
-      });
-
       return root;
     }
 
@@ -689,17 +761,25 @@
      * @returns {*} - Parsed value
      */
     function parseYamlValue(value) {
-      if (value === 'null') return null;
+      if (value === 'null' || value === '~' || value === '') return null;
       if (value === 'true') return true;
       if (value === 'false') return false;
-      if (value === '~') return null;
+      if (value === '[]') return [];
+      if (value === '{}') return {};
       if (/^-?\d+$/.test(value)) return parseInt(value, 10);
-      if (/^-?\d+\.\d+$/.test(value)) return parseFloat(value);
-      if (value.startsWith('"') && value.endsWith('"')) {
-        return value.substring(1, value.length - 1).replace(/\\"/g, '"');
+      if (/^-?\d+\.\d+(e[+-]?\d+)?$/i.test(value)) return parseFloat(value);
+      if (value.startsWith('"') && value.endsWith('"') && value.length >= 2) {
+        try {
+          return JSON.parse(value);
+        } catch (e) {
+          return value.substring(1, value.length - 1).replace(/\\"/g, '"');
+        }
       }
-      if (value.startsWith("'") && value.endsWith("'")) {
-        return value.substring(1, value.length - 1);
+      if (value.startsWith("'") && value.endsWith("'") && value.length >= 2) {
+        return value.substring(1, value.length - 1).replace(/''/g, "'");
+      }
+      if (value.startsWith('[') && value.endsWith(']')) {
+        return value.slice(1, -1).split(',').map(v => v.trim()).filter(v => v !== '').map(parseYamlValue);
       }
       return value;
     }
@@ -746,14 +826,13 @@
      * @returns {Array<object>} - Array of objects
      */
     function csvToJson(csv, delimiter = ',', hasHeader = true) {
-      const lines = csv.split('\n').filter(line => line.trim());
-      if (lines.length === 0) return [];
+      const rows = parseCsv(csv, delimiter);
+      if (rows.length === 0) return [];
 
-      const headers = hasHeader ? parseCsvLine(lines[0], delimiter) : null;
+      const headers = hasHeader ? rows[0] : null;
       const startIndex = hasHeader ? 1 : 0;
 
-      return lines.slice(startIndex).map((line) => {
-        const values = parseCsvLine(line, delimiter);
+      return rows.slice(startIndex).map((values) => {
         const obj = {};
 
         values.forEach((value, i) => {
@@ -766,38 +845,56 @@
     }
 
     /**
-     * Parse CSV line respecting quoted fields
+     * Parse CSV text into rows of fields (RFC 4180)
      *
-     * @param {string} line - CSV line
+     * Quoted fields may contain the delimiter, doubled quotes and line breaks,
+     * so the text is scanned as a whole rather than line by line.
+     *
+     * @param {string} text - CSV text
      * @param {string} delimiter - Field delimiter
-     * @returns {Array<string>} - Array of field values
+     * @returns {Array<Array<string>>} - Rows of field values
      */
-    function parseCsvLine(line, delimiter) {
-      const result = [];
-      let current = '';
+    function parseCsv(text, delimiter) {
+      const rows = [];
+      let row = [];
+      let field = '';
       let inQuotes = false;
 
-      for (let i = 0; i < line.length; i++) {
-        const char = line[i];
-        const nextChar = line[i + 1];
+      for (let i = 0; i < text.length; i++) {
+        const char = text[i];
 
-        if (char === '"') {
-          if (inQuotes && nextChar === '"') {
-            current += '"';
-            i++;
+        if (inQuotes) {
+          if (char === '"') {
+            if (text[i + 1] === '"') {
+              field += '"';
+              i++;
+            } else {
+              inQuotes = false;
+            }
           } else {
-            inQuotes = !inQuotes;
+            field += char;
           }
-        } else if (char === delimiter && !inQuotes) {
-          result.push(current);
-          current = '';
+        } else if (char === '"' && field === '') {
+          inQuotes = true;
+        } else if (char === delimiter) {
+          row.push(field);
+          field = '';
+        } else if (char === '\n' || char === '\r') {
+          if (char === '\r' && text[i + 1] === '\n') i++;
+          row.push(field);
+          rows.push(row);
+          row = [];
+          field = '';
         } else {
-          current += char;
+          field += char;
         }
       }
 
-      result.push(current);
-      return result;
+      row.push(field);
+      rows.push(row);
+
+      // Drop blank lines
+      return rows.filter(r => r.length > 1 || r[0].trim() !== '');
     }
 
     /**

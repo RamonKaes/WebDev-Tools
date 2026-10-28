@@ -341,3 +341,22 @@ describe('HashGeneratorTool – Hash Comparison', () => {
     expect(text).toContain('12');
   });
 });
+
+// ─── Progress / info elements start hidden ───────────────────────────────────
+
+describe('HashGeneratorTool – Hidden helper elements', () => {
+  let c;
+  beforeEach(() => { c = openTool(); });
+  afterEach(() => cleanup(c));
+
+  test('file mode renders file info and progress bar hidden', () => {
+    switchMode(c, 'file');
+    expect(c.querySelector('#fileInfo').classList.contains('d-none')).toBe(true);
+    expect(c.querySelector('#fileProgress').classList.contains('d-none')).toBe(true);
+  });
+
+  test('SRI mode renders the fetch spinner hidden', () => {
+    switchMode(c, 'sri');
+    expect(c.querySelector('#sriProgress').classList.contains('d-none')).toBe(true);
+  });
+});

@@ -91,7 +91,7 @@
     '↑': '&uarr;',
     '↓': '&darr;',
     '↔': '&harr;',
-    ' ': '&nbsp;',
+    ' ': '&nbsp;',
     '–': '&ndash;',
     '—': '&mdash;',
     '…': '&hellip;',
@@ -131,8 +131,10 @@
    * @returns {string} - Text with numeric entities
    */
   function encodeToNumericEntities(text, useHex = false) {
-    return text.replace(/[\u00A0-\u9999<>&"']/g, char => {
-      const code = char.charCodeAt(0);
+    // The u flag makes the class match whole code points, so characters outside
+    // the BMP (emoji, rare CJK) are encoded as one entity instead of two halves.
+    return text.replace(/[\u0080-\u{10FFFF}<>&"']/gu, char => {
+      const code = char.codePointAt(0);
       if (useHex) {
         return `&#x${code.toString(16)};`;
       }
@@ -147,7 +149,7 @@
    * @returns {string} - Text with all characters encoded to named entities
    */
   function encodeToAllNamedEntities(text) {
-    return text.replace(/[\s\S]/g, char => {
+    return text.replace(/[\s\S]/gu, char => {
       return NAMED_ENTITIES[char] || char;
     });
   }

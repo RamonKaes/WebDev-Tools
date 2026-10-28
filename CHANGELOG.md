@@ -4,6 +4,45 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
 
 ---
 
+## [Unreleased]
+
+### 🐛 Bugfixes
+- **Base64 decoder** treated every input of 20+ characters as a binary file,
+  so even the built-in sample decoded to "Binary file decoded". Plain Base64
+  is now decoded as UTF-8 text first and only falls back to a file (with
+  image preview for PNG/JPEG/GIF/WebP by magic bytes) when it is not valid UTF-8.
+- **i18n placeholders** – `i18n.t()` only substituted `{{name}}`, while the
+  translation files mostly use `{name}`. Strings such as "Detected type:
+  {type}", "Match {number}" and "HTTP error {status}" rendered verbatim.
+  Both syntaxes are now accepted.
+- **HTML entity encoder** – the "all named entities" mode turned every
+  ordinary space into `&nbsp;` (the map keyed a plain space instead of
+  U+00A0). Numeric and hex modes skipped characters above U+9999 and split
+  emoji into surrogate halves; they now encode by code point.
+- **Punycode converter** worked on UTF-16 code units instead of code points,
+  so emoji domains encoded wrongly (💩.la → `xn--8c9by4f.la` instead of
+  `xn--ls8h.la`) and could not be decoded.
+- **Data converter** – JSON → YAML misaligned lists of objects and left
+  values like `yes`, `123` or empty strings unquoted; YAML → JSON could not
+  read lists of objects. Both directions were rewritten. A top-level JSON
+  array now gets a root element in XML, dates without a zone are read as UTC
+  (matching the UTC output of the reverse direction), and quoted CSV fields
+  may contain line breaks.
+- **JSON formatter auto-fix** quoted everything before a colon, breaking
+  valid JSON containing URLs or times inside strings. Fixes now only apply
+  outside string literals and unquoted keys are only quoted in key position.
+- **Hash generator** used an undefined `hidden` class, so an empty info box
+  and progress bar (file mode) and the "Fetching resource…" spinner (SRI mode)
+  were always visible. Replaced with Bootstrap's `d-none`.
+- **SRI generator** result blocks carried inline `style` attributes that the
+  CSP blocks; they use the `pre-wrap`, `text-break` and `small` classes now.
+
+### ✅ Tests
+- 41 new regression tests (898 total, 22 suites), including a first suite for
+  `assets/js/i18n.js`.
+
+---
+
 ## [2.2.0] – 2026-08-20
 
 ### 🎨 Design

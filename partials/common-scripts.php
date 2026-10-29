@@ -25,6 +25,8 @@ if (!isset($buildHash)) {
 
   <script src="<?= assetSrc('js/lib/clipboard-utils.js') ?>"></script>
 
+  <script src="<?= assetSrc('js/lib/download-utils.js') ?>"></script>
+
   <script src="<?= assetSrc('js/lib/a11y-utils.js') ?>"></script>
 
   <script src="<?= assetSrc('js/sidebar-persistence.js') ?>"></script>

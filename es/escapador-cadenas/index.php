@@ -59,8 +59,8 @@ HTML
 
 $usefulResources = [
     [
-        'url' => 'https://developer.mozilla.org/en-US/docs/Glossary/Escape_sequence',
-        'title' => 'MDN: Secuencias de escape',
+        'url' => 'https://developer.mozilla.org/en-US/docs/Glossary/Escape_character',
+        'title' => 'MDN: Carácter de escape',
         'description' => 'Introducción accesible a los caracteres de escape y secuencias'
     ],
     [

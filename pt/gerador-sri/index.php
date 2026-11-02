@@ -18,7 +18,7 @@ $features = [
 $resourcesSectionTitle = 'Recursos úteis';
 $usefulResources = [
     [
-        'url'         => 'https://developer.mozilla.org/pt-BR/docs/Web/Security/Subresource_Integrity',
+        'url'         => 'https://developer.mozilla.org/en-US/docs/Web/Security/Defenses/Subresource_Integrity',
         'title'       => 'MDN: Subresource Integrity',
         'description' => 'Documentação oficial do MDN sobre SRI, suporte de navegadores e como funciona a verificação de integridade.',
     ],
@@ -33,7 +33,7 @@ $usefulResources = [
         'description' => 'Tabela de compatibilidade de navegadores para o atributo integrity.',
     ],
     [
-        'url'         => 'https://developer.mozilla.org/pt-BR/docs/Web/API/SubtleCrypto/digest',
+        'url'         => 'https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/digest',
         'title'       => 'MDN: SubtleCrypto.digest()',
         'description' => 'Documentação da API Web Crypto usada por esta ferramenta para hashing seguro.',
     ],

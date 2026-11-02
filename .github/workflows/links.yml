@@ -30,5 +30,8 @@ jobs:
             --exclude '127\.0\.0\.1'
             --exclude 'example\.(com|org|net)'
             --exclude '^mailto:'
+            --exclude '^https://(beispiel\.de|exemple\.fr|esempio\.com)/?$'
+            --exclude '^https://www\.googletagmanager\.com/?$'
+            --exclude '^https://kaes-websysteme\.de/?$'
             './**/*.php' './**/*.md' './**/*.txt' './config/i18n/*.json'
           fail: true

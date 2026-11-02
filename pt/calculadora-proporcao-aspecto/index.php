@@ -86,12 +86,12 @@ HTML
 
 $usefulResources = [
     [
-        'url' => 'https://pt.wikipedia.org/wiki/Propor%C3%A7%C3%A3o_de_aspecto',
-        'title' => 'Wikipedia: Proporção de Aspecto',
+        'url' => 'https://pt.wikipedia.org/wiki/Propor%C3%A7%C3%A3o_de_tela',
+        'title' => 'Wikipedia: Proporção de tela',
         'description' => 'Introdução amigável para iniciantes sobre proporções de aspecto em imagens e vídeo'
     ],
     [
-        'url' => 'https://developer.mozilla.org/pt-BR/docs/Web/CSS/aspect-ratio',
+        'url' => 'https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/aspect-ratio',
         'title' => 'MDN: Propriedade CSS aspect-ratio',
         'description' => 'Propriedade CSS moderna para manter proporções de aspecto'
     ],

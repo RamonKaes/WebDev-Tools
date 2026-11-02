@@ -18,7 +18,7 @@ $features = [
 $resourcesSectionTitle = 'Recursos útiles';
 $usefulResources = [
     [
-        'url'         => 'https://developer.mozilla.org/es/docs/Web/Security/Subresource_Integrity',
+        'url'         => 'https://developer.mozilla.org/en-US/docs/Web/Security/Defenses/Subresource_Integrity',
         'title'       => 'MDN: Subresource Integrity',
         'description' => 'Documentación oficial de MDN sobre SRI, soporte de navegadores y cómo funciona la verificación de integridad.',
     ],

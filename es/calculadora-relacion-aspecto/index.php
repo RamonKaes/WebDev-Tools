@@ -91,7 +91,7 @@ $usefulResources = [
         'description' => 'Introducción amigable para principiantes sobre relaciones de aspecto en imágenes y video'
     ],
     [
-        'url' => 'https://developer.mozilla.org/es/docs/Web/CSS/aspect-ratio',
+        'url' => 'https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/aspect-ratio',
         'title' => 'MDN: Propiedad CSS aspect-ratio',
         'description' => 'Propiedad CSS moderna para mantener relaciones de aspecto'
     ],

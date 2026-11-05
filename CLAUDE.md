@@ -7,9 +7,10 @@ Privacyfirst Developer-Toolbox. Alle Operationen laufen **client-side im Browser
 ## Befehle
 
 ```bash
-npm test                        # Jest Unit-Tests (952 Tests, 24 Suites)
+npm test                        # Jest Unit-Tests (969 Tests, 25 Suites)
 npm run test:coverage           # Mit Coverage-Report
 bash build.sh                   # Production-Build nach dist/
+npm run test:browser            # Playwright gegen dist/ hinter Apache (vorher build.sh)
 php config/generate-manifest.php    # Nach neuem Tool ausführen
 php config/generate-sitemaps.php    # Nach neuem Tool ausführen
 ```
@@ -112,6 +113,10 @@ Muster: `tests/unit/toolNameTool.test.js`
 - `openTool()`: `div#tool-container` anlegen, `tool.open()` aufrufen
 - Pro Konverter/Feature mindestens 1 Happy-Path + 1 Fehlerfall
 
+Browser-Tests: `tests/browser/` (Chrome + lokaler Apache mit `.htaccess.production`, braucht `apache2`, `libapache2-mod-php`)
+- `pages.spec.js`: alle Sitemap-Seiten, Redirects, Security-Header; `tools.spec.js`: Normalfall je Tool mit Erwartungswerten von außerhalb des Tools
+- Der Browser ruft `webdev-tools.info` auf, Chrome leitet lokal um. **Nie** die `request`-Fixture von Playwright nutzen: Sie umgeht die Umleitung und träfe die echte Seite
+
 ---
 
 ## URL-Änderungen → htaccess-Rewrite-Rules
@@ -135,6 +140,6 @@ RewriteRule ^de/alter-slug/?$ /de/neuer-slug/ [R=301,L]
 3. Eintrag in `config/tools.php`
 4. i18n-Keys in allen 6 JSON-Dateien
 5. `php config/generate-manifest.php && php config/generate-sitemaps.php`
-6. `tests/unit/toolNameTool.test.js`
+6. `tests/unit/toolNameTool.test.js` + Normalfall in `tests/browser/tools.spec.js` (Tool-Zahl in `pages.spec.js` anpassen)
 7. `bash build.sh`
 8. Bei lokalisierten Slugs: Rewrite-Rules in `.htaccess` **und** `.htaccess.production`

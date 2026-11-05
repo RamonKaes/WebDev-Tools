@@ -6,6 +6,10 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
 
 ## [Unreleased]
 
+### 🔄 Changed
+- **Base64 encoder** now outputs standard Base64 with padding by default
+  (`hello` → `aGVsbG8=`). URL-safe encoding without padding is opt-in.
+
 ### ♿ Accessibility
 - **Lorem Ipsum and QR code generator** no longer use blocking `alert()`
   dialogs for validation and error messages; they show an inline Bootstrap

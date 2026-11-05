@@ -65,7 +65,7 @@
                       <label class="form-check-label" for="autoEncode">${t('tools.base64EncoderDecoder.auto_encode')}</label>
                     </div>
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="urlSafe" checked>
+                      <input class="form-check-input" type="checkbox" id="urlSafe">
                       <label class="form-check-label" for="urlSafe">${t('tools.base64EncoderDecoder.url_safe')}</label>
                     </div>
                   </div>

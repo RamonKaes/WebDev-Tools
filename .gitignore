@@ -160,3 +160,7 @@ deploy.config
 # Interne Arbeitsnotizen
 /TODO.md
 .claude/
+
+# Browser tests
+test-results/
+playwright-report/

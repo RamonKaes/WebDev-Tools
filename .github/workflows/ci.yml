@@ -72,3 +72,27 @@ jobs:
           test -f dist/assets/js/tools/base64EncoderDecoderTool.js
           test -f dist/config/i18n/en.json
           test -d dist/de/base64-kodierer-dekodierer
+
+  browser:
+    name: Browser tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install Apache with mod_php
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq apache2 libapache2-mod-php php-mbstring
+      - run: npm ci
+      - run: bash build.sh
+      # Uses the Chrome that ubuntu-latest ships, no Playwright browser download
+      - run: npm run test:browser
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: browser-test-results
+          path: |
+            test-results/playwright
+            test-results/apache/error.log
+          retention-days: 7

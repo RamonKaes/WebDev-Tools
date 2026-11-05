@@ -118,6 +118,7 @@ Muster: `tests/unit/toolNameTool.test.js`
 
 Browser-Tests: `tests/browser/` (Chrome + lokaler Apache mit `.htaccess.production`, braucht `apache2`, `libapache2-mod-php`)
 - `pages.spec.js`: alle Sitemap-Seiten, Redirects, Security-Header; `tools.spec.js`: Normalfall je Tool mit Erwartungswerten von außerhalb des Tools
+- `accessibility.spec.js`: axe-core (WCAG 2.2 AA) über alle englischen Seiten in Hell und Dunkel. Was axe meldet, wird behoben; neue Felder brauchen ein `<label for>` oder `aria-label`
 - Der Browser ruft `webdev-tools.info` auf, Chrome leitet lokal um. **Nie** die `request`-Fixture von Playwright nutzen: Sie umgeht die Umleitung und träfe die echte Seite
 
 ---

@@ -198,7 +198,7 @@
                       </div>
                     </div>
                     <div class="col-md-4" id="entityTypeWrapper">
-                      <label class="form-label fw-bold">
+                      <label for="entityType" class="form-label fw-bold">
                         <i class="bi bi-gear me-2"></i>${t('tools.htmlEntityTool.entityType')}
                       </label>
                       <select class="form-select form-select-sm" id="entityType">

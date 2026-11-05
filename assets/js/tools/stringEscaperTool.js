@@ -226,7 +226,7 @@
                   <p class="h6 fw-semibold card-title mb-3"><i class="bi bi-pencil me-2"></i>${t('tools.stringEscaperTool.input_title')}</p>
 
                   <div class="mb-3">
-                    <label class="form-label">${t('tools.stringEscaperTool.formatLabel')}</label>
+                    <label for="escapeFormat" class="form-label">${t('tools.stringEscaperTool.formatLabel')}</label>
                     <select class="form-select form-select-sm" id="escapeFormat">
                       <option value="html">HTML</option>
                       <option value="xml">XML</option>

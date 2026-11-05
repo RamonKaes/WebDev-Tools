@@ -24,6 +24,12 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
 - **Lorem Ipsum and QR code generator** no longer use blocking `alert()`
   dialogs for validation and error messages; they show an inline Bootstrap
   alert with `aria-live` inside the tool, like every other tool.
+- **WCAG 2.2 AA colors**: secondary text, outline buttons, inline code and
+  the primary, success, danger and warning text colors now reach 4.5:1 in the
+  light and dark theme.
+- **Form fields and icon buttons** in seven tools have accessible names.
+- `tests/browser/accessibility.spec.js` runs axe-core over every English page
+  in both themes.
 
 ### 🔧 Tooling
 - **GitHub Actions** (`.github/workflows/ci.yml`) on every push to `main`

@@ -131,7 +131,6 @@ html, body {
 
 .btn-toggle-nav a {
   margin-left: 2rem;
-  color: var(--bs-secondary) !important;
   padding: 0.25rem 0.5rem;
   display: block;
   font-size: 0.875rem;
@@ -753,3 +752,44 @@ button:active:not(:disabled) {
 }
 
 .form-control { font-size: inherit;}
+/* WCAG AA contrast: Bootstrap's defaults fall below 4.5:1 for these colors.
+   Checked by tests/browser/accessibility.spec.js. */
+:root,
+[data-bs-theme="light"] {
+  --bs-code-color: #ab296a;
+}
+
+.text-secondary { color: #5c636a !important; }
+.text-primary { color: #0a58ca !important; }
+.text-success { color: #146c43 !important; }
+.text-danger { color: #b02a37 !important; }
+.text-warning { color: #856404 !important; }
+
+.btn-outline-info {
+  --bs-btn-color: #087990;
+  --bs-btn-border-color: #087990;
+}
+
+[data-bs-theme="dark"] {
+  --bs-code-color: #efadce;
+}
+
+[data-bs-theme="dark"] .text-secondary { color: #adb5bd !important; }
+[data-bs-theme="dark"] .text-primary { color: #6ea8fe !important; }
+[data-bs-theme="dark"] .text-success { color: #75b798 !important; }
+[data-bs-theme="dark"] .text-danger { color: #ea868f !important; }
+[data-bs-theme="dark"] .text-warning { color: #ffc107 !important; }
+
+[data-bs-theme="dark"] .btn-outline-secondary {
+  --bs-btn-color: #adb5bd;
+}
+
+[data-bs-theme="dark"] .btn-outline-info {
+  --bs-btn-color: #0dcaf0;
+  --bs-btn-border-color: #0dcaf0;
+}
+
+[data-bs-theme="dark"] .btn-outline-primary {
+  --bs-btn-color: #6ea8fe;
+  --bs-btn-border-color: #6ea8fe;
+}

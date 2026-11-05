@@ -825,7 +825,7 @@
         <div class="progress mb-2 progress-strength-bar">
           <div class="progress-bar bg-${color}" role="progressbar"
             aria-valuenow="${progressWidth}" aria-valuemin="0" aria-valuemax="100"
-            id="passwordStrengthBar"></div>
+            id="passwordStrengthBar" aria-label="${t('tools.passwordGeneratorTool.strength')}"></div>
         </div>
         <div class="row g-2">
           <div class="col-md-4">

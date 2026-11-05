@@ -226,7 +226,7 @@
                   <div id="jsonTree" class="json-tree-container d-none mb-3"></div>
 
                   <div class="d-flex align-items-center gap-2 flex-wrap">
-                    <label class="form-label me-2 mb-0">${t('tools.jsonFormatterValidator.indentation_label')}:</label>
+                    <label for="indentSelect" class="form-label me-2 mb-0">${t('tools.jsonFormatterValidator.indentation_label')}:</label>
                     <select class="form-select form-select-sm d-inline-block w-auto" id="indentSelect">
                       <option value="2">${t('tools.jsonFormatterValidator.indent_2_spaces')}</option>
                       <option value="4" selected>${t('tools.jsonFormatterValidator.indent_4_spaces')}</option>

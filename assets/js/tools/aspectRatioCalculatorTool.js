@@ -136,11 +136,11 @@
                       </div>
                     </div>
                     <div class="col">
-                      <label class="form-label small">${t('tools.aspectRatioCalculator.calculated_height_label')}</label>
+                      <label for="calculatedHeight" class="form-label small">${t('tools.aspectRatioCalculator.calculated_height_label')}</label>
                       <div class="input-group input-group-sm">
                         <input type="text" class="form-control bg-body-secondary" id="calculatedHeight" readonly>
                         <span class="input-group-text">px</span>
-                        <button class="btn btn-outline-secondary btn-sm copy-btn d-inline-flex align-items-center" type="button" data-target="calculatedHeight">
+                        <button class="btn btn-outline-secondary btn-sm copy-btn d-inline-flex align-items-center" type="button" data-target="calculatedHeight" aria-label="${t('common.copy')}">
                           <i class="bi bi-clipboard"></i>
                         </button>
                       </div>
@@ -156,11 +156,11 @@
                       </div>
                     </div>
                     <div class="col">
-                      <label class="form-label small">${t('tools.aspectRatioCalculator.calculated_width_label')}</label>
+                      <label for="calculatedWidth" class="form-label small">${t('tools.aspectRatioCalculator.calculated_width_label')}</label>
                       <div class="input-group input-group-sm">
                         <input type="text" class="form-control bg-body-secondary" id="calculatedWidth" readonly>
                         <span class="input-group-text">px</span>
-                        <button class="btn btn-outline-secondary btn-sm copy-btn d-inline-flex align-items-center" type="button" data-target="calculatedWidth">
+                        <button class="btn btn-outline-secondary btn-sm copy-btn d-inline-flex align-items-center" type="button" data-target="calculatedWidth" aria-label="${t('common.copy')}">
                           <i class="bi bi-clipboard"></i>
                         </button>
                       </div>
@@ -177,8 +177,8 @@
                     <div class="col-12">
                       <div class="input-group input-group-sm">
                         <span class="input-group-text">${t('tools.aspectRatioCalculator.ratio_format')}</span>
-                        <input type="text" class="form-control bg-body-secondary font-monospace" id="ratioFormat" readonly>
-                        <button class="btn btn-outline-secondary btn-sm copy-btn d-inline-flex align-items-center" data-target="ratioFormat">
+                        <input type="text" class="form-control bg-body-secondary font-monospace" id="ratioFormat" readonly aria-label="${t('tools.aspectRatioCalculator.ratio_format')}">
+                        <button class="btn btn-outline-secondary btn-sm copy-btn d-inline-flex align-items-center" data-target="ratioFormat" aria-label="${t('common.copy')}">
                           <i class="bi bi-clipboard"></i>
                         </button>
                       </div>
@@ -186,8 +186,8 @@
                     <div class="col-12">
                       <div class="input-group input-group-sm">
                         <span class="input-group-text">${t('tools.aspectRatioCalculator.decimal_format')}</span>
-                        <input type="text" class="form-control bg-body-secondary font-monospace" id="decimalFormat" readonly>
-                        <button class="btn btn-outline-secondary btn-sm copy-btn d-inline-flex align-items-center" data-target="decimalFormat">
+                        <input type="text" class="form-control bg-body-secondary font-monospace" id="decimalFormat" readonly aria-label="${t('tools.aspectRatioCalculator.decimal_format')}">
+                        <button class="btn btn-outline-secondary btn-sm copy-btn d-inline-flex align-items-center" data-target="decimalFormat" aria-label="${t('common.copy')}">
                           <i class="bi bi-clipboard"></i>
                         </button>
                       </div>
@@ -195,8 +195,8 @@
                     <div class="col-12">
                       <div class="input-group input-group-sm">
                         <span class="input-group-text">${t('tools.aspectRatioCalculator.percentage_format')}</span>
-                        <input type="text" class="form-control bg-body-secondary font-monospace" id="percentageFormat" readonly>
-                        <button class="btn btn-outline-secondary btn-sm copy-btn d-inline-flex align-items-center" data-target="percentageFormat">
+                        <input type="text" class="form-control bg-body-secondary font-monospace" id="percentageFormat" readonly aria-label="${t('tools.aspectRatioCalculator.percentage_format')}">
+                        <button class="btn btn-outline-secondary btn-sm copy-btn d-inline-flex align-items-center" data-target="percentageFormat" aria-label="${t('common.copy')}">
                           <i class="bi bi-clipboard"></i>
                         </button>
                       </div>
@@ -221,7 +221,7 @@
 
                 <!-- CSS Method Selection -->
                 <div class="mb-3">
-                  <label class="form-label">${t('tools.aspectRatioCalculator.css_method_label')}</label>
+                  <label for="cssMethod" class="form-label">${t('tools.aspectRatioCalculator.css_method_label')}</label>
                   <select class="form-select form-select-sm" id="cssMethod">
                     <option value="modern">${t('tools.aspectRatioCalculator.css_modern')}</option>
                     <option value="padding">${t('tools.aspectRatioCalculator.css_padding_trick')}</option>
@@ -237,7 +237,7 @@
                       <i class="bi bi-clipboard me-1"></i>${t('common.copy')}
                     </button>
                   </label>
-                  <textarea class="form-control form-control-sm font-monospace bg-body-secondary" id="cssOutput" rows="12" readonly></textarea>
+                  <textarea class="form-control form-control-sm font-monospace bg-body-secondary" id="cssOutput" rows="12" readonly aria-label="CSS ${t('common.code')}"></textarea>
                 </div>
 
                 <!-- Info Alert -->

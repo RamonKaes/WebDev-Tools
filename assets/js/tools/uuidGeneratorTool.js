@@ -58,10 +58,10 @@
               </button>
 
               <div class="mb-3">
-                <label class="form-label">${t('tools.uuidGeneratorTool.result_label')}</label>
+                <label for="singleUuid" class="form-label">${t('tools.uuidGeneratorTool.result_label')}</label>
                 <div class="input-group">
                   <input type="text" class="form-control bg-body-secondary font-monospace" id="singleUuid" readonly>
-                  <button class="btn btn-outline-secondary btn-sm" type="button" id="copySingle">
+                  <button class="btn btn-outline-secondary btn-sm" type="button" id="copySingle" aria-label="${t('common.copy')}">
                     <i class="bi bi-clipboard"></i>
                   </button>
                 </div>
@@ -102,7 +102,7 @@
               </button>
 
               <div class="mb-3">
-                <textarea class="form-control bg-body-secondary font-monospace" id="bulkOutput" rows="10" readonly></textarea>
+                <textarea class="form-control bg-body-secondary font-monospace" id="bulkOutput" rows="10" readonly aria-label="${t('tools.uuidGeneratorTool.bulk_title')}"></textarea>
               </div>
 
               <div class="d-flex gap-2">

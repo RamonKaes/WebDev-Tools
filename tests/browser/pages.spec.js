@@ -48,6 +48,12 @@ test('the sitemap covers all 20 tools in all 6 languages', () => {
   expect(sitemapPaths()).toHaveLength(22 * 6);
 });
 
+test('the build ships only the translations from config/i18n', () => {
+  // Local leftovers in that folder would otherwise go live with the next deploy
+  const files = fs.readdirSync(path.join(ROOT, 'dist/config/i18n')).sort();
+  expect(files).toEqual(['de.json', 'en.json', 'es.json', 'fr.json', 'it.json', 'pt.json']);
+});
+
 test.describe('.htaccess.production', () => {
   test('finds the redirect rules', () => {
     expect(redirects().length).toBeGreaterThan(50);

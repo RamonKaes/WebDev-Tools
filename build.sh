@@ -137,7 +137,7 @@ cp -r assets/data "$DIST_DIR/assets/"
 # 7. Copy i18n
 # ============================================
 echo "🌍 Copying i18n files..."
-cp -r config/i18n "$DIST_DIR/config/"
+cp config/i18n/*.json "$DIST_DIR/config/i18n/"
 
 # ============================================
 # 8. Copy Tool Directories

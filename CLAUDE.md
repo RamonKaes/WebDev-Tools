@@ -7,7 +7,7 @@ Privacyfirst Developer-Toolbox. Alle Operationen laufen **client-side im Browser
 ## Befehle
 
 ```bash
-npm test                        # Jest Unit-Tests (968 Tests, 25 Suites)
+npm test                        # Jest Unit-Tests (969 Tests, 25 Suites)
 npm run test:coverage           # Mit Coverage-Report
 bash build.sh                   # Production-Build nach dist/
 npm run test:browser            # Playwright gegen dist/ hinter Apache (vorher build.sh)

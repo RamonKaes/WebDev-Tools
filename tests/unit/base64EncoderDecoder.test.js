@@ -89,6 +89,12 @@ describe('Base64EncoderDecoder – Encoding', () => {
   beforeEach(() => { c = openTool(); });
   afterEach(() => cleanup(c));
 
+  test('uses standard Base64 with padding by default', () => {
+    expect(c.querySelector('#urlSafe').checked).toBe(false);
+    process(c, 'Hello');
+    expect(c.querySelector('#output').value).toBe('SGVsbG8=');
+  });
+
   test('encodes ASCII text correctly (URL-safe, no padding)', () => {
     setUrlSafe(c, true);
     process(c, 'Hello');

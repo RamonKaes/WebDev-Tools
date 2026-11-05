@@ -22,9 +22,8 @@ async function downloadedText(page, trigger) {
 
 const TEXT_TOOLS = [
   {
-    // URL-safe without padding is this tool's default
     slug: 'base64-encoder-decoder', input: '#input', run: '#processBtn', output: '#output',
-    value: 'hello', expected: 'aGVsbG8', download: '#downloadBtn',
+    value: 'hello', expected: 'aGVsbG8=', download: '#downloadBtn',
   },
   {
     slug: 'url-encoder-decoder', input: '#input', run: '#processBtn', output: '#output',
@@ -69,9 +68,18 @@ test('copy button writes to the clipboard', async ({ page, context }) => {
   await openTool(page, 'base64-encoder-decoder');
   await page.locator('#input').fill('hello');
   await page.locator('#processBtn').click();
-  await expect(page.locator('#output')).toHaveValue('aGVsbG8');
+  await expect(page.locator('#output')).toHaveValue('aGVsbG8=');
   await page.locator('#copyBtn').click();
-  await expect.poll(() => page.evaluate(() => navigator.clipboard.readText())).toBe('aGVsbG8');
+  await expect.poll(() => page.evaluate(() => navigator.clipboard.readText())).toBe('aGVsbG8=');
+});
+
+test('base64 drops the padding only when URL-safe is enabled', async ({ page }) => {
+  await openTool(page, 'base64-encoder-decoder');
+  await expect(page.locator('#urlSafe')).not.toBeChecked();
+  await page.locator('#urlSafe').check();
+  await page.locator('#input').fill('hello');
+  await page.locator('#processBtn').click();
+  await expect(page.locator('#output')).toHaveValue('aGVsbG8');
 });
 
 test('code-formatter minifies CSS', async ({ page }) => {

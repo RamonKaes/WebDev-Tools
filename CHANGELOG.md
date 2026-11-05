@@ -14,6 +14,12 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
 - **Build** copies only the translation files from `config/i18n`, so local
   leftovers and the README in that folder no longer reach the server.
 
+### 🚀 Deployment
+- **`npm run deploy`** now refuses a build that is not a fresh, clean build of
+  `origin/main` or that contains backups or files unknown to git. It stops on
+  files that are new on the server unless `--allow-new` is given, and checks
+  production after the upload (`npm run verify:prod`).
+
 ### ♿ Accessibility
 - **Lorem Ipsum and QR code generator** no longer use blocking `alert()`
   dialogs for validation and error messages; they show an inline Bootstrap

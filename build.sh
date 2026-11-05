@@ -26,6 +26,13 @@ echo "🧹 Cleaning previous build..."
 rm -rf "$DIST_DIR"
 mkdir -p "$DIST_DIR"/{assets/{css,js,img,data,bootstrap},config/i18n,partials}
 
+# Tells build-tools/check-deploy.sh which commit this build belongs to
+if [ -n "$(git status --porcelain)" ]; then
+  echo "uncommitted changes" > "$PROJECT_ROOT/.build-commit"
+else
+  git rev-parse HEAD > "$PROJECT_ROOT/.build-commit"
+fi
+
 # ============================================
 # 2. Copy PHP Files
 # ============================================

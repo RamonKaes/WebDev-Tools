@@ -8,6 +8,7 @@
 # Production Build
 dist/
 build-manifest.json
+.build-commit
 
 # Source Maps
 *.min.js.map

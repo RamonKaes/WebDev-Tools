@@ -272,33 +272,6 @@ function getToolsByCategory($category)
     });
 }
 
-function generateToolPreloads($toolId)
-{
-    $config = getToolConfig($toolId);
-    if (!$config) {
-        return '';
-    }
-
-    $preloads = [];
-
-    $jsUrl = getAssetUrl('js/' . $config['jsModule']);
-    $preloads[] = "<link rel=\"modulepreload\" href=\"{$jsUrl}\">";
-
-    foreach ($config['jsLibraries'] ?? [] as $lib) {
-        $libUrl = getAssetUrl("js/lib/{$lib}.js");
-        $preloads[] = "<link rel=\"modulepreload\" href=\"{$libUrl}\">";
-    }
-
-    foreach ($config['externalLibraries'] ?? [] as $extLib) {
-        $url = $extLib['url'] ?? $extLib;
-        $integrity = isset($extLib['integrity']) ? " integrity=\"{$extLib['integrity']}\"" : '';
-        $crossorigin = isset($extLib['crossorigin']) ? " crossorigin=\"{$extLib['crossorigin']}\"" : '';
-        $preloads[] = "<link rel=\"preload\" as=\"script\" href=\"{$url}\"{$integrity}{$crossorigin}>";
-    }
-
-    return implode("\n  ", $preloads);
-}
-
 function getRelativePrefix($currentFile)
 {
     $rootDir = __DIR__ . '/..';

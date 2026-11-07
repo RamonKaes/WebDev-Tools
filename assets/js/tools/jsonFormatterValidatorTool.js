@@ -91,7 +91,7 @@
     if (obj === null || typeof obj !== 'object') return currentDepth;
     let maxDepth = currentDepth;
     for (const key in obj) {
-      if (obj.hasOwnProperty(key)) {
+      if (Object.prototype.hasOwnProperty.call(obj, key)) {
         const depth = getJSONDepth(obj[key], currentDepth + 1);
         maxDepth = Math.max(maxDepth, depth);
       }
@@ -113,7 +113,7 @@
       count++;
       if (node !== null && typeof node === 'object') {
         for (const key in node) {
-          if (node.hasOwnProperty(key)) traverse(node[key]);
+          if (Object.prototype.hasOwnProperty.call(node, key)) traverse(node[key]);
         }
       }
     }
@@ -381,7 +381,7 @@
 
       dropArea.addEventListener('drop', handleDrop, false);
       dropArea.addEventListener('click', function() {
-        var input = document.createElement('input');
+        const input = document.createElement('input');
         input.type = 'file';
         input.accept = '.json,application/json';
         input.onchange = function(e) {
@@ -448,7 +448,7 @@
       });
 
       function getIndent() {
-        var val = indentSelect.value;
+        const val = indentSelect.value;
         return val === 'tab' ? '\t' : parseInt(val, 10) || 2;
       }
 
@@ -471,7 +471,7 @@
        * @returns {object} - Object with total, objects, arrays properties
        */
       function countKeys(obj) {
-        var result = { total: 0, objects: 0, arrays: 0 };
+        const result = { total: 0, objects: 0, arrays: 0 };
         function count(o) {
           if (Array.isArray(o)) {
             result.arrays++;
@@ -508,10 +508,10 @@
        * @throws {Error} - If path not found
        */
       function extractJSONPath(obj, path) {
-        var parts = path.split(/\.|\[|\]/).filter(Boolean);
-        var current = obj;
-        for (var i = 0; i < parts.length; i++) {
-          var part = parts[i];
+        const parts = path.split(/\.|\[|\]/).filter(Boolean);
+        let current = obj;
+        for (let i = 0; i < parts.length; i++) {
+          const part = parts[i];
           if (current === null || current === undefined) {
             throw new Error(t('tools.jsonFormatterValidator.path_not_found', {path: path}));
           }
@@ -785,7 +785,7 @@
 
       // Event handlers
       formatBtn.addEventListener('click', function () {
-        var input = jsonInput.value.trim();
+        let input = jsonInput.value.trim();
         if (!input) {
           statusOutput.innerHTML = `<p class="text-warning mb-0"><i class="bi bi-exclamation-triangle me-2"></i>${t('tools.jsonFormatterValidator.no_input')}</p>`;
           return;
@@ -807,7 +807,7 @@
             input = autoFixJSON(input);
           }
 
-          var parsed = JSON.parse(input);
+          let parsed = JSON.parse(input);
 
           // Check if tree rendering is feasible
           const treeCheck = canRenderJSONTree(parsed);
@@ -821,13 +821,13 @@
           }
 
           currentParsedJSON = parsed;
-          var formatted = JSON.stringify(parsed, null, getIndent());
+          const formatted = JSON.stringify(parsed, null, getIndent());
           jsonOutput.value = formatted;
 
-          var size = new Blob([formatted]).size;
-          var keys = countKeys(parsed);
-          var sizeWarning = sizeCheck.warning ? `<br><small class="text-warning">⚠️ ${sizeCheck.message}</small>` : '';
-          var treeWarning = !treeCheck.allowed ? `<br><small class="text-warning">⚠️ ${t('tools.jsonFormatterValidator.tree_disabled', { reason: treeCheck.reason })}</small>` : '';
+          const size = new Blob([formatted]).size;
+          const keys = countKeys(parsed);
+          const sizeWarning = sizeCheck.warning ? `<br><small class="text-warning">⚠️ ${sizeCheck.message}</small>` : '';
+          const treeWarning = !treeCheck.allowed ? `<br><small class="text-warning">⚠️ ${t('tools.jsonFormatterValidator.tree_disabled', { reason: treeCheck.reason })}</small>` : '';
           statusOutput.innerHTML = `<div class="alert alert-success mb-0"><i class="bi bi-check-circle me-2"></i><strong>✅ ${t('tools.jsonFormatterValidator.valid_json')}</strong><br><small>${t('tools.jsonFormatterValidator.size')}: ${formatBytes(size)} | ${t('tools.jsonFormatterValidator.objects')}: ${keys.objects} | ${t('tools.jsonFormatterValidator.arrays')}: ${keys.arrays} | ${t('tools.jsonFormatterValidator.total_keys')}: ${keys.total}</small>${sizeWarning}${treeWarning}</div>`;
 
           // Update tree view if it's active and feasible
@@ -842,7 +842,7 @@
       });
 
       validateBtn.addEventListener('click', function () {
-        var input = jsonInput.value.trim();
+        let input = jsonInput.value.trim();
         if (!input) {
           statusOutput.innerHTML = `<p class="text-warning mb-0"><i class="bi bi-exclamation-triangle me-2"></i>${t('tools.jsonFormatterValidator.no_input')}</p>`;
           return;
@@ -853,11 +853,11 @@
             input = autoFixJSON(input);
           }
 
-          var parsed = JSON.parse(input);
+          const parsed = JSON.parse(input);
           currentParsedJSON = parsed;
-          var size = new Blob([input]).size;
-          var keys = countKeys(parsed);
-          var depth = getDepth(parsed);
+          const size = new Blob([input]).size;
+          const keys = countKeys(parsed);
+          const depth = getDepth(parsed);
           statusOutput.innerHTML = `<div class="alert alert-success mb-0"><i class="bi bi-check-circle me-2"></i><strong>✅ ${t('tools.jsonFormatterValidator.valid_json')}</strong><br><small>${t('tools.jsonFormatterValidator.size')}: ${formatBytes(size)} | ${t('tools.jsonFormatterValidator.type')}: ${Array.isArray(parsed) ? 'Array' : typeof parsed} | ${t('tools.jsonFormatterValidator.total_keys')}: ${keys.total} | ${t('tools.jsonFormatterValidator.max_depth')}: ${depth}</small></div>`;
         } catch (e) {
           currentParsedJSON = null;
@@ -866,7 +866,7 @@
       });
 
       minifyBtn.addEventListener('click', function () {
-        var input = jsonInput.value.trim();
+        let input = jsonInput.value.trim();
         if (!input) {
           statusOutput.innerHTML = `<p class="text-warning mb-0"><i class="bi bi-exclamation-triangle me-2"></i>${t('tools.jsonFormatterValidator.no_input')}</p>`;
           return;
@@ -877,7 +877,7 @@
             input = autoFixJSON(input);
           }
 
-          var parsed = JSON.parse(input);
+          let parsed = JSON.parse(input);
 
           // Apply sort if enabled
           if (sortKeysCheck.checked) {
@@ -885,11 +885,11 @@
           }
 
           currentParsedJSON = parsed;
-          var minified = JSON.stringify(parsed);
+          const minified = JSON.stringify(parsed);
           jsonOutput.value = minified;
-          var originalSize = new Blob([input]).size;
-          var minifiedSize = new Blob([minified]).size;
-          var saved = ((1 - minifiedSize / originalSize) * 100).toFixed(1);
+          const originalSize = new Blob([input]).size;
+          const minifiedSize = new Blob([minified]).size;
+          const saved = ((1 - minifiedSize / originalSize) * 100).toFixed(1);
           statusOutput.innerHTML = `<div class="alert alert-success mb-0"><i class="bi bi-check-circle me-2"></i><strong>✅ ${t('tools.jsonFormatterValidator.minified')}</strong><br><small>${t('tools.jsonFormatterValidator.original')}: ${formatBytes(originalSize)} → ${t('tools.jsonFormatterValidator.minified')}: ${formatBytes(minifiedSize)} (${saved}% ${t('tools.jsonFormatterValidator.saved')})</small></div>`;
         } catch (e) {
           jsonOutput.value = '';
@@ -907,7 +907,7 @@
       });
 
       loadSampleBtn.addEventListener('click', function () {
-        var sample = {
+        const sample = {
           name: 'John Doe',
           age: 30,
           email: 'max@example.com',
@@ -948,7 +948,7 @@
       });
 
       extractPathBtn.addEventListener('click', function () {
-        var path = jsonPath.value.trim();
+        const path = jsonPath.value.trim();
         if (!path) {
           pathResult.innerHTML = `<small class="text-warning">${t('tools.jsonFormatterValidator.enter_path')}</small>`;
           return;
@@ -958,8 +958,8 @@
           return;
         }
         try {
-          var value = extractJSONPath(currentParsedJSON, path);
-          var displayValue = typeof value === 'object' ? JSON.stringify(value, null, 2) : String(value);
+          const value = extractJSONPath(currentParsedJSON, path);
+          const displayValue = typeof value === 'object' ? JSON.stringify(value, null, 2) : String(value);
           pathResult.innerHTML = `<div class="alert alert-success small mb-0"><strong>${t('tools.jsonFormatterValidator.value')}:</strong><br><code>${escapeHtml(displayValue)}</code></div>`;
         } catch (e) {
           pathResult.innerHTML = `<small class="text-danger">${escapeHtml(e.message)}</small>`;
@@ -967,24 +967,24 @@
       });
 
       escapeBtn.addEventListener('click', function () {
-        var input = jsonInput.value;
+        const input = jsonInput.value;
         if (!input) {
           statusOutput.innerHTML = `<p class="text-warning mb-0"><i class="bi bi-exclamation-triangle me-2"></i>${t('tools.jsonFormatterValidator.no_input')}</p>`;
           return;
         }
-        var escaped = JSON.stringify(input);
+        const escaped = JSON.stringify(input);
         jsonOutput.value = escaped;
   statusOutput.innerHTML = `<p class="text-info mb-0"><i class="bi bi-info-circle me-2"></i>${t('tools.jsonFormatterValidator.string_escaped')}</p>`;
       });
 
       unescapeBtn.addEventListener('click', function () {
-        var input = jsonInput.value.trim();
+        const input = jsonInput.value.trim();
         if (!input) {
           statusOutput.innerHTML = `<p class="text-warning mb-0"><i class="bi bi-exclamation-triangle me-2"></i>${t('tools.jsonFormatterValidator.no_input')}</p>`;
           return;
         }
         try {
-          var unescaped = JSON.parse(input);
+          const unescaped = JSON.parse(input);
           if (typeof unescaped !== 'string') throw new Error(t('tools.jsonFormatterValidator.not_escaped_string'));
           jsonOutput.value = unescaped;
           statusOutput.innerHTML = `<p class="text-info mb-0"><i class="bi bi-info-circle me-2"></i>${t('tools.jsonFormatterValidator.string_unescaped')}</p>`;

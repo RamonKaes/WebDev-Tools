@@ -137,6 +137,5 @@ Bootstrap: custom SCSS compilation via sass (optional, falls back to full Bootst
 
 - clipboard-utils.js: window.ClipboardUtils.copyToClipboard()
 - download-utils.js: window.DownloadUtils.downloadText()
-- dragdrop-utils.js: drag-and-drop file handling
-- validators.js: input validation helpers
-- formatters.js: data formatting helpers
+- a11y-utils.js: window.A11yUtils (focus management, live-region announcements)
+- wordlist.js: EFF long wordlist, dynamically imported by the password generator

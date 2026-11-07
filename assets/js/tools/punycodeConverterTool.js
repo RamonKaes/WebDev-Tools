@@ -477,7 +477,7 @@
         }
 
         try {
-          let mode = container.querySelector('input[name="mode"]:checked').value;
+          const mode = container.querySelector('input[name="mode"]:checked').value;
 
           // Process each line independently (batch mode)
           const lines = text.split('\n');
@@ -584,8 +584,4 @@
       updateStats();
     }
   });
-
-  if (typeof window.logger !== 'undefined') {
-    window.logger.info('Punycode Converter Tool loaded');
-  }
 })();

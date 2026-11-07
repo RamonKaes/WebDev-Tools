@@ -200,9 +200,12 @@ describe('CharacterReference – Search', () => {
 });
 
 describe('CharacterReference – Category Filter', () => {
+  // triggerSearch() flushes the debounce with fake timers, so they must be active here too
+  beforeEach(() => { jest.useFakeTimers(); });
   afterEach(() => {
     triggerSearch('');
     triggerCategoryFilter('all');
+    jest.useRealTimers();
   });
 
   test('filtering by "arrows" shows only arrow characters', () => {

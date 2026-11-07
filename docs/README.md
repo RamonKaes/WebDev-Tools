@@ -1,433 +1,154 @@
 # WebDev-Tools Documentation
 
-**Comprehensive Documentation for Developers** – Tech stack, integration guides, best practices.
+Developer documentation: tech stack, how to add a tool, testing, security. Every statement here is checked against the code; when a file in the repository disagrees with this text, the file wins and the text needs fixing.
 
 ---
 
-## 📚 Documentation Overview
-
-### Tech Stack Documentation (`techstack/`)
-
-Detailed description of the technical architecture and best practices:
+## Documentation Index (`techstack/`)
 
 | Document | Content |
 |----------|---------|
-| **[OVERVIEW](techstack/OVERVIEW.md)** | Architecture overview, stack components, lifecycle |
-| **[FRONTEND](techstack/FRONTEND.md)** | JavaScript (IIFE pattern), shared utilities, security |
-| **[BACKEND](techstack/BACKEND.md)** | PHP standards, tool registry, i18n system, routing |
-| **[BUILD](techstack/BUILD.md)** | Build process, minification, deployment |
-| **[TESTING](techstack/TESTING.md)** | Jest setup, test patterns, coverage |
-| **[INTEGRATION](techstack/INTEGRATION.md)** | **Add new tool** – Step-by-step guide |
-| **[DEPENDENCIES](techstack/DEPENDENCIES.md)** | External dependencies, versions, upgrade strategies |
-| **[SECURITY](techstack/SECURITY.md)** | Security best practices, privacy, CSP, XSS prevention |
-| **[TEMPLATES](techstack/TEMPLATES.md)** | **Code templates** – Ready-to-use PHP, JS, test templates |
-| **[CONVENTIONS](techstack/CONVENTIONS.md)** | Naming, structure, CSS, accessibility, error handling |
+| **[OVERVIEW](techstack/OVERVIEW.md)** | Architecture, stack components, commands, build and deploy |
+| **[NEUES-TOOL](techstack/NEUES-TOOL.md)** | **Add a new tool** – registry, PHP page, JS pattern, i18n, tests, rewrites (German) |
+| **[BACKEND](techstack/BACKEND.md)** | PHP standards, tool registry, i18n, helpers, security headers, routing |
+| **[TESTING](techstack/TESTING.md)** | Jest unit tests, Playwright and axe browser tests, lint, CI |
+| **[SECURITY](techstack/SECURITY.md)** | CSP, security headers, XSS prevention, sensitive data (German) |
+
+Project conventions in short form: [CLAUDE.md](../CLAUDE.md) in the repository root.
 
 ---
 
-## 🚀 Quick Start (for new developers)
-
-### 1. Clone repository & setup
+## Quick Start
 
 ```bash
 git clone https://github.com/RamonKaes/WebDev-Tools.git
 cd WebDev-Tools
-npm install
+npm install           # dev tooling only; production needs PHP and Apache, not Node
 ```
+
+### Local server
+
+`config/config.php` sets `BASE_PATH` to `/WebDev-Tools` whenever the host is `localhost` or `127.0.0.1`, so the checkout must be reachable at `http://localhost/WebDev-Tools/`. With Apache that means cloning into the document root (for example `/var/www/html/WebDev-Tools`) with `AllowOverride All` and `mod_rewrite` enabled; the development `.htaccess` is used as is. On any other host name the site assumes it runs at the domain root (`BASE_PATH` empty).
+
+### Checks
+
+```bash
+npm test                  # Jest unit tests (tests/unit/)
+npm run test:coverage     # with coverage thresholds from jest.config.js
+npm run lint              # ESLint, flat config in eslint.config.js
+npm run check:i18n        # all six i18n files carry the same keys and placeholders
+bash build.sh             # production build to dist/
+npm run test:browser      # Playwright + axe against dist/ (needs apache2, libapache2-mod-php)
+```
+
+### Add a tool
+
+Follow [NEUES-TOOL.md](techstack/NEUES-TOOL.md). In short: registry entry in `config/tools.php`, six PHP pages, one IIFE script, i18n keys in six JSON files, `php config/generate-manifest.php && php config/generate-sitemaps.php`, Jest test, browser test entry, rewrite rules in both `.htaccess` files.
 
 ---
 
-### 2. Development environment
-
-**Local server (PHP 8+):**
-```bash
-# Option 1: PHP built-in server
-cd /var/www/html/WebDev-Tools
-php -S localhost:8000 -t . dev/router.php
-
-# Option 2: XAMPP/MAMP
-# Copy project to htdocs/, start Apache
-```
-
-**Run tests:**
-```bash
-npm test                  # All tests
-npm run test:watch        # Watch mode
-npm run test:coverage     # With coverage report
-```
-
----
-
-### 3. Create new tool
-
-**Recommended order:**
-1. **[INTEGRATION.md](techstack/INTEGRATION.md)** read – Step-by-step checklist
-2. **[FRONTEND.md](techstack/FRONTEND.md)** consult – Utilities & patterns
-3. **[TESTING.md](techstack/TESTING.md)** – Write tests
-4. **[BUILD.md](techstack/BUILD.md)** – Production build
-
-**Typical workflow:**
-```bash
-# 1. Create feature branch
-git checkout -b feature/my-new-tool
-
-# 2. Create PHP files (6 languages)
-# - tool-name/index.php
-# - de/tool-name/index.php
-# - es/tool-name/index.php
-# - ... (see INTEGRATION.md)
-
-# 3. Create JavaScript module
-# - assets/js/tools/myToolNameTool.js
-
-# 4. Update tool registry
-# - config/tools.php
-
-# 5. Add i18n strings
-# - config/i18n/{en,de,es,pt,fr,it}.json
-
-# 6. Write tests
-# - tests/unit/myToolNameTool.test.js
-
-# 7. Run tests
-npm test
-
-# 8. Generate manifest & sitemaps
-php config/generate-manifest.php
-php config/generate-sitemaps.php
-
-# 9. Production build
-bash build.sh
-
-# 10. Commit & push
-git add .
-git commit -m "feat: add MyTool"
-git push origin feature/my-new-tool
-```
-
----
-
-## 🏗️ Project Architecture
+## Project Layout
 
 ```
 WebDev-Tools/
-├── tool-name/               # Tool pages (EN)
-│   └── index.php
-├── de/tool-name/            # German versions
-│   └── index.php
-├── es/tool-name/            # Spanish versions
-│   └── index.php
+├── tool-name/index.php          # Tool pages (EN)
+├── de/ es/ fr/ it/ pt/          # Language versions (localized slugs, own sitemap.xml and site.webmanifest)
 ├── assets/
-│   ├── js/
-│   │   ├── tools/           # Tool modules (IIFE)
-│   │   │   └── myToolTool.js
-│   │   └── lib/             # Shared utilities
-│   │       ├── clipboard-utils.js
-│   │       ├── download-utils.js
-│   │       ├── dragdrop-utils.js
-│   │       ├── validators.js
-│   │       └── formatters.js
-│   ├── css/                 # Stylesheets
-│   └── img/                 # Images
+│   ├── js/tools/*Tool.js        # One IIFE per tool, loaded on demand by js/tool-loader.js
+│   ├── js/lib/                  # clipboard-utils, download-utils, a11y-utils (globals); wordlist, performance-monitoring (import())
+│   ├── js/                      # helpers, i18n, tool-registry, tool-loader, sidebar/theme scripts
+│   ├── css/                     # style.css (minified by build.sh)
+│   ├── bootstrap/, bootstrap-icons/   # self-hosted
+│   └── img/, data/
 ├── config/
-│   ├── tools.php            # Tool registry
-│   ├── i18n/                # Translations (6 languages)
-│   │   ├── en.json
-│   │   ├── de.json
-│   │   └── ...
-│   ├── generate-manifest.php
-│   └── generate-sitemaps.php
-├── partials/
-│   └── tool-base.php        # Shared layout
-├── tests/
-│   ├── unit/                # Jest tests
-│   │   └── myToolTool.test.js
-│   └── setup.js             # Test setup (mocks)
-├── docs/                    # This documentation
-│   ├── README.md
-│   └── techstack/
-├── dist/                    # Production build (generated)
-├── .htaccess                # Development
-├── .htaccess.production     # Production
-├── build.sh                 # Build script
-├── package.json
-└── jest.config.js
+│   ├── config.php               # SUPPORTED_LANGS, BASE_PATH, $baseUrl, detectUserLanguage()
+│   ├── tools.php                # Tool registry
+│   ├── helpers.php              # getToolConfig(), getAllTools(), assetSrc(), loadI18n(), …
+│   ├── security-headers.php     # CSP and other headers
+│   ├── language-handler.php     # AJAX endpoint that sets the language cookie
+│   ├── manifest.json            # Generated registry dump for tool-loader.js
+│   ├── generate-manifest.php, generate-sitemaps.php
+│   └── i18n/{en,de,es,pt,fr,it}.json
+├── partials/                    # head, header-with-sidebar, tool-base, related-tools, footer, error-template, …
+├── build-tools/                 # bootstrap-custom.scss, check-deploy.sh, deploy-ftp.sh, verify-prod.js, check-i18n.js
+├── tests/unit/                  # Jest tests and setup.js
+├── tests/browser/               # pages.spec.js, tools.spec.js, accessibility.spec.js, fixtures.js, serve.sh
+├── dist/                        # Build output (generated, not in git)
+├── .htaccess                    # Development rewrites
+├── .htaccess.production         # Becomes dist/.htaccess
+├── build.sh, playwright.config.js, jest.config.js, eslint.config.js, package.json
+└── .github/workflows/           # ci.yml, codeql.yml, links.yml; dependabot.yml
 ```
 
 ---
 
-## 🔧 Common Tasks
+## Common Tasks
 
-### Switch tool category
+### Change a tool's category
 
-**File:** `config/tools.php`
-```php
-'myToolName' => [
-  'category' => 'converters',  // encoders|formatters|generators|converters|references
-  // ...
-]
-```
+`config/tools.php`, key `category`: one of `encoders`, `formatters`, `converters`, `generators`, `stringtools`, `references`, `utilities` (the list in `getNavigationStructure()` in `config/helpers.php`). Then `php config/generate-manifest.php`.
 
----
+### Add a shared utility
 
-### Add new utility
-
-**File:** `assets/js/lib/my-new-util.js`
-```javascript
-(function() {
-  'use strict';
-
-  window.MyNewUtil = {
-    doSomething: function(input) {
-      // Implementation
-      return result;
-    }
-  };
-})();
-```
-
-**Register in `config/tools.php`:**
-```php
-'jsLibraries' => ['my-new-util', 'clipboard-utils']
-```
-
----
+Create `assets/js/lib/my-util.js` as an IIFE that assigns `window.MyUtil = { … }`, add a `<script src="<?= assetSrc('js/lib/my-util.js') ?>">` line to `partials/common-scripts.php`, and a Jest test in `tests/unit/`. Coverage counts every file under `assets/js/` (`collectCoverageFrom` in `jest.config.js`).
 
 ### Update i18n strings
 
-**Edit all 6 files simultaneously:**
-- `config/i18n/en.json`
-- `config/i18n/de.json`
-- `config/i18n/es.json`
-- `config/i18n/pt.json`
-- `config/i18n/fr.json`
-- `config/i18n/it.json`
+Edit all six files under `config/i18n/`, then `npm run check:i18n`. Tool UI strings live under `tools.<toolId>.*` (snake_case, e.g. `input_title`, `encode_btn`), SEO meta under `seo.<toolId>.{meta_title,meta_description,keywords,featureList,applicationCategory}`. In JS: `window.i18n.t('tools.myTool.input_title', { count: 3 })`; placeholders may be written `{{count}}` or `{count}`.
 
-**Usage in JS:**
-```javascript
-function t(key, params) {
-  return window.i18n.t(key, params);
-}
+### Change a URL slug (with redirect)
 
-const label = t('tools.myTool.inputLabel');
-```
+1. `config/tools.php` → `slugs[lang]`, rename the directory to match
+2. Add a 301 rule to **both** `.htaccess` and `.htaccess.production`:
+   ```apache
+   RewriteRule ^de/alter-slug/?$ /de/neuer-slug/ [R=301,L]
+   ```
+3. `php config/generate-manifest.php && php config/generate-sitemaps.php`
+4. Update the entries in `tests/browser/tools.spec.js` and the redirect checks in `tests/browser/pages.spec.js` if they name the slug
 
----
+### Add a language
 
-### Change URL slug (with redirect)
-
-**1. Update `config/tools.php`:**
-```php
-'slugs' => [
-  'en' => 'new-tool-name',
-  'de' => 'neuer-werkzeug-name',
-  // ...
-]
-```
-
-**2. `.htaccess` AND `.htaccess.production`:**
-```apache
-# 301 redirect old → new
-RewriteRule ^old-tool-name/?$ /new-tool-name/ [R=301,L]
-RewriteRule ^de/alter-werkzeug-name/?$ /de/neuer-werkzeug-name/ [R=301,L]
-```
-
-**3. Regenerate sitemap:**
-```bash
-php config/generate-sitemaps.php
-```
+The language list is duplicated in four places; change all of them: `SUPPORTED_LANGS` and `$supportedLanguages` in `config/config.php`, `$allowedLanguages` in `config/language-handler.php`, `supportedLanguages` in `assets/js/i18n.js`. Also `LANGS` in `build-tools/check-i18n.js` and `build-tools/verify-prod.js`, the `lang_dir` loop in `build.sh`, a new `config/i18n/xx.json`, a tool directory per tool under `xx/`, `slugs.xx` for every tool, and `xx/sitemap.xml` / `xx/site.webmanifest`.
 
 ---
 
-## 📊 Code Quality
-
-### Code Standards
+## Code Standards
 
 | Aspect | Standard |
 |--------|----------|
-| **PHP** | PSR-12, strict_types, XSS protection |
-| **JavaScript** | IIFE pattern, 'use strict', no `var` |
-| **CSS** | Bootstrap 5.3, custom Sass |
-| **Tests** | Jest, 80% coverage target |
+| **PHP** | `declare(strict_types=1)` first, `htmlspecialchars()` for every output of user input, PHP 8 |
+| **JavaScript** | IIFE, `'use strict'`, no `var`, `textContent` for user input, no `eval`/`execCommand`; enforced by ESLint (`eslint.config.js`: recommended rules, `no-var`, `prefer-const`) |
+| **CSS** | Bootstrap utility classes first, custom rules in `assets/css/style.css` |
+| **Accessibility** | WCAG 2.2 AA checked by axe in `tests/browser/accessibility.spec.js`; new form fields need `<label for>` or `aria-label` |
+| **Tests** | Jest for every tool and shared lib, coverage floors in `jest.config.js`; one browser normal case per tool |
 
 ---
 
-### Linting (planned)
+## Release Checklist
 
-**ESLint config (future):**
-```json
-{
-  "extends": "eslint:recommended",
-  "env": {
-    "browser": true,
-    "es2020": true
-  },
-  "rules": {
-    "no-var": "error",
-    "prefer-const": "warn",
-    "no-eval": "error"
-  }
-}
-```
+- [ ] `npm run lint && npm test && npm run check:i18n` green
+- [ ] `bash build.sh && npm run test:browser` green
+- [ ] `npm audit` shows no critical/high findings
+- [ ] Sitemaps regenerated when tools changed (CI fails otherwise)
+- [ ] `CHANGELOG.md` updated
+- [ ] Deploy from the `main` checkout: `npm run deploy:dry`, then `npm run deploy`; `npm run verify:prod` runs automatically afterwards
 
 ---
 
-## 🔒 Security Checklist
+## Contributing
 
-Before each release check:
-
-- [ ] `npm audit` – No critical/high vulnerabilities
-- [ ] CSP header correct (no `'unsafe-eval'`)
-- [ ] All user inputs validated & escaped
-- [ ] HTTPS enforced (HSTS)
-- [ ] No sensitive data in logs/console
-- [ ] Tests green (including XSS tests)
-
-**See:** [SECURITY.md](techstack/SECURITY.md) for details
+1. Branch from `main`: `git checkout -b feature/my-feature`
+2. Implement with tests
+3. Run the checks above
+4. Conventional commits: `feat:`, `fix:`, `docs:`, `test:`, `chore:`, `refactor:`
+5. Open a pull request; CI (`.github/workflows/ci.yml`) runs Jest on Node 22 and 24 with lint and coverage, the i18n check, `php -l` over every PHP file, the sitemap diff, the production build and the browser tests
 
 ---
 
-## 📈 Performance Metrics
-
-### Current Targets (April 2026)
-
-| Metric | Target | Current |
-|--------|--------|---------|
-| **Lighthouse Score** | > 90 | 94 |
-| **First Contentful Paint** | < 1.5s | 1.2s |
-| **Time to Interactive** | < 3s | 2.8s |
-| **Bundle Size (JS)** | < 100 KB | 85 KB |
-| **Bundle Size (CSS)** | < 50 KB | 42 KB |
-
-**Tools:**
-- Lighthouse (Chrome DevTools)
-- WebPageTest.org
-- GTmetrix
-
----
-
-## 🤝 Contributing
-
-### Pull Request Workflow
-
-1. **Fork & Branch:** `git checkout -b feature/my-feature`
-2. **Code:** Implementation + tests
-3. **Tests:** `npm test` (all green)
-4. **Commit:** Conventional commits (`feat:`, `fix:`, `docs:`)
-5. **Push:** `git push origin feature/my-feature`
-6. **PR:** Create on GitHub, fill template
-7. **Review:** Implement feedback
-8. **Merge:** After approval by maintainer
-
----
-
-### Commit Message Format
-
-```
-<type>(<scope>): <subject>
-
-<body>
-
-<footer>
-```
-
-**Types:**
-- `feat`: New feature
-- `fix`: Bug fix
-- `docs`: Documentation change
-- `style`: Code formatting (no logic change)
-- `refactor`: Code refactoring
-- `test`: Add/change tests
-- `chore`: Build process, dependencies
-
-**Examples:**
-```
-feat(uuid-generator): add UUID v7 support
-
-Implements RFC 9562 UUID version 7 with timestamp-based ordering.
-Adds new option in UI and updates tests.
-
-Closes #123
-```
-
-```
-fix(json-formatter): handle very large inputs
-
-Adds performance guard for inputs > 10 MB to prevent browser freezing.
-
-Fixes #456
-```
-
----
-
-## 🌍 Internationalization (i18n)
-
-### Supported Languages
-
-1. **English (EN)** – Default, reference language
-2. **German (DE)** – Complete
-3. **Spanish (ES)** – Complete
-4. **Portuguese (PT)** – Complete
-5. **French (FR)** – Complete
-6. **Italian (IT)** – Complete
-
-### Add New Language
-
-**1. Create JSON file:**
-```bash
-cp config/i18n/en.json config/i18n/nl.json
-# Translate...
-```
-
-**2. Extend language handler:**
-```php
-// config/language-handler.php
-$supportedLangs = ['en', 'de', 'es', 'pt', 'fr', 'it', 'nl'];
-```
-
-**3. Create tool directories:**
-```bash
-mkdir nl/
-# For each tool:
-mkdir nl/tool-name/
-cp tool-name/index.php nl/tool-name/index.php
-# Translate...
-```
-
-**4. Update `config/tools.php`:**
-```php
-'slugs' => [
-  'en' => 'tool-name',
-  'de' => 'werkzeug-name',
-  'nl' => 'gereedschap-naam',  // New
-  // ...
-]
-```
-
----
-
-## 📞 Support & Contact
-
-### Questions?
-
-1. **Search documentation** (these docs)
-2. **Read CLAUDE.md** – Project overview
-3. **GitHub Issues** – Bug reports, feature requests
-4. **GitHub Discussions** – General questions
-
-### Links
+## Links
 
 - **Website:** https://webdev-tools.info
 - **Repository:** https://github.com/RamonKaes/WebDev-Tools
 - **Issues:** https://github.com/RamonKaes/WebDev-Tools/issues
 - **Changelog:** [CHANGELOG.md](../CHANGELOG.md)
-
----
-
-## 📝 License
-
-**MIT License** – See [LICENSE](../LICENSE) for details.
-
----
-
-**Last updated:** August 2026 | **Version:** 2.2.0
+- **License:** MIT, see [LICENSE](../LICENSE)

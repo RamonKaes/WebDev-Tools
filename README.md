@@ -70,9 +70,9 @@
   - [Challenges & Solutions](#challenges--solutions)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
+  - [Local setup](#local-setup)
   - [Configuration](#configuration)
-  - [Development Setup](#development-setup)
+  - [Development commands](#development-commands)
 - [Browser Compatibility](#browser-compatibility)
 - [Technical Audit](#technical-audit)
 - [Contributing](#contributing)
@@ -154,12 +154,14 @@ Available in **6 languages** with culturally-aware translations:
 
 | Language | Code | Status |
 |----------|------|--------|
-| 🇬🇧 English | `en` | ✅ Complete (1008 strings) |
-| 🇩🇪 German | `de` | ✅ Complete (1008 strings) |
-| 🇪🇸 Spanish | `es` | ✅ Complete (1008 strings) |
-| 🇵🇹 Portuguese | `pt` | ✅ Complete (1008 strings) |
-| 🇫🇷 French | `fr` | ✅ Complete (1008 strings) |
-| 🇮🇹 Italian | `it` | ✅ Complete (1008 strings) |
+| 🇬🇧 English | `en` | ✅ Complete (reference) |
+| 🇩🇪 German | `de` | ✅ Complete |
+| 🇪🇸 Spanish | `es` | ✅ Complete |
+| 🇵🇹 Portuguese | `pt` | ✅ Complete |
+| 🇫🇷 French | `fr` | ✅ Complete |
+| 🇮🇹 Italian | `it` | ✅ Complete |
+
+Key parity between the six files is enforced by `npm run check:i18n`.
 
 **Dynamic switching** — no page reload required
 
@@ -244,8 +246,8 @@ Security-critical tools utilize the **Web Crypto API** (`crypto.getRandomValues(
 
 3. **Subresource Integrity (SRI)**
    - Both CDN-hosted scripts carry SHA-384 integrity hashes
-   - DOMPurify 3.0.9 and qrcode-generator 1.4.4
-   - Everything else is served from the site's own origin
+   - qrcode-generator 1.4.4 (QR code tool) and terser 5.31.0 (code formatter, loaded on first use)
+   - Everything else, including Bootstrap and Bootstrap Icons, is served from the site's own origin
 
 </td>
 </tr>
@@ -295,16 +297,15 @@ Security-critical tools utilize the **Web Crypto API** (`crypto.getRandomValues(
 
 | Security Feature | Status | Implementation |
 |------------------|--------|----------------|
-| ✅ **Subresource Integrity (SRI)** | Enabled | All external libraries verified with SHA-384 hashes |
-| ✅ **Content Security Policy (CSP)** | Strict | Nonce-based script execution, no inline code |
-| ✅ **Security Headers** | Complete | HSTS, X-Frame-Options, CSP, Referrer-Policy, Permissions-Policy |
-| ✅ **Zero External Dependencies** | Verified | Data processing uses only native browser APIs |
+| ✅ **Subresource Integrity (SRI)** | Enabled | Both external scripts verified with SHA-384 hashes |
+| ✅ **Content Security Policy (CSP)** | Strict | Nonce-based script execution, no inline or eval allowances |
+| ✅ **Security Headers** | Complete | HSTS, X-Frame-Options, CSP, Referrer-Policy, Permissions-Policy, nosniff |
+| ✅ **Minimal External Dependencies** | Verified | Data processing uses native browser APIs; only the QR code library and terser come from a CDN |
 | ✅ **No Tracking** | Guaranteed | No cookies (except language), no analytics on tool usage |
-| ✅ **HTTPS Enforcement** | Production | HSTS with 1-year max-age and includeSubDomains |
-| ✅ **XSS Protection** | DOMPurify 3.0.9 | Sanitizes all user-generated content |
-| ✅ **OWASP Top 10** | 100% Compliant | All critical vulnerabilities mitigated |
+| ✅ **HTTPS Enforcement** | Production | Redirect in `.htaccess.production`, HSTS with 1-year max-age, includeSubDomains, preload |
+| ✅ **XSS Protection** | Code rules | `textContent` for user input in JS, `htmlspecialchars()` in PHP, CSP as backstop; browser tests fail on CSP violations |
 
-**Security Score:** A+ ([See Security Headers Report](https://securityheaders.com/?q=webdev-tools.info&followRedirects=on))
+**Check the live headers:** [securityheaders.com report](https://securityheaders.com/?q=webdev-tools.info&followRedirects=on)
 
 ---
 
@@ -599,7 +600,7 @@ Security-critical tools utilize the **Web Crypto API** (`crypto.getRandomValues(
 <div align="center">
 
 **🔍 Need something else?**  
-[Request a new tool](https://github.com/RamonKaes/WebDev-Tools/issues/new?template=feature_request.md) • [View Roadmap](#roadmap)
+[Request a new tool](https://github.com/RamonKaes/WebDev-Tools/issues/new) • [View Roadmap](#roadmap)
 
 </div>
 
@@ -701,63 +702,70 @@ The platform provides complete localization across all tools and documentation:
 
 ```
 Frontend:
-├── Bootstrap 5.3.3         # UI framework (chosen for stability over Tailwind)
-├── Bootstrap Icons 1.11.3  # Icon system
-├── Vanilla JavaScript      # No framework dependencies
-└── Web Crypto API          # Secure random number generation
+├── Bootstrap 5.3           # Custom Sass build (build-tools/bootstrap-custom.scss) with only the components in use
+├── Bootstrap Icons 1.11.3  # Self-hosted icon font
+├── Vanilla JavaScript      # Classic <script> IIFEs, no framework, no bundler
+└── Web Crypto API          # Secure random numbers and hashing
 
 Backend:
-├── PHP 8.0+                # Server-side routing and templating
-├── Apache 2.4+             # Web server with mod_rewrite
+├── PHP 8 (strict_types)    # Routing, templating, security headers
+├── Apache 2.4+             # mod_rewrite, .htaccess
 └── Client-side processing  # No backend data processing
 
-Architecture:
-├── Responsive Design       # Mobile-first approach
-├── Progressive Enhancement # Works without JavaScript (where applicable)
-├── Modular Components      # Centralized tool template (partials/tool-base.php)
-└── SEO Optimized          # Dynamic sitemaps, meta tags
+Tooling (development only):
+├── Jest 30 + jsdom         # Unit tests (tests/unit/)
+├── Playwright + axe-core   # Browser and WCAG 2.2 AA tests against the build (tests/browser/)
+├── ESLint                  # eslint.config.js
+├── build.sh                # Copies to dist/, minifies CSS with csso, compiles Bootstrap with sass
+└── lftp                    # FTP(S) deploy (build-tools/deploy-ftp.sh)
 ```
 
 ### Project Structure
 
 ```
-/var/www/html/WebDev-Tools/
-├── index.php                    # Homepage
+WebDev-Tools/
+├── index.php, about.php, 403/404/500.php
 ├── config/
+│   ├── config.php               # SUPPORTED_LANGS, BASE_PATH, $baseUrl, language detection
 │   ├── tools.php                # Tool registry
-│   ├── language-handler.php     # i18n routing
-│   ├── security-headers.php     # CSP and security policies
-│   └── i18n/                    # Translation files
+│   ├── helpers.php              # getToolConfig(), getAllTools(), assetSrc(), loadI18n(), …
+│   ├── security-headers.php     # CSP and security headers
+│   ├── language-handler.php     # Sets the language cookie (AJAX)
+│   ├── manifest.json            # Generated registry dump read by assets/js/tool-loader.js
+│   └── i18n/                    # en/de/es/pt/fr/it.json
 ├── partials/
-│   ├── tool-base.php            # Centralized tool template
-│   ├── header.php               # Global header
-│   └── footer.php               # Global footer
+│   ├── tool-base.php            # Shared tool layout
+│   ├── head.php, header-with-sidebar.php, footer.php, related-tools.php, error-template.php
+│   └── common-scripts.php       # Shared JS (tool-registry, clipboard/download/a11y utils, tool-loader)
 ├── assets/
-│   ├── css/                     # Stylesheets
-│   ├── js/                      # JavaScript utilities
-│   └── img/                     # Static assets
-├── [tool-name]/
-│   └── index.php                # Individual tool (20 tools)
-├── de/, es/, pt/, fr/, it/      # Language-specific directories
-├── CHANGELOG.md                 # Version history
-├── SECURITY.md                  # Security documentation
-└── README.md                    # This file
+│   ├── js/tools/*Tool.js        # One IIFE per tool
+│   ├── js/lib/                  # Shared utilities
+│   ├── css/, img/, data/
+│   └── bootstrap/, bootstrap-icons/
+├── [tool-name]/index.php        # Tool pages (20 tools)
+├── de/, es/, pt/, fr/, it/      # Language versions with localized slugs, own sitemap and web manifest
+├── build-tools/                 # Sass entry, deploy and verification scripts, i18n check
+├── tests/unit/, tests/browser/
+├── build.sh, .htaccess, .htaccess.production
+└── CHANGELOG.md, SECURITY.md, README.md, docs/
 ```
 
 ### Content Security Policy (CSP)
 
-Strict CSP enforced to prevent XSS attacks:
+Set per request in `config/security-headers.php`:
 
 ```
 default-src 'self';
 script-src 'self' 'nonce-{random}' https://cdn.jsdelivr.net;
-style-src 'self' https://cdn.jsdelivr.net;
+style-src 'self';
+font-src 'self';
 img-src 'self' data: blob: https:;
-font-src 'self' https://cdn.jsdelivr.net;
 connect-src 'self' https:;
+object-src 'none'; media-src 'none'; worker-src 'self'; manifest-src 'self';
+frame-ancestors 'none'; base-uri 'self'; form-action 'self'
 ```
 
-**No inline scripts** — All JavaScript uses nonce-based execution.
+Self-hosted scripts match `'self'`; the few inline scripts in the partials carry the per-request nonce; `cdn.jsdelivr.net` is allowed only for the two SRI-pinned libraries; `connect-src https:` exists for the SRI generator, which fetches arbitrary URLs.
 
 ---
 
@@ -793,56 +801,52 @@ WebDev-Tools was developed using a **hybrid human-AI approach** that combines th
 
 ---
 
-### Developer Artifacts
-
-Developer utilities and helper scripts are located under `/dev` and `/maintenance`. These are intended solely for developers and do not affect production assets.
-
-
 ## Getting Started
 
 ### Prerequisites
 
-- **Web Server (production)**: Apache/Nginx with PHP support — the live site (https://webdev-tools.info/) runs entirely as a PHP/Apache site and **does not require Node.js or npm**. All production assets are static/PHP and safe for hosting environments without Node.
-- **Local development (optional)**: Node.js/npm are useful convenience tools for developers (local servers, scripts) but are **not required** for the site to run in production. Use the PHP CLI or `maintenance/start-server.sh`
+- **Production**: Apache 2.4 with `mod_rewrite` and PHP 8. The live site runs as a plain PHP/Apache site and **does not need Node.js**; everything under `dist/` is static or PHP.
+- **Development**: Node.js >= 22 and npm for tests, lint and the build (`npm install`). The browser tests additionally need `apache2`, `libapache2-mod-php` and a local Chrome.
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/RamonKaes/WebDev-Tools.git
-   cd WebDev-Tools
-   ```
+### Local setup
 
-2. **Configure Apache**:
-   Ensure `.htaccess` is enabled and `mod_rewrite` is active:
-   ```apache
-   <Directory /var/www/html/WebDev-Tools>
-       AllowOverride All
-       Require all granted
-   </Directory>
-   ```
+`config/config.php` sets `BASE_PATH` to `/WebDev-Tools` whenever the host is `localhost` or `127.0.0.1`, so the checkout has to be served at `http://localhost/WebDev-Tools/`:
 
-3. **Set permissions**:
-   ```bash
-   chmod -R 755 /var/www/html/WebDev-Tools
-   ```
+```bash
+cd /var/www/html                 # Apache document root
+git clone https://github.com/RamonKaes/WebDev-Tools.git
+cd WebDev-Tools && npm install
+```
 
-4. **Access the platform**:
-   Navigate to `http://localhost/` or your configured domain.
+```apache
+<Directory /var/www/html/WebDev-Tools>
+    AllowOverride All             # the development .htaccess holds the rewrite rules
+    Require all granted
+</Directory>
+```
+
+Then open `http://localhost/WebDev-Tools/`. On any other host name the site assumes the domain root (`BASE_PATH` empty), which is what `dist/` is built for.
 
 ### Configuration
 
-- **Base URL**: Set in `config/config.php` (if exists)
-- **Languages**: Modify `config/language-handler.php` to add/remove languages
-- **Tools**: Register new tools in `config/tools.php`
+- **Base URL and languages**: `config/config.php` (`$baseUrl`, `SUPPORTED_LANGS`, `$supportedLanguages`); the language list is repeated in `config/language-handler.php` and `assets/js/i18n.js`
+- **Tools**: `config/tools.php`, then `php config/generate-manifest.php && php config/generate-sitemaps.php`
+- **Adding a tool**: step-by-step guide in [docs/techstack/NEUES-TOOL.md](docs/techstack/NEUES-TOOL.md)
 
-### Development Setup
+### Development commands
 
 ```bash
-# Start local development server (PHP built-in)
-php -S localhost:8000
-
-# Or use the helper script
-./maintenance/start-server.sh
+npm test                  # Jest unit tests
+npm run test:coverage     # with coverage thresholds
+npm run lint              # ESLint
+npm run check:i18n        # key parity of the six translation files
+bash build.sh             # production build to dist/ (CSS minified, custom Bootstrap compiled)
+npm run test:browser      # Playwright + axe against dist/ behind a local Apache
+npm run deploy:dry        # what an upload would change; npm run deploy uploads from a clean main checkout
+npm run verify:prod       # read-only check of the live site against dist/
 ```
+
+Developer helper scripts live under `dev/` and `maintenance/`; they are not deployed.
 
 ---
 
@@ -867,19 +871,15 @@ php -S localhost:8000
 
 ## Technical Audit
 
-WebDev-Tools has undergone comprehensive third-party technical auditing:
+What is checked automatically on every push and pull request (`.github/workflows/ci.yml`):
 
-### Audit Highlights
+- Jest unit tests on Node 22 and 24 with coverage thresholds, plus ESLint
+- Key parity of the six translation files
+- `php -l` over every PHP file and up-to-date sitemaps
+- The production build, and Playwright browser tests with axe-core (WCAG 2.2 AA) against it
+- CodeQL analysis and an external link check run weekly
 
-✅ **Functional Integrity**: All 20 tools generate RFC/ISO-compliant output  
-✅ **Security Architecture**: Client-side-only execution verified  
-✅ **Cryptographic Security**: CSPRNG usage confirmed for sensitive operations  
-✅ **Standards Adherence**: Explicit referencing of normative specifications  
-✅ **Development Quality**: Modern QA processes with version control and code review  
-
-**Classification**: **Industry-Standard Compliant / Safe for Professional Use**
-
-For detailed audit findings, see the [Technical Documentation](docs/README.md).
+Normal cases in `tests/browser/tools.spec.js` use expected values from outside the tools (the known SHA-256 digest of `hello`, a public example JWT, known Base64 and Punycode encodings). See the [Technical Documentation](docs/README.md).
 
 ---
 
@@ -942,12 +942,11 @@ As the sole maintainer of this repository, you can keep changes lightweight whil
 
 Detailed technical documentation is available in the [`/docs`](docs/) directory:
 
-- **[Tech Stack Overview](docs/techstack/OVERVIEW.md)** — Architecture, stack components, project lifecycle
-- **[Frontend](docs/techstack/FRONTEND.md)** — JavaScript conventions, IIFE pattern, utilities
-- **[Backend](docs/techstack/BACKEND.md)** — PHP tool registry, i18n, routing
-- **[Security](docs/techstack/SECURITY.md)** — CSP, XSS prevention, cryptographic security
-- **[Testing](docs/techstack/TESTING.md)** — Jest setup, test patterns, mocking strategy
-- **[Build](docs/techstack/BUILD.md)** — Build script, minification, deployment
+- **[Tech Stack Overview](docs/techstack/OVERVIEW.md)** — Architecture, stack components, commands, build and deploy
+- **[Adding a Tool](docs/techstack/NEUES-TOOL.md)** — Registry, PHP page, JS pattern, i18n, tests, rewrites (German)
+- **[Backend](docs/techstack/BACKEND.md)** — PHP standards, tool registry, i18n, helpers, security headers
+- **[Testing](docs/techstack/TESTING.md)** — Jest, Playwright and axe browser tests, lint, CI
+- **[Security](docs/techstack/SECURITY.md)** — CSP, headers, XSS prevention, sensitive data (German)
 
 ### 🔧 Configuration
 

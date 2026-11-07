@@ -302,21 +302,6 @@
       }
 
       /**
-       * Decode Base64 string to UTF-8 text
-       *
-       * @param {string} str - Base64 string to decode
-       * @returns {string} - Decoded string
-       * @throws {Error} - If the input is not valid Base64 or not valid UTF-8
-       */
-      function decodeBase64(str) {
-        const text = bytesToUtf8(decodeBase64ToBytes(str));
-        if (text === null) {
-          throw new Error(t('tools.base64EncoderDecoder.decode_error'));
-        }
-        return text;
-      }
-
-      /**
        * Guess an image MIME type from the magic bytes of decoded data
        *
        * @param {Uint8Array} bytes - Decoded bytes

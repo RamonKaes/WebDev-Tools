@@ -546,7 +546,6 @@
      */
     setupHashListeners: function(container) {
       const mode = container.querySelector('input[name="hashMode"]:checked').value;
-      const hashResults = container.querySelector('#hashResults');
 
       if (mode === 'text') {
         const textInput = container.querySelector('#textInput');

@@ -492,8 +492,4 @@
       updateStats();
     }
   });
-
-  if (typeof window.logger !== 'undefined') {
-    window.logger.info('HTML Entity Encoder/Decoder Tool loaded');
-  }
 })();

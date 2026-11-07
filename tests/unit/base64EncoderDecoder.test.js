@@ -147,7 +147,6 @@ describe('Base64EncoderDecoder – Decoding', () => {
 
   test('decodes URL-safe Base64 (no padding) correctly', () => {
     // "SGVsbG8" (URL-safe, no "=") = "Hello"
-    const urlSafeCheck = c.querySelector('#urlSafe');
     // In decode mode there is no #urlSafe, but #detectFormat is available;
     // The decode path for short strings goes through decodeBase64() directly.
     process(c, 'SGVsbG8=');

@@ -419,9 +419,7 @@ describe('SriGeneratorTool – Resource Type Auto-Detection', () => {
     clickGenerateBtn(c);
     await new Promise(r => setTimeout(r, 30));
 
-    const typeSelect = c.querySelector('#sri-resource-type');
     // The default select value before override is auto-detected; check result has <link>
-    const pre = c.querySelector('#sri-results pre');
     // No HTML tag shown for URL mode with auto type; just check no crash
     expect(c.querySelector('#sri-results .card')).not.toBeNull();
 

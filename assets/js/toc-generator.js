@@ -28,9 +28,9 @@
     const headings = document.querySelectorAll('#main-content h2:not(#tool-container h2):not(#tool-header h2), #main-content .h5:not(#tool-container .h5):not(#tool-header .h5), #main-content h5:not(#tool-container h5):not(#tool-header h5)');
     const usedIds = new Set();
 
-    headings.forEach((heading, index) => {
+    headings.forEach((heading, _index) => {
       if (!heading.id) {
-        let baseId = heading.textContent
+        const baseId = heading.textContent
           .trim()
           .toLowerCase()
           .replace(/[^a-z0-9]+/g, '-')
@@ -98,7 +98,7 @@
       return;
     }
 
-    headings.forEach((heading, index) => {
+    headings.forEach((heading, _index) => {
       const link = document.createElement('a');
       link.className = 'nav-link py-1';
       link.href = `#${heading.id}`;

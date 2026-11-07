@@ -208,9 +208,6 @@
       const generateBtn = document.getElementById('generateBtn');
       const copyBtn = document.getElementById('copyBtn');
       const clearBtn = document.getElementById('clearBtn');
-      const paragraphCount = document.getElementById('paragraphCount');
-      const sentenceCount = document.getElementById('sentenceCount');
-      const wordCountInput = document.getElementById('wordCount');
       const loremOutput = document.getElementById('loremOutput');
       const charCount = document.getElementById('charCount');
       const wordCountDisplay = document.getElementById('wordCountDisplay');

@@ -77,36 +77,36 @@ class I18n {
   const pathLangMatch = relativePath.match(/^\/(de|es|pt|fr|it)\//);
   if (pathLangMatch) {
     const detectedLang = pathLangMatch[1];
-    console.log('[i18n] Language detected from path:', detectedLang);
+    console.debug('[i18n] Language detected from path:', detectedLang);
     return detectedLang;
   }
 
   const urlParams = new URLSearchParams(window.location.search);
   const urlLang = urlParams.get('lang');
   if (urlLang && this.supportedLanguages.includes(urlLang)) {
-    console.log('[i18n] Language detected from URL param:', urlLang);
+    console.debug('[i18n] Language detected from URL param:', urlLang);
     return urlLang;
   }
 
   const cookieLang = this.getCookie('webdev-tools-lang');
   if (cookieLang && this.supportedLanguages.includes(cookieLang)) {
-    console.log('[i18n] Language detected from cookie:', cookieLang);
+    console.debug('[i18n] Language detected from cookie:', cookieLang);
     return cookieLang;
   }
 
   const savedLang = localStorage.getItem('webdev-tools-lang');
   if (savedLang && this.supportedLanguages.includes(savedLang)) {
-    console.log('[i18n] Language detected from localStorage:', savedLang);
+    console.debug('[i18n] Language detected from localStorage:', savedLang);
     return savedLang;
   }
 
   const browserLang = navigator.language.split('-')[0];
   if (this.supportedLanguages.includes(browserLang)) {
-    console.log('[i18n] Language detected from browser:', browserLang);
+    console.debug('[i18n] Language detected from browser:', browserLang);
     return browserLang;
   }
 
-  console.log('[i18n] Using fallback language:', this.fallbackLang);
+  console.debug('[i18n] Using fallback language:', this.fallbackLang);
   return this.fallbackLang;
   }
 
@@ -402,10 +402,10 @@ class I18n {
       const lang = langLink.getAttribute('data-lang');
       const targetUrl = langLink.getAttribute('href');
 
-      console.log(`[i18n] Language change requested: ${lang}`);
+      console.debug(`[i18n] Language change requested: ${lang}`);
 
       if (lang === this.currentLang) {
-        console.log('[i18n] Already using language:', lang);
+        console.debug('[i18n] Already using language:', lang);
         return;
       }
 
@@ -441,7 +441,7 @@ class I18n {
 
   document.addEventListener('click', this._languageClickHandler);
 
-  console.log('[i18n] Language switcher event handler registered');
+  console.debug('[i18n] Language switcher event handler registered');
   }
 
   /**
@@ -457,7 +457,7 @@ class I18n {
     const currentSearch = window.location.search;
     const basePath = window.__BASE_PATH__ || '';
 
-    let newPath = currentPath;
+    let newPath;
     // Escape every RegExp metacharacter so the base path is matched literally
     const basePathPattern = basePath.replace(/[.*+?^${}()|[\]\\/]/g, '\\$&');
 
@@ -498,10 +498,10 @@ class I18n {
   updateURL(lang) {
     const target = this.buildLanguageURL(lang);
     if (target) {
-      console.log('[i18n] Navigating to:', target);
+      console.debug('[i18n] Navigating to:', target);
       window.location.assign(target);
     } else {
-      console.log('[i18n] Already on correct language path');
+      console.debug('[i18n] Already on correct language path');
     }
   }
 

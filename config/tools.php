@@ -17,7 +17,6 @@ return [
     'category' => 'encoders',
     'icon' => 'bi-file-binary',
     'jsModule' => 'tools/base64EncoderDecoderTool.js',
-    'jsLibraries' => ['clipboard-utils', 'download-utils', 'dragdrop-utils', 'validators'],
     'features' => ['drag-drop', 'file-upload', 'live-mode'],
     'seoTemplate' => 'default',
     'hasFeaturesSection' => true
@@ -37,7 +36,6 @@ return [
     'category' => 'encoders',
     'icon' => 'bi-link-45deg',
     'jsModule' => 'tools/urlEncoderDecoderTool.js',
-    'jsLibraries' => ['clipboard-utils', 'download-utils', 'validators'],
     'features' => ['bulk-processing', 'url-parsing'],
     'seoTemplate' => 'default',
     'hasFeaturesSection' => true
@@ -57,7 +55,6 @@ return [
     'category' => 'encoders',
     'icon' => 'bi-code-square',
     'jsModule' => 'tools/htmlEntityTool.js',
-    'jsLibraries' => ['clipboard-utils', 'download-utils'],
     'features' => ['named-entities', 'numeric-entities', 'bidirectional'],
     'seoTemplate' => 'default',
     'hasFeaturesSection' => true
@@ -77,7 +74,6 @@ return [
     'category' => 'formatters',
     'icon' => 'bi-filetype-json',
     'jsModule' => 'tools/jsonFormatterValidatorTool.js',
-    'jsLibraries' => ['clipboard-utils', 'download-utils', 'dragdrop-utils', 'formatters', 'validators'],
     'features' => ['syntax-highlighting', 'tree-view', 'minification', 'validation'],
     'seoTemplate' => 'default',
     'hasFeaturesSection' => true
@@ -97,7 +93,6 @@ return [
     'category' => 'formatters',
     'icon' => 'bi-code-square',
     'jsModule' => 'tools/codeFormatterTool.js',
-    'jsLibraries' => ['clipboard-utils', 'download-utils'],
     'features' => [],
     'seoTemplate' => 'default',
     'hasFeaturesSection' => true
@@ -117,7 +112,6 @@ return [
     'category' => 'converters',
     'icon' => 'bi-arrows-angle-expand',
     'jsModule' => 'tools/pxToRemConverterTool.js',
-    'jsLibraries' => ['clipboard-utils'],
     'features' => ['live-calculation', 'conversion-tables', 'tailwind-support'],
     'seoTemplate' => 'default',
     'hasFeaturesSection' => true
@@ -137,7 +131,6 @@ return [
     'category' => 'converters',
     'icon' => 'bi-arrow-left-right',
     'jsModule' => 'tools/dataConverterTool.js',
-    'jsLibraries' => ['clipboard-utils', 'download-utils', 'validators', 'formatters'],
     'features' => ['bidirectional-conversion', 'multiple-formats', 'timestamp-conversion'],
     'seoTemplate' => 'default',
     'hasFeaturesSection' => true
@@ -157,7 +150,6 @@ return [
     'category' => 'encoders',
     'icon' => 'bi-shield-lock',
     'jsModule' => 'tools/jwtDecoderTool.js',
-    'jsLibraries' => [],
     'features' => ['decode-jwt', 'verify-expiry', 'algorithm-detection'],
     'seoTemplate' => 'default',
     'hasFeaturesSection' => true
@@ -177,7 +169,6 @@ return [
     'category' => 'encoders',
     'icon' => 'bi-globe',
     'jsModule' => 'tools/punycodeConverterTool.js',
-    'jsLibraries' => ['clipboard-utils', 'download-utils'],
     'features' => ['idn-support', 'bidirectional', 'auto-detect'],
     'seoTemplate' => 'default',
     'hasFeaturesSection' => true
@@ -197,7 +188,6 @@ return [
     'category' => 'generators',
     'icon' => 'bi-fingerprint',
     'jsModule' => 'tools/uuidGeneratorTool.js',
-    'jsLibraries' => ['clipboard-utils', 'download-utils', 'validators'],
     'features' => ['bulk-generation', 'uuid-v4', 'rfc-4122'],
     'seoTemplate' => 'default',
     'hasFeaturesSection' => true
@@ -217,7 +207,6 @@ return [
     'category' => 'generators',
     'icon' => 'bi-shield-lock',
     'jsModule' => 'tools/passwordGeneratorTool.js',
-    'jsLibraries' => ['clipboard-utils', 'download-utils', 'wordlist'],
     'features' => ['random-password', 'passphrase', 'pattern-based', 'strength-meter'],
     'seoTemplate' => 'default',
     'hasFeaturesSection' => true
@@ -237,7 +226,6 @@ return [
     'category' => 'generators',
     'icon' => 'bi-hash',
     'jsModule' => 'tools/hashGeneratorTool.js',
-    'jsLibraries' => ['clipboard-utils', 'download-utils'],
     'features' => ['multiple-algorithms', 'file-hashing'],
     'seoTemplate' => 'default',
     'hasFeaturesSection' => true
@@ -257,7 +245,6 @@ return [
     'category' => 'generators',
     'icon' => 'bi-file-text',
     'jsModule' => 'tools/loremIpsumTool.js',
-    'jsLibraries' => ['clipboard-utils', 'download-utils'],
     'features' => ['paragraphs', 'words', 'sentences'],
     'seoTemplate' => 'default',
     'hasFeaturesSection' => true
@@ -277,7 +264,6 @@ return [
     'category' => 'generators',
     'icon' => 'bi-qr-code',
     'jsModule' => 'tools/qrCodeGeneratorTool.js',
-    'jsLibraries' => ['download-utils'],
     'externalLibraries' => [
       [
         'url' => 'https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js',
@@ -304,7 +290,6 @@ return [
     'category' => 'stringtools',
     'icon' => 'bi-code-slash',
     'jsModule' => 'tools/stringEscaperTool.js',
-    'jsLibraries' => ['clipboard-utils', 'download-utils'],
     'features' => [],
     'seoTemplate' => 'default',
     'hasFeaturesSection' => true
@@ -324,7 +309,6 @@ return [
     'category' => 'references',
     'icon' => 'bi-table',
     'jsModule' => 'tools/characterReferenceTool.js',
-    'jsLibraries' => ['clipboard-utils'],
     'features' => ['search', 'categories', 'toggle-view', 'copy-codes'],
     'seoTemplate' => 'default',
     'hasFeaturesSection' => true,
@@ -345,7 +329,6 @@ return [
     'category' => 'references',
     'icon' => 'bi-emoji-smile',
     'jsModule' => 'tools/emojiReferenceTool.js',
-    'jsLibraries' => ['a11y-utils'],
     'features' => ['search', 'categories', 'copy-emoji', 'copy-codes'],
     'seoTemplate' => 'default',
     'hasFeaturesSection' => true
@@ -365,7 +348,6 @@ return [
     'category' => 'utilities',
     'icon' => 'bi-regex',
     'jsModule' => 'tools/regexTesterTool.js',
-    'jsLibraries' => ['clipboard-utils', 'download-utils', 'a11y-utils'],
     'features' => ['live-testing', 'match-highlighting', 'group-extraction', 'multiple-flags'],
     'seoTemplate' => 'default',
     'hasFeaturesSection' => true
@@ -385,7 +367,6 @@ return [
     'category' => 'converters',
     'icon' => 'bi-aspect-ratio',
     'jsModule' => 'tools/aspectRatioCalculatorTool.js',
-    'jsLibraries' => ['clipboard-utils'],
     'features' => ['dimension-calculation', 'common-presets', 'css-padding-trick', 'responsive-design'],
     'seoTemplate' => 'default',
     'hasFeaturesSection' => true
@@ -405,7 +386,6 @@ return [
     'category' => 'utilities',
     'icon' => 'bi-shield-check',
     'jsModule' => 'tools/sriGeneratorTool.js',
-    'jsLibraries' => ['clipboard-utils', 'download-utils'],
     'features' => ['sha256', 'sha384', 'sha512', 'url-fetch', 'file-upload', 'tag-generation'],
     'seoTemplate' => 'default',
     'hasFeaturesSection' => true

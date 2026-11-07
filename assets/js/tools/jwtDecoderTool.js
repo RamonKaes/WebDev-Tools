@@ -391,8 +391,4 @@
       });
     }
   });
-
-  if (typeof window.logger !== 'undefined') {
-    window.logger.info('JWT Decoder Tool loaded');
-  }
 })();

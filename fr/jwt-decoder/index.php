@@ -18,7 +18,8 @@ $customAboutContent = <<<HTML
 </p>
 <p class="mb-0">
     Ce décodeur extrait et affiche les composants en-tête, charge utile et signature d'un JWT.
-    Remarque&nbsp;: la vérification de la signature nécessite la clé secrète et doit être effectuée côté serveur pour rester sécurisée.
+    Remarque : cet outil ne vérifie pas la signature. La vérification nécessite le secret partagé (HS256/HS384/HS512)
+    ou la clé publique de l'émetteur (RS*, ES*, PS*) et doit se faire côté serveur.
 </p>
 HTML;
 
@@ -71,17 +72,17 @@ $additionalSections = [
     <p class="small">Contient les revendications&nbsp;:</p>
     <ul class="small">
       <li><code>sub</code>&nbsp;: sujet (ID utilisateur)</li>
-      <li><code>exp</code>&nbsp;: date d\'expiration</li>
-      <li><code>iat</code>&nbsp;: date d\'émission</li>
+      <li><code>exp</code>&nbsp;: date d'expiration</li>
+      <li><code>iat</code>&nbsp;: date d'émission</li>
       <li>Revendications personnalisées</li>
     </ul>
   </div>
   <div class="col-md-4">
     <h3 class="h6 text-warning">Signature</h3>
-    <p class="small">Vérifie l\'intégrité du jeton&nbsp;:</p>
+    <p class="small">Vérifie l'intégrité du jeton&nbsp;:</p>
     <ul class="small">
-      <li>Signature HMAC ou RSA</li>
-      <li>Nécessite la clé secrète pour vérification</li>
+      <li>HMAC (secret partagé) ou RSA/ECDSA (clé publique)</li>
+      <li>Non vérifiée par cet outil</li>
       <li>Empêche toute altération</li>
     </ul>
   </div>
@@ -93,7 +94,7 @@ HTML
 $usefulResources = [
     [
         'url' => 'https://fr.wikipedia.org/wiki/JSON_Web_Token',
-        'title' => 'Wikipedia&nbsp;: JSON Web Token',
+        'title' => 'Wikipedia : JSON Web Token',
         'description' => 'Introduction accessible aux concepts et à la structure des JWT'
     ],
     [
@@ -103,17 +104,17 @@ $usefulResources = [
     ],
     [
         'url' => 'https://datatracker.ietf.org/doc/html/rfc7519',
-        'title' => 'RFC 7519&nbsp;: JSON Web Token',
+        'title' => 'RFC 7519 : JSON Web Token',
         'description' => 'Spécification officielle IETF des JWT'
     ],
     [
         'url' => 'https://auth0.com/docs/secure/tokens/json-web-tokens',
-        'title' => 'Auth0&nbsp;: introduction aux JSON Web Tokens',
+        'title' => 'Auth0 : introduction aux JSON Web Tokens',
         'description' => 'Guide complet pour comprendre et utiliser les JWT'
     ],
     [
         'url' => 'https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto',
-        'title' => 'MDN&nbsp;: SubtleCrypto',
+        'title' => 'MDN : SubtleCrypto',
         'description' => 'API Web Crypto pour les opérations cryptographiques en JavaScript'
     ]
 ];

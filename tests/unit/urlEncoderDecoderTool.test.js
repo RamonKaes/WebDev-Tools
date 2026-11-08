@@ -426,6 +426,12 @@ describe('urlEncoderDecoderTool – Error Handling', () => {
     expect(output.value).toContain('decode_error');
   });
 
+  test('error output carries no doubled "Error:" prefix', () => {
+    const output = decode(c, '%E0%A4%A');
+    expect(output).not.toMatch(/^tools\.urlEncoderDecoder\.error: /);
+    expect(output.length).toBeGreaterThan(0);
+  });
+
   test('clears is-invalid class on successful decode', () => {
     decode(c, '%E0%A4'); // cause error
     decode(c, 'hello%20world'); // should succeed

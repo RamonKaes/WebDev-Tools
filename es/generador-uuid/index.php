@@ -24,7 +24,7 @@ $features = [
     'Generación masiva: crea múltiples UUID de un golpe',
     'Formatos alternativos: estándar, mayúsculas, sin guiones',
     'Copiar UUID individual o todos a la vez',
-    'Cumple la RFC 4122',
+    'Cumple la RFC 4122 (v1, v4) y la RFC 9562 (v7)',
     'Sin comunicación con el servidor: 100 % local',
     'Generación inmediata sin esperas'
 ];

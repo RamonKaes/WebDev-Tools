@@ -51,7 +51,8 @@
     "output": "Saída",
     "unknown": "Desconhecido",
     "copy_failed": "Falha ao copiar",
-    "related_tools": "Ferramentas relacionadas"
+    "related_tools": "Ferramentas relacionadas",
+    "client_side_only": "Somente no navegador"
   },
   "theme": {
     "light": "Claro",
@@ -70,9 +71,7 @@
         "Decodificação de Texto: Decodifique strings Base64 de volta para texto simples",
         "Suporte a Ficheiros: Arraste e solte ficheiros para codificação/decodificação",
         "Modo ao Vivo: Codificação/decodificação em tempo real enquanto digita",
-        "Seguro para URL: Opção para codificação Base64 segura para URL",
-        "Processamento de Linhas: Codifique/decodifique múltiplas linhas independentemente",
-        "Estatísticas: Exibição de contagem de caracteres e linhas"
+        "Seguro para URL: Opção para codificação Base64 segura para URL"
       ],
       "notice_title": "Privacidade e Segurança",
       "notice_content": "Esta ferramenta processa todos os dados exclusivamente no seu navegador. Nenhum dado é transmitido ou armazenado em servidores externos. Sua privacidade está 100% protegida.",
@@ -119,7 +118,7 @@
       "error": "Erro",
       "toc_title": "Codificador Base64",
       "h1_title": "Codificador e Decodificador Base64 — Codificação binária",
-      "card_description": "Codificador e decodificador Base64 para texto e arquivos com suporte arrastar e soltar. Codificação URL-safe, visualização ao vivo e processamento multilinha.",
+      "card_description": "Codificador e decodificador Base64 para texto e arquivos com suporte arrastar e soltar. Codificação URL-safe e visualização ao vivo.",
       "tool_description": "Base64 é um esquema de codificação binário para texto que representa dados binários no formato de string ASCII. É comumente usado para codificar dados em URLs, emails e URIs de dados. Toda codificação e decodificação acontece localmente em seu navegador para privacidade completa."
     },
     "urlEncoderDecoder": {
@@ -227,6 +226,7 @@
       "downloaded": "Transferido com sucesso!",
       "saved": "Guardado!",
       "minified": "JSON minificado!",
+      "minified_label": "Minificado",
       "original": "Original",
       "valid_json": "JSON válido",
       "invalid_json": "JSON inválido",
@@ -397,7 +397,7 @@
         "card": "Gerar identificadores únicos em múltiplos formatos",
         "nav": "Gerador UUID"
       },
-      "version_v1_help": "UUID baseado em timestamp (usa endereço MAC e hora atual)",
+      "version_v1_help": "UUID baseado em timestamp (hora atual mais um ID de nó aleatório em vez do endereço MAC)",
       "version_v7_help": "Combina timestamp com dados aleatórios (recomendado para UUIDs ordenados por tempo)",
       "version_nil_help": "UUID especial com todos zeros (00000000-0000-0000-0000-000000000000)",
       "bulk_error": "Por favor insira um número válido entre 1 e 1000",
@@ -445,7 +445,7 @@
       "lowercase": "Minúsculas (a-z)",
       "numbers": "Números (0-9)",
       "symbols": "Símbolos (!@#$...)",
-      "excludeAmbiguous": "Excluir caracteres ambíguos (0, O, l, I)",
+      "excludeAmbiguous": "Excluir caracteres ambíguos (0, O, 1, l, I)",
       "generate": "Gerar Senha",
       "strengthVeryStrong": "Muito Forte",
       "strengthVeryStrongDesc": "Excelente senha!",
@@ -473,7 +473,7 @@
       "errorLoading": "Erro ao carregar gerador de senhas",
       "errorNoCharset": "Por favor selecione pelo menos um tipo de carácter",
       "wordCount": "Número de palavras",
-      "wordCountHint": "Número de palavras na frase-passe (3-10 recomendado)",
+      "wordCountHint": "Número de palavras na frase-senha (3–8)",
       "separator": "Separador",
       "hyphen": "Hífen (-)",
       "underscore": "Sublinhado (_)",
@@ -485,7 +485,7 @@
       "patternCVC": "CVC (consoante-vogal-consoante)",
       "patternCVVC": "CVVC (consoante-vogal-vogal-consoante)",
       "patternLength": "Comprimento do Padrão",
-      "patternLengthHint": "Número de sílabas (2-8 recomendado)",
+      "patternLengthHint": "Número de caracteres (6–32)",
       "patternCapitalize": "Capitalizar",
       "how_to_use_title": "Como Usar",
       "how_to_use_steps": [
@@ -742,9 +742,9 @@
       "header": "Cabeçalho",
       "payload": "Payload",
       "signature": "Assinatura",
-      "signatureNote": "A assinatura só pode ser verificada com a chave secreta. Esta ferramenta apenas decodifica o token.",
+      "signatureNote": "Esta ferramenta não verifica a assinatura. A verificação exige o segredo compartilhado (HS*) ou a chave pública do emissor (RS*, ES*, PS*).",
       "verificationWarning": "⚠️ Aviso: Esta ferramenta NÃO verifica a assinatura!",
-      "verificationWarningDetails": "Este decodificador JWT apenas exibe o conteúdo do token. NÃO verifica a assinatura. Nunca confie em dados JWT decodificados sem verificação no servidor. Um invasor pode manipular o conteúdo do token – apenas a validação criptográfica com a chave secreta garante autenticidade.",
+      "verificationWarningDetails": "Este decodificador JWT apenas exibe o conteúdo do token. NÃO verifica a assinatura. Nunca confie em dados JWT decodificados sem verificação no servidor. Um invasor pode manipular o conteúdo do token – apenas a validação criptográfica com o segredo compartilhado (HS*) ou a chave pública do emissor (RS*, ES*, PS*) garante autenticidade.",
       "algorithm": "Algoritmo",
       "expiry": "Expiração",
       "expired": "Token expirou",
@@ -767,7 +767,7 @@
       "toc_title": "Decodificador JWT",
       "h1_title": "Decodificador JWT — Decodificação de JSON Web Tokens",
       "card_description": "Decodifique e analise JSON Web Tokens com inspeção detalhada de cabeçalho, payload e assinatura. Valida estrutura JWT e fornece informações de decodificação.",
-      "tool_description": "Decodifique e analise JSON Web Tokens (JWT) com o nosso Decodificador JWT. A ferramenta separa automaticamente o token nas suas três partes (cabeçalho, payload, assinatura) e exibe o conteúdo decodificado em JSON formatado. Mostra o algoritmo de assinatura do cabeçalho e verifica o claim de expiração (exp) em relação à hora atual. Nota: esta ferramenta apenas decodifica tokens; a verificação de assinatura requer a chave secreta. Todas as operações são realizadas localmente no seu navegador.",
+      "tool_description": "Decodifique e analise JSON Web Tokens (JWT) com o nosso Decodificador JWT. A ferramenta separa automaticamente o token nas suas três partes (cabeçalho, payload, assinatura) e exibe o conteúdo decodificado em JSON formatado. Mostra o algoritmo de assinatura do cabeçalho e verifica o claim de expiração (exp) em relação à hora atual. Nota: esta ferramenta apenas decodifica tokens e não verifica assinaturas. A verificação exige o segredo compartilhado (HS*) ou a chave pública (RS*, ES*, PS*) e deve ser feita no servidor. Todas as operações são realizadas localmente no seu navegador.",
       "errorFormat": "Formato JWT inválido. Esperam-se 3 partes (header.payload.signature)",
       "errorBase64": "Codificação Base64URL inválida",
       "errorHeader": "Não foi possível descodificar o cabeçalho: {message}",
@@ -985,8 +985,8 @@
       ],
       "toc_title": "Testador Regex",
       "h1_title": "Testador Regex — Teste de expressões regulares e padrões",
-      "card_description": "Teste expressões regulares com destaque de correspondências e grupos de captura. Testador regex JavaScript com todas as flags (g, i, m, s, u, y) e resultados exportáveis.",
-      "tool_description": "Teste expressões regulares contra texto de amostra e veja cada correspondência destacada com a sua posição e grupos de captura. Valide os seus padrões antes de os usar no código. Usa o motor regex do JavaScript e suporta todas as suas flags: global (g), insensível a maiúsculas (i), multilinha (m), dotAll (s), unicode (u) e sticky (y)."
+      "card_description": "Teste expressões regulares com destaque de correspondências e grupos de captura. Testador regex JavaScript com as flags g, i, m, s, u e y e resultados exportáveis.",
+      "tool_description": "Teste expressões regulares contra texto de amostra e veja cada correspondência destacada com a sua posição e grupos de captura. Valide os seus padrões antes de os usar no código. Usa o motor regex do JavaScript e suporta as flags global (g), insensível a maiúsculas (i), multilinha (m), dotAll (s), unicode (u) e sticky (y)."
     },
     "characterReferenceTool": {
       "linkTitle": {
@@ -1023,7 +1023,7 @@
       "copyEntity": "Copiar entidade",
       "toc_title": "Referência de Caracteres",
       "h1_title": "Referência de Caracteres — Referência de entidades HTML Unicode",
-      "card_description": "Referência completa de entidades HTML com 2.231+ símbolos, setas e operadores matemáticos. Pesquise por nome, decimal, hexadecimal ou Unicode para uso.",
+      "card_description": "Referência completa de entidades HTML com 2.231 símbolos, setas e operadores matemáticos. Pesquise por nome, decimal, hexadecimal ou Unicode para uso.",
       "tool_description": "Referência abrangente de entidades de caracteres HTML, símbolos Unicode e caracteres especiais. Procure por milhares de símbolos matemáticos, setas, diacríticos, pontuação, símbolos gregos e caracteres de desenho de caixas. Copie o caractere ou a sua entidade HTML com um único clique. Perfeito para desenvolvimento web, criação de conteúdo e trabalho com texto internacional.",
       "noResults": "Nenhum carácter encontrado",
       "noResultsHint": "Tente um termo de pesquisa ou categoria diferente",
@@ -1128,7 +1128,7 @@
   },
   "seo": {
     "home": {
-      "meta_description": "Ferramentas gratuitas para desenvolvimento web. Formatador JSON, codificador Base64, gerador UUID e 15+ utilitários. Processamento do lado do cliente e privacidade."
+      "meta_description": "Ferramentas gratuitas para desenvolvimento web. Formatador JSON, codificador Base64, gerador UUID e 20 utilitários. Processamento do lado do cliente e privacidade."
     },
     "about": {
       "meta_description": "WebDev-Tools: utilitários para desenvolvedores com processamento 100% do lado do cliente. Sem rastreamento, sem coleta de dados. Ferramentas open-source gratuitas."
@@ -1146,7 +1146,6 @@
         "Suporte arrastar e soltar ficheiros",
         "Codificação Base64 segura para URL",
         "Modo ao vivo em tempo real",
-        "Processamento multilinha",
         "Processamento do lado do cliente"
       ],
       "applicationCategory": "UtilityApplication",
@@ -1327,18 +1326,18 @@
         "Teste de regex com feedback instantâneo ao clicar",
         "Realce visual de correspondências na string de teste",
         "Extração e exibição de grupos de captura",
-        "Suporte para todas as flags JavaScript (g, i, m, s, u, y)",
+        "Flags g, i, m, s, u e y",
         "Contagem de correspondências e detalhes de posição",
         "Copiar resultados e descarregar dados de teste"
       ],
       "applicationCategory": "UtilityApplication",
-      "meta_title": "Testador de Regex Online – Expressões Regulares ao Vivo",
-      "meta_description": "Teste expressões regulares JavaScript ao vivo: as correspondências são destacadas enquanto digita, com grupos de captura e todas as flags. Grátis e local."
+      "meta_title": "Testador de Regex Online – Expressões Regulares Grátis",
+      "meta_description": "Teste expressões regulares JavaScript: execute o padrão com um clique e veja as correspondências destacadas, com grupos de captura e as flags g, i, m, s, u, y. Grátis e local."
     },
     "characterReferenceTool": {
       "keywords": "entidades html, caracteres especiais, símbolos unicode, escape html, códigos de caracteres, referência de entidades",
       "featureList": [
-        "Mais de 2.231 entidades HTML",
+        "2.231 entidades HTML",
         "Navegação baseada em categorias",
         "Função de pesquisa poderosa",
         "Múltiplos formatos de cópia",

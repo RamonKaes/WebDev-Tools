@@ -17,7 +17,8 @@ $customAboutContent = <<<HTML
 </p>
 <p class="mb-0">
     Questo decodificatore estrae e visualizza header, payload e firma di un JWT.
-    Nota: la verifica della firma richiede la chiave segreta e deve essere eseguita lato server.
+    Nota: questo strumento non verifica la firma. La verifica richiede il segreto condiviso (HS256/HS384/HS512)
+    o la chiave pubblica dell'emittente (RS*, ES*, PS*) e va eseguita lato server.
 </p>
 HTML;
 
@@ -79,8 +80,8 @@ $additionalSections = [
     <h3 class="h6 text-warning">Signature</h3>
     <p class="small">Garantisce l'integrità:</p>
     <ul class="small">
-      <li>Firma HMAC o RSA</li>
-      <li>Richiede la chiave segreta per verificare</li>
+      <li>HMAC (segreto condiviso) o RSA/ECDSA (chiave pubblica)</li>
+      <li>Non verificata da questo strumento</li>
       <li>Previene manomissioni</li>
     </ul>
   </div>

@@ -25,6 +25,7 @@ $features = [
     'Minificação de JSON para reduzir tamanho',
     'Visualização em árvore para estruturas aninhadas',
     'Detecção de erros linha a linha',
+    'Correção automática de erros comuns (comentários, vírgulas finais, aspas simples)',
     'Cópia do resultado com um clique',
     'Extrator de caminho JSON e ajudas de escape de strings',
     'Processamento 100% local'

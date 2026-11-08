@@ -51,12 +51,13 @@
     "output": "Salida",
     "unknown": "Desconocido",
     "copy_failed": "Error al copiar",
-    "related_tools": "Herramientas relacionadas"
+    "related_tools": "Herramientas relacionadas",
+    "client_side_only": "Solo en el navegador"
   },
   "theme": {
     "light": "Claro",
     "dark": "Oscuro",
-    "auto": "Auto"
+    "auto": "Automático"
   },
   "errors": {
     "registry_missing": "[{tool}] Registro de herramientas no disponible. Por favor, recargue la página."
@@ -70,9 +71,7 @@
         "Decodificación de Texto: Decodifica cadenas Base64 de vuelta a texto plano",
         "Soporte de Archivos: Arrastra y suelta archivos para codificar/decodificar",
         "Modo en Vivo: Codificación/decodificación en tiempo real mientras escribes",
-        "URL Segura: Opción para codificación Base64 segura para URL",
-        "Procesamiento de Líneas: Codifica/decodifica múltiples líneas de forma independiente",
-        "Estadísticas: Muestra el recuento de caracteres y líneas"
+        "URL Segura: Opción para codificación Base64 segura para URL"
       ],
       "notice_title": "Privacidad y Seguridad",
       "notice_content": "Esta herramienta procesa todos los datos exclusivamente en tu navegador. No se transmite ni almacena ningún dato en servidores externos. Tu privacidad está 100% protegida.",
@@ -227,6 +226,7 @@
       "downloaded": "¡Descargado exitosamente!",
       "saved": "¡Guardado!",
       "minified": "¡JSON minificado!",
+      "minified_label": "Minificado",
       "original": "Original",
       "valid_json": "JSON válido",
       "invalid_json": "JSON inválido",
@@ -397,7 +397,7 @@
         "card": "Generar identificadores únicos en múltiples formatos",
         "nav": "Generador UUID"
       },
-      "version_v1_help": "UUID basado en marca de tiempo (usa dirección MAC y tiempo actual)",
+      "version_v1_help": "UUID basado en marca de tiempo (hora actual más un ID de nodo aleatorio en lugar de la dirección MAC)",
       "version_v7_help": "Combina marca de tiempo con datos aleatorios (recomendado para UUIDs ordenados por tiempo)",
       "version_nil_help": "UUID especial con todos ceros (00000000-0000-0000-0000-000000000000)",
       "bulk_error": "Por favor ingresa un número válido entre 1 y 1000",
@@ -445,7 +445,7 @@
       "lowercase": "Minúsculas (a-z)",
       "numbers": "Números (0-9)",
       "symbols": "Símbolos (!@#$...)",
-      "excludeAmbiguous": "Excluir caracteres ambiguos (0, O, l, I)",
+      "excludeAmbiguous": "Excluir caracteres ambiguos (0, O, 1, l, I)",
       "generate": "Generar Contraseña",
       "strengthVeryStrong": "Muy Fuerte",
       "strengthVeryStrongDesc": "¡Excelente contraseña!",
@@ -473,7 +473,7 @@
       "errorLoading": "Error al cargar generador de contraseñas",
       "errorNoCharset": "Por favor selecciona al menos un tipo de carácter",
       "wordCount": "Número de palabras",
-      "wordCountHint": "Número de palabras en frase de paso (3-10 recomendado)",
+      "wordCountHint": "Número de palabras en la frase de paso (3–8)",
       "separator": "Separador",
       "hyphen": "Guion (-)",
       "underscore": "Guion bajo (_)",
@@ -485,7 +485,7 @@
       "patternCVC": "CVC (consonante-vocal-consonante)",
       "patternCVVC": "CVVC (consonante-vocal-vocal-consonante)",
       "patternLength": "Longitud de Patrón",
-      "patternLengthHint": "Número de sílabas (2-8 recomendado)",
+      "patternLengthHint": "Número de caracteres (6–32)",
       "patternCapitalize": "Capitalizar",
       "how_to_use_title": "Cómo Usar",
       "how_to_use_steps": [
@@ -500,7 +500,7 @@
       "separatorSpace": "Espacio ( )",
       "toc_title": "Generador de Contraseñas",
       "h1_title": "Generador de Contraseñas — Crea Claves Seguras y Fuertes",
-      "card_description": "Genera contraseñas criptográficamente seguras con longitud y tipos de caracteres personalizables. Crea contraseñas aleatorias fuertes, frases de contraseña.",
+      "card_description": "Genera contraseñas criptográficamente seguras con longitud y tipos de caracteres personalizables. Crea contraseñas aleatorias fuertes, frases de paso o patrones pronunciables con medidor de fortaleza.",
       "tool_description": "Crea contraseñas criptográficamente seguras con nuestro Generador de Contraseñas. La herramienta ofrece tres modos de generación: contraseñas aleatorias, frases de paso memorables y generación basada en patrones. Elige entre varios conjuntos de caracteres (estándar, alfanumérico, hexadecimal o personalizado), excluye caracteres ambiguos y genera hasta 100 contraseñas simultáneamente. El analizador de fortaleza de contraseñas integrado muestra entropía, tamaño del conjunto de caracteres y tiempo estimado de descifrado. Exporta tus contraseñas como TXT, CSV o JSON.",
       "alphabetWords": "{count} palabras",
       "alphabetPattern": "21 consonantes / 5 vocales"
@@ -742,9 +742,9 @@
       "header": "Encabezado",
       "payload": "Carga Útil",
       "signature": "Firma",
-      "signatureNote": "La firma solo puede verificarse con la clave secreta. Esta herramienta solo decodifica el token.",
+      "signatureNote": "Esta herramienta no verifica la firma. La verificación necesita el secreto compartido (HS*) o la clave pública del emisor (RS*, ES*, PS*).",
       "verificationWarning": "⚠️ Advertencia: ¡Esta herramienta NO verifica la firma!",
-      "verificationWarningDetails": "Este decodificador JWT solo muestra el contenido del token. NO verifica la firma. Nunca confíe en datos JWT decodificados sin verificación del lado del servidor. Un atacante puede manipular el contenido del token – solo la validación criptográfica con la clave secreta garantiza autenticidad.",
+      "verificationWarningDetails": "Este decodificador JWT solo muestra el contenido del token. NO verifica la firma. Nunca confíe en datos JWT decodificados sin verificación del lado del servidor. Un atacante puede manipular el contenido del token – solo la validación criptográfica con el secreto compartido (HS*) o la clave pública del emisor (RS*, ES*, PS*) garantiza autenticidad.",
       "algorithm": "Algoritmo",
       "expiry": "Expiración",
       "expired": "El token ha expirado",
@@ -767,7 +767,7 @@
       "toc_title": "Decodificador JWT",
       "h1_title": "Decodificador JWT — Analizar y Decodificar Tokens JSON Web",
       "card_description": "Decodifica y analiza JSON Web Tokens (JWT) con inspección detallada. Ver encabezado, carga útil y firma. Valida estructura de token y algoritmos de firma.",
-      "tool_description": "Decodifica y analiza JSON Web Tokens (JWT) con nuestro Decodificador JWT. La herramienta separa automáticamente el token en sus tres partes (encabezado, carga útil, firma) y muestra el contenido decodificado en JSON formateado. Muestra el algoritmo de firma del encabezado y comprueba el claim de expiración (exp) frente a la hora actual. Nota: esta herramienta solo decodifica tokens; la verificación de firma requiere la clave secreta. Todas las operaciones se realizan localmente en su navegador.",
+      "tool_description": "Decodifica y analiza JSON Web Tokens (JWT) con nuestro Decodificador JWT. La herramienta separa automáticamente el token en sus tres partes (encabezado, carga útil, firma) y muestra el contenido decodificado en JSON formateado. Muestra el algoritmo de firma del encabezado y comprueba el claim de expiración (exp) frente a la hora actual. Nota: esta herramienta solo decodifica tokens y no verifica firmas. La verificación necesita el secreto compartido (HS*) o la clave pública (RS*, ES*, PS*) y debe hacerse en el servidor. Todas las operaciones se realizan localmente en su navegador.",
       "errorFormat": "Formato JWT no válido. Se esperan 3 partes (header.payload.signature)",
       "errorBase64": "Codificación Base64URL no válida",
       "errorHeader": "No se pudo decodificar el encabezado: {message}",
@@ -985,8 +985,8 @@
       "how_to_use_title": "Cómo Usar",
       "toc_title": "Probador Regex",
       "h1_title": "Probador Regex — Prueba Expresiones Regulares Online",
-      "card_description": "Prueba expresiones regulares con resaltado de coincidencias y grupos de captura. Probador regex JavaScript con todas las banderas (g, i, m, s, u, y) y resultados exportables.",
-      "tool_description": "Prueba expresiones regulares contra texto de muestra y ve cada coincidencia resaltada con su posición y grupos de captura. Valida tus patrones antes de usarlos en código. Usa el motor regex de JavaScript y admite todas sus banderas: global (g), insensible a mayúsculas (i), multilínea (m), dotAll (s), unicode (u) y sticky (y)."
+      "card_description": "Prueba expresiones regulares con resaltado de coincidencias y grupos de captura. Probador regex JavaScript con las banderas g, i, m, s, u e y y resultados exportables.",
+      "tool_description": "Prueba expresiones regulares contra texto de muestra y ve cada coincidencia resaltada con su posición y grupos de captura. Valida tus patrones antes de usarlos en código. Usa el motor regex de JavaScript y admite las banderas global (g), insensible a mayúsculas (i), multilínea (m), dotAll (s), unicode (u) y sticky (y)."
     },
     "characterReferenceTool": {
       "linkTitle": {
@@ -1023,8 +1023,8 @@
       "tableHeaderCode": "Código Unicode",
       "toc_title": "Referencia de Caracteres",
       "h1_title": "Referencia de Caracteres — Entidades HTML y Símbolos",
-      "card_description": "Navega y copia entidades HTML y caracteres especiales con códigos Unicode. Referencia completa de 2.231+ entidades HTML organizadas por categorías.",
-      "tool_description": "Referencia completa de caracteres HTML con más de 2.231 entidades y caracteres especiales. Busca por nombre, código decimal o hexadecimal con función de copia instantánea. Perfecto para desarrolladores web, diseñadores y creadores de contenido que necesitan acceso rápido a entidades HTML, caracteres Unicode y símbolos especiales.",
+      "card_description": "Navega y copia entidades HTML y caracteres especiales con códigos Unicode. Referencia completa de 2231 entidades HTML organizadas por categorías.",
+      "tool_description": "Referencia completa de caracteres HTML con 2231 entidades y caracteres especiales. Busca por nombre, código decimal o hexadecimal con función de copia instantánea. Perfecto para desarrolladores web, diseñadores y creadores de contenido que necesitan acceso rápido a entidades HTML, caracteres Unicode y símbolos especiales.",
       "noResults": "No se encontraron caracteres",
       "noResultsHint": "Prueba con un término de búsqueda o categoría diferente",
       "copyUnicode": "Copiar Unicode",
@@ -1128,7 +1128,7 @@
   },
   "seo": {
     "home": {
-      "meta_description": "Herramientas gratuitas para desarrollo web. Formateador JSON, codificador Base64, generador UUID y 15+ utilidades. Procesamiento del lado del cliente y privacidad."
+      "meta_description": "Herramientas gratuitas para desarrollo web. Formateador JSON, codificador Base64, generador UUID y 20 utilidades. Procesamiento del lado del cliente y privacidad."
     },
     "about": {
       "meta_description": "WebDev-Tools: utilidades para desarrolladores con procesamiento 100% del lado del cliente. Sin seguimiento ni recopilación de datos. Herramientas open-source gratuitas."
@@ -1146,7 +1146,6 @@
         "Soporte de arrastrar y soltar archivos",
         "Codificación Base64 segura para URL",
         "Modo en vivo en tiempo real",
-        "Procesamiento multilínea",
         "Procesamiento del lado del cliente"
       ],
       "applicationCategory": "UtilityApplication",
@@ -1327,18 +1326,18 @@
         "Prueba regex con retroalimentación instantánea al hacer clic",
         "Resaltado visual de coincidencias en cadena de prueba",
         "Extracción y visualización de grupos de captura",
-        "Soporte para todas las banderas JavaScript (g, i, m, s, u, y)",
+        "Banderas g, i, m, s, u e y",
         "Detalles de recuento y posición de coincidencias",
         "Copiar resultados y descargar datos de prueba"
       ],
       "applicationCategory": "UtilityApplication",
-      "meta_title": "Probador de Expresiones Regulares Online – Regex en Vivo",
-      "meta_description": "Prueba expresiones regulares JavaScript en vivo: las coincidencias se resaltan mientras escribes, con grupos de captura y todos los flags. Gratis y local."
+      "meta_title": "Probador de Expresiones Regulares Online – Gratis",
+      "meta_description": "Prueba expresiones regulares JavaScript: ejecuta el patrón con un clic y ve las coincidencias resaltadas, con grupos de captura y las banderas g, i, m, s, u, y. Gratis y local."
     },
     "characterReferenceTool": {
       "keywords": "entidades html, caracteres especiales, símbolos unicode, escape html, códigos de caracteres, referencia de entidades",
       "featureList": [
-        "Más de 2,231 entidades HTML",
+        "2231 entidades HTML",
         "Navegación basada en categorías",
         "Potente función de búsqueda",
         "Múltiples formatos de copia",

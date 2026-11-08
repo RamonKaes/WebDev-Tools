@@ -559,11 +559,11 @@ $openMenuLabel = $openMenuLabels[$lang] ?? 'Open menu';
     <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme">
       <li>
         <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
-          aria-pressed="false" data-i18n="theme.light" data-i18n-aria="theme.light">
+          aria-pressed="false">
           <svg class="bi me-2 opacity-50" width="1em" height="1em">
             <use href="#sun-fill"></use>
           </svg>
-          <span data-i18n="theme.light">Light</span>
+          <span data-i18n="theme.light"><?= htmlspecialchars($i18nData['theme']['light'] ?? 'Light', ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?></span>
           <svg class="bi ms-auto d-none" width="1em" height="1em">
             <use href="#check2"></use>
           </svg>
@@ -571,11 +571,11 @@ $openMenuLabel = $openMenuLabels[$lang] ?? 'Open menu';
       </li>
       <li>
         <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
-          aria-pressed="false" data-i18n="theme.dark" data-i18n-aria="theme.dark">
+          aria-pressed="false">
           <svg class="bi me-2 opacity-50" width="1em" height="1em">
             <use href="#moon-stars-fill"></use>
           </svg>
-          <span data-i18n="theme.dark">Dark</span>
+          <span data-i18n="theme.dark"><?= htmlspecialchars($i18nData['theme']['dark'] ?? 'Dark', ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?></span>
           <svg class="bi ms-auto d-none" width="1em" height="1em">
             <use href="#check2"></use>
           </svg>
@@ -583,11 +583,11 @@ $openMenuLabel = $openMenuLabels[$lang] ?? 'Open menu';
       </li>
       <li>
         <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"
-          aria-pressed="true" data-i18n="theme.auto" data-i18n-aria="theme.auto">
+          aria-pressed="true">
           <svg class="bi me-2 opacity-50" width="1em" height="1em">
             <use href="#circle-half"></use>
           </svg>
-          <span data-i18n="theme.auto">Auto</span>
+          <span data-i18n="theme.auto"><?= htmlspecialchars($i18nData['theme']['auto'] ?? 'Auto', ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?></span>
           <svg class="bi ms-auto d-none" width="1em" height="1em">
             <use href="#check2"></use>
           </svg>

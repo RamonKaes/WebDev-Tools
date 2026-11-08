@@ -51,12 +51,13 @@
     "output": "Ausgabe",
     "unknown": "Unbekannt",
     "copy_failed": "Kopieren fehlgeschlagen",
-    "related_tools": "Verwandte Tools"
+    "related_tools": "Verwandte Tools",
+    "client_side_only": "Nur im Browser"
   },
   "theme": {
     "light": "Hell",
     "dark": "Dunkel",
-    "auto": "Auto"
+    "auto": "Automatisch"
   },
   "errors": {
     "registry_missing": "[{tool}] Tools-Registry nicht verfügbar. Bitte laden Sie die Seite neu."
@@ -70,9 +71,7 @@
         "Text-Dekodierung: Dekodiere Base64-Strings zurück in Klartext",
         "Datei-Unterstützung: Drag & Drop für Dateien zum Kodieren/Dekodieren",
         "Live-Modus: Echtzeit-Kodierung/Dekodierung während der Eingabe",
-        "URL-sicher: Option für URL-sichere Base64-Kodierung",
-        "Zeilenverarbeitung: Kodiere/dekodiere mehrere Zeilen unabhängig",
-        "Statistiken: Anzeige von Zeichen- und Zeilenanzahl"
+        "URL-sicher: Option für URL-sichere Base64-Kodierung"
       ],
       "notice_title": "Datenschutz & Sicherheit",
       "notice_content": "Dieses Tool verarbeitet alle Daten ausschließlich in Ihrem Browser. Es werden keine Daten an externe Server übertragen oder dort gespeichert. Ihre Privatsphäre ist zu 100% geschützt.",
@@ -119,7 +118,7 @@
       "error": "Fehler",
       "toc_title": "Base64 Encoder",
       "h1_title": "Base64 Encoder & Decoder — Schnell & Sicher Online Tool",
-      "card_description": "Base64 Encoder und Decoder für Text und Dateien mit Drag & Drop Support. URL-sichere Kodierung, Live-Vorschau und mehrzeilige Verarbeitung für Entwickler.",
+      "card_description": "Base64 Encoder und Decoder für Text und Dateien mit Drag & Drop Support. URL-sichere Kodierung und Live-Vorschau für Entwickler.",
       "tool_description": "Base64 ist ein binär-zu-Text-Kodierungsschema, das Binärdaten im ASCII-Stringformat darstellt. Es wird häufig zum Kodieren von Daten in URLs, E-Mails und Daten-URIs verwendet. Die gesamte Kodierung und Dekodierung erfolgt lokal in Ihrem Browser für vollständige Privatsphäre."
     },
     "urlEncoderDecoder": {
@@ -234,6 +233,7 @@
       "downloaded": "Erfolgreich heruntergeladen!",
       "saved": "Gespeichert!",
       "minified": "JSON minifiziert!",
+      "minified_label": "Minifiziert",
       "original": "Original",
       "valid_json": "Gültiges JSON",
       "invalid_json": "Ungültiges JSON",
@@ -404,7 +404,7 @@
         "card": "Eindeutige Identifikatoren in v1, v4, v7 Formaten mit Batch erstellen",
         "nav": "UUID-Generator"
       },
-      "version_v1_help": "Zeitstempel-basierte UUID (verwendet MAC-Adresse und aktuelle Zeit)",
+      "version_v1_help": "Zeitstempel-basierte UUID (aktuelle Zeit plus zufällige Node-ID statt MAC-Adresse)",
       "version_v7_help": "Kombiniert Zeitstempel mit Zufallsdaten (empfohlen für zeitlich geordnete UUIDs)",
       "version_nil_help": "Spezielle UUID mit allen Nullen (00000000-0000-0000-0000-000000000000)",
       "bulk_error": "Bitte geben Sie eine gültige Zahl zwischen 1 und 1000 ein",
@@ -452,7 +452,7 @@
       "lowercase": "Kleinbuchstaben (a-z)",
       "numbers": "Zahlen (0-9)",
       "symbols": "Symbole (!@#$...)",
-      "excludeAmbiguous": "Mehrdeutige Zeichen ausschließen (0, O, l, I)",
+      "excludeAmbiguous": "Mehrdeutige Zeichen ausschließen (0, O, 1, l, I)",
       "generate": "Passwort generieren",
       "strengthVeryStrong": "Sehr stark",
       "strengthVeryStrongDesc": "Ausgezeichnetes Passwort!",
@@ -480,7 +480,7 @@
       "errorLoading": "Fehler beim Laden des Passwort-Generators",
       "errorNoCharset": "Bitte wählen Sie mindestens einen Zeichentyp aus",
       "wordCount": "Anzahl Wörter",
-      "wordCountHint": "Anzahl der Wörter in der Passphrase (3-10 empfohlen)",
+      "wordCountHint": "Anzahl der Wörter in der Passphrase (3–8)",
       "separator": "Trennzeichen",
       "hyphen": "Bindestrich (-)",
       "underscore": "Unterstrich (_)",
@@ -492,7 +492,7 @@
       "patternCVC": "CVC (Konsonant-Vokal-Konsonant)",
       "patternCVVC": "CVVC (Konsonant-Vokal-Vokal-Konsonant)",
       "patternLength": "Musterlänge",
-      "patternLengthHint": "Anzahl der Silben (2-8 empfohlen)",
+      "patternLengthHint": "Anzahl der Zeichen (6–32)",
       "patternCapitalize": "Großschreiben",
       "crackDays": "Tage zum Knacken",
       "crackMonths": "Monate zum Knacken",
@@ -500,7 +500,7 @@
       "separatorSpace": "Leerzeichen ( )",
       "toc_title": "Passwort Generator",
       "h1_title": "Passwort Generator — Sichere Zufallspasswörter generieren",
-      "card_description": "Generiere kryptografisch sichere Passwörter mit anpassbarer Länge und Zeichentypen. Erstelle starke Zufallspasswörter, einprägsame Passphrasen oder.",
+      "card_description": "Generiere kryptografisch sichere Passwörter mit anpassbarer Länge und Zeichentypen. Erstelle starke Zufallspasswörter, einprägsame Passphrasen oder aussprechbare Muster, mit Stärkeanzeige.",
       "tool_description": "Erstelle kryptografisch sichere Passwörter mit unserem Passwort Generator. Das Tool bietet drei Generierungsmodi: Zufällige Passwörter, einprägsame Passphrasen und musterbasierte Generierung. Wähle aus verschiedenen Zeichensätzen (Standard, alphanumerisch, hexadezimal oder benutzerdefiniert), schließe mehrdeutige Zeichen aus und generiere bis zu 100 Passwörter gleichzeitig. Die integrierte Passwortstärke-Analyse zeigt Entropie, Zeichensatz-Größe und geschätzte Knackzeit an. Exportiere deine Passwörter als TXT, CSV oder JSON.",
       "alphabetWords": "{count} Wörter",
       "alphabetPattern": "21 Konsonanten / 5 Vokale"
@@ -665,7 +665,7 @@
       "downloadSVG": "SVG herunterladen",
       "clear": "Löschen",
       "linkTitle": {
-        "card": "Anpassbare QR-Codes sofort mit Farbe und Logo-Optionen erstellen",
+        "card": "Anpassbare QR-Codes sofort mit eigenen Farben und Größen erstellen",
         "nav": "QR-Code-Generator"
       },
       "enterContent": "Bitte geben Sie Inhalt ein, um einen QR-Code zu generieren",
@@ -696,8 +696,8 @@
       "outputTitle": "Ausgabe",
       "outputPlaceholder": "Konvertiertes Ergebnis erscheint hier...",
       "modeLabel": "Modus",
-      "encode": "Encode",
-      "decode": "Decode",
+      "encode": "Kodieren",
+      "decode": "Dekodieren",
       "entityType": "Entity-Typ",
       "namedEntities": "Benannte Entities (&nbsp;)",
       "numericDecimal": "Numerisch Dezimal (&#160;)",
@@ -741,10 +741,10 @@
       "loadExample": "Beispiel laden",
       "header": "Header",
       "payload": "Payload",
-      "signature": "Signature",
-      "signatureNote": "Die Signatur kann nur mit dem geheimen Schlüssel verifiziert werden. Dieses Tool dekodiert nur den Token.",
+      "signature": "Signatur",
+      "signatureNote": "Dieses Tool prüft die Signatur nicht. Die Prüfung braucht das gemeinsame Geheimnis (HS*) oder den öffentlichen Schlüssel des Ausstellers (RS*, ES*, PS*).",
       "verificationWarning": "⚠️ Warnung: Dieses Tool führt KEINE Signaturverifizierung durch!",
-      "verificationWarningDetails": "Dieser JWT-Decoder zeigt nur den Inhalt des Tokens an. Er überprüft NICHT die Signatur. Verlassen Sie sich niemals auf dekodierte JWT-Daten ohne serverseitige Verifizierung. Ein Angreifer kann den Token-Inhalt manipulieren – nur eine kryptographische Prüfung mit dem geheimen Schlüssel garantiert Authentizität.",
+      "verificationWarningDetails": "Dieser JWT-Decoder zeigt nur den Inhalt des Tokens an. Er überprüft NICHT die Signatur. Verlassen Sie sich niemals auf dekodierte JWT-Daten ohne serverseitige Verifizierung. Ein Angreifer kann den Token-Inhalt manipulieren – nur eine kryptographische Prüfung mit dem gemeinsamen Geheimnis (HS*) oder dem öffentlichen Schlüssel des Ausstellers (RS*, ES*, PS*) garantiert Authentizität.",
       "algorithm": "Algorithmus",
       "expiry": "Ablaufzeit",
       "expired": "Token ist abgelaufen",
@@ -767,7 +767,7 @@
       "toc_title": "JWT Decoder",
       "h1_title": "JWT Decoder — JSON Web Tokens analysieren & dekodieren",
       "card_description": "Dekodiere und analysiere JSON Web Tokens (JWT) mit detaillierter Inspektion. Zeige Header, Payload und Signatur an. Validiere Struktur und Algorithmen.",
-      "tool_description": "Decodieren und analysieren Sie JSON Web Tokens (JWT) mit unserem JWT Decoder. Das Tool trennt den Token automatisch in seine drei Teile (Header, Payload, Signatur) und zeigt den dekodierten Inhalt in formatiertem JSON an. Zeigt den Signatur-Algorithmus aus dem Header und prüft den Ablauf-Claim (exp) gegen die aktuelle Zeit. Hinweis: Dieses Tool dekodiert nur Tokens; die Signaturverifizierung erfordert den geheimen Schlüssel. Alle Operationen werden lokal in Ihrem Browser ausgeführt.",
+      "tool_description": "Decodieren und analysieren Sie JSON Web Tokens (JWT) mit unserem JWT Decoder. Das Tool trennt den Token automatisch in seine drei Teile (Header, Payload, Signatur) und zeigt den dekodierten Inhalt in formatiertem JSON an. Zeigt den Signatur-Algorithmus aus dem Header und prüft den Ablauf-Claim (exp) gegen die aktuelle Zeit. Hinweis: Dieses Tool dekodiert Tokens nur und prüft keine Signaturen. Die Prüfung braucht das gemeinsame Geheimnis (HS*) oder den öffentlichen Schlüssel (RS*, ES*, PS*) und gehört auf den Server. Alle Operationen werden lokal in Ihrem Browser ausgeführt.",
       "errorFormat": "Ungültiges JWT-Format. Erwartet werden 3 Teile (header.payload.signature)",
       "errorBase64": "Ungültige Base64URL-Kodierung",
       "errorHeader": "Header konnte nicht dekodiert werden: {message}",
@@ -808,7 +808,7 @@
       "features_title": "Funktionen",
       "toc_title": "Punycode Converter",
       "h1_title": "Punycode Converter — Internationale Domainnamen umwandeln",
-      "card_description": "Konvertiere internationale Domainnamen (IDN) zu Punycode und zurück. Transformiere Unicode-Domains in ASCII-kompatibles Format. Unterstützt alle.",
+      "card_description": "Konvertiere internationale Domainnamen (IDN) zu Punycode und zurück. Transformiere Unicode-Domains in ASCII-kompatibles Format, auch mehrere auf einmal, Zeile für Zeile.",
       "tool_description": "Konvertieren Sie internationale Domainnamen (IDN) von und zu Punycode mit unserem Punycode Converter. Das Tool wandelt Unicode-Domains wie münchen.de in ASCII-kompatibles Punycode-Format (xn--mnchen-3ya.de) um und umgekehrt. Unterstützt alle Unicode-Zeichen einschließlich Emojis und Sonderschriften. Der Auto-Modus konvertiert sofort während der Eingabe. Ideal für Webentwickler und Systemadministratoren, die mit internationalen Domains arbeiten."
     },
     "stringEscaperTool": {
@@ -937,7 +937,7 @@
     },
     "regexTesterTool": {
       "linkTitle": {
-        "card": "Reguläre Ausdrücke online mit Live-Match-Ergebnissen testen und debuggen",
+        "card": "Reguläre Ausdrücke online testen und debuggen, mit hervorgehobenen Treffern",
         "nav": "Regex-Tester"
       },
       "features_title": "Funktionen",
@@ -947,9 +947,9 @@
       "test_string_placeholder": "Gib Text ein, um ihn gegen dein Muster zu testen",
       "flags_label": "Flags",
       "flag_global": "Global (g) - Alle Übereinstimmungen finden",
-      "flag_ignoreCase": "Groß-/Kleinschreibung ignorieren (i) - Groß-/Kleinschreibung ignorieren",
+      "flag_ignoreCase": "Groß-/Kleinschreibung ignorieren (i) - Unabhängig von Groß- und Kleinschreibung",
       "flag_multiline": "Mehrzeilig (m) - ^ und $ passen auf Zeilengrenzen",
-      "flag_dotAll": "Punkt Alle (s) - . passt auf Zeilenumbrüche",
+      "flag_dotAll": "Punkt trifft alles (s) - . passt auch auf Zeilenumbrüche",
       "flag_unicode": "Unicode (u) - Volle Unicode-Unterstützung",
       "flag_sticky": "Sticky (y) - Nur ab lastIndex übereinstimmen",
       "test_button": "Muster testen",
@@ -985,8 +985,8 @@
       "how_to_use_title": "So funktioniert's",
       "toc_title": "Regex Tester",
       "h1_title": "Regex Tester — Reguläre Ausdrücke online testen",
-      "card_description": "Teste reguläre Ausdrücke mit Match-Hervorhebung und Erfassungsgruppen. JavaScript-Regex-Tester mit allen Flags (g, i, m, s, u, y) und exportierbaren Ergebnissen.",
-      "tool_description": "Teste reguläre Ausdrücke gegen Beispieltext und sieh jeden Treffer hervorgehoben, mit Position und Erfassungsgruppen. Validiere deine Muster, bevor du sie im Code verwendest. Nutzt die JavaScript-Regex-Engine und unterstützt alle ihre Flags: Global (g), Groß-/Kleinschreibung ignorieren (i), Mehrzeilig (m), dotAll (s), Unicode (u) und Sticky (y)."
+      "card_description": "Teste reguläre Ausdrücke mit Match-Hervorhebung und Erfassungsgruppen. JavaScript-Regex-Tester mit den Flags g, i, m, s, u und y und exportierbaren Ergebnissen.",
+      "tool_description": "Teste reguläre Ausdrücke gegen Beispieltext und sieh jeden Treffer hervorgehoben, mit Position und Erfassungsgruppen. Validiere deine Muster, bevor du sie im Code verwendest. Nutzt die JavaScript-Regex-Engine und unterstützt die Flags Global (g), Groß-/Kleinschreibung ignorieren (i), Mehrzeilig (m), dotAll (s), Unicode (u) und Sticky (y)."
     },
     "characterReferenceTool": {
       "linkTitle": {
@@ -996,7 +996,7 @@
       "errorLoading": "Fehler beim Laden der Zeichen-Referenz",
       "searchTitle": "Suche",
       "searchPlaceholder": "Suche nach Name, Entity oder Unicode...",
-      "searchHint": "z.B. 'pfeil', '&copy;', 'U+2192'",
+      "searchHint": "z.B. 'arrow', '&copy;', 'U+2192'",
       "categoriesTitle": "Kategorie",
       "categoryAll": "Alle Zeichen",
       "categoryMath": "Mathematische Symbole",
@@ -1023,8 +1023,8 @@
       "tableHeaderCode": "Unicode-Code",
       "toc_title": "Zeichen-Referenz",
       "h1_title": "Zeichen-Referenz — HTML-Entities & Unicode-Symbole",
-      "card_description": "Durchsuche 2.231+ HTML-Entities und Sonderzeichen mit Unicode-Codes. Suche nach Name, Dezimal oder Hex-Code. Vollständige Referenz für Webentwicklung.",
-      "tool_description": "Vollständige HTML-Zeichen-Referenz mit über 2.231 Entities und Sonderzeichen. Suche nach Name, Dezimal- oder Hex-Code mit sofortiger Kopierfunktion. Perfekt für Webentwickler, Designer und Content-Ersteller, die schnellen Zugriff auf HTML-Entities, Unicode-Zeichen und Sondersymbole benötigen.",
+      "card_description": "Durchsuche 2.231 HTML-Entities und Sonderzeichen mit Unicode-Codes. Suche nach Name, Dezimal oder Hex-Code. Vollständige Referenz für Webentwicklung.",
+      "tool_description": "Vollständige HTML-Zeichen-Referenz mit 2.231 Entities und Sonderzeichen. Suche nach Name, Dezimal- oder Hex-Code mit sofortiger Kopierfunktion. Perfekt für Webentwickler, Designer und Content-Ersteller, die schnellen Zugriff auf HTML-Entities, Unicode-Zeichen und Sondersymbole benötigen.",
       "noResults": "Keine Zeichen gefunden",
       "noResultsHint": "Versuche einen anderen Suchbegriff oder eine andere Kategorie",
       "copyUnicode": "Unicode kopieren",
@@ -1044,7 +1044,7 @@
     },
     "emojiReferenceTool": {
       "linkTitle": {
-        "card": "Emojis mit Unicode-Codes und Shortcodes-Referenz suchen und kopieren",
+        "card": "Emojis mit Unicode- und HTML-Codes suchen und kopieren",
         "nav": "Emoji-Referenz"
       },
       "features_title": "Funktionen",
@@ -1128,7 +1128,7 @@
   },
   "seo": {
     "home": {
-      "meta_description": "Kostenlose Entwickler-Tools für Webentwicklung. JSON Formatierer, Base64 Encoder, UUID Generator und 15+ Werkzeuge. Datenschutzfreundlich, clientseitig."
+      "meta_description": "Kostenlose Entwickler-Tools für Webentwicklung. JSON Formatierer, Base64 Encoder, UUID Generator und 20 Werkzeuge. Datenschutzfreundlich, clientseitig."
     },
     "about": {
       "meta_description": "WebDev-Tools: Datenschutzfreundliche Entwickler-Werkzeuge mit 100% clientseitiger Verarbeitung. Kein Tracking, keine Datensammlung. Kostenlose Open-Source Tools."
@@ -1146,7 +1146,6 @@
         "Drag & Drop Dateiunterstützung",
         "URL-sichere Base64-Kodierung",
         "Echtzeit Live-Modus",
-        "Mehrzeilige Verarbeitung",
         "Clientseitige Verarbeitung"
       ],
       "applicationCategory": "UtilityApplication",
@@ -1327,18 +1326,18 @@
         "Regex-Test mit sofortigem Feedback per Klick",
         "Visuelle Match-Hervorhebung im Test-String",
         "Erfassungsgruppen-Extraktion und Anzeige",
-        "Unterstützung für alle JavaScript-Flags (g, i, m, s, u, y)",
+        "Flags g, i, m, s, u und y",
         "Match-Anzahl und Positions-Details",
         "Ergebnisse kopieren und Testdaten herunterladen"
       ],
       "applicationCategory": "UtilityApplication",
-      "meta_title": "Regex Tester – Reguläre Ausdrücke live online testen",
-      "meta_description": "Teste reguläre Ausdrücke in JavaScript live: Treffer werden beim Tippen markiert, inklusive Capture-Gruppen und aller Flags. Kostenlos, direkt im Browser."
+      "meta_title": "Regex Tester – Reguläre Ausdrücke online testen",
+      "meta_description": "Teste reguläre Ausdrücke in JavaScript: Muster per Klick ausführen und Treffer hervorgehoben sehen, inklusive Capture-Gruppen und der Flags g, i, m, s, u, y. Kostenlos, direkt im Browser."
     },
     "characterReferenceTool": {
       "keywords": "html entities, sonderzeichen, unicode symbole, html escape, zeichencodes, entity referenz",
       "featureList": [
-        "Über 2.231 HTML-Entities",
+        "2.231 HTML-Entities",
         "Kategoriebasiertes Durchsuchen",
         "Leistungsstarke Suchfunktion",
         "Mehrere Kopierformate",

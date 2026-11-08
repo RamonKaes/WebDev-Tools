@@ -18,7 +18,7 @@ $features = [
     'Massengenerierung: mehrere UUIDs auf einmal erstellen',
     'Mehrere Ausgabeformate: Standard, Großbuchstaben, ohne Bindestriche',
     'Einzelne UUIDs oder alle auf einmal kopieren',
-    'RFC 4122 konform',
+    'Konform zu RFC 4122 (v1, v4) und RFC 9562 (v7)',
     'Keine Serverkommunikation - 100% clientseitig',
     'Sofortige Generierung ohne Verzögerungen'
 ];

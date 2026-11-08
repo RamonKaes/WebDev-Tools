@@ -12,7 +12,7 @@ $resourcesSectionTitle = 'Risorse Utili';
 
 $features = [
     'Corrispondenza di pattern con risultati evidenziati',
-    'Tutti i flag regex (g, i, m, s, u, y)',
+    'Flag regex g, i, m, s, u e y',
     'Evidenziazione delle corrispondenze con gruppi di cattura',
     'Informazioni dettagliate e statistiche',
     'Copia e scarica i risultati',

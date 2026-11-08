@@ -18,8 +18,8 @@ $customAboutContent = <<<HTML
 </p>
 <p class="mb-0">
     Dieser Decoder extrahiert und zeigt die Header-, Payload- und Signatur-Komponenten eines JWT an. 
-    Hinweis: Die Signaturprüfung erfordert den geheimen Schlüssel und sollte 
-    aus Sicherheitsgründen serverseitig erfolgen.
+    Hinweis: Dieses Tool prüft die Signatur nicht. Die Prüfung braucht das gemeinsame Geheimnis (HS256/HS384/HS512)
+    bzw. den öffentlichen Schlüssel des Ausstellers (RS*, ES*, PS*) und gehört auf den Server.
 </p>
 HTML;
 
@@ -81,8 +81,8 @@ $additionalSections = [
     <h3 class="h6 text-warning">Signatur</h3>
     <p class="small">Überprüft Token-Integrität:</p>
     <ul class="small">
-      <li>HMAC oder RSA Signatur</li>
-      <li>Erfordert geheimen Schlüssel</li>
+      <li>HMAC (gemeinsames Geheimnis) oder RSA/ECDSA (öffentlicher Schlüssel)</li>
+      <li>Wird von diesem Tool nicht geprüft</li>
       <li>Verhindert Manipulation</li>
     </ul>
   </div>

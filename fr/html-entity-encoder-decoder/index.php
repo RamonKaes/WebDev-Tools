@@ -94,22 +94,22 @@ HTML
 $usefulResources = [
     [
         'url' => 'https://fr.wikipedia.org/wiki/Liste_des_entit%C3%A9s_de_caract%C3%A8res_de_XML_et_HTML',
-        'title' => 'Wikipedia&nbsp;: Entités de caractères HTML',
+        'title' => 'Wikipedia : Entités de caractères HTML',
         'description' => 'Introduction accessible aux entités de caractères HTML'
     ],
     [
         'url' => 'https://html.spec.whatwg.org/multipage/named-characters.html',
-        'title' => 'Standard HTML&nbsp;: références de caractères nommés',
+        'title' => 'Standard HTML : références de caractères nommés',
         'description' => 'Spécification officielle WHATWG des entités nommées'
     ],
     [
         'url' => 'https://developer.mozilla.org/en-US/docs/Glossary/Entity',
-        'title' => 'MDN&nbsp;: entités HTML',
+        'title' => 'MDN : entités HTML',
         'description' => 'Guide complet des entités de caractères HTML'
     ],
     [
         'url' => 'https://www.w3.org/International/questions/qa-escapes',
-        'title' => 'W3C&nbsp;: utilisation des échappements',
+        'title' => 'W3C : utilisation des échappements',
         'description' => 'Bonnes pratiques pour utiliser les séquences d\'échappement en markup et CSS'
     ]
 ];

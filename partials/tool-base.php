@@ -80,69 +80,70 @@ include __DIR__ . '/head.php';
       
         <?php
       // Standards Compliance Badges - show relevant standards for each tool
+        $clientSideOnlyLabel = $i18nData['common']['client_side_only'] ?? 'Client-Side Only';
         $toolStandards = [
         'base64EncoderDecoder' => [
           ['label' => 'RFC 4648', 'tooltip' => 'Base64 Data Encoding Standard'],
-          ['label' => 'Client-Side Only', 'type' => 'security']
+          ['label' => $clientSideOnlyLabel, 'type' => 'security']
         ],
         'uuidGeneratorTool' => [
           ['label' => 'RFC 4122', 'tooltip' => 'UUID Specification'],
           ['label' => 'RFC 9562', 'tooltip' => 'UUID v6/v7/v8'],
           ['label' => 'CSPRNG', 'tooltip' => 'Cryptographically Secure Random Number Generator'],
-          ['label' => 'Client-Side Only', 'type' => 'security']
+          ['label' => $clientSideOnlyLabel, 'type' => 'security']
         ],
         'passwordGeneratorTool' => [
           ['label' => 'NIST SP 800-63B', 'tooltip' => 'Digital Identity Guidelines'],
           ['label' => 'CSPRNG', 'tooltip' => 'Cryptographically Secure Random Number Generator'],
-          ['label' => 'Client-Side Only', 'type' => 'security']
+          ['label' => $clientSideOnlyLabel, 'type' => 'security']
         ],
         'jwtDecoderTool' => [
           ['label' => 'RFC 7519', 'tooltip' => 'JSON Web Token Standard'],
-          ['label' => 'Client-Side Only', 'type' => 'security']
+          ['label' => $clientSideOnlyLabel, 'type' => 'security']
         ],
         'jsonFormatterValidator' => [
           ['label' => 'RFC 8259', 'tooltip' => 'JSON Data Interchange Format'],
-          ['label' => 'Client-Side Only', 'type' => 'security']
+          ['label' => $clientSideOnlyLabel, 'type' => 'security']
         ],
         'hashGeneratorTool' => [
           ['label' => 'Web Crypto API', 'tooltip' => 'Browser Cryptography Standard'],
-          ['label' => 'Client-Side Only', 'type' => 'security']
+          ['label' => $clientSideOnlyLabel, 'type' => 'security']
         ],
         'qrCodeGeneratorTool' => [
           ['label' => 'ISO/IEC 18004', 'tooltip' => 'QR Code Standard'],
-          ['label' => 'Client-Side Only', 'type' => 'security']
+          ['label' => $clientSideOnlyLabel, 'type' => 'security']
         ],
         'pxToRemConverter' => [
           ['label' => 'WCAG A11y', 'tooltip' => 'Web Accessibility Guidelines']
         ],
         'urlEncoderDecoder' => [
           ['label' => 'RFC 3986', 'tooltip' => 'URI Generic Syntax'],
-          ['label' => 'Client-Side Only', 'type' => 'security']
+          ['label' => $clientSideOnlyLabel, 'type' => 'security']
         ],
         'regexTesterTool' => [
           ['label' => 'ECMAScript', 'tooltip' => 'JavaScript Regex Engine'],
-          ['label' => 'Client-Side Only', 'type' => 'security']
+          ['label' => $clientSideOnlyLabel, 'type' => 'security']
         ],
         'htmlEntityTool' => [
           ['label' => 'HTML5', 'tooltip' => 'HTML Entity Reference'],
-          ['label' => 'Client-Side Only', 'type' => 'security']
+          ['label' => $clientSideOnlyLabel, 'type' => 'security']
         ],
         'punycodeConverterTool' => [
           ['label' => 'RFC 3492', 'tooltip' => 'Punycode: Internationalized Domain Names'],
-          ['label' => 'Client-Side Only', 'type' => 'security']
+          ['label' => $clientSideOnlyLabel, 'type' => 'security']
         ],
         'dataConverterTool' => [
           ['label' => 'RFC 8259', 'tooltip' => 'JSON Standard'],
-          ['label' => 'Client-Side Only', 'type' => 'security']
+          ['label' => $clientSideOnlyLabel, 'type' => 'security']
         ],
         'stringEscaperTool' => [
-          ['label' => 'Client-Side Only', 'type' => 'security']
+          ['label' => $clientSideOnlyLabel, 'type' => 'security']
         ],
         'loremIpsumTool' => [
-          ['label' => 'Client-Side Only', 'type' => 'security']
+          ['label' => $clientSideOnlyLabel, 'type' => 'security']
         ],
         'codeFormatterTool' => [
-          ['label' => 'Client-Side Only', 'type' => 'security']
+          ['label' => $clientSideOnlyLabel, 'type' => 'security']
         ],
         'characterReferenceTool' => [
           ['label' => 'HTML5', 'tooltip' => 'HTML Character Entities'],
@@ -155,7 +156,7 @@ include __DIR__ . '/head.php';
         'sriGeneratorTool' => [
           ['label' => 'W3C SRI', 'tooltip' => 'Subresource Integrity W3C Recommendation'],
           ['label' => 'Web Crypto API', 'tooltip' => 'Browser Cryptography Standard'],
-          ['label' => 'Client-Side Only', 'type' => 'security']
+          ['label' => $clientSideOnlyLabel, 'type' => 'security']
         ]
         ];
 

@@ -27,7 +27,7 @@ $features = [
     'Anpassbare Menge pro Typ',
     'Mit einem Klick in die Zwischenablage kopieren',
     'Zeichen- und Wortzähler in Echtzeit',
-    '100% clientseitig – funktioniert offline'
+    '100% clientseitig – dein Text verlässt den Browser nicht'
 ];
 
 $customNoticeType = 'info';

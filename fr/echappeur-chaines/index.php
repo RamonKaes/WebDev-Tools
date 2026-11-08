@@ -62,27 +62,27 @@ HTML
 $usefulResources = [
     [
         'url' => 'https://fr.wikipedia.org/wiki/Caract%C3%A8re_d%27%C3%A9chappement',
-        'title' => 'Wikipedia&nbsp;: Caractère d\'&eacute;chappement',
-        'description' => 'Introduction accessible aux caractères et séquences d\'&eacute;chappement'
+        'title' => 'Wikipedia : Caractère d\'échappement',
+        'description' => 'Introduction accessible aux caractères et séquences d\'échappement'
     ],
     [
         'url' => 'https://owasp.org/www-community/attacks/xss/',
-        'title' => 'OWASP&nbsp;: prévention des attaques XSS',
+        'title' => 'OWASP : prévention des attaques XSS',
         'description' => 'Guide complet pour prévenir les attaques Cross-Site Scripting'
     ],
     [
         'url' => 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String',
-        'title' => 'MDN&nbsp;: référence des chaînes JavaScript',
+        'title' => 'MDN : référence des chaînes JavaScript',
         'description' => 'Documentation complète sur les méthodes de chaînes et l\'échappement en JavaScript'
     ],
     [
         'url' => 'https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html',
-        'title' => 'OWASP&nbsp;: prévention des injections SQL',
+        'title' => 'OWASP : prévention des injections SQL',
         'description' => 'Bonnes pratiques pour éviter les vulnérabilités d\'injection SQL'
     ],
     [
         'url' => 'https://www.w3.org/TR/html5/syntax.html#escaping-a-string',
-        'title' => 'W3C HTML5&nbsp;: échappement des chaînes',
+        'title' => 'W3C HTML5 : échappement des chaînes',
         'description' => 'Spécification officielle pour l\'échappement des chaînes en HTML'
     ]
 ];

@@ -26,7 +26,7 @@ $features = [
     'Génération en lot : créez plusieurs UUID d\'un coup',
     'Plusieurs formats de sortie : standard, majuscules, sans tirets',
     'Copie individuelle ou globale en un clic',
-    'Conforme à la RFC 4122',
+    'Conforme à la RFC 4122 (v1, v4) et à la RFC 9562 (v7)',
     'Aucun appel serveur : 100 % côté client',
     'Génération instantanée sans latence'
 ];
@@ -77,12 +77,12 @@ HTML
 $usefulResources = [
     [
         'url' => 'https://datatracker.ietf.org/doc/html/rfc4122',
-        'title' => 'RFC 4122&nbsp;: espace de noms UUID',
+        'title' => 'RFC 4122 : espace de noms UUID',
         'description' => 'Spécification officielle du format et de la génération des UUID'
     ],
     [
         'url' => 'https://datatracker.ietf.org/doc/html/rfc9562',
-        'title' => 'RFC 9562&nbsp;: UUID versions 6, 7 et 8',
+        'title' => 'RFC 9562 : UUID versions 6, 7 et 8',
         'description' => 'Dernières spécifications des nouvelles versions d\'UUID basés sur l\'horodatage'
     ],
     [

@@ -83,7 +83,7 @@ $usefulResources = [
     ],
     [
         'url' => 'https://www.smashingmagazine.com/2010/01/lorem-ipsum-killing-designs/',
-        'title' => 'Smashing Magazine&nbsp;: Lorem Ipsum nuit à vos designs',
+        'title' => 'Smashing Magazine : Lorem Ipsum nuit à vos designs',
         'description' => 'Pourquoi le texte de substitution peut nuire à votre processus de conception et à l\'expérience utilisateur'
     ]
 ];

@@ -26,7 +26,7 @@ $features = [
     'Generazione batch: crea più UUID contemporaneamente',
     'Formati: standard, maiuscolo, senza trattini',
     'Copia UUID individualmente o tutti insieme',
-    'Conformità RFC 4122',
+    'Conforme a RFC 4122 (v1, v4) e RFC 9562 (v7)',
     'Nessuna chiamata al server: 100% lato client',
     'Generazione istantanea senza latenza'
 ];

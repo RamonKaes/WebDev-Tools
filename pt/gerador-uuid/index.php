@@ -26,7 +26,7 @@ $features = [
     'Geração em lote: crie vários UUIDs de uma vez',
     'Formatos: padrão, maiúsculo, sem hífens',
     'Copie UUIDs individualmente ou todos de uma vez',
-    'Conformidade com RFC 4122',
+    'Conformidade com RFC 4122 (v1, v4) e RFC 9562 (v7)',
     'Processamento 100% no navegador',
     'Geração instantânea sem atrasos'
 ];

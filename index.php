@@ -28,7 +28,7 @@ $assetPrefix = BASE_PATH . '/';
 $toolBaseUrl = BASE_PATH;
 $dashboardToolBaseUrl = './';
 $homeUrl = BASE_PATH;
-$pageTitle = 'WebDev-Tools – Free Developer Utilities Converters & Tools';
+$pageTitle = 'WebDev-Tools – Free Developer Utilities, Converters & Tools';
 $pageDescription = 'Professional web developer tools: JSON Formatter, Base64 Encoder, URL Encoder, UUID Generator and more. 100% free, client-side and privacy-friendly.';
 
 $toolsConfig = require __DIR__ . '/config/tools.php';

@@ -82,9 +82,9 @@ HTML
       <tr><td>münchen.de</td><td>xn--mnchen-3ya.de</td><td>Alemão</td></tr>
       <tr><td>zürich.ch</td><td>xn--zrich-kva.ch</td><td>Alemão</td></tr>
       <tr><td>москва.рф</td><td>xn--80adxhks.xn--p1ai</td><td>Russo</td></tr>
-      <tr><td>东京.jp</td><td>xn--1lqs71d.jp</td><td>Japonês</td></tr>
+      <tr><td>東京.jp</td><td>xn--1lqs71d.jp</td><td>Japonês</td></tr>
       <tr><td>مصر.eg</td><td>xn--wgbh1c.eg</td><td>Árabe</td></tr>
-      <tr><td>ελλάδα.gr</td><td>xn--qxam.gr</td><td>Grego</td></tr>
+      <tr><td>ελλάδα.gr</td><td>xn--hxakic4aa.gr</td><td>Grego</td></tr>
     </tbody>
   </table>
 </div>
@@ -100,7 +100,6 @@ HTML
     <ul>
       <li>Converter IDNs para cadastro no DNS</li>
       <li>Verificar disponibilidade</li>
-      <li>Codificar domínios em endereços de e-mail</li>
       <li>Gerar certificados SSL</li>
     </ul>
   </div>

@@ -23,7 +23,7 @@ $customAboutContent = <<<HTML
 HTML;
 
 $features = [
-    'Over 2,231 HTML entities',
+    '2,231 HTML entities',
     'Category-based browsing',
     'Powerful search function',
     'Multiple copy formats',

@@ -51,7 +51,8 @@
     "output": "Output",
     "unknown": "Unknown",
     "copy_failed": "Copy failed",
-    "related_tools": "Related tools"
+    "related_tools": "Related tools",
+    "client_side_only": "Client-Side Only"
   },
   "theme": {
     "light": "Light",
@@ -104,9 +105,7 @@
         "Text Decoding: Decode Base64 strings back to plain text",
         "File Support: Drag and drop files for encoding/decoding",
         "Live Mode: Real-time encoding/decoding as you type",
-        "URL Safe: Option for URL-safe Base64 encoding",
-        "Line Processing: Encode/decode multiple lines independently",
-        "Statistics: Display of character and line count"
+        "URL Safe: Option for URL-safe Base64 encoding"
       ],
       "how_to_use_steps": [
         "Enter text or upload a file via drag and drop",
@@ -119,7 +118,7 @@
       "notice_title": "Privacy and Security",
       "toc_title": "Base64 Encoder",
       "h1_title": "Base64 Encoder & Decoder — Fast & Secure Online Tool",
-      "card_description": "Base64 encoder and decoder for text and files with drag & drop support. URL-safe encoding, live preview, and multi-line processing for web development and APIs.",
+      "card_description": "Base64 encoder and decoder for text and files with drag & drop support. URL-safe encoding and live preview for web development and APIs.",
       "tool_description": "Base64 is a binary-to-text encoding scheme that represents binary data in ASCII string format. It's commonly used for encoding data in URLs, emails, and data URIs. All encoding and decoding happens locally in your browser for complete privacy."
     },
     "urlEncoderDecoder": {
@@ -226,6 +225,7 @@
       "downloaded": "Downloaded successfully!",
       "saved": "Saved!",
       "minified": "JSON minified!",
+      "minified_label": "Minified",
       "original": "Original",
       "valid_json": "Valid JSON",
       "invalid_json": "Invalid JSON",
@@ -376,7 +376,7 @@
       "version_v7": "Version 7 (Timestamp + Random)",
       "version_nil": "NIL UUID",
       "version_v4_help": "Randomly generated UUID (recommended for most use cases)",
-      "version_v1_help": "Timestamp-based UUID (uses MAC address and current time)",
+      "version_v1_help": "Timestamp-based UUID (current time plus a random node ID instead of a MAC address)",
       "version_v7_help": "Combines timestamp with random data (recommended for time-ordered UUIDs)",
       "version_nil_help": "Special UUID with all zeros (00000000-0000-0000-0000-000000000000)",
       "format_label": "Format",
@@ -448,7 +448,7 @@
       "lowercase": "Lowercase (a-z)",
       "numbers": "Numbers (0-9)",
       "symbols": "Symbols (!@#$...)",
-      "excludeAmbiguous": "Exclude ambiguous characters (0, O, l, I)",
+      "excludeAmbiguous": "Exclude ambiguous characters (0, O, 1, l, I)",
       "generate": "Generate Password",
       "strengthVeryStrong": "Very Strong",
       "strengthVeryStrongDesc": "Excellent password!",
@@ -472,7 +472,7 @@
       "errorLoading": "Error loading password generator",
       "errorNoCharset": "Please select at least one character type",
       "wordCount": "Number of words",
-      "wordCountHint": "Number of words in passphrase (3-10 recommended)",
+      "wordCountHint": "Number of words in the passphrase (3–8)",
       "separator": "Separator",
       "hyphen": "Hyphen (-)",
       "underscore": "Underscore (_)",
@@ -484,7 +484,7 @@
       "patternCVC": "CVC (consonant-vowel-consonant)",
       "patternCVVC": "CVVC (consonant-vowel-vowel-consonant)",
       "patternLength": "Pattern Length",
-      "patternLengthHint": "Number of syllables (2-8 recommended)",
+      "patternLengthHint": "Number of characters (6–32)",
       "patternCapitalize": "Capitalize",
       "about_title": "About",
       "how_to_use_steps": [
@@ -500,7 +500,7 @@
       "separatorSpace": "Space ( )",
       "toc_title": "Password Generator",
       "h1_title": "Secure Password Generator — Create Strong Passwords Fast",
-      "card_description": "Create strong, random passwords with customizable length and character sets. generator with strength meter and multiple password generation.",
+      "card_description": "Create strong, random passwords with customizable length and character sets. Passphrases, pronounceable patterns, strength meter and bulk generation.",
       "tool_description": "Create cryptographically secure passwords with our Password Generator. The tool offers three generation modes: random passwords, memorable passphrases, and pattern-based generation. Choose from various character sets (standard, alphanumeric, hexadecimal, or custom), exclude ambiguous characters, and generate up to 100 passwords simultaneously. The integrated password strength analyzer displays entropy, character set size, and estimated crack time. Export your passwords as TXT, CSV, or JSON.",
       "alphabetWords": "{count} words",
       "alphabetPattern": "21 consonants / 5 vowels"
@@ -610,7 +610,7 @@
     },
     "qrCodeGeneratorTool": {
       "linkTitle": {
-        "card": "Create customizable QR codes instantly with color and logo options",
+        "card": "Create customizable QR codes instantly with your own colors and sizes",
         "nav": "QR Code Generator"
       },
       "features_title": "Features",
@@ -737,9 +737,9 @@
       "header": "Header",
       "payload": "Payload",
       "signature": "Signature",
-      "signatureNote": "The signature can only be verified with the secret key. This tool only decodes the token.",
+      "signatureNote": "This tool does not verify the signature. Verification needs the shared secret (HS*) or the issuer's public key (RS*, ES*, PS*).",
       "verificationWarning": "⚠️ Warning: This tool does NOT perform signature verification!",
-      "verificationWarningDetails": "This JWT decoder only displays token content. It does NOT verify the signature. Never trust decoded JWT data without server-side verification. An attacker can manipulate the token content – only cryptographic validation with the secret key guarantees authenticity.",
+      "verificationWarningDetails": "This JWT decoder only displays token content. It does NOT verify the signature. Never trust decoded JWT data without server-side verification. An attacker can manipulate the token content – only cryptographic validation with the shared secret (HS*) or the issuer's public key (RS*, ES*, PS*) guarantees authenticity.",
       "algorithm": "Algorithm",
       "expiry": "Expiry",
       "expired": "Token has expired",
@@ -767,7 +767,7 @@
       "toc_title": "JWT Decoder",
       "h1_title": "JWT Decoder — Analyze & Decode JSON Web Tokens Online",
       "card_description": "Decode and analyze JSON Web Tokens (JWT) with detailed header, payload, and signature inspection. Validates JWT structure and provides Base64 decoding insights.",
-      "tool_description": "Decode and analyze JSON Web Tokens (JWT) with our JWT Decoder. The tool automatically separates the token into its three parts (header, payload, signature) and displays the decoded content in formatted JSON. Shows the signing algorithm from the header and checks the expiration claim (exp) against the current time. Note: this tool only decodes tokens; signature verification requires the secret key. All operations are performed locally in your browser.",
+      "tool_description": "Decode and analyze JSON Web Tokens (JWT) with our JWT Decoder. The tool automatically separates the token into its three parts (header, payload, signature) and displays the decoded content in formatted JSON. Shows the signing algorithm from the header and checks the expiration claim (exp) against the current time. Note: this tool only decodes tokens and does not verify signatures. Verification needs the shared secret (HS*) or the public key (RS*, ES*, PS*) and belongs on the server. All operations are performed locally in your browser.",
       "errorFormat": "Invalid JWT format. Expected 3 parts (header.payload.signature)",
       "errorBase64": "Invalid Base64URL encoding",
       "errorHeader": "Failed to decode header: {message}",
@@ -808,7 +808,7 @@
       ],
       "toc_title": "Punycode Converter",
       "h1_title": "Punycode Converter — Convert International Domain Names",
-      "card_description": "Convert international domain names to Punycode and back. IDN converter supporting Unicode domains for DNS compatibility and email address encoding.",
+      "card_description": "Convert international domain names to Punycode and back. IDN converter supporting Unicode domains for DNS compatibility, also several domains at once, line by line.",
       "tool_description": "Convert international domain names (IDN) to and from Punycode with our Punycode Converter. The tool transforms Unicode domains like münchen.de into ASCII-compatible Punycode format (xn--mnchen-3ya.de) and vice versa. Supports all Unicode characters including emojis and special scripts. Auto mode converts instantly as you type. Ideal for web developers and system administrators working with international domains."
     },
     "stringEscaperTool": {
@@ -937,7 +937,7 @@
     },
     "regexTesterTool": {
       "linkTitle": {
-        "card": "Test and debug regular expressions online with live match results",
+        "card": "Test and debug regular expressions online with highlighted matches",
         "nav": "Regex Tester"
       },
       "features_title": "Features",
@@ -985,8 +985,8 @@
       "match_label": "Match {number}",
       "toc_title": "Regex Tester",
       "h1_title": "Regex Tester — Test Regular Expressions with Match Highlighting",
-      "card_description": "Test regular expressions with match highlighting and capture groups. JavaScript regex tester with all flags (g, i, m, s, u, y) and exportable results.",
-      "tool_description": "Test regular expressions against sample text and see every match highlighted with its position and capture groups. Validate your patterns before using them in code. Uses the JavaScript regex engine and supports all of its flags: global (g), case-insensitive (i), multiline (m), dotAll (s), unicode (u) and sticky (y)."
+      "card_description": "Test regular expressions with match highlighting and capture groups. JavaScript regex tester with the flags g, i, m, s, u and y and exportable results.",
+      "tool_description": "Test regular expressions against sample text and see every match highlighted with its position and capture groups. Validate your patterns before using them in code. Uses the JavaScript regex engine and supports the flags global (g), case-insensitive (i), multiline (m), dotAll (s), unicode (u) and sticky (y)."
     },
     "characterReferenceTool": {
       "linkTitle": {
@@ -1023,8 +1023,8 @@
       "tableHeaderCode": "Unicode Code",
       "toc_title": "Character Reference",
       "h1_title": "Character Reference — HTML Entities & Unicode Symbols",
-      "card_description": "Complete HTML character entity reference with 2,231+ symbols, arrows, and mathematical operators. Search by name, decimal, hex, or Unicode for web development.",
-      "tool_description": "Complete HTML character reference with over 2,231 entities and special characters. Search by name, decimal, or hex code with instant copy functionality. Perfect for web developers, designers, and content creators who need quick access to HTML entities, Unicode characters, and special symbols.",
+      "card_description": "Complete HTML character entity reference with 2,231 symbols, arrows, and mathematical operators. Search by name, decimal, hex, or Unicode for web development.",
+      "tool_description": "Complete HTML character reference with 2,231 entities and special characters. Search by name, decimal, or hex code with instant copy functionality. Perfect for web developers, designers, and content creators who need quick access to HTML entities, Unicode characters, and special symbols.",
       "noResults": "No characters found",
       "noResultsHint": "Try a different search term or category",
       "copyUnicode": "Copy Unicode",
@@ -1044,7 +1044,7 @@
     },
     "emojiReferenceTool": {
       "linkTitle": {
-        "card": "Search and copy emojis with Unicode codes and shortcodes reference",
+        "card": "Search and copy emojis with Unicode and HTML codes",
         "nav": "Emoji Reference"
       },
       "features_title": "Features",
@@ -1128,7 +1128,7 @@
   },
   "seo": {
     "home": {
-      "meta_description": "Free developer tools for web development. JSON formatter, Base64 encoder, UUID generator, and 15+ utilities. Privacy-first with 100% client-side processing."
+      "meta_description": "Free developer tools for web development. JSON formatter, Base64 encoder, UUID generator, and 20 utilities. Privacy-first with 100% client-side processing."
     },
     "about": {
       "meta_description": "WebDev-Tools: privacy-first developer utilities running 100% client-side. No tracking, no data collection. Free open-source tools for web developers worldwide."
@@ -1314,13 +1314,13 @@
         "Test regular expressions",
         "Match highlighting in the test string",
         "Capture group extraction",
-        "All JavaScript regex flags",
+        "Flags g, i, m, s, u and y",
         "Match position display",
         "Export match results"
       ],
       "keywords": "regex tester, regular expression, pattern matching, regex validator, regex debugger, javascript regex",
-      "meta_title": "Regex Tester – Test Regular Expressions Online, Live",
-      "meta_description": "Test JavaScript regular expressions live: matches are highlighted as you type, with capture groups and all flags supported. Free, runs in your browser."
+      "meta_title": "Regex Tester – Test Regular Expressions Online, Free",
+      "meta_description": "Test JavaScript regular expressions: run a pattern with one click and see highlighted matches, capture groups and the flags g, i, m, s, u, y. Free, runs in your browser."
     },
     "sampleHelloWorld": {
       "keywords": "sample tool, demo tool, hello world, text transformation, developer template",
@@ -1339,7 +1339,7 @@
     "characterReferenceTool": {
       "applicationCategory": "UtilityApplication",
       "featureList": [
-        "Over 2,231 HTML entities",
+        "2,231 HTML entities",
         "Category-based navigation",
         "Powerful search function",
         "Multiple copy formats",

@@ -196,12 +196,6 @@ $currentUrl = getFullUrl('/about.php', $lang);
           </div>
         </div>
 
-        <div class="text-end mt-4">
-          <small class="text-muted">
-            <a href="https://www.deepl.com" target="_blank" rel="noopener noreferrer" title="Kostenloser Online-Übersetzungsdienst" class="text-decoration-none text-muted">Übersetzt mit deepl.com (kostenlose Version)</a>
-          </small>
-        </div>
-
       </div>
     </main>
   </div>

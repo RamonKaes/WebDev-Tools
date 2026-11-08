@@ -38,10 +38,8 @@ $toolBaseUrl = BASE_PATH . $langPrefix;
 // Load manifest with caching
 $manifest = getManifest();
 
-$buildHash = '1.0.0';
-if ($manifest && isset($manifest['generatedAt'])) {
-    $buildHash = preg_replace('/[^0-9]/', '', substr($manifest['generatedAt'], 0, 19));
-}
+// Content hash of scripts and translations (config/generate-manifest.php); every ?v= depends on it
+$buildHash = $manifest['version'] ?? '1.0.0';
 
 $toolUrlMap = [];
 
@@ -203,7 +201,7 @@ if (!isset($assetPrefix)) {
       '<?= $lang ?>': <?= json_encode($i18nData, JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP) ?>
     };
     
-    // Build hash for cache busting (from manifest.json generatedAt)
+    // Build hash for cache busting (manifest version = content hash)
     window.BUILD_HASH = '<?= $buildHash ?>';
   </script>
   

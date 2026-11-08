@@ -41,7 +41,7 @@ module.exports = [
     languageOptions: { sourceType: 'module' },
   },
   {
-    files: ['tests/**/*.js', 'build-tools/**/*.js', 'jest.config.js', 'playwright.config.js', 'eslint.config.js'],
+    files: ['tests/**/*.js', 'build-tools/**/*.js', 'jest.config.js', 'playwright*.config.js', 'eslint.config.js'],
     languageOptions: {
       ecmaVersion: 2022,
       sourceType: 'commonjs',

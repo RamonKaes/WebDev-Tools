@@ -88,7 +88,9 @@
         }
       }
 
-      const response = await fetch(`${BASE_PATH}/config/manifest.json`);
+      // Versioned by the server-rendered hash so a changed manifest is never served from the HTTP cache
+      const manifestVersion = window.MANIFEST_VERSION ? `?v=${encodeURIComponent(window.MANIFEST_VERSION)}` : '';
+      const response = await fetch(`${BASE_PATH}/config/manifest.json${manifestVersion}`);
       if (!response.ok) throw new Error('Manifest not found');
       TOOL_MANIFEST = await response.json();
 
@@ -119,7 +121,7 @@
       const freshManifest = await response.json();
       const cached = JSON.parse(localStorage.getItem('toolbox_manifest') || '{}');
 
-      if (freshManifest.generatedAt !== cached.manifest?.generatedAt) {
+      if (freshManifest.version !== cached.manifest?.version) {
         localStorage.setItem('toolbox_manifest', JSON.stringify({
           manifest: freshManifest,
           cachedAt: Date.now()

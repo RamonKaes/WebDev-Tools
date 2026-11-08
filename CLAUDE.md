@@ -12,10 +12,11 @@ npm run test:coverage           # Mit Coverage-Report und Schwellenwerten (wie i
 npm run lint                    # ESLint über assets/js, build-tools und tests
 bash build.sh                   # Production-Build nach dist/
 npm run test:browser            # Playwright gegen dist/ hinter Apache (vorher build.sh)
+npm run test:browser:live       # Dieselbe Suite gegen die Live-Seite (nur lesend, nach einem Deploy)
 npm run deploy                  # Upload aus dem Haupt-Checkout, mit Wächter und Prod-Prüfung
 npm run deploy:dry              # Zeigt neue und nur auf dem Server liegende Dateien
 npm run verify:prod             # Live-Seite gegen dist/ prüfen (nur lesend)
-php config/generate-manifest.php    # Nach neuem Tool ausführen
+php config/generate-manifest.php    # Nach neuem Tool und nach Änderungen an JS/i18n (Version = Inhalts-Hash, CI prüft)
 php config/generate-sitemaps.php    # Nach neuem Tool ausführen
 ```
 

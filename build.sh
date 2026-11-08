@@ -69,6 +69,8 @@ cp -r partials "$DIST_DIR/"
 
 # Config
 cp -r config/*.php "$DIST_DIR/config/"
+# Regenerate the manifest so its content-hash version matches the scripts and translations being shipped
+php config/generate-manifest.php > /dev/null
 cp config/manifest.json "$DIST_DIR/config/"
 
 # ============================================

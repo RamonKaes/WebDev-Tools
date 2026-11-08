@@ -32,6 +32,25 @@ test.describe('every page in the sitemap', () => {
       await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', SITE + pagePath);
       await expect(page.locator('h1').first()).toBeVisible();
 
+      // Every page that loads i18n.js must preload the translations and the
+      // cache-busting hash (head.php on tool pages, footer.php elsewhere); the
+      // HTML minifier once joined the lines of that script and commented it out
+      expect(await page.locator('script[src*="i18n.js"]').count()).toBe(1);
+      {
+        const inlineConfig = await page.evaluate(() => ({
+          preloadedLangs: Object.keys(window.__I18N__ || {}),
+          buildHash: window.BUILD_HASH,
+          manifestVersion: window.MANIFEST_VERSION,
+        }));
+        expect(inlineConfig.preloadedLangs).toEqual([lang]);
+        expect(inlineConfig.buildHash).toMatch(/^[0-9a-f]{16}$/);
+        // tool-loader.js versions the tool scripts with MANIFEST_VERSION (common-scripts.php);
+        // the about pages load neither, every other page must agree with the build hash
+        if (await page.locator('script[src*="tool-loader.js"]').count()) {
+          expect(inlineConfig.manifestVersion).toBe(inlineConfig.buildHash);
+        }
+      }
+
       // Tool scripts load asynchronously and fill this container themselves
       const container = page.locator('#tool-container');
       if (await container.count()) {

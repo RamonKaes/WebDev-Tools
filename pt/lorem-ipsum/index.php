@@ -11,7 +11,7 @@ $featuresSectionTitle = 'Recursos';
 $resourcesSectionTitle = 'Recursos Úteis';
 $customAboutContent = <<<HTML
 <p class="mb-2">
-    Gere texto de preenchimento (Lorem Ipsum) para maquetes, protótipos e layouts.
+    Gere texto de preenchimento (Lorem Ipsum) para mockups, protótipos e layouts.
     Personalize parágrafos, frases ou palavras conforme a necessidade.
 </p>
 <p class="mb-0">

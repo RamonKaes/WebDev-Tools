@@ -14,7 +14,7 @@ $customAboutContent = <<<HTML
 <p class="mb-2">
     <strong>URL-Kodierung</strong> (auch als Prozent-Kodierung bekannt) konvertiert Zeichen 
     in ein Format, das über das Internet übertragen werden kann. Sonderzeichen werden 
-    durch ein "%" gefolgt von zwei Hexadezimalziffern ersetzt.
+    durch ein „%“ gefolgt von zwei Hexadezimalziffern ersetzt.
 </p>
 <p class="mb-0">
     Alle Kodierungs- und Dekodierungsvorgänge erfolgen lokal in Ihrem Browser. Es werden 
@@ -27,9 +27,9 @@ $features = [
     'URL-Kodierung: Kodieren von URLs und Query-Parametern',
     'URL-Dekodierung: Dekodieren von prozent-kodierten URLs',
     'Komponenten-Kodierung: Kodieren einzelner URL-Komponenten',
-    'Stapelverarbeitung: Mehrere Zeilen gleichzeitig kodieren/dekodieren',
+    'Stapelverarbeitung: Mehrere Zeilen gleichzeitig kodieren oder dekodieren',
     'URL-Parsing: Extrahieren von Protokoll, Host, Pfad und Query-Strings',
-    'Live-Modus: Echtzeit-Kodierung/Dekodierung während der Eingabe'
+    'Live-Modus: Kodierung und Dekodierung in Echtzeit während der Eingabe'
 ];
 
 $customNoticeContent = '

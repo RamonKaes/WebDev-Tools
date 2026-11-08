@@ -83,7 +83,7 @@ $seoData = [];
 $pageDescription = $errorContent['message'];
 $keywords = '';
 $htmlLang = $lang;
-$ogLocales = ['en' => 'en_US', 'de' => 'de_DE', 'es' => 'es_ES', 'pt' => 'pt_PT', 'fr' => 'fr_FR', 'it' => 'it_IT'];
+$ogLocales = ['en' => 'en_US', 'de' => 'de_DE', 'es' => 'es_ES', 'pt' => 'pt_BR', 'fr' => 'fr_FR', 'it' => 'it_IT'];
 $ogLocale = $ogLocales[$lang] ?? 'en_US';
 $langPrefix = getLangPrefix($lang);
 

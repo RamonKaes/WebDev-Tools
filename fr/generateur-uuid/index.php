@@ -23,11 +23,11 @@ HTML;
 
 $features = [
     'Génération d\'UUID v1 (horodatés), v4 (aléatoires), v7 (triables par temps) et NIL',
-    'Génération en lot : créez plusieurs UUID d\'un coup',
-    'Plusieurs formats de sortie : standard, majuscules, sans tirets',
+    'Génération en lot : créez plusieurs UUID d\'un coup',
+    'Plusieurs formats de sortie : standard, majuscules, sans tirets',
     'Copie individuelle ou globale en un clic',
     'Conforme à la RFC 4122 (v1, v4) et à la RFC 9562 (v7)',
-    'Aucun appel serveur : 100 % côté client',
+    'Aucun appel serveur : 100 % côté client',
     'Génération instantanée sans latence'
 ];
 

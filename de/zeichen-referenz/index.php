@@ -16,7 +16,7 @@ $features = [
     'Leistungsstarke Suchfunktion',
     'Mehrere Kopierformate',
     'Unicode-, Dezimal-, Hex-Codes',
-    'Ein-Klick-Kopie'
+    'Kopieren mit einem Klick'
 ];
 
 $customAboutContent = <<<HTML
@@ -28,7 +28,7 @@ $customAboutContent = <<<HTML
 <p class="mb-0">
     <i class="bi bi-lightbulb me-1"></i>
     <strong>Text konvertieren?</strong> Nutzen Sie unseren 
-    <a href="' . getToolUrl('html-entity-encoder-decoder', 'de') . '">HTML Entity Encoder/Decoder</a>, 
+    <a href="' . getToolUrl('html-entity-encoder-decoder', 'de') . '">HTML-Entity-Kodierer/-Dekodierer</a>, 
     um HTML-Entities in großen Mengen zu kodieren oder dekodieren.
 </p>
 HTML;
@@ -37,22 +37,22 @@ $usefulResources = [
     [
         'url' => 'https://html.spec.whatwg.org/multipage/named-characters.html',
         'title' => 'WHATWG HTML Named Character References',
-        'description' => 'Offizielle HTML-Spezifikation für benannte Zeichenentitäten'
+        'description' => 'Offizielle HTML-Spezifikation für benannte Zeichenreferenzen'
     ],
     [
         'url' => 'https://developer.mozilla.org/en-US/docs/Glossary/Entity',
-        'title' => 'MDN HTML Entities Referenz',
-        'description' => 'Vollständiger Leitfaden zu HTML-Zeichenentitäten und Sonderzeichen'
+        'title' => 'MDN: HTML-Entities-Referenz',
+        'description' => 'Vollständiger Leitfaden zu HTML-Entities und Sonderzeichen'
     ],
     [
         'url' => 'https://www.w3.org/TR/xml-entity-names/',
         'title' => 'W3C XML Entity Definitions for Characters',
-        'description' => 'Offizielle W3C Entity-Definitionen und Unicode-Mappings'
+        'description' => 'Offizielle W3C-Entity-Definitionen und Unicode-Zuordnungen'
     ],
     [
         'url' => 'https://unicode.org/charts/',
         'title' => 'Unicode Character Code Charts',
-        'description' => 'Offizielle Unicode Consortium Zeichenreferenz-Tabellen'
+        'description' => 'Offizielle Zeichentabellen des Unicode-Konsortiums'
     ]
 ];
 

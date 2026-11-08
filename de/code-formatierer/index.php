@@ -11,20 +11,20 @@ $featuresSectionTitle = 'Funktionen';
 $resourcesSectionTitle = 'Nützliche Ressourcen';
 
 $features = [
-    'HTML, CSS, JavaScript, XML, SQL Formatierung',
+    'Formatierung für HTML, CSS, JavaScript, XML und SQL',
     'Verschönerungs- und Minifizierungs-Modi',
     'Anpassbare Einrückung (2/4 Leerzeichen, Tabs)',
-    'Echtzeit-Automatische Formatierung',
+    'Automatische Formatierung in Echtzeit',
     'JavaScript-Minifizierung mit Terser',
-    'Kopier- und Download-Unterstützung'
+    'Kopieren und Herunterladen'
 ];
 
 $customNoticeContent = <<<HTML
 <h2 class="h6 fw-semibold alert-heading mb-3"><i class="bi bi-info-circle me-2"></i>Formatierungsoptionen</h2>
 <ul class="mb-0">
-  <li>Verschönern: Macht Code mit korrekter Einrückung und Zeilenumbrüchen lesbarer</li>
-  <li>Minifizieren: Entfernt unnötige Leerzeichen zur Reduzierung der Dateigröße</li>
-  <li>Einrückung: Wählen Sie zwischen 2 Leerzeichen, 4 Leerzeichen oder Tabs</li>
+  <li>Verschönern: macht Code mit korrekter Einrückung und Zeilenumbrüchen lesbarer</li>
+  <li>Minifizieren: entfernt unnötige Leerzeichen und verkleinert die Datei</li>
+  <li>Einrückung: wählen Sie zwischen 2 Leerzeichen, 4 Leerzeichen oder Tabs</li>
 </ul>
 HTML;
 
@@ -46,8 +46,8 @@ $additionalSections = [
   <div class="col-md-6">
     <h3 class="h6">Produktion</h3>
     <ul>
-      <li>Code minifizieren zur Reduzierung der Dateigröße und Verbesserung der Ladezeiten</li>
-      <li>Code für Deployment vorbereiten</li>
+      <li>Code minifizieren, um Dateigröße und Ladezeiten zu verringern</li>
+      <li>Code für das Deployment vorbereiten</li>
       <li>Bandbreitennutzung optimieren</li>
       <li>Website-Performance verbessern</li>
     </ul>
@@ -81,7 +81,7 @@ $usefulResources = [
     [
         'url' => 'https://www.w3.org/TR/xml/',
         'title' => 'W3C XML-Spezifikation',
-        'description' => 'Extensible Markup Language (XML) Standard'
+        'description' => 'Der Standard der Extensible Markup Language (XML)'
     ]
 ];
 

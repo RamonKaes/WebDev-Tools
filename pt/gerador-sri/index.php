@@ -5,7 +5,7 @@ ob_start();
 $toolId = 'sriGeneratorTool';
 $lang   = 'pt';
 
-$featuresSectionTitle = 'Funcionalidades';
+$featuresSectionTitle = 'Recursos';
 $features = [
     'Gera hashes SRI a partir de URL, upload de arquivo ou texto colado',
     'Suporta SHA-256, SHA-384 (recomendado) e SHA-512 simultaneamente',
@@ -15,7 +15,7 @@ $features = [
     'Detecta automaticamente o tipo de recurso (JS ou CSS)',
 ];
 
-$resourcesSectionTitle = 'Recursos úteis';
+$resourcesSectionTitle = 'Recursos Úteis';
 $usefulResources = [
     [
         'url'         => 'https://developer.mozilla.org/en-US/docs/Web/Security/Defenses/Subresource_Integrity',

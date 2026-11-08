@@ -49,7 +49,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="<?= htmlspecialchars($pageDescription, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>">
-  <meta name="keywords" content="Convertidor JSON, Codificador Base64, Codificador URL, Generador UUID, Generador de Contraseñas, Generador Hash, Herramientas para Desarrolladores Web">
+  <meta name="keywords" content="Conversor de Datos, Codificador Base64, Codificador URL, Generador UUID, Generador de Contraseñas, Generador de Hash, Herramientas para Desarrolladores Web">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="googlebot" content="index, follow">
   <meta name="theme-color" content="#066fd1">
@@ -68,7 +68,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
   <meta property="og:locale" content="es_ES">
   <meta property="og:locale:alternate" content="en_US">
   <meta property="og:locale:alternate" content="de_DE">
-  <meta property="og:locale:alternate" content="pt_PT">
+  <meta property="og:locale:alternate" content="pt_BR">
   <meta property="og:locale:alternate" content="fr_FR">
   <meta property="og:locale:alternate" content="it_IT">
 

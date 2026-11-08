@@ -26,7 +26,7 @@ $features = [
     'Inclua letras maiúsculas, minúsculas, números e símbolos',
     'Exclua caracteres ambíguos (0, O, l, 1, ...)',
     'Gere várias senhas de uma vez',
-    'Três modos: senhas aleatórias, frases-passe EFF e padrões pronunciáveis',
+    'Três modos: senhas aleatórias, frases-senha EFF e padrões pronunciáveis',
     'Indicador de força da senha',
     'Copie para a área de transferência com um clique',
     '100% no lado do cliente: nenhuma senha é enviada ao servidor'
@@ -53,7 +53,7 @@ $additionalSections = [
     <li>Chaves de API: gerar strings aleatórias para autenticação</li>
     <li>Credenciais de banco de dados: proteger o acesso a sistemas</li>
     <li>Redes Wi-Fi: definir senhas WPA2/WPA3 robustas</li>
-    <li>Chaves de criptografia: criar passphrases seguras</li>
+    <li>Chaves de criptografia: criar frases-senha seguras</li>
     <li>Administração de sistemas: proteger contas root e administrativas</li>
 </ul>
 HTML
@@ -96,7 +96,7 @@ $usefulResources = [
     [
         'url' => 'https://www.eff.org/dice',
         'title' => 'EFF Diceware',
-        'description' => 'Método alternativo para criar passphrases fortes e memoráveis'
+        'description' => 'Método alternativo para criar frases-senha fortes e fáceis de lembrar'
     ]
 ];
 

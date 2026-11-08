@@ -12,7 +12,7 @@ $resourcesSectionTitle = 'Recursos Úteis';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
-    Gere códigos QR instantaneamente para URLs, textos, contatos e muito mais.
+    Gere QR Codes instantaneamente para URLs, textos, contatos e muito mais.
     Personalize cores e tamanho; a correção de erros usa sempre o nível mais alto.
 </p>
 <p class="mb-0">
@@ -23,12 +23,12 @@ $customAboutContent = <<<HTML
 HTML;
 
 $features = [
-    'Crie QR codes para URLs, textos, contactos vCard e redes WiFi',
+    'Crie QR Codes para URLs, textos, contatos vCard e redes Wi-Fi',
     'Quatro tamanhos de 128x128 a 1024x1024 pixels',
     'Cores personalizadas de fundo e primeiro plano',
     'Correção de erro máxima (nível H, ~30 % de recuperação)',
     'Download como PNG ou SVG',
-    'Pré-visualização instantânea ao gerar',
+    'Prévia instantânea ao gerar',
     'Geração 100% local'
 ];
 
@@ -50,7 +50,7 @@ $additionalSections = [
 <ul>
     <li>URLs: acesso rápido a sites em materiais impressos</li>
     <li>Informações de contato: vCards para compartilhamento fácil</li>
-    <li>Credenciais Wi-Fi: compartilhe redes sem digitar senhas</li>
+    <li>Credenciais de Wi-Fi: compartilhe redes sem digitar senhas</li>
     <li>Dados de produtos: link para manuais ou detalhes técnicos</li>
     <li>Ingressos: check-in digital para eventos</li>
     <li>Pagamentos: facilitar links de pagamento instantâneo</li>
@@ -63,22 +63,22 @@ $usefulResources = [
     [
         'url' => 'https://www.iso.org/standard/62021.html',
         'title' => 'ISO/IEC 18004:2015',
-        'description' => 'Padrão internacional oficial para simbologia de QR code'
+        'description' => 'Padrão internacional oficial para a simbologia de QR Code'
     ],
     [
         'url' => 'https://www.qrcode.com/en/about/',
         'title' => 'QR Code.com - Informações oficiais',
-        'description' => 'Conteúdo da DENSO WAVE, criadora do QR code'
+        'description' => 'Conteúdo da DENSO WAVE, criadora do QR Code'
     ],
     [
         'url' => 'https://github.com/kazuhikoarase/qrcode-generator',
         'title' => 'qrcode-generator',
-        'description' => 'Biblioteca JavaScript utilizada por esta ferramenta para gerar QR codes no navegador'
+        'description' => 'Biblioteca JavaScript usada por esta ferramenta para gerar QR Codes no navegador'
     ],
     [
         'url' => 'https://en.wikipedia.org/wiki/QR_code',
         'title' => 'QR Code - Wikipedia',
-        'description' => 'Visão geral da tecnologia e aplicações de QR code'
+        'description' => 'Visão geral da tecnologia e das aplicações de QR Code'
     ]
 ];
 

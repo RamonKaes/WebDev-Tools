@@ -11,7 +11,7 @@ $features = [
     'Prend en charge SHA-256, SHA-384 (recommandé) et SHA-512 simultanément',
     'Génère des balises HTML <script> et <link> prêtes à l\'emploi',
     'Copiez l\'attribut integrity et la balise HTML complète en un clic',
-    'Confidentialité : tout le hachage s\'exécute côté client dans le navigateur',
+    'Confidentialité : tout le hachage s\'exécute côté client dans le navigateur',
     'Détecte automatiquement le type de ressource (JS ou CSS)',
 ];
 

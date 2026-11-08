@@ -17,7 +17,7 @@ $toolBaseUrl = BASE_PATH . '/fr';
 $dashboardToolBaseUrl = './';
 $homeUrl = BASE_PATH . '/fr';
 $pageTitle = 'WebDev-Tools – Outils Développeurs Gratuits En Ligne Web';
-$pageDescription = 'Outils professionnels pour développeurs web : JSON Formatter, Base64 Encoder, UUID Generator et plus. 100% gratuit, côté client et respectueux de la vie privée.';
+$pageDescription = 'Outils professionnels pour développeurs web : JSON Formatter, Base64 Encoder, UUID Generator et plus. 100 % gratuit, côté client et respectueux de la vie privée.';
 
 $i18nData = loadI18n($lang) ?: [];
 $t = $i18nData;
@@ -49,7 +49,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="<?= htmlspecialchars($pageDescription, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>">
-  <meta name="keywords" content="Formateur JSON, Encodeur Base64, Encodeur URL, Générateur UUID, Générateur de Mot de Passe, Générateur Hash, Outils pour Développeurs Web">
+  <meta name="keywords" content="Formateur JSON, Encodeur Base64, Encodeur URL, Générateur UUID, Générateur de mots de passe, Générateur de hash, Outils pour Développeurs Web">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="googlebot" content="index, follow">
   <meta name="theme-color" content="#066fd1">
@@ -69,7 +69,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
   <meta property="og:locale:alternate" content="en_US">
   <meta property="og:locale:alternate" content="de_DE">
   <meta property="og:locale:alternate" content="es_ES">
-  <meta property="og:locale:alternate" content="pt_PT">
+  <meta property="og:locale:alternate" content="pt_BR">
   <meta property="og:locale:alternate" content="it_IT">
 
   <meta name="twitter:card" content="summary_large_image">

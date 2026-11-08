@@ -12,8 +12,8 @@ $resourcesSectionTitle = 'Risorse Utili';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
-    L'<strong>Escape di Stringhe</strong> aiuta a fare l'escape e il reverse di stringhe per formati come HTML, XML, JavaScript, JSON, SQL e CSV.
-    Ideale per sviluppatori che lavorano con dati testuali che richiedono escape appropriato per diversi contesti.
+    Lo strumento <strong>Escape di Stringhe</strong> ti aiuta a effettuare o rimuovere l'escape di stringhe per formati come HTML, XML, JavaScript, JSON, SQL e CSV.
+    Ideale per sviluppatori che lavorano con dati testuali che richiedono un escape corretto nei diversi contesti.
 </p>
 <p class="mb-0">
     Tutta l'elaborazione avviene lato client nel browser – i dati non lasciano mai il dispositivo.
@@ -21,12 +21,12 @@ $customAboutContent = <<<HTML
 HTML;
 
 $features = [
-    'Escape HTML/XML – codifica caratteri speciali come <, >, &',
+    'Escape HTML/XML – codifica i caratteri speciali come <, >, &',
     'Escape JavaScript – gestisce virgolette, newline e caratteri speciali',
     'Escape JSON – applica la sintassi corretta per stringhe JSON',
     'Escape SQL – aiuta a prevenire SQL injection',
     'Escape CSV – gestisce virgolette e delimitatori',
-    'Elaborazione 100% locale (focus sulla privacy)',
+    'Elaborazione 100% locale, a tutela della privacy',
     'Copia con un clic'
 ];
 
@@ -63,7 +63,7 @@ $usefulResources = [
     [
         'url' => 'https://developer.mozilla.org/en-US/docs/Glossary/Escape_character',
         'title' => 'MDN: Carattere di escape',
-        'description' => 'Introduzione accessibile ai caratteri e sequenze di escape'
+        'description' => 'Introduzione accessibile ai caratteri e alle sequenze di escape'
     ],
     [
         'url' => 'https://owasp.org/www-community/attacks/xss/',
@@ -73,7 +73,7 @@ $usefulResources = [
     [
         'url' => 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String',
         'title' => 'Riferimento String MDN',
-        'description' => 'Documentazione completa su stringhe e escape in JavaScript'
+        'description' => 'Documentazione completa su stringhe ed escape in JavaScript'
     ],
     [
         'url' => 'https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html',

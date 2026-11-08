@@ -25,10 +25,10 @@ HTML;
 
 $features = [
     'Benannte Entities: HTML-Sonderzeichen maskieren (&lt;, &gt;, &amp;, &quot;) oder alle bekannten Symbole wie &copy; und &nbsp; umwandeln',
-    'Numerische Entities: Dezimal (&#160;) oder Hexadezimal (&#xA0;) Format',
-    'Bidirektional: Text zu Entities encodieren oder Entities zu Text decodieren',
+    'Numerische Entities: dezimales (&#160;) oder hexadezimales (&#xA0;) Format',
+    'Bidirektional: Text in Entities kodieren oder Entities in Text dekodieren',
     'Auto-Konvertierung: Echtzeit-Konvertierung während der Eingabe',
-    'Zeichen-Referenz: Schneller Link zur Übersicht aller HTML-Entities',
+    'Zeichenreferenz: schneller Link zur Übersicht aller HTML-Entities',
     'Download-Unterstützung: Ergebnisse als Textdatei speichern'
 ];
 
@@ -43,7 +43,7 @@ $additionalSections = [
     <ul>
       <li>Code in HTML anzeigen (&lt;, &gt;, &amp;)</li>
       <li>Sonderzeichen in Attributen</li>
-      <li>Copyright & Trademark Symbole</li>
+      <li>Copyright- und Markensymbole</li>
       <li>Geschützte Leerzeichen</li>
     </ul>
   </div>
@@ -52,7 +52,7 @@ $additionalSections = [
     <ul>
       <li>XML/RSS-Feed-Inhalte</li>
       <li>E-Mail-Template-Generierung</li>
-      <li>Datenbank-Content-Escaping</li>
+      <li>Maskierung von Datenbankinhalten</li>
       <li>Internationalisierung (i18n)</li>
     </ul>
   </div>
@@ -86,7 +86,7 @@ HTML
 </div>
 <p class="text-muted small mb-0">
   <i class="bi bi-info-circle me-1"></i>
-  Siehe die vollständige Liste in unserer <a href="../zeichen-referenz/">Zeichenreferenz</a>
+  Die vollständige Liste finden Sie in unserer <a href="../zeichen-referenz/">Zeichenreferenz</a>
 </p>'
   ]
 ];
@@ -95,7 +95,7 @@ $usefulResources = [
     [
         'url' => 'https://de.wikipedia.org/wiki/HTML-Entit%C3%A4t',
         'title' => 'Wikipedia: HTML-Entität',
-        'description' => 'Einsteigerfreundliche Einführung in HTML-Zeichen-Entitäten'
+        'description' => 'Einsteigerfreundliche Einführung in HTML-Entities'
     ],
     [
         'url' => 'https://html.spec.whatwg.org/multipage/named-characters.html',
@@ -105,7 +105,7 @@ $usefulResources = [
     [
         'url' => 'https://developer.mozilla.org/de/docs/Glossary/Entity',
         'title' => 'MDN: HTML-Entities',
-        'description' => 'Umfassender Leitfaden zu HTML-Zeichen-Entities'
+        'description' => 'Umfassender Leitfaden zu HTML-Entities'
     ],
     [
         'url' => 'https://www.w3.org/International/questions/qa-escapes',

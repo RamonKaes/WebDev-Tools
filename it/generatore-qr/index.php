@@ -50,7 +50,7 @@ $additionalSections = [
 <ul>
     <li>URL di siti web: accesso rapido a siti da materiali stampati</li>
     <li>Informazioni di contatto: vCard per condivisione facile</li>
-    <li>Credenziali Wi-Fi: condividi reti senza digitare password</li>
+    <li>Credenziali Wi-Fi: condividere la rete senza digitare la password</li>
     <li>Informazioni prodotto: link a manuali o dettagli tecnici</li>
     <li>Biglietti per eventi: check-in digitale</li>
     <li>Link di pagamento: facilitare pagamenti istantanei</li>
@@ -68,7 +68,7 @@ $usefulResources = [
     [
         'url' => 'https://www.qrcode.com/en/about/',
         'title' => 'QR Code.com - informazioni ufficiali',
-        'description' => 'Contenuto da DENSO WAVE, creatore del QR code'
+        'description' => 'Contenuti di DENSO WAVE, l\'azienda che ha creato il QR code'
     ],
     [
         'url' => 'https://github.com/kazuhikoarase/qrcode-generator',
@@ -78,7 +78,7 @@ $usefulResources = [
     [
         'url' => 'https://en.wikipedia.org/wiki/QR_code',
         'title' => 'QR Code - Wikipedia',
-        'description' => 'Panoramica completa su tecnologia e applicazioni QR code'
+        'description' => 'Panoramica completa sulla tecnologia e sulle applicazioni dei QR code'
     ]
 ];
 

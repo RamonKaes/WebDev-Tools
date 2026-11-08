@@ -12,33 +12,33 @@ $resourcesSectionTitle = 'Nützliche Ressourcen';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
-    Berechnen Sie fehlende Dimensionen, bewahren Sie Seitenverhältnisse und generieren Sie CSS für responsive Medien. 
+    Berechnen Sie fehlende Abmessungen, bewahren Sie Seitenverhältnisse und generieren Sie CSS für responsive Medien. 
     Unverzichtbar für responsive Bilder, Videos und Layouts.
 </p>
 <p class="mb-0">
     Das Seitenverhältnis beschreibt das proportionale Verhältnis zwischen Breite und Höhe. Dieses Tool hilft Ihnen, 
-    Dimensionen zu berechnen, zwischen Verhältnis-Formaten umzuwandeln und CSS-Code zu generieren, um 
+    Abmessungen zu berechnen, zwischen Verhältnis-Formaten umzuwandeln und CSS-Code zu generieren, um 
     Seitenverhältnisse in responsiven Designs beizubehalten.
 </p>
 HTML;
 
 $features = [
     'Berechnung fehlender Breite oder Höhe aus Seitenverhältnis',
-    'Gängige Verhältnis-Vorlagen (16:9, 4:3, 21:9, 1:1, etc.)',
-    'CSS padding-bottom-Trick Generator',
+    'Gängige Verhältnis-Vorlagen (16:9, 4:3, 21:9, 1:1 usw.)',
+    'Generator für den CSS-padding-bottom-Trick',
     'Mehrere Verhältnis-Formate (Verhältnis, Dezimal, Prozent)',
     'Responsive Bildgrößen-Rechner',
     'Echtzeit-Berechnung',
-    '100% clientseitige Verarbeitung'
+    '100 % clientseitige Verarbeitung'
 ];
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
     <h2 class="h6 fw-semibold alert-heading mb-3"><i class="bi bi-info-circle me-2"></i>Häufige Seitenverhältnisse</h2>
     <ul class="mb-0">
-        <li><strong>16:9</strong> — Standard HD-Video, YouTube, moderne Displays</li>
+        <li><strong>16:9</strong> — Standard für HD-Video, YouTube, moderne Displays</li>
         <li><strong>4:3</strong> — Klassisches TV, ältere Monitore</li>
-        <li><strong>21:9</strong> — Ultrawide-Monitore, Kinoleinwand</li>
+        <li><strong>21:9</strong> — Ultrabreite Monitore, Kinoleinwand</li>
         <li><strong>1:1</strong> — Quadratisch (Instagram-Posts)</li>
         <li><strong>9:16</strong> — Vertikales Video (Instagram Stories, TikTok)</li>
     </ul>
@@ -50,9 +50,9 @@ $additionalSections = [
         'content' => <<<HTML
 <ul>
     <li><strong>Responsive Bilder:</strong> Seitenverhältnis beim Skalieren von Bildern beibehalten</li>
-    <li><strong>Video-Einbettungen:</strong> Iframe-Dimensionen für YouTube, Vimeo berechnen</li>
+    <li><strong>Video-Einbettungen:</strong> Iframe-Abmessungen für YouTube, Vimeo berechnen</li>
     <li><strong>CSS-Seitenverhältnis:</strong> Padding-bottom-Trick für ältere Browser generieren</li>
-    <li><strong>Bildgrößen-Anpassung:</strong> Zuschneide- oder Skalierungs-Dimensionen berechnen</li>
+    <li><strong>Bildgrößen-Anpassung:</strong> Abmessungen zum Zuschneiden oder Skalieren berechnen</li>
     <li><strong>Layout-Design:</strong> Responsive Grid-Layouts planen</li>
 </ul>
 HTML
@@ -92,7 +92,7 @@ $usefulResources = [
     ],
     [
         'url' => 'https://developer.mozilla.org/de/docs/Web/CSS/aspect-ratio',
-        'title' => 'MDN: CSS aspect-ratio Eigenschaft',
+        'title' => 'MDN: CSS-Eigenschaft aspect-ratio',
         'description' => 'Moderne CSS-Eigenschaft zur Beibehaltung von Seitenverhältnissen'
     ],
     [
@@ -107,8 +107,8 @@ $usefulResources = [
     ],
     [
         'url' => 'https://web.dev/aspect-ratio/',
-        'title' => 'Neue CSS Aspect-Ratio Eigenschaft',
-        'description' => 'Google web.dev Anleitung zur modernen Seitenverhältnis-Behandlung'
+        'title' => 'Die neue CSS-Eigenschaft aspect-ratio',
+        'description' => 'Anleitung von Google web.dev zum modernen Umgang mit Seitenverhältnissen'
     ]
 ];
 

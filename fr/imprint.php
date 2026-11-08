@@ -69,8 +69,8 @@ $currentUrl = getFullUrl('/imprint.php', $lang);
               <strong>Ramon Kaes</strong><br>
               Sitio dos Caliços<br>
               8700-069 Moncarapacho<br>
-              Téléphone : +351 921 173 235<br>
-              E-mail : ramon.kaes@webdev-tools.info
+              Téléphone : +351 921 173 235<br>
+              E-mail : ramon.kaes@webdev-tools.info
             </p>
 
             <h2 class="h5 card-title mb-3 mt-4">Clause de non-responsabilité – mentions légales</h2>

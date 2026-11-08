@@ -10,8 +10,8 @@ $currentTool = 'imprint';
 $assetPrefix = BASE_PATH . '/';
 $toolBaseUrl = BASE_PATH . '/it';
 $homeUrl = BASE_PATH . '/it';
-$pageTitle = 'Impronta – Informazioni Legali Contatto Dettagli WebDev';
-$pageDescription = 'Informazioni legali e dati di contatto per WebDev-Tools.';
+$pageTitle = 'Note Legali – Contatti e Informazioni Legali di WebDev-Tools';
+$pageDescription = 'Note legali e dati di contatto di WebDev-Tools.';
 $i18nData = loadI18n($lang) ?: [];
 $manifest = getManifest();
 $buildHash = $manifest['generatedAt'] ?? '1.0.0';
@@ -60,7 +60,7 @@ $currentUrl = getFullUrl('/imprint.php', $lang);
   <main id="main-content" class="flex-grow-1 p-4 p-md-5 bg-body shadow-sm overflow-auto">
     <div class="tool-container-inner mx-auto">
         <div class="text-center mb-5">
-          <h1 class="display-5 mb-3">Impressum</h1>
+          <h1 class="display-5 mb-3">Note legali</h1>
         </div>
         <div class="card mb-4 shadow-sm">
           <div class="card-body p-4">
@@ -73,13 +73,13 @@ $currentUrl = getFullUrl('/imprint.php', $lang);
               E-mail: ramon.kaes@webdev-tools.info
             </p>
 
-            <h2 class="h5 card-title mb-3 mt-4">Disclaimer – Note legali</h2>
+            <h2 class="h5 card-title mb-3 mt-4">Disclaimer – Esclusione di responsabilità</h2>
             
             <h3 class="h6 mt-4">§ 1 Avviso sui contenuti</h3>
-            <p>I contenuti gratuiti e liberamente accessibili di questo sito web sono stati redatti con la massima cura. Il fornitore di questo sito web non si assume tuttavia alcuna responsabilità per la correttezza e l'attualità delle guide giornalistiche e delle notizie fornite gratuitamente e liberamente accessibili. I contributi contrassegnati con il nome riflettono l'opinione del rispettivo autore e non sempre l'opinione del fornitore. La semplice consultazione dei contenuti gratuiti e liberamente accessibili non comporta alcun rapporto contrattuale tra l'utente e il fornitore, in quanto manca la volontà giuridicamente vincolante del fornitore.</p>
+            <p>I contenuti gratuiti e liberamente accessibili di questo sito web sono stati redatti con la massima cura. Il fornitore di questo sito web non si assume tuttavia alcuna responsabilità per la correttezza e l'attualità delle guide e delle notizie fornite gratuitamente e liberamente accessibili. I contributi contrassegnati con il nome riflettono l'opinione del rispettivo autore e non sempre l'opinione del fornitore. La semplice consultazione dei contenuti gratuiti e liberamente accessibili non comporta alcun rapporto contrattuale tra l'utente e il fornitore, in quanto manca la volontà giuridicamente vincolante del fornitore.</p>
 
             <h3 class="h6 mt-4">§ 2 Link esterni</h3>
-            <p>Questo sito web contiene collegamenti a siti web di terzi ("link esterni"). Questi siti web sono soggetti alla responsabilità dei rispettivi gestori. Al momento della prima creazione dei link esterni, il fornitore ha verificato i contenuti esterni per verificare l'eventuale presenza di violazioni della legge. A quel momento non erano evidenti violazioni della legge. Il fornitore non ha alcuna influenza sulla struttura attuale e futura e sui contenuti delle pagine collegate. L'inserimento di link esterni non significa che il fornitore si appropri dei contenuti a cui rimandano i riferimenti o i link. Non è ragionevole pretendere che il fornitore controlli costantemente i link esterni senza indicazioni concrete di violazioni della legge. Tuttavia, qualora venisse a conoscenza di violazioni della legge, tali link esterni verrebbero immediatamente cancellati.</p>
+            <p>Questo sito web contiene collegamenti a siti web di terzi ("link esterni"). Questi siti web sono soggetti alla responsabilità dei rispettivi gestori. Al momento della prima creazione dei link esterni, il fornitore ha controllato i contenuti esterni per verificare l'eventuale presenza di violazioni della legge. In quel momento non erano evidenti violazioni della legge. Il fornitore non ha alcuna influenza sulla struttura attuale e futura e sui contenuti delle pagine collegate. L'inserimento di link esterni non significa che il fornitore si appropri dei contenuti a cui rimandano i riferimenti o i link. Non è ragionevole pretendere che il fornitore controlli costantemente i link esterni senza indicazioni concrete di violazioni della legge. Tuttavia, qualora venisse a conoscenza di violazioni della legge, tali link esterni verrebbero immediatamente cancellati.</p>
 
           </div>
         </div>

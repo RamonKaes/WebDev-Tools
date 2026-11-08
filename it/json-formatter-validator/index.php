@@ -12,7 +12,7 @@ $resourcesSectionTitle = 'Risorse Utili';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
-    Formattta, valida e abbellisce dati JSON con uno strumento completo.
+    Formatta, valida e abbellisce dati JSON con uno strumento completo.
     Perfetto per sviluppatori che lavorano con API, file di configurazione e strutture dati.</p>
 <p class="mb-0">
     Lo strumento analizza il JSON, verifica la sintassi, applica un'indentazione pulita e fornisce messaggi di errore dettagliati.
@@ -66,7 +66,7 @@ $usefulResources = [
     [
         'url' => 'https://www.ecma-international.org/publications-and-standards/standards/ecma-404/',
         'title' => 'ECMA-404: JSON Data Interchange Syntax',
-        'description' => 'Specifiche ufficiali JSON pubblicate da ECMA International'
+        'description' => 'Specifica ufficiale di JSON pubblicata da ECMA International'
     ],
     [
         'url' => 'https://datatracker.ietf.org/doc/html/rfc8259',
@@ -75,13 +75,13 @@ $usefulResources = [
     ],
     [
         'url' => 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON',
-        'title' => 'MDN JSON object reference',
+        'title' => 'MDN: riferimento all\'oggetto JSON',
         'description' => 'Guida completa su JSON.parse() e JSON.stringify()'
     ],
     [
         'url' => 'https://json-schema.org/',
         'title' => 'JSON Schema Specification',
-        'description' => 'Documentazione ufficiale per validare struttura e tipi dei dati JSON'
+        'description' => 'Documentazione ufficiale per validare la struttura e i tipi dei dati JSON'
     ]
 ];
 

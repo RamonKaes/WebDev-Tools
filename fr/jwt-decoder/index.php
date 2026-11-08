@@ -18,18 +18,18 @@ $customAboutContent = <<<HTML
 </p>
 <p class="mb-0">
     Ce décodeur extrait et affiche les composants en-tête, charge utile et signature d'un JWT.
-    Remarque : cet outil ne vérifie pas la signature. La vérification nécessite le secret partagé (HS256/HS384/HS512)
+    Remarque : cet outil ne vérifie pas la signature. La vérification nécessite le secret partagé (HS256/HS384/HS512)
     ou la clé publique de l'émetteur (RS*, ES*, PS*) et doit se faire côté serveur.
 </p>
 HTML;
 
 $features = [
-    'Décodage de l\'en-tête : affiche l\'algorithme (alg) et le type de jeton (typ)',
-    'Extraction de la charge utile : décode les revendications et données utilisateur',
-    'Vérification d\'expiration : détecte automatiquement si le jeton a expiré',
-    'Mise en évidence syntaxique : JSON coloré pour une meilleure lisibilité',
-    'Affichage de la signature : montre la signature encodée en Base64URL',
-    'Côté client : tout le traitement se fait localement dans votre navigateur'
+    'Décodage de l\'en-tête : affiche l\'algorithme (alg) et le type de jeton (typ)',
+    'Extraction de la charge utile : décode les revendications et données utilisateur',
+    'Vérification d\'expiration : détecte automatiquement si le jeton a expiré',
+    'Mise en évidence syntaxique : JSON coloré pour une meilleure lisibilité',
+    'Affichage de la signature : montre la signature encodée en Base64URL',
+    'Côté client : tout le traitement se fait localement dans votre navigateur'
 ];
 
 $customNoticeType = 'warning';

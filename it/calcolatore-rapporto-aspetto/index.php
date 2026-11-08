@@ -25,7 +25,7 @@ HTML;
 $features = [
     'Calcolare larghezza o altezza mancante dal rapporto d\'aspetto',
     'Preset di rapporti comuni (16:9, 4:3, 21:9, 1:1, ecc.)',
-    'Generatore del trucco CSS padding-bottom',
+    'Generatore di codice CSS (aspect-ratio e trucco padding-bottom)',
     'Formati di rapporto multipli (rapporto, decimale, percentuale)',
     'Calcolatore di dimensioni per immagini responsive',
     'Calcolo in tempo reale',
@@ -46,19 +46,19 @@ HTML;
 
 $additionalSections = [
     [
-        'title' => 'Casi d\'Uso Comuni',
+        'title' => 'Casi d\'uso comuni',
         'content' => <<<HTML
 <ul>
-    <li><strong>Immagini Responsive:</strong> Mantenere il rapporto d'aspetto durante il ridimensionamento delle immagini</li>
-    <li><strong>Incorporamenti Video:</strong> Calcolare le dimensioni iframe per YouTube, Vimeo</li>
-    <li><strong>Rapporto d'Aspetto CSS:</strong> Generare il trucco padding-bottom per browser più vecchi</li>
-    <li><strong>Ridimensionamento Immagine:</strong> Calcolare le dimensioni di ritaglio o ridimensionamento</li>
-    <li><strong>Design di Layout:</strong> Pianificare layout a griglia responsive</li>
+    <li><strong>Immagini responsive:</strong> mantenere il rapporto d'aspetto durante il ridimensionamento delle immagini</li>
+    <li><strong>Video incorporati:</strong> calcolare le dimensioni degli iframe per YouTube e Vimeo</li>
+    <li><strong>Rapporto d'aspetto in CSS:</strong> generare il trucco padding-bottom per i browser più vecchi</li>
+    <li><strong>Ridimensionamento immagini:</strong> calcolare le dimensioni di ritaglio o ridimensionamento</li>
+    <li><strong>Design del layout:</strong> pianificare layout a griglia responsive</li>
 </ul>
 HTML
     ],
     [
-        'title' => 'Tecniche CSS di Rapporto d\'Aspetto',
+        'title' => 'Tecniche CSS per il rapporto d\'aspetto',
         'content' => <<<HTML
 <p><strong>Approccio moderno (CSS aspect-ratio):</strong></p>
 <pre><code>.container {
@@ -87,7 +87,7 @@ HTML
 $usefulResources = [
     [
         'url' => 'https://it.wikipedia.org/wiki/Aspect_ratio',
-        'title' => 'Wikipedia: Aspect Ratio',
+        'title' => 'Wikipedia: Rapporto d\'aspetto',
         'description' => 'Introduzione accessibile per principianti sui rapporti d\'aspetto in immagini e video'
     ],
     [
@@ -107,7 +107,7 @@ $usefulResources = [
     ],
     [
         'url' => 'https://web.dev/aspect-ratio/',
-        'title' => 'Nuova Proprietà CSS Aspect-Ratio',
+        'title' => 'web.dev: la nuova proprietà CSS aspect-ratio',
         'description' => 'Guida Google web.dev sul trattamento moderno del rapporto d\'aspetto'
     ]
 ];

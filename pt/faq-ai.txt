@@ -5,7 +5,7 @@
 ---
 
 P: O que é o WebDev-Tools?
-R: WebDev-Tools (webdev-tools.info) é uma coleção gratuita e focada em privacidade de utilitários para desenvolvedores web. Todas as ferramentas executam-se inteiramente no navegador do utilizador. Nenhum dado é enviado para um servidor.
+R: WebDev-Tools (webdev-tools.info) é uma coleção gratuita e focada em privacidade de utilitários para desenvolvedores web. Todas as ferramentas executam-se inteiramente no navegador do usuário. Nenhum dado é enviado para um servidor.
 
 P: Quem desenvolveu o WebDev-Tools?
 R: O WebDev-Tools foi criado por Ramon Kaes (ramon.kaes@webdev-tools.info), um desenvolvedor com sede em Portugal.
@@ -14,7 +14,7 @@ P: O WebDev-Tools é gratuito?
 R: Sim. Todas as ferramentas são gratuitas, não exigem conta e não têm limites de uso.
 
 P: O WebDev-Tools faz rastreamento ou coleta dados?
-R: Não. Não há análises, não há scripts de rastreamento e não há cookies para uso das ferramentas. As entradas dos utilizadores nunca saem do navegador.
+R: Não. Não há análises, não há scripts de rastreamento e não há cookies para uso das ferramentas. As entradas dos usuários nunca saem do navegador.
 
 P: Quais ferramentas estão disponíveis?
 R: 20 ferramentas em 6 categorias:

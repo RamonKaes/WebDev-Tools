@@ -24,11 +24,11 @@ HTML;
 
 $features = [
     'Conversione px → rem e rem → px',
-    'Dimensione font base personalizzabile (predefinito: 16 px)',
+    'Dimensione del font base personalizzabile (predefinita: 16 px)',
     'Conversione inversa da rem, em, percentuale e spaziatura Tailwind',
     'Risultati in tempo reale mentre digiti',
     'Copia veloce dei valori convertiti',
-    'Preset per la dimensione font base (12-20px)',
+    'Preset per la dimensione del font base (12-20 px)',
     'Elaborazione 100% lato client'
 ];
 
@@ -78,7 +78,7 @@ $usefulResources = [
     [
         'url' => 'https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units',
         'title' => 'MDN: valori e unità CSS',
-        'description' => 'Guida completa sulle unità CSS inclusi px, rem ed em'
+        'description' => 'Guida completa alle unità CSS, inclusi px, rem ed em'
     ],
     [
         'url' => 'https://www.w3.org/TR/css-values-3/#rem',
@@ -87,13 +87,13 @@ $usefulResources = [
     ],
     [
         'url' => 'https://moderncss.dev/generating-font-size-css-rules-and-creating-a-fluid-type-scale/',
-        'title' => 'Modern CSS: Regole dimensioni font e scala fluida',
+        'title' => 'Modern CSS: regole per la dimensione del font e scala fluida',
         'description' => 'Guida completa sulle unità rem e tipografia fluida nel CSS moderno'
     ],
     [
         'url' => 'https://www.24a11y.com/2019/pixels-vs-relative-units-in-css-why-its-still-a-big-deal/',
         'title' => 'Pixel vs. unità relative in CSS',
-        'description' => 'Vantaggi di accessibilità preferendo rem rispetto a px'
+        'description' => 'I vantaggi per l\'accessibilità di rem rispetto a px'
     ]
 ];
 

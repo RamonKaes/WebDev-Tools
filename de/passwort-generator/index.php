@@ -17,20 +17,20 @@ $customAboutContent = <<<HTML
 </p>
 <p class="mb-0">
     Dieses Tool erstellt kryptografisch sichere Zufallspasswörter mithilfe des integrierten 
-    Zufallszahlengenerators Ihres Browsers. Alle Passwortgenerierung erfolgt lokal - 
+    Zufallszahlengenerators Ihres Browsers. Die gesamte Passwortgenerierung erfolgt lokal – 
     Ihre Passwörter verlassen niemals Ihr Gerät.
 </p>
 HTML;
 
 $features = [
-    'Anpassbare Passwortlänge (8-128 Zeichen)',
+    'Anpassbare Passwortlänge (8–128 Zeichen)',
     'Großbuchstaben, Kleinbuchstaben, Zahlen und Symbole einschließen',
-    'Mehrdeutige Zeichen ausschließen (0,O,l,1, etc.)',
+    'Mehrdeutige Zeichen ausschließen (0, O, l, 1 usw.)',
     'Mehrere Passwörter auf einmal generieren',
     'Drei Modi: Zufallspasswörter, EFF-Passphrasen und aussprechbare Muster',
     'Passwortstärke-Indikator',
     'Mit einem Klick in die Zwischenablage kopieren',
-    '100% clientseitig - Passwörter werden nie an Server gesendet'
+    '100 % clientseitig – Passwörter werden nie an einen Server gesendet'
 ];
 
 $customNoticeType = 'info';
@@ -40,7 +40,7 @@ $customNoticeContent = <<<HTML
         <li>Länge zählt: Längere Passwörter sind exponentiell sicherer</li>
         <li>Alle Zeichentypen verwenden: Mischen Sie Groß-, Kleinbuchstaben, Zahlen und Symbole</li>
         <li>Muster vermeiden: Verwenden Sie keine Wörter oder persönliche Informationen</li>
-        <li>Eindeutige Passwörter: Verwenden Sie niemals Passwörter für verschiedene Konten wieder</li>
+        <li>Einmalige Passwörter: Verwenden Sie ein Passwort niemals für mehrere Konten</li>
         <li>Passwort-Manager verwenden: Speichern Sie generierte Passwörter sicher</li>
     </ul>
 HTML;
@@ -64,8 +64,8 @@ HTML
         'content' => <<<HTML
 <ul>
     <li><strong>Schwach (&lt; 8 Zeichen):</strong> Leicht zu knacken, wenn möglich vermeiden</li>
-    <li>Ausreichend (8-11 Zeichen): Minimum für die meisten Systeme</li>
-    <li>Gut (12-15 Zeichen): Empfohlen für wichtige Konten</li>
+    <li>Ausreichend (8–11 Zeichen): Minimum für die meisten Systeme</li>
+    <li>Gut (12–15 Zeichen): Empfohlen für wichtige Konten</li>
     <li>Stark (16+ Zeichen): Ausgezeichnete Sicherheit, schwer zu knacken</li>
     <li>Sehr stark (20+ Zeichen): Maximale Sicherheit für kritische Systeme</li>
 </ul>
@@ -92,11 +92,11 @@ $usefulResources = [
     [
         'url' => 'https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues',
         'title' => 'MDN Crypto.getRandomValues()',
-        'description' => 'Kryptografisch sichere Zufallszahlengenerierungs-API'
+        'description' => 'API für kryptografisch sichere Zufallszahlen'
     ],
     [
         'url' => 'https://www.eff.org/dice',
-        'title' => 'EFF Diceware Passphrasen-Generator',
+        'title' => 'EFF-Diceware-Passphrasen-Generator',
         'description' => 'Alternative Methode für starke, merkbare Passphrasen'
     ]
 ];

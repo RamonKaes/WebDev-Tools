@@ -12,10 +12,10 @@ $resourcesSectionTitle = 'Nützliche Ressourcen';
 
 $features = [
     'Text- und Datei-Kodierung/-Dekodierung',
-    'Drag & Drop Datei-Unterstützung',
+    'Datei-Unterstützung per Drag & Drop',
     'URL-sichere Base64-Kodierung',
-    'Echtzeit Live-Modus',
-    'Client-seitige Verarbeitung - Ihre Daten verlassen niemals Ihren Browser'
+    'Live-Modus in Echtzeit',
+    'Clientseitige Verarbeitung – Ihre Daten verlassen niemals Ihren Browser'
 ];
 
 $additionalSections = [
@@ -50,27 +50,27 @@ HTML
 $usefulResources = [
     [
         'url' => 'https://de.wikipedia.org/wiki/Base64',
-        'title' => 'Base64 - Wikipedia',
+        'title' => 'Base64 – Wikipedia',
         'description' => 'Einführung in das Base64-Kodierungskonzept und Geschichte'
     ],
     [
         'url' => 'https://datatracker.ietf.org/doc/html/rfc4648',
-        'title' => 'RFC 4648: Base16, Base32 und Base64 Datenkodierung',
+        'title' => 'RFC 4648: Base16-, Base32- und Base64-Datenkodierung',
         'description' => 'Offizielle IETF-Spezifikation für Base64-Kodierung'
     ],
     [
         'url' => 'https://developer.mozilla.org/en-US/docs/Glossary/Base64',
-        'title' => 'MDN Base64 Kodierungs-Leitfaden',
+        'title' => 'MDN: Leitfaden zur Base64-Kodierung',
         'description' => 'Umfassender Leitfaden für Base64 in der Webentwicklung'
     ],
     [
         'url' => 'https://developer.mozilla.org/en-US/docs/Web/API/btoa',
-        'title' => 'MDN btoa() Funktion',
+        'title' => 'MDN: btoa()-Funktion',
         'description' => 'JavaScript-Funktion zum Kodieren von Strings in Base64'
     ],
     [
         'url' => 'https://developer.mozilla.org/en-US/docs/Web/API/atob',
-        'title' => 'MDN atob() Funktion',
+        'title' => 'MDN: atob()-Funktion',
         'description' => 'JavaScript-Funktion zum Dekodieren von Base64 in Strings'
     ]
 ];

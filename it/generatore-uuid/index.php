@@ -40,7 +40,7 @@ $customNoticeContent = <<<HTML
     <code>xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx</code>
     <p class="mt-2 mb-0">
         Dove <code>x</code> è qualsiasi cifra esadecimale e <code>y</code> è 8, 9, A o B.
-        La cifra 4 indica la versione dell'UUID e i bit variant garantiscono conformità RFC.
+        La cifra 4 indica la versione dell'UUID e i bit di variante garantiscono la conformità alla RFC.
         Con 122 bit casuali, la probabilità di collisione è estremamente bassa.
     </p>
 HTML;
@@ -78,12 +78,12 @@ $usefulResources = [
     [
         'url' => 'https://datatracker.ietf.org/doc/html/rfc4122',
         'title' => 'RFC 4122: UUID',
-        'description' => 'Specifica ufficiale per formato e generazione UUID'
+        'description' => 'Specifica ufficiale per il formato e la generazione degli UUID'
     ],
     [
         'url' => 'https://datatracker.ietf.org/doc/html/rfc9562',
         'title' => 'RFC 9562: UUID v6, v7 e v8',
-        'description' => 'Standard recenti per nuove versioni di UUID'
+        'description' => 'Standard recente per le nuove versioni di UUID'
     ],
     [
         'url' => 'https://developer.mozilla.org/en-US/docs/Web/API/Crypto/randomUUID',
@@ -93,7 +93,7 @@ $usefulResources = [
     [
         'url' => 'https://en.wikipedia.org/wiki/Universally_unique_identifier',
         'title' => 'UUID - Wikipedia',
-        'description' => 'Panoramica e applicazioni delle diverse versioni UUID'
+        'description' => 'Panoramica e applicazioni delle diverse versioni di UUID'
     ]
 ];
 

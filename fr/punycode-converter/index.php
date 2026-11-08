@@ -23,12 +23,12 @@ $customAboutContent = <<<HTML
 HTML;
 
 $features = [
-    'Conversion bidirectionnelle : Unicode vers Punycode et inversement',
-    'Détection automatique : identifie automatiquement le format d\'entrée',
+    'Conversion bidirectionnelle : Unicode vers Punycode et inversement',
+    'Détection automatique : identifie automatiquement le format d\'entrée',
     'Conformité RFC 3492 : implémentation complète de la norme Punycode',
-    'Traitement par lot : convertissez plusieurs domaines en même temps (ligne par ligne)',
-    'Domaines d\'exemple : chargez des domaines internationaux à tester',
-    'Conversion en temps réel : transformation automatique pendant la saisie'
+    'Traitement par lot : convertissez plusieurs domaines en même temps (ligne par ligne)',
+    'Domaines d\'exemple : chargez des domaines internationaux à tester',
+    'Conversion en temps réel : transformation automatique pendant la saisie'
 ];
 
 $additionalSections = [

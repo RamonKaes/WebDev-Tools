@@ -26,10 +26,10 @@ $features = [
     'Text und Dateien hashen',
     'Hashes zur Verifikation vergleichen',
     'HMAC-Unterstützung mit benutzerdefinierten Schlüsseln',
-    'Groß- und Kleinschreibung Ausgabeoptionen',
+    'Ausgabe in Groß- oder Kleinschreibung',
     'Hashes mit einem Klick kopieren',
-    'Echtzeit Hash-Generierung',
-    '100% clientseitige Verarbeitung - Ihre Daten verlassen niemals Ihren Browser'
+    'Hash-Generierung in Echtzeit',
+    '100 % clientseitige Verarbeitung – Ihre Daten verlassen niemals Ihren Browser'
 ];
 
 $customNoticeType = 'warning';
@@ -50,7 +50,7 @@ $additionalSections = [
         'content' => <<<HTML
 <ul>
     <li>Dateiintegritätsprüfung: Überprüfen Sie, ob Downloads nicht manipuliert wurden</li>
-    <li>Inhalts-Fingerabdrücke: Änderungen an Dateien, API-Antworten oder Build-Artefakten erkennen</li>
+    <li>Inhalts-Fingerabdrücke: Erkennen Sie Änderungen an Dateien, API-Antworten oder Build-Artefakten</li>
     <li>Datendeduplizierung: Identifizieren Sie doppelte Dateien oder Inhalte</li>
     <li>Prüfsummengenerierung: Erstellen Sie Prüfsummen zur Datenvalidierung</li>
     <li>Digitale Signaturen: Komponente kryptografischer Signatursysteme</li>
@@ -59,7 +59,7 @@ $additionalSections = [
 HTML
     ],
     [
-        'title' => 'Hash-Algorithmus Auswahl',
+        'title' => 'Wahl des Hash-Algorithmus',
         'icon' => 'info-circle',
         'content' => <<<HTML
 <ul>
@@ -75,12 +75,12 @@ HTML
 $usefulResources = [
     [
         'url' => 'https://csrc.nist.gov/projects/hash-functions',
-        'title' => 'NIST Kryptografische Hash-Funktionen',
+        'title' => 'NIST: Kryptografische Hash-Funktionen',
         'description' => 'Offizielle NIST-Dokumentation und Standards für Hash-Algorithmen'
     ],
     [
         'url' => 'https://de.wikipedia.org/wiki/Secure_Hash_Algorithm',
-        'title' => 'Secure Hash Algorithm (SHA) - Wikipedia',
+        'title' => 'Secure Hash Algorithm (SHA) – Wikipedia',
         'description' => 'Umfassender Überblick über SHA-Algorithmen und ihre Sicherheit'
     ],
     [
@@ -90,7 +90,7 @@ $usefulResources = [
     ],
     [
         'url' => 'https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html',
-        'title' => 'OWASP Passwort-Speicherung Best Practices',
+        'title' => 'OWASP: Best Practices zur Passwortspeicherung',
         'description' => 'Sicherheitsrichtlinien für Passwort-Hashing und -Speicherung'
     ]
 ];

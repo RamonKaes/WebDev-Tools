@@ -11,7 +11,7 @@ $featuresSectionTitle = 'Funzionalità';
 $resourcesSectionTitle = 'Risorse Utili';
 
 $features = [
-    'Corrispondenza di pattern con risultati evidenziati',
+    'Ricerca di pattern con risultati evidenziati',
     'Flag regex g, i, m, s, u e y',
     'Evidenziazione delle corrispondenze con gruppi di cattura',
     'Informazioni dettagliate e statistiche',
@@ -24,8 +24,8 @@ $customNoticeContent = <<<HTML
 <h2 class="h6 fw-semibold alert-heading mb-3"><i class="bi bi-info-circle me-2"></i>Test di espressioni regolari</h2>
 <ul class="mb-0">
     <li>Motore JavaScript: il test utilizza il motore RegExp del browser</li>
-    <li>Feedback immediato: valida pattern su testi e vedi i risultati con un clic</li>
-    <li>Privacy: tutto il processamento avviene localmente, senza invio a server</li>
+    <li>Feedback immediato: prova i pattern su un testo e vedi i risultati con un clic</li>
+    <li>Privacy: tutta l'elaborazione avviene localmente, senza alcun invio a server</li>
 </ul>
 HTML;
 
@@ -38,12 +38,12 @@ $usefulResources = [
     [
         'url' => 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions',
         'title' => 'MDN: guida alle espressioni regolari',
-        'description' => 'Riferimento completo su regex in JavaScript da Mozilla'
+        'description' => 'Riferimento completo di Mozilla sulle regex in JavaScript'
     ],
     [
         'url' => 'https://www.regular-expressions.info/',
         'title' => 'Regular-Expressions.info',
-        'description' => 'Tutorial approfondito e riferimenti per pattern e sintassi'
+        'description' => 'Tutorial approfonditi e riferimenti su pattern e sintassi'
     ],
     [
         'url' => 'https://regexr.com/',

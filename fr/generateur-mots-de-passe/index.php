@@ -26,10 +26,10 @@ $features = [
     'Inclure majuscules, minuscules, chiffres et symboles',
     'Exclure les caractères ambigus (0, O, l, 1, etc.)',
     'Générer plusieurs mots de passe en une fois',
-    'Trois modes : mots de passe aléatoires, phrases secrètes EFF et motifs prononçables',
+    'Trois modes : mots de passe aléatoires, phrases secrètes EFF et motifs prononçables',
     'Indicateur de robustesse du mot de passe',
     'Copie en un clic',
-    '100 % côté client : aucune donnée envoyée au serveur'
+    '100 % côté client : aucune donnée envoyée au serveur'
 ];
 
 $customNoticeType = 'info';

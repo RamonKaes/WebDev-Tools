@@ -47,7 +47,7 @@ $additionalSections = [
     <h3 class="h6">Produção</h3>
     <ul>
       <li>Minificar para reduzir o tamanho dos arquivos e melhorar o carregamento</li>
-      <li>Preparar o código para deployment</li>
+      <li>Preparar o código para deploy</li>
       <li>Otimizar o uso de banda</li>
       <li>Melhorar o desempenho do site</li>
     </ul>

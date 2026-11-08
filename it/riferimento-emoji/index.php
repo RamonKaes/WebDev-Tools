@@ -11,7 +11,7 @@ $featuresSectionTitle = 'Funzionalità';
 $resourcesSectionTitle = 'Risorse Utili';
 
 $features = [
-    'Centinaia di emoji catalogati',
+    'Oltre 200 emoji catalogate',
     'Filtro per categorie',
     'Ricerca per parole chiave',
     'Informazioni Unicode dettagliate',
@@ -23,7 +23,7 @@ $usefulResources = [
     [
         'url' => 'https://unicode.org/emoji/charts/',
         'title' => 'Tabelle emoji Unicode',
-        'description' => 'Riferimento e documentazione ufficiali del Consorzio Unicode'
+        'description' => 'Riferimento e documentazione ufficiale del Consorzio Unicode'
     ],
     [
         'url' => 'https://emojipedia.org/',

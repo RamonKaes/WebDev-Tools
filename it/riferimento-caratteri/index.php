@@ -33,13 +33,13 @@ $features = [
 $usefulResources = [
     [
         'url' => 'https://html.spec.whatwg.org/multipage/named-characters.html',
-        'title' => 'WHATWG HTML: riferimenti caratteri nominati',
+        'title' => 'WHATWG HTML: riferimenti a caratteri con nome',
         'description' => 'Specifica ufficiale delle entità con nome'
     ],
     [
         'url' => 'https://developer.mozilla.org/en-US/docs/Glossary/Entity',
         'title' => 'MDN: entità HTML',
-        'description' => 'Guida completa di entità e simboli in HTML'
+        'description' => 'Guida completa a entità e simboli in HTML'
     ],
     [
         'url' => 'https://www.w3.org/TR/xml-entity-names/',

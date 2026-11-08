@@ -60,10 +60,10 @@ HTML
         'content' => <<<HTML
 <ul>
     <li>Simula la realtà: usa volumi simili al contenuto finale</li>
-    <li>Ricorda di sostituire: rimpiazza il Lorem Ipsum prima della pubblicazione</li>
+    <li>Ricorda di sostituirlo: rimpiazza il Lorem Ipsum prima della pubblicazione</li>
     <li>Testa gli estremi: verifica con testi molto lunghi o corti</li>
     <li>Pensa alla leggibilità: dimostra buona tipografia anche con testo fittizio</li>
-    <li>Usa tag HTML: includi &lt;p&gt; se necessiti formattazione</li>
+    <li>Usa i tag HTML: includi &lt;p&gt; se ti serve la formattazione</li>
 </ul>
 HTML
     ]
@@ -82,7 +82,7 @@ $usefulResources = [
     ],
     [
         'url' => 'https://www.smashingmagazine.com/2010/01/lorem-ipsum-killing-designs/',
-        'title' => 'Smashing Magazine: Lorem Ipsum danneggia i tuoi design',
+        'title' => 'Smashing Magazine: il Lorem Ipsum rovina i tuoi design',
         'description' => 'Perché il testo segnaposto può danneggiare il processo di progettazione e l\'esperienza utente'
     ]
 ];

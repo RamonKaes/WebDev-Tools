@@ -15,7 +15,7 @@ $features = [
     'Flags regex g, i, m, s, u e y',
     'Destaque de correspondências com grupos de captura',
     'Informações detalhadas e estatísticas',
-    'Copiar e descarregar resultados',
+    'Copiar e baixar resultados',
     'Processamento 100% do lado do cliente'
 ];
 

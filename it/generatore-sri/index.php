@@ -11,11 +11,11 @@ $features = [
     'Supporta SHA-256, SHA-384 (consigliato) e SHA-512 contemporaneamente',
     'Genera tag HTML <script> e <link> pronti all\'uso',
     'Copia l\'attributo integrity e il tag HTML completo con un clic',
-    'Privacy: tutto l\'hashing viene eseguito nel browser lato client',
+    'Privacy: il calcolo degli hash avviene interamente nel browser, lato client',
     'Rileva automaticamente il tipo di risorsa (JS o CSS)',
 ];
 
-$resourcesSectionTitle = 'Risorse utili';
+$resourcesSectionTitle = 'Risorse Utili';
 $usefulResources = [
     [
         'url'         => 'https://developer.mozilla.org/it/docs/Web/Security/Subresource_Integrity',
@@ -35,7 +35,7 @@ $usefulResources = [
     [
         'url'         => 'https://developer.mozilla.org/it/docs/Web/API/SubtleCrypto/digest',
         'title'       => 'MDN: SubtleCrypto.digest()',
-        'description' => 'Documentazione dell\'API Web Crypto utilizzata da questo strumento per l\'hashing sicuro.',
+        'description' => 'Documentazione della Web Crypto API utilizzata da questo strumento per il calcolo sicuro degli hash.',
     ],
 ];
 

@@ -15,11 +15,11 @@ $customAboutContent = <<<HTML
 HTML;
 $features = [
     'UUID v1 (zeitbasiert), v4 (zufällig), v7 (zeitlich sortierbar) und NIL generieren',
-    'Massengenerierung: mehrere UUIDs auf einmal erstellen',
+    'Mehrfachgenerierung: mehrere UUIDs auf einmal erstellen',
     'Mehrere Ausgabeformate: Standard, Großbuchstaben, ohne Bindestriche',
     'Einzelne UUIDs oder alle auf einmal kopieren',
     'Konform zu RFC 4122 (v1, v4) und RFC 9562 (v7)',
-    'Keine Serverkommunikation - 100% clientseitig',
+    'Keine Serverkommunikation – 100 % clientseitig',
     'Sofortige Generierung ohne Verzögerungen'
 ];
 $customNoticeType = 'info';
@@ -49,7 +49,7 @@ HTML
 <p class="mt-2">Beispiel: <code>550e8400-e29b-41d4-a716-446655440000</code></p>
 <ul class="mt-2">
     <li>Standardformat: Kleinbuchstaben mit Bindestrichen (am häufigsten)</li>
-    <li>Großbuchstabenformat: Großbuchstaben mit Bindestrichen (einige APIs bevorzugen dies)</li>
+    <li>Großbuchstabenformat: Großbuchstaben mit Bindestrichen (von einigen APIs bevorzugt)</li>
     <li>Kompaktes Format: Keine Bindestriche, nur 32 Hex-Zeichen</li>
 </ul>
 HTML
@@ -62,7 +62,7 @@ $usefulResources = [
     ],
     [
         'url' => 'https://datatracker.ietf.org/doc/html/rfc9562',
-        'title' => 'RFC 9562: UUID Version 6, 7 und 8',
+        'title' => 'RFC 9562: UUID-Versionen 6, 7 und 8',
         'description' => 'Neueste UUID-Spezifikation mit neuen Versionen und zeitbasierten UUIDs'
     ],
     [
@@ -72,7 +72,7 @@ $usefulResources = [
     ],
     [
         'url' => 'https://de.wikipedia.org/wiki/Universally_Unique_Identifier',
-        'title' => 'UUID Übersicht - Wikipedia',
+        'title' => 'UUID-Übersicht – Wikipedia',
         'description' => 'Umfassende Erklärung zu UUID-Versionen und Anwendungsfällen'
     ]
 ];

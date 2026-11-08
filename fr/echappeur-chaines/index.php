@@ -12,7 +12,7 @@ $resourcesSectionTitle = 'Ressources Utiles';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
-    L'<strong>Échappement de Chaînes</strong> vous aide à échapper et déséchapper des chaînes pour divers formats, notamment HTML, XML, JavaScript, JSON, SQL et CSV.
+    L'<strong>Échappement de chaînes</strong> vous aide à échapper et déséchapper des chaînes pour divers formats, notamment HTML, XML, JavaScript, JSON, SQL et CSV.
     Idéal pour les développeurs qui manipulent des chaînes devant être correctement échappées selon le contexte.
 </p>
 <p class="mb-0">
@@ -22,7 +22,7 @@ HTML;
 
 $features = [
     'Échappement HTML/XML : encode les caractères spéciaux comme <, >, &',
-    'Échappement JavaScript : gère guillemets, retours à la ligne et caractères spéciaux',
+    'Échappement JavaScript : gère guillemets, retours à la ligne et caractères spéciaux',
     'Échappement JSON : respect des chaînes JSON valides',
     'Échappement SQL : prévention des injections SQL',
     'Échappement CSV : gestion des guillemets et délimiteurs',

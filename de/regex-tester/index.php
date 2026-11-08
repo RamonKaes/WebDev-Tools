@@ -16,16 +16,16 @@ $features = [
     'Treffer-Hervorhebung mit Erfassungsgruppen',
     'Detaillierte Treffer-Informationen und Statistiken',
     'Treffer kopieren und herunterladen',
-    '100% clientseitige Verarbeitung'
+    '100 % clientseitige Verarbeitung'
 ];
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
 <h2 class="h6 fw-semibold alert-heading mb-3"><i class="bi bi-info-circle me-2"></i>Reguläre Ausdrücke testen</h2>
 <ul class="mb-0">
-    <li>JavaScript Engine: Dieses Tool nutzt JavaScripts RegExp-Engine zum Testen von Mustern</li>
-    <li>Test per Klick: Auf „Testen“ klicken oder Enter drücken (Strg+Enter im Testtext), dann werden die Treffer hervorgehoben</li>
-    <li>Datenschutz: Alle Tests erfolgen lokal in deinem Browser - keine Daten werden an Server gesendet</li>
+    <li>JavaScript-Engine: Dieses Tool nutzt die RegExp-Engine von JavaScript zum Testen von Mustern</li>
+    <li>Test per Klick: Klicken Sie auf „Muster testen“ oder drücken Sie Enter (Strg+Enter im Testtext), dann werden die Treffer hervorgehoben</li>
+    <li>Datenschutz: Alle Tests erfolgen lokal in Ihrem Browser – es werden keine Daten an Server gesendet</li>
 </ul>
 HTML;
 
@@ -38,7 +38,7 @@ $usefulResources = [
     ],
     [
         'url' => 'https://developer.mozilla.org/de/docs/Web/JavaScript/Guide/Regular_expressions',
-        'title' => 'MDN Reguläre Ausdrücke Leitfaden',
+        'title' => 'MDN: Leitfaden zu regulären Ausdrücken',
         'description' => 'Umfassender Leitfaden zu regulären Ausdrücken in JavaScript von Mozilla'
     ],
     [
@@ -48,12 +48,12 @@ $usefulResources = [
     ],
     [
         'url' => 'https://regexr.com/',
-        'title' => 'RegExr - Community-Muster',
-        'description' => 'Lerne Regex mit Tausenden von Community-beigesteuerten Mustern'
+        'title' => 'RegExr – Community-Muster',
+        'description' => 'Regex lernen mit Tausenden von Mustern aus der Community'
     ],
     [
         'url' => 'https://regex101.com/',
-        'title' => 'Regex101 - Testing & Debugger',
+        'title' => 'Regex101 – Tester & Debugger',
         'description' => 'Fortgeschrittenes Regex-Testing mit Erklärung und Visualisierung'
     ]
 ];

@@ -32,6 +32,17 @@ test.describe('every page in the sitemap', () => {
       await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', SITE + pagePath);
       await expect(page.locator('h1').first()).toBeVisible();
 
+      // head.php preloads the translations and the cache-busting hash in an inline
+      // script; the HTML minifier once joined its lines and commented them out
+      const inlineConfig = await page.evaluate(() => ({
+        preloadedLangs: Object.keys(window.__I18N__ || {}),
+        buildHash: window.BUILD_HASH,
+        manifestVersion: window.MANIFEST_VERSION,
+      }));
+      expect(inlineConfig.preloadedLangs).toEqual([lang]);
+      expect(inlineConfig.buildHash).toMatch(/^[0-9a-f]{16}$/);
+      if (inlineConfig.manifestVersion) expect(inlineConfig.manifestVersion).toBe(inlineConfig.buildHash);
+
       // Tool scripts load asynchronously and fill this container themselves
       const container = page.locator('#tool-container');
       if (await container.count()) {

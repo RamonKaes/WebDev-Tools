@@ -560,6 +560,20 @@ function minify_html_output(string $html): string
         return $html;
     }
 
+    // Inline scripts, <pre> and <textarea> keep their line breaks: joining the lines of a
+    // script turns everything after a // comment into a comment (this once disabled the
+    // preloaded translations and the build hash on every production page)
+    $protected = [];
+    $html = preg_replace_callback(
+        '/<(script|pre|textarea)\b[^>]*>.*?<\/\1>/is',
+        function (array $match) use (&$protected): string {
+            $placeholder = "\x1A" . count($protected) . "\x1A";
+            $protected[$placeholder] = $match[0];
+            return $placeholder;
+        },
+        $html
+    );
+
     // Minification rules
     $search = [
         '/\>[^\S ]+/s',                    // Strip whitespace after tags, except space
@@ -577,5 +591,5 @@ function minify_html_output(string $html): string
 
     $html = preg_replace($search, $replace, $html);
 
-    return $html;
+    return strtr($html, $protected);
 }

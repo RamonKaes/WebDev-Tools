@@ -195,13 +195,13 @@ if (!isset($assetPrefix)) {
   <link rel="preload" href="<?= assetSrc('js/tool-registry.js') ?>" as="script">
   
   <script nonce="<?= getCspNonce() ?>">
-    // Set global configuration BEFORE loading other scripts
+    /* Global configuration, set before the other scripts load */
     window.__BASE_PATH__ = '<?= BASE_PATH ?>';
     window.__I18N__ = {
       '<?= $lang ?>': <?= json_encode($i18nData, JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP) ?>
     };
     
-    // Build hash for cache busting (manifest version = content hash)
+    /* Build hash for cache busting (manifest version = content hash) */
     window.BUILD_HASH = '<?= $buildHash ?>';
   </script>
   
@@ -209,10 +209,10 @@ if (!isset($assetPrefix)) {
   <script src="<?= assetSrc('js/icon-system.js') ?>"></script>
   
   <script nonce="<?= getCspNonce() ?>">
-    // Base path for dynamic resource loading
+    /* Base path for dynamic resource loading */
     window.APP_BASE_PATH = '<?= BASE_PATH ?>';
     
-    // Simple translation function until i18n.js loads
+    /* Simple translation function until i18n.js loads */
     window.i18n = {
       data: window.__I18N__['<?= $lang ?>'],
       t: function(key, params) {

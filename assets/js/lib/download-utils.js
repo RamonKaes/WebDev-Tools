@@ -45,7 +45,7 @@
 
     let sanitized = filename
       .split('')
-      .map(char => /[\/\\:\0]/.test(char) ? '_' : char)
+      .map(char => /[/\\:\0]/.test(char) ? '_' : char)
       .join('');
 
     sanitized = sanitized.replace(/[\x00-\x1F\x7F]/g, '');

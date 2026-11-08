@@ -107,9 +107,11 @@
 
       window.currentToolName = name;
 
+      // Used by both error messages below; declared here so the catch block can see it
+      const safeName = window.AppHelpers ? window.AppHelpers.escapeHtml(name) : name.replace(/[<>"'&]/g, c => ({'<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;','&':'&amp;'}[c]));
+
       if (!tool) {
-        const safeName = window.AppHelpers ? window.AppHelpers.escapeHtml(name) : name.replace(/[<>"'&]/g, c => ({'<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;','&':'&amp;'}[c]));
-      container.innerHTML =
+        container.innerHTML =
           '<div class="alert alert-warning mt-4">' +
           '<i class="bi bi-exclamation-triangle me-2"></i>' +
           'Tool "' + safeName + '" not found.' +

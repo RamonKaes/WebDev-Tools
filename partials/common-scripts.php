@@ -15,12 +15,6 @@ if (!isset($buildHash)) {
     window.MANIFEST_VERSION = '<?= htmlspecialchars($manifest['version'] ?? '', ENT_QUOTES, 'UTF-8') ?>';
   </script>
 
-  <!-- DOMPurify: XSS sanitization library for safe innerHTML operations -->
-  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.9/dist/purify.min.js" 
-          integrity="sha384-3HPB1XT51W3gGRxAmZ+qbZwRpRlFQL632y8x+adAqCr4Wp3TaWwCLSTAJJKbyWEK" 
-          crossorigin="anonymous" 
-          nonce="<?= $nonce ?>"></script>
-
   <script src="<?= assetSrc('js/tool-registry.js') ?>"></script>
 
   <script src="<?= assetSrc('js/lib/clipboard-utils.js') ?>"></script>

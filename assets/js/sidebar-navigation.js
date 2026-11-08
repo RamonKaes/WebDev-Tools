@@ -25,7 +25,7 @@
     const allButtons = [...desktopButtons, ...mobileButtons];
     
     allButtons.forEach(button => {
-      button.addEventListener('click', function(e) {
+      button.addEventListener('click', function(_e) {
         const targetId = this.getAttribute('data-bs-target');
         const targetCollapse = document.querySelector(targetId);
         

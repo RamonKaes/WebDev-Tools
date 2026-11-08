@@ -1,6 +1,6 @@
 version: 2
 updates:
-  # Jest, Sass, Terser and the other build/test tools
+  # Jest, Sass, ESLint and the other build/test tools
   - package-ecosystem: npm
     directory: /
     schedule:

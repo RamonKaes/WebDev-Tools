@@ -28,10 +28,12 @@ $cspNonce = $GLOBALS['csp_nonce'];
 
 $cspDirectives = [
     "default-src 'self'",
-    "script-src 'self' 'nonce-{$cspNonce}' https://cdn.jsdelivr.net https://www.googletagmanager.com",
-    "style-src 'self' https://cdn.jsdelivr.net",
-    "font-src 'self' https://cdn.jsdelivr.net",
+    // cdn.jsdelivr.net: qrcode-generator (QR code tool) and terser (code formatter), both with SRI
+    "script-src 'self' 'nonce-{$cspNonce}' https://cdn.jsdelivr.net",
+    "style-src 'self'",
+    "font-src 'self'",
     "img-src 'self' data: blob: https:",
+    // https: is needed by the SRI generator, which fetches arbitrary resource URLs
     "connect-src 'self' https:",
     "object-src 'none'",
     "media-src 'none'",

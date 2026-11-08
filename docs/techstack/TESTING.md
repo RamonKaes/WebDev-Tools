@@ -1,20 +1,23 @@
 # Testing – WebDev-Tools
 
-**Jest 30 with jsdom** – 841 tests, 20 suites, unit tests for all tools.
+**Jest 30 with jsdom** for unit tests, **Playwright with axe-core** for browser and accessibility tests, **ESLint** for static checks. Current counts: run `npm test`.
 
 ---
 
-## Test Commands
+## Commands
 
 ```bash
-# Run all tests
-npm test
+npm test                  # Jest, all suites in tests/unit/
+npm run test:watch        # Jest watch mode
+npm run test:coverage     # Jest with coverage; fails below the thresholds in jest.config.js
+npm run lint              # ESLint over the repository (eslint.config.js)
+npm run check:i18n        # key/placeholder parity of config/i18n/*.json
+bash build.sh             # production build, required before the browser tests
+npm run test:browser      # Playwright: tests/browser/*.spec.js against dist/
 
-# Watch mode (during development)
-npm run test:watch
-
-# Coverage report
-npm run test:coverage
+npm test -- uuidGeneratorTool          # one suite
+npm test -- -t "should encode"         # tests matching a name
+npx playwright test tools.spec.js      # one browser spec
 ```
 
 ---
@@ -23,496 +26,118 @@ npm run test:coverage
 
 ```javascript
 module.exports = {
-  testEnvironment: 'jsdom',           // Simulate browser environment
+  testEnvironment: 'jest-environment-jsdom',
+  testEnvironmentOptions: { url: 'http://localhost/' },
+  setupFiles: ['./tests/unit/setup.js'],
   testMatch: ['**/tests/unit/**/*.test.js'],
-  collectCoverageFrom: [
-    'assets/js/tools/**/*.js',
-    'assets/js/lib/**/*.js',
-    '!assets/js/lib/external/**'      // Exclude external libraries
-  ],
-  coverageThreshold: {
-    global: {
-      branches: 70,
-      functions: 80,
-      lines: 80,
-      statements: 80
-    }
-  },
-  setupFilesAfterEnv: ['<rootDir>/tests/unit/setup.js']
+  verbose: true,
+  collectCoverageFrom: ['assets/js/**/*.js', '!assets/js/lib/wordlist.js', '!assets/js/lib/performance-monitoring.js'],
+  coverageThreshold: { global: { statements: 60, branches: 50, functions: 60, lines: 62 } },
 };
 ```
 
----
+Coverage counts every shipped script, not only the ones a test requires. The thresholds are floors slightly below the measured values; raise them as coverage grows, never lower them.
 
-## Test Setup (`tests/unit/setup.js`)
+### `tests/unit/setup.js`
 
-Global mocks for all tests:
-
-```javascript
-// i18n-Mock
-global.window.i18n = {
-  t: jest.fn((key, params) => {
-    // Simple template string replacement
-    let str = key;
-    if (params) {
-      Object.keys(params).forEach(k => {
-        str = str.replace(`{${k}}`, params[k]);
-      });
-    }
-    return str;
-  })
-};
-
-// Tools-Registry-Mock
-global.window.Tools = {
-  _tools: {},
-  register: jest.fn((id, tool) => {
-    global.window.Tools._tools[id] = tool;
-  }),
-  get: jest.fn((id) => {
-    return global.window.Tools._tools[id];
-  })
-};
-
-// ClipboardUtils-Mock
-global.window.ClipboardUtils = {
-  copyToClipboard: jest.fn((text, onSuccess, onError) => {
-    if (onSuccess) onSuccess();
-  })
-};
-
-// DownloadUtils-Mock
-global.window.DownloadUtils = {
-  downloadText: jest.fn((content, filename, mimeType) => {}),
-  downloadBlob: jest.fn((blob, filename) => {})
-};
-
-// DragDropUtils-Mock
-global.window.DragDropUtils = {
-  init: jest.fn((dropZone, onSuccess, onError, options) => {})
-};
-
-// Validators-Mock
-global.window.Validators = {
-  isValidJSON: jest.fn((str) => {
-    try {
-      JSON.parse(str);
-      return true;
-    } catch {
-      return false;
-    }
-  }),
-  isValidURL: jest.fn((str) => {
-    try {
-      new URL(str);
-      return true;
-    } catch {
-      return false;
-    }
-  })
-};
-
-// Performance-Mocks
-global.window.performance = {
-  now: jest.fn(() => Date.now())
-};
-```
+Provides only what jsdom lacks: `TextEncoder`/`TextDecoder` from `util`, `URL.createObjectURL`/`revokeObjectURL` mocks and `HTMLElement.prototype.scrollIntoView`. **No** registry, i18n or library mocks live here; every suite sets up its own.
 
 ---
 
-## Test Pattern (Tool Tests)
+## Tool Test Pattern
 
-### Basic Structure
+Reference: `tests/unit/uuidGeneratorTool.test.js`. Every suite mocks the globals the tool touches, requires the script once (it registers itself) and renders into a fresh container per test.
 
 ```javascript
-describe('MyTool', () => {
-  let tool;
+'use strict';
+const path = require('path');
+let tool;
 
-  beforeAll(() => {
-    // Mocks initialisieren (falls nicht in setup.js)
-    window.Tools = { register: jest.fn() };
-    window.i18n = { t: jest.fn(key => key) };
-    window.ClipboardUtils = { copyToClipboard: jest.fn() };
-    window.DownloadUtils = { downloadText: jest.fn() };
+beforeAll(() => {
+  global.window = global;
+  global.Tools = { _tools: {}, register: (name, obj) => { global.Tools._tools[name] = obj; }, open: jest.fn() };
+  global.i18n = { t: (key) => key };                       // tests assert on keys, not translations
+  global.ClipboardUtils = { copyToClipboard: jest.fn().mockResolvedValue(true) };
+  global.DownloadUtils = { downloadText: jest.fn() };
+  require(path.join(__dirname, '../../assets/js/tools/uuidGeneratorTool.js'));
+  tool = global.Tools._tools.uuidGeneratorTool;
+});
 
-    // Tool-Modul laden
-    require('../../assets/js/tools/myToolTool.js');
-    tool = window.Tools.register.mock.calls[0][1];
-  });
+function openTool() {
+  document.body.innerHTML = '<div id="tool-container"></div>';
+  const container = document.getElementById('tool-container');
+  tool.open(container);
+  return container;
+}
 
-  beforeEach(() => {
-    // Test-Container anlegen
-    document.body.innerHTML = '<div id="tool-container"></div>';
-  });
-
-  describe('Initialization', () => {
-    it('should register with correct tool ID', () => {
-      expect(window.Tools.register).toHaveBeenCalledWith(
-        'myTool',
-        expect.objectContaining({ open: expect.any(Function) })
-      );
-    });
-
-    it('should render UI on open()', () => {
-      tool.open();
-      const container = document.getElementById('tool-container');
-      expect(container.innerHTML).toContain('input');
-      expect(container.innerHTML).toContain('output');
-    });
-  });
-
-  describe('Core Functionality', () => {
-    it('should convert input correctly', () => {
-      tool.open();
-      const input = document.getElementById('input');
-      const output = document.getElementById('output');
-
-      input.value = 'test';
-      input.dispatchEvent(new Event('input'));
-
-      expect(output.value).toBe('EXPECTED_OUTPUT');
-    });
-
-    it('should handle empty input', () => {
-      tool.open();
-      const input = document.getElementById('input');
-      const output = document.getElementById('output');
-
-      input.value = '';
-      input.dispatchEvent(new Event('input'));
-
-      expect(output.value).toBe('');
-    });
-
-    it('should handle invalid input gracefully', () => {
-      tool.open();
-      const input = document.getElementById('input');
-
-      input.value = 'INVALID_DATA';
-      input.dispatchEvent(new Event('input'));
-
-      // Error-Message prüfen oder Output leer
-      const errorMsg = document.querySelector('.error-message');
-      expect(errorMsg).toBeTruthy();
-    });
-  });
-
-  describe('Copy Functionality', () => {
-    it('should copy output to clipboard', () => {
-      tool.open();
-      const output = document.getElementById('output');
-      const copyBtn = document.getElementById('copy-btn');
-
-      output.value = 'test output';
-      copyBtn.click();
-
-      expect(window.ClipboardUtils.copyToClipboard).toHaveBeenCalledWith(
-        'test output',
-        expect.any(Function),
-        expect.any(Function)
-      );
-    });
-  });
-
-  describe('Download Functionality', () => {
-    it('should download output as file', () => {
-      tool.open();
-      const output = document.getElementById('output');
-      const downloadBtn = document.getElementById('download-btn');
-
-      output.value = 'test output';
-      downloadBtn.click();
-
-      expect(window.DownloadUtils.downloadText).toHaveBeenCalledWith(
-        'test output',
-        expect.stringContaining('.txt'),
-        'text/plain'
-      );
-    });
-  });
+test('copies the generated UUID', async () => {
+  const c = openTool();
+  c.querySelector('#generateSingle').click();
+  c.querySelector('#copySingle').click();
+  await Promise.resolve();
+  expect(global.ClipboardUtils.copyToClipboard).toHaveBeenCalledWith(c.querySelector('#singleUuid').value);
 });
 ```
 
----
+Notes:
 
-## Test-Kategorien
+- `copyToClipboard(text, message?)` returns a `Promise<boolean>`; mock it with `mockResolvedValue(true)` and `await` a microtask before asserting on follow-up UI.
+- `downloadText(content, filename, mimeType = 'text/plain')`: assert on content and filename, the MIME type is often omitted by callers.
+- Deterministic randomness: define `global.crypto.getRandomValues` in `beforeAll` (see the UUID suite); `crypto.subtle` for the hash and SRI tools is mocked per suite.
+- Tools that `import()` (password generator) are tested through the `require()` fallback the tool provides.
+- Timers: `jest.useFakeTimers()` plus `jest.advanceTimersByTime()` for debounced live modes.
+- Per converter or feature: at least one happy path and one error case (invalid input shows the translated error key, output stays empty).
 
-### 1. Initialization Tests
+### Non-tool suites
 
-Prüfen, ob das Tool korrekt registriert und initialisiert wird:
-
-```javascript
-it('should register with correct tool ID', () => {
-  expect(window.Tools.register).toHaveBeenCalledWith('myTool', expect.any(Object));
-});
-
-it('should render UI on open()', () => {
-  tool.open();
-  expect(document.getElementById('input')).toBeTruthy();
-});
-```
+`a11yUtils.test.js`, `downloadUtils.test.js`, `i18n.test.js`, `installPrompt.test.js`, `webmanifest.test.js` (the PWA manifests), `checkDeploy.test.js` (runs `build-tools/check-deploy.sh` against temporary git repositories).
 
 ---
 
-### 2. Functionality Tests
+## Browser Tests (`tests/browser/`)
 
-**Happy Path:**
-```javascript
-it('should encode valid input', () => {
-  tool.open();
-  document.getElementById('input').value = 'Hello';
-  document.getElementById('encode-btn').click();
-  expect(document.getElementById('output').value).toBe('SGVsbG8=');
-});
-```
+Run against the **production build**: `playwright.config.js` starts `tests/browser/serve.sh`, a private unprivileged Apache with mod_php and a self-signed certificate serving `dist/` on port 8443 with the real `.htaccess.production`. Chrome is started with `--host-resolver-rules` so that `https://webdev-tools.info` resolves to that server; `BASE_PATH` therefore stays empty, as in production. Requires `apache2`, `libapache2-mod-php` and a local Chrome (`channel: 'chrome'`).
 
-**Edge Cases:**
-```javascript
-it('should handle empty input', () => { /* ... */ });
-it('should handle very long input', () => { /* ... */ });
-it('should handle special characters', () => { /* ... */ });
-```
+**Never use Playwright's `request` fixture here**: it runs outside Chrome, ignores the host mapping and would hit the live site.
 
-**Error Cases:**
-```javascript
-it('should show error for invalid JSON', () => { /* ... */ });
-it('should handle malformed URLs gracefully', () => { /* ... */ });
-```
+`fixtures.js` fails every test on a page error, a console error (CSP violations surface there), or a response from `webdev-tools.info` that did not come from the local server (header `X-Browser-Test: local`).
+
+| Spec | Covers |
+|------|--------|
+| `pages.spec.js` | Every sitemap URL returns 200 and shows no untranslated `tools.x.y` keys; the sitemaps list all tools in all six languages (the count is hard-coded: update it when adding a tool); redirects and security headers |
+| `tools.spec.js` | One normal case per tool through the real page. Text tools are table-driven (`TEXT_TOOLS`: slug, input/run/output selectors, value, expected, optional download button); hash, SRI, JWT, UUID, QR and others have their own tests. Expected values come from outside the tool (known SHA-256 of `hello`, a public JWT, …) |
+| `accessibility.spec.js` | axe-core (`@axe-core/playwright`) with WCAG 2.0/2.1 A+AA and 2.2 AA tags over every English sitemap page, in light and dark mode. Anything axe reports is fixed in the code, not excluded |
+
+Failure artefacts: `test-results/playwright` (traces on failure) and `test-results/apache/error.log`; CI uploads both.
 
 ---
 
-### 3. Integration Tests
+## Lint
 
-Testen von Drag & Drop, File Upload:
-
-```javascript
-it('should process dropped file', () => {
-  tool.open();
-  
-  // DragDropUtils.init wurde aufgerufen?
-  expect(window.DragDropUtils.init).toHaveBeenCalled();
-  
-  // Callback extrahieren & manuell aufrufen
-  const onSuccess = window.DragDropUtils.init.mock.calls[0][1];
-  const mockFile = { name: 'test.json', size: 100 };
-  const mockContent = '{"key":"value"}';
-  
-  onSuccess(mockFile, mockContent);
-  
-  expect(document.getElementById('output').value).toContain('value');
-});
-```
+`eslint.config.js` (flat config): `@eslint/js` recommended plus `no-var`, `prefer-const`, `no-unused-vars` (warn, `_` prefix ignored), `no-empty` with empty `catch` allowed. Shipped scripts under `assets/js/` are linted as classic scripts with browser globals (`bootstrap`, `qrcode`, `Terser` declared); `wordlist.js` and `performance-monitoring.js` as modules; tests and build tools as CommonJS with Node and Jest globals. `dist/`, `node_modules/`, Bootstrap and coverage output are ignored.
 
 ---
 
-### 4. Utility Tests (`assets/js/lib/`)
+## CI (`.github/workflows/ci.yml`)
 
-**Beispiel: `validators.test.js`**
+Runs on pushes to `main` and on pull requests:
 
-```javascript
-describe('Validators', () => {
-  beforeAll(() => {
-    require('../../assets/js/lib/validators.js');
-  });
+| Job | Steps |
+|-----|-------|
+| `test` (Node 22 and 24) | `npm ci`, `npm run lint`, `npm run test:coverage` |
+| `i18n` | `node build-tools/check-i18n.js` |
+| `php` | `php -l` over every PHP file; `php config/generate-sitemaps.php` followed by `git diff --exit-code` on the sitemaps |
+| `build` | `bash build.sh`, then checks that key files exist in `dist/` |
+| `browser` | Installs `apache2 libapache2-mod-php php-mbstring`, `bash build.sh`, `npm run test:browser`; uploads `test-results/` on failure |
 
-  describe('isValidJSON', () => {
-    it('should return true for valid JSON', () => {
-      expect(window.Validators.isValidJSON('{"key":"value"}')).toBe(true);
-    });
-
-    it('should return false for invalid JSON', () => {
-      expect(window.Validators.isValidJSON('{invalid}')).toBe(false);
-    });
-
-    it('should handle empty string', () => {
-      expect(window.Validators.isValidJSON('')).toBe(false);
-    });
-  });
-
-  describe('isValidURL', () => {
-    it('should validate http URLs', () => {
-      expect(window.Validators.isValidURL('http://example.com')).toBe(true);
-    });
-
-    it('should validate https URLs', () => {
-      expect(window.Validators.isValidURL('https://example.com')).toBe(true);
-    });
-
-    it('should reject invalid URLs', () => {
-      expect(window.Validators.isValidURL('not a url')).toBe(false);
-    });
-  });
-});
-```
+Additional workflows: `codeql.yml` (JavaScript analysis on push, PR and weekly), `links.yml` (lychee external link check, weekly), and Dependabot (`.github/dependabot.yml`, weekly, npm dev dependencies grouped, GitHub Actions).
 
 ---
 
-## Mocking-Strategien
+## Production Check
 
-### DOM-Manipulation
-
-```javascript
-beforeEach(() => {
-  document.body.innerHTML = `
-    <div id="tool-container"></div>
-    <div id="notifications"></div>
-  `;
-});
-```
+`npm run verify:prod` (`build-tools/verify-prod.js`, also run by the deploy script) opens every URL of the deployed sitemaps in Chrome, flags non-200 responses, PHP error text, console errors and tools that do not render, and compares the live `assets/js/tools/*.js` and `config/i18n/*.json` byte for byte with `dist/`. It only reads.
 
 ---
 
-### Event-Simulation
-
-```javascript
-// Input-Event
-const input = document.getElementById('input');
-input.value = 'test';
-input.dispatchEvent(new Event('input'));
-
-// Click-Event
-const button = document.getElementById('submit-btn');
-button.click();
-
-// Change-Event
-const select = document.getElementById('options');
-select.value = 'option2';
-select.dispatchEvent(new Event('change'));
-```
-
----
-
-### Async-Tests
-
-```javascript
-it('should load data asynchronously', async () => {
-  tool.open();
-  
-  const loadBtn = document.getElementById('load-btn');
-  loadBtn.click();
-  
-  // Warten auf Promise-Resolution
-  await new Promise(resolve => setTimeout(resolve, 100));
-  
-  const output = document.getElementById('output');
-  expect(output.value).toBe('loaded data');
-});
-```
-
----
-
-### Timer-Mocks (Debouncing)
-
-```javascript
-beforeEach(() => {
-  jest.useFakeTimers();
-});
-
-afterEach(() => {
-  jest.useRealTimers();
-});
-
-it('should debounce input events', () => {
-  tool.open();
-  const input = document.getElementById('input');
-  const processSpy = jest.fn();
-
-  input.addEventListener('input', () => {
-    setTimeout(processSpy, 300);
-  });
-
-  // Mehrere Events schnell hintereinander
-  input.dispatchEvent(new Event('input'));
-  input.dispatchEvent(new Event('input'));
-  input.dispatchEvent(new Event('input'));
-
-  // Timer vorlaufen lassen
-  jest.advanceTimersByTime(300);
-
-  // Nur 1x aufgerufen (debounced)
-  expect(processSpy).toHaveBeenCalledTimes(3); // Aber nur letzter zählt
-});
-```
-
----
-
-## Coverage-Ziele
-
-| Metrik | Ziel | Aktuell |
-|--------|------|---------|
-| **Branches** | 70% | ~75% |
-| **Functions** | 80% | ~85% |
-| **Lines** | 80% | ~82% |
-| **Statements** | 80% | ~83% |
-
-**Coverage-Report ansehen:**
-
-```bash
-npm run test:coverage
-open coverage/lcov-report/index.html
-```
-
----
-
-## Best Practices
-
-### ✅ DO:
-- **Einen Test pro Feature/Funktion**
-- **Descriptive Test-Namen:** `should convert Base64 to UTF-8`
-- **AAA-Pattern:** Arrange → Act → Assert
-- **Mock externe Dependencies** (APIs, localStorage, etc.)
-
-### ❌ DON'T:
-- **Tests abhängig voneinander machen** (shared state)
-- **Implementierungs-Details testen** (z.B. interne Variable-Namen)
-- **Zu große Tests** (sollten < 20 Zeilen sein)
-- **Flaky Tests** (intermittierende Failures)
-
----
-
-## Debugging Tests
-
-### Einzelnen Test ausführen
-
-```bash
-# Nur eine Test-Datei
-npm test -- myToolTool.test.js
-
-# Nur einen Testcase (via -t)
-npm test -- -t "should encode valid input"
-```
-
-### Verbose Output
-
-```bash
-npm test -- --verbose
-```
-
-### Debug-Modus (Node Inspector)
-
-```bash
-node --inspect-brk node_modules/.bin/jest --runInBand
-# Chrome öffnen: chrome://inspect
-```
-
----
-
-## CI-Integration
-
-### GitHub Actions Workflow
-
-```yaml
-- name: Run Tests
-  run: npm test -- --ci --coverage --maxWorkers=2
-
-- name: Upload Coverage
-  uses: codecov/codecov-action@v3
-  with:
-    files: ./coverage/lcov.info
-```
-
----
-
-**Weitere Infos:**
-- [FRONTEND.md](FRONTEND.md) – JS-Code-Struktur
-- [INTEGRATION.md](INTEGRATION.md) – Tests für neues Tool schreiben
+**See also:** [NEUES-TOOL.md](NEUES-TOOL.md) (tests for a new tool), [OVERVIEW.md](OVERVIEW.md) (commands)

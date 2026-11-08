@@ -165,7 +165,7 @@
 
     const searchTerm = search ? search.value.toLowerCase() : '';
 
-    let filtered = EMOJI_DATA.filter(item => {
+    const filtered = EMOJI_DATA.filter(item => {
       const matchesCategory = category === 'all' || item.category === category;
       const matchesSearch = !searchTerm || item.name.toLowerCase().includes(searchTerm);
       return matchesCategory && matchesSearch;

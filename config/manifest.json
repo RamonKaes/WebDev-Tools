@@ -1,6 +1,6 @@
 {
-    "version": "20261028.142755",
-    "generatedAt": "2026-10-28T14:27:55+00:00",
+    "version": "20261107.113802",
+    "generatedAt": "2026-11-07T11:38:02+00:00",
     "tools": {
         "base64EncoderDecoder": {
             "id": "base64EncoderDecoder",
@@ -18,12 +18,6 @@
             "icon": "bi-file-binary",
             "jsPath": "/assets/js/tools/base64EncoderDecoderTool.js",
             "externalLibraries": [],
-            "jsLibraries": [
-                "clipboard-utils",
-                "download-utils",
-                "dragdrop-utils",
-                "validators"
-            ],
             "features": [
                 "drag-drop",
                 "file-upload",
@@ -48,11 +42,6 @@
             "icon": "bi-link-45deg",
             "jsPath": "/assets/js/tools/urlEncoderDecoderTool.js",
             "externalLibraries": [],
-            "jsLibraries": [
-                "clipboard-utils",
-                "download-utils",
-                "validators"
-            ],
             "features": [
                 "bulk-processing",
                 "url-parsing"
@@ -76,10 +65,6 @@
             "icon": "bi-code-square",
             "jsPath": "/assets/js/tools/htmlEntityTool.js",
             "externalLibraries": [],
-            "jsLibraries": [
-                "clipboard-utils",
-                "download-utils"
-            ],
             "features": [
                 "named-entities",
                 "numeric-entities",
@@ -104,13 +89,6 @@
             "icon": "bi-filetype-json",
             "jsPath": "/assets/js/tools/jsonFormatterValidatorTool.js",
             "externalLibraries": [],
-            "jsLibraries": [
-                "clipboard-utils",
-                "download-utils",
-                "dragdrop-utils",
-                "formatters",
-                "validators"
-            ],
             "features": [
                 "syntax-highlighting",
                 "tree-view",
@@ -136,10 +114,6 @@
             "icon": "bi-code-square",
             "jsPath": "/assets/js/tools/codeFormatterTool.js",
             "externalLibraries": [],
-            "jsLibraries": [
-                "clipboard-utils",
-                "download-utils"
-            ],
             "features": [],
             "hasFeaturesSection": true,
             "hasAboutSection": false
@@ -160,9 +134,6 @@
             "icon": "bi-arrows-angle-expand",
             "jsPath": "/assets/js/tools/pxToRemConverterTool.js",
             "externalLibraries": [],
-            "jsLibraries": [
-                "clipboard-utils"
-            ],
             "features": [
                 "live-calculation",
                 "conversion-tables",
@@ -187,12 +158,6 @@
             "icon": "bi-arrow-left-right",
             "jsPath": "/assets/js/tools/dataConverterTool.js",
             "externalLibraries": [],
-            "jsLibraries": [
-                "clipboard-utils",
-                "download-utils",
-                "validators",
-                "formatters"
-            ],
             "features": [
                 "bidirectional-conversion",
                 "multiple-formats",
@@ -217,7 +182,6 @@
             "icon": "bi-shield-lock",
             "jsPath": "/assets/js/tools/jwtDecoderTool.js",
             "externalLibraries": [],
-            "jsLibraries": [],
             "features": [
                 "decode-jwt",
                 "verify-expiry",
@@ -242,10 +206,6 @@
             "icon": "bi-globe",
             "jsPath": "/assets/js/tools/punycodeConverterTool.js",
             "externalLibraries": [],
-            "jsLibraries": [
-                "clipboard-utils",
-                "download-utils"
-            ],
             "features": [
                 "idn-support",
                 "bidirectional",
@@ -270,11 +230,6 @@
             "icon": "bi-fingerprint",
             "jsPath": "/assets/js/tools/uuidGeneratorTool.js",
             "externalLibraries": [],
-            "jsLibraries": [
-                "clipboard-utils",
-                "download-utils",
-                "validators"
-            ],
             "features": [
                 "bulk-generation",
                 "uuid-v4",
@@ -299,11 +254,6 @@
             "icon": "bi-shield-lock",
             "jsPath": "/assets/js/tools/passwordGeneratorTool.js",
             "externalLibraries": [],
-            "jsLibraries": [
-                "clipboard-utils",
-                "download-utils",
-                "wordlist"
-            ],
             "features": [
                 "random-password",
                 "passphrase",
@@ -329,10 +279,6 @@
             "icon": "bi-hash",
             "jsPath": "/assets/js/tools/hashGeneratorTool.js",
             "externalLibraries": [],
-            "jsLibraries": [
-                "clipboard-utils",
-                "download-utils"
-            ],
             "features": [
                 "multiple-algorithms",
                 "file-hashing"
@@ -356,10 +302,6 @@
             "icon": "bi-file-text",
             "jsPath": "/assets/js/tools/loremIpsumTool.js",
             "externalLibraries": [],
-            "jsLibraries": [
-                "clipboard-utils",
-                "download-utils"
-            ],
             "features": [
                 "paragraphs",
                 "words",
@@ -390,9 +332,6 @@
                     "crossorigin": "anonymous"
                 }
             ],
-            "jsLibraries": [
-                "download-utils"
-            ],
             "features": [
                 "qr-generation",
                 "customizable",
@@ -417,10 +356,6 @@
             "icon": "bi-code-slash",
             "jsPath": "/assets/js/tools/stringEscaperTool.js",
             "externalLibraries": [],
-            "jsLibraries": [
-                "clipboard-utils",
-                "download-utils"
-            ],
             "features": [],
             "hasFeaturesSection": true,
             "hasAboutSection": false
@@ -441,9 +376,6 @@
             "icon": "bi-table",
             "jsPath": "/assets/js/tools/characterReferenceTool.js",
             "externalLibraries": [],
-            "jsLibraries": [
-                "clipboard-utils"
-            ],
             "features": [
                 "search",
                 "categories",
@@ -469,9 +401,6 @@
             "icon": "bi-emoji-smile",
             "jsPath": "/assets/js/tools/emojiReferenceTool.js",
             "externalLibraries": [],
-            "jsLibraries": [
-                "a11y-utils"
-            ],
             "features": [
                 "search",
                 "categories",
@@ -497,11 +426,6 @@
             "icon": "bi-regex",
             "jsPath": "/assets/js/tools/regexTesterTool.js",
             "externalLibraries": [],
-            "jsLibraries": [
-                "clipboard-utils",
-                "download-utils",
-                "a11y-utils"
-            ],
             "features": [
                 "live-testing",
                 "match-highlighting",
@@ -527,9 +451,6 @@
             "icon": "bi-aspect-ratio",
             "jsPath": "/assets/js/tools/aspectRatioCalculatorTool.js",
             "externalLibraries": [],
-            "jsLibraries": [
-                "clipboard-utils"
-            ],
             "features": [
                 "dimension-calculation",
                 "common-presets",
@@ -555,10 +476,6 @@
             "icon": "bi-shield-check",
             "jsPath": "/assets/js/tools/sriGeneratorTool.js",
             "externalLibraries": [],
-            "jsLibraries": [
-                "clipboard-utils",
-                "download-utils"
-            ],
             "features": [
                 "sha256",
                 "sha384",

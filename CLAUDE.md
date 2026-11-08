@@ -7,8 +7,9 @@ Privacyfirst Developer-Toolbox. Alle Operationen laufen **client-side im Browser
 ## Befehle
 
 ```bash
-npm test                        # Jest Unit-Tests (977 Tests, 26 Suites)
-npm run test:coverage           # Mit Coverage-Report
+npm test                        # Jest Unit-Tests
+npm run test:coverage           # Mit Coverage-Report und Schwellenwerten (wie in CI)
+npm run lint                    # ESLint über assets/js, build-tools und tests
 bash build.sh                   # Production-Build nach dist/
 npm run test:browser            # Playwright gegen dist/ hinter Apache (vorher build.sh)
 npm run deploy                  # Upload aus dem Haupt-Checkout, mit Wächter und Prod-Prüfung
@@ -25,7 +26,7 @@ php config/generate-sitemaps.php    # Nach neuem Tool ausführen
 ```
 tool-name/index.php             # Tool-Seite (PHP)
 assets/js/tools/toolNameTool.js # Tool-Logik (IIFE, registriert sich in window.Tools)
-assets/js/lib/                  # Gemeinsame Utilities (clipboard, download, validators, …)
+assets/js/lib/                  # Gemeinsame Utilities (clipboard-utils, download-utils, a11y-utils, wordlist)
 config/tools.php                # Tool-Registry (Metadaten, Libraries, Features)
 config/i18n/{en,de,es,pt,fr,it}.json  # Übersetzungen
 tests/unit/toolNameTool.test.js # Jest-Tests
@@ -96,7 +97,7 @@ $usefulResources = [
 
 - **JS-UI-Strings** (Labels, Buttons, Fehlermeldungen im Tool) → `config/i18n/{lang}.json` unter `tools.myToolName.*`
 - **PHP-Content** (Features-Liste, Ressourcen, Additional Sections, Seitentexte) → hardcoded in jeder Sprachversion, **nie** aus JSON
-- Schlüssel-Struktur JSON: `tools.toolId.label`, `tools.toolId.meta_title`, etc.
+- Schlüssel-Struktur JSON: UI-Strings unter `tools.toolId.*` (`toc_title`, `h1_title`, `card_description`, Labels …), Title/Description/Structured-Data unter `seo.toolId.*` (`meta_title`, `meta_description`, `featureList`, `keywords`)
 - Alle 6 Sprach-JSON-Dateien gleichzeitig pflegen
 
 ---

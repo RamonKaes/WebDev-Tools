@@ -6,6 +6,64 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
 
 ## [Unreleased]
 
+### 🔐 Security & Privacy
+- **DOMPurify removed.** Every tool page loaded `dompurify@3.0.9` from jsDelivr
+  although no code ever called it; the request leaked the visitor's IP to the
+  CDN for nothing, and the pinned version had known sanitizer bypasses. The
+  CSP no longer allows `www.googletagmanager.com` (never used) and allows
+  jsDelivr only for scripts: the QR code library and terser are the last two
+  CDN resources, both with SRI. Error pages dropped their jsDelivr preconnect.
+
+### 🗑️ Removed
+- **Dead JavaScript** that was shipped to the server but never loaded: the ES
+  modules `lib/dom-utils`, `json-tree-renderer`, `json-utils`,
+  `performance-guards`, `storage-utils`, `validators`, `formatters`,
+  `dragdrop-utils`, plus `performance-budget.js` and `logger.js` (about 2,700
+  lines). Tools are classic scripts and could not import them. With them went
+  the unused `jsLibraries` field of the tool registry, `generateToolPreloads()`
+  (never called) and the one-off script `suggest_extensions.py`.
+
+### 🐛 Fixed
+- **Tool registry** – when a tool's `open()` threw, the error message could
+  not be rendered: `safeName` was declared inside the "tool not found" branch
+  and the catch block hit a `ReferenceError` instead (found by ESLint
+  `no-undef`). The page showed an empty tool container.
+- `tests/unit/characterReference.test.js` flushed the search debounce with
+  fake timers in a suite that had not enabled them (one Jest warning per test).
+
+### 🔧 Tooling
+- `tool-loader.js` and `i18n.js` log through `console.debug` instead of
+  `console.log`, so the default console level of a visitor stays quiet.
+- CI runs Jest on Node 22 and 24 (18 and 20 are end-of-life) with a coverage
+  threshold; `collectCoverageFrom` now counts every shipped script.
+- ESLint (flat config, `npm run lint`) enforces `no-var`/`prefer-const` and
+  runs in CI; the last 33 `var` declarations were replaced.
+- Unused dev dependencies `cssnano`, `cssnano-cli`, `terser` and `watch` and
+  the `build:css` script (it wrote a file nothing loads) were removed.
+
+### 📝 Documentation
+- `docs/` rewritten against the code; see the commit for details.
+
+---
+
+## [2.3.0] – 2026-11-05
+
+### 🔍 SEO
+- **Titles and descriptions** of all 20 tools rewritten in all 6 languages:
+  benefit first, a local-processing promise, title ≤ 60 characters,
+  description 120–155 characters. Trigger were 11 pages with many impressions
+  and a CTR below 2 % in Search Console; the other 9 had descriptions cut off
+  mid-sentence.
+- **Related tools** – new `partials/related-tools.php` under every tool: up to
+  four tools of the same category, filled from the registry starting after the
+  current tool so cross-links spread evenly. New key `common.related_tools`.
+- **Structured data** – removed the second `WebApplication` node that
+  duplicated `generateToolSchema()`; the remaining one carries an `@id` and the
+  `h1_title`. Added missing `featureList`/`keywords` for the JWT decoder,
+  Punycode converter and aspect ratio calculator.
+- `head.php` reused `$toolId` as its manifest loop variable and so showed the
+  SRI generator's badges on every tool page.
+
 ### 🔄 Changed
 - **Base64 encoder** now outputs standard Base64 with padding by default
   (`hello` → `aGVsbG8=`). URL-safe encoding without padding is opt-in.

@@ -170,10 +170,6 @@ $ogImageUrl = $baseUrlEscaped . BASE_PATH . '/assets/img/webdev-tools.png';
   <meta name="apple-mobile-web-app-title" content="WebDev-Tools" />
   <link rel="manifest" href="<?= BASE_PATH . getLangPrefix($lang) ?>/site.webmanifest" />
 
-  <!-- Preconnect -->
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
-  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-
   <!-- Theme initialization (must load before body) -->
   <script src="<?= $assetPrefix ?>assets/js/theme-init.js"></script>
 

@@ -785,10 +785,10 @@
         100
       );
 
-      let strength = '';
-      let color = '';
-      let description = '';
-      let crackTime = '';
+      let strength;
+      let color;
+      let description;
+      let crackTime;
 
       if (entropy < 28) {
         strength = t('tools.passwordGeneratorTool.strengthVeryWeak');

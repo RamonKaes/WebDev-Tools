@@ -31,7 +31,8 @@
     'emojiReferenceTool': '/assets/js/tools/emojiReferenceTool.js',
     'stringEscaperTool': '/assets/js/tools/stringEscaperTool.js',
     'regexTesterTool': '/assets/js/tools/regexTesterTool.js',
-    'aspectRatioCalculator': '/assets/js/tools/aspectRatioCalculatorTool.js'
+    'aspectRatioCalculator': '/assets/js/tools/aspectRatioCalculatorTool.js',
+    'sriGeneratorTool': '/assets/js/tools/sriGeneratorTool.js'
   };
 
   const FREQUENTLY_USED = [
@@ -137,7 +138,7 @@
    * @returns {string|null} Full module path with version query string
    */
   function getToolModulePath(toolId) {
-    let path = null;
+    let path;
 
     if (TOOL_MANIFEST && TOOL_MANIFEST.tools && TOOL_MANIFEST.tools[toolId]) {
       path = TOOL_MANIFEST.tools[toolId].jsPath;
@@ -167,7 +168,7 @@
    */
   async function loadToolModule(toolId) {
     if (moduleCache.has(toolId)) {
-      console.log(`[ToolLoader] ${toolId} already loaded`);
+      console.debug(`[ToolLoader] ${toolId} already loaded`);
       return;
     }
 
@@ -177,13 +178,13 @@
     }
 
     try {
-      console.log(`[ToolLoader] Loading ${toolId}...`);
+      console.debug(`[ToolLoader] Loading ${toolId}...`);
       const startTime = performance.now();
 
       await loadScript(modulePath);
 
       const loadTime = Math.round(performance.now() - startTime);
-      console.log(`[ToolLoader] ${toolId} loaded in ${loadTime}ms`);
+      console.debug(`[ToolLoader] ${toolId} loaded in ${loadTime}ms`);
 
       moduleCache.set(toolId, true);
     } catch (error) {
@@ -246,7 +247,7 @@
     link.crossOrigin = 'anonymous';
     document.head.appendChild(link);
 
-    console.log(`[ToolLoader] Prefetching ${toolId}`);
+    console.debug(`[ToolLoader] Prefetching ${toolId}`);
   }
 
   /**
@@ -291,7 +292,7 @@
 
       if (conn.saveData ||
           (conn.effectiveType && ['slow-2g', '2g', '3g'].includes(conn.effectiveType))) {
-        console.log('[ToolLoader] Skipping prefetch (slow/metered connection)');
+        console.debug('[ToolLoader] Skipping prefetch (slow/metered connection)');
         return;
       }
     }
@@ -335,7 +336,7 @@
         const tool = window.Tools.get(toolId);
         if (tool && typeof tool.open === 'function') {
           tool.open(container);
-          console.log(`[Tool] ${toolId} loaded successfully`);
+          console.debug(`[Tool] ${toolId} loaded successfully`);
         } else {
           console.error(`[Tool] ${toolId} not found or missing open() method`);
         }

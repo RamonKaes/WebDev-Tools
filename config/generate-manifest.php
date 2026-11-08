@@ -50,7 +50,6 @@ foreach ($toolsConfig as $toolId => $config) {
     'icon' => $config['icon'] ?? 'bi-tools',
     'jsPath' => $baseUrl . '/assets/js/' . ($config['jsModule'] ?? "tools/{$toolId}.js"),
     'externalLibraries' => $config['externalLibraries'] ?? [],
-    'jsLibraries' => $config['jsLibraries'] ?? [],
     'features' => $config['features'] ?? [],
     'hasFeaturesSection' => $config['hasFeaturesSection'] ?? false,
     'hasAboutSection' => $config['hasAboutSection'] ?? false

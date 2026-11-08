@@ -12,7 +12,7 @@ $resourcesSectionTitle = 'Recursos Útiles';
 
 $features = [
     'Coincidencia de patrones con resultados resaltados',
-    'Todos los flags regex (g, i, m, s, u, y)',
+    'Flags regex g, i, m, s, u e y',
     'Resaltado de coincidencias con grupos de captura',
     'Información detallada de coincidencias y estadísticas',
     'Copiar y descargar resultados',
@@ -24,7 +24,7 @@ $customNoticeContent = <<<HTML
 <h2 class="h6 fw-semibold alert-heading mb-3"><i class="bi bi-info-circle me-2"></i>Pruebas de expresiones regulares</h2>
 <ul class="mb-0">
     <li>Motor JavaScript: la herramienta usa el motor RegExp de JavaScript para evaluar patrones</li>
-    <li>Pruebas en vivo: valida tus patrones con texto real y retroalimentación instantánea</li>
+    <li>Prueba bajo demanda: haz clic en Probar o pulsa Enter (Ctrl+Enter en el texto de prueba) para ver las coincidencias resaltadas</li>
     <li>Privacidad: todas las pruebas se ejecutan localmente, sin enviar datos a servidores</li>
 </ul>
 HTML;

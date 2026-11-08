@@ -12,7 +12,7 @@ $resourcesSectionTitle = 'Ressources Utiles';
 
 $features = [
     'Correspondance de motifs avec résultats surlignés',
-    'Tous les indicateurs regex (g, i, m, s, u, y)',
+    'Indicateurs regex g, i, m, s, u et y',
     'Mise en surbrillance des correspondances avec groupes de capture',
     'Informations détaillées et statistiques',
     'Copier et télécharger les résultats',
@@ -24,7 +24,7 @@ $customNoticeContent = <<<HTML
 <h2 class="h6 fw-semibold alert-heading mb-3"><i class="bi bi-info-circle me-2"></i>Test des expressions régulières</h2>
 <ul class="mb-0">
     <li>Moteur JavaScript&nbsp;: cet outil utilise le moteur RegExp de JavaScript pour tester les motifs</li>
-    <li>Tests en direct&nbsp;: évaluez vos motifs sur du texte réel avec un retour visuel instantané</li>
+    <li>Test à la demande&nbsp;: cliquez sur Tester ou appuyez sur Entrée (Ctrl+Entrée dans le texte de test) pour voir les correspondances surlignées</li>
     <li>Confidentialité&nbsp;: tous les tests se déroulent localement dans votre navigateur, aucune donnée n'est envoyée</li>
 </ul>
 HTML;
@@ -32,7 +32,7 @@ HTML;
 $usefulResources = [
     [
         'url' => 'https://fr.wikipedia.org/wiki/Expression_r%C3%A9guli%C3%A8re',
-        'title' => 'Wikipedia&nbsp;: Expression régulière',
+        'title' => 'Wikipedia : Expression régulière',
         'description' => 'Introduction accessible aux expressions régulières'
     ],
     [

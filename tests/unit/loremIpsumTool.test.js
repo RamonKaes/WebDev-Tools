@@ -319,6 +319,21 @@ describe('loremIpsumTool – Generate: Validation', () => {
     expect(c.querySelector('#loremNotice').classList.contains('d-none')).toBe(true);
   });
 
+  test('values above max are clamped to the field maximum', () => {
+    setInputs(c, { paragraphs: 999, sentences: 0, words: 0 });
+    clickGenerate(c);
+    expect(c.querySelector('#paragraphCount').value).toBe('50');
+    const paragraphs = c.querySelector('#loremOutput').value.split('\n\n').filter(Boolean);
+    expect(paragraphs.length).toBe(50);
+  });
+
+  test('negative values count as 0 and show the notice', () => {
+    setInputs(c, { paragraphs: -1, sentences: 0, words: 0 });
+    clickGenerate(c);
+    expect(c.querySelector('#paragraphCount').value).toBe('0');
+    expect(c.querySelector('#loremNotice').classList.contains('d-none')).toBe(false);
+  });
+
   test('does not update output when all inputs are 0', () => {
     // Clear first so output is empty
     c.querySelector('#loremOutput').value = '';

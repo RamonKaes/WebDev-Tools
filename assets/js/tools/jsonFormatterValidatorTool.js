@@ -890,7 +890,7 @@
           const originalSize = new Blob([input]).size;
           const minifiedSize = new Blob([minified]).size;
           const saved = ((1 - minifiedSize / originalSize) * 100).toFixed(1);
-          statusOutput.innerHTML = `<div class="alert alert-success mb-0"><i class="bi bi-check-circle me-2"></i><strong>✅ ${t('tools.jsonFormatterValidator.minified')}</strong><br><small>${t('tools.jsonFormatterValidator.original')}: ${formatBytes(originalSize)} → ${t('tools.jsonFormatterValidator.minified')}: ${formatBytes(minifiedSize)} (${saved}% ${t('tools.jsonFormatterValidator.saved')})</small></div>`;
+          statusOutput.innerHTML = `<div class="alert alert-success mb-0"><i class="bi bi-check-circle me-2"></i><strong>✅ ${t('tools.jsonFormatterValidator.minified')}</strong><br><small>${t('tools.jsonFormatterValidator.original')}: ${formatBytes(originalSize)} → ${t('tools.jsonFormatterValidator.minified_label')}: ${formatBytes(minifiedSize)} (${saved}% ${t('tools.jsonFormatterValidator.saved')})</small></div>`;
         } catch (e) {
           jsonOutput.value = '';
           currentParsedJSON = null;

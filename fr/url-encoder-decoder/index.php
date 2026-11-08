@@ -72,12 +72,12 @@ HTML
 $usefulResources = [
     [
         'url' => 'https://fr.wikipedia.org/wiki/Encodage-pourcent',
-        'title' => 'Wikipedia&nbsp;: Encodage-pourcent',
+        'title' => 'Wikipedia : Encodage-pourcent',
         'description' => 'Introduction accessible aux concepts d\'encodage d\'URL'
     ],
     [
         'url' => 'https://datatracker.ietf.org/doc/html/rfc3986',
-        'title' => 'RFC 3986&nbsp;: syntaxe des URI',
+        'title' => 'RFC 3986 : syntaxe des URI',
         'description' => 'Spécification officielle de la syntaxe et de l\'encodage des URI'
     ],
     [
@@ -92,7 +92,7 @@ $usefulResources = [
     ],
     [
         'url' => 'https://www.ietf.org/rfc/rfc1738.txt',
-        'title' => 'RFC 1738&nbsp;: Localisateurs de ressources uniformes (URL)',
+        'title' => 'RFC 1738 : Localisateurs de ressources uniformes (URL)',
         'description' => 'Spécification originelle de la syntaxe et des règles d\'encodage des URL'
     ]
 ];

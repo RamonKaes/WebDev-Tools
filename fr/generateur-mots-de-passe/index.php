@@ -75,17 +75,17 @@ HTML
 $usefulResources = [
     [
         'url' => 'https://fr.wikipedia.org/wiki/Mot_de_passe',
-        'title' => 'Wikipedia&nbsp;: Mot de passe',
+        'title' => 'Wikipedia : Mot de passe',
         'description' => 'Introduction accessible aux concepts de sécurité des mots de passe'
     ],
     [
         'url' => 'https://pages.nist.gov/800-63-3/sp800-63b.html',
-        'title' => 'NIST SP 800-63B&nbsp;: recommandations d\'identité numérique',
+        'title' => 'NIST SP 800-63B : recommandations d\'identité numérique',
         'description' => 'Directives officielles pour la création de mots de passe et l\'authentification'
     ],
     [
         'url' => 'https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html',
-        'title' => 'OWASP&nbsp;: aide-mémoire sur l\'authentification',
+        'title' => 'OWASP : aide-mémoire sur l\'authentification',
         'description' => 'Bonnes pratiques de sécurité pour l\'authentification par mot de passe'
     ],
     [

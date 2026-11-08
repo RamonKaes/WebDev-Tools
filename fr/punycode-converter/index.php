@@ -83,9 +83,9 @@ HTML
       <tr><td>münchen.de</td><td>xn--mnchen-3ya.de</td><td>Allemand</td></tr>
       <tr><td>zürich.ch</td><td>xn--zrich-kva.ch</td><td>Allemand</td></tr>
       <tr><td>москва.рф</td><td>xn--80adxhks.xn--p1ai</td><td>Russe</td></tr>
-      <tr><td>东京.jp</td><td>xn--1lqs71d.jp</td><td>Japonais</td></tr>
+      <tr><td>東京.jp</td><td>xn--1lqs71d.jp</td><td>Japonais</td></tr>
       <tr><td>مصر.eg</td><td>xn--wgbh1c.eg</td><td>Arabe</td></tr>
-      <tr><td>ελλάδα.gr</td><td>xn--qxam.gr</td><td>Grec</td></tr>
+      <tr><td>ελλάδα.gr</td><td>xn--hxakic4aa.gr</td><td>Grec</td></tr>
     </tbody>
   </table>
 </div>
@@ -101,7 +101,6 @@ HTML
     <ul>
       <li>Convertir des IDN pour l'enregistrement DNS</li>
       <li>Vérifier la disponibilité d'un domaine</li>
-      <li>Encodage d'adresses e-mail</li>
       <li>Génération de certificats SSL</li>
     </ul>
   </div>
@@ -122,22 +121,22 @@ HTML
 $usefulResources = [
     [
         'url' => 'https://datatracker.ietf.org/doc/html/rfc3492',
-        'title' => 'RFC 3492&nbsp;: Punycode',
+        'title' => 'RFC 3492 : Punycode',
         'description' => 'Spécification officielle IETF pour l\'encodage Punycode'
     ],
     [
         'url' => 'https://www.icann.org/resources/pages/idn-2012-02-25-en',
-        'title' => 'ICANN&nbsp;: noms de domaine internationalisés',
+        'title' => 'ICANN : noms de domaine internationalisés',
         'description' => 'Vue d\'ensemble de la mise en œuvre des IDN et des politiques associées'
     ],
     [
         'url' => 'https://en.wikipedia.org/wiki/Internationalized_domain_name',
-        'title' => 'Wikipédia&nbsp;: noms de domaine internationalisés',
+        'title' => 'Wikipédia : noms de domaine internationalisés',
         'description' => 'Informations complètes sur les systèmes IDN'
     ],
     [
         'url' => 'https://www.charset.org/punycode',
-        'title' => 'Charset.org&nbsp;: convertisseur Punycode',
+        'title' => 'Charset.org : convertisseur Punycode',
         'description' => 'Exemples supplémentaires et informations sur la conversion Punycode'
     ]
 ];

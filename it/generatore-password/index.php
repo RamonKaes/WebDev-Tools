@@ -50,8 +50,8 @@ $additionalSections = [
         'content' => <<<HTML
 <ul>
     <li>Account utente: creare password sicure per nuovi accessi</li>
-    <li>Chiavi API: generare stringhe casuali per l\'autenticazione</li>
-    <li>Credenziali database: proteggere l\'accesso ai sistemi</li>
+    <li>Chiavi API: generare stringhe casuali per l'autenticazione</li>
+    <li>Credenziali database: proteggere l'accesso ai sistemi</li>
     <li>Reti Wi-Fi: impostare password WPA2/WPA3 resistenti</li>
     <li>Chiavi di cifratura: creare passphrase sicure</li>
     <li>Amministrazione di sistema: mettere al sicuro account root e admin</li>

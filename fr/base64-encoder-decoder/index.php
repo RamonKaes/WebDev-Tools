@@ -15,7 +15,6 @@ $features = [
     'Prise en charge du glisser-déposer de fichiers',
     'Encodage Base64 compatible URL',
     'Mode temps réel',
-    'Traitement multi-lignes',
     'Traitement côté client : vos données ne quittent jamais votre navigateur'
 ];
 
@@ -56,7 +55,7 @@ $usefulResources = [
     ],
     [
         'url' => 'https://datatracker.ietf.org/doc/html/rfc4648',
-        'title' => 'RFC 4648&nbsp;: Encodages Base16, Base32 et Base64',
+        'title' => 'RFC 4648 : Encodages Base16, Base32 et Base64',
         'description' => 'Spécification officielle de l\'IETF qui définit la norme d\'encodage Base64'
     ],
     [

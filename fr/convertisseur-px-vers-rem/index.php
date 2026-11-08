@@ -25,10 +25,10 @@ HTML;
 $features = [
     'Conversion px → rem et rem → px',
     'Taille de police de base personnalisable (par défaut : 16 px)',
-    'Conversion en série : convertissez plusieurs valeurs en une fois',
+    'Conversion inverse depuis rem, em, pourcentage et espacement Tailwind',
     'Conversion en temps réel pendant la saisie',
     'Copie rapide des valeurs converties',
-    'Préréglages pour les points de rupture courants',
+    'Préréglages de taille de police de base (12 à 20 px)',
     'Traitement 100 % côté client'
 ];
 
@@ -75,17 +75,17 @@ $usefulResources = [
         'description' => 'Introduction accessible aux unités typographiques em et rem'
     ],
     [        'url' => 'https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units',
-        'title' => 'MDN&nbsp;: valeurs et unités CSS',
+        'title' => 'MDN : valeurs et unités CSS',
         'description' => 'Guide complet des unités CSS dont px, rem et em'
     ],
     [
         'url' => 'https://www.w3.org/TR/css-values-3/#rem',
-        'title' => 'W3C CSS Values and Units Level&nbsp;3',
+        'title' => 'W3C CSS Values and Units Level 3',
         'description' => 'Spécification officielle du W3C pour l\'unité rem'
     ],
     [
         'url' => 'https://moderncss.dev/generating-font-size-css-rules-and-creating-a-fluid-type-scale/',
-        'title' => 'Modern CSS&nbsp;: règles de taille de police et échelle fluide',
+        'title' => 'Modern CSS : règles de taille de police et échelle fluide',
         'description' => 'Guide complet sur les unités rem et la typographie fluide en CSS moderne'
     ],
     [

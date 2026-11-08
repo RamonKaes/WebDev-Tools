@@ -12,7 +12,7 @@ $resourcesSectionTitle = 'Nützliche Ressourcen';
 
 $features = [
     'Musterabgleich mit hervorgehobenen Treffern',
-    'Alle Regex-Flags (g, i, m, s, u, y)',
+    'Regex-Flags g, i, m, s, u und y',
     'Treffer-Hervorhebung mit Erfassungsgruppen',
     'Detaillierte Treffer-Informationen und Statistiken',
     'Treffer kopieren und herunterladen',
@@ -24,7 +24,7 @@ $customNoticeContent = <<<HTML
 <h2 class="h6 fw-semibold alert-heading mb-3"><i class="bi bi-info-circle me-2"></i>Reguläre Ausdrücke testen</h2>
 <ul class="mb-0">
     <li>JavaScript Engine: Dieses Tool nutzt JavaScripts RegExp-Engine zum Testen von Mustern</li>
-    <li>Live-Testing: Teste deine Muster gegen echten Text mit sofortigem visuellem Feedback</li>
+    <li>Test per Klick: Auf „Testen“ klicken oder Enter drücken (Strg+Enter im Testtext), dann werden die Treffer hervorgehoben</li>
     <li>Datenschutz: Alle Tests erfolgen lokal in deinem Browser - keine Daten werden an Server gesendet</li>
 </ul>
 HTML;

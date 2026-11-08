@@ -48,7 +48,7 @@ $additionalSections = [
     <ul>
       <li>Minificare per ridurre la dimensione dei file e migliorare i tempi di caricamento</li>
       <li>Preparare il codice per il deploy</li>
-      <li>Ottimizzare l\'uso della banda</li>
+      <li>Ottimizzare l'uso della banda</li>
       <li>Migliorare le prestazioni del sito</li>
     </ul>
   </div>

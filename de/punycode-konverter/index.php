@@ -86,7 +86,7 @@ HTML
       <tr><td>москва.рф</td><td>xn--80adxhks.xn--p1ai</td><td>Russisch</td></tr>
       <tr><td>東京.jp</td><td>xn--1lqs71d.jp</td><td>Japanisch</td></tr>
       <tr><td>مصر.eg</td><td>xn--wgbh1c.eg</td><td>Arabisch</td></tr>
-      <tr><td>ελλάδα.gr</td><td>xn--qxam.gr</td><td>Griechisch</td></tr>
+      <tr><td>ελλάδα.gr</td><td>xn--hxakic4aa.gr</td><td>Griechisch</td></tr>
     </tbody>
   </table>
 </div>
@@ -102,7 +102,6 @@ HTML
     <ul>
       <li>IDNs für DNS-Registrierung konvertieren</li>
       <li>Domain-Verfügbarkeit prüfen</li>
-      <li>E-Mail-Adressen kodieren</li>
       <li>SSL-Zertifikat-Generierung</li>
     </ul>
   </div>

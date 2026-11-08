@@ -90,7 +90,7 @@ $currentUrl = getFullUrl('/privacy.php', $lang);
             <p>Altri dati vengono raccolti automaticamente o dopo il vostro consenso durante la visita del sito web dai nostri sistemi informatici. Si tratta principalmente di dati tecnici (ad es. browser Internet, sistema operativo o ora di accesso alla pagina). La raccolta di questi dati avviene automaticamente non appena accedete a questo sito web.</p>
             
             <p><strong>Per cosa utilizziamo i vostri dati?</strong></p>
-            <p>Una parte dei dati viene raccolta per garantire il corretto funzionamento del sito web. Altri dati possono essere utilizzati per analizzare il comportamento degli utenti. Inoltre, utilizziamo Google AdSense per finanziare questo sito web gratuito attraverso la pubblicità.</p>
+            <p>Una parte dei dati viene raccolta per garantire il corretto funzionamento del sito web (file di log del server, vedere la sezione 4). Inoltre, due strumenti caricano ciascuno una libreria JavaScript da una rete di distribuzione dei contenuti (vedere la sezione 3.3). Non utilizziamo servizi di analisi, tracciamento o pubblicità.</p>
             
             <p><strong>Quali sono i vostri diritti in merito ai vostri dati?</strong></p>
             <p>Avete il diritto di ottenere in qualsiasi momento e gratuitamente informazioni sull'origine, i destinatari e lo scopo dei vostri dati personali memorizzati. Avete inoltre il diritto di richiedere la correzione o la cancellazione di questi dati. Se avete dato il vostro consenso al trattamento dei dati, potete revocarlo in qualsiasi momento per il futuro. Inoltre, in determinate circostanze, avete il diritto di richiedere la limitazione del trattamento dei vostri dati personali. Avete inoltre il diritto di presentare reclamo all'autorità di controllo competente.</p>
@@ -103,7 +103,7 @@ $currentUrl = getFullUrl('/privacy.php', $lang);
               <li>Non memorizziamo, registriamo né abbiamo accesso ai dati che elabori con i nostri strumenti</li>
               <li>Non possiamo fornire informazioni sui dati inseriti negli strumenti che non possediamo, poiché non li raccogliamo</li>
             </ul>
-            <p><strong>Nota importante:</strong> ciò si riferisce esclusivamente al trattamento dei vostri dati <em>all'interno degli strumenti</em>. Tuttavia, quando visitate il sito web, vengono raccolti automaticamente dati tecnici (vedere la sezione 4) e Google AdSense imposta cookie per scopi pubblicitari (vedere le sezioni 6 e 7).</p>
+            <p><strong>Nota importante:</strong> ciò si riferisce esclusivamente al trattamento dei vostri dati <em>all'interno degli strumenti</em>. Tuttavia, quando visitate il sito web, vengono raccolti automaticamente dati tecnici nei file di log del server (vedere la sezione 4) e, quando utilizzate il generatore di codici QR o minificate JavaScript nel formattatore di codice, viene caricata una libreria da una CDN (vedere la sezione 3.3).</p>
 
             <h2 class="h5 mb-3 mt-4">3. Sicurezza e Trasparenza</h2>
 
@@ -134,21 +134,35 @@ $currentUrl = getFullUrl('/privacy.php', $lang);
                     <td>1.4.4</td>
                     <td class="text-break">sha384-lQXOAyZwHXE55JFyr...TcIwz</td>
                   </tr>
+                  <tr>
+                    <td>terser</td>
+                    <td>5.31.0</td>
+                    <td class="text-break">sha384-Be6gQ8oRB6kvVWiyo...1v7dX</td>
+                  </tr>
                 </tbody>
               </table>
             </div>
-            <p><small class="text-muted">Gli hash SRI completi possono essere verificati nel nostro <a href="https://github.com/RamonKaes/WebDev-Tools/blob/main/config/tools.php" target="_blank" rel="noopener noreferrer">codice sorgente</a>.</small></p>
+            <p><small class="text-muted">Gli hash SRI completi possono essere verificati nel nostro codice sorgente (<a href="https://github.com/RamonKaes/WebDev-Tools/blob/main/config/tools.php" target="_blank" rel="noopener noreferrer">config/tools.php</a> e <a href="https://github.com/RamonKaes/WebDev-Tools/blob/main/assets/js/tools/codeFormatterTool.js" target="_blank" rel="noopener noreferrer">codeFormatterTool.js</a>).</small></p>
 
-            <h3 class="h6 mb-2 mt-3">3.3 Politica di Sicurezza dei Contenuti (CSP)</h3>
+            <h3 class="h6 mb-2 mt-3">3.3 Distribuzione di contenuti di terze parti (CDN)</h3>
+            <p>Bootstrap, il font delle icone e tutte le altre risorse sono ospitati sul nostro server. Solo due strumenti caricano una singola libreria JavaScript dalla rete di distribuzione dei contenuti jsDelivr (cdn.jsdelivr.net), gestita da Prospect One (jsDelivr) e distribuita tramite diversi fornitori CDN, tra cui Cloudflare e Fastly:</p>
+            <ul>
+              <li><strong>Generatore di codici QR:</strong> carica <code>qrcode-generator</code> all'apertura della pagina dello strumento.</li>
+              <li><strong>Formattatore di codice:</strong> carica <code>terser</code> solo quando minificate codice JavaScript.</li>
+            </ul>
+            <p>Al caricamento di una di queste librerie, il vostro browser si collega direttamente alla CDN e trasmette i dati tecnicamente necessari, in particolare il vostro indirizzo IP, il vostro user agent e la pagina di provenienza (referrer). Noi non riceviamo alcun dato da questo processo. Le librerie sono protette da hash SRI (vedere 3.2) e non possono quindi essere modificate senza che ciò venga rilevato. Al di fuori di questo, il sito web non effettua alcuna richiesta a server di terze parti; solo il generatore SRI recupera l'URL della risorsa che inserite voi stessi.</p>
+            <p>La base giuridica è l'art. 6, comma 1, lettera f) del GDPR; il nostro legittimo interesse consiste nel fornire questi strumenti in modo affidabile ed efficiente. Ulteriori informazioni sono disponibili nell'informativa sulla privacy di jsDelivr: <a href="https://www.jsdelivr.com/terms/privacy-policy-jsdelivr-net" target="_blank" rel="noopener">https://www.jsdelivr.com/terms/privacy-policy-jsdelivr-net</a></p>
+
+            <h3 class="h6 mb-2 mt-3">3.4 Politica di Sicurezza dei Contenuti (CSP)</h3>
             <p>Implementiamo politiche di sicurezza dei contenuti rigorose per prevenire attacchi XSS ed esecuzione di codice non autorizzato:</p>
             <ul>
               <li><i class="bi bi-check-circle text-success me-2"></i>Esecuzione di script basata su nonce (previene l'iniezione di script inline)</li>
-              <li><i class="bi bi-check-circle text-success me-2"></i>Caricamento limitato di risorse esterne (solo da CDN affidabili)</li>
+              <li><i class="bi bi-check-circle text-success me-2"></i>Caricamento limitato di risorse esterne (script solo dal nostro server e da cdn.jsdelivr.net)</li>
               <li><i class="bi bi-check-circle text-success me-2"></i>Incorporamento di frame completamente disabilitato (protezione contro clickjacking)</li>
               <li><i class="bi bi-check-circle text-success me-2"></i>Esecuzione di oggetti e plugin bloccata</li>
             </ul>
 
-            <h3 class="h6 mb-2 mt-3">3.4 Intestazioni di Sicurezza Aggiuntive</h3>
+            <h3 class="h6 mb-2 mt-3">3.5 Intestazioni di Sicurezza Aggiuntive</h3>
             <ul class="small">
               <li><strong>X-Frame-Options: DENY</strong> - Previene attacchi di incorporamento iframe</li>
               <li><strong>X-Content-Type-Options: nosniff</strong> - Previene il rilevamento del tipo MIME</li>
@@ -157,8 +171,8 @@ $currentUrl = getFullUrl('/privacy.php', $lang);
               <li><strong>Permissions-Policy</strong> - Disabilita funzionalità non necessarie del browser (geolocalizzazione, fotocamera, microfono, ecc.)</li>
             </ul>
 
-            <h3 class="h6 mb-2 mt-3">3.5 Zero Dipendenze Esterne per l'Elaborazione dei Dati</h3>
-            <p>Tutte le funzioni principali di elaborazione dati utilizzano solo API native del browser. Le librerie esterne vengono utilizzate solo per componenti UI (rendering codice QR) e vengono caricate con verifica SRI.</p>
+            <h3 class="h6 mb-2 mt-3">3.6 Zero Dipendenze Esterne per l'Elaborazione dei Dati</h3>
+            <p>Tutte le funzioni principali di elaborazione dati utilizzano solo API native del browser. Le librerie esterne vengono utilizzate solo per due funzioni ausiliarie (rendering di codici QR e minificazione di JavaScript) e vengono caricate con verifica SRI.</p>
 
             <h2 class="h5 mb-3 mt-4">4. Hosting e file di log del server</h2>
             
@@ -191,41 +205,9 @@ $currentUrl = getFullUrl('/privacy.php', $lang);
             <h2 class="h5 mb-3 mt-4">5. Cookie utilizzati</h2>
             
             <h3 class="h6 mb-2 mt-3">5.1 Informazioni generali sui cookie</h3>
-            <p>Utilizziamo i cookie quando visitate il nostro sito web. I cookie sono piccoli file di testo che il vostro browser Internet memorizza sul vostro computer. Quando visitate nuovamente il nostro sito web, questi cookie forniscono informazioni per riconoscervi automaticamente. I cookie includono anche i cosiddetti "ID utente", dove le informazioni degli utenti vengono memorizzate utilizzando profili pseudonimizzati. Quando visitate il nostro sito web, vi informiamo sull'uso dei cookie per le finalità sopra menzionate e su come potete opporvi o impedirne la memorizzazione ("opt-out") facendo riferimento alla nostra informativa sulla privacy.</p>
-            
-            <p>Si distinguono i seguenti tipi di cookie:</p>
-            <ul>
-              <li><strong>Cookie necessari ed essenziali:</strong> i cookie essenziali sono cookie assolutamente necessari per il funzionamento del sito web al fine di memorizzare determinate funzioni del sito web come login, carrello della spesa o input dell'utente, ad esempio per quanto riguarda la lingua del sito web.</li>
-              <li><strong>Cookie di sessione:</strong> i cookie di sessione sono necessari per riconoscere l'uso multiplo di un'offerta da parte dello stesso utente (ad esempio, quando avete effettuato il login per determinare il vostro stato di login). Quando visitate nuovamente il nostro sito, questi cookie forniscono informazioni per riconoscervi automaticamente. Le informazioni ottenute in questo modo vengono utilizzate per ottimizzare le nostre offerte e facilitarvi l'accesso al nostro sito. Quando chiudete il browser o effettuate il logout, i cookie di sessione vengono eliminati.</li>
-              <li><strong>Cookie persistenti:</strong> questi cookie rimangono memorizzati anche dopo la chiusura del browser. Vengono utilizzati per memorizzare il vostro login, misurare la portata e per scopi di marketing. Vengono eliminati automaticamente dopo un periodo specificato, che può variare a seconda del cookie. Potete eliminare i cookie in qualsiasi momento nelle impostazioni di sicurezza del vostro browser.</li>
-              <li><strong>Cookie di terze parti (in particolare degli inserzionisti):</strong> potete configurare le impostazioni del vostro browser secondo le vostre preferenze e, ad esempio, rifiutare i cookie di terze parti o tutti i cookie. Tuttavia, vorremmo sottolineare che potreste non essere in grado di utilizzare tutte le funzioni di questo sito web se lo fate. Per ulteriori informazioni su questi cookie, consultare le rispettive informative sulla privacy dei fornitori terzi.</li>
-            </ul>
+            <p>I cookie sono piccoli file di testo che il vostro browser Internet memorizza sul vostro dispositivo. Questo sito web utilizza <strong>esattamente un cookie</strong>, tecnicamente necessario. Non utilizziamo cookie di sessione, di analisi, di tracciamento o di terze parti e non vengono creati profili utente. Poiché non vengono utilizzati cookie soggetti a consenso, non viene mostrato alcun banner per i cookie.</p>
 
-            <h3 class="h6 mb-2 mt-3">5.2 Categorie di dati</h3>
-            <p>Dati utente, cookie, ID utente (comprese le pagine visitate, informazioni sul dispositivo, orari di accesso e indirizzi IP).</p>
-
-            <h3 class="h6 mb-2 mt-3">5.3 Finalità del trattamento</h3>
-            <p>Le informazioni ottenute in questo modo servono allo scopo di ottimizzare le nostre offerte web tecnicamente ed economicamente e di consentirvi un accesso più facile e sicuro al nostro sito web.</p>
-
-            <h3 class="h6 mb-2 mt-3">5.4 Base giuridica</h3>
-            <p>Se trattiamo i vostri dati personali con l'aiuto dei cookie sulla base del vostro consenso ("opt-in"), allora l'art. 6, comma 1, lettera a) del GDPR è la base giuridica. Altrimenti, abbiamo un legittimo interesse nella funzionalità efficace, nel miglioramento e nel funzionamento economico del sito web, nel qual caso l'art. 6, comma 1, lettera f) del GDPR è la base giuridica. La base giuridica è anche l'art. 6, comma 1, lettera b) del GDPR se i cookie vengono impostati allo scopo di avviare un contratto, ad esempio per ordini.</p>
-
-            <h3 class="h6 mb-2 mt-3">5.5 Periodo di conservazione / Cancellazione</h3>
-            <p>I dati verranno cancellati non appena non saranno più necessari per lo scopo per cui sono stati raccolti. Nel caso della raccolta di dati per la fornitura del sito web, questo è il caso quando la rispettiva sessione è terminata.</p>
-            <p>Altrimenti, i cookie vengono memorizzati sul vostro computer e trasmessi al nostro sito. Come utente, avete quindi il controllo completo sull'uso dei cookie. Potete disattivare o limitare la trasmissione dei cookie modificando le impostazioni nel vostro browser Internet. I cookie già memorizzati possono essere eliminati in qualsiasi momento. Questo può anche essere fatto automaticamente. Se i cookie vengono disattivati per il nostro sito web, potrebbe non essere più possibile utilizzare tutte le funzioni del sito web nella loro interezza.</p>
-            <p>Qui troverete informazioni sulla cancellazione dei cookie per diversi browser:</p>
-            <ul>
-              <li>Chrome: <a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener">https://support.google.com/chrome/answer/95647</a></li>
-              <li>Safari: <a href="https://support.apple.com/de-at/guide/safari/sfri11471/mac" target="_blank" rel="noopener">https://support.apple.com/de-at/guide/safari/sfri11471/mac</a></li>
-              <li>Firefox: <a href="https://support.mozilla.org/de/kb/cookies-und-website-daten-in-firefox-loschen" target="_blank" rel="noopener">https://support.mozilla.org/de/kb/cookies-und-website-daten-in-firefox-loschen</a></li>
-              <li>Internet Explorer: <a href="https://support.microsoft.com/de-at/help/17442/windows-internet-explorer-delete-manage-cookies" target="_blank" rel="noopener">https://support.microsoft.com/de-at/help/17442/windows-internet-explorer-delete-manage-cookies</a></li>
-              <li>Microsoft Edge: <a href="https://support.microsoft.com/de-at/help/4027947/windows-delete-cookies" target="_blank" rel="noopener">https://support.microsoft.com/de-at/help/4027947/windows-delete-cookies</a></li>
-            </ul>
-
-            <h3 class="h6 mb-2 mt-3">5.6 Opposizione e "opt-out"</h3>
-            <p>Potete generalmente impedire la memorizzazione dei cookie sul vostro disco rigido, indipendentemente dal consenso o dall'autorizzazione legale, selezionando "non accettare cookie" nelle impostazioni del vostro browser. Tuttavia, ciò può comportare restrizioni funzionali delle nostre offerte. Potete opporvi all'uso di cookie di terze parti per scopi pubblicitari tramite un cosiddetto "opt-out" su questo sito web americano (<a href="https://optout.aboutads.info" target="_blank" rel="noopener">https://optout.aboutads.info</a>) o questo sito web europeo (<a href="http://www.youronlinechoices.com/de/praferenzmanagement/" target="_blank" rel="noopener">http://www.youronlinechoices.com/de/praferenzmanagement/</a>).</p>
-
-            <h3 class="h6 mb-2 mt-3">Cookie di preferenza lingua (tecnicamente necessario)</h3>
+            <h3 class="h6 mb-2 mt-3">5.2 Cookie di preferenza lingua (tecnicamente necessario)</h3>
             <p>Utilizziamo un singolo cookie per memorizzare la vostra preferenza linguistica:</p>
             <ul>
               <li><strong>Nome del cookie:</strong> <code>webdev-tools-lang</code></li>
@@ -236,65 +218,37 @@ $currentUrl = getFullUrl('/privacy.php', $lang);
             </ul>
             <p>Questo cookie non contiene alcuna informazione personale ed è utilizzato esclusivamente per fornirvi contenuti nella vostra lingua preferita. Potete eliminare questo cookie in qualsiasi momento tramite le impostazioni del vostro browser.</p>
 
-            <h2 class="h5 mb-3 mt-4">6. Google Adsense</h2>
-            
-            <h3 class="h6 mb-2 mt-3">6.1 Introduzione</h3>
-            <p>Abbiamo integrato annunci pubblicitari del servizio Google "Adsense" (fornitore di servizi: Google Ireland Limited, numero di registrazione: 368047, Gordon House, Barrow Street, Dublino 4, Irlanda) sul nostro sito web. Gli annunci sono contrassegnati dalla nota (i) "Annunci Google" in ogni annuncio.</p>
+            <h3 class="h6 mb-2 mt-3">5.3 Base giuridica</h3>
+            <p>La base giuridica è l'art. 6, comma 1, lettera f) del GDPR. Il nostro legittimo interesse consiste nel fornirvi il sito web nella lingua da voi selezionata senza doverla richiedere a ogni visualizzazione di pagina. Il cookie è strettamente necessario per questa funzione, pertanto non è richiesto alcun consenso.</p>
 
-            <h3 class="h6 mb-2 mt-3">6.2 Categorie di dati e descrizione del trattamento dei dati</h3>
-            <p>Dati di utilizzo/dati di comunicazione; quando visitate il nostro sito web, Google riceve l'informazione che avete visitato il nostro sito web. Per fare ciò, Google inserisce un web beacon o un cookie sul vostro computer. I dati vengono anche trasferiti negli USA e lì analizzati. Se siete loggati con un account Google, Adsense può assegnare i dati al vostro account. Se non desiderate che ciò accada, dovete effettuare il logout prima di visitare il nostro sito web. Tuttavia, Google può anche utilizzare altre informazioni per questo scopo:</p>
+            <h3 class="h6 mb-2 mt-3">5.4 Periodo di conservazione / Cancellazione</h3>
+            <p>Il cookie viene cancellato automaticamente dopo 30 giorni o non appena lo eliminate manualmente. Potete impedire in qualsiasi momento la memorizzazione dei cookie tramite le impostazioni del vostro browser; in tal caso la vostra scelta della lingua non verrà salvata e il sito web ricorrerà al rilevamento automatico della lingua (URL, lingua del browser). Qui troverete informazioni sulla cancellazione dei cookie per diversi browser:</p>
             <ul>
-              <li>il tipo di siti web che visitate e le app mobili installate sul vostro dispositivo;</li>
-              <li>cookie nel vostro browser e impostazioni nel vostro account Google;</li>
-              <li>siti web e app che avete visitato;</li>
-              <li>le vostre attività su altri dispositivi;</li>
-              <li>interazioni precedenti con annunci o servizi pubblicitari di Google;</li>
-              <li>le attività e le informazioni del vostro account Google.</li>
-            </ul>
-            <p>Quando fate clic su un annuncio Adsense, Google elabora l'indirizzo IP dell'utente (dati di utilizzo), per cui l'elaborazione viene pseudonimizzata (cosiddetto "ID pubblicitario") troncando gli ultimi due cifre dell'indirizzo IP. Nel caso della pubblicità personalizzata, Google non collega identificatori da cookie o tecnologie simili a categorie speciali di dati personali ai sensi dell'art. 9 del GDPR come origine etnica, religione, orientamento sessuale o salute.</p>
-
-            <h3 class="h6 mb-2 mt-3">6.3 Finalità del trattamento</h3>
-            <p>Abbiamo attivato gli annunci personalizzati al fine di mostrarvi pubblicità più interessante che supporta l'uso commerciale del nostro sito web, ne aumenta il valore per noi e migliora la vostra esperienza utente. Con l'aiuto della pubblicità personalizzata, possiamo raggiungere gli utenti tramite Adsense in base ai loro interessi e caratteristiche demografiche (ad es. "appassionati di sport"). Inoltre, l'elaborazione viene utilizzata per il tracciamento, il remarketing e la misurazione delle conversioni, nonché per finanziare il nostro sito web.</p>
-
-            <h3 class="h6 mb-2 mt-3">6.4 Base giuridica</h3>
-            <p>Se avete dato il vostro consenso ("opt-in") all'elaborazione dei vostri dati personali tramite "Google Adsense con annunci personalizzati", allora l'art. 6, comma 1, lettera a) del GDPR è la base giuridica. Altrimenti, la base giuridica per l'elaborazione dei vostri dati è l'art. 6, comma 1, lettera f) del GDPR sulla base dei nostri legittimi interessi nell'analisi, nell'ottimizzazione e nel funzionamento economico efficiente della nostra pubblicità e del nostro sito web.</p>
-
-            <h3 class="h6 mb-2 mt-3">6.5 Trasferimento dati/categoria destinatari</h3>
-            <p>Google Irlanda, USA; questo sito web ha anche abilitato annunci Google AdSense di terze parti. I dati sopra menzionati possono anche essere trasferiti a questi fornitori terzi, noti come "Fornitori esterni certificati", elencati su <a href="https://support.google.com/dfp_sb/answer/94149" target="_blank" rel="noopener">https://support.google.com/dfp_sb/answer/94149</a>.</p>
-
-            <h3 class="h6 mb-2 mt-3">6.6 Periodo di conservazione</h3>
-            <p>I dati vengono conservati fino a 24 mesi dopo l'ultima visita.</p>
-
-            <h3 class="h6 mb-2 mt-3">6.7 Opzioni di opposizione ed eliminazione ("opt-out")</h3>
-            <p>Potete opporvi o impedire l'installazione di cookie da parte di Google Adsense in vari modi:</p>
-            <ul>
-              <li>Potete impedire i cookie nel vostro browser selezionando l'impostazione "non accettare cookie", che include anche i cookie di terze parti;</li>
-              <li>Potete disattivare gli annunci personalizzati su Google direttamente tramite il link <a href="https://adssettings.google.com" target="_blank" rel="noopener">https://adssettings.google.com</a>, sebbene questa impostazione rimarrà in vigore solo fino a quando non eliminerete i vostri cookie. Le istruzioni per disattivare la pubblicità personalizzata sui dispositivi mobili si trovano qui: <a href="https://support.google.com/adsense/troubleshooter/1631343" target="_blank" rel="noopener">https://support.google.com/adsense/troubleshooter/1631343</a>;</li>
-              <li>Potete disattivare gli annunci personalizzati di fornitori terzi che partecipano all'iniziativa di autoregolamentazione pubblicitaria "About Ads" tramite il link <a href="https://optout.aboutads.info" target="_blank" rel="noopener">https://optout.aboutads.info</a> per i siti USA o <a href="http://www.youronlinechoices.com/de/praferenzmanagement/" target="_blank" rel="noopener">http://www.youronlinechoices.com/de/praferenzmanagement/</a> per i siti UE. Questa impostazione rimarrà in vigore solo fino a quando non eliminerete tutti i vostri cookie.</li>
-              <li>Potete disattivare permanentemente i cookie tramite un plugin del browser per Chrome, Firefox o Internet Explorer su <a href="https://support.google.com/ads/answer/7395996" target="_blank" rel="noopener">https://support.google.com/ads/answer/7395996</a>. La disattivazione dei cookie può significare che non sarete più in grado di utilizzare tutte le funzioni del nostro sito web nella loro interezza.</li>
+              <li>Chrome: <a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener">https://support.google.com/chrome/answer/95647</a></li>
+              <li>Safari: <a href="https://support.apple.com/de-at/guide/safari/sfri11471/mac" target="_blank" rel="noopener">https://support.apple.com/de-at/guide/safari/sfri11471/mac</a></li>
+              <li>Firefox: <a href="https://support.mozilla.org/de/kb/cookies-und-website-daten-in-firefox-loschen" target="_blank" rel="noopener">https://support.mozilla.org/de/kb/cookies-und-website-daten-in-firefox-loschen</a></li>
+              <li>Internet Explorer: <a href="https://support.microsoft.com/de-at/help/17442/windows-internet-explorer-delete-manage-cookies" target="_blank" rel="noopener">https://support.microsoft.com/de-at/help/17442/windows-internet-explorer-delete-manage-cookies</a></li>
+              <li>Microsoft Edge: <a href="https://support.microsoft.com/de-at/help/4027947/windows-delete-cookies" target="_blank" rel="noopener">https://support.microsoft.com/de-at/help/4027947/windows-delete-cookies</a></li>
             </ul>
 
-            <h3 class="h6 mb-2 mt-3">6.8 Ulteriori informazioni</h3>
-            <p>Nell'informativa sulla privacy di Google per la pubblicità su <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">https://policies.google.com/technologies/ads</a>, troverete ulteriori informazioni sull'uso dei cookie di Google negli annunci e le loro tecnologie pubblicitarie, durata della conservazione, anonimizzazione, dati sulla posizione, funzionalità e i vostri diritti.</p>
-
-            <h2 class="h5 mb-3 mt-4">7. Contatto via e-mail/posta</h2>
+            <h2 class="h5 mb-3 mt-4">6. Contatto via e-mail/posta</h2>
             
-            <h3 class="h6 mb-2 mt-3">7.1 Descrizione e ambito del trattamento dei dati</h3>
+            <h3 class="h6 mb-2 mt-3">6.1 Descrizione e ambito del trattamento dei dati</h3>
             <p>Quando ci contattate via posta o e-mail, i vostri dati vengono elaborati allo scopo di gestire la vostra richiesta di contatto.</p>
 
-            <h3 class="h6 mb-2 mt-3">7.2 Base giuridica</h3>
+            <h3 class="h6 mb-2 mt-3">6.2 Base giuridica</h3>
             <p>La base giuridica per l'elaborazione dei dati è l'art. 6, comma 1, lettera a) del GDPR se avete dato il vostro consenso. La base giuridica per l'elaborazione dei dati trasmessi nel corso di una richiesta di contatto o e-mail o lettera è l'art. 6, comma 1, lettera f) del GDPR. Il responsabile ha un legittimo interesse nell'elaborazione e nella conservazione dei dati al fine di poter rispondere alle richieste degli utenti, per preservare le prove per motivi di responsabilità e per poter adempiere ai suoi obblighi legali di conservazione per le lettere commerciali, se applicabile. Se lo scopo del contatto è la conclusione di un contratto, la base giuridica aggiuntiva per l'elaborazione è l'art. 6, comma 1, lettera b) del GDPR.</p>
 
-            <h3 class="h6 mb-2 mt-3">7.3 Conservazione nel sistema CRM</h3>
+            <h3 class="h6 mb-2 mt-3">6.3 Conservazione nel sistema CRM</h3>
             <p>Potremmo conservare i vostri dati e la richiesta di contatto nel nostro sistema di gestione delle relazioni con i clienti ("sistema CRM") o in un sistema comparabile.</p>
 
-            <h3 class="h6 mb-2 mt-3">7.4 Durata della conservazione</h3>
+            <h3 class="h6 mb-2 mt-3">6.4 Durata della conservazione</h3>
             <p>I dati verranno cancellati non appena non saranno più necessari per lo scopo per cui sono stati raccolti. Per i dati personali inviati via e-mail, questo è il caso quando la rispettiva conversazione con voi è terminata. La conversazione è terminata quando si può dedurre dalle circostanze che la questione in oggetto è stata chiarita in modo definitivo. Conserviamo le richieste degli utenti che hanno un account o un contratto con noi per un massimo di due anni dopo la fine del contratto. In caso di obblighi legali di archiviazione, la cancellazione avviene dopo la loro scadenza in conformità con le direttive UE e le normative nazionali di conservazione.</p>
 
-            <h3 class="h6 mb-2 mt-3">7.5 Diritto di opposizione e diritto di cancellazione</h3>
+            <h3 class="h6 mb-2 mt-3">6.5 Diritto di opposizione e diritto di cancellazione</h3>
             <p>Avete il diritto di revocare il vostro consenso all'elaborazione dei dati personali in qualsiasi momento ai sensi dell'art. 6, comma 1, lettera a) del GDPR. Se ci contattate via e-mail, potete opporvi alla conservazione dei vostri dati personali in qualsiasi momento.</p>
 
-            <h2 class="h5 mb-3 mt-4">8. Utilizzo degli strumenti a proprio rischio</h2>
+            <h2 class="h5 mb-3 mt-4">7. Utilizzo degli strumenti a proprio rischio</h2>
             <p><strong>Utilizzate tutti gli strumenti su questo sito web a vostro rischio.</strong> Sebbene ci sforziamo di fornire strumenti accurati e affidabili, non possiamo garantire che siano privi di errori o adatti a tutti gli scopi.</p>
             <p>Non ci assumiamo alcuna responsabilità per:</p>
             <ul>
@@ -304,7 +258,7 @@ $currentUrl = getFullUrl('/privacy.php', $lang);
             </ul>
             <p>Verificate indipendentemente i risultati critici prima di utilizzarli in ambienti di produzione.</p>
 
-            <h2 class="h5 mb-3 mt-4">9. I vostri diritti</h2>
+            <h2 class="h5 mb-3 mt-4">8. I vostri diritti</h2>
             <p>Avete i seguenti diritti ai sensi del GDPR:</p>
             <ul>
               <li><strong>Diritto di accesso (art. 15 GDPR):</strong> avete il diritto di richiedere informazioni sui vostri dati personali elaborati da noi.</li>

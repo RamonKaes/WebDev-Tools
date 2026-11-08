@@ -15,7 +15,6 @@ $features = [
     'Supporto drag & drop per i file',
     'Codifica Base64 compatibile con gli URL',
     'Modalità in tempo reale',
-    'Elaborazione multi-linea',
     'Elaborazione lato client: i dati non lasciano mai il browser'
 ];
 

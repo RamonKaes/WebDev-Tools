@@ -51,7 +51,7 @@ HTML
 $usefulResources = [
     [
         'url' => 'https://fr.wikipedia.org/wiki/S%C3%A9rialisation',
-        'title' => 'Wikipedia&nbsp;: Sérialisation',
+        'title' => 'Wikipedia : Sérialisation',
         'description' => 'Introduction accessible aux formats de sérialisation de données'
     ],
     [
@@ -71,7 +71,7 @@ $usefulResources = [
     ],
     [
         'url' => 'https://datatracker.ietf.org/doc/html/rfc4180',
-        'title' => 'RFC 4180&nbsp;: Spécification du format CSV',
+        'title' => 'RFC 4180 : Spécification du format CSV',
         'description' => 'Spécification officielle pour le format Comma-Separated Values (CSV)'
     ]
 ];

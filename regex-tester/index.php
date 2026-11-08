@@ -12,7 +12,7 @@ $resourcesSectionTitle = 'Useful Resources';
 
 $features = [
     'Pattern matching with highlighted results',
-    'Support for all regex flags (g, i, m, s, u, y)',
+    'Flags g, i, m, s, u and y',
     'Match highlighting with capture groups',
     'Detailed match information and statistics',
     'Copy and download match results',
@@ -24,7 +24,7 @@ $customNoticeContent = <<<HTML
 <h2 class="h6 fw-semibold alert-heading mb-3"><i class="bi bi-info-circle me-2"></i>Regular Expression Testing</h2>
 <ul class="mb-0">
     <li>JavaScript Engine: This tool uses JavaScript's RegExp engine for pattern testing</li>
-    <li>Live Testing: Test your patterns against real text with instant visual feedback</li>
+    <li>Run on demand: click Test or press Enter (Ctrl+Enter in the test string) to see matches highlighted</li>
     <li>Privacy: All testing happens locally in your browser - no data is sent to servers</li>
 </ul>
 HTML;

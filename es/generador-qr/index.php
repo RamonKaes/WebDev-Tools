@@ -22,7 +22,7 @@ HTML;
 
 $features = [
     'Genera códigos QR para URLs, texto, contactos vCard y redes WiFi',
-    'Tamaño y calidad configurables',
+    'Cuatro tamaños de 128x128 a 1024x1024 píxeles',
     'Colores de primer plano y fondo personalizables',
     'Corrección de error máxima (nivel H, ~30 % de recuperación)',
     'Descarga en PNG o SVG',

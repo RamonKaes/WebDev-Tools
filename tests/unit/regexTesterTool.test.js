@@ -320,6 +320,15 @@ describe('regexTesterTool – Invalid Pattern', () => {
     expect(alert).not.toBeNull();
   });
 
+  test('browser prefix "Invalid regular expression:" is not shown twice', () => {
+    c.querySelector('#regexPattern').value = '[invalid';
+    c.querySelector('#testString').value = 'test';
+    c.querySelector('#testButton').click();
+    const text = c.querySelector('#resultsContainer .alert-danger').textContent;
+    expect(text).not.toMatch(/Invalid regular expression:/);
+    expect(text).toContain('tools.regexTesterTool.invalid_pattern:');
+  });
+
   test('hides highlighted container on invalid pattern', () => {
     c.querySelector('#regexPattern').value = '[bad';
     c.querySelector('#testString').value = 'test';

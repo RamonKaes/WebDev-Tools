@@ -339,7 +339,8 @@
             outputInfo.textContent = t('tools.urlEncoderDecoder.chars_decoded', {count: output.value.length});
           }
         } catch (e) {
-          output.value = t('tools.urlEncoderDecoder.error') + ': ' + e.message;
+          // The thrown messages are already user-facing sentences; no second "Error:" prefix
+          output.value = e.message;
           output.classList.add('is-invalid');
           outputInfo.textContent = '';
         }

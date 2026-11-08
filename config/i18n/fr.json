@@ -51,12 +51,13 @@
     "output": "Sortie",
     "unknown": "Inconnu",
     "copy_failed": "Échec de la copie",
-    "related_tools": "Outils similaires"
+    "related_tools": "Outils similaires",
+    "client_side_only": "Uniquement dans le navigateur"
   },
   "theme": {
     "light": "Clair",
     "dark": "Sombre",
-    "auto": "Auto"
+    "auto": "Automatique"
   },
   "errors": {
     "registry_missing": "[{tool}] Registre d'outils non disponible. Veuillez recharger la page."
@@ -104,9 +105,7 @@
         "Décodage de Texte : Décoder les chaînes Base64 en texte brut",
         "Support de Fichiers : Glisser-déposer des fichiers pour encoder/décoder",
         "Mode en Direct : Encodage/décodage en temps réel pendant la saisie",
-        "Sécurisé pour URL : Option pour l'encodage Base64 sécurisé pour URL",
-        "Traitement par Lignes : Encoder/décoder plusieurs lignes indépendamment",
-        "Statistiques : Affichage du nombre de caractères et de lignes"
+        "Sécurisé pour URL : Option pour l'encodage Base64 sécurisé pour URL"
       ],
       "how_to_use_steps": [
         "Entrez du texte ou téléchargez un fichier par glisser-déposer",
@@ -226,6 +225,7 @@
       "downloaded": "Fichier téléchargé",
       "saved": "Sauvegardé",
       "minified": "Minifié",
+      "minified_label": "Minifié",
       "original": "Original",
       "valid_json": "JSON valide",
       "invalid_json": "JSON invalide",
@@ -396,7 +396,7 @@
       "generate_bulk_btn": "Générer en masse",
       "copy_all_btn": "Tout copier",
       "download_btn": "Télécharger",
-      "version_v1_help": "Basé sur l'horodatage et l'adresse MAC",
+      "version_v1_help": "Basé sur l'horodatage et un identifiant de nœud aléatoire (pas d'adresse MAC)",
       "version_v7_help": "Basé sur l'horodatage Unix avec composant aléatoire",
       "version_nil_help": "UUID nul (tous les bits à zéro)",
       "bulk_error": "Le nombre doit être compris entre 1 et 1000",
@@ -448,7 +448,7 @@
       "lowercase": "Minuscules (a-z)",
       "numbers": "Chiffres (0-9)",
       "symbols": "Symboles (!@#$...)",
-      "excludeAmbiguous": "Exclure les caractères ambigus (0, O, l, I)",
+      "excludeAmbiguous": "Exclure les caractères ambigus (0, O, 1, l, I)",
       "generate": "Générer un mot de passe",
       "strengthVeryStrong": "Très fort",
       "strengthVeryStrongDesc": "Excellent mot de passe !",
@@ -474,7 +474,7 @@
       "errorLoading": "Erreur de chargement du générateur de mots de passe",
       "errorNoCharset": "Veuillez sélectionner au moins un type de caractère",
       "wordCount": "Nombre de mots",
-      "wordCountHint": "3-8 mots recommandés",
+      "wordCountHint": "Nombre de mots dans la phrase de passe (3–8)",
       "separator": "Séparateur",
       "hyphen": "Trait d'union (-)",
       "underscore": "Trait de soulignement (_)",
@@ -488,7 +488,7 @@
       "patternCVC": "Consonne-Voyelle-Consonne (CVC)",
       "patternCVVC": "Consonne-Voyelle-Voyelle-Consonne (CVVC)",
       "patternLength": "Longueur du motif",
-      "patternLengthHint": "Nombre de répétitions du motif",
+      "patternLengthHint": "Nombre de caractères (6–32)",
       "patternCapitalize": "Mettre en majuscule chaque segment",
       "about_title": "À propos",
       "how_to_use_title": "Comment Utiliser",
@@ -738,9 +738,9 @@
       "header": "En-tête",
       "payload": "Charge utile",
       "signature": "Signature",
-      "signatureNote": "La signature ne peut être vérifiée qu'avec la clé secrète. Cet outil ne fait que décoder le token.",
+      "signatureNote": "Cet outil ne vérifie pas la signature. La vérification nécessite le secret partagé (HS*) ou la clé publique de l'émetteur (RS*, ES*, PS*).",
       "verificationWarning": "⚠️ Attention : Cet outil NE vérifie PAS la signature !",
-      "verificationWarningDetails": "Ce décodeur JWT affiche uniquement le contenu du jeton. Il NE vérifie PAS la signature. Ne faites jamais confiance aux données JWT décodées sans vérification côté serveur. Un attaquant peut manipuler le contenu du jeton – seule la validation cryptographique avec la clé secrète garantit l'authenticité.",
+      "verificationWarningDetails": "Ce décodeur JWT affiche uniquement le contenu du jeton. Il NE vérifie PAS la signature. Ne faites jamais confiance aux données JWT décodées sans vérification côté serveur. Un attaquant peut manipuler le contenu du jeton – seule la validation cryptographique avec le secret partagé (HS*) ou la clé publique de l'émetteur (RS*, ES*, PS*) garantit l'authenticité.",
       "algorithm": "Algorithme",
       "expiry": "Expiration",
       "expired": "Le token a expiré",
@@ -765,9 +765,9 @@
         "Bearer"
       ],
       "toc_title": "Décodeur JWT",
-      "h1_title": "Décodeur JWT — Décodage JSON Web Tokens et vérification",
+      "h1_title": "Décodeur JWT — Décodage de JSON Web Tokens (sans vérification)",
       "card_description": "Décodez et analysez JSON Web Tokens avec inspection détaillée. Visualisez en-tête, charge utile et signature. Validez structure et algorithmes de signature.",
-      "tool_description": "Décodez et analysez les JSON Web Tokens (JWT) avec notre Décodeur JWT. L'outil sépare automatiquement le token en ses trois parties (en-tête, charge utile, signature) et affiche le contenu décodé en JSON formaté. Affiche l'algorithme de signature de l'en-tête et vérifie le claim d'expiration (exp) par rapport à l'heure actuelle. Remarque : cet outil ne fait que décoder les tokens ; la vérification de la signature nécessite la clé secrète. Toutes les opérations sont effectuées localement dans votre navigateur.",
+      "tool_description": "Décodez et analysez les JSON Web Tokens (JWT) avec notre Décodeur JWT. L'outil sépare automatiquement le token en ses trois parties (en-tête, charge utile, signature) et affiche le contenu décodé en JSON formaté. Affiche l'algorithme de signature de l'en-tête et vérifie le claim d'expiration (exp) par rapport à l'heure actuelle. Remarque : cet outil ne fait que décoder les tokens et ne vérifie pas les signatures. La vérification nécessite le secret partagé (HS*) ou la clé publique (RS*, ES*, PS*) et doit se faire côté serveur. Toutes les opérations sont effectuées localement dans votre navigateur.",
       "errorFormat": "Format JWT invalide. 3 parties attendues (header.payload.signature)",
       "errorBase64": "Encodage Base64URL invalide",
       "errorHeader": "Impossible de décoder l'en-tête : {message}",
@@ -985,8 +985,8 @@
       "how_to_use_title": "Comment Utiliser",
       "toc_title": "Testeur Regex",
       "h1_title": "Testeur Regex — Test expressions régulières et patterns",
-      "card_description": "Testez expressions régulières avec surbrillance des correspondances et groupes de capture. Testeur regex JavaScript avec tous les drapeaux (g, i, m, s, u, y) et résultats exportables.",
-      "tool_description": "Testez les expressions régulières contre un texte d'exemple et voyez chaque correspondance surlignée avec sa position et ses groupes de capture. Validez vos motifs avant de les utiliser dans le code. Utilise le moteur regex de JavaScript et prend en charge tous ses drapeaux : global (g), ignorer la casse (i), multiligne (m), dotAll (s), unicode (u) et sticky (y)."
+      "card_description": "Testez expressions régulières avec surbrillance des correspondances et groupes de capture. Testeur regex JavaScript avec les drapeaux g, i, m, s, u et y et résultats exportables.",
+      "tool_description": "Testez les expressions régulières contre un texte d'exemple et voyez chaque correspondance surlignée avec sa position et ses groupes de capture. Validez vos motifs avant de les utiliser dans le code. Utilise le moteur regex de JavaScript et prend en charge les drapeaux global (g), ignorer la casse (i), multiligne (m), dotAll (s), unicode (u) et sticky (y)."
     },
     "characterReferenceTool": {
       "linkTitle": {
@@ -1023,8 +1023,8 @@
       "tableHeaderCode": "Code Unicode",
       "toc_title": "Référence de Caractères",
       "h1_title": "Référence de Caractères — Référence HTML entities Unicode",
-      "card_description": "Parcourez et copiez entités HTML et caractères spéciaux avec codes Unicode. Référence de 2.231+ entités organisées par catégories pour développement web.",
-      "tool_description": "Référence complète de caractères HTML avec plus de 2.231 entités et caractères spéciaux. Recherchez par nom, code décimal ou hexadécimal avec fonction de copie instantanée. Parfait pour les développeurs web, designers et créateurs de contenu qui ont besoin d'un accès rapide aux entités HTML, caractères Unicode et symboles spéciaux.",
+      "card_description": "Parcourez et copiez entités HTML et caractères spéciaux avec codes Unicode. Référence de 2 231 entités organisées par catégories pour développement web.",
+      "tool_description": "Référence complète de caractères HTML avec 2 231 entités et caractères spéciaux. Recherchez par nom, code décimal ou hexadécimal avec fonction de copie instantanée. Parfait pour les développeurs web, designers et créateurs de contenu qui ont besoin d'un accès rapide aux entités HTML, caractères Unicode et symboles spéciaux.",
       "noResults": "Aucun caractère trouvé",
       "noResultsHint": "Essayez un terme de recherche ou une catégorie différente",
       "copyUnicode": "Copier Unicode",
@@ -1128,7 +1128,7 @@
   },
   "seo": {
     "home": {
-      "meta_description": "Outils gratuits pour développeurs web. Formateur JSON, encodeur Base64, générateur UUID et 15+ utilitaires. Traitement côté client et protection de la vie privée."
+      "meta_description": "Outils gratuits pour développeurs web. Formateur JSON, encodeur Base64, générateur UUID et 20 utilitaires. Traitement côté client et protection de la vie privée."
     },
     "about": {
       "meta_description": "WebDev-Tools : utilitaires pour développeurs avec traitement 100% côté client. Aucun tracking, aucune collecte de données. Outils open-source gratuits."
@@ -1146,7 +1146,6 @@
         "Support glisser-déposer de fichiers",
         "Encodage Base64 URL-safe",
         "Mode direct en temps réel",
-        "Traitement multi-lignes",
         "Traitement côté client"
       ],
       "keywords": "base64, encodeur, décodeur, binaire vers texte, data uri, encodage sécurisé url, encodage fichier",
@@ -1313,13 +1312,13 @@
         "Test d'expressions régulières en un clic",
         "Surbrillance des correspondances",
         "Extraction de groupes de capture",
-        "Support de tous les indicateurs JavaScript",
+        "Indicateurs g, i, m, s, u et y",
         "Validation de motifs",
         "Retour instantané"
       ],
       "keywords": "testeur regex, expression régulière, correspondance motif, validateur regex, débogueur regex, regex javascript",
       "meta_title": "Testeur Regex – Tester une Expression Régulière en Ligne",
-      "meta_description": "Testez vos expressions régulières JavaScript en direct : correspondances surlignées à la frappe, groupes de capture et tous les flags. Gratuit et local."
+      "meta_description": "Testez vos expressions régulières JavaScript : lancez le motif en un clic et voyez les correspondances surlignées, les groupes de capture et les drapeaux g, i, m, s, u, y. Gratuit et local."
     },
     "sampleHelloWorld": {
       "keywords": "outil exemple, outil démo, hello world, transformation texte, modèle développeur",
@@ -1338,7 +1337,7 @@
     "characterReferenceTool": {
       "applicationCategory": "UtilityApplication",
       "featureList": [
-        "Plus de 2 231 entités HTML",
+        "2 231 entités HTML",
         "Navigation par catégories",
         "Fonction de recherche puissante",
         "Formats de copie multiples",

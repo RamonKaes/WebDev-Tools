@@ -83,9 +83,9 @@ HTML
       <tr><td>münchen.de</td><td>xn--mnchen-3ya.de</td><td>German</td></tr>
       <tr><td>zürich.ch</td><td>xn--zrich-kva.ch</td><td>German</td></tr>
       <tr><td>москва.рф</td><td>xn--80adxhks.xn--p1ai</td><td>Russian</td></tr>
-      <tr><td>东京.jp</td><td>xn--1lqs71d.jp</td><td>Japanese</td></tr>
+      <tr><td>東京.jp</td><td>xn--1lqs71d.jp</td><td>Japanese</td></tr>
       <tr><td>مصر.eg</td><td>xn--wgbh1c.eg</td><td>Arabic</td></tr>
-      <tr><td>ελλάδα.gr</td><td>xn--qxam.gr</td><td>Greek</td></tr>
+      <tr><td>ελλάδα.gr</td><td>xn--hxakic4aa.gr</td><td>Greek</td></tr>
     </tbody>
   </table>
 </div>
@@ -101,7 +101,6 @@ HTML
     <ul>
       <li>Convert IDNs for DNS registration</li>
       <li>Check domain availability</li>
-      <li>Email address encoding</li>
       <li>SSL certificate generation</li>
     </ul>
   </div>

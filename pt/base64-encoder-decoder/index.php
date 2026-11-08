@@ -15,7 +15,6 @@ $features = [
     'Suporte a arrastar e soltar arquivos',
     'Codificação Base64 compatível com URLs',
     'Modo em tempo real',
-    'Processamento multilinha',
     'Processamento no navegador: seus dados nunca saem do dispositivo'
 ];
 

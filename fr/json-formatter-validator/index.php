@@ -61,16 +61,16 @@ HTML
 
 $usefulResources = [
     [        'url' => 'https://fr.wikipedia.org/wiki/JavaScript_Object_Notation',
-        'title' => 'Wikipedia&nbsp;: JSON',
+        'title' => 'Wikipedia : JSON',
         'description' => 'Introduction accessible aux concepts et à l\'utilisation du JSON'
     ],
     [        'url' => 'https://www.ecma-international.org/publications-and-standards/standards/ecma-404/',
-        'title' => 'ECMA-404&nbsp;: syntaxe d\'échange de données JSON',
+        'title' => 'ECMA-404 : syntaxe d\'échange de données JSON',
         'description' => 'Spécification officielle du JSON publiée par ECMA International'
     ],
     [
         'url' => 'https://datatracker.ietf.org/doc/html/rfc8259',
-        'title' => 'RFC 8259&nbsp;: JavaScript Object Notation (JSON)',
+        'title' => 'RFC 8259 : JavaScript Object Notation (JSON)',
         'description' => 'Norme IETF décrivant le format JSON'
     ],
     [

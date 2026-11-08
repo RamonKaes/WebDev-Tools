@@ -15,7 +15,6 @@ $features = [
     'Drag & Drop Datei-Unterstützung',
     'URL-sichere Base64-Kodierung',
     'Echtzeit Live-Modus',
-    'Mehrzeilige Verarbeitung',
     'Client-seitige Verarbeitung - Ihre Daten verlassen niemals Ihren Browser'
 ];
 

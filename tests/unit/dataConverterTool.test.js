@@ -150,6 +150,25 @@ describe('DataConverterTool – XML to JSON', () => {
     expect(window.__xss).toBeUndefined();
   });
 
+  test('indented XML is read like compact XML', () => {
+    const output = convert('<root>\n  <name>John</name>\n  <age>30</age>\n  <tags>\n    <tag>a</tag>\n    <tag>b</tag>\n  </tags>\n</root>');
+    expect(JSON.parse(output)).toEqual({ name: 'John', age: '30', tags: { tag: ['a', 'b'] } });
+  });
+
+  test('attributes and mixed content survive indentation', () => {
+    const output = convert('<root>\n  <item id="7">\n    text\n    <child>x</child>\n  </item>\n</root>');
+    expect(JSON.parse(output)).toEqual({ item: { '@attributes': { id: '7' }, child: 'x', '#text': 'text' } });
+  });
+
+  test('JSON → XML → JSON round trip keeps the structure', () => {
+    const original = { user: { name: 'Ada', langs: ['js', 'php'], address: { city: 'Berlin' } } };
+    setConversionType('jsonToXml');
+    const xml = convert(JSON.stringify(original));
+    expect(xml).toContain('\n  ');
+    setConversionType('xmlToJson');
+    expect(JSON.parse(convert(xml))).toEqual({ user: { name: 'Ada', langs: ['js', 'php'], address: { city: 'Berlin' } } });
+  });
+
   test('invalid XML shows error status', () => {
     convert('<root><unclosed>');
     const status = document.getElementById('conversionStatus');

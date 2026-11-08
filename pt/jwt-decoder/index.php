@@ -17,7 +17,8 @@ $customAboutContent = <<<HTML
 </p>
 <p class="mb-0">
     Este decodificador separa e exibe o cabeçalho, o payload e a assinatura de um JWT.
-    Atenção: verificar a assinatura exige a chave secreta e deve ser feito no servidor.
+    Atenção: esta ferramenta não verifica a assinatura. A verificação exige o segredo compartilhado (HS256/HS384/HS512)
+    ou a chave pública do emissor (RS*, ES*, PS*) e deve ser feita no servidor.
 </p>
 HTML;
 
@@ -78,8 +79,8 @@ $additionalSections = [
     <h3 class="h6 text-warning">Signature</h3>
     <p class="small">Garante integridade:</p>
     <ul class="small">
-      <li>Assinatura HMAC ou RSA</li>
-      <li>Requer a chave secreta para validar</li>
+      <li>HMAC (segredo compartilhado) ou RSA/ECDSA (chave pública)</li>
+      <li>Não é verificada por esta ferramenta</li>
       <li>Impede adulteração</li>
     </ul>
   </div>

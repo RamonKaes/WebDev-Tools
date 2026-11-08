@@ -11,7 +11,7 @@ $featuresSectionTitle = 'Funktionen';
 $resourcesSectionTitle = 'Nützliche Ressourcen';
 
 $features = [
-    'Über 2.231 HTML-Entities',
+    '2.231 HTML-Entities',
     'Kategoriebasiertes Durchsuchen',
     'Leistungsstarke Suchfunktion',
     'Mehrere Kopierformate',

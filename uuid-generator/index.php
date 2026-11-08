@@ -27,7 +27,7 @@ $features = [
     'Bulk generation: create multiple UUIDs at once',
     'Multiple output formats: standard, uppercase, no hyphens',
     'Copy individual UUIDs or all at once',
-    'RFC 4122 compliant',
+    'RFC 4122 (v1, v4) and RFC 9562 (v7) compliant',
     'No server communication - 100% client-side',
     'Instant generation with no delays'
 ];

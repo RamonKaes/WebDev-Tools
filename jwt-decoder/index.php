@@ -18,8 +18,8 @@ $customAboutContent = <<<HTML
 </p>
 <p class="mb-0">
     This decoder extracts and displays the header, payload, and signature components of a JWT. 
-    Note: Signature verification requires the secret key and should be done 
-    server-side for security.
+    Note: this tool does not verify the signature. Verification needs the shared secret (HS256/HS384/HS512)
+    or the issuer's public key (RS*, ES*, PS*) and belongs on the server.
 </p>
 HTML;
 
@@ -81,8 +81,8 @@ $additionalSections = [
     <h3 class="h6 text-warning">Signature</h3>
     <p class="small">Verifies token integrity:</p>
     <ul class="small">
-      <li>HMAC or RSA signature</li>
-      <li>Requires secret key to verify</li>
+      <li>HMAC (shared secret) or RSA/ECDSA (public key)</li>
+      <li>Not verified by this tool</li>
       <li>Prevents tampering</li>
     </ul>
   </div>

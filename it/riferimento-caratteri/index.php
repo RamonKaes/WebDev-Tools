@@ -22,7 +22,7 @@ $customAboutContent = <<<HTML
 HTML;
 
 $features = [
-    'Oltre 2 231 entità HTML catalogate',
+    '2231 entità HTML catalogate',
     'Navigazione per categorie',
     'Ricerca avanzata per nome o codice',
     'Formati multipli di copia',

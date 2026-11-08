@@ -335,7 +335,8 @@
 
       return { success: true, matches, regex };
     } catch (error) {
-      return { success: false, error: error.message };
+      // The browser's message already starts with "Invalid regular expression:"; keep only the reason
+      return { success: false, error: error.message.replace(/^Invalid regular expression:\s*/, '') };
     }
   }
 

@@ -305,9 +305,15 @@
       const wordCountInput = document.getElementById('wordCount');
       const loremOutput = document.getElementById('loremOutput');
 
-      const paragraphs = parseInt(paragraphCount.value) || 0;
-      const sentences = parseInt(sentenceCount.value) || 0;
-      const words = parseInt(wordCountInput.value) || 0;
+      // Keep typed values inside the min/max of the field; the browser only enforces them on form submit
+      const clampedValue = (input) => {
+        const value = Math.min(Math.max(parseInt(input.value, 10) || 0, Number(input.min)), Number(input.max));
+        if (String(value) !== input.value) input.value = String(value);
+        return value;
+      };
+      const paragraphs = clampedValue(paragraphCount);
+      const sentences = clampedValue(sentenceCount);
+      const words = clampedValue(wordCountInput);
 
       if (paragraphs === 0 && sentences === 0 && words === 0) {
         this.notify(t('tools.loremIpsumTool.selectAtLeastOne'));

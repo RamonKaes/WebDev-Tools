@@ -90,7 +90,7 @@ $usefulResources = [
     ],
     [
         'url' => 'https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html',
-        'title' => 'OWASP&nbsp;: Stockage des mots de passe',
+        'title' => 'OWASP : Stockage des mots de passe',
         'description' => 'Bonnes pratiques de sécurité pour le hachage et le stockage des mots de passe'
     ]
 ];

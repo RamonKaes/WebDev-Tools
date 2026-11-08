@@ -513,40 +513,57 @@
      * @returns {object} - JSON object
      */
     function xmlToJson(xml) {
-      const obj = {};
-
-      if (xml.nodeType === 1) { // Element
-        if (xml.attributes.length > 0) {
-          obj['@attributes'] = {};
-          for (let i = 0; i < xml.attributes.length; i++) {
-            const attr = xml.attributes.item(i);
-            obj['@attributes'][attr.nodeName] = attr.nodeValue;
-          }
-        }
-      } else if (xml.nodeType === 3) { // Text
+      // Text and CDATA nodes carry their value; the caller decides whether to keep it
+      if (xml.nodeType === 3 || xml.nodeType === 4) {
         return xml.nodeValue;
       }
 
-      if (xml.hasChildNodes()) {
-        for (let i = 0; i < xml.childNodes.length; i++) {
-          const child = xml.childNodes.item(i);
-          const nodeName = child.nodeName;
+      const obj = {};
 
-          if (typeof obj[nodeName] === 'undefined') {
-            const converted = xmlToJson(child);
-            if (nodeName === '#text') {
-              return converted;
-            }
-            obj[nodeName] = converted;
-          } else {
-            if (typeof obj[nodeName].push === 'undefined') {
-              const old = obj[nodeName];
-              obj[nodeName] = [];
-              obj[nodeName].push(old);
-            }
-            obj[nodeName].push(xmlToJson(child));
-          }
+      if (xml.nodeType === 1 && xml.attributes.length > 0) {
+        obj['@attributes'] = {};
+        for (let i = 0; i < xml.attributes.length; i++) {
+          const attr = xml.attributes.item(i);
+          obj['@attributes'][attr.nodeName] = attr.nodeValue;
         }
+      }
+
+      // Indentation between elements is whitespace-only text; comments carry no data
+      const children = Array.from(xml.childNodes).filter(child => {
+        if (child.nodeType === 8) return false;
+        if (child.nodeType === 3 || child.nodeType === 4) return child.nodeValue.trim() !== '';
+        return true;
+      });
+      const elementNodes = children.filter(child => child.nodeType === 1);
+      const text = children
+        .filter(child => child.nodeType === 3 || child.nodeType === 4)
+        .map(child => child.nodeValue)
+        .join('')
+        .trim();
+
+      // Leaf element: its text is the value (unless attributes have to be kept alongside)
+      if (elementNodes.length === 0 && text !== '') {
+        if (Object.keys(obj).length === 0) return text;
+        obj['#text'] = text;
+        return obj;
+      }
+
+      elementNodes.forEach(child => {
+        const nodeName = child.nodeName;
+        const converted = xmlToJson(child);
+        if (typeof obj[nodeName] === 'undefined') {
+          obj[nodeName] = converted;
+        } else {
+          if (!Array.isArray(obj[nodeName])) {
+            obj[nodeName] = [obj[nodeName]];
+          }
+          obj[nodeName].push(converted);
+        }
+      });
+
+      // Mixed content: keep the text next to the child elements
+      if (text !== '') {
+        obj['#text'] = text;
       }
 
       return obj;

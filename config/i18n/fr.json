@@ -1128,16 +1128,16 @@
   },
   "seo": {
     "home": {
-      "meta_description": "Outils gratuits pour développeurs web. Formateur JSON, encodeur Base64, générateur UUID et 20 utilitaires. Traitement côté client et protection de la vie privée."
+      "meta_description": "Outils gratuits pour développeurs web : formateur JSON, encodeur Base64, générateur UUID et 17 autres utilitaires. Tout est traité dans votre navigateur."
     },
     "about": {
       "meta_description": "WebDev-Tools : utilitaires pour développeurs avec traitement 100% côté client. Aucun tracking, aucune collecte de données. Outils open-source gratuits."
     },
     "privacy": {
-      "meta_description": "Politique de confidentialité : Tous les outils traitent les données localement dans votre navigateur. Aucun téléchargement serveur, aucun tracking, aucun cookie."
+      "meta_description": "Politique de confidentialité : tous les outils traitent les données localement dans votre navigateur. Aucun envoi au serveur, aucun tracking, aucun cookie."
     },
     "imprint": {
-      "meta_description": "Mentions légales et coordonnées pour WebDev-Tools. Responsable du contenu, contact du délégué à la protection des données et mentions légales pour nos utilitaires."
+      "meta_description": "Mentions légales et coordonnées de WebDev-Tools : responsable du contenu, contact protection des données et mentions légales de nos utilitaires."
     },
     "base64EncoderDecoder": {
       "applicationCategory": "UtilityApplication",

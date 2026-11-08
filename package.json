@@ -13,7 +13,8 @@
     "test:coverage": "jest --coverage",
     "check:i18n": "node build-tools/check-i18n.js",
     "lint": "eslint .",
-    "test:browser": "playwright test"
+    "test:browser": "playwright test",
+    "test:browser:live": "BROWSER_TEST_LIVE=1 playwright test -c playwright.live.config.js"
   },
   "repository": {
     "type": "git",

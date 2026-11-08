@@ -108,10 +108,8 @@ $goBackLabel = $goBackLabels[$lang] ?? 'Go Back';
 
 // Build hash for cache busting
 $manifest = getManifest();
-$buildHash = '1.0.0';
-if ($manifest && isset($manifest['generatedAt'])) {
-    $buildHash = preg_replace('/[^0-9]/', '', substr($manifest['generatedAt'], 0, 19));
-}
+// Content hash of scripts and translations (config/generate-manifest.php); every ?v= depends on it
+$buildHash = $manifest['version'] ?? '1.0.0';
 
 // URLs for canonical and hreflang
 $baseUrlEscaped = htmlspecialchars($baseUrl, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');

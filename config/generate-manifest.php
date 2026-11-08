@@ -32,9 +32,25 @@ if ($baseUrl && !str_starts_with($baseUrl, '/')) {
 
 echo "📦 Generating manifest with BASE_PATH: '{$baseUrl}'\n";
 
+// The version is a hash of everything the browser caches under "?v=<version>":
+// tool scripts, shared scripts and translations. It changes only when one of
+// them changes, so build.sh and CI can regenerate the manifest and compare.
+$versionedFiles = array_merge(
+    glob(__DIR__ . '/../assets/js/*.js') ?: [],
+    glob(__DIR__ . '/../assets/js/lib/*.js') ?: [],
+    glob(__DIR__ . '/../assets/js/tools/*.js') ?: [],
+    glob(__DIR__ . '/i18n/*.json') ?: [],
+    [__DIR__ . '/tools.php']
+);
+sort($versionedFiles);
+$hashContext = hash_init('xxh128');
+foreach ($versionedFiles as $file) {
+    hash_update($hashContext, basename($file) . ':' . hash_file('xxh128', $file) . "\n");
+}
+$version = substr(hash_final($hashContext), 0, 16);
+
 $manifest = [
-  'version' => date('Ymd.His'),
-  'generatedAt' => date('c'),
+  'version' => $version,
   'tools' => []
 ];
 
@@ -63,6 +79,7 @@ if (file_put_contents($outputPath, $json)) {
     echo "✅ Manifest generated successfully!\n";
     echo "   - Output: {$outputPath}\n";
     echo "   - Tools: " . count($manifest['tools']) . "\n";
+    echo "   - Version: {$version}\n";
     exit(0);
 } else {
     echo "❌ Failed to write manifest.json\n";

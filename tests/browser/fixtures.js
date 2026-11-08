@@ -18,7 +18,8 @@ const test = base.test.extend({
       });
       page.on('response', (response) => {
         if (!response.url().startsWith(SITE)) return;
-        if (response.headers()['x-browser-test'] !== 'local') {
+        // BROWSER_TEST_LIVE=1 runs the suite against the real site (playwright.live.config.js)
+        if (!process.env.BROWSER_TEST_LIVE && response.headers()['x-browser-test'] !== 'local') {
           problems.push(`not served by the test server: ${response.url()}`);
         }
       });

@@ -11,7 +11,7 @@ $featuresSectionTitle = 'Funktionen';
 $resourcesSectionTitle = 'Nützliche Ressourcen';
 $customAboutContent = <<<HTML
 <p class="mb-2">Konvertieren Sie schnell und präzise zwischen Pixeln (px) und rem-Einheiten. Unverzichtbar für responsives Webdesign und barrierefreie Typografie.</p>
-<p>Die rem (root em) Einheit ist relativ zur Schriftgröße des Root-Elements, was sie ideal für die Erstellung skalierbarer und barrierefreier Interfaces macht. Dieses Tool hilft Ihnen, px-Werte basierend auf Ihrer Basis-Schriftgröße in rem zu konvertieren und umgekehrt.</p>
+<p>Die Einheit rem (root em) ist relativ zur Schriftgröße des Root-Elements, was sie ideal für die Erstellung skalierbarer und barrierefreier Interfaces macht. Dieses Tool hilft Ihnen, px-Werte basierend auf Ihrer Basis-Schriftgröße in rem zu konvertieren und umgekehrt.</p>
 HTML;
 $features = [
     'px zu rem und rem zu px konvertieren',
@@ -20,7 +20,7 @@ $features = [
     'Echtzeit-Konvertierung während der Eingabe',
     'Konvertierte Werte mit einem Klick kopieren',
     'Voreinstellungen für die Basis-Schriftgröße (12 bis 20px)',
-    '100% clientseitige Verarbeitung'
+    '100 % clientseitige Verarbeitung'
 ];
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
@@ -63,7 +63,7 @@ $usefulResources = [
     ],
     [
         'url' => 'https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units',
-        'title' => 'MDN CSS-Werte und -Einheiten',
+        'title' => 'MDN: CSS-Werte und -Einheiten',
         'description' => 'Vollständiger Leitfaden zu CSS-Einheiten inkl. px, rem und em'
     ],
     [
@@ -73,13 +73,13 @@ $usefulResources = [
     ],
     [
         'url' => 'https://moderncss.dev/generating-font-size-css-rules-and-creating-a-fluid-type-scale/',
-        'title' => 'Modern CSS: Schriftgrößen-Regeln und fluid Type Scale',
-        'description' => 'Umfassender Leitfaden zu rem-Einheiten und fluid Typography in modernem CSS'
+        'title' => 'Modern CSS: Schriftgrößen-Regeln und Fluid Type Scale',
+        'description' => 'Umfassender Leitfaden zu rem-Einheiten und Fluid Typography in modernem CSS'
     ],
     [
         'url' => 'https://www.24a11y.com/2019/pixels-vs-relative-units-in-css-why-its-still-a-big-deal/',
         'title' => 'Pixels vs. relative Einheiten in CSS',
-        'description' => 'Barrierefreiheits-Vorteile von rem gegenüber px'
+        'description' => 'Vorteile von rem gegenüber px für die Barrierefreiheit'
     ]
 ];
 

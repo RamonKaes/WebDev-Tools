@@ -11,26 +11,25 @@ $featuresSectionTitle = 'Funktionen';
 $resourcesSectionTitle = 'Nützliche Ressourcen';
 $customAboutContent = <<<HTML
 <p class="mb-2">Formatieren, validieren und visualisieren Sie JSON-Daten mit erweiterten Funktionen. Perfekt für Entwickler, die mit APIs, Konfigurationsdateien und strukturierten Daten arbeiten.</p>
-<p>Dieses Tool hilft Ihnen, JSON zu bereinigen, Fehler zu finden und Ihre Datenstruktur zu verstehen. Alle Verarbeitung erfolgt clientseitig für maximale Sicherheit und Datenschutz.</p>
+<p>Dieses Tool hilft Ihnen, JSON zu bereinigen, Fehler zu finden und Ihre Datenstruktur zu verstehen. Die gesamte Verarbeitung erfolgt clientseitig für maximale Sicherheit und Datenschutz.</p>
 HTML;
 $features = [
     'JSON formatieren und verschönern',
     'JSON-Syntax validieren mit detaillierten Fehlermeldungen',
-    'JSON minimieren/komprimieren',
-    'Baumanzeige mit erweiterbaren/zusammenklappbaren Knoten',
+    'JSON minifizieren/komprimieren',
+    'Baumansicht mit auf- und zuklappbaren Knoten für verschachtelte Strukturen',
     'Anpassbare Einrückung (2 oder 4 Leerzeichen, Tabs)',
-    'Tree-Ansicht für verschachtelte Strukturen',
     'Mit einem Klick in die Zwischenablage kopieren',
-    '100% clientseitige Verarbeitung - Ihre Daten bleiben privat'
+    '100 % clientseitige Verarbeitung – Ihre Daten bleiben privat'
 ];
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
     <h2 class="h6 fw-semibold alert-heading mb-3"><i class="bi bi-info-circle me-2"></i>JSON-Formatierungsoptionen</h2>
     <ul class="mb-0">
-        <li>Verschönern: Fügt Einrückung und Zeilenumbrüche für Lesbarkeit hinzu</li>
-        <li>Minimieren: Entfernt alle Leerzeichen, um die Dateigröße zu reduzieren</li>
-        <li>Baumansicht: Visualisiert JSON-Struktur mit interaktiven Knoten</li>
-        <li>Validieren: Überprüft auf Syntaxfehler und zeigt genaue Fehlerstellen an</li>
+        <li>Verschönern: fügt Einrückung und Zeilenumbrüche für bessere Lesbarkeit hinzu</li>
+        <li>Minifizieren: entfernt alle Leerzeichen, um die Dateigröße zu reduzieren</li>
+        <li>Baumansicht: visualisiert die JSON-Struktur mit interaktiven Knoten</li>
+        <li>Validieren: prüft auf Syntaxfehler und zeigt die genaue Fehlerstelle an</li>
     </ul>
 HTML;
 $additionalSections = [[
@@ -55,7 +54,7 @@ $usefulResources = [
     ],
     [
         'url' => 'https://www.ecma-international.org/publications-and-standards/standards/ecma-404/',
-        'title' => 'ECMA-404: JSON Datenaustausch-Syntax',
+        'title' => 'ECMA-404: JSON-Datenaustausch-Syntax',
         'description' => 'Offizielle JSON-Spezifikation von ECMA International'
     ],
     [
@@ -65,12 +64,12 @@ $usefulResources = [
     ],
     [
         'url' => 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON',
-        'title' => 'MDN JSON-Objekt Referenz',
+        'title' => 'MDN: Referenz zum JSON-Objekt',
         'description' => 'Vollständige Anleitung zu JSON.parse() und JSON.stringify()'
     ],
     [
         'url' => 'https://json-schema.org/',
-        'title' => 'JSON Schema Spezifikation',
+        'title' => 'JSON-Schema-Spezifikation',
         'description' => 'Offizielle Dokumentation zur Validierung von JSON-Struktur und Datentypen'
     ]
 ];

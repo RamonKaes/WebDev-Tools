@@ -22,12 +22,12 @@ $customAboutContent = <<<HTML
 HTML;
 
 $features = [
-    'Più algoritmi: SHA-1, SHA-256, SHA-384, SHA-512',
+    'Diversi algoritmi: SHA-1, SHA-256, SHA-384, SHA-512',
     'Hash di testo e file',
     'Confronto di hash per la verifica',
     'Supporto HMAC con chiavi personalizzate',
     'Output maiuscolo o minuscolo',
-    'Copia hash con un clic',
+    'Copia dell\'hash con un clic',
     'Generazione in tempo reale',
     'Elaborazione 100% lato client: i dati rimangono sul dispositivo'
 ];
@@ -81,7 +81,7 @@ $usefulResources = [
     [
         'url' => 'https://en.wikipedia.org/wiki/Secure_Hash_Algorithms',
         'title' => 'Secure Hash Algorithms (SHA)',
-        'description' => 'Panoramica completa della famiglia SHA e del loro stato di sicurezza'
+        'description' => 'Panoramica completa della famiglia SHA e del suo stato di sicurezza'
     ],
     [
         'url' => 'https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/digest',

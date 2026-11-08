@@ -25,7 +25,7 @@ HTML;
 $features = [
     'Conversão px → rem e rem → px',
     'Tamanho de fonte base personalizável (padrão: 16 px)',
-    'Conversão inversa a partir de rem, em, percentagem e espaçamento Tailwind',
+    'Conversão inversa a partir de rem, em, porcentagem e espaçamento Tailwind',
     'Resultados em tempo real enquanto digita',
     'Copie os valores convertidos com um clique',
     'Predefinições de tamanho base da fonte (12 a 20px)',
@@ -36,7 +36,7 @@ $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
     <h2 class="h6 fw-semibold alert-heading mb-3"><i class="bi bi-info-circle me-2"></i>Por que usar unidades rem?</h2>
     <ul class="mb-0">
-        <li>Acessibilidade: pessoas usuárias podem ajustar o tamanho da fonte no navegador</li>
+        <li>Acessibilidade: usuários podem ajustar o tamanho da fonte no navegador</li>
         <li>Consistência: todas as medidas escalam proporcionalmente</li>
         <li>Design responsivo: facilita a manutenção em diferentes dispositivos</li>
         <li>Boa prática: padrão recomendado no desenvolvimento moderno</li>

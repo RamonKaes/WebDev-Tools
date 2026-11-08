@@ -22,14 +22,14 @@ $customAboutContent = <<<HTML
 HTML;
 
 $features = [
-    'Multiples algorithmes : SHA-1, SHA-256, SHA-384, SHA-512',
+    'Multiples algorithmes : SHA-1, SHA-256, SHA-384, SHA-512',
     'Hachage de texte et de fichiers',
     'Comparaison des empreintes pour vérification',
     'Prise en charge HMAC avec clés personnalisées',
     'Sortie en majuscules ou minuscules',
     'Copie des empreintes en un clic',
     'Génération en temps réel',
-    'Traitement 100 % côté client : vos données restent sur votre appareil'
+    'Traitement 100 % côté client : vos données restent sur votre appareil'
 ];
 
 $customNoticeType = 'warning';

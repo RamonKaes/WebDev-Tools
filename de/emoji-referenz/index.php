@@ -15,7 +15,7 @@ $features = [
     'Kategoriefilterung',
     'Stichwortsuche',
     'Unicode-Informationen',
-    'Ein-Klick-Kopie',
+    'Kopieren mit einem Klick',
     'Entwicklerfokussierte Kategorien'
 ];
 
@@ -28,7 +28,7 @@ $usefulResources = [
     [
         'url' => 'https://unicode.org/emoji/charts/',
         'title' => 'Unicode Emoji Charts',
-        'description' => 'Offizielle Unicode Consortium Emoji-Referenz und Dokumentation'
+        'description' => 'Offizielle Emoji-Referenz und Dokumentation des Unicode-Konsortiums'
     ],
     [
         'url' => 'https://emojipedia.org/',

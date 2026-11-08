@@ -16,8 +16,8 @@ $assetPrefix = BASE_PATH . '/';
 $toolBaseUrl = BASE_PATH . '/it';
 $dashboardToolBaseUrl = './';
 $homeUrl = BASE_PATH . '/it';
-$pageTitle = 'WebDev-Tools – Strumenti Gratuiti Sviluppatori Online Web';
-$pageDescription = 'Strumenti professionali per sviluppatori web: JSON Formatter, Base64 Encoder, UUID Generator e altro. 100% gratuito, lato client e privacy-friendly.';
+$pageTitle = 'WebDev-Tools – Strumenti Online Gratuiti per Sviluppatori Web';
+$pageDescription = 'Strumenti professionali per sviluppatori web: Formattatore JSON, Codificatore Base64, Generatore UUID e altro. 100% gratuiti, lato client e rispettosi della privacy.';
 
 $i18nData = loadI18n($lang) ?: [];
 $t = $i18nData;
@@ -69,7 +69,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
   <meta property="og:locale:alternate" content="en_US">
   <meta property="og:locale:alternate" content="de_DE">
   <meta property="og:locale:alternate" content="es_ES">
-  <meta property="og:locale:alternate" content="pt_PT">
+  <meta property="og:locale:alternate" content="pt_BR">
   <meta property="og:locale:alternate" content="fr_FR">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -129,7 +129,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
     <div class="tool-container-inner mx-auto">
       <div class="text-center mb-5">
         <h1 class="display-5 mb-3">Strumenti gratuiti per sviluppatori</h1>
-        <p class="lead text-secondary">Utilità per sviluppatori web.</p>
+        <p class="lead text-secondary">Utility per lo sviluppo web, direttamente nel browser.</p>
       </div>
 
       <ul class="nav nav-tabs mb-4 d-none d-lg-flex" id="categoryTabs">
@@ -338,7 +338,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
                 <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
                     <i class="bi bi-aspect-ratio me-2"></i>
-                    <?= htmlspecialchars($tools['aspectRatioCalculator']['toc_title'] ?? 'Rapporto d\'Aspetto', ENT_QUOTES, 'UTF-8') ?>
+                    <?= htmlspecialchars($tools['aspectRatioCalculator']['toc_title'] ?? 'Calcolatore di Proporzioni', ENT_QUOTES, 'UTF-8') ?>
                   </div>
                   <p class="card-text text-secondary flex-grow-1">
                     <?= htmlspecialchars($tools['aspectRatioCalculator']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
@@ -448,10 +448,10 @@ if ($manifest && isset($manifest['generatedAt'])) {
                 <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
                     <i class="bi bi-table me-2"></i>
-                    <?= htmlspecialchars($tools['characterReferenceTool']['toc_title'] ?? 'Riferimento Caratteri HTML', ENT_QUOTES, 'UTF-8') ?>
+                    <?= htmlspecialchars($tools['characterReferenceTool']['toc_title'] ?? 'Riferimento Caratteri', ENT_QUOTES, 'UTF-8') ?>
                   </div>
                   <p class="card-text text-secondary flex-grow-1">
-                    <?= htmlspecialchars($tools['characterReferenceTool']['card_description'] ?? 'Esplorare entità HTML, caratteri Unicode e simboli speciali', ENT_QUOTES, 'UTF-8') ?>
+                    <?= htmlspecialchars($tools['characterReferenceTool']['card_description'] ?? 'Sfogliare entità HTML, caratteri Unicode e simboli speciali', ENT_QUOTES, 'UTF-8') ?>
                   </p>
               </div>
             </div>
@@ -468,7 +468,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
                     <?= htmlspecialchars($tools['emojiReferenceTool']['toc_title'] ?? 'Riferimento Emoji', ENT_QUOTES, 'UTF-8') ?>
                   </div>
                   <p class="card-text text-secondary flex-grow-1">
-                    <?= htmlspecialchars($tools['emojiReferenceTool']['card_description'] ?? 'Esplorare e copiare emoji con codici Unicode', ENT_QUOTES, 'UTF-8') ?>
+                    <?= htmlspecialchars($tools['emojiReferenceTool']['card_description'] ?? 'Cercare e copiare emoji con codici Unicode', ENT_QUOTES, 'UTF-8') ?>
                   </p>
               </div>
             </div>

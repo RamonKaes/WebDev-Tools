@@ -16,8 +16,8 @@ $assetPrefix = BASE_PATH . '/';
 $toolBaseUrl = BASE_PATH . '/de';
 $dashboardToolBaseUrl = './';
 $homeUrl = BASE_PATH . '/de';
-$pageTitle = 'WebDev-Tools – Kostenlose Entwickler-Tools & Konverter Online';
-$pageDescription = 'Professionelle Webentwickler-Tools: JSON Formatter, Base64 Encoder, UUID Generator und mehr. 100% kostenlos, clientseitig und datenschutzfreundlich.';
+$pageTitle = 'WebDev-Tools – Kostenlose Entwickler-Tools & Konverter online';
+$pageDescription = 'Professionelle Werkzeuge für Webentwickler: JSON-Formatter, Base64-Kodierer, UUID-Generator und mehr. 100 % kostenlos, clientseitig und datenschutzfreundlich.';
 
 $i18nData = loadI18n($lang) ?: [];
 $t = $i18nData;
@@ -68,7 +68,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
   <meta property="og:locale" content="de_DE">
   <meta property="og:locale:alternate" content="en_US">
   <meta property="og:locale:alternate" content="es_ES">
-  <meta property="og:locale:alternate" content="pt_PT">
+  <meta property="og:locale:alternate" content="pt_BR">
   <meta property="og:locale:alternate" content="fr_FR">
   <meta property="og:locale:alternate" content="it_IT">
 
@@ -128,7 +128,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
   <main id="main-content" class="flex-grow-1 p-4 p-md-5 bg-body shadow-sm overflow-auto">
     <div class="tool-container-inner mx-auto">
       <div class="text-center mb-5">
-        <h1 class="display-5 mb-3">Kostenlose Entwicklertools</h1>
+        <h1 class="display-5 mb-3">Kostenlose Entwickler-Tools</h1>
         <p class="lead text-secondary">Werkzeuge für Webentwickler.</p>
       </div>
 
@@ -139,7 +139,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
         </li>
         <li class="nav-item">
           <button class="nav-link" id="encoders-tab" data-category="encoders" type="button" aria-pressed="false"
-            title="<?= htmlspecialchars($t['navigation']['categories']['filterTitle']['encoders'] ?? 'Kodierungs- und Dekodierungstools anzeigen', ENT_QUOTES, 'UTF-8') ?>">Encoder</button>
+            title="<?= htmlspecialchars($t['navigation']['categories']['filterTitle']['encoders'] ?? 'Kodierungs- und Dekodierungstools anzeigen', ENT_QUOTES, 'UTF-8') ?>">Kodierer</button>
         </li>
         <li class="nav-item">
           <button class="nav-link" id="formatters-tab" data-category="formatters" type="button" aria-pressed="false"
@@ -174,7 +174,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
         <ul class="dropdown-menu w-100" aria-labelledby="categoryDropdown">
           <li><a class="dropdown-item active" href="#" data-category="all">Alle Tools</a></li>
           <li><a class="dropdown-item" href="#" data-category="encoders" 
-              title="<?= htmlspecialchars($t['navigation']['categories']['filterTitle']['encoders'] ?? 'Kodierungs- und Dekodierungstools anzeigen', ENT_QUOTES, 'UTF-8') ?>">Encoder</a></li>
+              title="<?= htmlspecialchars($t['navigation']['categories']['filterTitle']['encoders'] ?? 'Kodierungs- und Dekodierungstools anzeigen', ENT_QUOTES, 'UTF-8') ?>">Kodierer</a></li>
           <li><a class="dropdown-item" href="#" data-category="formatters" 
               title="<?= htmlspecialchars($t['navigation']['categories']['filterTitle']['formatters'] ?? 'Formatierungs- und Validierungstools anzeigen', ENT_QUOTES, 'UTF-8') ?>">Formatierer</a></li>
           <li><a class="dropdown-item" href="#" data-category="converters" 
@@ -197,7 +197,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
                 <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
                     <i class="bi bi-file-binary me-2"></i>
-                    <?= htmlspecialchars($tools['base64EncoderDecoder']['toc_title'] ?? 'Base64 Encoder/Decoder', ENT_QUOTES, 'UTF-8') ?>
+                    <?= htmlspecialchars($tools['base64EncoderDecoder']['toc_title'] ?? 'Base64-Kodierer', ENT_QUOTES, 'UTF-8') ?>
                   </div>
                   <p class="card-text text-secondary flex-grow-1">
                     <?= htmlspecialchars($tools['base64EncoderDecoder']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
@@ -212,7 +212,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
                 <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
                     <i class="bi bi-link-45deg me-2"></i>
-                    <?= htmlspecialchars($tools['urlEncoderDecoder']['toc_title'] ?? 'URL Encoder/Decoder', ENT_QUOTES, 'UTF-8') ?>
+                    <?= htmlspecialchars($tools['urlEncoderDecoder']['toc_title'] ?? 'URL-Kodierer', ENT_QUOTES, 'UTF-8') ?>
                   </div>
                   <p class="card-text text-secondary flex-grow-1">
                     <?= htmlspecialchars($tools['urlEncoderDecoder']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
@@ -228,7 +228,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
                 <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
                     <i class="bi bi-code-square me-2"></i>
-                    <?= htmlspecialchars($tools['htmlEntityTool']['toc_title'] ?? 'HTML Entity Encoder/Decoder', ENT_QUOTES, 'UTF-8') ?>
+                    <?= htmlspecialchars($tools['htmlEntityTool']['toc_title'] ?? 'HTML-Entity-Kodierer', ENT_QUOTES, 'UTF-8') ?>
                   </div>
                   <p class="card-text text-secondary flex-grow-1">
                     <?= htmlspecialchars($tools['htmlEntityTool']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
@@ -244,7 +244,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
                 <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
                     <i class="bi bi-shield-lock me-2"></i>
-                    <?= htmlspecialchars($tools['jwtDecoderTool']['toc_title'] ?? 'JWT Decoder', ENT_QUOTES, 'UTF-8') ?>
+                    <?= htmlspecialchars($tools['jwtDecoderTool']['toc_title'] ?? 'JWT-Decoder', ENT_QUOTES, 'UTF-8') ?>
                   </div>
                   <p class="card-text text-secondary flex-grow-1">
                     <?= htmlspecialchars($tools['jwtDecoderTool']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
@@ -260,7 +260,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
                 <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
                     <i class="bi bi-globe me-2"></i>
-                    <?= htmlspecialchars($tools['punycodeConverterTool']['toc_title'] ?? 'Punycode Converter', ENT_QUOTES, 'UTF-8') ?>
+                    <?= htmlspecialchars($tools['punycodeConverterTool']['toc_title'] ?? 'Punycode-Konverter', ENT_QUOTES, 'UTF-8') ?>
                   </div>
                   <p class="card-text text-secondary flex-grow-1">
                     <?= htmlspecialchars($tools['punycodeConverterTool']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
@@ -276,7 +276,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
                 <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
                     <i class="bi bi-filetype-json me-2"></i>
-                    <?= htmlspecialchars($tools['jsonFormatterValidator']['toc_title'] ?? 'JSON Formatter/Validator', ENT_QUOTES, 'UTF-8') ?>
+                    <?= htmlspecialchars($tools['jsonFormatterValidator']['toc_title'] ?? 'JSON-Formatter', ENT_QUOTES, 'UTF-8') ?>
                   </div>
                   <p class="card-text text-secondary flex-grow-1">
                     <?= htmlspecialchars($tools['jsonFormatterValidator']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
@@ -291,7 +291,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
                 <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
                     <i class="bi bi-code-square me-2"></i>
-                    <?= htmlspecialchars($tools['codeFormatterTool']['toc_title'] ?? 'Code Formatter & Beautifier', ENT_QUOTES, 'UTF-8') ?>
+                    <?= htmlspecialchars($tools['codeFormatterTool']['toc_title'] ?? 'Code-Formatter', ENT_QUOTES, 'UTF-8') ?>
                   </div>
                   <p class="card-text text-secondary flex-grow-1">
                     <?= htmlspecialchars($tools['codeFormatterTool']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
@@ -307,7 +307,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
                 <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
                     <i class="bi bi-arrow-left-right me-2"></i>
-                    <?= htmlspecialchars($tools['dataConverterTool']['toc_title'] ?? 'Daten-Konverter', ENT_QUOTES, 'UTF-8') ?>
+                    <?= htmlspecialchars($tools['dataConverterTool']['toc_title'] ?? 'Datenkonverter', ENT_QUOTES, 'UTF-8') ?>
                   </div>
                   <p class="card-text text-secondary flex-grow-1">
                     <?= htmlspecialchars($tools['dataConverterTool']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
@@ -322,7 +322,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
                 <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
                     <i class="bi bi-arrows-angle-expand me-2"></i>
-                    <?= htmlspecialchars($tools['pxToRemConverter']['toc_title'] ?? 'PX ⇄ REM Konverter', ENT_QUOTES, 'UTF-8') ?>
+                    <?= htmlspecialchars($tools['pxToRemConverter']['toc_title'] ?? 'Px-zu-Rem-Konverter', ENT_QUOTES, 'UTF-8') ?>
                   </div>
                   <p class="card-text text-secondary flex-grow-1">
                     <?= htmlspecialchars($tools['pxToRemConverter']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
@@ -338,7 +338,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
                 <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
                     <i class="bi bi-aspect-ratio me-2"></i>
-                    <?= htmlspecialchars($tools['aspectRatioCalculator']['toc_title'] ?? 'Seitenverhältnis', ENT_QUOTES, 'UTF-8') ?>
+                    <?= htmlspecialchars($tools['aspectRatioCalculator']['toc_title'] ?? 'Seitenverhältnis-Rechner', ENT_QUOTES, 'UTF-8') ?>
                   </div>
                   <p class="card-text text-secondary flex-grow-1">
                     <?= htmlspecialchars($tools['aspectRatioCalculator']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
@@ -354,7 +354,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
                 <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
                     <i class="bi bi-fingerprint me-2"></i>
-                    <?= htmlspecialchars($tools['uuidGeneratorTool']['toc_title'] ?? 'UUID Generator', ENT_QUOTES, 'UTF-8') ?>
+                    <?= htmlspecialchars($tools['uuidGeneratorTool']['toc_title'] ?? 'UUID-Generator', ENT_QUOTES, 'UTF-8') ?>
                   </div>
                   <p class="card-text text-secondary flex-grow-1">
                     <?= htmlspecialchars($tools['uuidGeneratorTool']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
@@ -369,7 +369,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
                 <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
                     <i class="bi bi-shield-lock me-2"></i>
-                    <?= htmlspecialchars($tools['passwordGeneratorTool']['toc_title'] ?? 'Passwort Generator', ENT_QUOTES, 'UTF-8') ?>
+                    <?= htmlspecialchars($tools['passwordGeneratorTool']['toc_title'] ?? 'Passwort-Generator', ENT_QUOTES, 'UTF-8') ?>
                   </div>
                   <p class="card-text text-secondary flex-grow-1">
                     <?= htmlspecialchars($tools['passwordGeneratorTool']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
@@ -384,7 +384,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
                 <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
                     <i class="bi bi-hash me-2"></i>
-                    <?= htmlspecialchars($tools['hashGeneratorTool']['toc_title'] ?? 'Hash Generator', ENT_QUOTES, 'UTF-8') ?>
+                    <?= htmlspecialchars($tools['hashGeneratorTool']['toc_title'] ?? 'Hash-Generator', ENT_QUOTES, 'UTF-8') ?>
                   </div>
                   <p class="card-text text-secondary flex-grow-1">
                     <?= htmlspecialchars($tools['hashGeneratorTool']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
@@ -399,7 +399,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
                 <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
                     <i class="bi bi-file-text me-2"></i>
-                    <?= htmlspecialchars($tools['loremIpsumTool']['toc_title'] ?? 'Lorem Ipsum Generator', ENT_QUOTES, 'UTF-8') ?>
+                    <?= htmlspecialchars($tools['loremIpsumTool']['toc_title'] ?? 'Lorem-Ipsum-Generator', ENT_QUOTES, 'UTF-8') ?>
                   </div>
                   <p class="card-text text-secondary flex-grow-1">
                     <?= htmlspecialchars($tools['loremIpsumTool']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
@@ -414,7 +414,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
                 <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
                     <i class="bi bi-qr-code me-2"></i>
-                    <?= htmlspecialchars($tools['qrCodeGeneratorTool']['toc_title'] ?? 'QR Code Generator', ENT_QUOTES, 'UTF-8') ?>
+                    <?= htmlspecialchars($tools['qrCodeGeneratorTool']['toc_title'] ?? 'QR-Code-Generator', ENT_QUOTES, 'UTF-8') ?>
                   </div>
                   <p class="card-text text-secondary flex-grow-1">
                     <?= htmlspecialchars($tools['qrCodeGeneratorTool']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
@@ -431,7 +431,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
                 <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
                     <i class="bi bi-code-slash me-2"></i>
-                    <?= htmlspecialchars($tools['stringEscaperTool']['toc_title'] ?? 'String Escaper', ENT_QUOTES, 'UTF-8') ?>
+                    <?= htmlspecialchars($tools['stringEscaperTool']['toc_title'] ?? 'String-Escaper', ENT_QUOTES, 'UTF-8') ?>
                   </div>
                   <p class="card-text text-secondary flex-grow-1">
                     <?= htmlspecialchars($tools['stringEscaperTool']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
@@ -448,7 +448,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
                 <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
                     <i class="bi bi-table me-2"></i>
-                    <?= htmlspecialchars($tools['characterReferenceTool']['toc_title'] ?? 'HTML Zeichenreferenz', ENT_QUOTES, 'UTF-8') ?>
+                    <?= htmlspecialchars($tools['characterReferenceTool']['toc_title'] ?? 'Zeichenreferenz', ENT_QUOTES, 'UTF-8') ?>
                   </div>
                   <p class="card-text text-secondary flex-grow-1">
                     <?= htmlspecialchars($tools['characterReferenceTool']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>
@@ -482,7 +482,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
                 <div class="card-body d-flex flex-column">
                   <div class="card-title fs-6 fw-semibold mb-2">
                     <i class="bi bi-regex me-2"></i>
-                    <?= htmlspecialchars($tools['regexTesterTool']['toc_title'] ?? 'Regex Tester', ENT_QUOTES, 'UTF-8') ?>
+                    <?= htmlspecialchars($tools['regexTesterTool']['toc_title'] ?? 'Regex-Tester', ENT_QUOTES, 'UTF-8') ?>
                   </div>
                   <p class="card-text text-secondary flex-grow-1">
                     <?= htmlspecialchars($tools['regexTesterTool']['card_description'] ?? '', ENT_QUOTES, 'UTF-8') ?>

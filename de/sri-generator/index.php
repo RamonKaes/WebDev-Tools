@@ -11,8 +11,8 @@ $features = [
     'Unterstützt SHA-256, SHA-384 (empfohlen) und SHA-512 gleichzeitig',
     'Erzeugt fertige <script>- und <link>-HTML-Tags',
     'Integrity-Attribut und vollständigen HTML-Tag mit einem Klick kopieren',
-    'Datenschutz: Alle Hash-Berechnungen laufen client-seitig im Browser',
-    'Erkennt Ressourcentyp (JS vs. CSS) automatisch aus URL oder Dateiname',
+    'Datenschutz: Alle Hash-Berechnungen laufen clientseitig im Browser',
+    'Erkennt den Ressourcentyp (JS oder CSS) automatisch aus URL oder Dateiname',
 ];
 
 $resourcesSectionTitle = 'Nützliche Ressourcen';
@@ -25,7 +25,7 @@ $usefulResources = [
     [
         'url'         => 'https://www.w3.org/TR/SRI/',
         'title'       => 'W3C SRI-Spezifikation',
-        'description' => 'Die offizielle W3C-Spezifikation, die den Subresource Integrity Standard definiert.',
+        'description' => 'Die offizielle W3C-Spezifikation, die den Subresource-Integrity-Standard definiert.',
     ],
     [
         'url'         => 'https://caniuse.com/subresource-integrity',
@@ -35,7 +35,7 @@ $usefulResources = [
     [
         'url'         => 'https://developer.mozilla.org/de/docs/Web/API/SubtleCrypto/digest',
         'title'       => 'MDN: SubtleCrypto.digest()',
-        'description' => 'Web Crypto API Dokumentation — die Browser-API, die dieses Tool für sicheres Hashing verwendet.',
+        'description' => 'Dokumentation der Web Crypto API — die Browser-API, die dieses Tool für sicheres Hashing verwendet.',
     ],
 ];
 

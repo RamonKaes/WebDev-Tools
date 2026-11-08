@@ -29,7 +29,7 @@ $features = [
     'Correction automatique des erreurs courantes (commentaires, virgules finales, guillemets simples)',
     'Copie du résultat formaté en un clic',
     'Mise en évidence claire des erreurs et messages explicites',
-    'Respect de la vie privée : tout se passe dans votre navigateur'
+    'Respect de la vie privée : tout se passe dans votre navigateur'
 ];
 
 $customNoticeType = 'info';

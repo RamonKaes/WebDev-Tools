@@ -26,7 +26,7 @@ HTML;
 $features = [
     'Bidirektionale Konvertierung: Unicode zu Punycode und umgekehrt',
     'Auto-Erkennung: Automatische Erkennung des Eingabeformats',
-    'RFC 3492 Konform: Vollständige Implementierung des Punycode-Standards',
+    'RFC-3492-konform: Vollständige Implementierung des Punycode-Standards',
     'Batch-Verarbeitung: Mehrere Domains gleichzeitig konvertieren (zeilenweise)',
     'Beispiel-Domains: Internationale Beispiel-Domains zum Testen laden',
     'Echtzeit-Konvertierung: Auto-Konvertierung während der Eingabe'
@@ -57,7 +57,7 @@ $additionalSections = [
 <ol>
   <li>ASCII-Zeichen extrahieren (mnchen)</li>
   <li>Nicht-ASCII-Positionen und -Werte kodieren</li>
-  <li>Präfix <code>xn--</code> hinzufügen für Punycode-Kennzeichnung</li>
+  <li>Präfix <code>xn--</code> als Punycode-Kennzeichnung voranstellen</li>
   <li>Kodierte Unicode-Information anhängen (-3ya)</li>
 </ol>
 
@@ -137,7 +137,7 @@ $usefulResources = [
     ],
     [
         'url' => 'https://www.charset.org/punycode',
-        'title' => 'Charset.org: Punycode Converter',
+        'title' => 'Charset.org: Punycode-Konverter',
         'description' => 'Zusätzliche Punycode-Konvertierungsbeispiele und Informationen'
     ]
 ];

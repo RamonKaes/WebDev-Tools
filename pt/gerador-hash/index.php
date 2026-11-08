@@ -16,7 +16,7 @@ $customAboutContent = <<<HTML
     Útil para verificar integridade de dados, criar resumos e apoiar fluxos de segurança.
 </p>
 <p class="mb-0">
-    Suporta SHA-1, SHA-256, SHA-384 e SHA-512 através da Web Crypto API (MD5 não está disponível nos browsers).
+    Suporta SHA-1, SHA-256, SHA-384 e SHA-512 através da Web Crypto API (MD5 não está disponível nos navegadores).
     Todo o processamento acontece no seu navegador, preservando a privacidade.
 </p>
 HTML;
@@ -50,7 +50,7 @@ $additionalSections = [
         'content' => <<<HTML
 <ul>
     <li>Integridade de arquivos: confirmar se downloads não foram alterados</li>
-    <li>Impressões digitais de conteúdo: detetar alterações em ficheiros, respostas de API ou artefactos de build</li>
+    <li>Fingerprint de conteúdo: detectar alterações em arquivos, respostas de API ou artefatos de build</li>
     <li>Deduplicação: identificar arquivos ou conteúdos duplicados</li>
     <li>Checksums: gerar resumos para validação de dados</li>
     <li>Assinaturas digitais: componente essencial de sistemas criptográficos</li>

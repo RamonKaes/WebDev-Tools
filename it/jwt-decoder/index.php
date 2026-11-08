@@ -23,10 +23,10 @@ $customAboutContent = <<<HTML
 HTML;
 
 $features = [
-    'Decodifica header: visualizza algoritmo (alg) e tipo (typ)',
-    'Estrazione payload: decodifica claim e dati utente',
-    'Controllo scadenza: verifica automatica se il token è scaduto',
-    'Evidenziazione sintassi: JSON colorato per leggibilità',
+    'Decodifica dell\'header: mostra algoritmo (alg) e tipo (typ)',
+    'Estrazione del payload: decodifica i claim e i dati utente',
+    'Controllo della scadenza: verifica automaticamente se il token è scaduto',
+    'Evidenziazione della sintassi: JSON colorato per una migliore leggibilità',
     'Firma: mostra la firma codificata in Base64URL',
     'Elaborazione lato client: i dati non lasciano il browser'
 ];
@@ -36,7 +36,7 @@ $customNoticeContent = <<<HTML
     <h2 class="h6 fw-semibold alert-heading mb-3"><i class="bi bi-shield-exclamation me-2"></i>Informazioni di sicurezza importanti</h2>
     <ul class="mb-2">
         <li>Decodificare ≠ verificare: questo strumento decodifica solo il JWT, non ne verifica la firma.</li>
-        <li>Mai fidarsi senza verifica: verifica sempre le firme lato server prima di usare i dati del JWT.</li>
+        <li>Non fidarti mai senza verifica: controlla sempre le firme lato server prima di usare i dati del JWT.</li>
         <li>Dati sensibili: i JWT sono codificati in Base64, non cifrati. Chiunque può decodificarli.</li>
         <li>Chiavi segrete: non incollare mai chiavi segrete in strumenti online o codice client.</li>
     </ul>
@@ -68,12 +68,12 @@ $additionalSections = [
   </div>
   <div class="col-md-4">
     <h3 class="h6 text-success">Payload</h3>
-    <p class="small">Contiene le claim:</p>
+    <p class="small">Contiene i claim:</p>
     <ul class="small">
       <li><code>sub</code>: soggetto (ID utente)</li>
       <li><code>exp</code>: data di scadenza</li>
       <li><code>iat</code>: data di emissione</li>
-      <li>Claim personalizzate</li>
+      <li>Claim personalizzati</li>
     </ul>
   </div>
   <div class="col-md-4">

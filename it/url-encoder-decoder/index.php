@@ -21,8 +21,8 @@ $customAboutContent = <<<HTML
 HTML;
 
 $features = [
-    'Codifica URL: encoding di URL complete e parametri di query',
-    'Decodifica URL: converti percent-encoding in testo originale',
+    'Codifica URL: codifica di URL completi e parametri di query',
+    'Decodifica URL: riconverti il percent-encoding nel testo originale',
     'Componenti: codifica parti specifiche dell\'URL',
     'Batch: elabora più righe contemporaneamente',
     'Analisi: estrai protocollo, host, percorso e query string',
@@ -34,7 +34,7 @@ $customNoticeContent = '
     <i class="bi bi-info-circle me-2"></i>encodeURI() vs encodeURIComponent()
   </h2>
   <p class="mb-0">
-    <strong>encodeURI()</strong> codifica l\'intera URL, preservando caratteri speciali come <code>:</code>, <code>/</code>, <code>?</code> e <code>&</code>.<br>
+    <strong>encodeURI()</strong> codifica l\'intero URL, preservando caratteri speciali come <code>:</code>, <code>/</code>, <code>?</code> e <code>&</code>.<br>
     <strong>encodeURIComponent()</strong> codifica tutti i caratteri speciali, ideale per parametri individuali.
   </p>
 ';
@@ -57,10 +57,10 @@ $additionalSections = [
   <div class="col-md-6">
     <h3 class="h6">Decodifica</h3>
     <ul>
-      <li>Leggere URL codificate</li>
+      <li>Leggere URL codificati</li>
       <li>Debug di risposte API</li>
       <li>Interpretare query string</li>
-      <li>Estrarre componenti di URL</li>
+      <li>Estrarre i componenti di un URL</li>
     </ul>
   </div>
 </div>
@@ -71,8 +71,8 @@ HTML
 $usefulResources = [
     [
         'url' => 'https://web.dev/articles/url-parts',
-        'title' => 'Web.dev: Parti dell\'URL',
-        'description' => 'Guida accessibile sui componenti e sulla codifica degli URL'
+        'title' => 'web.dev: le parti di un URL',
+        'description' => 'Guida accessibile ai componenti e alla codifica degli URL'
     ],
     [
         'url' => 'https://datatracker.ietf.org/doc/html/rfc3986',

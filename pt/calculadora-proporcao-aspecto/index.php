@@ -12,18 +12,18 @@ $resourcesSectionTitle = 'Recursos Úteis';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
-    Calcule dimensões ausentes, mantenha proporções de aspecto e gere CSS para mídia responsiva. 
+    Calcule dimensões ausentes, mantenha proporções e gere CSS para mídia responsiva. 
     Essencial para imagens, vídeos e layouts responsivos.
 </p>
 <p class="mb-0">
-    A proporção de aspecto descreve a relação proporcional entre largura e altura. Esta ferramenta ajuda você 
+    A proporção (aspect ratio) descreve a relação entre largura e altura. Esta ferramenta ajuda você 
     a calcular dimensões, converter entre formatos de proporção e gerar código CSS para manter 
-    proporções de aspecto em designs responsivos.
+    proporções em designs responsivos.
 </p>
 HTML;
 
 $features = [
-    'Calcular largura ou altura ausente a partir da proporção de aspecto',
+    'Calcular largura ou altura ausente a partir da proporção',
     'Predefinições de proporções comuns (16:9, 4:3, 21:9, 1:1, etc.)',
     'Gerador do truque CSS padding-bottom',
     'Múltiplos formatos de proporção (proporção, decimal, porcentagem)',
@@ -34,7 +34,7 @@ $features = [
 
 $customNoticeType = 'info';
 $customNoticeContent = <<<HTML
-    <h2 class="h6 fw-semibold alert-heading mb-3"><i class="bi bi-info-circle me-2"></i>Proporções de Aspecto Comuns</h2>
+    <h2 class="h6 fw-semibold alert-heading mb-3"><i class="bi bi-info-circle me-2"></i>Proporções Comuns</h2>
     <ul class="mb-0">
         <li><strong>16:9</strong> — Vídeo HD padrão, YouTube, telas modernas</li>
         <li><strong>4:3</strong> — TV clássica, monitores antigos</li>
@@ -49,16 +49,16 @@ $additionalSections = [
         'title' => 'Casos de Uso Comuns',
         'content' => <<<HTML
 <ul>
-    <li><strong>Imagens Responsivas:</strong> Manter proporção de aspecto ao escalar imagens</li>
+    <li><strong>Imagens Responsivas:</strong> Manter a proporção ao escalar imagens</li>
     <li><strong>Incorporações de Vídeo:</strong> Calcular dimensões de iframe para YouTube, Vimeo</li>
-    <li><strong>Proporção de Aspecto CSS:</strong> Gerar truque padding-bottom para navegadores antigos</li>
+    <li><strong>Proporção em CSS:</strong> Gerar o truque padding-bottom para navegadores antigos</li>
     <li><strong>Redimensionamento de Imagem:</strong> Calcular dimensões de corte ou redimensionamento</li>
     <li><strong>Design de Layout:</strong> Planejar layouts de grade responsivos</li>
 </ul>
 HTML
     ],
     [
-        'title' => 'Técnicas CSS de Proporção de Aspecto',
+        'title' => 'Técnicas CSS de proporção',
         'content' => <<<HTML
 <p><strong>Abordagem moderna (CSS aspect-ratio):</strong></p>
 <pre><code>.container {
@@ -88,17 +88,17 @@ $usefulResources = [
     [
         'url' => 'https://pt.wikipedia.org/wiki/Propor%C3%A7%C3%A3o_de_tela',
         'title' => 'Wikipedia: Proporção de tela',
-        'description' => 'Introdução amigável para iniciantes sobre proporções de aspecto em imagens e vídeo'
+        'description' => 'Introdução amigável para iniciantes sobre proporção de tela em imagens e vídeo'
     ],
     [
         'url' => 'https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/aspect-ratio',
         'title' => 'MDN: Propriedade CSS aspect-ratio',
-        'description' => 'Propriedade CSS moderna para manter proporções de aspecto'
+        'description' => 'Propriedade CSS moderna para manter proporções'
     ],
     [
         'url' => 'https://www.smashingmagazine.com/2019/03/aspect-ratio-unit-css/',
         'title' => 'Smashing Magazine: Aspect Ratio em CSS',
-        'description' => 'Guia completo para manter proporções de aspecto em CSS moderno'
+        'description' => 'Guia completo para manter proporções em CSS moderno'
     ],
     [
         'url' => 'https://www.w3.org/TR/css-sizing-4/#aspect-ratio',
@@ -108,7 +108,7 @@ $usefulResources = [
     [
         'url' => 'https://web.dev/aspect-ratio/',
         'title' => 'Nova Propriedade CSS Aspect-Ratio',
-        'description' => 'Guia do Google web.dev sobre tratamento moderno de proporção de aspecto'
+        'description' => 'Guia do Google web.dev sobre o tratamento moderno de proporção'
     ]
 ];
 

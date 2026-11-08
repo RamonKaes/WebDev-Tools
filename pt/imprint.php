@@ -10,8 +10,8 @@ $currentTool = 'imprint';
 $assetPrefix = BASE_PATH . '/';
 $toolBaseUrl = BASE_PATH . '/pt';
 $homeUrl = BASE_PATH . '/pt';
-$pageTitle = 'Impressum – Informações Legais Contato Detalhes WebDev-Tools';
-$pageDescription = 'Informações legais e dados de contacto para WebDev-Tools.';
+$pageTitle = 'Aviso Legal – Informações Legais e Contato do WebDev-Tools';
+$pageDescription = 'Informações legais e dados de contato do WebDev-Tools.';
 $i18nData = loadI18n($lang) ?: [];
 $manifest = getManifest();
 $buildHash = $manifest['generatedAt'] ?? '1.0.0';
@@ -59,7 +59,7 @@ $currentUrl = getFullUrl('/imprint.php', $lang);
   <main id="main-content" class="flex-grow-1 p-4 p-md-5 bg-body shadow-sm overflow-auto">
     <div class="tool-container-inner mx-auto">
         <div class="text-center mb-5">
-          <h1 class="display-5 mb-3">Impressão</h1>
+          <h1 class="display-5 mb-3">Aviso Legal</h1>
         </div>
         <div class="card mb-4 shadow-sm">
           <div class="card-body p-4">
@@ -75,10 +75,10 @@ $currentUrl = getFullUrl('/imprint.php', $lang);
             <h2 class="h5 card-title mb-3 mt-4">Isenção de responsabilidade – avisos legais</h2>
             
             <h3 class="h6 mt-4">§ 1 Aviso sobre conteúdos</h3>
-            <p>Os conteúdos gratuitos e de acesso livre deste site foram criados com o maior cuidado possível. No entanto, o fornecedor deste site não se responsabiliza pela exatidão e atualidade dos guias jornalísticos e notícias gratuitos e de acesso livre disponibilizados. As contribuições identificadas nominalmente refletem a opinião do respetivo autor e nem sempre a opinião do fornecedor. O simples acesso aos conteúdos gratuitos e de livre acesso não implica qualquer relação contratual entre o utilizador e o fornecedor, na medida em que não existe vontade de vinculação jurídica por parte do fornecedor.</p>
+            <p>Os conteúdos gratuitos e de acesso livre deste site foram criados com o maior cuidado possível. No entanto, o fornecedor deste site não se responsabiliza pela exatidão e atualidade dos guias jornalísticos e notícias gratuitos e de acesso livre disponibilizados. As contribuições identificadas nominalmente refletem a opinião do respectivo autor e nem sempre a opinião do fornecedor. O simples acesso aos conteúdos gratuitos e de livre acesso não implica nenhuma relação contratual entre o usuário e o fornecedor, na medida em que não existe vontade de vinculação jurídica por parte do fornecedor.</p>
 
             <h3 class="h6 mt-4">§ 2 Links externos</h3>
-            <p>Este site contém links para sites de terceiros ("links externos"). Estes sites estão sujeitos à responsabilidade dos respetivos operadores. Ao criar os links externos pela primeira vez, o fornecedor verificou os conteúdos externos para verificar se existiam eventuais violações legais. Na altura, não foram detetadas quaisquer violações legais. O fornecedor não tem qualquer influência sobre a configuração atual e futura e sobre os conteúdos das páginas ligadas. A inclusão de links externos não significa que o fornecedor se apropria dos conteúdos por trás da referência ou do link. Não é razoável esperar que o fornecedor controle constantemente os links externos sem indícios concretos de violações legais. No entanto, se tomar conhecimento de violações legais, esses links externos serão imediatamente excluídos.</p>
+            <p>Este site contém links para sites de terceiros ("links externos"). Esses sites estão sujeitos à responsabilidade dos respectivos operadores. Ao criar os links externos pela primeira vez, o fornecedor verificou se os conteúdos externos apresentavam eventuais violações legais. Naquele momento, não foi detectada nenhuma violação legal. O fornecedor não tem nenhuma influência sobre a configuração atual e futura nem sobre os conteúdos das páginas vinculadas. A inclusão de links externos não significa que o fornecedor se apropria dos conteúdos por trás da referência ou do link. Não é razoável esperar que o fornecedor controle constantemente os links externos sem indícios concretos de violações legais. No entanto, caso tome conhecimento de violações legais, esses links externos serão imediatamente excluídos.</p>
 
           </div>
         </div>

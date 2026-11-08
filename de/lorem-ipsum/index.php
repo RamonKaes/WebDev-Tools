@@ -12,7 +12,7 @@ $resourcesSectionTitle = 'Nützliche Ressourcen';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
-    Generieren Sie Lorem Ipsum Platzhaltertext für Ihre Design-Mockups, Prototypen 
+    Generieren Sie Lorem-Ipsum-Platzhaltertext für Ihre Design-Mockups, Prototypen 
     und Layouts. Anpassbare Absätze, Sätze und Wörter.
 </p>
 <p class="mb-0">
@@ -27,7 +27,7 @@ $features = [
     'Anpassbare Menge pro Typ',
     'Mit einem Klick in die Zwischenablage kopieren',
     'Zeichen- und Wortzähler in Echtzeit',
-    '100% clientseitig – dein Text verlässt den Browser nicht'
+    '100 % clientseitig – Ihr Text verlässt den Browser nicht'
 ];
 
 $customNoticeType = 'info';
@@ -36,7 +36,7 @@ $customNoticeContent = <<<HTML
     <p class="mb-2">
         Lorem Ipsum stammt aus den Abschnitten 1.10.32 und 1.10.33 von "de Finibus Bonorum et Malorum" 
         (Die Extreme von Gut und Böse) von Cicero, geschrieben 45 v. Chr. Es ist seit den 1500er Jahren 
-        der Standard-Dummy-Text der Industrie.
+        der Standard-Blindtext der Branche.
     </p>
     <p class="mb-0">
         <strong>Warum Lorem Ipsum verwenden?</strong> Es hat eine mehr oder weniger normale Buchstabenverteilung, 
@@ -53,7 +53,7 @@ $additionalSections = [
     <li>Webdesign-Mockups: Füllen Sie Layouts mit realistisch aussehendem Text</li>
     <li>Printdesign: Vorschau, wie Text in Broschüren, Magazinen usw. fließt</li>
     <li>UI/UX-Prototyping: Testen Sie Interface-Designs mit Platzhalterinhalt</li>
-    <li>Typografie-Tests: Bewerten Sie Schriftartwahlen und Abstände</li>
+    <li>Typografie-Tests: Bewerten Sie Schriftwahl und Abstände</li>
     <li>Content-Management-Systeme: Füllen Sie Vorlagen während der Entwicklung</li>
     <li>Kundenpräsentationen: Zeigen Sie Designkonzepte, bevor der finale Inhalt bereit ist</li>
 </ul>
@@ -67,7 +67,7 @@ HTML
     <li>Nicht vergessen zu ersetzen: Ersetzen Sie Lorem Ipsum immer durch echten Inhalt vor dem Launch</li>
     <li>Grenzfälle testen: Probieren Sie sehr langen und sehr kurzen Text aus, um responsives Design zu gewährleisten</li>
     <li>Lesbarkeit berücksichtigen: Selbst Platzhaltertext sollte gute Typografie demonstrieren</li>
-    <li>HTML-Tags verwenden: Fügen Sie Absatz-Tags hinzu, wenn Sie formatierten Output benötigen</li>
+    <li>HTML-Tags verwenden: Fügen Sie Absatz-Tags hinzu, wenn Sie formatierte Ausgabe benötigen</li>
 </ul>
 HTML
     ]
@@ -76,12 +76,12 @@ HTML
 $usefulResources = [
     [
         'url' => 'https://de.wikipedia.org/wiki/Lorem_ipsum',
-        'title' => 'Lorem Ipsum - Wikipedia',
+        'title' => 'Lorem Ipsum – Wikipedia',
         'description' => 'Geschichte und Ursprung des Lorem-Ipsum-Platzhaltertextes'
     ],
     [
         'url' => 'https://www.lipsum.com/',
-        'title' => 'Lipsum.com - Der Original Lorem Ipsum Generator',
+        'title' => 'Lipsum.com – der originale Lorem-Ipsum-Generator',
         'description' => 'Langjährige Ressource für Lorem-Ipsum-Textgenerierung und Informationen'
     ],
     [

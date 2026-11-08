@@ -13,7 +13,7 @@ $resourcesSectionTitle = 'Nützliche Ressourcen';
 $customAboutContent = <<<HTML
 <p class="mb-2">
     <strong>JSON Web Tokens (JWT)</strong> sind eine kompakte, URL-sichere Methode zur 
-    Darstellung von Ansprüchen zwischen zwei Parteien. Sie werden häufig für Authentifizierung 
+    Darstellung von Claims (Ansprüchen) zwischen zwei Parteien. Sie werden häufig für Authentifizierung 
     und Informationsaustausch in modernen Webanwendungen und APIs verwendet.
 </p>
 <p class="mb-0">
@@ -26,10 +26,10 @@ HTML;
 $features = [
     'Header-Dekodierung: Anzeige von Algorithmus (alg) und Token-Typ (typ)',
     'Payload-Extraktion: Dekodierung von Claims und Benutzerdaten',
-    'Ablaufprüfung: Automatische Überprüfung, ob Token abgelaufen ist',
+    'Ablaufprüfung: Automatische Prüfung, ob der Token abgelaufen ist',
     'Syntax-Hervorhebung: Farbcodiertes JSON für bessere Lesbarkeit',
     'Beispiel-Token: Beispiel-JWT zum Testen des Decoders laden',
-    'Nur Client-seitig: Alle Dekodierung erfolgt in Ihrem Browser'
+    'Nur clientseitig: Die gesamte Dekodierung erfolgt in Ihrem Browser'
 ];
 
 $customNoticeType = 'warning';

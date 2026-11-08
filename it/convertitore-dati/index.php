@@ -14,7 +14,7 @@ $features = [
     'Conversione tra JSON, XML, YAML e CSV',
     'Conversioni bidirezionali',
     'Conversione di timestamp Unix in date leggibili',
-    'Formattazione personalizzabile dell\'output',
+    'Formattazione dell\'output personalizzabile',
     'Modalità di conversione automatica in tempo reale',
     'Opzioni per il delimitatore CSV'
 ];
@@ -56,8 +56,8 @@ $usefulResources = [
     ],
     [
         'url' => 'https://www.json.org/',
-        'title' => 'JSON.org - introduzione a JSON',
-        'description' => 'Specifiche ufficiali e documentazione del formato JSON'
+        'title' => 'JSON.org: introduzione a JSON',
+        'description' => 'Specifica ufficiale e documentazione del formato JSON'
     ],
     [
         'url' => 'https://yaml.org/spec/',

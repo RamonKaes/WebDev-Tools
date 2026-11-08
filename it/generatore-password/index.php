@@ -81,11 +81,11 @@ $usefulResources = [
     [
         'url' => 'https://pages.nist.gov/800-63-3/sp800-63b.html',
         'title' => 'NIST SP 800-63B: linee guida per l\'identità digitale',
-        'description' => 'Raccomandazioni ufficiali per gestione password e autenticazione'
+        'description' => 'Raccomandazioni ufficiali per la gestione delle password e l\'autenticazione'
     ],
     [
         'url' => 'https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html',
-        'title' => 'OWASP: promemoria autenticazione',
+        'title' => 'OWASP Authentication Cheat Sheet',
         'description' => 'Best practice per l\'autenticazione basata su password'
     ],
     [

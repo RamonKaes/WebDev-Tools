@@ -7,7 +7,7 @@ ob_start();
 
 $toolId = 'uuidGeneratorTool';
 $lang = 'pt';
-$featuresSectionTitle = 'Funcionalidades';
+$featuresSectionTitle = 'Recursos';
 $resourcesSectionTitle = 'Recursos Úteis';
 
 $customAboutContent = <<<HTML

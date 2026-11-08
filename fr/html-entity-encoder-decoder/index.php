@@ -24,12 +24,12 @@ $customAboutContent = <<<HTML
 HTML;
 
 $features = [
-    'Entités nommées : échappe les caractères spéciaux HTML (&lt;, &gt;, &amp;, &quot;) ou convertit tous les symboles connus comme &copy; et &nbsp;',
-    'Entités numériques : formats décimal (&#160;) ou hexadécimal (&#xA0;)',
-    'Bidirectionnel : encode du texte en entités ou décode des entités en texte',
-    'Conversion automatique : transformation en temps réel pendant la saisie',
-    'Référence de caractères : lien rapide vers la liste complète des entités HTML',
-    'Téléchargement : enregistrez les résultats dans un fichier texte'
+    'Entités nommées : échappe les caractères spéciaux HTML (&lt;, &gt;, &amp;, &quot;) ou convertit tous les symboles connus comme &copy; et &nbsp;',
+    'Entités numériques : formats décimal (&#160;) ou hexadécimal (&#xA0;)',
+    'Bidirectionnel : encode du texte en entités ou décode des entités en texte',
+    'Conversion automatique : transformation en temps réel pendant la saisie',
+    'Référence des caractères : lien rapide vers la liste complète des entités HTML',
+    'Téléchargement : enregistrez les résultats dans un fichier texte'
 ];
 
 $additionalSections = [

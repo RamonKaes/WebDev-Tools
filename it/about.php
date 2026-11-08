@@ -63,7 +63,7 @@ $currentUrl = getFullUrl('/about.php', $lang);
   <meta property="og:locale:alternate" content="en_US">
   <meta property="og:locale:alternate" content="de_DE">
   <meta property="og:locale:alternate" content="es_ES">
-  <meta property="og:locale:alternate" content="pt_PT">
+  <meta property="og:locale:alternate" content="pt_BR">
   <meta property="og:locale:alternate" content="fr_FR">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -105,9 +105,9 @@ $currentUrl = getFullUrl('/about.php', $lang);
       <div class="tool-container-inner mx-auto">
 
         <div class="text-center mb-5">
-          <h1 class="display-5 mb-3">Informazioni su WebDev Tools</h1>
+          <h1 class="display-5 mb-3">Informazioni su WebDev-Tools</h1>
           <p class="lead text-secondary">
-            La diecimillesima raccolta di strumenti – un resoconto di un incidente
+            La diecimillesima raccolta di strumenti – il resoconto di un incidente
           </p>
           
           <!-- Badge di Conformità agli Standard -->
@@ -143,7 +143,7 @@ $currentUrl = getFullUrl('/about.php', $lang);
           <div class="card-body p-4 fs-6">
             <p>
               Sì, lo so. La diecimillesima raccolta di strumenti su Internet. A chi serve?<br>
-              Ma posso rassicurarvi. Questo progetto non era mai stato pianificato. È nato per caso, frutto di pura procrastinazione, ma anche da una reale necessità. Tutto è iniziato in modo del tutto innocuo sul mio desktop.
+              Ma posso rassicurarti: questo progetto non era mai stato pianificato. È nato per caso, frutto di pura procrastinazione, ma anche di una reale necessità. Tutto è iniziato in modo del tutto innocuo sul mio desktop.
             </p>
 
             <h2 class="h5 card-title mb-3 mt-4">
@@ -167,19 +167,19 @@ $currentUrl = getFullUrl('/about.php', $lang);
               Dall’intranet al web selvaggio
             </h2>
             <p>
-              Una volta completata, la raccolta di strumenti ha inizialmente funzionato bene per un bel po’ di tempo nella nostra rete aziendale. A un certo punto mi sono detto: perché non condividerlo con il mondo intero?
+              Una volta completata, la raccolta di strumenti ha inizialmente funzionato bene per un bel po’ di tempo nella nostra rete aziendale. A un certo punto mi sono detto: perché non condividerla con il mondo intero?
             </p>
             <p>
               Quando si pubblica un progetto su Internet, però, è importante che non fallisca a causa delle barriere linguistiche. Così, spinto ancora una volta dall’ambizione, prima della pubblicazione ho aggiunto al sistema la funzionalità multilingue, per renderlo accessibile a un pubblico internazionale. Per realizzare il tutto in modo pragmatico ed efficiente, mi sono affidato interamente a <a href="https://www.deepl.com" target="_blank" rel="noopener noreferrer" title="Strumento di traduzione DeepL">DeepL</a> per la traduzione dei testi.
             </p>
             <p>
-              Successivamente ho ripulito il codice e ho reso pubblico il sito. Dato che il tutto è nato comunque da un “incidente” e si basa sulla filosofia open source, il codice è completamente aperto. Chiunque voglia contribuire, abbia un’idea per un nuovo strumento o trovi un errore è cordialmente invitato a partecipare. Il repository Git lo trovate qui: <a href="https://github.com/RamonKaes/WebDev-Tools" target="_blank" rel="noopener noreferrer" title="Repository GitHub di WebDev-Tools">https://github.com/RamonKaes/WebDev-Tools</a>.
+              Successivamente ho ripulito il codice e ho reso pubblico il sito. Dato che il tutto è nato comunque da un “incidente” e si basa sulla filosofia open source, il codice è completamente aperto. Chiunque voglia contribuire, abbia un’idea per un nuovo strumento o trovi un errore è cordialmente invitato a partecipare. Il repository Git lo trovi qui: <a href="https://github.com/RamonKaes/WebDev-Tools" target="_blank" rel="noopener noreferrer" title="Repository GitHub di WebDev-Tools">https://github.com/RamonKaes/WebDev-Tools</a>.
             </p>
             <p>
               Hai trovato un bug? Segnalalo nelle <a href="https://github.com/RamonKaes/WebDev-Tools/issues" target="_blank" rel="noopener noreferrer" title="Segnala un bug su GitHub">issue su GitHub</a>. Domande, idee e altri feedback sono benvenuti su <a href="https://easyq.info/projects/ramonkaes-webdev-tools" target="_blank" rel="noopener noreferrer" title="Domande e idee su easyQ">easyQ</a>.
             </p>
             <p>
-              Sì, scusate. Eccola qui, la 10.000esima raccolta di strumenti. Ma ehi, almeno ha una bella storia alle spalle e, chissà, forse vi risparmierà nella vita di tutti i giorni tante ricerche quanto ne ha risparmiate a me!
+              Sì, scusa. Eccola qui, la diecimillesima raccolta di strumenti. Ma ehi, almeno ha una bella storia alle spalle e, chissà, forse ti risparmierà nella vita di tutti i giorni tante ricerche quante ne ha risparmiate a me!
             </p>
 
             <p>Buon divertimento!</p>

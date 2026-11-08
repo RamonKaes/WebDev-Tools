@@ -12,22 +12,22 @@ $resourcesSectionTitle = 'Nützliche Ressourcen';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
-    <strong>String Escaper</strong> hilft dir, Strings für verschiedene Formate zu maskieren und zu demaskieren, einschließlich HTML, XML, JavaScript, JSON, SQL und CSV.
+    <strong>Der String-Escaper</strong> hilft Ihnen, Strings für verschiedene Formate zu maskieren und zu demaskieren, einschließlich HTML, XML, JavaScript, JSON, SQL und CSV.
     Perfekt für Entwickler, die mit String-Daten arbeiten, die für unterschiedliche Kontexte richtig maskiert werden müssen.
 </p>
 <p class="mb-0">
-    Die gesamte Verarbeitung erfolgt clientseitig in deinem Browser – deine Daten verlassen niemals dein Gerät.
+    Die gesamte Verarbeitung erfolgt clientseitig in Ihrem Browser – Ihre Daten verlassen niemals Ihr Gerät.
 </p>
 HTML;
 
 $features = [
-    'HTML/XML Escape – Kodiert Sonderzeichen wie <, >, &',
-    'JavaScript Escape – Behandelt Anführungszeichen, Zeilenumbrüche und Sonderzeichen',
-    'JSON Escape – Korrekte Maskierung für JSON-Strings',
-    'SQL Escape – Schutz vor SQL-Injection',
-    'CSV Escape – Behandelt Anführungszeichen und Trennzeichen',
-    'Clientseitige Verarbeitung (Datenschutz zuerst)',
-    'Mit einem Klick in Zwischenablage kopieren'
+    'HTML/XML-Maskierung – kodiert Sonderzeichen wie <, > und &',
+    'JavaScript-Maskierung – behandelt Anführungszeichen, Zeilenumbrüche und Sonderzeichen',
+    'JSON-Maskierung – korrektes Escaping für JSON-Strings',
+    'SQL-Maskierung – Schutz vor SQL-Injection',
+    'CSV-Maskierung – behandelt Anführungszeichen und Trennzeichen',
+    'Clientseitige Verarbeitung (Datenschutz an erster Stelle)',
+    'Mit einem Klick in die Zwischenablage kopieren'
 ];
 
 /*
@@ -59,7 +59,7 @@ $additionalSections = [
     <h3 class="h6">Datenverarbeitung</h3>
     <ul>
       <li>CSV-Export mit korrektem Escaping</li>
-      <li>XML/HTML-Content-Sanitization</li>
+      <li>Bereinigung von XML/HTML-Inhalten</li>
       <li>JavaScript-String-Literale</li>
       <li>Datenbank-Abfragevorbereitung</li>
     </ul>
@@ -78,11 +78,11 @@ $usefulResources = [
     [
         'url' => 'https://owasp.org/www-community/attacks/xss/',
         'title' => 'OWASP XSS Prevention Cheat Sheet',
-        'description' => 'Umfassender Leitfaden zur Verhinderung von Cross-Site Scripting-Angriffen'
+        'description' => 'Umfassender Leitfaden zur Verhinderung von Cross-Site-Scripting-Angriffen'
     ],
     [
         'url' => 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String',
-        'title' => 'MDN JavaScript String-Referenz',
+        'title' => 'MDN: JavaScript-String-Referenz',
         'description' => 'Vollständige Dokumentation für JavaScript-String-Methoden und Escaping'
     ],
     [

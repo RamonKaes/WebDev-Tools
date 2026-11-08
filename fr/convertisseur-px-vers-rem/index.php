@@ -24,7 +24,7 @@ HTML;
 
 $features = [
     'Conversion px → rem et rem → px',
-    'Taille de police de base personnalisable (par défaut : 16 px)',
+    'Taille de police de base personnalisable (par défaut : 16 px)',
     'Conversion inverse depuis rem, em, pourcentage et espacement Tailwind',
     'Conversion en temps réel pendant la saisie',
     'Copie rapide des valeurs converties',
@@ -71,7 +71,7 @@ HTML
 
 $usefulResources = [
     [        'url' => 'https://fr.wikipedia.org/wiki/Cadratin',
-        'title' => 'Wikipedia : Cadratin',
+        'title' => 'Wikipedia : Cadratin',
         'description' => 'Introduction accessible aux unités typographiques em et rem'
     ],
     [        'url' => 'https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units',

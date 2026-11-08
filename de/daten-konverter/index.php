@@ -11,11 +11,11 @@ $featuresSectionTitle = 'Funktionen';
 $resourcesSectionTitle = 'Nützliche Ressourcen';
 
 $features = [
-    'JSON, XML, YAML, CSV Konvertierung',
+    'Konvertierung zwischen JSON, XML, YAML und CSV',
     'Bidirektionale Format-Konvertierung',
-    'Unix-Timestamp zu Datum-Konvertierung',
-    'Anpassbare Ausgabe-Formatierung',
-    'Auto-Konvertierungs-Live-Modus',
+    'Unix-Timestamp-zu-Datum-Konvertierung',
+    'Anpassbare Ausgabeformatierung',
+    'Auto-Konvertierung im Live-Modus',
     'CSV-Trennzeichen-Optionen'
 ];
 
@@ -56,7 +56,7 @@ $usefulResources = [
     ],
     [
         'url' => 'https://www.json.org/',
-        'title' => 'JSON.org - Einführung in JSON',
+        'title' => 'JSON.org – Einführung in JSON',
         'description' => 'Offizielle JSON-Spezifikation und Format-Dokumentation'
     ],
     [
@@ -67,12 +67,12 @@ $usefulResources = [
     [
         'url' => 'https://www.w3.org/TR/xml/',
         'title' => 'W3C XML-Spezifikation',
-        'description' => 'Extensible Markup Language (XML) Standard'
+        'description' => 'Der Standard der Extensible Markup Language (XML)'
     ],
     [
         'url' => 'https://datatracker.ietf.org/doc/html/rfc4180',
         'title' => 'RFC 4180: CSV-Format-Spezifikation',
-        'description' => 'Offizielle Spezifikation für Comma-Separated Values (CSV) Format'
+        'description' => 'Offizielle Spezifikation für das CSV-Format (Comma-Separated Values)'
     ]
 ];
 

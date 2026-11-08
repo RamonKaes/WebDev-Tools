@@ -16,8 +16,8 @@ $assetPrefix = BASE_PATH . '/';
 $toolBaseUrl = BASE_PATH . '/pt';
 $dashboardToolBaseUrl = './';
 $homeUrl = BASE_PATH . '/pt';
-$pageTitle = 'WebDev-Tools – Ferramentas Gratuitas Desenvolvedores Online';
-$pageDescription = 'Ferramentas para desenvolvedores web: JSON Formatter, Base64 Encoder, UUID Generator e mais. 100% gratuito, do lado do cliente e amigável à privacidade.';
+$pageTitle = 'WebDev-Tools – Ferramentas Online Grátis para Desenvolvedores';
+$pageDescription = 'Ferramentas para desenvolvedores web: Formatador JSON, Codificador Base64, Gerador de UUID e mais. 100% grátis, processadas no navegador e com respeito à privacidade.';
 
 $i18nData = loadI18n($lang) ?: [];
 $t = $i18nData;
@@ -49,7 +49,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="<?= htmlspecialchars($pageDescription, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>">
-  <meta name="keywords" content="Formatador JSON, Codificador Base64, Codificador URL, Gerador UUID, Gerador de Senhas, Gerador Hash, Ferramentas para Desenvolvedores Web">
+  <meta name="keywords" content="Formatador JSON, Codificador Base64, Codificador de URL, Gerador de UUID, Gerador de Senhas, Gerador de Hash, Ferramentas para Desenvolvedores Web">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="googlebot" content="index, follow">
   <meta name="theme-color" content="#066fd1">
@@ -65,7 +65,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="<?= htmlspecialchars($pageTitle, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>">
   <meta property="og:site_name" content="WebDev-Tools">
-  <meta property="og:locale" content="pt_PT">
+  <meta property="og:locale" content="pt_BR">
   <meta property="og:locale:alternate" content="en_US">
   <meta property="og:locale:alternate" content="de_DE">
   <meta property="og:locale:alternate" content="es_ES">
@@ -159,7 +159,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
         </li>
         <li class="nav-item">
           <button class="nav-link" id="references-tab" data-category="references" type="button" aria-pressed="false"
-            title="<?= htmlspecialchars($t['navigation']['categories']['filterTitle']['references'] ?? 'Mostrar ferramentas de referência e consulta', ENT_QUOTES, 'UTF-8') ?>">Referências</button>
+            title="<?= htmlspecialchars($t['navigation']['categories']['filterTitle']['references'] ?? 'Mostrar ferramentas de referência e pesquisa', ENT_QUOTES, 'UTF-8') ?>">Referências</button>
         </li>
         <li class="nav-item">
           <button class="nav-link" id="utilities-tab" data-category="utilities" type="button" aria-pressed="false"
@@ -184,7 +184,7 @@ if ($manifest && isset($manifest['generatedAt'])) {
           <li><a class="dropdown-item" href="#" data-category="stringtools" 
               title="<?= htmlspecialchars($t['navigation']['categories']['filterTitle']['stringtools'] ?? 'Mostrar ferramentas de manipulação de strings', ENT_QUOTES, 'UTF-8') ?>">Ferramentas de Texto</a></li>
           <li><a class="dropdown-item" href="#" data-category="references" 
-              title="<?= htmlspecialchars($t['navigation']['categories']['filterTitle']['references'] ?? 'Mostrar ferramentas de referência e consulta', ENT_QUOTES, 'UTF-8') ?>">Referências</a></li>
+              title="<?= htmlspecialchars($t['navigation']['categories']['filterTitle']['references'] ?? 'Mostrar ferramentas de referência e pesquisa', ENT_QUOTES, 'UTF-8') ?>">Referências</a></li>
           <li><a class="dropdown-item" href="#" data-category="utilities" 
               title="<?= htmlspecialchars($t['navigation']['categories']['filterTitle']['utilities'] ?? 'Mostrar utilitários', ENT_QUOTES, 'UTF-8') ?>">Utilitários</a></li>
         </ul>

@@ -60,7 +60,7 @@
     "auto": "Automático"
   },
   "errors": {
-    "registry_missing": "[{tool}] Registro de herramientas no disponible. Por favor, recargue la página."
+    "registry_missing": "[{tool}] Registro de herramientas no disponible. Por favor, recarga la página."
   },
   "tools": {
     "base64EncoderDecoder": {
@@ -264,7 +264,7 @@
     "aspectRatioCalculator": {
       "linkTitle": {
         "card": "Calcula dimensiones y mantén relaciones de aspecto",
-        "nav": "Relación de Aspecto"
+        "nav": "Calculadora de Relación de Aspecto"
       },
       "presets_title": "Relaciones de Aspecto Comunes",
       "calculator_title": "Calculadora",
@@ -319,7 +319,7 @@
         "Usa la tabla de resoluciones comunes como referencia rápida"
       ],
       "how_to_use_title": "Cómo Usar",
-      "toc_title": "Relación de Aspecto",
+      "toc_title": "Calculadora de Relación de Aspecto",
       "h1_title": "Calculadora de Relación de Aspecto — Dimensiones Responsive",
       "card_description": "Calcula dimensiones faltantes desde relaciones de aspecto. Genera código CSS con propiedad aspect-ratio moderna o técnica padding-bottom. Incluye presets 16:9, 4:3, 21:9.",
       "tool_description": "Calcula dimensiones faltantes desde relaciones de aspecto con nuestra Calculadora de Relación de Aspecto. Genera código CSS para medios responsivos con la propiedad moderna aspect-ratio o técnica legacy padding-bottom. Perfecto para imágenes responsivas, embeds de video y diseño de layouts con presets comunes como 16:9, 4:3, 21:9 y más."
@@ -332,7 +332,7 @@
       "base_font_hint": "Tamaño de fuente raíz (elemento html)",
       "parent_size_label": "Tamaño de Fuente Padre (px)",
       "parent_size_hint": "Para cálculos em",
-      "converter_title": "Convertidor",
+      "converter_title": "Conversor",
       "pixel_label": "Píxeles (px)",
       "quick_values": "Valores Rápidos",
       "em_relative_hint": "em es relativo al tamaño de fuente del padre",
@@ -349,7 +349,7 @@
       "conversion_table_title": "Tabla de Conversión",
       "linkTitle": {
         "card": "Convertir píxeles a unidades rem para diseño responsivo",
-        "nav": "PX a REM"
+        "nav": "Conversor px a rem"
       },
       "how_to_use_title": "Cómo Usar",
       "how_to_use_steps": [
@@ -358,10 +358,10 @@
         "La conversión es automática a rem, em y porcentaje",
         "Usa la tabla de conversión para valores comúnmente usados"
       ],
-      "toc_title": "Convertidor Px a Rem",
-      "h1_title": "Convertidor Px a Rem — Unidades CSS para Diseño Responsivo",
+      "toc_title": "Conversor px a rem",
+      "h1_title": "Conversor px a rem — Unidades CSS para Diseño Responsivo",
       "card_description": "Convierte píxeles a unidades rem, em y porcentaje para diseño responsive. Calculadora CSS con tamaño de fuente base personalizable y tabla de conversión.",
-      "tool_description": "Convierte sin esfuerzo entre unidades de píxel (px), rem, em y porcentaje con nuestro Convertidor Px a Rem. La herramienta permite personalizar el tamaño de fuente base y el tamaño de fuente padre para cálculos precisos y ofrece valores rápidos así como una tabla de conversión completa. Ideal para diseño responsivo y especialmente útil para desarrolladores de Tailwind CSS que trabajan con sistemas de espaciado basados en rem."
+      "tool_description": "Convierte sin esfuerzo entre unidades de píxel (px), rem, em y porcentaje con nuestro Conversor px a rem. La herramienta permite personalizar el tamaño de fuente base y el tamaño de fuente padre para cálculos precisos y ofrece valores rápidos así como una tabla de conversión completa. Ideal para diseño responsivo y especialmente útil para desarrolladores de Tailwind CSS que trabajan con sistemas de espaciado basados en rem."
     },
     "uuidGeneratorTool": {
       "about_title": "Acerca de",
@@ -456,7 +456,7 @@
       "crackTime": "Tiempo Estimado de Descifrado",
       "linkTitle": {
         "card": "Crear contraseñas seguras y frases de paso",
-        "nav": "Generador Contraseñas"
+        "nav": "Generador de Contraseñas"
       },
       "strengthVeryWeak": "Muy Débil",
       "strengthVeryWeakDesc": "Esta contraseña es extremadamente débil",
@@ -535,7 +535,7 @@
       "loadExample": "Cargar ejemplo",
       "linkTitle": {
         "card": "Generar hashes criptográficos y checksums",
-        "nav": "Generador Hash"
+        "nav": "Generador de Hash"
       },
       "hmacSecretPlaceholder": "Ingresa clave secreta para HMAC...",
       "how_to_use_title": "Cómo Usar",
@@ -545,10 +545,10 @@
         "Selecciona algoritmo hash (SHA-1, SHA-256, SHA-384, SHA-512)",
         "Opcionalmente habilita modo en vivo para hash en tiempo real"
       ],
-      "toc_title": "Generador Hash",
-      "h1_title": "Generador Hash — SHA-256, SHA-512, SHA-1 y HMAC Online",
+      "toc_title": "Generador de Hash",
+      "h1_title": "Generador de Hash — SHA-256, SHA-512, SHA-1 y HMAC Online",
       "card_description": "Genera hashes criptográficos con SHA-1, SHA-256, SHA-384, SHA-512 y HMAC. Generador de hash con soporte para procesamiento de archivos y texto.",
-      "tool_description": "Crea valores hash criptográficos con nuestro versátil Generador Hash. La herramienta admite la familia SHA de la Web Crypto API: SHA-1, SHA-256, SHA-384 y SHA-512 (MD5 no se ofrece porque los navegadores no lo implementan). Genera hashes desde texto o archivos, y crea firmas HMAC con claves personalizadas. El modo en vivo habilita hash en tiempo real durante la entrada, y la función de comparación de hash ayuda a verificar la integridad de archivos.",
+      "tool_description": "Crea valores hash criptográficos con nuestro versátil Generador de Hash. La herramienta admite la familia SHA de la Web Crypto API: SHA-1, SHA-256, SHA-384 y SHA-512 (MD5 no se ofrece porque los navegadores no lo implementan). Genera hashes desde texto o archivos, y crea firmas HMAC con claves personalizadas. El modo en vivo habilita hash en tiempo real durante la entrada, y la función de comparación de hash ayuda a verificar la integridad de archivos.",
       "cryptoUnsupportedTitle": "Web Crypto API no compatible",
       "cryptoUnsupportedText": "Tu navegador no admite la Web Crypto API. Utiliza un navegador moderno.",
       "algorithms": "Algoritmos",
@@ -659,7 +659,7 @@
       "clear": "Limpiar",
       "linkTitle": {
         "card": "Crear códigos QR personalizables al instante",
-        "nav": "Generador QR"
+        "nav": "Generador de Códigos QR"
       },
       "enterContent": "Por favor ingresa contenido para generar código QR",
       "invalidURL": "Por favor ingresa una URL válida",
@@ -676,8 +676,8 @@
         "Opcionalmente personaliza colores y tamaño",
         "Haz clic en 'Generar Código QR' y descarga como PNG o SVG"
       ],
-      "toc_title": "Generador Código QR",
-      "h1_title": "Generador Código QR — Crea Códigos QR Personalizados",
+      "toc_title": "Generador de Códigos QR",
+      "h1_title": "Generador de Códigos QR — Crea Códigos QR Personalizados",
       "card_description": "Crea códigos QR personalizados desde texto, URLs, contactos vCard o información WiFi. Generador con opciones de colores, tamaños y descarga PNG/SVG.",
       "tool_description": "Crea códigos QR profesionales con nuestro versátil Generador de Códigos QR. La herramienta admite varios tipos de códigos QR: URLs/enlaces, texto plano, contactos (vCard) y configuraciones de red WiFi. Personaliza los colores de primer plano y fondo individualmente y elige entre cuatro tamaños (128x128 a 1024x1024 píxeles). La corrección de errores está fijada en el nivel más alto (H) para que los códigos sigan siendo legibles aunque se dañen parcialmente. Los códigos QR generados se pueden descargar como PNG o SVG y están optimizados tanto para medios digitales como para impresión."
     },
@@ -708,7 +708,7 @@
       "viewReference": "Referencia de Caracteres",
       "linkTitle": {
         "card": "Convertir texto a entidades HTML y viceversa",
-        "nav": "Codificador Entidades HTML"
+        "nav": "Codificador de Entidades HTML"
       },
       "how_to_use_title": "Cómo Usar",
       "how_to_use_steps": [
@@ -720,10 +720,10 @@
       ],
       "about_title": "Acerca de",
       "features_title": "Características",
-      "toc_title": "Codificador HTML Entity",
-      "h1_title": "Codificador y Decodificador HTML Entity — Caracteres HTML",
+      "toc_title": "Codificador de Entidades HTML",
+      "h1_title": "Codificador y Decodificador de Entidades HTML — Caracteres HTML",
       "card_description": "Convierte texto a entidades HTML y viceversa. Herramienta con entidades nombradas (&nbsp;), decimales (&#160;) y hexadecimales (&#xA0;) para desarrollo web.",
-      "tool_description": "Convierte caracteres especiales en entidades HTML y viceversa con nuestro Codificador de Entidades HTML. La herramienta admite entidades nombradas (&lt;, &amp;, &copy;, &nbsp;), entidades numéricas decimales (&#160;) y entidades hexadecimales (&#xA0;). En el modo nombrado solo se escapan los cinco caracteres especiales de HTML; el modo «todas las entidades nombradas» convierte además símbolos como ©, € o espacios de no separación. El modo automático convierte instantáneamente mientras escribe. Perfecto para desarrolladores web que necesitan incrustar caracteres especiales de forma segura en código HTML."
+      "tool_description": "Convierte caracteres especiales en entidades HTML y viceversa con nuestro Codificador de Entidades HTML. La herramienta admite entidades nombradas (&lt;, &amp;, &copy;, &nbsp;), entidades numéricas decimales (&#160;) y entidades hexadecimales (&#xA0;). En el modo nombrado solo se escapan los cinco caracteres especiales de HTML; el modo «todas las entidades nombradas» convierte además símbolos como ©, € o espacios de no separación. El modo automático convierte instantáneamente mientras escribes. Perfecto para desarrolladores web que necesitan incrustar caracteres especiales de forma segura en código HTML."
     },
     "jwtDecoderTool": {
       "keywords": [
@@ -744,7 +744,7 @@
       "signature": "Firma",
       "signatureNote": "Esta herramienta no verifica la firma. La verificación necesita el secreto compartido (HS*) o la clave pública del emisor (RS*, ES*, PS*).",
       "verificationWarning": "⚠️ Advertencia: ¡Esta herramienta NO verifica la firma!",
-      "verificationWarningDetails": "Este decodificador JWT solo muestra el contenido del token. NO verifica la firma. Nunca confíe en datos JWT decodificados sin verificación del lado del servidor. Un atacante puede manipular el contenido del token – solo la validación criptográfica con el secreto compartido (HS*) o la clave pública del emisor (RS*, ES*, PS*) garantiza autenticidad.",
+      "verificationWarningDetails": "Este decodificador JWT solo muestra el contenido del token. NO verifica la firma. Nunca confíes en datos JWT decodificados sin verificación del lado del servidor. Un atacante puede manipular el contenido del token – solo la validación criptográfica con el secreto compartido (HS*) o la clave pública del emisor (RS*, ES*, PS*) garantiza autenticidad.",
       "algorithm": "Algoritmo",
       "expiry": "Expiración",
       "expired": "El token ha expirado",
@@ -767,7 +767,7 @@
       "toc_title": "Decodificador JWT",
       "h1_title": "Decodificador JWT — Analizar y Decodificar Tokens JSON Web",
       "card_description": "Decodifica y analiza JSON Web Tokens (JWT) con inspección detallada. Ver encabezado, carga útil y firma. Valida estructura de token y algoritmos de firma.",
-      "tool_description": "Decodifica y analiza JSON Web Tokens (JWT) con nuestro Decodificador JWT. La herramienta separa automáticamente el token en sus tres partes (encabezado, carga útil, firma) y muestra el contenido decodificado en JSON formateado. Muestra el algoritmo de firma del encabezado y comprueba el claim de expiración (exp) frente a la hora actual. Nota: esta herramienta solo decodifica tokens y no verifica firmas. La verificación necesita el secreto compartido (HS*) o la clave pública (RS*, ES*, PS*) y debe hacerse en el servidor. Todas las operaciones se realizan localmente en su navegador.",
+      "tool_description": "Decodifica y analiza JSON Web Tokens (JWT) con nuestro Decodificador JWT. La herramienta separa automáticamente el token en sus tres partes (encabezado, carga útil, firma) y muestra el contenido decodificado en JSON formateado. Muestra el algoritmo de firma del encabezado y comprueba el claim de expiración (exp) frente a la hora actual. Nota: esta herramienta solo decodifica tokens y no verifica firmas. La verificación necesita el secreto compartido (HS*) o la clave pública (RS*, ES*, PS*) y debe hacerse en el servidor. Todas las operaciones se realizan localmente en tu navegador.",
       "errorFormat": "Formato JWT no válido. Se esperan 3 partes (header.payload.signature)",
       "errorBase64": "Codificación Base64URL no válida",
       "errorHeader": "No se pudo decodificar el encabezado: {message}",
@@ -809,7 +809,7 @@
       "toc_title": "Convertidor Punycode",
       "h1_title": "Convertidor Punycode — Convierte Dominios Internacionales",
       "card_description": "Convierte nombres de dominio internacionales (IDN) a Punycode ASCII y viceversa. Herramienta para transformar dominios Unicode a formato compatible con DNS.",
-      "tool_description": "Convierte nombres de dominio internacionales (IDN) hacia y desde Punycode con nuestro Convertidor Punycode. La herramienta transforma dominios Unicode como münchen.de en formato Punycode compatible con ASCII (xn--mnchen-3ya.de) y viceversa. Admite todos los caracteres Unicode, incluidos emojis y scripts especiales. El modo automático convierte instantáneamente mientras escribe. Ideal para desarrolladores web y administradores de sistemas que trabajan con dominios internacionales."
+      "tool_description": "Convierte nombres de dominio internacionales (IDN) hacia y desde Punycode con nuestro Convertidor Punycode. La herramienta transforma dominios Unicode como münchen.de en formato Punycode compatible con ASCII (xn--mnchen-3ya.de) y viceversa. Admite todos los caracteres Unicode, incluidos emojis y scripts especiales. El modo automático convierte instantáneamente mientras escribes. Ideal para desarrolladores web y administradores de sistemas que trabajan con dominios internacionales."
     },
     "stringEscaperTool": {
       "features_title": "Características",
@@ -818,7 +818,7 @@
       "formatLabel": "Formato",
       "escapeBtn": "Escapar",
       "unescapeBtn": "Desescapar",
-      "inputPlaceholder": "Ingrese texto para escapar o desescapar...",
+      "inputPlaceholder": "Introduce el texto que quieres escapar o desescapar...",
       "outputPlaceholder": "La salida escapada/desescapada aparecerá aquí...",
       "processBtn": "Procesar",
       "autoProcess": "Procesamiento automático en la entrada",
@@ -828,7 +828,7 @@
       "errorUnescape": "Error al desescapar",
       "linkTitle": {
         "card": "Escapar cadenas para múltiples contextos de programación",
-        "nav": "Escape Cadenas"
+        "nav": "Escape de Cadenas"
       },
       "toc_title": "Escape de Cadenas",
       "h1_title": "Escape de Cadenas — HTML, JavaScript, JSON, SQL y CSV",
@@ -839,7 +839,7 @@
       "features_title": "Características",
       "linkTitle": {
         "card": "Formatear y embellecer código en múltiples lenguajes",
-        "nav": "Formateador Código"
+        "nav": "Formateador de Código"
       },
       "formatLabel": "Formato",
       "html": "HTML",
@@ -876,7 +876,7 @@
       "features_title": "Características",
       "linkTitle": {
         "card": "Convertir entre formatos de datos y marcas de tiempo",
-        "nav": "Conversor Datos"
+        "nav": "Conversor de Datos"
       },
       "conversionLabel": "Tipo de Conversión",
       "jsonToXml": "JSON → XML",
@@ -920,9 +920,9 @@
       "dateISO": "ISO 8601 (AAAA-MM-DD)",
       "dateUS": "US (MM/DD/AAAA)",
       "timestampUnit": "Unidad de Timestamp",
-      "toc_title": "Convertidor de Datos",
-      "h1_title": "Convertidor de Datos — JSON, XML, YAML, CSV y Timestamps",
-      "card_description": "Convierte datos entre JSON, CSV, XML, YAML y Unix timestamps. Convertidor de formatos con configuración personalizable y mensajes de error claros.",
+      "toc_title": "Conversor de Datos",
+      "h1_title": "Conversor de Datos — JSON, XML, YAML, CSV y Timestamps",
+      "card_description": "Convierte datos entre JSON, CSV, XML, YAML y Unix timestamps. Conversor de formatos con configuración personalizable y mensajes de error claros.",
       "tool_description": "Potente convertidor de formatos de datos para desarrolladores web. Convierte entre formatos JSON, XML, YAML y CSV con un solo clic. Además, convierte marcas de tiempo Unix/Epoch a fechas legibles y viceversa. La herramienta admite conversión bidireccional y formateo de salida personalizable. Perfecto para desarrollo de API, migración de datos y trabajo con diferentes formatos de datos.",
       "errors": {
         "invalidXml": "Formato XML no válido",
@@ -956,7 +956,7 @@
       "example_date": "Fecha (AAAA-MM-DD)",
       "example_ipv4": "Dirección IPv4",
       "example_named_groups": "Grupos con nombre",
-      "placeholder_text": "Ingrese un patrón y cadena de prueba, luego haga clic en \"{button}\"",
+      "placeholder_text": "Introduce un patrón y una cadena de prueba, luego haz clic en \"{button}\"",
       "results_title": "Resultados",
       "matches_found": "Coincidencia encontrada | {count} coincidencias encontradas",
       "no_matches": "No se encontraron coincidencias",
@@ -977,10 +977,10 @@
       },
       "about_title": "Acerca de",
       "how_to_use_steps": [
-        "Ingrese su patrón de expresión regular",
-        "Ingrese el texto para probar contra el patrón",
-        "Seleccione las banderas regex apropiadas si es necesario",
-        "Haga clic en Probar Patrón para ver las coincidencias resaltadas"
+        "Introduce tu patrón de expresión regular",
+        "Introduce el texto que quieres probar contra el patrón",
+        "Selecciona las banderas regex apropiadas si es necesario",
+        "Haz clic en Probar Patrón para ver las coincidencias resaltadas"
       ],
       "how_to_use_title": "Cómo Usar",
       "toc_title": "Probador Regex",
@@ -991,7 +991,7 @@
     "characterReferenceTool": {
       "linkTitle": {
         "card": "Navegar y copiar entidades HTML y símbolos",
-        "nav": "Referencia Caracteres"
+        "nav": "Referencia de Caracteres"
       },
       "errorLoading": "Error al cargar referencia de caracteres",
       "searchTitle": "Buscar",
@@ -1045,7 +1045,7 @@
     "emojiReferenceTool": {
       "linkTitle": {
         "card": "Buscar y copiar emojis con códigos Unicode",
-        "nav": "Referencia Emojis"
+        "nav": "Referencia de Emojis"
       },
       "features_title": "Características",
       "categoryAll": "Todos",
@@ -1057,8 +1057,8 @@
       "categoryBusiness": "Negocios y Oficina",
       "categoryDev": "Desarrollo",
       "categoryArrows": "Flechas y Símbolos",
-      "toc_title": "Referencia Emoji",
-      "h1_title": "Referencia Emojis — Busca, Explora y Copia Emojis",
+      "toc_title": "Referencia de Emojis",
+      "h1_title": "Referencia de Emojis — Busca, Explora y Copia Emojis",
       "card_description": "Navega y copia emojis con códigos Unicode y HTML. Referencia con más de 200 emojis seleccionados y organizados por categorías para desarrolladores (UI, tecnología, negocios y más).",
       "tool_description": "Herramienta completa de referencia de emojis para desarrolladores y diseñadores. Navega más de 200 emojis seleccionados, organizados por categorías para desarrolladores como UI, tecnología, negocios y dev, busca por nombre y copia emojis o sus códigos HTML con un clic. Perfecto para desarrollo web, documentación, contenido de redes sociales y proyectos de diseño. Incluye códigos decimales Unicode para entidades HTML.",
       "loadingEmojis": "Cargando emojis...",
@@ -1072,7 +1072,7 @@
     "sriGeneratorTool": {
       "linkTitle": {
         "card": "Genera hashes SRI para la carga segura de recursos CDN",
-        "nav": "Generador SRI"
+        "nav": "Generador de Hash SRI"
       },
       "features_title": "Características",
       "about_title": "Acerca de",
@@ -1108,8 +1108,8 @@
       "integrityAttr": "atributo integrity",
       "htmlTag": "etiqueta HTML",
       "outputTitle": "Hashes SRI",
-      "toc_title": "Generador SRI",
-      "h1_title": "Generador de Hashes SRI — Subresource Integrity para CDN",
+      "toc_title": "Generador de Hash SRI",
+      "h1_title": "Generador de Hash SRI — Subresource Integrity para CDN",
       "card_description": "Genera hashes Subresource Integrity (SRI) para recursos CDN. SHA-256, SHA-384, SHA-512 con etiquetas script y link listas para usar.",
       "tool_description": "Genera hashes Subresource Integrity (SRI) para proteger tu sitio web de recursos CDN comprometidos. Introduce una URL, sube un archivo o pega el contenido del recurso para calcular hashes SHA-256, SHA-384 y SHA-512. La herramienta genera etiquetas HTML <script> y <link> listas para usar con el atributo integrity incluido. Todo el hash se ejecuta en tu navegador.",
       "errors": {
@@ -1163,7 +1163,7 @@
         "Soporte multilínea"
       ],
       "applicationCategory": "UtilityApplication",
-      "meta_title": "Codificador y Decodificador de URL – Online y Gratis",
+      "meta_title": "Codificador y Decodificador URL – Online y Gratis",
       "meta_description": "Codifica o decodifica URLs y parámetros de consulta con encodeURI o encodeURIComponent y desglosa una URL en host, ruta y parámetros. En tu navegador."
     },
     "jsonFormatterValidator": {
@@ -1191,7 +1191,7 @@
         "Compatibilidad con Tailwind CSS"
       ],
       "applicationCategory": "UtilityApplication",
-      "meta_title": "Convertir PX a REM – Calculadora CSS con Tabla",
+      "meta_title": "Convertir px a rem – Calculadora CSS con Tabla",
       "meta_description": "Convierte px a rem, em y % al instante con tu propio tamaño de fuente base o consulta la tabla de equivalencias. Gratis y directamente en tu navegador."
     },
     "uuidGeneratorTool": {
@@ -1233,7 +1233,7 @@
         "Comparación de hash"
       ],
       "applicationCategory": "UtilityApplication",
-      "meta_title": "Generador Hash – Crear Hashes SHA-256, SHA-512 y HMAC Online",
+      "meta_title": "Generador de Hash – SHA-256, SHA-512 y HMAC Online",
       "meta_description": "Crea hashes SHA-1, SHA-256, SHA-384 o SHA-512 y HMAC a partir de texto o archivos y compara checksums. Se calculan en tu navegador, sin subir nada."
     },
     "loremIpsumTool": {
@@ -1275,7 +1275,7 @@
         "Procesamiento del lado del cliente"
       ],
       "applicationCategory": "UtilityApplication",
-      "meta_title": "Escapar Cadenas – HTML, JavaScript, JSON, SQL y CSV Online",
+      "meta_title": "Escape de Cadenas – HTML, JavaScript, JSON, SQL y CSV Online",
       "meta_description": "Escapa o desescapa cadenas para HTML, XML, JavaScript, JSON, SQL y CSV para que comillas y caracteres especiales no rompan tu código. En tu navegador."
     },
     "codeFormatterTool": {
@@ -1317,7 +1317,7 @@
         "Plantilla de desarrollo de herramientas"
       ],
       "applicationCategory": "DemoApplication",
-      "meta_title": "Ejemplo Hello World – Plantilla de Desarrollo de Herramientas",
+      "meta_title": "Ejemplo Hello World – Plantilla para Nuevas Herramientas",
       "meta_description": "Herramienta de ejemplo que demuestra la estructura de WebDev-Tools con transformación de texto, conteo de caracteres y funcionalidad de portapapeles."
     },
     "regexTesterTool": {
@@ -1332,7 +1332,7 @@
       ],
       "applicationCategory": "UtilityApplication",
       "meta_title": "Probador de Expresiones Regulares Online – Gratis",
-      "meta_description": "Prueba expresiones regulares JavaScript: ejecuta el patrón con un clic y ve las coincidencias resaltadas, con grupos de captura y las banderas g, i, m, s, u, y. Gratis y local."
+      "meta_description": "Prueba expresiones regulares JavaScript: ejecuta el patrón con un clic y ve coincidencias resaltadas, grupos de captura y banderas g, i, m, s, u, y."
     },
     "characterReferenceTool": {
       "keywords": "entidades html, caracteres especiales, símbolos unicode, escape html, códigos de caracteres, referencia de entidades",

@@ -13,7 +13,7 @@ $resourcesSectionTitle = 'Ressources Utiles';
 $customAboutContent = <<<HTML
 <p class="mb-2">
     Générez instantanément des codes QR pour des URL, du texte, des coordonnées de contact et bien plus.
-    Personnalisez les couleurs et la taille ; la correction d'erreur est toujours réglée au niveau le plus élevé.
+    Personnalisez les couleurs et la taille ; la correction d'erreur est toujours réglée au niveau le plus élevé.
 </p>
 <p class="mb-0">
     Les codes QR (Quick Response) sont des codes-barres bidimensionnels capables de stocker de nombreux types de données

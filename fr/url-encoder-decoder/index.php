@@ -24,10 +24,10 @@ HTML;
 $features = [
     'Encodage d\'URL : encodez des URL et paramètres de requête',
     'Décodage d\'URL : décodez des URL encodées en pourcentage',
-    'Encodage de composants : encodez des segments individuels d\'URL',
-    'Traitement en masse : encodez/décodez plusieurs lignes en une fois',
+    'Encodage de composants : encodez des segments individuels d\'URL',
+    'Traitement en masse : encodez/décodez plusieurs lignes en une fois',
     'Analyse d\'URL : extrayez protocole, hôte, chemin et chaîne de requête',
-    'Mode en direct : encodage/décodage en temps réel pendant la saisie'
+    'Mode en direct : encodage/décodage en temps réel pendant la saisie'
 ];
 
 $customNoticeContent = '

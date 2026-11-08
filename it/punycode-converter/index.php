@@ -22,11 +22,11 @@ $customAboutContent = <<<HTML
 HTML;
 
 $features = [
-    'Conversione bidirezionale: Unicode a Punycode e viceversa',
-    'Rilevamento automatico: identifica il formato di input',
+    'Conversione bidirezionale: da Unicode a Punycode e viceversa',
+    'Rilevamento automatico: riconosce il formato dell\'input',
     'Conforme a RFC 3492: implementazione completa dello standard',
     'Elaborazione batch: converti più domini (una riga per dominio)',
-    'Domini di esempio: carica casi reali per testare',
+    'Domini di esempio: carica casi reali per fare una prova',
     'Conversione in tempo reale durante la digitazione'
 ];
 
@@ -56,7 +56,7 @@ $additionalSections = [
   <li>Estrae i caratteri ASCII (mnchen)</li>
   <li>Codifica posizioni e valori non-ASCII</li>
   <li>Aggiunge il prefisso <code>xn--</code> per indicare Punycode</li>
-  <li>Appende le informazioni Unicode codificate (-3ya)</li>
+  <li>Aggiunge in coda le informazioni Unicode codificate (-3ya)</li>
 </ol>
 
 <p class="mb-0 text-muted small">
@@ -99,14 +99,14 @@ HTML
     <h3 class="h6">Registrazione domini</h3>
     <ul>
       <li>Convertire IDN per la registrazione DNS</li>
-      <li>Verificare disponibilità</li>
+      <li>Verificare la disponibilità</li>
       <li>Generare certificati SSL</li>
     </ul>
   </div>
   <div class="col-md-6">
     <h3 class="h6">Sviluppo web</h3>
     <ul>
-      <li>Gestire URL in applicazioni</li>
+      <li>Gestire gli URL nelle applicazioni</li>
       <li>Salvare domini in database</li>
       <li>Richieste API con IDN</li>
       <li>Internazionalizzazione (i18n)</li>
@@ -131,7 +131,7 @@ $usefulResources = [
     [
         'url' => 'https://en.wikipedia.org/wiki/Internationalized_domain_name',
         'title' => 'Wikipedia: domini internazionalizzati',
-        'description' => 'Informazioni complete sui sistemi IDN'
+        'description' => 'Informazioni complete sui nomi di dominio internazionalizzati'
     ],
     [
         'url' => 'https://www.charset.org/punycode',

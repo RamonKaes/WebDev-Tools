@@ -55,7 +55,7 @@ $usefulResources = [
     ],
     [
         'url' => 'https://datatracker.ietf.org/doc/html/rfc4648',
-        'title' => 'RFC 4648: codifiche Base16, Base32 e Base64',
+        'title' => 'RFC 4648: le codifiche Base16, Base32 e Base64',
         'description' => 'Specifiche ufficiali IETF che definiscono lo standard Base64'
     ],
     [

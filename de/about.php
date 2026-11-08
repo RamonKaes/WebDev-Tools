@@ -64,7 +64,7 @@ $currentUrl = getFullUrl('/about.php', $lang);
   <meta property="og:locale" content="de_DE">
   <meta property="og:locale:alternate" content="en_US">
   <meta property="og:locale:alternate" content="es_ES">
-  <meta property="og:locale:alternate" content="pt_PT">
+  <meta property="og:locale:alternate" content="pt_BR">
   <meta property="og:locale:alternate" content="fr_FR">
   <meta property="og:locale:alternate" content="it_IT">
 
@@ -112,7 +112,7 @@ $currentUrl = getFullUrl('/about.php', $lang);
       <div class="tool-container-inner mx-auto">
 
         <div class="text-center mb-5">
-          <h1 class="display-5 mb-3">Über WebDev Tools</h1>
+          <h1 class="display-5 mb-3">Über WebDev-Tools</h1>
           <p class="lead text-secondary">
             Die 10.000ste Toolsammlung – ein Unfallbericht
           </p>
@@ -141,7 +141,7 @@ $currentUrl = getFullUrl('/about.php', $lang);
               <i class="bi bi-shield-check me-1"></i>WCAG A11y
             </span>
             <span class="badge bg-primary px-3 py-2">
-              <i class="bi bi-lock-fill me-1"></i>Nur Client-seitig
+              <i class="bi bi-lock-fill me-1"></i>Nur clientseitig
             </span>
           </div>
         </div>
@@ -150,7 +150,7 @@ $currentUrl = getFullUrl('/about.php', $lang);
           <div class="card-body p-4 fs-6">
             <p>
               Ja, ich weiß. Die zehntausendste Toolsammlung im Internet. Wer braucht die schon?<br>
-              Aber ich kann euch beruhigen. Dieses Projekt war nie geplant. Es ist ein Unfall, ein Produkt purer Prokrastination, aber auch aus einer echten Notwendigkeit heraus entstanden. Alles begann ganz harmlos auf meinem Desktop.
+              Aber ich kann Sie beruhigen. Dieses Projekt war nie geplant. Es ist ein Unfall, ein Produkt purer Prokrastination, aber auch aus einer echten Notwendigkeit heraus entstanden. Alles begann ganz harmlos auf meinem Desktop.
             </p>
 
             <h2 class="h5 card-title mb-3 mt-4">
@@ -160,7 +160,7 @@ $currentUrl = getFullUrl('/about.php', $lang);
               Wie viele Entwickler hatte auch ich diverse Eigenbau-Tools auf meinem Localhost gespeichert. Kleine Skripte für alltägliche Ärgernisse: eine Em/Px-Umrechnung hier, ein kleiner Helfer dort. Dinge, für die ich zu faul war, um jedes Mal die gleichen Websites zu suchen. Mit Lesezeichen stehe ich nämlich auf absolutem Kriegsfuß.
             </p>
             <p class="mb-3">
-              Diese Helferlein taten brav ihren Dienst. Doch dann fügte ich zwei weitere hinzu und mein Webentwickler-Instinkt schlug gnadenlos zu: Ich begann, die Dinger zu verknüpfen. Ein Menü musste her. Ein bisschen Styling. Und plötzlich war ich mittendrin in allem, was einem so einfällt, wenn man sich erfolgreich von der eigentlichen Arbeit ablenken möchte. Aus der simplen Sammlung wurde ein ausgewachsenes Projekt. Ich musste es einfach „pimpen”, bis eine richtige kleine Website mit allem Drum und Dran vor mir stand.
+              Diese Helferlein taten brav ihren Dienst. Doch dann fügte ich zwei weitere hinzu und mein Webentwickler-Instinkt schlug gnadenlos zu: Ich begann, die Dinger zu verknüpfen. Ein Menü musste her. Ein bisschen Styling. Und plötzlich war ich mittendrin in allem, was einem so einfällt, wenn man sich erfolgreich von der eigentlichen Arbeit ablenken möchte. Aus der simplen Sammlung wurde ein ausgewachsenes Projekt. Ich musste es einfach „pimpen“, bis eine richtige kleine Website mit allem Drum und Dran vor mir stand.
             </p>
 
             <h2 class="h5 card-title mb-3">
@@ -180,13 +180,13 @@ $currentUrl = getFullUrl('/about.php', $lang);
               Wenn man ein Projekt für das Internet freigibt, sollte es allerdings nicht an Sprachbarrieren scheitern. Also packte mich noch einmal der Ehrgeiz, und ich habe das System vor der Veröffentlichung um Mehrsprachigkeit erweitert, um es für ein internationales Publikum nutzbar zu machen. Um das Ganze pragmatisch und effizient umzusetzen, habe ich für die Übersetzungen der Texte vollständig auf <a href="https://www.deepl.com" target="_blank" rel="noopener noreferrer" title="DeepL Übersetzungswerkzeug">DeepL</a> gesetzt.
             </p>
             <p>
-              Anschließend habe ich den Code aufgeräumt und die Seite öffentlich geschaltet. Weil das Ganze ja ohnehin aus einem „Unfall“ entstanden ist und vom Open-Source-Gedanken lebt, liegt der Code komplett offen. Wer mitbasteln will, eine Idee für ein neues Tool hat oder einen Fehler findet, ist herzlich eingeladen, sich zu beteiligen. Das Git-Repo findet ihr hier: <a href="https://github.com/RamonKaes/WebDev-Tools" target="_blank" rel="noopener noreferrer" title="GitHub Repository von WebDev-Tools">https://github.com/RamonKaes/WebDev-Tools</a>.
+              Anschließend habe ich den Code aufgeräumt und die Seite öffentlich geschaltet. Weil das Ganze ja ohnehin aus einem „Unfall“ entstanden ist und vom Open-Source-Gedanken lebt, liegt der Code komplett offen. Wer mitbasteln will, eine Idee für ein neues Tool hat oder einen Fehler findet, ist herzlich eingeladen, sich zu beteiligen. Das Git-Repo finden Sie hier: <a href="https://github.com/RamonKaes/WebDev-Tools" target="_blank" rel="noopener noreferrer" title="GitHub Repository von WebDev-Tools">https://github.com/RamonKaes/WebDev-Tools</a>.
             </p>
             <p>
-              Einen Fehler gefunden? Bitte meldet ihn in den <a href="https://github.com/RamonKaes/WebDev-Tools/issues" target="_blank" rel="noopener noreferrer" title="Fehler auf GitHub melden">GitHub Issues</a>. Fragen, Ideen und sonstiges Feedback sind auf <a href="https://easyq.info/projects/ramonkaes-webdev-tools" target="_blank" rel="noopener noreferrer" title="Fragen und Ideen auf easyQ">easyQ</a> willkommen.
+              Einen Fehler gefunden? Bitte melden Sie ihn in den <a href="https://github.com/RamonKaes/WebDev-Tools/issues" target="_blank" rel="noopener noreferrer" title="Fehler auf GitHub melden">GitHub Issues</a>. Fragen, Ideen und sonstiges Feedback sind auf <a href="https://easyq.info/projects/ramonkaes-webdev-tools" target="_blank" rel="noopener noreferrer" title="Fragen und Ideen auf easyQ">easyQ</a> willkommen.
             </p>
             <p>
-              Ja, sorry. Jetzt ist sie also da, die 10.000ste Toolsammlung. Aber hey, immerhin hat sie eine gute Entstehungsgeschichte, und wer weiß, vielleicht erspart sie euch im Alltag genauso viel Sucherei wie mir!
+              Ja, sorry. Jetzt ist sie also da, die 10.000ste Toolsammlung. Aber hey, immerhin hat sie eine gute Entstehungsgeschichte, und wer weiß, vielleicht erspart sie Ihnen im Alltag genauso viel Sucherei wie mir!
             </p>
 
             <p>Viel Spaß damit!</p>

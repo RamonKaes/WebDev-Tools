@@ -12,7 +12,7 @@ $resourcesSectionTitle = 'Recursos Úteis';
 
 $customAboutContent = <<<HTML
 <p class="mb-2">
-    <strong>JSON Web Tokens (JWT)</strong> são uma forma compacta e segura para transportar afirmações entre duas partes.
+    <strong>JSON Web Tokens (JWT)</strong> são uma forma compacta e segura de transportar claims (afirmações) entre duas partes.
     Muito usados em autenticação e troca de informações em aplicações web modernas e APIs.
 </p>
 <p class="mb-0">

@@ -16,17 +16,17 @@ $customAboutContent = <<<HTML
     senza causare problemi di parsing nel browser. Garantiscono un rendering corretto in diversi ambienti e codifiche.
 </p>
 <p class="mb-0">
-    Questo strumento supporta entità nominali (&amp;nbsp;), numeriche decimali (&amp;#160;) ed esadecimali (&amp;#xA0;).
+    Questo strumento supporta entità con nome (&amp;nbsp;), numeriche decimali (&amp;#160;) ed esadecimali (&amp;#xA0;).
     Tutte le conversioni avvengono localmente nel tuo browser.
 </p>
 HTML;
 
 $features = [
-    'Entità nominali: esegui l\'escape dei caratteri speciali HTML (&lt;, &gt;, &amp;, &quot;) o converti tutti i simboli noti come &copy; e &nbsp;',
+    'Entità con nome: esegui l\'escape dei caratteri speciali HTML (&lt;, &gt;, &amp;, &quot;) o converti tutti i simboli noti come &copy; e &nbsp;',
     'Entità numeriche: formato decimale (&#160;) o esadecimale (&#xA0;)',
     'Bidirezionale: codifica testo o decodifica entità',
     'Conversione automatica: trasformazione in tempo reale durante la digitazione',
-    'Riferimento caratteri: collegamento rapido all\'intera lista di entità HTML',
+    'Riferimento Caratteri: collegamento rapido all\'elenco completo delle entità HTML',
     'Download: salva i risultati in un file di testo'
 ];
 
@@ -65,7 +65,7 @@ HTML
     <thead>
       <tr>
         <th>Carattere</th>
-        <th>Entità nominativa</th>
+        <th>Entità con nome</th>
         <th>Decimale</th>
         <th>Esa</th>
         <th>Descrizione</th>
@@ -84,7 +84,7 @@ HTML
 </div>
 <p class="text-muted small mb-0">
   <i class="bi bi-info-circle me-1"></i>
-  Consulta l\'elenco completo nella nostra <a href="../riferimento-caratteri/">riferimento caratteri</a>
+  Consulta l\'elenco completo nel nostro <a href="../riferimento-caratteri/">Riferimento Caratteri</a>
 </p>'
   ]
 ];
@@ -93,11 +93,11 @@ $usefulResources = [
     [
         'url' => 'https://it.wikipedia.org/wiki/Entit%C3%A0_HTML',
         'title' => 'Wikipedia: Entità HTML',
-        'description' => 'Introduzione accessibile alle entità di caratteri HTML'
+        'description' => 'Introduzione accessibile alle entità HTML'
     ],
     [
         'url' => 'https://html.spec.whatwg.org/multipage/named-characters.html',
-        'title' => 'Standard HTML: entità di caratteri nominali',
+        'title' => 'Standard HTML: riferimenti a caratteri con nome',
         'description' => 'Specifiche ufficiali WHATWG per le entità con nome'
     ],
     [

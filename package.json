@@ -1,6 +1,6 @@
 {
   "name": "webdev-tools",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "description": "Privacy-first developer utilities - 20 tools, 6 languages, 100% client-side execution",
   "main": "index.php",
   "scripts": {

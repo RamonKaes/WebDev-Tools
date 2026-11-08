@@ -4,7 +4,56 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
 
 ---
 
-## [Unreleased]
+## [2.4.0] – 2026-11-08
+
+Everything below went live on 2026-11-08 (PRs #24, #26, #27, #28, #29).
+
+### 🐛 Fixed
+- **Stale caches after deploys.** Tool scripts, `config/manifest.json` and
+  the translations are requested with `?v=<manifest version>` and the
+  translations are also kept in `localStorage` under that version. The
+  version was a timestamp written only when someone ran
+  `generate-manifest.php` by hand, so deploys that changed scripts or texts
+  did not reach returning visitors. The version is now a hash of every
+  shipped script, translation file and `config/tools.php`; `build.sh`
+  regenerates the manifest and CI fails when the committed one is stale.
+- **HTML minifier commented out the inline configuration.** It joined the
+  lines inside `<script>` blocks, so the `//` comment at the top of the
+  configuration script in `head.php` swallowed `window.__I18N__`,
+  `__BASE_PATH__` and `BUILD_HASH` on every production page; `i18n.js` then
+  fell back to a `localStorage` cache keyed `1.0.0` that never expired. The
+  minifier leaves `<script>`, `<pre>` and `<textarea>` untouched, the inline
+  scripts use block comments, and `footer.php` now preloads the
+  translations on the start, about, imprint and privacy pages too. A
+  browser test checks the preload and the hash on every page.
+- **Data converter** – XML → JSON returned `"\n  "` for indented XML, including
+  the tool's own JSON → XML output; whitespace text nodes are skipped now.
+- Lorem ipsum clamps typed values to the field's min/max; URL decoder and
+  regex tester no longer double their error prefix; the JSON formatter's
+  minify status uses a "Minified" label.
+
+### 🔐 Privacy
+- **Privacy policy** in all six languages: the Google AdSense sections (no ads
+  exist) are gone; a new section explains the two jsDelivr-hosted scripts
+  (QR code generator, terser in the code formatter) and the data the CDN
+  receives.
+
+### 📝 Texts
+- Factual corrections in all languages: Punycode examples re-verified, regex
+  flags listed as "g, i, m, s, u, y" and no "live while typing", UUID v1 uses
+  a random node ID (RFC 4122 / 9562), exactly 2,231 characters, the JWT
+  decoder does not verify signatures, no e-mail/multi-line/logo/shortcode
+  claims, "20 tools" in the home meta, password hints match the sliders.
+- Visible defects: "Client-Side Only" badge and theme labels translated,
+  French `&nbsp;`/`&eacute;` and FR/IT backslashes, truncated DE/ES cards.
+- Language pass: German consistently formal (Sie) with hyphenated compounds,
+  Portuguese switched to the Brazilian variant (`og:locale` pt_BR), Italian
+  grammar and consistent "tu", Spanish "tú" throughout, French "Déséchapper"
+  and typography. One name per tool across navigation, headings, cards and
+  SEO titles in every language.
+
+### 🔧 Tooling
+- `npm run test:browser:live` runs the Playwright suite against the live site.
 
 ### 🔐 Security & Privacy
 - **DOMPurify removed.** Every tool page loaded `dompurify@3.0.9` from jsDelivr

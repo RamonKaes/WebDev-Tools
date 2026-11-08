@@ -40,7 +40,8 @@ yourself with `curl -I https://webdev-tools.info/`.
 | `Permissions-Policy` | geolocation, microphone, camera, payment, usb and motion sensors all disabled |
 
 **Subresource Integrity** — the two scripts loaded from a CDN
-(DOMPurify and qrcode-generator) carry SHA-384 `integrity` hashes and
+(qrcode-generator for the QR code tool, and terser, loaded on demand by the
+code formatter's JavaScript minifier) carry SHA-384 `integrity` hashes and
 `crossorigin="anonymous"`, so a modified file is rejected by the browser.
 
 **Dependencies** — no third-party code is bundled into the pages beyond

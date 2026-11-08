@@ -26,7 +26,7 @@ php config/generate-sitemaps.php    # Nach neuem Tool ausführen
 ```
 tool-name/index.php             # Tool-Seite (PHP)
 assets/js/tools/toolNameTool.js # Tool-Logik (IIFE, registriert sich in window.Tools)
-assets/js/lib/                  # Gemeinsame Utilities (clipboard, download, validators, …)
+assets/js/lib/                  # Gemeinsame Utilities (clipboard-utils, download-utils, a11y-utils, wordlist)
 config/tools.php                # Tool-Registry (Metadaten, Libraries, Features)
 config/i18n/{en,de,es,pt,fr,it}.json  # Übersetzungen
 tests/unit/toolNameTool.test.js # Jest-Tests

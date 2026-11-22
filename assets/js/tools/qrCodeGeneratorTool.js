@@ -572,11 +572,12 @@
         for (let row = 0; row < moduleCount; row++) {
           for (let col = 0; col < moduleCount; col++) {
             if (qr.isDark(row, col)) {
+              const { edges } = layout;
               ctx.fillRect(
-                layout.offset + col * layout.cellSize,
-                layout.offset + row * layout.cellSize,
-                layout.cellSize,
-                layout.cellSize
+                edges[col],
+                edges[row],
+                edges[col + 1] - edges[col],
+                edges[row + 1] - edges[row]
               );
             }
           }
@@ -613,19 +614,23 @@
      *
      * The QR standard requires a light quiet zone of 4 modules around the
      * code; without it scanners cannot find the finder patterns, especially
-     * on a dark page or background. Modules get a whole-pixel size so they
-     * stay sharp, and the code is centred, so any leftover pixels widen the
-     * quiet zone instead of cutting into the code.
+     * on a dark page or background. The zone is exactly 4 modules wide; a
+     * module rarely spans a whole number of pixels, so each module edge is
+     * rounded to the nearest pixel instead. Modules then differ by at most
+     * one pixel in width, with sharp edges and no gaps between them.
      *
      * @param {number} moduleCount - Modules per side of the code
      * @param {number} size - Image width and height in pixels
-     * @returns {{cellSize: number, offset: number}} Module size and position of the first module
+     * @returns {{edges: number[]}} Pixel position of every module edge;
+     *   module i spans from edges[i] to edges[i + 1], on both axes
      */
     getLayout: function (moduleCount, size) {
-      const totalModules = moduleCount + 2 * QUIET_ZONE_MODULES;
-      const cellSize = Math.max(1, Math.floor(size / totalModules));
-      const offset = Math.floor((size - moduleCount * cellSize) / 2);
-      return { cellSize, offset };
+      const moduleSize = size / (moduleCount + 2 * QUIET_ZONE_MODULES);
+      const edges = [];
+      for (let i = 0; i <= moduleCount; i++) {
+        edges.push(Math.round((QUIET_ZONE_MODULES + i) * moduleSize));
+      }
+      return { edges };
     },
 
     /**

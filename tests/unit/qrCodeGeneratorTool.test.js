@@ -510,6 +510,83 @@ describe('qrCodeGeneratorTool – generateQRCode', () => {
   });
 });
 
+// ─── Quiet zone, module size and encoding ────────────────────────────────────
+
+describe('qrCodeGeneratorTool – scannable output', () => {
+  let c;
+  const t = (key) => key;
+  beforeEach(() => {
+    c = openTool();
+    tool.currentSize = 256;
+  });
+  afterEach(() => cleanup(c));
+
+  test('layout leaves at least 4 modules of quiet zone and uses whole-pixel modules', () => {
+    for (const size of [128, 256, 512, 1024]) {
+      for (const moduleCount of [21, 33, 57]) {
+        const { cellSize, offset } = tool.getLayout(moduleCount, size);
+        expect(Number.isInteger(cellSize)).toBe(true);
+        expect(offset).toBeGreaterThanOrEqual(4 * cellSize);
+        // the code plus the far quiet zone still fits into the image
+        expect(offset + moduleCount * cellSize + 4 * cellSize).toBeLessThanOrEqual(size);
+      }
+    }
+  });
+
+  test('canvas draws no module inside the quiet zone', () => {
+    const ctx = { fillStyle: '', fillRect: jest.fn() };
+    // getContext is already a shared mock, so swap it rather than spying on it
+    const originalGetContext = global.HTMLCanvasElement.prototype.getContext;
+    global.HTMLCanvasElement.prototype.getContext = () => ctx;
+    try {
+      tool.switchMode('url');
+      c.querySelector('#url-input').value = 'https://example.com';
+      tool.generateQRCode(t);
+    } finally {
+      global.HTMLCanvasElement.prototype.getContext = originalGetContext;
+    }
+
+    // first call fills the background, the rest are modules
+    const [background, ...modules] = ctx.fillRect.mock.calls;
+    expect(background).toEqual([0, 0, 256, 256]);
+    const { cellSize, offset } = tool.getLayout(21, 256);
+    expect(offset).toBeGreaterThanOrEqual(4 * cellSize);
+    for (const [x, y, w, h] of modules) {
+      expect(x).toBeGreaterThanOrEqual(offset);
+      expect(y).toBeGreaterThanOrEqual(offset);
+      expect(x + w).toBeLessThanOrEqual(256 - 4 * cellSize);
+      expect(y + h).toBeLessThanOrEqual(256 - 4 * cellSize);
+      expect(w).toBe(cellSize);
+    }
+  });
+
+  test('SVG download keeps a 4-module quiet zone in its viewBox', () => {
+    tool.currentSize = 512;
+    const qr = { isDark: (row, col) => row === 0 && col === 0 };
+    const svg = tool.buildSvg(qr, 21);
+    expect(svg).toContain('viewBox="0 0 29 29"');
+    expect(svg).toContain('width="512" height="512"');
+    // the only dark module (0,0) starts after the quiet zone
+    expect(svg).toContain('d="M4 4h1v1h-1z"');
+  });
+
+  test('encodes content as UTF-8', () => {
+    const utf8 = jest.fn();
+    const latin1 = jest.fn();
+    global.qrcode.stringToBytesFuncs = { default: latin1, 'UTF-8': utf8 };
+    global.qrcode.stringToBytes = latin1;
+    try {
+      tool.switchMode('text');
+      c.querySelector('#text-input').value = '€ 🚀';
+      tool.generateQRCode(t);
+      expect(global.qrcode.stringToBytes).toBe(utf8);
+    } finally {
+      delete global.qrcode.stringToBytesFuncs;
+      delete global.qrcode.stringToBytes;
+    }
+  });
+});
+
 // ─── Clear All ────────────────────────────────────────────────────────────────
 
 describe('qrCodeGeneratorTool – clearAll', () => {

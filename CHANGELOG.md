@@ -4,6 +4,17 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) · Versioning: 
 
 ---
 
+## [Unreleased]
+
+### 🐛 Fixed
+- **QR code generator** – phone cameras could not read the codes, above all
+  on the dark theme: the code filled the canvas edge to edge, without the
+  4-module quiet zone the QR standard requires, so the finder patterns sat
+  directly on the dark page. Preview, PNG and SVG now keep a light border of
+  at least 4 modules, and modules have a whole-pixel size so they stay sharp.
+- **QR code generator** – text is encoded as UTF-8; the library's Latin-1
+  default turned characters such as € or emoji into wrong bytes.
+
 ## [2.4.0] – 2026-11-08
 
 Everything below went live on 2026-11-08 (PRs #24, #26, #27, #28, #29).

@@ -19,6 +19,9 @@
     return;
   }
 
+  // Light border required around every QR code (ISO/IEC 18004)
+  const QUIET_ZONE_MODULES = 4;
+
   window.Tools.register('qrCodeGeneratorTool', {
     currentQRCode: null,
     currentMode: 'url',
@@ -539,6 +542,14 @@
         // Error correction level: 'L', 'M', 'Q', 'H' (H = highest)
         const typeNumber = 0; // 0 = auto-detect optimal size
         const errorCorrectionLevel = 'H';
+
+        // The library encodes strings as Latin-1 by default, which turns
+        // characters such as € or emoji into wrong bytes. Phone scanners
+        // read byte mode as UTF-8, so encode it that way.
+        if (qrcode.stringToBytesFuncs && qrcode.stringToBytesFuncs['UTF-8']) {
+          qrcode.stringToBytes = qrcode.stringToBytesFuncs['UTF-8'];
+        }
+
         const qr = qrcode(typeNumber, errorCorrectionLevel);
         qr.addData(content);
         qr.make();
@@ -547,12 +558,12 @@
         const canvas = document.createElement('canvas');
         const ctx = canvas.getContext('2d');
         const moduleCount = qr.getModuleCount();
-        const cellSize = this.currentSize / moduleCount;
+        const layout = this.getLayout(moduleCount, this.currentSize);
 
         canvas.width = this.currentSize;
         canvas.height = this.currentSize;
 
-        // Fill background
+        // Fill background, including the quiet zone around the code
         ctx.fillStyle = this.currentBgColor;
         ctx.fillRect(0, 0, this.currentSize, this.currentSize);
 
@@ -562,10 +573,10 @@
           for (let col = 0; col < moduleCount; col++) {
             if (qr.isDark(row, col)) {
               ctx.fillRect(
-                col * cellSize,
-                row * cellSize,
-                cellSize,
-                cellSize
+                layout.offset + col * layout.cellSize,
+                layout.offset + row * layout.cellSize,
+                layout.cellSize,
+                layout.cellSize
               );
             }
           }
@@ -598,6 +609,50 @@
     },
 
     /**
+     * Place the code inside an image of the given size.
+     *
+     * The QR standard requires a light quiet zone of 4 modules around the
+     * code; without it scanners cannot find the finder patterns, especially
+     * on a dark page or background. Modules get a whole-pixel size so they
+     * stay sharp, and the code is centred, so any leftover pixels widen the
+     * quiet zone instead of cutting into the code.
+     *
+     * @param {number} moduleCount - Modules per side of the code
+     * @param {number} size - Image width and height in pixels
+     * @returns {{cellSize: number, offset: number}} Module size and position of the first module
+     */
+    getLayout: function (moduleCount, size) {
+      const totalModules = moduleCount + 2 * QUIET_ZONE_MODULES;
+      const cellSize = Math.max(1, Math.floor(size / totalModules));
+      const offset = Math.floor((size - moduleCount * cellSize) / 2);
+      return { cellSize, offset };
+    },
+
+    /**
+     * Build the SVG download: vector modules on a background with quiet zone
+     *
+     * @param {Object} qr - qrcode-generator instance
+     * @param {number} moduleCount - Modules per side of the code
+     * @returns {string} SVG document
+     */
+    buildSvg: function (qr, moduleCount) {
+      const total = moduleCount + 2 * QUIET_ZONE_MODULES;
+      let path = '';
+      for (let row = 0; row < moduleCount; row++) {
+        for (let col = 0; col < moduleCount; col++) {
+          if (qr.isDark(row, col)) {
+            path += `M${col + QUIET_ZONE_MODULES} ${row + QUIET_ZONE_MODULES}h1v1h-1z`;
+          }
+        }
+      }
+
+      return `<svg xmlns="http://www.w3.org/2000/svg" width="${this.currentSize}" height="${this.currentSize}" viewBox="0 0 ${total} ${total}" shape-rendering="crispEdges">`
+        + `<rect width="${total}" height="${total}" fill="${this.currentBgColor}"/>`
+        + `<path d="${path}" fill="${this.currentFgColor}"/>`
+        + '</svg>';
+    },
+
+    /**
      * Download generated QR code as PNG or SVG
      *
      * @param {string} format - File format (png or svg)
@@ -626,23 +681,7 @@
           });
         } else if (format === 'svg') {
           const { qr, moduleCount } = this.currentQRCode;
-          const cellSize = this.currentSize / moduleCount;
-
-          // Generate true SVG (not embedded PNG)
-          let svgContent = `<svg xmlns="http://www.w3.org/2000/svg" width="${this.currentSize}" height="${this.currentSize}" viewBox="0 0 ${this.currentSize} ${this.currentSize}">`;
-          svgContent += `<rect width="${this.currentSize}" height="${this.currentSize}" fill="${this.currentBgColor}"/>`;
-
-          for (let row = 0; row < moduleCount; row++) {
-            for (let col = 0; col < moduleCount; col++) {
-              if (qr.isDark(row, col)) {
-                const x = col * cellSize;
-                const y = row * cellSize;
-                svgContent += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${this.currentFgColor}"/>`;
-              }
-            }
-          }
-
-          svgContent += '</svg>';
+          const svgContent = this.buildSvg(qr, moduleCount);
 
           const blob = new Blob([svgContent], { type: 'image/svg+xml' });
           const url = URL.createObjectURL(blob);

@@ -521,19 +521,25 @@ describe('qrCodeGeneratorTool – scannable output', () => {
   });
   afterEach(() => cleanup(c));
 
-  test('layout leaves at least 4 modules of quiet zone and uses whole-pixel modules', () => {
+  test('layout leaves a quiet zone of exactly 4 modules with whole-pixel edges', () => {
     for (const size of [128, 256, 512, 1024]) {
-      for (const moduleCount of [21, 33, 57]) {
-        const { cellSize, offset } = tool.getLayout(moduleCount, size);
-        expect(Number.isInteger(cellSize)).toBe(true);
-        expect(offset).toBeGreaterThanOrEqual(4 * cellSize);
-        // the code plus the far quiet zone still fits into the image
-        expect(offset + moduleCount * cellSize + 4 * cellSize).toBeLessThanOrEqual(size);
+      for (const moduleCount of [21, 25, 29, 33, 41, 57]) {
+        const { edges } = tool.getLayout(moduleCount, size);
+        const moduleSize = size / (moduleCount + 8);
+        expect(edges).toHaveLength(moduleCount + 1);
+        edges.forEach(edge => expect(Number.isInteger(edge)).toBe(true));
+        // both quiet zones are 4 modules wide, give or take the rounding of one edge
+        expect(Math.abs(edges[0] - 4 * moduleSize)).toBeLessThanOrEqual(0.5);
+        expect(Math.abs(size - edges[moduleCount] - 4 * moduleSize)).toBeLessThanOrEqual(0.5);
+        // modules are contiguous and differ by at most one pixel
+        const widths = edges.slice(1).map((edge, i) => edge - edges[i]);
+        expect(Math.max(...widths) - Math.min(...widths)).toBeLessThanOrEqual(1);
+        expect(Math.min(...widths)).toBeGreaterThanOrEqual(1);
       }
     }
   });
 
-  test('canvas draws no module inside the quiet zone', () => {
+  test('canvas draws every module between the quiet zones', () => {
     const ctx = { fillStyle: '', fillRect: jest.fn() };
     // getContext is already a shared mock, so swap it rather than spying on it
     const originalGetContext = global.HTMLCanvasElement.prototype.getContext;
@@ -546,17 +552,17 @@ describe('qrCodeGeneratorTool – scannable output', () => {
       global.HTMLCanvasElement.prototype.getContext = originalGetContext;
     }
 
-    // first call fills the background, the rest are modules
+    // first call fills the background, the rest are modules (mock: 21 modules, checkerboard)
     const [background, ...modules] = ctx.fillRect.mock.calls;
     expect(background).toEqual([0, 0, 256, 256]);
-    const { cellSize, offset } = tool.getLayout(21, 256);
-    expect(offset).toBeGreaterThanOrEqual(4 * cellSize);
+    const { edges } = tool.getLayout(21, 256);
+    expect(modules).toHaveLength(221);
+    expect(modules[0]).toEqual([edges[0], edges[0], edges[1] - edges[0], edges[1] - edges[0]]);
     for (const [x, y, w, h] of modules) {
-      expect(x).toBeGreaterThanOrEqual(offset);
-      expect(y).toBeGreaterThanOrEqual(offset);
-      expect(x + w).toBeLessThanOrEqual(256 - 4 * cellSize);
-      expect(y + h).toBeLessThanOrEqual(256 - 4 * cellSize);
-      expect(w).toBe(cellSize);
+      expect(x).toBeGreaterThanOrEqual(edges[0]);
+      expect(y).toBeGreaterThanOrEqual(edges[0]);
+      expect(x + w).toBeLessThanOrEqual(edges[21]);
+      expect(y + h).toBeLessThanOrEqual(edges[21]);
     }
   });
 
